@@ -10,7 +10,7 @@ module Cmor
 
         def initialize(*args)
           super
-          @user_class_name = ENV.fetch('ECM_RBAC_USER_CLASS_NAME') { 'User' }
+          @user_class_name = ENV.fetch('CMOR_RBAC_USER_CLASS_NAME') { 'User' }
         end
 
         def generate_initializer

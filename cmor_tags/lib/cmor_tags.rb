@@ -1,8 +1,5 @@
 require 'cmor_core'
 require 'acts-as-taggable-on'
-require 'haml-rails'
-# require 'responders'
-require 'simple_form'
 
 require 'cmor/tags'
 

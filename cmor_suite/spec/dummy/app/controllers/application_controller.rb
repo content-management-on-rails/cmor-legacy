@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # From ECM Tags
+  # From CMOR Tags
   helper Cmor::Tags::ApplicationHelper
   
   include Cmor::UserArea::Controller::RedirectBackConcern

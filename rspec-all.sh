@@ -1,15 +1,23 @@
 #!/bin/bash -l
-for i in blog cms2 contact2 core files galleries links2 rbac sliders2 suite tags user_area2; do
+echo $PWD
+rvm current
+bundle install
+
+for i in blog carousels cms contact core files galleries links rbac suite tags user_area; do
   cd "cmor_${i}"
   echo $PWD
-  bundle exec rspec spec
+  rvm current
+  BUNDLE_GEMFILE=./Gemfile bundle install
+  BUNDLE_GEMFILE=./Gemfile bundle exec rspec spec
   cd ..
 done
 
-for i in blog cms2 contact2 core files galleries links2 rbac sliders2 tags user_area2; do
+for i in blog carousels cms contact core files galleries links rbac tags user_area; do
   cd "cmor_${i}_backend"
   echo $PWD
-  bundle exec rspec spec
+  rvm current
+  BUNDLE_GEMFILE=./Gemfile bundle install
+  BUNDLE_GEMFILE=./Gemfile bundle exec rspec spec
   cd ..
 done
 

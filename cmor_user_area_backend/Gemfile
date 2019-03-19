@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gemspec
+gem 'cmor', path: '../'
+gem 'cmor_user_area', path: '../cmor_user_area'
+gem 'cmor_core_backend', path: '../cmor_core_backend'
+

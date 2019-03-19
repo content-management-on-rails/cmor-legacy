@@ -1,5 +1,7 @@
+require 'cmor/version'
+
 module Cmor
   module Blog
-    VERSION = '1.3.0'.freeze
+    VERSION = ::Cmor::VERSION
   end
 end

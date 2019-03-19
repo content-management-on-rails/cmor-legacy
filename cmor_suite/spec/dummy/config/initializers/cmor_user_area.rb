@@ -49,7 +49,7 @@ Cmor::UserArea.configure do |config|
   # Default: config.email_from_address = 'info@example.com'
   # 
   config.email_from_address = lambda do
-    ENV['ECM_USER_AREA_FROM_ADDRESS'] || 'info@example.com'
+    ENV['CMOR_USER_AREA_FROM_ADDRESS'] || 'info@example.com'
   end
   
   # Allow/disallow users to remove their own accounts.

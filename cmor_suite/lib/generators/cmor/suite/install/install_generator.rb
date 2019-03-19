@@ -9,7 +9,7 @@ module Cmor
         source_root File.expand_path('../templates', __FILE__)
 
         def initialize(*args)
-          ENV['ECM_RBAC_USER_CLASS_NAME'] ||= 'Cmor::UserArea::User'
+          ENV['CMOR_RBAC_USER_CLASS_NAME'] ||= 'Cmor::UserArea::User'
           super
         end
 

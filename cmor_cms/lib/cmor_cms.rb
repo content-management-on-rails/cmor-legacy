@@ -1,0 +1,8 @@
+require 'awesome_nested_set'
+require 'cmor_core'
+require 'rao-service'
+require 'rao-view_helper'
+require 'redcloth'
+require 'simple-navigation'
+require 'coffee-rails'
+require 'cmor/cms'

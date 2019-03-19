@@ -6,7 +6,7 @@ require "cmor/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "cmor"
-  s.version     = Cmor::VERSION
+  s.version     = ::Cmor::VERSION
   s.authors     = ["Roberto Vasquez Angel"]
   s.email       = ["roberto@vasquez-angel.de"]
   s.summary     = "Content management on rails"

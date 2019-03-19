@@ -1,4 +1,4 @@
-= ECM Carousels
+= CMOR Carousels
 
 = Installation
 

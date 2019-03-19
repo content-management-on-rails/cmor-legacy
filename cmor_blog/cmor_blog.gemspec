@@ -1,12 +1,12 @@
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'cmor/blog/version'
+require_relative "../lib/cmor/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = 'cmor_blog'
-  s.version     = Cmor::Blog::VERSION
+  s.version     = ::Cmor::VERSION
   s.authors     = ['Roberto Vasquez Angel']
   s.email       = ['roberto@vasquez-angel.de']
   s.homepage    = 'https://github.com/robotex82/cmor_blog'
@@ -16,12 +16,13 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib,spec}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'rails'
-  s.add_dependency 'acts_as_list'
-  s.add_dependency 'acts_as_published'
-  s.add_dependency 'html2markdown'
-  s.add_dependency 'kaminari'
-  s.add_dependency 'kramdown'
-  s.add_dependency 'friendly_id'
-  s.add_dependency 'cmor_comments'
+  s.add_dependency 'rails', '>= 5.0.0'
+  s.add_dependency 'cmor_core', "= #{Cmor::VERSION}"
+  # s.add_dependency 'acts_as_list'
+  # s.add_dependency 'acts_as_published'
+  # s.add_dependency 'html2markdown'
+  # s.add_dependency 'kaminari'
+  # s.add_dependency 'kramdown'
+  # s.add_dependency 'friendly_id'
+  # s.add_dependency 'cmor_comments'
 end

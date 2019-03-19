@@ -17,7 +17,7 @@ Bundler.require(*Rails.groups)
 require "pry-rails"
 require "sqlite3"
 require "responders"
-require "cmor_suite"
+require "cmor/suite/all"
 
 module Dummy
   class Application < Rails::Application
