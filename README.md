@@ -1,4 +1,4 @@
-https://travis-ci.org/content-management-on-rails/cmor.svg?branch=master
+[![Travis CI](https://travis-ci.org/content-management-on-rails/cmor.svg?branch=master)](https://travis-ci.org/content-management-on-rails/cmor)
 
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
 Short description and motivation.
