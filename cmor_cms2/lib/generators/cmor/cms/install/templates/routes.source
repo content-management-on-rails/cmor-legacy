@@ -1,0 +1,4 @@
+
+  mount Cmor::Cms::Engine, at: '/' # This one is greedy and has to go last!
+
+  root to: redirect("/#{I18n.locale}")

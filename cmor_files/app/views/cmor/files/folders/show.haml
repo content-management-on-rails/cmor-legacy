@@ -1,0 +1,17 @@
+%h1= @resource.name
+
+.row
+  .col-12
+    = collection_table(collection: @resource.assets, resource_class: ActiveStorage::Attachment, header: false) do |table|
+      = table.column :filename do |resource|
+        - resource.blob.filename
+      = table.column :blob_byte_size do |resource|
+        - number_to_human_size(resource.blob.byte_size)
+      = table.column :actions do |resource|
+        - capture_haml do
+          = link_to(t('.download'), main_app.url_for(resource), class: 'btn btn-primary')
+
+
+.row.mt-4
+  .col-12
+    = link_to(t('.back'), last_location, class: 'btn btn-primary')

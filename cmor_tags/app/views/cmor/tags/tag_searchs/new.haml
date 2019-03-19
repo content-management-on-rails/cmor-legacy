@@ -1,0 +1,11 @@
+- unless params[:tag].present?
+  = simple_form_for(@tag_search, url: cmor_tags.tag_searchs_path) do |f|
+    = f.input :tag_list
+    = f.input :exact, as: :boolean
+    = f.button :submit, class: 'btn btn-primary'
+
+#tag_search_result
+  - @result.each do |class_name, resources|
+    - next if resources.empty?
+    %h2= class_name.constantize.model_name.human(count: :other)
+    = render partial: "#{class_name.tableize}/#{class_name.demodulize.underscore}", collection: resources, as: class_name.demodulize.underscore.to_sym

@@ -1,0 +1,13 @@
+en:
+  cmor:
+    contact:
+      backend:
+        contact_requests:
+          notify:
+            success: 'The notification was sent.'
+          table:
+            notify: 'Resend notification'
+  classes:
+    cmor/contact/backend/engine: Contact
+  routes:
+    cmor-contact-backend-engine: 'contact'

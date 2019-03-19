@@ -1,0 +1,7 @@
+%h1= t('.title')
+
+%ul
+  - @contact_request.attributes.each do |attribute, value|
+    %li
+      %span.key= @contact_request.class.human_attribute_name(attribute)
+      %span.value= value

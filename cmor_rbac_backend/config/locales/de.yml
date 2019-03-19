@@ -1,0 +1,24 @@
+de:
+  classes:
+    cmor/rbac/backend/engine: "Berechtigungen"
+    scopes:
+      never_signed_in: Niemals angemeldet
+  cmor:
+    rbac:
+      backend:
+        permissions:
+          show_extras:
+            show: 'Anzeigen'
+        roles:
+          show_extras:
+            show: 'Anzeigen'
+        users:
+          show_extras:
+            show: 'Anzeigen'
+  pundit:
+    not_authorized:
+      index: "Sie sind nicht berechtigt %{collection_name} aufzulisten"
+      new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
+      show: "Sie sind nicht berechtigt die Resource %{resource_name} anzuzeigen"
+  routes:
+    cmor-rbac-backend-engine: 'berechtigungen'

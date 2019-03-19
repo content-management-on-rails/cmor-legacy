@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/blog/backend/engine: Blog
+  routes:
+    cmor-blog-backend-engine: 'blog'

@@ -1,0 +1,48 @@
+de:
+  routes:
+    cmor_galleries_engine: bilder
+    picture_galleries: galerien
+  activerecord:
+    models:
+      cmor/galleries/picture_detail:
+        one: Bilddetail
+        other: Bilddetails
+      cmor/galleries/picture_gallery:
+        one: Bildgalerie
+        other: Bildgalerien
+    attributes:
+      cmor/galleries/picture_gallery:
+        id: ID
+        append_assets: Bilder hinzufügen
+        description: Beschreibung
+        display_code_for_erb: Anzeigecode (erb)
+        name: Name
+        overwrite_assets: Bilder ersetzen
+        picture_details_count: Bilder
+        preview: Vorschau
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/galleries/picture_detail:
+        id: ID
+        asset_id: Datei
+        asset: Datei
+        description: Beschreibung
+        display_code_for_erb: Anzeigecode (erb)
+        picture_gallery_id: Galerie
+        picture_gallery: Galerie
+        position: Position
+        preview: Vorschau
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+        title: Titel
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  cmor:
+    galleries:
+      picture_galleries:
+        index:
+          show: Anzeigen
+        show:
+          back: Zurück

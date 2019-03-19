@@ -1,0 +1,102 @@
+en:
+  classes:
+    cmor/core/backend/engine: Core
+  routes:
+    cmor-core-backend-engine: core
+  or: or
+  activerecord:
+    models:
+      acts_as_taggable_on/tag:
+        one: Tag
+        other: Tag
+      acts_as_taggable_on/tagging:
+        one: Tagging
+        other: Tagging
+      delayed/backend/active_record/job:
+        one: Background job
+        other: Background jobs
+      i18n/backend/active_record/translation:
+        one: Translation
+        other: Translations
+      delayed/job:
+        one: Background job
+        other: Background jobs
+      active_storage/attachment:
+        one: File
+        other: Fileŝ
+      active_storage/blob:
+        one: File content
+        other: File contents
+    attributes:
+      acts_as_taggable_on/tag:
+        id: ID
+        name: Name
+        taggings_count: Taggings
+        color: Color
+      acts_as_taggable_on/tagging:
+        id: ID
+        tag: Tag
+        tag_id: Tag
+        taggable: Taggable object
+        taggable_id: Taggable object
+        taggable_type: Taggable object type
+        tagger: Tagger
+        tagger_id: Tagger
+        tagger_type: Tagger type
+        context: Context
+        created_at: Created at
+      delayed/backend/active_record/job:
+        id: ID
+        priority: Priority
+        attempts: Attempts
+        handler: Handler
+        last_error: Last error
+        run_at: Run at
+        locked_at: Locked at
+        failed_at: Failed at
+        locked_by: Locked by
+        queue: Queue
+        created_at: Created at
+        updated_at: Updated at
+      i18n/backend/active_record/translation:
+        id: ID
+        locale: Locale
+        key: Key
+        value: Value
+        interpolations: Interpolations
+        is_proc: Is proc?
+        created_at: Created at
+        updated_at: Updated at
+      delayed/job:
+        id: ID
+        priority: Priority
+        attempts: Attempts
+        handler: Handler
+        last_error: Last error
+        run_at: Run at
+        locked_at: Locked at
+        failed_at: Failed at
+        locked_by: Locked by
+        queue: Queue
+        created_at: Created at
+        updated_at: Updated at
+      active_storage/attachment:
+        id: ID
+        additional_actions: Additional actions
+        name: Name
+        record: Record
+        record_id: Record
+        record_type: Record type
+        blob: Blob
+        blob_id: Blob
+        created_at: Created at
+      active_storage/blob:
+        id: ID
+        additional_actions: Additional actions
+        key: Key
+        filename: Filename
+        content_type: Content type
+        metadata: Metadata
+        byte_size: Byte size
+        checksum: Checksum
+        created_at: Created at

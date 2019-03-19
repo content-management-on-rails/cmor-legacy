@@ -1,0 +1,61 @@
+defaults:
+  permissions:
+    - cmor/rbac/backend/engine
+    - cmor/rbac/permission/index
+    - cmor/rbac/permission/show
+    - cmor/rbac/permission/new
+    - cmor/rbac/permission/create
+    - cmor/rbac/permission/edit
+    - cmor/rbac/permission/update
+    - cmor/rbac/permission/destroy
+    - cmor/rbac/role/index
+    - cmor/rbac/role/show
+    - cmor/rbac/role/new
+    - cmor/rbac/role/create
+    - cmor/rbac/role/edit
+    - cmor/rbac/role/update
+    - cmor/rbac/role/destroy
+    - cmor/rbac/user/index
+    - cmor/rbac/user/show
+    - cmor/rbac/user/new
+    - cmor/rbac/user/create
+    - cmor/rbac/user/edit
+    - cmor/rbac/user/update
+    - cmor/rbac/user/destroy
+    - cmor/rbac/import_default_permissions_service/call
+    - cmor/rbac/import_default_permissions_service/invoke
+  roles:
+    cmor/rbac/administrator:
+      - cmor/rbac/backend/engine
+      - cmor/rbac/permission/index
+      - cmor/rbac/permission/show
+      - cmor/rbac/permission/new
+      - cmor/rbac/permission/create
+      - cmor/rbac/permission/edit
+      - cmor/rbac/permission/update
+      - cmor/rbac/permission/destroy
+      - cmor/rbac/role/index
+      - cmor/rbac/role/show
+      - cmor/rbac/role/new
+      - cmor/rbac/role/create
+      - cmor/rbac/role/edit
+      - cmor/rbac/role/update
+      - cmor/rbac/role/destroy
+      - cmor/rbac/user/index
+      - cmor/rbac/user/show
+      - cmor/rbac/user/new
+      - cmor/rbac/user/create
+      - cmor/rbac/user/edit
+      - cmor/rbac/user/update
+      - cmor/rbac/user/destroy
+      - cmor/rbac/import_default_permissions_service/call
+      - cmor/rbac/import_default_permissions_service/invoke
+    cmor/rbac/reviewer:
+      - cmor/rbac/backend/engine
+      - cmor/rbac/permission/index
+      - cmor/rbac/permission/show
+      - cmor/rbac/role/index
+      - cmor/rbac/role/show
+      - cmor/rbac/user/index
+      - cmor/rbac/user/show
+      - cmor/rbac/import_default_permissions_service/invoke

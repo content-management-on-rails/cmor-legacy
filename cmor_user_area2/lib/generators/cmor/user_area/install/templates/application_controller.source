@@ -1,0 +1,3 @@
+  
+  include Cmor::UserArea::Controller::RedirectBackConcern
+  include Cmor::UserArea::Controller::CurrentUserConcern

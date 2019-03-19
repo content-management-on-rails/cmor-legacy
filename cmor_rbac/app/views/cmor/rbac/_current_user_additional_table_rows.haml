@@ -1,0 +1,2 @@
+= table.association Cmor::Rbac::Role.model_name.human(count: :other) do |resource|
+  - resource.roles.map(&:identifier).join(', ')

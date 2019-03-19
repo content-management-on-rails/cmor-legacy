@@ -1,0 +1,18 @@
+%h1= @resource.name
+
+%div{ id: dom_id(@resource), class: dom_class(@resource) }
+  .row
+    - @resource.picture_details.each do |picture_detail|
+      .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
+        = bootstrap_card(additional_css_classes: 'text-center border-0' ) do
+          %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(@resource) } }
+            %img.img-fluid{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
+          .card-body
+            %h5.card-title
+              = picture_detail.title
+            %p.card-text
+              = picture_detail.description
+
+.row.mt-4
+  .col-12
+    = link_to(t('.back'), last_location, class: 'btn btn-primary')

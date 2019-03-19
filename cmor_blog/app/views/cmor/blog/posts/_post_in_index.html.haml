@@ -1,0 +1,18 @@
+%div{ id: dom_id(post), class: "row #{dom_class(post)} bottom-margin-5 mb-4" }
+  .col-lg-12
+    %h2.post-title
+      = link_to(post.title, cmor_blog.url_for(post))
+    %small
+      %span.post-creation-information.text-muted
+        = "#{l(post.created_at)} | #{post.creator.send(Cmor::Blog::Configuration.creator_label_method_name)}"
+      - if Cmor::Blog.features?(:cmor_comments)
+        |
+        %span.comments-information
+          = link_to(t('cmor.comments.commentable.comments_information', comments_count: post.comments.count), cmor_blog.post_url(post, anchor: 'comments'))
+      - if Cmor::Blog.features?(:cmor_tags)
+        |
+        %span.post-tags
+          = tag_labels_for(post)
+
+    .post-body.truncate-lines-3
+      = post.body(format: :html).html_safe

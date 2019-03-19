@@ -1,0 +1,15 @@
+- if resource.nil?
+- else
+  %notextile
+    - if image_tag_only
+      %img.img-responsive{ src: main_app.url_for(resource.asset.variant(variant_options)) }
+    - else
+      .row{ id: dom_id(resource), class: dom_class(resource) }
+        .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
+          = bootstrap_card(image_options: { src: main_app.url_for(resource.asset.variant(variant_options)) }, additional_css_classes: 'text-center border-0 w-100' ) do
+            - if show_details
+              .card-body
+                %h5.card-title
+                  = resource.title
+                %p.card-text
+                  = resource.description

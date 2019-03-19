@@ -1,0 +1,46 @@
+de:
+  classes:
+    cmor/blog/engine: Blog
+  activerecord:
+    models:
+      cmor/blog/post:
+        one: Post
+        other: Posts
+      cmor/blog/asset_detail:
+        one: Anhang
+        other: Anhänge
+    attributes:
+      cmor/blog/post:
+        id: ID
+        assets: Anhänge
+        asset_details_count: Anhänge
+        title: Titel
+        tags: Tags
+        body: Inhalt
+        position: Position
+        published: Veröffentlicht
+        published_at: Veröffentlicht am
+        created_by_id: Erstellt von
+        creator: Erstellt von
+        slug: Freundliche ID
+        updated_by_id: Aktualisiert von
+        updater: Aktualisiert von
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/blog/asset_detail:
+        id: ID
+        post: Post
+        post_id: Post
+        asset: Datei
+        asset_id: Datei
+        asset_actions: ''
+        description: Beschreibung
+        filename: Dateiname
+        title: Titel
+        preview_picture: Vorschau
+        position: Position
+        published_at: Veröffentlicht am
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  routes:
+    cmor_blog_engine: blog

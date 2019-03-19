@@ -1,0 +1,13 @@
+= table.batch_actions actions: { destroy: url_for(action: :destroy_many) }
+= table.acts_as_list_actions scope: :picture_gallery_id
+= table.column :preview do |resource|
+  - bootstrap_card(image_options: { src: main_app.url_for(resource.asset) })
+= table.column :picture_gallery, as: :association, label_method: :name, link_to: ->(r) { url_for(r.picture_gallery) }, sort: { column_name: 'cmor_galleries_picture_galleries.name'  }
+= table.column :title
+= table.timestamps sort: true
+= table.column :asset do |resource|
+  - link_to( main_app.url_for(resource.asset), class: 'btn btn-xs btn-responsive btn-default btn-secondary') do
+    %i.fas.fa-download
+    %span.glyphicon.glyphicon-download
+    %span.btn-text= t('.download')
+= table.acts_as_published_actions

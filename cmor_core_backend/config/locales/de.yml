@@ -1,0 +1,6 @@
+de:
+  classes:
+    cmor/core/backend/engine: Core
+  routes:
+    cmor-core-backend-engine: core
+  or: oder

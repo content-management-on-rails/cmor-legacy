@@ -1,0 +1,14 @@
+de:
+  activerecord:
+    models:
+      cmor/cms/page/content_block:
+        one: Content Block
+        other: Content Blöcke
+    attributes:
+      cmor/cms/page/content_block:
+        body: Inhalt
+        created_at: Erstellt am
+        cmor_cms_page: Seite
+        cmor_cms_content_box: Content Box
+        updated_at: Aktualisiert am
+

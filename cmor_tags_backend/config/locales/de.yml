@@ -1,0 +1,11 @@
+de:
+  classes:
+    cmor/tags/backend/engine: Tagging
+  cmor:
+    tags:
+      backend:
+        taggings:
+          create_by_gid_and_tag:
+            success: 'Tag hinzugefügt'
+  routes:
+    cmor-tags-backend-engine: 'tags'

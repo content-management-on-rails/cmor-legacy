@@ -1,0 +1,26 @@
+- if @resource.asset_details.any?
+  = collection_table(collection: @resource.asset_details) do |t|
+    = t.acts_as_list_actions
+    = t.column(:preview_picture) do |resource|
+      - capture_haml do
+        - begin
+          %img.img-responsive.bottom-margin-2{ src: main_app.url_for(resource.asset.variant(thumbnail: '160x120^')) }
+        - rescue ActiveStorage::InvariableError
+    = t.column :filename
+    = t.column :asset_actions do |resource|
+      - link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-primary btn-responsive') do
+        %span.glyphicon.glyphicon-download
+        %span.btn-text= t('.download')
+    = t.column :actions do |resource|
+      - capture_haml do
+        - id_base = "link-to-#{controller.class.name.underscore.gsub('_controller', '').gsub(/[\/_]/, '-')}-#{resource.to_param}"
+        .btn-group
+          = link_to(resource, id: "#{id_base}-show", class: 'btn btn-xs btn-responsive btn-primary') do
+            %span.glyphicon.glyphicon-eye-open
+            %span.btn-text= t('.show')
+          = link_to([:edit, resource], id: "#{id_base}-edit", class: 'btn btn-xs btn-responsive btn-default') do
+            %span.glyphicon.glyphicon-pencil
+            %span.btn-text= t('.edit')
+          = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: I18n.t('.confirmations.delete') }) do
+            %span.glyphicon.glyphicon-fire
+            %span.btn-text= t('.destroy')

@@ -1,0 +1,9 @@
+.well
+  ~ form.input :body
+
+.well
+  = form.input :pathname, required: false
+  = form.input :basename
+  = form.input :locale,  collection: I18n.available_locales
+  = form.input :format,  collection: Mime::SET.symbols
+  = form.input :handler, collection: ActionView::Template::Handlers.extensions

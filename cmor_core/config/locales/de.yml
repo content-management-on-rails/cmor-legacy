@@ -1,0 +1,101 @@
+de:
+  classes:
+    cmor/core/backend/engine: Core
+  routes:
+    cmor-core-backend-engine: core
+  or: oder
+  activerecord:
+    models:
+      acts_as_taggable_on/tag:
+        one: Tag
+        other: Tag
+      acts_as_taggable_on/tagging:
+        one: Tagging
+        other: Tagging
+      delayed/backend/active_record/job:
+        one: Hintergrundjob
+        other: Hintergrundjobs
+      i18n/backend/active_record/translation:
+        one: Übersetzung
+        other: Übersetzungen
+      delayed/job:
+        one: Hintergrundjob
+        other: Hintergrundjobs
+      active_storage/attachment:
+        one: Datei
+        other: Dateien
+      active_storage/blob:
+        one: Dateiinhalt
+        other: Dateiinhalte
+    attributes:
+      acts_as_taggable_on/tag:
+        id: ID
+        name: Name
+        taggings_count: Taggings
+        color: Farbe
+      acts_as_taggable_on/tagging:
+        id: ID
+        tag: Tag
+        tag_id: Tag
+        taggable: Getaggtes Objekt
+        taggable_id: Getaggtes Objekt
+        taggable_type: Getaggtes Objekt-Typ
+        tagger: Erstellt durch
+        tagger_id: Erstellt durch
+        tagger_type: Ersteller Objekt-Typ
+        context: Kontext
+        created_at: Erstellt am
+      delayed/backend/active_record/job:
+        id: ID
+        priority: Priorität
+        attempts: Versuche
+        handler: handler
+        last_error: Letzter Fehler
+        run_at: Gestartet am
+        locked_at: Gesperrt am
+        failed_at: Gescheitert am
+        locked_by: Gesperrt durch
+        queue: Warteschlange
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      i18n/backend/active_record/translation:
+        id: ID
+        locale: Sprache
+        key: Schlüssel
+        value: Wert
+        interpolations: Interpolierungen
+        is_proc: Ist Prozedur?
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      delayed/job:
+        priority: Priorität
+        attempts: Versuche
+        handler: handler
+        last_error: Letzter Fehler
+        run_at: Gestartet am
+        locked_at: Gesperrt am
+        failed_at: Gescheitert am
+        locked_by: Gesperrt durch
+        queue: Warteschlange
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      active_storage/attachment:
+        id: ID
+        additional_actions: Weitere Aktionen
+        name: Name
+        record: Angehängt an
+        record_id: Angehängt an
+        record_type: Objekt-Typ
+        blob: Datei
+        blob_id: Datei
+        created_at: Erstellt am
+      active_storage/blob:
+        id: ID
+        additional_actions: Weitere Aktionen
+        key: Schlüssel
+        filename: Dateiname
+        content_type: Dateityp
+        metadata: Metadaten
+        byte_size: Dateigröße
+        checksum: Checksumme
+        created_at: Erstellt am

@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/files/backend/engine: Dateien
+  routes:
+    cmor-files-backend-engine: dateien

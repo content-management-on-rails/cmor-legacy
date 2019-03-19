@@ -1,0 +1,5 @@
+<%= t('.title') %>
+
+<% @contact_request.attributes.each do |attribute, value| %>
+    <%= @contact_request.class.human_attribute_name(attribute) %>: <%= value %>
+<% end %>

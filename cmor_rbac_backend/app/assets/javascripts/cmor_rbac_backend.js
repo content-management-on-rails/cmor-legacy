@@ -1,0 +1,1 @@
+//= require cmor/rbac/backend/application

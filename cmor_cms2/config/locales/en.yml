@@ -1,0 +1,140 @@
+en:
+  activerecord:
+    models:
+      cmor/cms/page/content_block:
+        one: Content block
+        other: Content blocks
+      cmor/cms/content_box:
+        one: Content box
+        other: Content boxes
+      cmor/cms/navigation:
+        one: Navigation
+        other: Navigations
+      cmor/cms/navigation_item:
+        one: Navigation item
+        other: Navigation items
+      cmor/cms/page:
+        one: Page
+        other: Pages
+      cmor/cms/partial:
+        one: Partial
+        other: Partials
+      cmor/cms/template:
+        one: Template
+        other: Templates
+    attributes:
+      cmor/cms/page/content_block:
+        id: ID
+        body: Body
+        cmor_cms_page: Page
+        cmor_cms_page_id: Page
+        cmor_cms_content_box: Content box
+        cmor_cms_content_box_id: Content box
+        created_at: Created at
+        updated_at: Updated at
+      cmor/cms/content_box:
+        id: ID
+        name: Name
+        body: Body
+        cmor_cms_page_content_blocks: Content blocks
+        cmor_cms_page_content_blocks_count: Content blocks
+        created_at: Created at
+        updated_at: updated at
+      cmor/cms/navigation:
+        id: ID
+        cmor_cms_navigation_items: Navigation items
+        cmor_cms_navigation_items_count: Navigation items
+        locale: Language
+        name: Name
+        slug: Slug
+        created_at: Created at
+        updated_at: updated at
+      cmor/cms/navigation_item:
+        id: ID
+        children_count: Subitems
+        data_add_icon: Icon
+        depth: Tree depth
+        cmor_cms_navigation: Nvigation
+        cmor_cms_navigation_id: Navigation
+        cmor_cms_page: Page
+        cmor_cms_page_id: Page
+        highlights_on: Highlights on
+        key: Key
+        lft: Left
+        li_attributes: 'List-element attributes'
+        name: Name
+        options: Options
+        parent: Parent
+        parent_id: Parent
+        properties: Properties
+        rgt: Right
+        slug: Slug
+        url: Target url
+        created_at: Created at
+        updated_at: Updated at
+      cmor/cms/page:
+        id: ID
+        basename: Name
+        body: Body
+        cmor_cms_folder_id: Folder
+        cmor_cms_folder: Folder
+        cmor_cms_navigation_items: Navigation items
+        cmor_cms_navigation_item_ids: Navigation items
+        filename: Filename
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Language
+        meta_description: Meta description
+        path_and_filename: Filepath
+        pathname: Path
+        title: Title
+        created_at: Created at
+        updated_at: Updated at
+      cmor/cms/partial:
+        id: ID
+        basename: Name
+        body: Body
+        cmor_cms_folder_id: Folder
+        cmor_cms_folder: Folder
+        filename: Filename
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Language
+        pathname: Path
+        created_at: Created at
+        updated_at: Updated at
+      cmor/cms/template:
+        id: ID
+        basename: Name
+        body: Body
+        cmor_cms_folder_id: Folder
+        cmor_cms_folder: Folder
+        filename: Filename
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Language
+        pathname: Path
+        created_at: Created at
+        updated_at: Updated at
+  classes:
+    cmor/cms/add_homepages_service: 'Add homepages service'
+    cmor/cms/import_partials_service: 'Import partials service'
+  cmor:
+    cms:
+      active_admin:
+        menu: CMS
+      navigation:
+        messages:
+          empty: Navigation  %{name} (%{lang}) is empty
+          not_found: Could not find navigation %{name} (%{lang})
+  resources:
+    cmor_cms_folders: folders
+    cmor_cms_navigations: navigations
+    cmor_cms_navigation_items: navigation_items
+    cmor_cms_pages: pages
+    cmor_cms_partials: partials
+    cmor_cms_templates: templates
+

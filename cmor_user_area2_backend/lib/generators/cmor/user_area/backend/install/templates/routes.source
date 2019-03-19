@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::UserArea::Backend::Engine, at: '/backend/cmor-user-area-backend-engine'
+  end

@@ -1,0 +1,13 @@
+%p.navbar-text
+  -if user_signed_in?
+    = current_user.email
+  - else
+    = t('.not_signed_in')
+%ul.nav.navbar-nav
+  - if user_signed_in?
+    %li= link_to t('.show'), cmor_user_area.current_user_path
+    %li= link_to t('.sign_out'), cmor_user_area.user_session_path, method: :delete
+  - else
+    %li= link_to t('.sign_in'), cmor_user_area.new_user_session_path
+    - if Cmor::UserArea::Configuration.enable_registrations    
+      %li= link_to t('.new'), cmor_user_area.new_current_user_path

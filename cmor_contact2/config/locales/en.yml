@@ -1,0 +1,50 @@
+en:
+  classes:
+    cmor/contact/engine: Contact
+  activerecord:
+    models:
+      cmor/contact/contact_request:
+        one: Contact Request
+        other: Contact Requests
+    attributes:
+      cmor/contact/contact_request:
+        id: ID
+        accept_terms_of_service: 'I hereby allow the site owner to use my personal data for the purpose of answering this request.'
+        name: Name
+        email: E-Mail
+        phone: Phone
+        ip_address: IP Address
+        message: Message
+        notified_at: Notified at
+        created_at: Created at
+        updated_at: Updated at
+        additional_actions: Additional Actions
+  cmor:
+    contact:
+      contact_requests:
+        new:
+          title: "Contact Request"
+      contact_request_mailer:
+        notify:
+          subject: "[%{application_name}] New contact request"
+          title: "New contact request"
+  flash:
+    cmor:
+      contact:
+        contact_requests:
+          create:
+            notice: "Your contact request has been delivered."
+  helpers:
+    submit:
+      contact_request:
+        create: Submit
+  routes:
+    cmor_contact_engine: contact
+    contact_requests: request
+  simple_form:
+    placeholders:
+      contact_request:
+        name: "John Doe"
+        email: "john.doe@example.com"
+        message: "Hi Dave..."
+        phone: "+1-541-754-3010"

@@ -1,0 +1,5 @@
+<%= link_to([cmor_links, category], class: "list-group-item left-padding-#{category.depth * 3}", title: category.short_description) do %>
+  <%= category.tree_name %>
+  <%= category.locale_label %>
+  <%= category.links_count_label %>
+<% end %>

@@ -1,0 +1,6 @@
+= table.id sort: true
+= table.association :category, sort: true, link_to: ->(resource) { resource.category }
+= table.column :name, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :description, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.timestamps sort: true
+= table.column(:link_actions) { |link| link_to(t('.visit'), link.url, class: 'btn btn-xs btn-primary') }

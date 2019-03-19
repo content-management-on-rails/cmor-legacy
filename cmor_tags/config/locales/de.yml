@@ -1,0 +1,46 @@
+de:
+  classes:
+    cmor/tags/engine: Tags
+  attributes:
+    tag_list: Tags
+  activerecord:
+    models:
+      cmor/tags/tag:
+        one: Tag
+        other: Tags
+      cmor/tags/tagging:
+        one: Tagging
+        other: Taggings
+    attributes:
+      cmor/tags/tag:
+        id: ID
+        color: Farbe
+        name: Name
+        taggings_count: Getagte Objekte
+      cmor/tags/tagging:
+        id: ID
+        color: Farbe
+        context: Kontext
+        tag_id: Tag
+        tag: Tag
+        taggable_id: Getagtes Objekt
+        taggable: Getagtes Objekt
+        taggable_type: Getagtes Objekt-Typ
+        tagger_id: Ersteller
+        tagger: Ersteller
+        tagger_type: Ersteller-Typ
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/tags/tag_search:
+        exact: Wortgenau
+        tag_list: Tags
+  cmor:
+    tags:
+      search_box:
+        search: "Katzen, Baum, grün, ..."
+  helpers:
+    submit:
+      tag_search:
+        create: 'Suchen'
+  routes:
+    cmor_tags_engine: tags

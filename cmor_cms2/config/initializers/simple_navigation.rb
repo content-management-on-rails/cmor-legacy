@@ -1,0 +1,1 @@
+SimpleNavigation.config_file_paths << Cmor::Cms::Engine.root.join(*%w(config))

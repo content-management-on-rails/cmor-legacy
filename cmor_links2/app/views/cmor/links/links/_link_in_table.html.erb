@@ -1,0 +1,5 @@
+<tr class="<%= link.class.name.underscore.gsub('/', ' ') %>" id="<%= "#{link.class.name.underscore.gsub('/', '-')}-#{link.to_param}" %>">
+  <td><%= link_to link.name, link.url %></td>
+  <td><%= link_to link.category.human, link.category %></td>
+  <td><%= link.description(as: :html).html_safe %></td>
+</tr>

@@ -1,0 +1,14 @@
+%li.nav-item.dropdown
+  %a#dropdown02.nav-link.dropdown-toggle{ href: '#', 'data-toggle': 'dropdown', role: 'button', 'aria-has-popup': true, 'aria-expanded': false }
+    -if user_signed_in?
+      = current_user.email
+    - else
+      = t('.not_signed_in')
+  .dropdown-menu{"aria-labelledby" => "dropdown02"}
+    - if user_signed_in?
+      = link_to t('.show'), cmor_user_area.current_user_path, class: 'dropdown-item'
+      = link_to t('.sign_out'), cmor_user_area.user_session_path, class: 'dropdown-item', method: :delete
+    - else
+      = link_to t('.sign_in'), cmor_user_area.new_user_session_path, class: 'dropdown-item'
+      - if Cmor::UserArea::Configuration.enable_registrations
+        = link_to t('.new'), cmor_user_area.new_current_user_path, class: 'dropdown-item'

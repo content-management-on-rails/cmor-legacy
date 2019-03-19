@@ -1,0 +1,46 @@
+en:
+  classes:
+    cmor/tags/engine: Tags
+  attributes:
+    tag_list: Tags
+  activerecord:
+    models:
+      cmor/tags/tag:
+        one: Tag
+        other: Tags
+      cmor/tags/tagging:
+        one: Tagging
+        other: Taggings
+    attributes:
+      cmor/tags/tag:
+        id: ID
+        color: Color
+        name: Name
+        taggings_count: Tagged Items
+      cmor/tags/tagging:
+        id: ID
+        color: Color
+        context: Context
+        tag_id: Tag
+        tag: Tag
+        taggable_id: Taggable
+        taggable: Taggable
+        taggable_type: Taggable type
+        tagger_id: Tagger
+        tagger_type: Tagger type
+        tagger: Tagger
+        created_at: Created at
+        udpated_at: Updated at
+      cmor/tags/tag_search:
+        exact: Exact
+        tag_list: Tags
+  cmor:
+    tags:
+      search_box:
+        search: "cats, tree, green, ..."
+  helpers:
+    submit:
+      tag_search:
+        create: 'Search'
+  routes:
+    cmor_tags_engine: tags

@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/cms/backend/engine: 'CMS'
+  routes:
+    cmor-cms-backend-engine: 'cms'

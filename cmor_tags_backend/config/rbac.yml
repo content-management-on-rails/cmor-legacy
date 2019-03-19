@@ -1,0 +1,40 @@
+defaults:
+  permissions:
+    - cmor/tags/backend/engine
+    - cmor/tags/taggings/index
+    - cmor/tags/taggings/show
+    - cmor/tags/taggings/new
+    - cmor/tags/taggings/create
+    - cmor/tags/taggings/edit
+    - cmor/tags/taggings/update
+    - cmor/tags/taggings/destroy
+    - cmor/tags/tags/index
+    - cmor/tags/tags/show
+    - cmor/tags/tags/new
+    - cmor/tags/tags/create
+    - cmor/tags/tags/edit
+    - cmor/tags/tags/update
+    - cmor/tags/tags/destroy
+  roles:
+    cmor/tags/administrator:
+      - cmor/tags/backend/engine
+      - cmor/tags/taggings/index
+      - cmor/tags/taggings/show
+      - cmor/tags/taggings/new
+      - cmor/tags/taggings/create
+      - cmor/tags/taggings/edit
+      - cmor/tags/taggings/update
+      - cmor/tags/taggings/destroy
+      - cmor/tags/tags/index
+      - cmor/tags/tags/show
+      - cmor/tags/tags/new
+      - cmor/tags/tags/create
+      - cmor/tags/tags/edit
+      - cmor/tags/tags/update
+      - cmor/tags/tags/destroy
+    cmor/tags/reviewer:
+      - cmor/tags/backend/engine
+      - cmor/tags/taggings/index
+      - cmor/tags/taggings/show
+      - cmor/tags/tags/index
+      - cmor/tags/tags/show

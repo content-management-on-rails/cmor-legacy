@@ -1,0 +1,10 @@
+%ul.navbar-nav
+  - if user_signed_in?
+    .btn-group
+      = link_to t('.show'), cmor_user_area.current_user_path, class: 'btn btn-secondary'
+      = link_to t('.sign_out'), cmor_user_area.user_session_path, class: 'btn btn-primary', method: :delete
+  - else
+    .btn-group
+      = link_to t('.sign_in'), cmor_user_area.new_user_session_path, class: 'btn btn-primary'
+      - if Cmor::UserArea::Configuration.enable_registrations
+        = link_to t('.new'), cmor_user_area.new_current_user_path, class: 'btn btn-secondary'

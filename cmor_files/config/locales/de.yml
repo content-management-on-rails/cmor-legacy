@@ -1,0 +1,44 @@
+de:
+  routes:
+    cmor_files_engine: dateien
+    folders: ordner
+  activerecord:
+    models:
+      cmor/files/file_detail:
+        one: Dateidetail
+        other: Dateidetails
+      cmor/files/folder:
+        one: Ordner
+        other: Ordner
+    attributes:
+      cmor/files/file_detail:
+        id: ID
+        blob_byte_size: Dateigröße
+        blob_checksum: Checksumme
+        blob_filename: Dateiname
+        folder: Ordner
+        folder_id: Ordner
+        asset: Datei
+        asset_id: Datei
+        title: Titel
+        description: Beschreibung
+        position: Position
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/files/folder:
+        id: ID
+        name: Name
+        description: Beschreibung
+        assets: Dateien
+        assets_count: Dateien
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  cmor:
+    files:
+      folders:
+        index:
+          show: Anzeigen
+        show:
+          back: Zurück

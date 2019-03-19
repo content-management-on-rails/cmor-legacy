@@ -1,0 +1,3 @@
+
+
+  mount Cmor::Galleries::Engine, at: '/'

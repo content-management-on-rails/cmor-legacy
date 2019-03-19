@@ -1,0 +1,15 @@
+de:
+  activerecord:
+    models:
+      cmor/cms/navigation:
+        one: Navigation
+        other: Navigationen
+    attributes:
+      cmor/cms/navigation:
+        created_at: Erstellt am
+        cmor_cms_navigation_items: Navigationseinträge
+        locale: Sprache
+        name: Name
+        slug: Freundliche ID
+        updated_at: Aktualisiert am
+

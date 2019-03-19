@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Blog::Backend::Engine, at: '/backend/cmor-blog-backend-engine'
+  end

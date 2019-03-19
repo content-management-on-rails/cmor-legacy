@@ -1,0 +1,45 @@
+en:
+  activerecord:
+    models:
+      cmor/links/category:
+        one: link category
+        other: link categories
+      cmor/links/link: 
+        one: link
+        other: links
+    attributes:
+      cmor/links/category:
+        id: ID
+        children: Subcategories
+        created_at: created at
+        depth: depth
+        lft: left
+        link_footer_column: link footer column
+        links: links
+        links_count: links
+        locale: language
+        long_description: long description
+        markup_language: markup language
+        name: name
+        parent: parent category
+        parent_id: parent category
+        rgt: right
+        short_description: short description
+        slug: friendly id
+        updated_at: updated at
+      cmor/links/link:
+        id: ID
+        category: link category
+        category_id: link category
+        created_at: created at
+        description: description
+        link_action: ''
+        markup_language: markup language
+        name: name
+        position: position
+        updated_at: updated at
+        url: url
+  routes:
+    cmor_links_engine: links
+    categories: categories
+    links: links

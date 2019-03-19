@@ -1,0 +1,126 @@
+en:
+  activerecord:
+    attributes:
+      cmor/user_area/user_password_reset_request:
+        email: E-Mail
+        user: Benutzer
+      cmor/user_area/user:
+        id: ID
+        active: Active
+        approved: Approved
+        confirmed: Confirmed
+        crypted_password: Crypted password
+        current_login_at: Current login at
+        current_login_ip: Current login IP
+        email: E-Mail
+        failed_login_count: Failed logins
+        last_login_at: Last login at
+        last_login_ip: Last login IP
+        last_request_at: Last request at
+        login_count: Logins
+        password: Password
+        password_confirmation: Confirm password
+        password_salt: Password Salt
+        perishable_token: Perishable token
+        persistence_token: Persistence token
+        single_access_token: Single access token
+        created_at: Created at
+        updated_at: Updated at
+    models:
+      cmor/user_area/user:
+        one: User
+        other: Users
+    errors:
+      cmor/user_area/user_password_reset_request:
+        one: Password
+        other: Passwordd
+      models:
+        cmor/user_area/user_password_reset_request:
+          attributes:
+            user:
+              blank: 'unknown'
+  classes:
+    cmor/user_area/create_default_user_service: 'Create Default User Service'
+  cmor:
+    user_area:
+      navigation: &navigation
+        show: My Account
+        edit: My Account
+        new: Register
+        not_signed_in: Not signed in
+        sign_in: Sign in
+        sign_out: Sign out
+      navigation_dropdown:
+        bootstrap3:
+          <<: *navigation
+        bootstrap4:
+          <<: *navigation
+      password_reset_requests:
+        base:
+          new:
+            back: Back
+            title: 'Reset password'
+      password_resets:
+        base:
+          edit:
+            back: Back
+            title: 'Reset password for %{resource}'
+      sessions:
+        base:
+          form_errors:
+            errors:
+              template:
+                header: 'Login failed'
+          new:
+            back: Back
+            title: Sign in
+            password:
+              new: Forgot password
+      current_users:
+        edit:
+          back: Back
+          show: Show
+          title: My Account
+        new:
+          back: Back
+          title: Register
+        show:
+          back: Back
+          destroy: 'Destroy'
+          edit: 'Edit'
+          sign_out: Sign out
+      users:
+        base:
+          show:
+            sign_out: Sign out
+    cmor:
+      user_area:
+        user_password_resets:
+          update:
+            notice: 'Updated password'
+        user_password_reset_requests:
+          create:
+            notice: 'You will receive an email with instructions for how to reset your password in a few minutes.'
+  helpers:
+    submit:
+      user_password_reset_request:
+        create: 'Proceed'
+      user_session:
+        create: 'Sign in'
+  messages:
+    confirmations:
+      cmor_user_area:
+        send_instructions: 'You will receive an email with instructions for how to confirm your email address in a few minutes.'
+    success:
+      cmor_user_area:
+        signed_in: 'Signed in.'
+        signed_out: 'Signed out.'
+    failures:
+      cmor_user_area:
+        authentication_failed: 'You need to sign in or sign up before continuing.'
+        perishable_token_invalid: 'Could not find user for the given token or the token is too old.'
+  routes:
+    cmor_user_area_engine: user
+    current_user: profile
+    user_password_reset_request: password-reset
+    user_session: session

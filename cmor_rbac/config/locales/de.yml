@@ -1,0 +1,58 @@
+de:
+  activemodel:
+    models:
+      cmor/rbac/import_default_permissions_service: "Dienst zum Einrichten von Berechtigungen"
+    attributes:
+      cmor/rbac/import_default_permissions_service:
+        filename: Datei
+  activerecord:
+    attributes:
+      cmor/rbac/permission:
+        id: ID
+        actions: Aktionen
+        created_at: Erstellt am
+        enabled?: Aktiv
+        enabled_from: Aktiv ab
+        enabled_to: Aktiv bis
+        identifier: Bezeichner
+        updated_at: Aktualisiert am
+      cmor/rbac/role:
+        id: ID
+        actions: Aktionen
+        created_at: Erstellt am
+        enabled?: Aktiv
+        enabled_from: Aktiv ab
+        enabled_to: Aktiv bis
+        identifier: Bezeichner
+        updated_at: Aktualisiert am
+      cmor/rbac/role_permission:
+        id: ID
+        role: Rolle
+        role_id: Rolle
+        permission: Berechtigung
+        permission_id: Berechtigung
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/rbac/user_role:
+        id: ID
+        user: Benutzer
+        user_id: Benutzer
+        role: Rolle
+        role_id: Rolle
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+    models:
+      cmor/rbac/permission:
+        one: Berechtigung
+        other: Berechtigungen
+      cmor/rbac/role:
+        one: Rolle
+        other: Rollen
+      cmor/rbac/role_permission:
+        one: Rollen-Berechtigung
+        other: Rollen-Berechtigungen
+      cmor/rbac/user_role:
+        one: Benutzer-Rolle
+        other: Benutzer-Rollen
+  routes:
+    cmor_rbac_engine: rbac

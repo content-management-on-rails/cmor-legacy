@@ -1,0 +1,8 @@
+en:
+  classes:
+    cmor/user_area/backend/engine: Authentication
+  activerecord:
+    scopes:
+      never_signed_in: Never signed in
+  routes:
+    cmor-user-area-backend-engine: 'authentication'

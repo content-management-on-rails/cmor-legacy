@@ -1,0 +1,14 @@
+.well
+  = form.association :parent
+
+.well
+  = form.input :locale, collection: I18n.available_locales
+  = form.input :name
+
+.well
+  = form.input :markup_language, collection: Cmor::Links::markup_languages
+  = form.input :short_description
+  = form.input :long_description
+
+.well
+  = form.input :link_footer_column, collection: (1..Cmor::Links::Configuration.link_footer_columns).to_a

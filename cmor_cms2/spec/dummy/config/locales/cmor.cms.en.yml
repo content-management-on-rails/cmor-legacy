@@ -1,0 +1,17 @@
+en:
+  cmor:
+    cms:
+      active_admin:
+        menu: CMS
+      navigation:
+        messages:
+          empty: Navigation  %{name} (%{lang}) is empty
+          not_found: Could not find navigation %{name} (%{lang})
+  resources:
+    cmor_cms_folders: folders
+    cmor_cms_navigations: navigations
+    cmor_cms_navigation_items: navigation_items
+    cmor_cms_pages: pages
+    cmor_cms_partials: partials
+    cmor_cms_templates: templates
+

@@ -1,0 +1,29 @@
+defaults:
+  permissions:
+    - cmor/user_area/backend/engine
+    - cmor/user_area/user/index
+    - cmor/user_area/user/show
+    - cmor/user_area/user/new
+    - cmor/user_area/user/create
+    - cmor/user_area/user/edit
+    - cmor/user_area/user/update
+    - cmor/user_area/user/destroy
+    - cmor/user_area/create_default_user_service/call
+    - cmor/user_area/create_default_user_service/invoke
+  roles:
+    cmor/user_area/administrator:
+      - cmor/user_area/backend/engine
+      - cmor/user_area/user/index
+      - cmor/user_area/user/show
+      - cmor/user_area/user/new
+      - cmor/user_area/user/create
+      - cmor/user_area/user/edit
+      - cmor/user_area/user/update
+      - cmor/user_area/user/destroy
+      - cmor/user_area/create_default_user_service/call
+      - cmor/user_area/create_default_user_service/invoke
+    cmor/user_area/reviewer:
+      - cmor/user_area/backend/engine
+      - cmor/user_area/user/index
+      - cmor/user_area/user/show
+      - cmor/user_area/create_default_user_service/invoke

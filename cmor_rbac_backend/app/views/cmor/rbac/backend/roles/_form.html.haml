@@ -1,0 +1,10 @@
+.well
+  = form.input :identifier
+  = form.input :enabled_from
+  = form.input :enabled_to
+
+.well
+  = form.association :permissions, as: :check_boxes, label_method: :identifier
+
+.well
+  = form.association :users, as: :check_boxes, label_method: :email

@@ -1,0 +1,14 @@
+de:
+  cmor:
+    contact:
+      backend:
+        contact_requests:
+          notify:
+            success: 'Benachrichtigung erneut versandt.'
+          table:
+            notify: 'Erneut benachrichtigen'
+
+  classes:
+    cmor/contact/backend/engine: Kontakt
+  routes:
+    cmor-contact-backend-engine: 'kontakt'

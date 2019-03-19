@@ -1,0 +1,58 @@
+en:
+  activemodel:
+    models:
+      cmor/rbac/import_default_permissions_service: "Import default permissions service"
+    attributes:
+      cmor/rbac/import_default_permissions_service:
+        filename: File
+  activerecord:
+    attributes:
+      cmor/rbac/permission:
+        id: ID
+        actions: Actions
+        created_at: Created at
+        enabled?: Active
+        enabled_from: Enabled from
+        enabled_to: Enabled to
+        identifier: Identifier
+        updated_at: Updated at
+      cmor/rbac/role:
+        id: ID
+        actions: Actions
+        created_at: Created at
+        enabled?: Active
+        enabled_from: Enabled from
+        enabled_to: Enabled to
+        identifier: Identifier
+        updated_at: Updated at
+      cmor/rbac/role_permission:
+        id: ID
+        role: Role
+        role_id: Role
+        permission: Permission
+        permission_id: Permission
+        created_at: Created at
+        updated_at: Updated at
+      cmor/rbac/user_role:
+        id: ID
+        user: User
+        user_id: User
+        role: Role
+        role_id: Role
+        created_at: Created at
+        updated_at: Updated at
+    models:
+      cmor/rbac/permission:
+        one: Permission
+        other: Permissions
+      cmor/rbac/role:
+        one: Role
+        other: Roles
+      cmor/rbac/role_permission:
+        one: Role Permission
+        other: Role Permissions
+      cmor/rbac/user_role:
+        one: User Role
+        other: User Roles
+  routes:
+    cmor_rbac_engine: rbac

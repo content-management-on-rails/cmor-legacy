@@ -1,0 +1,17 @@
+- if resource.nil?
+- else
+  %div{ id: dom_id(resource), class: dom_class(resource) }
+    %notextile
+      .row
+        - resource.picture_details.published.each do |picture_detail|
+          .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
+            = bootstrap_card(additional_css_classes: 'text-center border-0 w-100') do
+              %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(resource) } }
+                %img{ src: main_app.url_for(picture_detail.asset.variant(variant_options)) }
+              - if show_details
+                .card-body
+                  %h5.card-title
+                    = picture_detail.title
+                  %p.card-text
+                    = picture_detail.description
+

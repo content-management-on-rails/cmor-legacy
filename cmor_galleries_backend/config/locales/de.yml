@@ -1,0 +1,17 @@
+de:
+  classes:
+    cmor/galleries/backend/engine: Bilder
+  routes:
+    cmor-galleries-backend-engine: bilder
+  cmor:
+    galleries:
+      backend:
+        picture_details:
+          destroy_many:
+            success: Löschvorgang erfolgreich.
+        picture_galleries:
+          after_show_table:
+            destroy: Löschen
+            edit: Bearbeiten
+            publish: Veröffentlichen
+            unpublish: Zurückziehen

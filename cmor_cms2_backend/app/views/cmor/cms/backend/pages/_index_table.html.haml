@@ -1,0 +1,8 @@
+= table.column :title, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :pathname, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :filename, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.boolean :home_page?, sort: true
+= table.column :layout, sort: true
+= table.column(:cmor_cms_navigation_items, sortable: false) do |page|
+  - page.cmor_cms_navigation_items.collect{ |navigation_item| link_to(navigation_item, navigation_item_path(navigation_item)) }.join('<br />').html_safe
+= table.timestamps(sort: true)

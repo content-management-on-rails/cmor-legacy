@@ -1,0 +1,18 @@
+= form.association :tag
+= form.input(:taggable, collection: Cmor::Tags::Backend::Configuration.taggable_classes,
+                      as: :grouped_select,
+                      group_method: :all,
+                      group_label_method: :model_name,
+                      value_method: :to_global_id,
+                      label_method: :human,
+                      include_blank: true,
+                      selected: form.object.taggable.try(:to_global_id))
+= form.input(:tagger, collection: Cmor::Tags::Backend::Configuration.tagger_classes,
+                      as: :grouped_select,
+                      group_method: :all,
+                      group_label_method: :model_name,
+                      value_method: :to_global_id,
+                      label_method: :human,
+                      include_blank: true,
+                      selected: form.object.tagger.try(:to_global_id))
+= form.input :context

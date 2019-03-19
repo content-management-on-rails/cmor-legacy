@@ -1,0 +1,23 @@
+en:
+  classes:
+    cmor/rbac/backend/engine: "Authorization"
+    scopes:
+      never_signed_in: Never signed in
+  cmor:
+    rbac:
+      backend:
+        permissions:
+          show_extras:
+            show: 'Show'
+        roles:
+          show_extras:
+            show: 'Show'
+        users:
+          show_extras:
+            show: 'Show'
+  pundit:
+    not_authorized:
+      index: "You are not allowed to list %{collection_name}"
+      new: "You are not allowed to add %{collection_name}"
+  routes:
+    cmor-rbac-backend-engine: 'authorization'

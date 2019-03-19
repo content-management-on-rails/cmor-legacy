@@ -1,0 +1,14 @@
+en:
+  classes:
+    cmor/links/backend/engine: 'Links'
+  component:
+    collection_table:
+      visit: 'Visit'
+  cmor:
+    links:
+      backend:
+        links:
+          table:
+            visit: Open link
+  routes:
+    cmor-links-backend-engine: 'links'

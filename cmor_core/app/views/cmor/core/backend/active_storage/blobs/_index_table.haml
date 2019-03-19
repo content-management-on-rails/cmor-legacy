@@ -1,0 +1,15 @@
+= table.column :key
+= table.column :filename do |resource|
+  - resource.filename.to_s
+= table.column :content_type
+= table.column :metadata do |resource|
+  - capture_haml do
+    %ul
+      - resource.metadata.each do |key, value|
+        %li= "#{key}: #{value}"
+= table.column :byte_size do |resource|
+  - number_to_human_size(resource.byte_size)
+= table.column :checksum
+= table.column :created_at
+= table.column :additional_actions do |resource|
+  - link_to(t('.download'), main_app.url_for(resource), class: 'btn btn-primary btn-xs')

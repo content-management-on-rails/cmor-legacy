@@ -1,0 +1,19 @@
+de:
+  classes:
+    cmor/user_area/backend/engine: Authentifizierung
+  activerecord:
+    scopes:
+      never_signed_in: Niemals angemeldet
+  routes:
+    cmor-user-area-backend-engine: 'authentifizierung'
+  cmor:
+    user_area:
+      backend:
+        user_sidebars:
+          show:
+            signed_in_as: "Angemeldet als %{user}"
+            show: "Profil"
+            sign_out: "Abmelden"
+            not_signed_in: "Nicht angemeldet"
+            sign_in: "Anmelden"
+            new: "Registrieren"

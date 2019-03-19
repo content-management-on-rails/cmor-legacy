@@ -1,0 +1,50 @@
+de:
+  classes:
+    cmor/contact/engine: Kontakt
+  activerecord:
+    models:
+      cmor/contact/contact_request:
+        one: Kontaktanfrage
+        other: Kontaktanfragen
+    attributes:
+      cmor/contact/contact_request:
+        id: ID
+        accept_terms_of_service: 'Hiermit erlaube ich dem Seitenbetreiber die Nutzung meiner Daten zwecks Beantwortung dieser Kontaktanfrage.'
+        name: Name
+        email: E-Mail
+        phone: Telefonnummer
+        ip_address: IP Adresse
+        message: Nachricht
+        notified_at: Benachrichtigt am
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+        additional_actions: Zusatzliche Aktionen
+  cmor:
+    contact:
+      contact_requests:
+        new:
+          title: "Kontaktanfrage"
+      contact_request_mailer:
+        notify:
+          subject: "[%{application_name}] Neue Kontaktanfrage"
+          title: "Neue Kontaktanfrage"
+  flash:
+    cmor:
+      contact:
+        contact_requests:
+          create:
+            notice: "Ihre Kontaktanfrage wurde versandt."
+  helpers:
+    submit:
+      contact_request:
+        create: Absenden
+  routes:
+    cmor_contact_engine: kontakt
+    contact_requests: anfrage
+  simple_form:
+    placeholders:
+      contact_request:
+        name: "Max Mustermann"
+        email: "max.mustermann@example.com"
+        message: "Meine Nachricht"
+        phone: "+49 69 12345678"

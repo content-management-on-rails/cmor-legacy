@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( cmor_carousels_backend.css cmor_carousels_backend.js )

@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      cmor/cms/template:
+        one: template
+        other: templates
+    attributes:
+      cmor/cms/template:
+        basename: name
+        body: body
+        created_at: created at
+        cmor_cms_folder_id: folder
+        cmor_cms_folder: folder
+        filename: filename
+        format: format
+        handler: handler
+        layout: layout
+        locale: language
+        pathname: path
+        updated_at: updated at
+

@@ -1,0 +1,76 @@
+= ECM Links 2
+
+= Migrating from 1.x.x to 2.0.0
+
+Add active_admin-awesome_nested_set to your gemfile, if you are using activeadmin:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
+    gem 'active_admin-awesome_nested_set'
+
+
+= Prerequisites
+
+if you are using activeadmin as backend, cmor_cms2 comes with admin files to provide a backend. In that case, you'll need active_admin-acts_as_list and active_admin-awesome_nested_set. Add it to your gemfile:
+
+    # Gemfile
+    gem 'active_admin-acts_as_list'
+    gem 'active_admin-awesome_nested_set'
+
+
+= Installation
+
+Add it to your gemfile:
+
+  # Gemfile
+  gem 'cmor_links2'
+
+Install your bundle:
+
+  > bundle install
+
+Generate initializer:
+
+  > rails generate cmor:links:install
+
+Generatre the migrations:
+
+  > rake cmor_links_engine:install:migrations
+
+Migrate:
+
+  > rake db:migrate
+
+
+== Optional: Generate locale files
+
+You may want to copy the locales to your app:
+
+  > rails generate cmor:links:locales
+
+= Usage
+
+Use the helper to display the link footer:
+
+  # i.e. app/views/layouts/application.html.erb
+  <%= render_link_footer %>
+
+== Optional: Display a link tree
+
+To display a link tree, you have to add the routes:
+
+  # config/routes.rb
+  Cmor::Links::Routing.routes(self)
+
+This will give you a route to /cmor_links_categories
+
+= Running specs
+
+    gem install bundler
+    bundle
+    cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+    guard
+
+= License
+
+This project rocks and uses MIT-LICENSE.

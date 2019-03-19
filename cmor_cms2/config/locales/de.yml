@@ -1,0 +1,140 @@
+de:
+  activerecord:
+    models:
+      cmor/cms/page/content_block:
+        one: Content Block
+        other: Content Blöcke
+      cmor/cms/content_box:
+        one: Content Box
+        other: Content Boxen
+      cmor/cms/navigation:
+        one: Navigation
+        other: Navigationen
+      cmor/cms/navigation_item:
+        one: Navigationseintrag
+        other: Navigationseinträge
+      cmor/cms/page:
+        one: Seite
+        other: Seiten
+      cmor/cms/partial:
+        one: Fragment
+        other: Fragmente
+      cmor/cms/template:
+        one: Vorlage
+        other: Vorlagen
+    attributes:
+      cmor/cms/page/content_block:
+        id: ID
+        body: Inhalt
+        cmor_cms_page: Seite
+        cmor_cms_page_id: Seite
+        cmor_cms_content_box: Content Box
+        cmor_cms_content_box_id: Content Box
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/content_box:
+        id: ID
+        name: Name
+        body: Inhalt
+        cmor_cms_page_content_blocks: Content Blöcke
+        cmor_cms_page_content_blocks_count: Content Blöcke
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/navigation:
+        id: ID
+        created_at: Erstellt am
+        cmor_cms_navigation_items: Navigationseinträge
+        cmor_cms_navigation_items_count: Navigationseinträge
+        locale: Sprache
+        name: Name
+        slug: Freundliche ID
+        updated_at: Aktualisiert am
+      cmor/cms/navigation_item:
+        id: ID
+        children_count: Unterelemente
+        data_add_icon: Symbol
+        depth: Baumtiefe
+        cmor_cms_navigation: Navigation
+        cmor_cms_navigation_id: Navigation
+        cmor_cms_page: Seite
+        cmor_cms_page_id: Seite
+        highlights_on: Hervorgehoben bei
+        key: Schlüssel
+        lft: Links
+        li_attributes: 'Listen-Element Attribute'
+        name: Name
+        options: Optionen
+        parent: Untereintrag von
+        parent_id: Untereintrag von
+        properties: Eigenschaften
+        rgt: Rechts
+        slug: Freundliche ID
+        url: Ziel-URL
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/page:
+        id: ID
+        basename: Name
+        body: Inhalt
+        cmor_cms_folder_id: Ordner
+        cmor_cms_folder: Ordner
+        cmor_cms_navigation_items: Verlinkt von
+        cmor_cms_navigation_item_ids: Verlinkt von
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        meta_description: Meta Beschreibung
+        path_and_filename: Dateipfad
+        pathname: Pfad
+        title: Titel
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/partial:
+        id: ID
+        basename: Name
+        body: Inhalt
+        cmor_cms_folder_id: Ordner
+        cmor_cms_folder: Ordner
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        pathname: Pfad
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/template:
+        id: ID
+        basename: Name
+        body: Inhalt
+        cmor_cms_folder_id: Ordner
+        cmor_cms_folder: Ordner
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        pathname: Pfad
+        created_at: Erstellt am
+        updated_at: Aktualsiert am
+  classes:
+    cmor/cms/add_homepages_service: 'Dienst zum hinzufügen von Homepages'
+    cmor/cms/import_partials_service: 'Dienst zum importieren von Fragmenten'
+  cmor:
+    cms:
+      active_admin:
+        menu: CMS
+      navigation:
+        messages:
+          empty: Navigation  %{name} (%{lang}) ist leer
+          not_found: Navigation %{name} (%{lang}) nicht gefunden
+  resources:
+    cmor_cms_folders: ordner
+    cmor_cms_navigations: navigationen
+    cmor_cms_navigation_items: navigationseintraege
+    cmor_cms_pages: seiten
+    cmor_cms_partials: fragmente
+    cmor_cms_templates: vorlagen    
+

@@ -1,0 +1,4 @@
+= simple_form_for(@tag_search, url: cmor_tags.tag_searchs_path, html: { class: 'navbar-form navbar-left' }) do |f|
+  = f.input :tag_list, label: false, placeholder: t('.search')
+  - if Cmor::Tags::Configuration.add_submit_button_to_search_box
+    = f.button :submit, class: 'btn btn-success', id: 'new_tag_search_submit'

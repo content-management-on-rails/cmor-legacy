@@ -1,0 +1,21 @@
+- if @resource.respond_to?(:roles)
+  .panel.panel-default
+    .panel-heading
+      .panel-title= Cmor::Rbac::Role.model_name.human(count: :other)
+    %table.table.table-striped.table-condensed.table-hover
+      = collection_table(collection: @resource.roles) do |table|
+        = table.column :identifier
+        = table.column :actions do |resource|
+          = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
+    .panel-footer
+
+- if @resource.respond_to?(:permissions)
+  .panel.panel-default
+    .panel-heading
+      .panel-title= Cmor::Rbac::Permission.model_name.human(count: :other)
+    %table.table.table-striped.table-condensed.table-hover
+      = collection_table(collection: @resource.permissions) do |table|
+        = table.column :identifier
+        = table.column :actions do |resource|
+          = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
+    .panel-footer

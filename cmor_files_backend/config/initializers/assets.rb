@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( cmor_files_backend.css cmor_files_backend.js )

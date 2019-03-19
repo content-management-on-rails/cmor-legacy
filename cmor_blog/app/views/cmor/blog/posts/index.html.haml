@@ -1,0 +1,11 @@
+%h1#page-title= Cmor::Blog::Configuration.posts_index_page_title_proc.call(self)
+
+- @collection.each do |resource|
+  - if resource.preview_picture.present?
+    = render partial: "post_in_index_with_preview_picture", locals: { post: resource }
+  - else
+    = render partial: "post_in_index", locals: { post: resource }
+
+.row
+  .col-lg-12.text-center
+    = paginate(@collection, Cmor::Blog::Configuration.pagination_options_proc.call(self))

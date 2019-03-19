@@ -1,0 +1,11 @@
+
+.well
+  = form.association :category
+
+.well
+  = form.input :name
+  = form.input :url
+
+.well
+  = form.input :markup_language, collection: Cmor::Links::markup_languages
+  = form.input :description

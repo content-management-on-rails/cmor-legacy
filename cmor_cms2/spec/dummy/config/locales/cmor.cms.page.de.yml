@@ -1,0 +1,25 @@
+de:
+  activerecord:
+    models:
+      cmor/cms/page:
+        one: Seite
+        other: Seiten
+    attributes:
+      cmor/cms/page:
+        basename: Name
+        body: Inhalt
+        created_at: Erstellt am
+        cmor_cms_folder_id: Ordner
+        cmor_cms_folder: Ordner
+        cmor_cms_navigation_items: Verlinkt von
+        cmor_cms_navigation_item_ids: Verlinkt von
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        meta_description: Meta Beschreibung
+        pathname: Pfad
+        title: Titel
+        updated_at: Aktualisiert am
+

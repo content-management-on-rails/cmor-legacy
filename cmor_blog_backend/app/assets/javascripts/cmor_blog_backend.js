@@ -1,0 +1,1 @@
+//= require cmor/blog/backend/application

@@ -1,0 +1,14 @@
+<div class="row link-footer">
+  <% Cmor::Links::Configuration.link_footer_columns.times do |column| %>
+    <div class="column-<%= column + 1 %> <%= Cmor::Links::Configuration.link_footer_column_css_classes.join(' ') %>">
+      <% categories[column + 1].each do |c| %>
+        <h4><%= c.name %></h4>
+        <ul>
+        <% c.links.each do |l| %>
+          <li><%= render partial: 'cmor/links/links/link', locals: { link: l } %></li>
+        <% end %>
+        </ul>
+      <% end if categories.has_key?(column + 1) %>
+    </div>
+  <% end %>
+</div>

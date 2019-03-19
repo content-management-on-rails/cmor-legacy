@@ -1,0 +1,20 @@
+.bottom-margin-1
+  = "#{Cmor::Blog::Post.human_attribute_name(:creator)}: #{form.object.creator.send(Cmor::Blog::Configuration.creator_label_method_name) }"
+
+= form.input :title
+= form.input :body
+= form.input :published, as: :boolean
+
+- if form.object.assets.empty?
+  = form.input :assets, as: :file, input_html: { multiple: true }
+- else
+  .row.mb-4
+    .col-md-6
+      .bg-success.p-4
+        = form.input :append_assets, as: :file, input_html: { multiple: true }
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :overwrite_assets, as: :file, input_html: { multiple: true }
+
+- if Cmor::Blog.features?(:cmor_tags)
+  = form.input :tag_list

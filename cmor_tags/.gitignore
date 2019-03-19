@@ -1,0 +1,17 @@
+.bundle/
+log/*.log
+pkg/
+
+*.gem
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/spec/dummy/db/*.sqlite3
+/spec/dummy/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/spec/dummy/log/*
+/spec/dummy!/log/.keep
+/spec/dummy/tmp
