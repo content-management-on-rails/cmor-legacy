@@ -1,3 +1,5 @@
+https://travis-ci.org/content-management-on-rails/cmor.svg?branch=master
+
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
 Short description and motivation.
 
