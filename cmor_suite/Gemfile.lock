@@ -672,6 +672,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails-dummy
+  rake
   rao!
   rao-component!
   rao-query!

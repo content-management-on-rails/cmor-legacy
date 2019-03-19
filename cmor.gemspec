@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'guard-bundler'
   s.add_development_dependency 'git_log_generator'
+  s.add_development_dependency 'wwtd'
 end

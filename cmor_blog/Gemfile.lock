@@ -1,27 +1,27 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.1.pre)
-
-PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.1.pre)
       administrador
       bootstrap-kaminari-views
-      cmor
+      cmor (= 0.0.1.pre)
       delayed_job_active_record
       kaminari
-      rails (>= 4.0.0)
+      rails (>= 5.0.0)
       rao-view_helper
       request_store_rails
       route_translator
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.1.pre)
+
+PATH
   remote: .
   specs:
-    cmor_blog (1.3.0)
-      cmor_core
+    cmor_blog (0.0.1.pre)
+      cmor_core (= 0.0.1.pre)
       rails (>= 5.0.0)
 
 GEM

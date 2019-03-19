@@ -59,6 +59,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'i18n-debug'
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'puma'
+  s.add_development_dependency 'rake'
   s.add_development_dependency 'rails-dummy'
   s.add_development_dependency 'rao-shoulda_matchers'
   s.add_development_dependency 'rspec-rails'

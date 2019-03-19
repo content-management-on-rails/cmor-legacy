@@ -1,5 +1,10 @@
 PATH
-  remote: ../cmor_core
+  remote: ..
+  specs:
+    cmor (0.0.1.pre)
+
+PATH
+  remote: .
   specs:
     cmor_core (0.0.1.pre)
       administrador
@@ -12,26 +17,9 @@ PATH
       request_store_rails
       route_translator
 
-PATH
-  remote: ..
-  specs:
-    cmor (0.0.1.pre)
-
-PATH
-  remote: .
-  specs:
-    cmor_cms (0.0.1.pre)
-      RedCloth
-      awesome_nested_set
-      cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
-      rao-service
-      simple-navigation (>= 4.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
-    RedCloth (4.3.2)
     actioncable (5.2.2.1)
       actionpack (= 5.2.2.1)
       nio4r (~> 2.0)
@@ -91,8 +79,6 @@ GEM
       simple_form
     arel (9.0.0)
     ast (2.4.0)
-    awesome_nested_set (3.1.4)
-      activerecord (>= 4.0.0, < 5.3)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -100,7 +86,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
-    capybara (3.14.0)
+    capybara (3.15.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -172,6 +158,8 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     jaro_winkler (1.5.2)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
@@ -189,6 +177,8 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -219,6 +209,8 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     psych (3.1.0)
     public_suffix (3.0.3)
     rack (2.0.6)
@@ -265,10 +257,6 @@ GEM
     rao-resource_controller (0.0.13.pre)
       rao
     rao-resources_controller (0.0.13.pre)
-      rao
-    rao-service (0.0.13.pre)
-      activemodel
-      activesupport
       rao
     rao-service_controller (0.0.13.pre)
       font-awesome-rails
@@ -323,8 +311,6 @@ GEM
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)
-    simple-navigation (4.0.5)
-      activesupport (>= 2.3.2)
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -352,7 +338,6 @@ GEM
     websocket-extensions (0.1.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yard (0.9.18)
 
 PLATFORMS
   ruby
@@ -360,16 +345,17 @@ PLATFORMS
 DEPENDENCIES
   capybara
   cmor!
-  cmor_cms!
   cmor_core!
   factory_girl_rails
   guard-bundler
   guard-rspec
+  i18n-debug
+  launchy
+  pry-rails
   rspec-rails
   rubocop
   shoulda-matchers
   sqlite3
-  yard
 
 BUNDLED WITH
    1.17.3
