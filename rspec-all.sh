@@ -11,7 +11,7 @@ for i in suite; do
   rvm current
   BUNDLE_GEMFILE=./Gemfile bundle install
   cd spec/dummy
-  BUNDLE_GEMFILE=./Gemfile bundle exec rake db:migrate db:test:prepare
+  BUNDLE_GEMFILE=../../Gemfile bundle exec rake db:migrate db:test:prepare
   cd ../..
   BUNDLE_GEMFILE=./Gemfile bundle exec rake spec
   cd ..
