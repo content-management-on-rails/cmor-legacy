@@ -23,7 +23,7 @@ gem "cmor_tags", path: "../../cmor_tags"
 gem "cmor_tags_backend", path: "../../cmor_tags_backend"
 gem "cmor_user_area", path: "../../cmor_user_area"
 gem "cmor_user_area_backend", path: "../../cmor_user_area_backend"
-gem "acts-as-taggable-on", git: "https://github.com/michelson/acts-as-taggable-on"
+gem "acts-as-taggable-on", git: "https://github.com/mbleigh/acts-as-taggable-on"
 gem "authlogic", git: "https://github.com/binarylogic/authlogic"
 gem "rails", "6.0.0.beta1"
 

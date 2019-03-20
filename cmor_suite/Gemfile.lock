@@ -314,10 +314,6 @@ GEM
       rao-view_helper (>= 0.0.12.pre)
       route_translator
       simple_form
-    appraisal (2.2.0)
-      bundler
-      rake
-      thor (>= 0.14.0)
     arel (9.0.0)
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
@@ -611,7 +607,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on!
-  appraisal
   authlogic!
   capybara
   cmor!

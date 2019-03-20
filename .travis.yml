@@ -1,7 +1,7 @@
 language: ruby
 rbenv:
   - 2.6.2
-  - 2.5.5
+  - 2.5.3
   - 2.3.7  
 
 gemfile:
@@ -14,5 +14,5 @@ matrix:
     - rbenv: 2.3.7
       gemfile: cmor_suite/gemfiles/rails_6.0.gemfile
 
-script: cd cmor_suite && rake
+script: cd cmor_suite && ruby -v && rails -v && rake
 # script: ./rspec-all.sh
