@@ -10,5 +10,7 @@ ruby -v
 bundle install
 echo "RAILS VERSION"
 rails -v
+cd spec/dummy
 rake db:migrate db:test:prepare
+cd ../..
 rspec -f d
