@@ -3,16 +3,9 @@ rvm:
   - 2.6.2
   - 2.5.3
   - 2.3.7  
+env:
+  - GEM=cmor_suite
+  # - GEM=cmor_blog
+  # - GEM=cmor_blog_backend
 
-gemfile:
-  - cmor_suite/Gemfile
-  - cmor_suite/gemfiles/rails_5.2.gemfile
-  - cmor_suite/gemfiles/rails_6.0.gemfile
-
-matrix:
-  exclude:
-    - rvm: 2.3.7
-      gemfile: cmor_suite/gemfiles/rails_6.0.gemfile
-
-script: cd cmor_suite && ruby -v && rails -v && rake
-# script: ./rspec-all.sh
+script: ./rspec.sh
