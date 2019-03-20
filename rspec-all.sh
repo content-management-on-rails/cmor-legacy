@@ -9,6 +9,7 @@ for i in suite; do
   echo $PWD
   rvm current
   BUNDLE_GEMFILE=./Gemfile bundle install
+  BUNDLE_GEMFILE=./Gemfile bundle exec rake build
   BUNDLE_GEMFILE=./Gemfile bundle exec rake spec
   cd ..
 done
