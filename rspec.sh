@@ -10,5 +10,5 @@ ruby -v
 bundle install
 echo "RAILS VERSION"
 rails -v
-rails db:migrate db:test:prepare
+rake db:migrate db:test:prepare
 rspec -f d
