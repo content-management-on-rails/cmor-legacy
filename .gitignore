@@ -11,3 +11,6 @@ spec/dummy/tmp/
 
 # Ignore gem builds
 *.gem
+
+# Ignore wwtd files
+vendor/
