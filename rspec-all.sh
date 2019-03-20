@@ -1,6 +1,7 @@
 #!/bin/bash -l
 echo $PWD
 rvm current
+gem update --system
 bundle install
 
 # for i in blog carousels cms contact core files galleries links rbac suite tags user_area; do
