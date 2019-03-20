@@ -17,7 +17,7 @@ GIT
       activerecord (~> 5.0)
 
 PATH
-  remote: ../cmor_blog_backend
+  remote: ../../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.1.pre)
       cmor_blog (= 0.0.1.pre)
@@ -25,14 +25,14 @@ PATH
       rao-query
 
 PATH
-  remote: ../cmor_blog
+  remote: ../../cmor_blog
   specs:
     cmor_blog (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_carousels_backend
+  remote: ../../cmor_carousels_backend
   specs:
     cmor_carousels_backend (0.0.1.pre)
       cmor_carousels (= 0.0.1.pre)
@@ -40,7 +40,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_carousels
+  remote: ../../cmor_carousels
   specs:
     cmor_carousels (0.0.1.pre)
       acts_as_list
@@ -50,7 +50,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_cms_backend
+  remote: ../../cmor_cms_backend
   specs:
     cmor_cms_backend (0.0.1.pre)
       cmor_cms (= 0.0.1.pre)
@@ -58,7 +58,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_cms
+  remote: ../../cmor_cms
   specs:
     cmor_cms (0.0.1.pre)
       RedCloth
@@ -69,7 +69,7 @@ PATH
       simple-navigation (>= 4.0.0)
 
 PATH
-  remote: ../cmor_contact_backend
+  remote: ../../cmor_contact_backend
   specs:
     cmor_contact_backend (0.0.1.pre)
       cmor_contact (= 0.0.1.pre)
@@ -77,14 +77,14 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_contact
+  remote: ../../cmor_contact
   specs:
     cmor_contact (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_files_backend
+  remote: ../../cmor_files_backend
   specs:
     cmor_files_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -92,7 +92,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_files
+  remote: ../../cmor_files
   specs:
     cmor_files (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
@@ -101,7 +101,7 @@ PATH
       rao-resources_controller
 
 PATH
-  remote: ../cmor_galleries_backend
+  remote: ../../cmor_galleries_backend
   specs:
     cmor_galleries_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -109,7 +109,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_galleries
+  remote: ../../cmor_galleries
   specs:
     cmor_galleries (0.0.1.pre)
       acts_as_list
@@ -120,7 +120,7 @@ PATH
       rao-view_helper (>= 0.0.3.pre)
 
 PATH
-  remote: ../cmor_links_backend
+  remote: ../../cmor_links_backend
   specs:
     cmor_links_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -128,7 +128,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_links
+  remote: ../../cmor_links
   specs:
     cmor_links (0.0.1.pre)
       RedCloth
@@ -142,7 +142,7 @@ PATH
       rao-view_helper
 
 PATH
-  remote: ../cmor_rbac_backend
+  remote: ../../cmor_rbac_backend
   specs:
     cmor_rbac_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -150,14 +150,14 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_rbac
+  remote: ../../cmor_rbac
   specs:
     cmor_rbac (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_tags_backend
+  remote: ../../cmor_tags_backend
   specs:
     cmor_tags_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -165,7 +165,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_tags
+  remote: ../../cmor_tags
   specs:
     cmor_tags (0.0.1.pre)
       acts-as-taggable-on
@@ -173,7 +173,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_user_area_backend
+  remote: ../../cmor_user_area_backend
   specs:
     cmor_user_area_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
@@ -181,7 +181,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: ../cmor_user_area
+  remote: ../../cmor_user_area
   specs:
     cmor_user_area (0.0.1.pre)
       active_model_serializers
@@ -192,7 +192,7 @@ PATH
       rao-view_helper
 
 PATH
-  remote: ..
+  remote: ../..
   specs:
     cmor (0.0.1.pre)
     cmor_core (0.0.1.pre)
@@ -210,7 +210,7 @@ PATH
       rails (>= 5.0.0)
 
 PATH
-  remote: .
+  remote: ..
   specs:
     cmor_suite (0.0.1.pre)
       cmor (= 0.0.1.pre)
@@ -314,10 +314,6 @@ GEM
       rao-view_helper (>= 0.0.12.pre)
       route_translator
       simple_form
-    appraisal (2.2.0)
-      bundler
-      rake
-      thor (>= 0.14.0)
     arel (9.0.0)
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
@@ -611,7 +607,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on!
-  appraisal
   authlogic!
   capybara
   cmor!
@@ -643,6 +638,7 @@ DEPENDENCIES
   i18n-debug
   pry-rails
   puma
+  rails (= 5.2.2.1)
   rails-dummy
   rake
   rao-shoulda_matchers
@@ -652,4 +648,4 @@ DEPENDENCIES
   sqlite3 (~> 1.3.6)
 
 BUNDLED WITH
-   1.17.3
+   2.0.1
