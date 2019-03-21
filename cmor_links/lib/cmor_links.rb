@@ -5,6 +5,7 @@ require 'awesome_nested_set-tools'
 require 'friendly_id'
 require 'draper'
 require 'rao-view_helper'
+require 'redcloth'
 
 require 'cmor/links'
 

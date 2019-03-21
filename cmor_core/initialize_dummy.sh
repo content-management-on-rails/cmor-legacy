@@ -1,4 +1,7 @@
 #!/bin/bash
+GEM_NAME=${PWD##*/}
+INSTALL_NAME=${GEM_NAME//_/\:}
+
 # Delete old dummy app
 rm -rf spec/dummy
 
@@ -8,10 +11,10 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
+rails active_storage:install
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
 # Install
-rails g cmor:core:install
-# rails cmor_core:install:migrations db:migrate db:test:prepare
+rails generate $INSTALL_NAME:install

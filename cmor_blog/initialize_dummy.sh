@@ -1,4 +1,7 @@
 #!/bin/bash
+GEM_NAME=${PWD##*/}
+INSTALL_NAME=${GEM_NAME//_/\:}
+
 # Delete old dummy app
 rm -rf spec/dummy
 
@@ -15,5 +18,5 @@ echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/in
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
 # Install
-rails g cmor:blog:install
-rails cmor_blog:install:migrations db:migrate db:test:prepare
+rails generate $INSTALL_NAME:install
+rails $GEM_NAME:install:migrations db:migrate db:test:prepare

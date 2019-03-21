@@ -25,7 +25,7 @@ PATH
       acts_as_markup
       cmor_core (= 0.0.1.pre)
       mini_magick
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 GEM
   remote: http://rubygems.org/
@@ -77,6 +77,8 @@ GEM
       activerecord (>= 3.0.20)
       activesupport (>= 3.0.20)
       rdiscount
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
     administrador (0.0.1.pre)
       bootstrap4-kaminari-views
       coffee-rails
@@ -93,8 +95,6 @@ GEM
       simple_form
     arel (9.0.0)
     ast (2.4.0)
-    bootsnap (1.4.1)
-      msgpack (~> 1.0)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -102,6 +102,14 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
+    capybara (3.15.0)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (~> 1.8)
+      rack (>= 1.6.0)
+      rack-test (>= 0.6.3)
+      regexp_parser (~> 1.2)
+      xpath (~> 3.2)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -204,7 +212,6 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    msgpack (1.2.9)
     nenv (0.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
@@ -221,6 +228,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     psych (3.1.0)
+    public_suffix (3.0.3)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -273,14 +281,20 @@ GEM
       rao
       simple_form
       twitter-bootstrap-components-rails
+    rao-shoulda_matchers (0.0.13.pre)
+      rao
     rao-view_helper (0.0.13.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdiscount (2.2.0.1)
+    regexp_parser (1.3.0)
     request_store_rails (1.0.3)
       concurrent-ruby (~> 1.0)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
     route_translator (5.9.0)
       actionpack (>= 5.0.0.1, <= 6.0.0.beta3)
       activesupport (>= 5.0.0.1, <= 6.0.0.beta3)
@@ -313,9 +327,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.6)
-    rubocop-rails_config (0.4.3)
-      railties (>= 3.0)
-      rubocop (~> 0.58)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.0)
@@ -349,12 +360,14 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    xpath (3.2.0)
+      nokogiri (~> 1.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap
+  capybara
   cmor!
   cmor_carousels!
   cmor_core!
@@ -362,12 +375,13 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
-  listen
   pry-rails
   rails-dummy
   rails-i18n
+  rao-shoulda_matchers
+  responders
   rspec-rails
-  rubocop-rails_config
+  rubocop
   shoulda-matchers
   sqlite3 (~> 1.3.6)
 

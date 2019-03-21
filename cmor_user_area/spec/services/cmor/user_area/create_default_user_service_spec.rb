@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Cmor::UserArea
   describe CreateDefaultUserService do
-    it { expect(subject).to be_a(Rails::AddOns::Service::Base) }
+    it { expect(subject).to be_a(Rao::Service::Base) }
 
     it 'should create a user' do
       expect do
