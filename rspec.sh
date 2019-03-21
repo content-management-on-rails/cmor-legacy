@@ -10,6 +10,7 @@ ruby -v
 bundle install
 echo "RAILS VERSION"
 rails -v
+initialize_dummy.sh
 cd spec/dummy
 rake db:migrate db:test:prepare
 cd ../..

@@ -15,6 +15,7 @@ module Cmor
       mattr_accessor(:pagination_options_proc) { ->(view) { { theme: 'twitter-bootstrap-3' } } }
       mattr_accessor(:preview_picture_asset_variant_options) { { resize: '320x240' } }
       mattr_accessor(:creator_label_method_name) { :to_s }
+      mattr_accessor(:user_factory_name) { :cmor_user_area_user }
       mattr_accessor(:features) { {} }
       def enable_feature(name, options = {})
         @@features[name] = Cmor::Blog::Feature.new(name, options)

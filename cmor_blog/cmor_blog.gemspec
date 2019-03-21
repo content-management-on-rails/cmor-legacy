@@ -18,11 +18,18 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '>= 5.0.0'
   s.add_dependency 'cmor_core', "= #{Cmor::VERSION}"
-  # s.add_dependency 'acts_as_list'
-  # s.add_dependency 'acts_as_published'
+  s.add_dependency 'acts_as_list'
+  s.add_dependency 'acts_as_published'
   # s.add_dependency 'html2markdown'
   # s.add_dependency 'kaminari'
   # s.add_dependency 'kramdown'
-  # s.add_dependency 'friendly_id'
+  s.add_dependency 'friendly_id'
   # s.add_dependency 'cmor_comments'
+
+  s.add_development_dependency 'sqlite3', '~> 1.3.6'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'rails-dummy'
+  s.add_development_dependency 'rao-shoulda_matchers'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'factory_bot_rails'
 end

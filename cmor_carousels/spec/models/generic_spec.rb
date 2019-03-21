@@ -1,34 +1,50 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe "ActiveRecord::Base models" do
-  ActiveRecord::Base.descendants.map(&:to_s).reject() { |m| %w(ActiveAdmin::Comment AdminUser).include?(m) }.each do |model_name|
-    model = model_name.constantize
+RSpec.describe 'ActiveRecord::Base models', type: :model do
+  DEFAULT_SPECS_TO_RUN = [
+    :is_an_active_record,
+    :is_instanciable,
+    :valid_with_correct_attributes,
+    :not_valid_with_empty_attributes,
+    :saves_with_valid_attributes
+  ]
+
+  {
+    Cmor::Carousels::Carousel   => {},
+    Cmor::Carousels::ItemDetail => {},
+  }.each do |model, options|
+    options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
+    specs_to_run = options.delete(:specs_to_run)
+    specs_to_skip = options.delete(:specs_to_skip)
+    specs = specs_to_run - specs_to_skip
+    
     describe model do
-      it "should be an ActiveRecord::Base" do
-        ActiveRecord::Base.descendants.should include(model)
-      end
+      it 'is an ActiveRecord::Base' do
+        expect(ActiveRecord::Base.descendants).to include(model)
+      end if specs.include?(:is_an_active_record)
 
-      it "should be instanciable" do
+      it 'is instanciable' do
         instance = model.new
-        instance.should be_a model
-      end
+        expect(instance).to be_a(model)
+      end if specs.include?(:is_instanciable)
 
-      it "should be valid with correct attribute values" do
-        instance = FactoryBot.create(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
-        instance.should be_valid
-      end
+      it 'is valid with correct attribute values' do
+        instance = build(model.to_s.tableize.singularize.underscore.tr('/', '_'))
+        
+        instance.valid?
+        expect(instance.errors.full_messages).to eq([])
+      end if specs.include?(:valid_with_correct_attributes)
 
-      it "should not be valid with empty attributes" do
+      it 'is not valid with empty attributes' do
         instance = model.new
-        instance.should_not be_valid
-      end
+        expect(instance).not_to be_valid
+      end if specs.include?(:not_valid_with_empty_attributes)
 
-      it "should save with valid attributes" do
-        instance = FactoryBot.create(model.to_s.tableize.singularize.underscore.gsub( '/', '_'))
-        instance.save.should be_true
-        instance.should be_persisted
-      end
+      it 'saves with valid attributes' do
+        instance = build(model.to_s.tableize.singularize.underscore.tr('/', '_'))
+        expect(instance.save).to be_truthy
+        expect(instance).to be_persisted
+      end if specs.include?(:saves_with_valid_attributes)
     end
   end
 end
-

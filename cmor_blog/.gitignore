@@ -2,3 +2,6 @@
 log/*.log
 pkg/
 *.gem
+
+# Initialize the dummy app with ./initialize_dummy.sh
+spec/dummy

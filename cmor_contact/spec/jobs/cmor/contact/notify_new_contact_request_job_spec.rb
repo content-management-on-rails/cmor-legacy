@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Contact::NotifyNewContactRequestJob, type: :job do
-  let(:contact_request) { create(:cmor_contact_contact_request, send_notifications: false)}
+  let(:contact_request) { create(:cmor_contact_contact_request)}
 
   describe '#perform' do
     before(:each) do

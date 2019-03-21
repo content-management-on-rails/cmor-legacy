@@ -16,3 +16,5 @@ end
 
 
 Bundler::GemHelper.install_tasks
+
+require 'rails/dummy/tasks'

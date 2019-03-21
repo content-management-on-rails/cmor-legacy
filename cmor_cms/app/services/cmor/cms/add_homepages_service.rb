@@ -1,4 +1,13 @@
 module Cmor::Cms
+  # Creates root pages for all given locales.
+  #
+  # After installing the cms you don't have any pages. This service
+  # creates home pages for all (or the given) locales.
+  #
+  # Usage:
+  #
+  #     Cmor::Cms::AddHomepagesService.call(locales: [:de, :en])
+  #
   class AddHomepagesService < Rao::Service::Base
     class Result < Rao::Service::Result::Base
     end

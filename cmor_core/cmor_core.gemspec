@@ -25,15 +25,17 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari"
   s.add_dependency "bootstrap-kaminari-views"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3", '~> 1.3.6'
 
   s.add_development_dependency 'capybara'
-  s.add_development_dependency 'factory_girl_rails'
+  s.add_development_dependency 'factory_bot_rails'
   s.add_development_dependency 'guard-bundler'
   s.add_development_dependency 'guard-rspec'
   s.add_development_dependency 'i18n-debug'
   s.add_development_dependency 'launchy'
   s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'rails-dummy'
+  s.add_development_dependency 'rao-shoulda_matchers'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'shoulda-matchers'

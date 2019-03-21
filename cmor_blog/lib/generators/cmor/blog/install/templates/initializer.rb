@@ -7,9 +7,15 @@ Cmor::Blog.configure do |config|
 
   # Class to use for creators and updaters.
   #
-  # default: config.creator_class_name = 'User'
+  # default: config.creator_class_name = '<%= creator_class_name %>'
   #
-  config.creator_class_name = 'User'
+  config.creator_class_name = '<%= creator_class_name %>'
+
+  # Factory name to use for creators and updaters.
+  #
+  # default: config.user_factory_name = '<%= user_factory_name %>' 
+  #
+  config.user_factory_name = '<%= user_factory_name %>'
 
   # Set the page title for the posts index page. Useful for when you use
   # the blog posts index as main app root page.
