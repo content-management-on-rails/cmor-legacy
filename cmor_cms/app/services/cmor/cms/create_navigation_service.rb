@@ -1,6 +1,6 @@
 module Cmor::Cms
-  class CreateNavigationService < Itsf::Services::V2::Service::Base
-    class Response < Itsf::Services::V2::Response::Base
+  class CreateNavigationService < Rao::Service::Base
+    class Response < Rao::Service::Result::Base
       attr_accessor :navigation, :navigation_items, :created_navigation_items, :errored_navigation_items
 
       def initialize
