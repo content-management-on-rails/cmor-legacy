@@ -11,7 +11,7 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
-rails g model User email
+RAILS_ENV=development rails g model User email
 rails active_storage:install
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
