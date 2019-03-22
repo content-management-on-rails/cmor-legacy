@@ -1,2 +1,0 @@
-class FrontendController < ApplicationController
-end

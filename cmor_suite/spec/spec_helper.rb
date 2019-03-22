@@ -1,6 +1,8 @@
 if ENV["COVERAGE"]
   require 'simplecov'
+  require 'simplecov-console'
   SimpleCov.start 'rails' do
+    formatter = SimpleCov::Formatter::Console
     adapters.delete(:root_filter)
     filters.clear # This will remove the :root_filter that comes via simplecov's defaults
     add_filter do |src|

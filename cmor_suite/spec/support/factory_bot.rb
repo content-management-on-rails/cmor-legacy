@@ -4,6 +4,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
 
+FactoryBot.factories.clear
 FactoryBot.definition_file_paths << Cmor::Blog::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Cms::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Contact::Engine.root.join(*%w(spec factories))

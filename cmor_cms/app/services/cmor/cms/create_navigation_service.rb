@@ -1,6 +1,6 @@
 module Cmor::Cms
   class CreateNavigationService < Rao::Service::Base
-    class Response < Rao::Service::Result::Base
+    class Result < Rao::Service::Result::Base
       attr_accessor :navigation, :navigation_items, :created_navigation_items, :errored_navigation_items
 
       def initialize

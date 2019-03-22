@@ -10,3 +10,6 @@ spec/dummy
 
 # Ignore backup files.
 *~
+
+# Ignore coverage files.
+coverage/
