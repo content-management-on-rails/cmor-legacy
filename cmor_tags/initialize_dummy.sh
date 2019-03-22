@@ -16,7 +16,7 @@ echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/in
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 rails acts_as_taggable_on_engine:install:migrations
 rails generate model Post email
-sed -i '2i   include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
+sed -i '2i\  include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
 
 # Install
 rails generate $INSTALL_NAME:install
