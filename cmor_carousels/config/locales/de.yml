@@ -11,6 +11,7 @@ de:
       cmor/carousels/item_detail:
         id: ID
         asset: Bild
+        asset_id: Bild
         description: Inhalt
         created_at: Erstellt am
         image: Bild
@@ -34,6 +35,8 @@ de:
         locale: Sprache
         name: Name
         updated_at: Aktualisiert am
+        identifier: Bezeichner
+        variant_options: Bildoptionen
   resources:
     cmor_carousels_items_details: carousel-item-details
     cmor_carousels_carousels: carousels

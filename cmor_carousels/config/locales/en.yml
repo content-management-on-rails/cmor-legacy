@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      cmor/carousels/item:
+      cmor/carousels/item_detail:
         one: carousel item
         other: carousel items
       cmor/carousels/carousel:
@@ -11,6 +11,7 @@ en:
       cmor/carousels/item_detail:
         id: ID
         asset: image
+        asset_id: image
         description: body
         created_at: created at
         image: Bild
@@ -34,6 +35,8 @@ en:
         locale: locale
         name: name
         updated_at: updated at
+        identifier: identifier
+        variant_options: image_options
   resources:
     cmor_carousels_items: carousel-items
     cmor_carousels_carousels: carousels
