@@ -1,6 +1,6 @@
 #!/bin/bash
 GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//_/\:}
+INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy

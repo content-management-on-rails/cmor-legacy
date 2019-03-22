@@ -11,5 +11,6 @@ bundle install
 echo "RAILS VERSION"
 rails -v
 
+cd $GEM
 initialize_dummy.sh
 rspec -f d
