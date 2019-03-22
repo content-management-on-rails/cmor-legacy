@@ -9,7 +9,7 @@ module Cmor::Galleries
 
       def initialize(*args)
         super
-        @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::FrontendController' }
+        @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::ApplicationController' }
       end
 
       def generate_initializer

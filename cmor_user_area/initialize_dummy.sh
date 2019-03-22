@@ -16,6 +16,11 @@ touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
+touch config/initializers/route_translator.rb
+echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
+echo "  config.force_locale = true" >> config/initializers/route_translator.rb
+echo "end" >> config/initializers/route_translator.rb
+
 # Install
 rails generate $INSTALL_NAME:install
 rails $GEM_NAME:install:migrations db:migrate db:test:prepare
