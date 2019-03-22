@@ -4,3 +4,4 @@ gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
 
+gem 'acts-as-taggable-on', git: 'https://github.com/robotex82/acts-as-taggable-on'

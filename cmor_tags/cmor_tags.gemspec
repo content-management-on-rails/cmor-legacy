@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   # s.add_dependency 'rails', '>= 5.0.0'
   # s.add_dependency 'cmor_core', "= #{Cmor::VERSION}"
   s.add_dependency 'acts-as-taggable-on'
+  s.add_dependency 'rao-service'
+  s.add_dependency 'rao-service_controller'
 
   # s.add_development_dependency 'capybara'
   # s.add_development_dependency 'formulaic'

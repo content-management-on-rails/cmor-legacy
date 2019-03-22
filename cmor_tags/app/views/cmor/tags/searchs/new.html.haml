@@ -1,0 +1,2 @@
+= simple_form_for(@service, url: url_for(action: :create, only_path: true)) do |form|
+  = render partial: 'form', locals: { form: form }

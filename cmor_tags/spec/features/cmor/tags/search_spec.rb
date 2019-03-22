@@ -1,19 +1,26 @@
 require 'rails_helper'
 
 RSpec.feature 'Tag search', type: :feature do
+  let(:post) { create(:post) }
+
   background do
-    @post = create(:post)
-    @post.tag_list.add('foo, bar, baz')
-    @post.save!
+    post.tag_list.add('foo, bar, baz')
+    post.save!
   end
 
   scenario 'User searches for tags' do
-    visit '/tags'
+    visit '/de/tags'
 
-    fill_in 'tag_search[tag_list]', with: 'foo'
-    check 'tag_search[fuzzy]'
-    click_on submit(:tag_search)
+    fill_in 'search[tag_list]', with: 'foo'
+    # check 'tag_search[exact]'
+    within('#new_search') { find('input[type="submit"]').click }
 
-    expect(page).to have_text(@post.title)
+    expect(page).to have_text(post.title)
+  end
+
+  scenario 'User searches for tags as url params' do
+    visit '/de/tags/foo'
+
+    expect(page).to have_text(post.title)
   end
 end

@@ -1,0 +1,8 @@
+= simple_form_for(@service, url: url_for(action: :create, only_path: true)) do |form|
+  = render partial: 'form', locals: { form: form }
+
+#tag_search_result
+  - @result.found.each do |class_name, resources|
+    - if resources.any?
+      %h2= class_name.constantize.model_name.human(count: :other)
+      = render partial: "#{class_name.tableize}/#{class_name.demodulize.underscore}", collection: resources, as: class_name.demodulize.underscore.to_sym

@@ -17,6 +17,8 @@ en:
         color: Color
         name: Name
         taggings_count: Tagged Items
+        created_at: Created at
+        updated_at: Updated at
       cmor/tags/tagging:
         id: ID
         color: Color
@@ -30,7 +32,7 @@ en:
         tagger_type: Tagger type
         tagger: Tagger
         created_at: Created at
-        udpated_at: Updated at
+        updated_at: Updated at
       cmor/tags/tag_search:
         exact: Exact
         tag_list: Tags

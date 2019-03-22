@@ -17,6 +17,8 @@ de:
         color: Farbe
         name: Name
         taggings_count: Getagte Objekte
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
       cmor/tags/tagging:
         id: ID
         color: Farbe
@@ -31,7 +33,7 @@ de:
         tagger_type: Ersteller-Typ
         created_at: Erstellt am
         updated_at: Aktualisiert am
-      cmor/tags/tag_search:
+      cmor/tags/search:
         exact: Wortgenau
         tag_list: Tags
   cmor:
@@ -40,7 +42,7 @@ de:
         search: "Katzen, Baum, grün, ..."
   helpers:
     submit:
-      tag_search:
+      search:
         create: 'Suchen'
   routes:
     cmor_tags_engine: tags
