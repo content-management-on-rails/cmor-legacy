@@ -27,7 +27,7 @@ module Cmor
         end
 
         def run_frontend_generators
-          %w(blog carousels core cms contact files galleries lightbox links rbac tags).each do |m|
+          %w(blog carousels core cms contact files galleries links rbac tags user_area).each do |m|
             generate "cmor:#{m}:install"
           end
         end

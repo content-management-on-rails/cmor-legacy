@@ -28,8 +28,11 @@ PATH
   remote: ../cmor_blog
   specs:
     cmor_blog (0.0.1.pre)
+      acts_as_list
+      acts_as_published
       cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      friendly_id
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_carousels_backend
@@ -45,9 +48,10 @@ PATH
     cmor_carousels (0.0.1.pre)
       acts_as_list
       acts_as_markup
+      acts_as_published
       cmor_core (= 0.0.1.pre)
       mini_magick
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_cms_backend
@@ -64,7 +68,8 @@ PATH
       RedCloth
       awesome_nested_set
       cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      draper
+      rails (>= 5.2.0)
       rao-service
       simple-navigation (>= 4.0.0)
 
@@ -81,7 +86,7 @@ PATH
   specs:
     cmor_contact (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_files_backend
@@ -95,6 +100,7 @@ PATH
   remote: ../cmor_files
   specs:
     cmor_files (0.0.1.pre)
+      acts_as_published
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
       rao-component
@@ -116,8 +122,6 @@ PATH
       acts_as_published
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
-      rao-resources_controller (>= 0.0.3.pre)
-      rao-view_helper (>= 0.0.3.pre)
 
 PATH
   remote: ../cmor_links_backend
@@ -138,8 +142,7 @@ PATH
       cmor_core (= 0.0.1.pre)
       draper
       friendly_id
-      rails (>= 5.0.0)
-      rao-view_helper
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_rbac_backend
@@ -154,7 +157,7 @@ PATH
   specs:
     cmor_rbac (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_tags_backend
@@ -170,7 +173,7 @@ PATH
     cmor_tags (0.0.1.pre)
       acts-as-taggable-on
       cmor_core (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_user_area_backend
@@ -187,9 +190,9 @@ PATH
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core
-      rails (>= 5.0.0)
-      rao-view_helper
+      cmor_core (= 0.0.1.pre)
+      rails (>= 5.2.0)
+      rao-service (>= 0.0.13.pre)
 
 PATH
   remote: ..
@@ -213,7 +216,6 @@ PATH
   remote: .
   specs:
     cmor_suite (0.0.1.pre)
-      cmor (= 0.0.1.pre)
       cmor_blog (= 0.0.1.pre)
       cmor_blog_backend (= 0.0.1.pre)
       cmor_carousels (= 0.0.1.pre)
@@ -222,6 +224,7 @@ PATH
       cmor_cms_backend (= 0.0.1.pre)
       cmor_contact (= 0.0.1.pre)
       cmor_contact_backend (= 0.0.1.pre)
+      cmor_core (= 0.0.1.pre)
       cmor_files (= 0.0.1.pre)
       cmor_files_backend (= 0.0.1.pre)
       cmor_galleries (= 0.0.1.pre)
@@ -234,7 +237,7 @@ PATH
       cmor_tags_backend (= 0.0.1.pre)
       cmor_user_area (= 0.0.1.pre)
       cmor_user_area_backend (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -314,7 +317,9 @@ GEM
       rao-view_helper (>= 0.0.12.pre)
       route_translator
       simple_form
+    ansi (1.5.0)
     arel (9.0.0)
+    ast (2.4.0)
     awesome_nested_set (3.1.4)
       activerecord (>= 4.0.0, < 5.3)
     awesome_nested_set-tools (1.0.2)
@@ -394,6 +399,9 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
+    guard-rails (0.8.1)
+      guard (~> 2.11)
+      guard-compat (~> 1.0)
     guard-rspec (4.7.3)
       guard (~> 2.1)
       guard-compat (~> 1.1)
@@ -407,6 +415,7 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hirb (0.7.3)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -414,8 +423,7 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    i18n-debug (1.2.0)
-      i18n (< 2)
+    jaro_winkler (1.5.2)
     jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -459,13 +467,16 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    parallel (1.14.0)
+    parser (2.6.2.0)
+      ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    psych (3.1.0)
     public_suffix (3.0.3)
-    puma (3.12.1)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -498,6 +509,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
+    rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.13.pre)
     rao-component (0.0.13.pre)
@@ -561,6 +573,15 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    rubocop (0.66.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      psych (>= 3.1.0)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.6)
+    ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.0)
       sexp_processor (~> 4.9)
@@ -568,6 +589,8 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     sexp_processor (4.12.0)
     shellany (0.0.1)
+    shoulda-matchers (4.0.1)
+      activesupport (>= 4.2.0)
     simple-navigation (4.0.5)
       activesupport (>= 2.3.2)
     simple_form (4.1.0)
@@ -577,6 +600,10 @@ GEM
       docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
     simplecov-html (0.10.2)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -596,6 +623,7 @@ GEM
       rails (>= 3.2)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unicode-display_width (1.5.0)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -634,16 +662,18 @@ DEPENDENCIES
   factory_bot_rails
   git_log_generator
   guard-bundler
+  guard-rails
   guard-rspec
-  i18n-debug
   pry-rails
-  puma
   rails-dummy
-  rake
+  rails-i18n
   rao-shoulda_matchers
   responders
   rspec-rails
+  rubocop
+  shoulda-matchers
   simplecov
+  simplecov-console
   sqlite3 (~> 1.3.6)
 
 BUNDLED WITH

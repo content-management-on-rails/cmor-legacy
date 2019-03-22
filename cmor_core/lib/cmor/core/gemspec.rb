@@ -18,6 +18,7 @@ module Cmor
         
         s.add_development_dependency 'capybara'
         s.add_development_dependency 'factory_bot_rails'
+        s.add_development_dependency 'git_log_generator'
         s.add_development_dependency 'guard-bundler'
         s.add_development_dependency 'guard-rails'
         s.add_development_dependency 'guard-rspec'

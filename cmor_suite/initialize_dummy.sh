@@ -18,4 +18,7 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 
 # Install
 rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails db:migrate db:test:prepare
+
+# Enable authentication
+sed -i '2i\  before_action :authenticate_user!' app/controllers/backend_controller.rb

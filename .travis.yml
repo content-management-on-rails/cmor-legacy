@@ -9,7 +9,7 @@ env:
   # - GEM=cmor_blog_backend
   - GEM=cmor_carousels
   # - GEM=cmor_carousels_backend
-  # - GEM=cmor_cms
+  - GEM=cmor_cms
   # - GEM=cmor_cms_backend
   - GEM=cmor_contact
   # - GEM=cmor_contact_backend
