@@ -9,15 +9,15 @@ module Cmor
         yield self
       end
 
-      # mattr_accessor(:carousel_auto_start)
+      mattr_accessor(:carousel_auto_start)
 
-      # mattr_accessor(:carousel_interval)
+      mattr_accessor(:carousel_interval)
 
-      # mattr_accessor(:item_image_styles) { {} }
+      mattr_accessor(:item_image_styles) { {} }
 
-      # mattr_accessor(:markup_languages) { [] }
+      mattr_accessor(:markup_languages) { [] }
 
-      # mattr_accessor(:default_markup_language)
+      mattr_accessor(:default_markup_language)
     end
   end
 end

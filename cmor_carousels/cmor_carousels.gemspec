@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   # s.add_dependency 'cmor_core', "= #{Cmor::VERSION}"
   s.add_dependency 'acts_as_list'
   s.add_dependency 'acts_as_markup'
+  s.add_dependency 'acts_as_published'
   s.add_dependency 'mini_magick'
 
   # s.add_development_dependency "bootsnap"
