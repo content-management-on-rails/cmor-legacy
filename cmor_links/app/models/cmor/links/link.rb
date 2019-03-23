@@ -5,8 +5,7 @@ class Cmor::Links::Link < ActiveRecord::Base
   acts_as_list scope: :category
 
   # associations
-  belongs_to :category,
-             optional: true
+  belongs_to :category, optional: true
 
 
   # callbacks
