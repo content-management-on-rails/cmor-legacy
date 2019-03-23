@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/links/links', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Links::Link }
   let(:resource) { create(:cmor_links_link) }
   let(:resources) { create_list(:cmor_links_link, 3) }

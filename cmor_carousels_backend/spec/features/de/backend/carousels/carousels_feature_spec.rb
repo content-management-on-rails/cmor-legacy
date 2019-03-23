@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/carousels/carousels', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Carousels::Carousel }
 
   describe 'REST actions' do

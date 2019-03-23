@@ -32,9 +32,16 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+## Acts as taggabble
+rails acts_as_taggable_on_engine:install:migrations
+
+# Example post model for specs
+rails generate model Post title
+sed -i '2i\  include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
+
 # Install cmor core backend gem
 rails generate administrador:install
-rails generate ecm:core:backend:install
+rails generate cmor:core:backend:install
 
 # Install frontend gem
 rails generate $INSTALL_NAME:install

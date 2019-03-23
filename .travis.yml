@@ -12,7 +12,7 @@ env:
   - GEM=cmor_cms
   # - GEM=cmor_cms_backend
   - GEM=cmor_contact
-  # - GEM=cmor_contact_backend
+  - GEM=cmor_contact_backend
   - GEM=cmor_core
   # - GEM=cmor_core_backend
   - GEM=cmor_files
@@ -20,7 +20,7 @@ env:
   - GEM=cmor_galleries
   # - GEM=cmor_galleries_backend
   - GEM=cmor_links
-  # - GEM=cmor_links_backend
+  - GEM=cmor_links_backend
   - GEM=cmor_rbac
   # - GEM=cmor_rbac_backend
   - GEM=cmor_tags

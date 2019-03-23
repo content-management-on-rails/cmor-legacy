@@ -6,7 +6,7 @@ module Cmor
 
         source_root File.expand_path('../templates', __FILE__)
 
-        attr_reader :user_class_name
+        attr_reader :user_class_name, :user_factory_name
 
         def initialize(*args)
           super

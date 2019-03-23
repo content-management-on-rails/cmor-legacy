@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/dateien/folders', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Files::Folder }
 
   describe 'REST actions' do

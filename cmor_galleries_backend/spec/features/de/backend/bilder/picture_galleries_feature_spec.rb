@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/bilder/picture_galleries', type: :feature, locale: :de do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Galleries::PictureGallery }
   let(:resource) { create(:cmor_galleries_picture_gallery) }
   let(:resources) { create_list(:cmor_galleries_picture_gallery, 3) }

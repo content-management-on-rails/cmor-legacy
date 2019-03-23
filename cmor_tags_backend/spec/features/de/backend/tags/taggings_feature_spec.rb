@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/tags/taggings', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:tag) { create(:cmor_tags_tag) }
 
   let(:resource_class) { Cmor::Tags::Tagging }

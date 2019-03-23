@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/cms/partials', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Cms::Partial}
   let(:resource) { create(:cmor_cms_partial) }
   let(:resources) { create_list(:cmor_cms_partial, 3) }

@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/cms/navigation_items', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:navigation) { create(:cmor_cms_navigation) }
 
   let(:resource_class) { Cmor::Cms::NavigationItem }

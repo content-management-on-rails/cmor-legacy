@@ -2,30 +2,18 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
 require_relative "../lib/cmor/version"
+require_relative "../cmor_core_backend/lib/cmor/core/backend/gemspec"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
+  Cmor::Core::Backend::Gemspec.defaults(s)
   s.name        = 'cmor_cms_backend'
-  s.version     = ::Cmor::VERSION
-  s.authors     = ['Roberto Vasquez Angel']
-  s.email       = ['roberto@vasquez-angel.de']
-  s.homepage    = 'https://github.com/robotex82/cmor_cms_backend'
   s.summary     = 'Backend Module for CMOR CMS 2'
-  s.description = 'Provides a ITSF Backend based Backend for CMOR CMS'
-  s.license     = 'MIT'
+  s.description = 'Provides a Backend for CMOR CMS'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'rails', '>= 5.0.0'
-  s.add_dependency 'cmor_core_backend', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_cms', "= #{Cmor::VERSION}"
-
-  s.add_development_dependency 'rails-dummy'
-  s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'i18n-debug'
-  s.add_development_dependency 'jquery-turbolinks'
-
-  s.add_development_dependency 'guard-bundler'
-  s.add_development_dependency 'guard-rails'
+  # s.add_development_dependency 'jquery-turbolinks'
 end

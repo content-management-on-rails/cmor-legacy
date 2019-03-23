@@ -32,9 +32,19 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+## Always require rspec and factory_bot_rails in dummy app
+sed -i '17i\  require "rspec-rails"' config/application.rb
+sed -i '17i\  require "factory_bot_rails"' config/application.rb
+
+# Add ActiveStorage
+rails active_storage:install
+
+# Add User model for userstamping
+rails g model User email
+
 # Install cmor core backend gem
 rails generate administrador:install
-rails generate ecm:core:backend:install
+rails generate cmor:core:backend:install
 
 # Install frontend gem
 rails generate $INSTALL_NAME:install

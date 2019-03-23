@@ -34,7 +34,10 @@ echo "end" >> config/initializers/route_translator.rb
 
 # Install cmor core backend gem
 rails generate administrador:install
-rails generate ecm:core:backend:install
+rails generate cmor:core:backend:install
+
+# Example user model for specs
+rails g model User email
 
 # Install frontend gem
 rails generate $INSTALL_NAME:install

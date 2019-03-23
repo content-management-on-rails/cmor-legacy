@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/authentifizierung/users', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::UserArea::User }
   let(:resource) { create(:cmor_user_area_user) }
   let(:resources) { create_list(:cmor_user_area_user, 3) }

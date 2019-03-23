@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/berechtigungen/permissions', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
   let(:resource_class) { Cmor::Rbac::Permission }
   let(:resource) { create(:cmor_rbac_permission) }
   let(:resources) { create_list(:cmor_rbac_permission, 3) }
