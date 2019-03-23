@@ -15,3 +15,5 @@ RDoc::Task.new(:rdoc) do |rdoc|
 end
 
 Bundler::GemHelper.install_tasks
+
+require 'rails/dummy/tasks'
