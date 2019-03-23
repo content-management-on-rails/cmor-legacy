@@ -11,6 +11,7 @@ module Cmor
         def initialize(*args)
           super
           @user_class_name = ENV.fetch('CMOR_RBAC_USER_CLASS_NAME') { 'User' }
+          @user_factory_name = ENV.fetch('USER_FACTORY_NAME') { 'user' }
         end
 
         def generate_initializer

@@ -15,7 +15,7 @@ cd spec/dummy
 # responders for rao-service_controller
 sed -i '17i\  require "responders"' config/application.rb
 
-# always require rspec and factory_bot_rails in dummy app
+## Slways require rspec and factory_bot_rails in dummy app
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
 
@@ -27,7 +27,7 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 ## acts as taggabble
 rails acts_as_taggable_on_engine:install:migrations
 
-# Example model
+# Example post model for specs
 rails generate model Post title
 sed -i '2i\  include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
 mkdir -p app/views/posts

@@ -9,6 +9,7 @@ module Cmor
       end
 
       mattr_accessor(:user_class_name) { 'User' }
+      mattr_accessor(:user_factory_name) { :user }
 
       mattr_accessor(:default_permissions_filename) { -> { Rails.root.join('config', 'rbac.yml') }  }
 

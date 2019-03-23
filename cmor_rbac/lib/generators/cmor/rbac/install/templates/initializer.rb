@@ -5,6 +5,12 @@ Cmor::Rbac.configure do |config|
   # 
   config.user_class_name = '<%= user_class_name %>'
 
+  # Factory name to use for users.
+  #
+  # default: config.user_factory_name = '<%= user_factory_name %>' 
+  #
+  config.user_factory_name = '<%= user_factory_name %>'
+
   # Set the path of your default permissions file that will be used by
   # Cmor::Rbac::ImportDefaultPermissionsService
   # 
