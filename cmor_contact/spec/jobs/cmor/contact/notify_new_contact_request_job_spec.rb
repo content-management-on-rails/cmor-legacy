@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe Cmor::Contact::NotifyNewContactRequestJob, type: :job do
   let(:contact_request) { create(:cmor_contact_contact_request)}
@@ -14,7 +15,7 @@ RSpec.describe Cmor::Contact::NotifyNewContactRequestJob, type: :job do
   end
 
   describe '.perform_later' do
-    before(:each) { described_class.perform_later(contact_request.id) }
+    before(:each) { contact_request.reload }
 
     it { expect(enqueued_jobs.size).to eq(1) }
     it { expect(enqueued_jobs.last[:job]).to eq(described_class) }
