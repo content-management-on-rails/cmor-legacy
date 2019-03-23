@@ -4,28 +4,28 @@ rvm:
   # - 2.5.3
   # - 2.3.7
 env:
-  # - GEM=cmor_suite
+  - GEM=cmor_suite
   - GEM=cmor_blog
-  # - GEM=cmor_blog_backend
+  - GEM=cmor_blog_backend
   - GEM=cmor_carousels
-  # - GEM=cmor_carousels_backend
+  - GEM=cmor_carousels_backend
   - GEM=cmor_cms
-  # - GEM=cmor_cms_backend
+  - GEM=cmor_cms_backend
   - GEM=cmor_contact
   - GEM=cmor_contact_backend
   - GEM=cmor_core
-  # - GEM=cmor_core_backend
+  - GEM=cmor_core_backend
   - GEM=cmor_files
-  # - GEM=cmor_files_backend
+  - GEM=cmor_files_backend
   - GEM=cmor_galleries
-  # - GEM=cmor_galleries_backend
+  - GEM=cmor_galleries_backend
   - GEM=cmor_links
   - GEM=cmor_links_backend
   - GEM=cmor_rbac
-  # - GEM=cmor_rbac_backend
+  - GEM=cmor_rbac_backend
   - GEM=cmor_tags
-  # - GEM=cmor_tags_backend
+  - GEM=cmor_tags_backend
   - GEM=cmor_user_area
-  # - GEM=cmor_user_area_backend
+  - GEM=cmor_user_area_backend
 
 script: ./rspec.sh
