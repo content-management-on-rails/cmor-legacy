@@ -10,7 +10,7 @@ module Cmor::Cms
       end
 
       def pathname
-        @pathname ||= "#{File.dirname(relative_filename)}/"
+        @pathname ||= File.join("#{File.dirname(relative_filename)}")
       end
 
       def basename
@@ -73,20 +73,24 @@ module Cmor::Cms
       super(attributes, options)
     end
 
+    private
+
     def _perform    
       @partials = load_partials
       partials_count = @partials.size
-      info "Processing #{partials_count} partials in #{view_path}:"
-      @partials.each_with_index do |partial, index|
-        info "  (#{index + 1}/#{partials_count}) #{partial.human}"
-        attributes_hash = partial.to_partial_attributes_hash
-        partial = force ? find_or_initialize_partial(attributes_hash) : initialize_partial(attributes_hash)
-        new_record = partial.new_record?
-        partial.attributes = attributes_hash
-        if partial.save
-          info "    #{new_record ? 'Created' : 'Updated'} #{partial.human}"
-        else
-          info "    Could not #{new_record ? 'create' : 'update'} #{partial.human}. Errors: #{partial.errors.full_messages.to_sentence}"
+      say "Processing #{partials_count} partials in #{view_path}" do
+        @partials.each_with_index do |partial, index|
+          say "  (#{index + 1}/#{partials_count}) #{partial.human}" do
+            attributes_hash = partial.to_partial_attributes_hash
+            partial = force ? find_or_initialize_partial(attributes_hash) : initialize_partial(attributes_hash)
+            new_record = partial.new_record?
+            partial.attributes = attributes_hash
+            if partial.save
+              say "#{new_record ? 'Created' : 'Updated'} #{partial.human}"
+            else
+              say "Could not #{new_record ? 'create' : 'update'} #{partial.human}. Errors: #{partial.errors.full_messages.to_sentence}"
+            end
+          end
         end
       end
     end

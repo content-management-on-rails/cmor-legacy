@@ -42,9 +42,9 @@ module Cmor
       def content_for_title(record)
         case record.handler
         when 'haml'
-          "= content_for(:title) { \"#{record.title}\" }\r\n"
+          "= content_for(:title) { \"#{Cmor::Cms::Configuration.site_title} - #{record.title}\" }\r\n"
         else
-          "<% content_for :title do %>#{record.title}<% end %>"
+          "<% content_for :title do %>#{Cmor::Cms::Configuration.site_title} - #{record.title}<% end %>"
         end
       end
 

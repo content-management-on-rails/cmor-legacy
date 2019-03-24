@@ -7,7 +7,8 @@ module Cmor::Cms
     # associations
     belongs_to :cmor_cms_navigation,
                class_name: 'Cmor::Cms::Navigation',
-               foreign_key: 'cmor_cms_navigation_id'
+               foreign_key: 'cmor_cms_navigation_id',
+               optional: true
     belongs_to :cmor_cms_page,
                class_name: 'Cmor::Cms::Page',
                foreign_key: 'cmor_cms_page_id',
@@ -28,7 +29,7 @@ module Cmor::Cms
     validates :key, presence: true
     validates :name, presence: true
     validates :url, presence: true
-    validates :cmor_cms_navigation, presence: true, if: :root?
+    validates :cmor_cms_navigation, presence: true, if: -> { parent.nil? }
 
     def params_for_new_page
       return {} if self.new_record?

@@ -44,4 +44,10 @@ Cmor::Cms.configure do |config|
   # Default: config.navigation_locale_fallback = ->(navigation_name, locale) { false }
   # 
   config.navigation_locale_fallback = ->(navigation_name, locale) { I18n.default_locale }
+
+  # Sets the site title
+  #
+  # Default: config.site_title = Rails.application.class.to_s.deconstantize
+  #
+  config.site_title = Rails.application.class.to_s.deconstantize
 end

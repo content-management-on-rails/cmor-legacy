@@ -36,7 +36,7 @@ module Cmor
       end
 
       def filename
-        filename = basename.dup
+        filename = basename.nil? ? '' : basename.dup
         filename << ".#{locale}" if locale.present?
         filename << ".#{format}" if format.present?
         filename << ".#{handler}" if handler.present?

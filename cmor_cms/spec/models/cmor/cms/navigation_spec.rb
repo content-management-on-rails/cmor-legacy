@@ -1,29 +1,25 @@
 require 'rails_helper'
 
-module Cmor
-  module Cms
-    describe Navigation do
-      subject { FactoryBot.create :cmor_cms_navigation }
+RSpec.describe Cmor::Cms::Navigation, type: :model do
+  subject { create :cmor_cms_navigation }
 
-      context 'associations' do
-        it { should have_many :cmor_cms_navigation_items }
-      end
+  context 'associations' do
+    it { expect(subject).to have_many :cmor_cms_navigation_items }
+  end
 
-      context 'public methods' do
-        context '#to_s' do
-          it 'should have the correct format' do
-            subject.locale = 'en'
-            subject.name = 'foo'
-            subject.to_s.should eq('foo (en)')
-          end
-        end
-      end
-
-      context 'validations' do
-        it { should validate_presence_of :name }
-        it { should validate_uniqueness_of(:name).scoped_to(:locale) }
-        it { should validate_inclusion_of(:locale).in_array(I18n.available_locales.map(&:to_s)) }
+  context 'public methods' do
+    context '#human' do
+      it 'should have the correct format' do
+        subject.locale = 'en'
+        subject.name = 'foo'
+        expect(subject.human).to eq('foo (en)')
       end
     end
+  end
+
+  context 'validations' do
+    it { expect(subject).to validate_presence_of :name }
+    it { expect(subject).to validate_uniqueness_of(:name).scoped_to(:locale) }
+    it { expect(subject).to validate_inclusion_of(:locale).in_array(I18n.available_locales.map(&:to_s)) }
   end
 end

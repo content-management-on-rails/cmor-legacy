@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'title rendering' do
-  it 'adds the title to the page' do
-    page_model = Cmor::Cms::Page.create! do |page|
+RSpec.describe 'title rendering', type: :request do
+  let(:page) do
+    Cmor::Cms::Page.create! do |page|
       page.pathname = '/'
       page.basename = 'home'
       page.locale   = 'en'
@@ -11,8 +11,14 @@ describe 'title rendering' do
       page.title    = 'This is the title'
       page.body     = '<h1>Home</h1>'
     end
-    get '/en'
+  end
 
-    response.body.should include("<title>#{Cmor::Cms::Configuration.site_title} - #{page_model.title}</title>")
+  before(:each) do
+    page
+    get '/en'
+  end
+    
+  it 'adds the title to the page' do
+    expect(response.body).to include("<title>#{Cmor::Cms::Configuration.site_title} - #{page.title}</title>")
   end
 end

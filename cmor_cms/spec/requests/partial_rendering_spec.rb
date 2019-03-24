@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'requesting a page that renders a partial' do
-  it 'renders the partial' do
-    partial = Cmor::Cms::Partial.create! do |record|
+RSpec.describe 'requesting a page that renders a partial', type: :request do
+  let(:partial) do
+    Cmor::Cms::Partial.create! do |record|
       record.pathname = '/'
       record.basename = 'test'
       record.locale   = ''
@@ -10,17 +10,27 @@ describe 'requesting a page that renders a partial' do
       record.handler  = 'erb'
       record.body     = 'Test partial'
     end
+  end
 
-    record = Cmor::Cms::Template.create! do |record|
-      record.pathname = '/'
-      record.basename = 'partial_test'
+  let(:page) do
+    Cmor::Cms::Page.create! do |record|
+      record.pathname = '/partial_test'
+      record.basename = 'index'
       record.locale   = ''
       record.format   = 'html'
       record.handler  = 'erb'
-      record.body     = '<%= render "/test" %>'
+      record.title    = 'Partial Test'
+      record.body     = '<%= render partial: "/test" %>'
     end
-    get '/en/partial_test'
+  end
 
-    response.body.should include(partial.body)
+  before(:each) do
+    page
+    partial
+    get '/en/partial_test'
+  end
+
+  it 'renders the partial' do
+    expect(response.body).to include(partial.body)
   end
 end
