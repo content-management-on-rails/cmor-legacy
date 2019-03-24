@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "administrador", '>= 0.0.2.pre'
+  s.add_dependency "cmor", "= #{::Cmor::VERSION}"
 
   s.add_development_dependency "sqlite3"
 
