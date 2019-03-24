@@ -8,16 +8,10 @@ require_relative "../cmor_core/lib/cmor/core/gemspec"
 Gem::Specification.new do |s|
   Cmor::Core::Gemspec.defaults(s)
   s.name        = 'cmor_rbac'
-  # s.version     = ::Cmor::VERSION
-  # s.authors     = ['Roberto Vasquez Angel']
-  # s.email       = ['roberto@vasquez-angel.de']
-  # s.homepage    = 'https://github.com/robotex82/cmor_rbac'
   s.summary     = 'Cmor::Rbac.'
   s.description = 'Cmor::Rbac Module.'
-  # s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  # s.add_dependency 'rails', '>= 5.0.0'
-  # s.add_dependency 'cmor_core', "= #{Cmor::VERSION}"
+  s.add_dependency 'rao-service', '>= 0.0.13.pre'
 end

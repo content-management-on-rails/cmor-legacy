@@ -23,6 +23,7 @@ PATH
     cmor_rbac (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-service (>= 0.0.13.pre)
 
 GEM
   remote: https://rubygems.org/
@@ -270,6 +271,10 @@ GEM
     rao-resource_controller (0.0.13.pre)
       rao
     rao-resources_controller (0.0.13.pre)
+      rao
+    rao-service (0.0.13.pre)
+      activemodel
+      activesupport
       rao
     rao-service_controller (0.0.13.pre)
       font-awesome-rails

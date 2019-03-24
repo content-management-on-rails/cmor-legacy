@@ -10,16 +10,6 @@ RSpec.describe Cmor::Carousels::ItemDetail, type: :model do
     it { should respond_to(:move_to_bottom) }
   end
 
-  context "acts as markup" do
-    subject {
-      create(:cmor_carousels_item_detail, :description => "h1. This is a heading")
-    }
-
-    context "description.to_html" do
-      specify { subject.description.to_html.should eq("<h1>This is a heading</h1>") }
-    end
-  end
-
   context "associations" do
     it { should belong_to :carousel }
   end

@@ -33,20 +33,16 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-## Always require rspec and factory_bot_rails in dummy app
-sed -i '17i\  require "rspec-rails"' config/application.rb
-sed -i '17i\  require "factory_bot_rails"' config/application.rb
-
 # Add ActiveStorage
 rails active_storage:install
 
 # Add User model for userstamping
 rails g model User email
 sed -i '2i\  private' app/controllers/application_controller.rb
-sed -i '2i\  ' app/controllers/application_controller.rb
-sed -i '2i\  def current_user' app/controllers/application_controller.rb
-sed -i '2i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
-sed -i '2i\  end' app/controllers/application_controller.rb
+sed -i '3i\  ' app/controllers/application_controller.rb
+sed -i '4i\  def current_user' app/controllers/application_controller.rb
+sed -i '5i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
+sed -i '6i\  end' app/controllers/application_controller.rb
 
 # Install cmor core backend gem
 rails generate administrador:install
