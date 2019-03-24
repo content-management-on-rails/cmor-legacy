@@ -1,4 +1,21 @@
 PATH
+  remote: ../cmor_core_backend
+  specs:
+    cmor_core_backend (0.0.1.pre)
+      administrador (>= 0.0.2.pre)
+      cmor (= 0.0.1.pre)
+      rails (>= 5.0.0)
+
+PATH
+  remote: ../cmor_galleries
+  specs:
+    cmor_galleries (0.0.1.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.1.pre)
+      rails (>= 5.2.0)
+
+PATH
   remote: ..
   specs:
     cmor (0.0.1.pre)
@@ -12,22 +29,6 @@ PATH
       rao-view_helper
       request_store_rails
       route_translator
-
-PATH
-  remote: ../cmor_core_backend
-  specs:
-    cmor_core_backend (0.0.1.pre)
-      administrador (>= 0.0.2.pre)
-      rails (>= 5.0.0)
-
-PATH
-  remote: ../cmor_galleries
-  specs:
-    cmor_galleries (0.0.1.pre)
-      acts_as_list
-      acts_as_published
-      cmor_core (= 0.0.1.pre)
-      rails (>= 5.2.0)
 
 PATH
   remote: .

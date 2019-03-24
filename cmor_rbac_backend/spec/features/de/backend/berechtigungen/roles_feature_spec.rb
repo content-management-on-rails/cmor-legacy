@@ -5,11 +5,14 @@ RSpec.describe '/de/backend/berechtigungen/roles', type: :feature do
   let(:resource) { create(:cmor_rbac_role) }
   let(:resources) { create_list(:cmor_rbac_role, 3) }
 
+  let(:user) { create(Cmor::Rbac.user_factory_name) }
+
   # List
   it { resources; expect(subject).to implement_index_action(self) }
 
   # Create
-  it { 
+  it {
+    user
     expect(subject).to implement_create_action(self)
       .for(resource_class)
       .within_form('#new_role') {

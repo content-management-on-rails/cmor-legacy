@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe '/de/backend/berechtigungen/users', type: :feature do
   let(:role) { create(:cmor_rbac_role)}
 
-  let(:resource_class) { Cmor::UserArea::User }
-  let(:resource) { create(:cmor_user_area_user) }
-  let(:resources) { create_list(:cmor_user_area_user, 3) }
+  let(:resource_class) { Cmor::Rbac.user_class_name }
+  let(:resource) { create(Cmor::Rbac.user_factory_name) }
+  let(:resources) { create_list(Cmor::Rbac.user_factory_name, 3) }
 
   it { resources; expect(subject).to implement_index_action(self) }
   

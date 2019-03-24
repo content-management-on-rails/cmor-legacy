@@ -42,6 +42,11 @@ rails active_storage:install
 
 # Add User model for userstamping
 rails g model User email
+sed -i '2i\  private' app/controllers/application_controller.rb
+sed -i '2i\  ' app/controllers/application_controller.rb
+sed -i '2i\  def current_user' app/controllers/application_controller.rb
+sed -i '2i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
+sed -i '2i\  end' app/controllers/application_controller.rb
 
 # Install cmor core backend gem
 rails generate administrador:install

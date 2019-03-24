@@ -13,6 +13,7 @@ PATH
   specs:
     cmor_core_backend (0.0.1.pre)
       administrador (>= 0.0.2.pre)
+      cmor (= 0.0.1.pre)
       rails (>= 5.0.0)
 
 PATH
