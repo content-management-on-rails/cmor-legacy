@@ -1,12 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe '/de/backend/links/links', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
-  let(:resource_class) { Cmor::Links::Link }
-  let(:resource) { create(:cmor_links_link) }
-  let(:resources) { create_list(:cmor_links_link, 3) }
+RSpec.describe '/de/backend/core/active_storage/blobs', type: :feature do
+  let(:resource_class) { ActiveStorage::Blob }
+  let(:resource) { create(:active_storage_blob) }
+  let(:resources) { create_list(:active_storage_blob, 3) }
 
   # List
   it { resources; expect(subject).to implement_index_action(self) }
@@ -15,7 +12,7 @@ RSpec.describe '/de/backend/links/links', type: :feature do
   it { 
     expect(subject).to implement_create_action(self)
       .for(resource_class)
-      .within_form('#new_link') {
+      .within_form('#new_blob') {
         # fill the needed form inputs via capybara here
         #
         # Example:
@@ -24,10 +21,8 @@ RSpec.describe '/de/backend/links/links', type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        fill_in 'link[name]', with: 'Google'
-        fill_in 'link[url]',  with: 'https://www.google.de'
       }
-      .increasing{ Cmor::Links::Link.count }.by(1)
+      .increasing{ ActiveStorage::Blob.count }.by(1)
   }
   
   # Read
@@ -37,17 +32,16 @@ RSpec.describe '/de/backend/links/links', type: :feature do
   it {
     expect(subject).to implement_update_action(self)
       .for(resource)
-      .within_form('.edit_link') {
+      .within_form('.edit_blob') {
         # fill the needed form inputs via capybara here
         # 
         # Example:
         # 
         #     fill_in 'slider[name]', with: 'New name'
-        fill_in 'link[description]', with: 'Search Engine'
       }
       .updating
       .from(resource.attributes)
-      .to({ 'description' => 'Search Engine' }) # Example: .to({ 'name' => 'New name' })
+      .to({ }) # Example: .to({ 'name' => 'New name' })
   }
 
   # Delete

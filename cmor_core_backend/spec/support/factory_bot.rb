@@ -6,6 +6,7 @@ end
 
 FactoryBot.factories.clear
 FactoryBot.definition_file_paths += [
-  Cmor::Core::Engine.root.join(*%w(spec factories))
+  Cmor::Core::Backend::Engine.root.join(*%w(spec factories)),
+  Rails.root.join(*%w(spec factories))
 ]
 FactoryBot.find_definitions 

@@ -17,12 +17,36 @@ GIT
       activerecord (~> 5.0)
 
 PATH
+  remote: ../../../gems/administrador
+  specs:
+    administrador (0.0.2.pre)
+      bootstrap4-kaminari-views
+      coffee-rails
+      haml-rails
+      rails (>= 5.2.0)
+      rails-i18n
+      rao-component (>= 0.0.12.pre)
+      rao-query (>= 0.0.12.pre)
+      rao-resource_controller (>= 0.0.12.pre)
+      rao-resources_controller (>= 0.0.12.pre)
+      rao-service_controller (>= 0.0.12.pre)
+      rao-view_helper (>= 0.0.12.pre)
+      route_translator
+      simple_form
+
+PATH
+  remote: ../../../gems/rao/rao-resources_controller
+  specs:
+    rao-resources_controller (0.0.13.pre)
+      rao
+
+PATH
   remote: ../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.1.pre)
       cmor_blog (= 0.0.1.pre)
-      rails
-      rao-query
+      cmor_core_backend (= 0.0.1.pre)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_blog
@@ -40,7 +64,7 @@ PATH
     cmor_carousels_backend (0.0.1.pre)
       cmor_carousels (= 0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_carousels
@@ -59,7 +83,7 @@ PATH
     cmor_cms_backend (0.0.1.pre)
       cmor_cms (= 0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_cms
@@ -79,7 +103,7 @@ PATH
     cmor_contact_backend (0.0.1.pre)
       cmor_contact (= 0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_contact
@@ -94,7 +118,7 @@ PATH
     cmor_files_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_files (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_files
@@ -112,7 +136,7 @@ PATH
     cmor_galleries_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_galleries (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_galleries
@@ -129,7 +153,7 @@ PATH
     cmor_links_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_links (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_links
@@ -150,7 +174,7 @@ PATH
     cmor_rbac_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_rbac (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_rbac
@@ -158,6 +182,7 @@ PATH
     cmor_rbac (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-service (>= 0.0.13.pre)
 
 PATH
   remote: ../cmor_tags_backend
@@ -165,7 +190,7 @@ PATH
     cmor_tags_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_tags (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_tags
@@ -174,6 +199,8 @@ PATH
       acts-as-taggable-on
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-service
+      rao-service_controller
 
 PATH
   remote: ../cmor_user_area_backend
@@ -181,7 +208,7 @@ PATH
     cmor_user_area_backend (0.0.1.pre)
       cmor_core_backend (= 0.0.1.pre)
       cmor_user_area (= 0.0.1.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_user_area
@@ -192,7 +219,10 @@ PATH
       bcrypt
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-component (>= 0.0.13.pre)
+      rao-resources_controller (>= 0.0.13.pre)
       rao-service (>= 0.0.13.pre)
+      simple_form
 
 PATH
   remote: ..
@@ -210,7 +240,7 @@ PATH
       route_translator
     cmor_core_backend (0.0.1.pre)
       administrador (>= 0.0.2.pre)
-      rails (>= 5.0.0)
+      rails (>= 5.2.0)
 
 PATH
   remote: .
@@ -303,20 +333,6 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.2.pre)
-      bootstrap4-kaminari-views
-      coffee-rails
-      haml-rails
-      rails (>= 5.2.0)
-      rails-i18n
-      rao-component (>= 0.0.12.pre)
-      rao-query (>= 0.0.12.pre)
-      rao-resource_controller (>= 0.0.12.pre)
-      rao-resources_controller (>= 0.0.12.pre)
-      rao-service_controller (>= 0.0.12.pre)
-      rao-view_helper (>= 0.0.12.pre)
-      route_translator
-      simple_form
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
@@ -522,8 +538,6 @@ GEM
       rao-view_helper
     rao-resource_controller (0.0.13.pre)
       rao
-    rao-resources_controller (0.0.13.pre)
-      rao
     rao-service (0.0.13.pre)
       activemodel
       activesupport
@@ -635,6 +649,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on!
+  administrador!
   authlogic!
   capybara
   cmor!
@@ -667,6 +682,7 @@ DEPENDENCIES
   pry-rails
   rails-dummy
   rails-i18n
+  rao-resources_controller!
   rao-shoulda_matchers
   responders
   rspec-rails

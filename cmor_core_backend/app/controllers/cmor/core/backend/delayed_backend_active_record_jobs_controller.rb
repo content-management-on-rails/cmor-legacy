@@ -1,10 +1,14 @@
 module Cmor
   module Core
     module Backend
-      class DelayedJobsController < Cmor::Core::Backend::ResourcesController::Base
+      class DelayedBackendActiveRecordJobsController < Cmor::Core::Backend::ResourcesController::Base
         def self.resource_class
-          Delayed::Job
+          ::Delayed::Backend::ActiveRecord::Job
         end
+
+        # def self.available_rest_actions
+        #   %i(index show edit update)
+        # end
 
         private
 

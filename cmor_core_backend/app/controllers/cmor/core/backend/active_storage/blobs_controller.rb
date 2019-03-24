@@ -9,6 +9,10 @@ module Cmor
 
           private
 
+          def resource_namespace
+            :active_storage
+          end
+
           def permitted_params
             params.require(:blob).permit()
           end

@@ -20,8 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'delayed_job_active_record'
   s.add_dependency 'request_store_rails'
   s.add_dependency 'route_translator'
-  s.add_dependency "administrador"
-  s.add_dependency "rao-view_helper"
+  s.add_dependency "rao-view_helper", ">= 0.0.14.pre"
   s.add_dependency "kaminari"
   s.add_dependency "bootstrap-kaminari-views"
 

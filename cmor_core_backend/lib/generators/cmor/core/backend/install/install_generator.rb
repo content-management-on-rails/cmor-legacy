@@ -7,12 +7,21 @@ module Cmor
 
           source_root File.expand_path('../templates', __FILE__)
 
+          attr_reader :cmor_core_backend_enable_active_storage
+          attr_reader :cmor_core_backend_enable_delayed_job
+
+          def initialize(*args)
+            super
+            @cmor_core_backend_enable_active_storage = ENV.fetch('CMOR_CORE_BACKEND_ENABLE_ACTIVE_STORAGE') { false }
+            @cmor_core_backend_enable_delayed_job = ENV.fetch('CMOR_CORE_BACKEND_ENABLE_DELAYED_JOB') { false }
+          end
+
           def generate_controller
             copy_file 'backend_controller.rb', 'app/controllers/backend_controller.rb'
           end
 
           def generate_initializer
-            copy_file 'initializer.rb', 'config/initializers/cmor_core_backend.rb'
+            template 'initializer.rb', 'config/initializers/cmor_core_backend.rb'
           end
 
           def generate_routes

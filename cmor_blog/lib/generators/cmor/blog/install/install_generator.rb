@@ -13,8 +13,8 @@ module Cmor
         def initialize(*args)
           super
           @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::ApplicationController' }
-          @user_factory_name = ENV.fetch('USER_FACTORY_NAME') { 'user' }
-          @creator_class_name = ENV.fetch('CREATOR_CLASS_NAME') { 'User' }
+          @user_factory_name = ENV.fetch('CMOR_BLOG_USER_FACTORY_NAME') { 'user' }
+          @creator_class_name = ENV.fetch('CMOR_BLOG_CREATOR_CLASS_NAME') { 'User' }
         end
 
         def generate_initializer

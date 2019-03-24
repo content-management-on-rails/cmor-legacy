@@ -18,7 +18,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'awesome_nested_set-tools'
   s.add_dependency 'friendly_id'
   s.add_dependency 'RedCloth'
-  s.add_dependency 'draper' 
-
-  s.add_development_dependency 'rao-shoulda_matchers'
+  s.add_dependency 'draper'
 end

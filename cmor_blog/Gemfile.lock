@@ -2,13 +2,12 @@ PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.1.pre)
-      administrador
       bootstrap-kaminari-views
       cmor (= 0.0.1.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
-      rao-view_helper
+      rao-view_helper (>= 0.0.14.pre)
       request_store_rails
       route_translator
 
@@ -77,27 +76,10 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.1.pre)
-      bootstrap4-kaminari-views
-      coffee-rails
-      haml-rails
-      rails (>= 5.2.0)
-      rails-i18n
-      rao-component (>= 0.0.12.pre)
-      rao-query (>= 0.0.12.pre)
-      rao-resource_controller (>= 0.0.12.pre)
-      rao-resources_controller (>= 0.0.12.pre)
-      rao-service_controller (>= 0.0.12.pre)
-      rao-view_helper (>= 0.0.12.pre)
-      route_translator
-      simple_form
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
     bootstrap-kaminari-views (0.0.5)
-      kaminari (>= 0.13)
-      rails (>= 3.1)
-    bootstrap4-kaminari-views (1.0.1)
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
@@ -110,13 +92,6 @@ GEM
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
     coderay (1.1.2)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
     delayed_job (4.1.5)
@@ -127,19 +102,16 @@ GEM
     diff-lcs (1.3)
     docile (1.3.1)
     erubi (1.8.0)
-    erubis (2.7.0)
-    execjs (2.7.0)
     factory_bot (5.0.2)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.0.1)
       factory_bot (~> 5.0.0)
       railties (>= 4.2.0)
     ffi (1.10.0)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
+    git_log_generator (0.0.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     guard (2.15.0)
@@ -163,28 +135,10 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.0.4)
-      temple (>= 0.8.0)
-      tilt
-    haml-rails (2.0.0)
-      actionpack (>= 5.1)
-      activesupport (>= 5.1)
-      haml (>= 4.0.6, < 6.0)
-      html2haml (>= 1.0.1)
-      railties (>= 5.1)
     hirb (0.7.3)
-    html2haml (2.2.0)
-      erubis (~> 2.7.0)
-      haml (>= 4.0, < 6)
-      nokogiri (>= 1.6.0)
-      ruby_parser (~> 3.5)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
-    jquery-rails (4.3.3)
-      rails-dom-testing (>= 1, < 3)
-      railties (>= 4.2.0)
-      thor (>= 0.14, < 2.0)
     json (2.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -267,26 +221,9 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.13.pre)
-    rao-component (0.0.13.pre)
-      haml-rails
-      rails
-      rao
-    rao-query (0.0.13.pre)
-      rails
-      rao
-      rao-view_helper
-    rao-resource_controller (0.0.13.pre)
-      rao
-    rao-resources_controller (0.0.13.pre)
-      rao
-    rao-service_controller (0.0.13.pre)
-      font-awesome-rails
-      rao
-      simple_form
-      twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.13.pre)
       rao
-    rao-view_helper (0.0.13.pre)
+    rao-view_helper (0.0.14.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -331,15 +268,9 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.6)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
-    ruby_parser (3.13.0)
-      sexp_processor (~> 4.9)
-    sexp_processor (4.12.0)
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)
-    simple_form (4.1.0)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -357,14 +288,8 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    temple (0.8.1)
     thor (0.20.3)
     thread_safe (0.3.6)
-    tilt (2.0.9)
-    twitter-bootstrap-components-rails (0.6.2)
-      haml-rails
-      jquery-rails
-      rails (>= 3.2)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.5.0)
@@ -383,6 +308,7 @@ DEPENDENCIES
   cmor_blog!
   cmor_core!
   factory_bot_rails
+  git_log_generator
   guard-bundler
   guard-rails
   guard-rspec

@@ -1,12 +1,10 @@
 require 'rails_helper'
+require 'delayed_job_active_record'
 
-RSpec.describe '/de/backend/berechtigungen/roles', type: :feature do
-  let(:user) { create(:cmor_user_area_user, :authenticable) }
-  before(:each) { sign_in(user) }
-
-  let(:resource_class) { Cmor::Rbac::Role }
-  let(:resource) { create(:cmor_rbac_role) }
-  let(:resources) { create_list(:cmor_rbac_role, 3) }
+RSpec.describe '/de/backend/core/delayed_backend_active_record_jobs', type: :feature do
+  let(:resource_class) { Delayed::Backend::ActiveRecord::Job }
+  let(:resource) { create(:delayed_backend_active_record_job) }
+  let(:resources) { create_list(:delayed_backend_active_record_job, 3) }
 
   # List
   it { resources; expect(subject).to implement_index_action(self) }
@@ -15,7 +13,7 @@ RSpec.describe '/de/backend/berechtigungen/roles', type: :feature do
   it { 
     expect(subject).to implement_create_action(self)
       .for(resource_class)
-      .within_form('#new_role') {
+      .within_form('#new_delayed_backend_active_record_job') {
         # fill the needed form inputs via capybara here
         #
         # Example:
@@ -24,10 +22,8 @@ RSpec.describe '/de/backend/berechtigungen/roles', type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        fill_in 'role[identifier]', with: 'administrator'
-        check user.email
       }
-      .increasing{ Cmor::Rbac::Role.count }.by(1)
+      .increasing{ Delayed::Backend::ActiveRecord::Job.count }.by(1)
   }
   
   # Read
@@ -37,17 +33,17 @@ RSpec.describe '/de/backend/berechtigungen/roles', type: :feature do
   it {
     expect(subject).to implement_update_action(self)
       .for(resource)
-      .within_form('.edit_role') {
+      .within_form('.edit_delayed_backend_active_record_job') {
         # fill the needed form inputs via capybara here
         # 
         # Example:
         # 
         #     fill_in 'slider[name]', with: 'New name'
-        fill_in 'role[identifier]', with: 'editor'
+        fill_in 'delayed_backend_active_record_job[queue]', with: 'different_queue'
       }
       .updating
       .from(resource.attributes)
-      .to({ 'identifier' => 'editor' }) # Example: .to({ 'name' => 'New name' })
+      .to({ 'queue' => 'different_queue' }) # Example: .to({ 'name' => 'New name' })
   }
 
   # Delete

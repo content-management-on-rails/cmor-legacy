@@ -33,13 +33,23 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Install cmor core backend gem
+# Install administrador
 rails generate administrador:install
-rails generate cmor:core:backend:install
 
-# Install frontend gem
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+# Install SimpleForm
+rails generate simple_form:install --bootstrap
+
+# Add DelayedJob::ActiveRecord
+sed -i '17i\  require "delayed_job_active_record"' config/application.rb
+rails generate delayed_job:active_record
+
+# Add ActiveStorage
+rails active_storage:install
+
+# Example model for ActiveStorage specs
+rails g model Post title
+
+rails db:migrate db:test:prepare
 
 # Install
-rails generate $BACKEND_INSTALL_NAME:install
+CMOR_CORE_BACKEND_ENABLE_ACTIVE_STORAGE=true CMOR_CORE_BACKEND_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install
