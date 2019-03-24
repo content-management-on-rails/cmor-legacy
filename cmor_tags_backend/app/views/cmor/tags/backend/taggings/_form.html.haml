@@ -4,7 +4,7 @@
                       group_method: :all,
                       group_label_method: :model_name,
                       value_method: :to_global_id,
-                      label_method: :human,
+                      label_method: ->(r) { administrador_helper(self).label_for(r) },
                       include_blank: true,
                       selected: form.object.taggable.try(:to_global_id))
 = form.input(:tagger, collection: Cmor::Tags::Backend::Configuration.tagger_classes,
@@ -12,7 +12,7 @@
                       group_method: :all,
                       group_label_method: :model_name,
                       value_method: :to_global_id,
-                      label_method: :human,
+                      label_method: ->(r) { administrador_helper(self).label_for(r) },
                       include_blank: true,
                       selected: form.object.tagger.try(:to_global_id))
 = form.input :context

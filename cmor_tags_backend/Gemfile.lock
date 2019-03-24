@@ -1,17 +1,9 @@
-PATH
-  remote: ..
+GIT
+  remote: https://github.com/robotex82/acts-as-taggable-on
+  revision: 97cfbfdb074a8c66d52023b5de22ca92a58efb06
   specs:
-    cmor (0.0.1.pre)
-    cmor_core (0.0.1.pre)
-      administrador
-      bootstrap-kaminari-views
-      cmor (= 0.0.1.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper
-      request_store_rails
-      route_translator
+    acts-as-taggable-on (6.0.1)
+      activerecord (>= 5.0, < 6.1)
 
 PATH
   remote: ../cmor_core_backend
@@ -29,6 +21,21 @@ PATH
       rails (>= 5.2.0)
       rao-service
       rao-service_controller
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.1.pre)
+    cmor_core (0.0.1.pre)
+      administrador
+      bootstrap-kaminari-views
+      cmor (= 0.0.1.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper
+      request_store_rails
+      route_translator
 
 PATH
   remote: .
@@ -82,8 +89,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.0.0)
-      activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     administrador (0.0.2.pre)
@@ -390,6 +395,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   capybara
   cmor!
   cmor_core_backend!

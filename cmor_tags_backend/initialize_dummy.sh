@@ -48,4 +48,4 @@ rails generate $INSTALL_NAME:install
 rails $GEM_NAME:install:migrations db:migrate db:test:prepare
 
 # Install
-rails generate $BACKEND_INSTALL_NAME:install
+CMOR_TAGS_BACKEND_TAGGABLE_CLASSES='%w(Post)' rails generate $BACKEND_INSTALL_NAME:install

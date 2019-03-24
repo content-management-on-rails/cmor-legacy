@@ -25,13 +25,13 @@ Cmor::Tags::Backend.configure do |config|
 
   # Specify the models that can be tagged.
   #
-  # Default: config.taggable_class_names = %w()
+  # Default: config.taggable_class_names = <%= taggable_classes %>
   #
-  config.taggable_class_names = %w()
+  config.taggable_class_names = <%= taggable_classes %>
 
   # Specify the models the can tag things.
   #
-  # Default: config.tagger_class_names = %w()
+  # Default: config.tagger_class_names = <%= tagger_classes %>
   #
-  config.tagger_class_names = %w()
+  config.tagger_class_names = <%= tagger_classes %>
 end
