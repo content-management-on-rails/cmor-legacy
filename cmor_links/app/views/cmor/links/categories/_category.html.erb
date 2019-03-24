@@ -1,4 +1,4 @@
-<div class="link_category category" id="link_category-<%= category.id %>">
+<div class="link_category category" id="<%= dom_id(category) %>">
   <h1><%= category.name %></h1>
 
   <% unless category.long_description.blank? %>
@@ -8,7 +8,7 @@
   <% end %>
 
   <div class="list-group">
-    <%= render partial: 'category_in_index', collection: Cmor::Links::CategoryDecorator.decorate_collection(category.descendants), as: :category %>
+    <%= render partial: 'cmor/links/categories/category_in_index', collection: Cmor::Links::CategoryDecorator.decorate_collection(category.descendants), as: :category %>
   </div>
 
   <div class="download_category-downloads item_list">

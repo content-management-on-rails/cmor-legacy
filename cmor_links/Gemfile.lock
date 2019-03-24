@@ -1,4 +1,10 @@
 PATH
+  remote: ../../../gems/rao/rao-shoulda_matchers
+  specs:
+    rao-shoulda_matchers (0.0.13.pre)
+      rao
+
+PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.1.pre)
@@ -301,8 +307,6 @@ GEM
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.13.pre)
-      rao
     rao-view_helper (0.0.13.pre)
       rao
     rb-fsevent (0.10.3)
@@ -409,7 +413,7 @@ DEPENDENCIES
   pry-rails
   rails-dummy
   rails-i18n
-  rao-shoulda_matchers
+  rao-shoulda_matchers!
   responders
   rspec-rails
   rubocop

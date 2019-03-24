@@ -3,7 +3,7 @@ module Cmor::Links
     delegate_all
 
     def links_count_label
-      h.content_tag(:span, cmor_links_links_count, class: 'badge')
+      h.content_tag(:span, links_count, class: 'badge')
     end
 
     def locale_label
