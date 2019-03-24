@@ -25,7 +25,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'bcrypt'
   s.add_dependency 'rao-service', '>= 0.0.13.pre'
   s.add_dependency 'rao-component', '>= 0.0.13.pre'
-  # s.add_dependency 'rao-view_helper'
+  s.add_dependency 'rao-resources_controller', '>= 0.0.13.pre'
+  s.add_dependency 'simple_form'
 
   # s.add_development_dependency 'pry-rails'
   # s.add_development_dependency 'launchy'

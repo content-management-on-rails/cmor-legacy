@@ -4,5 +4,7 @@ require 'active_model_serializers'
 require 'rao-component'
 require 'rao-view_helper'
 require 'rao-service'
+require 'rao-resources_controller'
+require 'simple_form'
 
 require 'cmor/user_area'

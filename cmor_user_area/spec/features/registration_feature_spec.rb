@@ -1,30 +1,28 @@
 require 'rails_helper'
 require 'cmor/user_area/spec_helpers/feature'
 
-feature 'User Area -> Registration' do
+RSpec.describe 'User Area -> Registration', type: :feature do
   include Cmor::UserArea::SpecHelpers::Feature
 
-  background do
-    I18n.locale = :de
-  end
+  before(:each) { I18n.locale = :de }
 
   describe 'new registration' do
+    around(:each) { |example| with_enabled_registrations { example } }
+
     context 'when not signed in' do
-      background do
-        @user_attributes = attributes_for(:cmor_user_area_user)
-      end
+      let(:user_attributes) { attributes_for(:cmor_user_area_user) }
 
       it 'should create a user' do
-        expect { sign_up(@user_attributes) }.to change { Cmor::UserArea::User.count }.from(0).to(1)
+        expect { sign_up(user_attributes) }.to change { Cmor::UserArea::User.count }.from(0).to(1)
       end
 
       it 'should redirect to root' do
-        sign_up(@user_attributes)
+        sign_up(user_attributes)
         expect(page.current_path).to eq(main_app.root_path)
       end
 
       it 'should show a success message' do
-        sign_up(@user_attributes)
+        sign_up(user_attributes)
         expect(page.body).to include(I18n.t('messages.confirmations.cmor_user_area.send_instructions'))
       end
     end
@@ -32,11 +30,11 @@ feature 'User Area -> Registration' do
 
   describe 'editing a registration' do
     let(:edit_current_user_path) { "/de/benutzer/profil/edit" }
+
     context 'when signed in' do
-      background do
-        @user = Cmor::UserArea::CreateDefaultUserService.call.user
-        sign_in(@user)
-      end
+      let(:user) { Cmor::UserArea::CreateDefaultUserService.call.user }
+
+      before(:each) { sign_in(user) }
 
       it 'should allow access' do
         visit(edit_current_user_path)
@@ -46,9 +44,7 @@ feature 'User Area -> Registration' do
       context 'changing email' do
         let(:new_user_session_path) { "/de/benutzer/session/new" }
         
-        background do
-          visit(edit_current_user_path)
-        end
+        before(:each) { visit(edit_current_user_path) }
 
         it do
           expect do

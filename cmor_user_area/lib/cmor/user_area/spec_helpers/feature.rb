@@ -23,6 +23,40 @@ module Cmor::UserArea
           click_on I18n.t('helpers.submit.user_session.create')
         end
       end
+
+      # Enables the registrations feature, so you can signup users.
+      #
+      # Usage:
+      #
+      #     # spec/features/registrations_feature_spec.rb
+      #     require 'rails_helper'
+      #     require 'cmor/user_area/spec_helpers/feature'
+      #
+      #     RSpec.feature 'Registrations', type: :feature do
+      #       include Cmor::UserArea::SpecHelpers::Feature
+      #
+      #       around(:each) { |example| with_enabled_registrations { example } }
+      #
+      #       it do
+      #         expect { sign_up(user_attributes) }.to change { Cmor::UserArea::User.count }.from(0).to(1)
+      #       end
+      #     end
+      #
+      def with_enabled_registrations
+        _setup_enabled_registrations
+        yield
+        _undo_setup_enabled_registrations
+      end
+
+      def _setup_enabled_registrations
+        @_enabled_registrations = Cmor::UserArea.enable_registrations
+        Cmor::UserArea.enable_registrations = true
+      end
+
+      def _undo_setup_enabled_registrations
+        Cmor::UserArea.enable_registrations = @_enabled_registrations
+        remove_instance_variable(:@_enabled_registrations)
+      end
     end
   end
 end

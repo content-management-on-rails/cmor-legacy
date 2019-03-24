@@ -27,7 +27,9 @@ PATH
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
       rao-component (>= 0.0.13.pre)
+      rao-resources_controller (>= 0.0.13.pre)
       rao-service (>= 0.0.13.pre)
+      simple_form
 
 GEM
   remote: https://rubygems.org/

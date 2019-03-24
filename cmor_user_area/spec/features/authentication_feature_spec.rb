@@ -1,18 +1,16 @@
 require 'rails_helper'
 require 'cmor/user_area/spec_helpers/feature'
 
-feature 'User Area -> Authentication' do
+RSpec.describe 'User Area -> Authentication', type: :feature do
   include Cmor::UserArea::SpecHelpers::Feature
 
-  background do
-    I18n.locale = :de
-  end
+  before(:each) { I18n.locale = :de }
 
   describe 'sign in' do
     context 'with an existant user' do
-      background do
-        @user = Cmor::UserArea::CreateDefaultUserService.call.user
-      end
+      let(:user) { Cmor::UserArea::CreateDefaultUserService.call.user }
+
+      before(:each) { user }
 
       it 'should sign in' do
         sign_in(@user)
@@ -22,10 +20,9 @@ feature 'User Area -> Authentication' do
   end
 
   describe 'sign out' do
-    background do
-      user = Cmor::UserArea::CreateDefaultUserService.call.user
-      sign_in(user)
-    end
+    let(:user) { Cmor::UserArea::CreateDefaultUserService.call.user }
+
+    before(:each) { sign_in(user) }
 
     it 'should redirect to the home page' do
       click_link('Ausloggen')

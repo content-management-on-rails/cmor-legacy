@@ -11,6 +11,11 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
+
+# Install SimpleForm
+rails generate simple_form:install --bootstrap
+
+# Add ActiveStorage
 rails active_storage:install
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
@@ -21,6 +26,10 @@ touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
+
+# Add root route
+sed -i '3i\  root to: proc { |e| [ 200, { "Content-Type" => "text/html" }, ["root"] ] }' config/routes.rb
+
 
 # Install
 rails generate $INSTALL_NAME:install
