@@ -63,7 +63,7 @@ module Cmor
         }
         
         details[:layout] = record.layout if record.respond_to?(:layout) && record.layout.present?
-        
+
         ::ActionView::Template.new(source, identifier, handler, details)
       end
 

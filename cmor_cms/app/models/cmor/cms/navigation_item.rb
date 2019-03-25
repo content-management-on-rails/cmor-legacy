@@ -65,7 +65,6 @@ module Cmor::Cms
     end
 
     def update_url_form_page!
-      # self.url = build_url_from_page(cmor_cms_page.locale, cmor_cms_page.pathname, cmor_cms_page.basename, cmor_cms_page.home_page?)
       update_url_form_page
       save!
     end

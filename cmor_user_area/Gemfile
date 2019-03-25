@@ -3,5 +3,3 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
-
-gem 'rao-resources_controller', path: '~/rails/gems/rao/rao-resources_controller'

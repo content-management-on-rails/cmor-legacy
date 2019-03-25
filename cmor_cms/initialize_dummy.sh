@@ -48,6 +48,14 @@ echo "  def index; end" >> app/controllers/partial_test_controller.rb
 echo "end" >> app/controllers/partial_test_controller.rb
 sed -i '2i\  localized { get "partial_test", to: "partial_test#index" }' config/routes.rb
 
+# Add yield for context block spec
+sed -i '14i\  <%= yield :sidebar %>' app/views/layouts/application.html.erb
+
+# Add cms helper for title/meta description spec
+sed -i '2i\  view_helper Cmor::Cms::ApplicationViewHelper, as: :cms_helper' app/controllers/application_controller.rb
+sed -i "s|<title>.*</title>|<title><%= cms_helper(self).title %></title>|" app/views/layouts/application.html.erb
+sed -i '7i\    <%= cms_helper(self).meta_description.html_safe %>' app/views/layouts/application.html.erb
+
 # Install
 rails generate $INSTALL_NAME:install
 rails $GEM_NAME:install:migrations db:migrate db:test:prepare

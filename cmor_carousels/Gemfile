@@ -1,8 +1,4 @@
 source "http://rubygems.org"
 gemspec
 gem 'cmor', path: '../'
-
 gem 'cmor_core', path: '../cmor_core'
-# gem 'administrador', path: '~/rails/gems/administrador'
-# gem 'rao-resource_controller', path: '~/rails/gems/rao/rao-resource_controller'
-# gem 'rao-resources_controller', path: '~/rails/gems/rao/rao-resources_controller'

@@ -37,18 +37,17 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
     end
 
     context '#update_children_navigations!' do
-      it 'should set the new navigation on all descendants' # do
-      #            n1 = create :cmor_cms_navigation
-      #            n2 = create :cmor_cms_navigation
-      #            foo = create :cmor_cms_navigation_item, :cmor_cms_navigation => n1
-      #            bar = build :cmor_cms_navigation_item # , :parent => foo
-      #            bar.parent = foo
-      #            bar.save!
-      #
-      #            foo.cmor_cms_navigation = n2
-      #            foo.save!
-      #            bar.cmor_cms_navigation.should == n2
-      #          end
+      it 'should set the new navigation on all descendants' do
+        pending
+        original_navigation = create :cmor_cms_navigation, name: 'old_navigation'
+        first_level_item = create :cmor_cms_navigation_item, name: 'first_level_item', :cmor_cms_navigation => original_navigation
+        second_level_item = create :cmor_cms_navigation_item, name: 'second_level_item', parent: first_level_item
+        
+        new_navigation = create :cmor_cms_navigation, name: 'new_navigation'
+        first_level_item.cmor_cms_navigation = new_navigation
+        first_level_item.save!
+        second_level_item.reload.cmor_cms_navigation.should == new_navigation
+      end
     end
 
     context '#update_url_form_page' do

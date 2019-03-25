@@ -22,7 +22,7 @@ de:
         created_at: Erstellt am
       active_storage/blob:
         id: ID
-        key: Schlüsseö
+        key: Schlüssel
         filename: Dateiname
         content_type: Content Typ
         metadata: Metadaten

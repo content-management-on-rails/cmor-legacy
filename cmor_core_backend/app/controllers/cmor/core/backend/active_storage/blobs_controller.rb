@@ -7,6 +7,10 @@ module Cmor
             ::ActiveStorage::Blob
           end
 
+          def self.available_rest_actions
+            super - %i(new create edit update)
+          end
+
           private
 
           def resource_namespace

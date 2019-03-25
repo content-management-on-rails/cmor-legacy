@@ -1,8 +1,8 @@
 Cmor::Core::Backend::Engine.routes.draw do
   resources :delayed_backend_active_record_jobs if Cmor::Core::Backend::Configuration.enable_delayed_job_backend
   namespace :active_storage do
-    resources :blobs
-    resources :attachments
+    resources :blobs , only: [:index, :show, :destroy]
+    resources :attachments , only: [:index, :show, :destroy]
   end if Cmor::Core::Backend::Configuration.enable_active_storage_backend
 
   root to: 'home#index'

@@ -8,6 +8,14 @@ module Cmor
     #     end
     #
     class ApplicationViewHelper < Rao::ViewHelper::Base
+      def title
+        c.content_for(:title)
+      end
+
+      def meta_description
+        "<meta name=\"description\" content=\"#{c.content_for(:meta_description)}\">"
+      end
+
       def link_to_top
         c.render partial: '/cmor/cms/link_to_top'
       end
