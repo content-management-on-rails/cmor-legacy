@@ -49,16 +49,15 @@ RSpec.describe 'User Area -> Registration', type: :feature do
         it do
           expect do
             fill_in 'user[email]', with: 'new@example.com'
-            click_on submit(Cmor::UserArea::User.model_name.human, :update)
+            within("form.edit_user") { find("input[type='submit']").click }
           end.to change {
-            @user.reload
-            @user.email
-          }.from(@user.email).to('new@example.com')
+            user.reload.email
+          }.from(user.email).to('new@example.com')
         end
 
         it 'should sign out' do
           fill_in 'user[email]', with: 'new@example.com'
-          click_on submit(Cmor::UserArea::User.model_name.human, :update)
+          within("form.edit_user") { find("input[type='submit']").click }
 
           expect(page.current_path).to eq(new_user_session_path)
         end

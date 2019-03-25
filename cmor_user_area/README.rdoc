@@ -62,10 +62,10 @@ This gives you #current_user_session, #current_user, user_signed_in?
 = Using the navigation helper
 
   # app/controllers/application_controller.rb
-  view_helper Cmor::UserArea::NavigationViewHelper, as: :user_navigation_helper
+  view_helper Cmor::UserArea::ApplicationViewHelper, as: :user_area_helper
 
   # app/views/layouts/application.html.erb
-  <%= user_navigation_helper(self).render %>
+  <%= user_area_helper(self).render_navigation %>
 
 
 = Running Specs

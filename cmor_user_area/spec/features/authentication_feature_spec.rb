@@ -13,7 +13,7 @@ RSpec.describe 'User Area -> Authentication', type: :feature do
       before(:each) { user }
 
       it 'should sign in' do
-        sign_in(@user)
+        sign_in(user)
         expect(page.body).to include(I18n.t('messages.success.cmor_user_area.signed_in'))
       end
     end

@@ -27,9 +27,22 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Add root route
-sed -i '3i\  root to: proc { |e| [ 200, { "Content-Type" => "text/html" }, ["root"] ] }' config/routes.rb
+# Frontend setup
+sed -i '2i\  view_helper Cmor::Core::ApplicationViewHelper, as: :core_helper' app/controllers/application_controller.rb
+sed -i '3i\  view_helper Cmor::UserArea::ApplicationViewHelper, as: :user_area_helper' app/controllers/application_controller.rb
 
+sed -i '2i\    <%= user_area_helper(self).render_navigation %>' app/views/layouts/application.html.erb
+sed -i '3i\    <%= core_helper(self).render_flash %>' app/views/layouts/application.html.erb
+
+sed -i '3i\  localized { root to: "home#index" }' config/routes.rb
+
+touch app/controllers/home_controller.rb
+echo "class HomeController < ApplicationController" >> app/controllers/home_controller.rb
+echo "  def index; end" >> app/controllers/home_controller.rb
+echo "end" >> app/controllers/home_controller.rb
+
+mkdir -p app/views/home
+touch app/views/home/index.html.erb
 
 # Install
 rails generate $INSTALL_NAME:install

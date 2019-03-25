@@ -1,7 +1,18 @@
 module Cmor
   module UserArea
-    class NavigationViewHelper < Rao::ViewHelper::Base
-      def render(options = {})
+    # Usage:
+    #
+    #     class ApplicationController < ActionController::Base
+    #       view_helper Cmor::UserArea::ApplicationViewHelper, as: :user_area_helper
+    #     end
+    #
+    class ApplicationViewHelper < Rao::ViewHelper::Base
+      # Usage:
+      #
+      #     # app/views/layouts/application.html.erb
+      #     <%= user_area_helper(self).render_navigation %>
+      #
+      def render_navigation(options = {})
         options.reverse_merge!(dropdown: false, bootstrap_version: 4)
         
         bootstrap_version = options.delete(:bootstrap_version)
