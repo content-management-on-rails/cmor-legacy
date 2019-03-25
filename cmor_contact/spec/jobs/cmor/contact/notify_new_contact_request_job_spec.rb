@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 RSpec.describe Cmor::Contact::NotifyNewContactRequestJob, type: :job do
   let(:contact_request) { create(:cmor_contact_contact_request)}
