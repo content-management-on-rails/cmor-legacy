@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'rao-service', '>= 0.0.13.pre'
+  s.add_dependency 'rao-service', '>= 0.0.15.pre'
 end

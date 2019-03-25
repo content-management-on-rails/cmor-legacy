@@ -25,10 +25,18 @@ PATH
       bcrypt
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
-      rao-component (>= 0.0.13.pre)
-      rao-resources_controller (>= 0.0.13.pre)
-      rao-service (>= 0.0.13.pre)
+      rao-component (>= 0.0.15.pre)
+      rao-resources_controller (>= 0.0.15.pre)
+      rao-service (>= 0.0.15pre)
       simple_form
+
+PATH
+  remote: ../../../gems/rao/rao-resources_controller
+  specs:
+    rao-resources_controller (0.0.15.pre)
+      rails (>= 4.2.0)
+      rao
+      responders
 
 GEM
   remote: https://rubygems.org/
@@ -208,7 +216,7 @@ GEM
     minitest (5.11.3)
     nenv (0.3.0)
     nio4r (2.3.1)
-    nokogiri (1.10.1)
+    nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -257,20 +265,18 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.14.pre)
-    rao-component (0.0.14.pre)
+    rao (0.0.15.pre)
+    rao-component (0.0.15.pre)
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.14.pre)
-      rao
-    rao-service (0.0.14.pre)
+    rao-service (0.0.15.pre)
       activemodel
       activesupport
       rao
-    rao-shoulda_matchers (0.0.14.pre)
+    rao-shoulda_matchers (0.0.15.pre)
       rao
-    rao-view_helper (0.0.14.pre)
+    rao-view_helper (0.0.15.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -378,8 +384,8 @@ DEPENDENCIES
   pry-rails
   rails-dummy
   rails-i18n
+  rao-resources_controller!
   rao-shoulda_matchers
-  responders
   rspec-rails
   rubocop
   shoulda-matchers

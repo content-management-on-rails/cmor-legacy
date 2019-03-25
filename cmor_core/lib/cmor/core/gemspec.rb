@@ -14,7 +14,6 @@ module Cmor
         s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
 
         s.add_development_dependency "sqlite3", '~> 1.3.6'
-        s.add_development_dependency 'responders'
         
         s.add_development_dependency 'capybara'
         s.add_development_dependency 'coveralls'

@@ -85,9 +85,10 @@ PATH
       RedCloth
       awesome_nested_set
       cmor_core (= 0.0.1.pre)
+      coffee-rails
       draper
       rails (>= 5.2.0)
-      rao-service
+      rao-service (>= 0.0.15.pre)
       simple-navigation (>= 4.0.0)
 
 PATH
@@ -139,6 +140,8 @@ PATH
       acts_as_published
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-resources_controller (>= 0.0.14.pre)
+      rao-view_helper (>= 0.0.14.pre)
 
 PATH
   remote: ../cmor_links_backend
@@ -175,7 +178,7 @@ PATH
     cmor_rbac (0.0.1.pre)
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
-      rao-service (>= 0.0.13.pre)
+      rao-service (>= 0.0.15.pre)
 
 PATH
   remote: ../cmor_tags_backend
@@ -192,8 +195,8 @@ PATH
       acts-as-taggable-on
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
-      rao-service
-      rao-service_controller
+      rao-service (>= 0.0.15.pre)
+      rao-service_controller (>= 0.0.15.pre)
 
 PATH
   remote: ../cmor_user_area_backend
@@ -212,9 +215,9 @@ PATH
       bcrypt
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
-      rao-component (>= 0.0.13.pre)
-      rao-resources_controller (>= 0.0.13.pre)
-      rao-service (>= 0.0.13.pre)
+      rao-component (>= 0.0.15.pre)
+      rao-resources_controller (>= 0.0.15.pre)
+      rao-service (>= 0.0.15pre)
       simple_form
 
 PATH
@@ -308,18 +311,18 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.3.pre)
+    administrador (0.0.4.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.14.pre)
-      rao-query (>= 0.0.14.pre)
-      rao-resource_controller (>= 0.0.14.pre)
-      rao-resources_controller (>= 0.0.14.pre)
-      rao-service_controller (>= 0.0.14.pre)
-      rao-view_helper (>= 0.0.14.pre)
+      rao-component (>= 0.0.15.pre)
+      rao-query (>= 0.0.15.pre)
+      rao-resource_controller (>= 0.0.15.pre)
+      rao-resources_controller (>= 0.0.15.pre)
+      rao-service_controller (>= 0.0.15.pre)
+      rao-view_helper (>= 0.0.15.pre)
       route_translator
       simple_form
     ansi (1.5.0)
@@ -473,7 +476,7 @@ GEM
     minitest (5.11.3)
     nenv (0.3.0)
     nio4r (2.3.1)
-    nokogiri (1.10.1)
+    nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -522,31 +525,35 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.14.pre)
-    rao-component (0.0.14.pre)
+    rao (0.0.15.pre)
+    rao-component (0.0.15.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.14.pre)
+    rao-query (0.0.15.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.14.pre)
+    rao-resource_controller (0.0.15.pre)
+      rails (>= 4.2.0)
       rao
-    rao-resources_controller (0.0.14.pre)
+      responders
+    rao-resources_controller (0.0.15.pre)
+      rails (>= 4.2.0)
       rao
-    rao-service (0.0.14.pre)
+      responders
+    rao-service (0.0.15.pre)
       activemodel
       activesupport
       rao
-    rao-service_controller (0.0.14.pre)
+    rao-service_controller (0.0.15.pre)
       font-awesome-rails
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.14.pre)
+    rao-shoulda_matchers (0.0.15.pre)
       rao
-    rao-view_helper (0.0.14.pre)
+    rao-view_helper (0.0.15.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -683,7 +690,6 @@ DEPENDENCIES
   rails-dummy
   rails-i18n
   rao-shoulda_matchers
-  responders
   rspec-rails
   rubocop
   shoulda-matchers

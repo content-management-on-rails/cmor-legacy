@@ -13,7 +13,6 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     Cmor::Blog::Post                          => {},
     Cmor::Blog::AssetDetail                   => {},
     Cmor::Cms::ContentBox                     => {},
-    Cmor::Cms::Folder                         => {},
     Cmor::Cms::Navigation                     => {},
     Cmor::Cms::NavigationItem                 => {},
     Cmor::Cms::Page                           => {},
