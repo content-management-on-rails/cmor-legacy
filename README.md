@@ -1,5 +1,6 @@
 [![Travis CI](https://travis-ci.org/content-management-on-rails/cmor.svg?branch=master)](https://travis-ci.org/content-management-on-rails/cmor)
 [![Coverage Status](https://coveralls.io/repos/github/content-management-on-rails/cmor/badge.svg?branch=master)](https://coveralls.io/github/content-management-on-rails/cmor?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a71fdca73c85a22125dc/maintainability)](https://codeclimate.com/github/content-management-on-rails/cmor/maintainability)
 
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
 Short description and motivation.
