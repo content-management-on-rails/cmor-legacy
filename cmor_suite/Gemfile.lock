@@ -17,28 +17,21 @@ GIT
       activerecord (~> 5.0)
 
 PATH
-  remote: ../../../gems/administrador
+  remote: ..
   specs:
-    administrador (0.0.2.pre)
-      bootstrap4-kaminari-views
-      coffee-rails
-      haml-rails
-      rails (>= 5.2.0)
-      rails-i18n
-      rao-component (>= 0.0.12.pre)
-      rao-query (>= 0.0.12.pre)
-      rao-resource_controller (>= 0.0.12.pre)
-      rao-resources_controller (>= 0.0.12.pre)
-      rao-service_controller (>= 0.0.12.pre)
-      rao-view_helper (>= 0.0.12.pre)
+    cmor (0.0.1.pre)
+    cmor_core (0.0.1.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.1.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
       route_translator
-      simple_form
-
-PATH
-  remote: ../../../gems/rao/rao-resources_controller
-  specs:
-    rao-resources_controller (0.0.13.pre)
-      rao
+    cmor_core_backend (0.0.1.pre)
+      administrador (>= 0.0.3.pre)
+      rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_blog_backend
@@ -225,24 +218,6 @@ PATH
       simple_form
 
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.1.pre)
-    cmor_core (0.0.1.pre)
-      administrador
-      bootstrap-kaminari-views
-      cmor (= 0.0.1.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.1.pre)
-      administrador (>= 0.0.2.pre)
-      rails (>= 5.2.0)
-
-PATH
   remote: .
   specs:
     cmor_suite (0.0.1.pre)
@@ -268,6 +243,30 @@ PATH
       cmor_user_area (= 0.0.1.pre)
       cmor_user_area_backend (= 0.0.1.pre)
       rails (>= 5.2.0)
+
+PATH
+  remote: ../../../gems/administrador
+  specs:
+    administrador (0.0.3.pre)
+      bootstrap4-kaminari-views
+      coffee-rails
+      haml-rails
+      rails (>= 5.2.0)
+      rails-i18n
+      rao-component (>= 0.0.14.pre)
+      rao-query (>= 0.0.14.pre)
+      rao-resource_controller (>= 0.0.14.pre)
+      rao-resources_controller (>= 0.0.14.pre)
+      rao-service_controller (>= 0.0.14.pre)
+      rao-view_helper (>= 0.0.14.pre)
+      route_translator
+      simple_form
+
+PATH
+  remote: ../../../gems/rao/rao-resources_controller
+  specs:
+    rao-resources_controller (0.0.14.pre)
+      rao
 
 GEM
   remote: https://rubygems.org/
@@ -367,6 +366,12 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    coveralls (0.8.22)
+      json (>= 1.8, < 3)
+      simplecov (~> 0.16.1)
+      term-ansicolor (~> 1.3)
+      thor (~> 0.19.4)
+      tins (~> 1.6)
     crass (1.0.4)
     delayed_job (4.1.5)
       activesupport (>= 3.0, < 5.3)
@@ -483,7 +488,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    parallel (1.14.0)
+    parallel (1.15.0)
     parser (2.6.2.0)
       ast (~> 2.4.0)
     pry (0.12.2)
@@ -527,29 +532,29 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.13.pre)
-    rao-component (0.0.13.pre)
+    rao (0.0.14.pre)
+    rao-component (0.0.14.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.13.pre)
+    rao-query (0.0.14.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.13.pre)
+    rao-resource_controller (0.0.14.pre)
       rao
-    rao-service (0.0.13.pre)
+    rao-service (0.0.14.pre)
       activemodel
       activesupport
       rao
-    rao-service_controller (0.0.13.pre)
+    rao-service_controller (0.0.14.pre)
       font-awesome-rails
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.13.pre)
+    rao-shoulda_matchers (0.0.14.pre)
       rao
-    rao-view_helper (0.0.13.pre)
+    rao-view_helper (0.0.14.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -628,9 +633,12 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
     temple (0.8.1)
-    thor (0.20.3)
+    term-ansicolor (1.7.1)
+      tins (~> 1.0)
+    thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    tins (1.20.2)
     twitter-bootstrap-components-rails (0.6.2)
       haml-rails
       jquery-rails
@@ -674,6 +682,7 @@ DEPENDENCIES
   cmor_tags_backend!
   cmor_user_area!
   cmor_user_area_backend!
+  coveralls
   factory_bot_rails
   git_log_generator
   guard-bundler
