@@ -29,12 +29,6 @@ PATH
       friendly_id
       rails (>= 5.2.0)
 
-PATH
-  remote: ../../../gems/rao/rao-shoulda_matchers
-  specs:
-    rao-shoulda_matchers (0.0.14.pre)
-      rao
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -249,6 +243,8 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.14.pre)
+    rao-shoulda_matchers (0.0.14.pre)
+      rao
     rao-view_helper (0.0.14.pre)
       rao
     rb-fsevent (0.10.3)
@@ -347,7 +343,7 @@ DEPENDENCIES
   pry-rails
   rails-dummy
   rails-i18n
-  rao-shoulda_matchers!
+  rao-shoulda_matchers
   responders
   rspec-rails
   rubocop

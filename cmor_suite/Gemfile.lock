@@ -244,30 +244,6 @@ PATH
       cmor_user_area_backend (= 0.0.1.pre)
       rails (>= 5.2.0)
 
-PATH
-  remote: ../../../gems/administrador
-  specs:
-    administrador (0.0.3.pre)
-      bootstrap4-kaminari-views
-      coffee-rails
-      haml-rails
-      rails (>= 5.2.0)
-      rails-i18n
-      rao-component (>= 0.0.14.pre)
-      rao-query (>= 0.0.14.pre)
-      rao-resource_controller (>= 0.0.14.pre)
-      rao-resources_controller (>= 0.0.14.pre)
-      rao-service_controller (>= 0.0.14.pre)
-      rao-view_helper (>= 0.0.14.pre)
-      route_translator
-      simple_form
-
-PATH
-  remote: ../../../gems/rao/rao-resources_controller
-  specs:
-    rao-resources_controller (0.0.14.pre)
-      rao
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -332,6 +308,20 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    administrador (0.0.3.pre)
+      bootstrap4-kaminari-views
+      coffee-rails
+      haml-rails
+      rails (>= 5.2.0)
+      rails-i18n
+      rao-component (>= 0.0.14.pre)
+      rao-query (>= 0.0.14.pre)
+      rao-resource_controller (>= 0.0.14.pre)
+      rao-resources_controller (>= 0.0.14.pre)
+      rao-service_controller (>= 0.0.14.pre)
+      rao-view_helper (>= 0.0.14.pre)
+      route_translator
+      simple_form
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
@@ -543,6 +533,8 @@ GEM
       rao-view_helper
     rao-resource_controller (0.0.14.pre)
       rao
+    rao-resources_controller (0.0.14.pre)
+      rao
     rao-service (0.0.14.pre)
       activemodel
       activesupport
@@ -657,7 +649,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on!
-  administrador!
   authlogic!
   capybara
   cmor!
@@ -691,7 +682,6 @@ DEPENDENCIES
   pry-rails
   rails-dummy
   rails-i18n
-  rao-resources_controller!
   rao-shoulda_matchers
   responders
   rspec-rails

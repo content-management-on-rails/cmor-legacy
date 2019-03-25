@@ -3,5 +3,3 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
-
-gem 'rao-shoulda_matchers', path: '~/rails/gems/rao/rao-shoulda_matchers'

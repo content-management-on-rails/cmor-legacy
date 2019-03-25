@@ -24,6 +24,8 @@ PATH
       acts_as_published
       cmor_core (= 0.0.1.pre)
       rails (>= 5.2.0)
+      rao-resources_controller (>= 0.0.14.pre)
+      rao-view_helper (>= 0.0.14.pre)
 
 GEM
   remote: https://rubygems.org/
@@ -224,6 +226,8 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.14.pre)
+    rao-resources_controller (0.0.14.pre)
+      rao
     rao-shoulda_matchers (0.0.14.pre)
       rao
     rao-view_helper (0.0.14.pre)

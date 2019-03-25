@@ -23,6 +23,7 @@ PATH
       RedCloth
       awesome_nested_set
       cmor_core (= 0.0.1.pre)
+      coffee-rails
       draper
       rails (>= 5.2.0)
       rao-service
@@ -97,6 +98,13 @@ GEM
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
     coderay (1.1.2)
+    coffee-rails (4.2.2)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     coveralls (0.8.22)
       json (>= 1.8, < 3)
@@ -119,6 +127,7 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
     erubi (1.8.0)
+    execjs (2.7.0)
     factory_bot (5.0.2)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.0.1)

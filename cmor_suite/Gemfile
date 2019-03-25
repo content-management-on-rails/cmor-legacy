@@ -27,6 +27,3 @@ gem 'cmor_user_area_backend', path: '../cmor_user_area_backend'
 # fixes tagging not being save with rails > 5
 gem 'acts-as-taggable-on', git: 'https://github.com/michelson/acts-as-taggable-on'
 gem 'authlogic', git: 'https://github.com/binarylogic/authlogic'
-
-gem 'administrador', path: '~/rails/gems/administrador'
-gem 'rao-resources_controller', path: '~/rails/gems/rao/rao-resources_controller'
