@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Cmor::Cms::ContentBox, type: :model do
   context 'associations' do
-    it { expect(subject).to have_many(:cmor_cms_page_content_blocks) }
+    it { expect(subject).to have_many(:content_blocks) }
   end
 
   context 'validations' do

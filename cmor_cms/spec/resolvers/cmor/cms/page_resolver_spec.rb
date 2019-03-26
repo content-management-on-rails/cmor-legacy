@@ -153,14 +153,14 @@ module Cmor
         #        end
 
         before(:each) do
-          @sidebar_content_box = FactoryBot.build(:cmor_cms_content_box, name: 'sidebar')
-          @footer_content_box = FactoryBot.build(:cmor_cms_content_box, name: 'footer')
+          @sidebar_content_box = build(:cmor_cms_content_box, name: 'sidebar')
+          @footer_content_box = build(:cmor_cms_content_box, name: 'footer')
           @page = Cmor::Cms::Page.new do |page|
             page.body = 'foo'
             page.title = 'bar'
             page.meta_description = 'baz'
-            page.cmor_cms_page_content_blocks << FactoryBot.build(:cmor_cms_page_content_block, cmor_cms_page: page, cmor_cms_content_box: @sidebar_content_box, body: 'sidebar content')
-            page.cmor_cms_page_content_blocks << FactoryBot.build(:cmor_cms_page_content_block, cmor_cms_page: page, cmor_cms_content_box: @footer_content_box, body: 'footer content')
+            page.content_blocks << build(:cmor_cms_content_block, page: page, content_box: @sidebar_content_box, body: 'sidebar content')
+            page.content_blocks << build(:cmor_cms_content_block, page: page, content_box: @footer_content_box, body: 'footer content')
           end
         end
 

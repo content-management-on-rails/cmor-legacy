@@ -11,7 +11,7 @@ module Cmor
 
       def build_source(record)
         output = ''
-        record.cmor_cms_page_content_blocks.each do |content_block|
+        record.content_blocks.each do |content_block|
           # rendered_body = RedCloth.new(begin;content_block.body;end).to_html.html_safe
           rendered_body = RedCloth.new(content_block.body).to_html
           output << "<% content_for :#{content_block.content_box_name} do %>#{rendered_body}<% end %>"

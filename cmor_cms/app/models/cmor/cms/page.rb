@@ -4,20 +4,16 @@ module Cmor::Cms
     include DatabaseTemplate
 
     # associations
-    has_many :cmor_cms_navigation_items,
-             class_name: 'NavigationItem',
-             dependent: :nullify,
-             foreign_key: 'cmor_cms_page_id'
-    has_many :cmor_cms_page_content_blocks,
-             class_name: 'Cmor::Cms::Page::ContentBlock',
+    has_many :navigation_items,
+             dependent: :nullify
+    has_many :content_blocks,
              dependent: :destroy,
-             foreign_key: 'cmor_cms_page_id',
-             inverse_of: :cmor_cms_page
+             inverse_of: :page
 
-    accepts_nested_attributes_for :cmor_cms_page_content_blocks, allow_destroy: true
+    accepts_nested_attributes_for :content_blocks, allow_destroy: true
 
     # callbacks
-    after_save :touch_navigation_items # , :if => Proc.new { |page| page.locale_changed? || page.pathname_changed? || page.basename_changed? }
+    after_save :touch_navigation_items
 
     # validations
     validates :title, presence: true
@@ -27,7 +23,7 @@ module Cmor::Cms
     end
 
     def touch_navigation_items
-      cmor_cms_navigation_items.map(&:update_url_form_page!)
+      navigation_items.map(&:update_url_form_page!)
     end
   end
 end

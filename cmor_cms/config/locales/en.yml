@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      cmor/cms/page/content_block:
+      cmor/cms/content_block:
         one: Content block
         other: Content blocks
       cmor/cms/content_box:
@@ -23,27 +23,27 @@ en:
         one: Template
         other: Templates
     attributes:
-      cmor/cms/page/content_block:
+      cmor/cms/content_block:
         id: ID
         body: Body
-        cmor_cms_page: Page
-        cmor_cms_page_id: Page
-        cmor_cms_content_box: Content box
-        cmor_cms_content_box_id: Content box
+        page: Page
+        page_id: Page
+        content_box: Content box
+        content_box_id: Content box
         created_at: Created at
         updated_at: Updated at
       cmor/cms/content_box:
         id: ID
         name: Name
         body: Body
-        cmor_cms_page_content_blocks: Content blocks
-        cmor_cms_page_content_blocks_count: Content blocks
+        content_blocks: Content blocks
+        content_blocks_count: Content blocks
         created_at: Created at
         updated_at: updated at
       cmor/cms/navigation:
         id: ID
-        cmor_cms_navigation_items: Navigation items
-        cmor_cms_navigation_items_count: Navigation items
+        navigation_items: Navigation items
+        navigation_items_count: Navigation items
         locale: Language
         name: Name
         slug: Slug
@@ -54,10 +54,10 @@ en:
         children_count: Subitems
         data_add_icon: Icon
         depth: Tree depth
-        cmor_cms_navigation: Nvigation
-        cmor_cms_navigation_id: Navigation
-        cmor_cms_page: Page
-        cmor_cms_page_id: Page
+        navigation: Nvigation
+        navigation_id: Navigation
+        page: Page
+        page_id: Page
         highlights_on: Highlights on
         key: Key
         lft: Left
@@ -134,7 +134,7 @@ en:
     cmor_cms_folders: folders
     cmor_cms_navigations: navigations
     cmor_cms_navigation_items: navigation_items
-    cmor_cms_pages: pages
-    cmor_cms_partials: partials
-    cmor_cms_templates: templates
+    pages: pages
+    partials: partials
+    templates: templates
 

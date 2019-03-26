@@ -1,9 +1,9 @@
-= table.awesome_nested_set_actions scope: ->(navigation_item) { navigation_item.root.cmor_cms_navigation.to_param }
-= table.association(:cmor_cms_navigation, sort: { column_name: 'cmor_cms_navigations.name'}, link_to: ->(navigation_item) { navigation_path(navigation_item.cmor_cms_navigation) }, label_method: :human)
+= table.awesome_nested_set_actions scope: ->(navigation_item) { navigation_item.root.navigation.to_param }
+= table.association(:navigation, sort: { column_name: 'cmor_cms_navigations.name'}, link_to: ->(navigation_item) { navigation_path(navigation_item.navigation) }, label_method: :human)
 = table.column(:name, sort: true) do |navigation_item|
   - capture_haml do
     %span{ class: "indent indent-chars-#{navigation_item.depth * 3}"}= navigation_item.name
 = table.column :url, sort: true
-= table.column(:cmor_cms_page, sort: { column_name: 'cmor_cms_pages.title' }) do |navigation_item|
-  - link_to navigation_item.cmor_cms_page.title, page_path(navigation_item.cmor_cms_page) if navigation_item.cmor_cms_page.present?
+= table.column(:page, sort: { column_name: 'cmor_cms_pages.title' }) do |navigation_item|
+  - link_to navigation_item.page.title, page_path(navigation_item.page) if navigation_item.page.present?
 = table.timestamps(sort: true)

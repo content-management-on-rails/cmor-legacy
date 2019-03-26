@@ -16,9 +16,9 @@ describe 'content block rendering' do
       page.body     = 'h1. Home'
     end
 
-    content_block = Cmor::Cms::Page::ContentBlock.create! do |cb|
-      cb.cmor_cms_page = @page_model
-      cb.cmor_cms_content_box = @content_box
+    content_block = Cmor::Cms::ContentBlock.create! do |cb|
+      cb.page = @page_model
+      cb.content_box = @content_box
       cb.body = 'h1. Sidebar'
     end
   end # before

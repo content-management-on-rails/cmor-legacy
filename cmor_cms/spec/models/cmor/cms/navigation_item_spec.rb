@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Cms::NavigationItem, type: :model do
-  subject { create :cmor_cms_navigation_item }
+  subject { create(:cmor_cms_navigation_item) }
 
   context 'associations' do
-    it { pending('wtf? why is this failing?'); expect(subject).to belong_to(:cmor_cms_navigation).optional }
-    it { expect(subject).to belong_to(:cmor_cms_page).optional }
+    it { pending('wtf? why is this failing?'); expect(subject).to belong_to(:navigation).optional }
+    it { expect(subject).to belong_to(:page).optional }
   end
 
   context '#to_s' do
     it 'should return the correct string' do
-      expect(subject.to_s).to eq("#{subject.cmor_cms_navigation}: #{subject.name}")
+      expect(subject.to_s).to eq("#{subject.navigation}: #{subject.name}")
     end
   end
 
@@ -28,25 +28,25 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
   context 'callbacks' do
     context '#update_navigation_from_parent' do
       it 'should set the navigation from the parent item' do
-        root = create :cmor_cms_navigation_item
-        foo  = create :cmor_cms_navigation_item, parent: root
+        root = create(:cmor_cms_navigation_item)
+        foo  = create(:cmor_cms_navigation_item, parent: root)
 
         foo.valid?
-        foo.cmor_cms_navigation.should eq(root.cmor_cms_navigation)
+        foo.navigation.should eq(root.navigation)
       end
     end
 
     context '#update_children_navigations!' do
       it 'should set the new navigation on all descendants' do
         pending
-        original_navigation = create :cmor_cms_navigation, name: 'old_navigation'
-        first_level_item = create :cmor_cms_navigation_item, name: 'first_level_item', :cmor_cms_navigation => original_navigation
-        second_level_item = create :cmor_cms_navigation_item, name: 'second_level_item', parent: first_level_item
+        original_navigation = create(:cmor_cms_navigation, name: 'old_navigation')
+        first_level_item = create(:cmor_cms_navigation_item, name: 'first_level_item', navigation: original_navigation)
+        second_level_item = create(:cmor_cms_navigation_item, name: 'second_level_item', parent: first_level_item)
         
-        new_navigation = create :cmor_cms_navigation, name: 'new_navigation'
-        first_level_item.cmor_cms_navigation = new_navigation
+        new_navigation = create(:cmor_cms_navigation, name: 'new_navigation')
+        first_level_item.navigation = new_navigation
         first_level_item.save!
-        second_level_item.reload.cmor_cms_navigation.should == new_navigation
+        second_level_item.reload.navigation.should == new_navigation
       end
     end
 
@@ -54,16 +54,16 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
       it 'should set the url from page if url is blank and page is present' do
         basename = 'about-us'
         locale = 'en'
-        page = build :cmor_cms_page, basename: basename, locale: locale
-        ni = build :cmor_cms_navigation_item, url: nil, cmor_cms_page: page
+        page = build(:cmor_cms_page, basename: basename, locale: locale)
+        ni = build(:cmor_cms_navigation_item, url: nil, page: page)
 
         ni.valid?
         ni.url.should eq('/en/about-us')
       end
 
       it 'should set the correct url for home pages' do
-        page = build :cmor_cms_page, pathname: '/', basename: 'home', locale: 'en'
-        ni = build :cmor_cms_navigation_item, url: nil, cmor_cms_page: page
+        page = build(:cmor_cms_page, pathname: '/', basename: 'home', locale: 'en')
+        ni = build(:cmor_cms_navigation_item, url: nil, page: page)
 
         ni.valid?
         ni.url.should eq('/en')
@@ -76,14 +76,14 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
     it { expect(subject).to validate_presence_of :name }
     it { expect(subject).to validate_presence_of :url }
     # Removed due to missing if support
-    # it { expect(subject).to validate_presence_of :cmor_cms_navigation }
-    it 'should validate presence of :cmor_cms_navigation if it is a root item' do
-      navigation_item = build :cmor_cms_navigation_item_root, cmor_cms_navigation: nil
+    # it { expect(subject).to validate_presence_of :navigation }
+    it 'should validate presence of :navigation if it is a root item' do
+      navigation_item = build(:cmor_cms_navigation_item_root, navigation: nil)
       expect(navigation_item).not_to be_valid
     end
 
-    it 'should not validate presence of :cmor_cms_navigation if it is a child item' do
-      navigation_item = build :cmor_cms_navigation_item_child, cmor_cms_navigation: nil
+    it 'should not validate presence of :navigation if it is a child item' do
+      navigation_item = build(:cmor_cms_navigation_item_child, navigation: nil)
       expect(navigation_item).to be_valid
     end
   end
@@ -104,7 +104,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         subject.url = '/en/contact'
         subject.name = 'Contact'
 
-        expected_params = { locale: 'en', pathname: '/', basename: 'contact', title: subject.name, cmor_cms_navigation_item_ids: [subject.to_param] }
+        expected_params = { locale: 'en', pathname: '/', basename: 'contact', title: subject.name, navigation_item_ids: [subject.to_param] }
         expect(subject.params_for_new_page).to eq(expected_params)
       end
 
@@ -112,7 +112,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         subject.url = '/en'
         subject.name = 'Home'
 
-        expected_params = { locale: 'en', pathname: '/', basename: 'home', title: subject.name, cmor_cms_navigation_item_ids: [subject.to_param] }
+        expected_params = { locale: 'en', pathname: '/', basename: 'home', title: subject.name, navigation_item_ids: [subject.to_param] }
         expect(subject.params_for_new_page).to eq(expected_params)
       end
     end

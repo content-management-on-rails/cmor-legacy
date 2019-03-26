@@ -17,7 +17,7 @@ RSpec.describe '/de/backend/cms/navigation_items', type: :feature do
     expect(subject).to implement_create_action(self)
       .for(Cmor::Cms::NavigationItem)
       .within_form('#new_navigation_item') {
-        select navigation.name, from: 'navigation_item[cmor_cms_navigation_id]'
+        select navigation.name, from: 'navigation_item[navigation_id]'
         fill_in 'navigation_item[name]', with: 'Impressum'
         fill_in 'navigation_item[url]',  with: '/de/impressum'
         fill_in 'navigation_item[key]',  with: 'imprint'

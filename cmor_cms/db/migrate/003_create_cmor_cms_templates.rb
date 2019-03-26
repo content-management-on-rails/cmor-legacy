@@ -8,11 +8,7 @@ class CreateCmorCmsTemplates < ActiveRecord::Migration[4.2]
       t.string :format
       t.string :handler
 
-      # associations
-      t.references :cmor_cms_folder
-
       t.timestamps
     end
-    add_index :cmor_cms_templates, :cmor_cms_folder_id
   end
 end

@@ -72,8 +72,8 @@ describe 'page with content blocks' do
       content_box.name = 'footer'
     end
 
-    footer_content_block = page_model.cmor_cms_page_content_blocks.create! do |content_block|
-      content_block.cmor_cms_content_box = content_box
+    footer_content_block = page_model.content_blocks.create! do |content_block|
+      content_block.content_box = content_box
       content_block.body = 'This is the footer content'
     end
     get '/de/test'

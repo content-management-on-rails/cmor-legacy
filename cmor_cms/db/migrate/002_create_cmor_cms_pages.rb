@@ -10,10 +10,8 @@ class CreateCmorCmsPages < ActiveRecord::Migration[4.2]
       t.string :locale
       t.string :format
       t.string :handler
-      t.references :cmor_cms_folder
 
       t.timestamps
     end
-    add_index :cmor_cms_pages, :cmor_cms_folder_id
   end
 end

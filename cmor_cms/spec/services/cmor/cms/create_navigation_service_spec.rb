@@ -19,7 +19,7 @@ RSpec.describe Cmor::Cms::CreateNavigationService, type: :model do
 
     it { expect(subject.locale).to eq("#{I18n.locale}") }
     it { expect(subject.name).to eq('main') }
-    it { expect(subject.cmor_cms_navigation_items.count).to eq(2) }
+    it { expect(subject.navigation_items.count).to eq(2) }
   end
 
   describe 'the new navigation items' do

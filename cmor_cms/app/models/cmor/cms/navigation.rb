@@ -1,9 +1,7 @@
 class Cmor::Cms::Navigation < ActiveRecord::Base
   # associations
-  has_many :cmor_cms_navigation_items,
-           class_name: 'Cmor::Cms::NavigationItem',
-           dependent: :destroy,
-           foreign_key: 'cmor_cms_navigation_id'
+  has_many :navigation_items,
+           dependent: :destroy
 
   # validations
   validates :locale, inclusion: I18n.available_locales.map(&:to_s),
@@ -12,7 +10,7 @@ class Cmor::Cms::Navigation < ActiveRecord::Base
   validates :name, presence: true,
                    uniqueness: { scope: [:locale] }
 
-  delegate :count, to: :cmor_cms_navigation_items, prefix: true
+  delegate :count, to: :navigation_items, prefix: true
 
   def human
     "#{name} (#{locale})"

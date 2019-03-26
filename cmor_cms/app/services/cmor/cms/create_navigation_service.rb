@@ -42,7 +42,7 @@ module Cmor::Cms
 
     def build_navigation_items
       @items_attributes.collect do |item_attributes|
-        NavigationItem.new(item_attributes.merge(cmor_cms_navigation: @navigation))
+        NavigationItem.new(item_attributes.merge(navigation: @navigation))
       end
     end
   end

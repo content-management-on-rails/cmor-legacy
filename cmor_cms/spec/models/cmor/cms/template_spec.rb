@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Cms::Template, type: :model do
-  subject { create :cmor_cms_template }
+  subject { create(:cmor_cms_template) }
 
   context 'callbacks' do
     subject { Cmor::Cms::Template.new }

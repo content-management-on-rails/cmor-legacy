@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Cms::Page, type: :model do
-  subject { FactoryBot.create :cmor_cms_page }
+  subject { create(:cmor_cms_page) }
 
   context 'associations' do
-    it { expect(subject).to have_many :cmor_cms_page_content_blocks }
-    it { expect(subject).to have_many :cmor_cms_navigation_items }
+    it { expect(subject).to have_many(:content_blocks) }
+    it { expect(subject).to have_many(:navigation_items) }
   end
 
   context 'callbacks' do
@@ -29,9 +29,9 @@ RSpec.describe Cmor::Cms::Page, type: :model do
 
   context 'page callbacks' do
     it 'updates associated navigation items when the basename changes' do
-      navigation_item = FactoryBot.create(:cmor_cms_navigation_item, url: '/foo')
-      page = FactoryBot.build :cmor_cms_page, pathname: '/', basename: 'bar', locale: 'de'
-      page.cmor_cms_navigation_items << navigation_item
+      navigation_item = create(:cmor_cms_navigation_item, url: '/foo')
+      page = build(:cmor_cms_page, pathname: '/', basename: 'bar', locale: 'de')
+      page.navigation_items << navigation_item
       page.save!
       navigation_item.url.should eq('/de/bar')
     end

@@ -1,7 +1,7 @@
 de:
   activerecord:
     models:
-      cmor/cms/page/content_block:
+      cmor/cms/content_block:
         one: Content Block
         other: Content Blöcke
       cmor/cms/content_box:
@@ -23,21 +23,21 @@ de:
         one: Vorlage
         other: Vorlagen
     attributes:
-      cmor/cms/page/content_block:
+      cmor/cms/content_block:
         id: ID
         body: Inhalt
-        cmor_cms_page: Seite
-        cmor_cms_page_id: Seite
-        cmor_cms_content_box: Content Box
-        cmor_cms_content_box_id: Content Box
+        page: Seite
+        page_id: Seite
+        content_box: Content Box
+        content_box_id: Content Box
         created_at: Erstellt am
         updated_at: Aktualisiert am
       cmor/cms/content_box:
         id: ID
         name: Name
         body: Inhalt
-        cmor_cms_page_content_blocks: Content Blöcke
-        cmor_cms_page_content_blocks_count: Content Blöcke
+        content_blocks: Content Blöcke
+        content_blocks_count: Content Blöcke
         created_at: Erstellt am
         updated_at: Aktualisiert am
       cmor/cms/navigation:
@@ -54,10 +54,10 @@ de:
         children_count: Unterelemente
         data_add_icon: Symbol
         depth: Baumtiefe
-        cmor_cms_navigation: Navigation
-        cmor_cms_navigation_id: Navigation
-        cmor_cms_page: Seite
-        cmor_cms_page_id: Seite
+        navigation: Navigation
+        navigation_id: Navigation
+        page: Seite
+        page_id: Seite
         highlights_on: Hervorgehoben bei
         key: Schlüssel
         lft: Links
@@ -134,7 +134,7 @@ de:
     cmor_cms_folders: ordner
     cmor_cms_navigations: navigationen
     cmor_cms_navigation_items: navigationseintraege
-    cmor_cms_pages: seiten
-    cmor_cms_partials: fragmente
-    cmor_cms_templates: vorlagen    
+    pages: seiten
+    partials: fragmente
+    templates: vorlagen    
 

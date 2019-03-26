@@ -9,11 +9,7 @@ class CreateCmorCmsPartials < ActiveRecord::Migration[4.2]
       t.string :format
       t.string :handler
 
-      # associations
-      t.references :cmor_cms_folder
-
       t.timestamps
     end
-    add_index :cmor_cms_partials, :cmor_cms_folder_id
   end
 end

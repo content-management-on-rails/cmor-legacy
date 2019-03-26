@@ -10,12 +10,12 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
   ]
 
   {
-    Cmor::Cms::Navigation         => {},
-    Cmor::Cms::NavigationItem     => {},
-    Cmor::Cms::Page               => {},
-    Cmor::Cms::Page::ContentBlock => {},
-    Cmor::Cms::Partial            => {},
-    Cmor::Cms::Template           => {},
+    Cmor::Cms::Navigation     => {},
+    Cmor::Cms::NavigationItem => {},
+    Cmor::Cms::Page           => {},
+    Cmor::Cms::ContentBlock   => {},
+    Cmor::Cms::Partial        => {},
+    Cmor::Cms::Template       => {},
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)

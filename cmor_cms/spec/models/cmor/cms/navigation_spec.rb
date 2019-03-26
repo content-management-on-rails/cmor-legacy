@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Cms::Navigation, type: :model do
-  subject { create :cmor_cms_navigation }
+  subject { create(:cmor_cms_navigation) }
 
   context 'associations' do
-    it { expect(subject).to have_many :cmor_cms_navigation_items }
+    it { expect(subject).to have_many :navigation_items }
   end
 
   context 'public methods' do

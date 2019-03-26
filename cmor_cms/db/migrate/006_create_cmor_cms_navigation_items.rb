@@ -8,8 +8,8 @@ class CreateCmorCmsNavigationItems < ActiveRecord::Migration[4.2]
       t.text :properties, null: true
 
       # associations
-      t.references :cmor_cms_navigation
-      t.references :cmor_cms_page
+      t.references :navigation
+      t.references :page
 
       # awesome nested set
       t.references :parent
@@ -23,7 +23,7 @@ class CreateCmorCmsNavigationItems < ActiveRecord::Migration[4.2]
 
       t.timestamps
     end
-    add_index :cmor_cms_navigation_items, :cmor_cms_navigation_id
+    add_index :cmor_cms_navigation_items, :navigation_id
     add_index :cmor_cms_navigation_items, :parent_id
   end
 end

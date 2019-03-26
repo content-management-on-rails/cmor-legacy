@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Translations', type: :model do
   {
-    Cmor::Cms::Navigation         => {},
-    Cmor::Cms::NavigationItem     => {},
-    Cmor::Cms::Page               => {},
-    Cmor::Cms::Page::ContentBlock => {},
-    Cmor::Cms::Partial            => {},
-    Cmor::Cms::Template           => {},
+    Cmor::Cms::Navigation     => {},
+    Cmor::Cms::NavigationItem => {},
+    Cmor::Cms::Page           => {},
+    Cmor::Cms::ContentBlock   => {},
+    Cmor::Cms::Partial        => {},
+    Cmor::Cms::Template       => {},
   }.each do |model, options|
     I18n.available_locales.each do |locale|
       I18n.locale = locale

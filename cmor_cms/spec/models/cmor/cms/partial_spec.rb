@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Cms::Partial, type: :model do
-  subject { create :cmor_cms_partial }
+  subject { create(:cmor_cms_partial) }
 
   context 'callbacks' do
     subject { Cmor::Cms::Partial.new }
@@ -24,7 +24,7 @@ RSpec.describe Cmor::Cms::Partial, type: :model do
   end
 
   context 'partial callbacks' do
-    subject { FactoryBot.build :cmor_cms_partial }
+    subject { build(:cmor_cms_partial) }
 
     it "adds a '_' to the basename before validation" do
       subject.basename = 'foo'
