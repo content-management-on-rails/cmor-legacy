@@ -7,13 +7,13 @@ class CreateCmorLinksLinks < ActiveRecord::Migration[4.2]
       t.string :markup_language
 
       # associations
-      t.references :cmor_links_category
+      t.references :category
 
       # acts as list
       t.integer :position
 
       t.timestamps
     end
-    add_index :cmor_links_links, :cmor_links_category_id
+    add_index :cmor_links_links, :category_id
   end
 end

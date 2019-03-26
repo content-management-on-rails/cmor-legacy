@@ -8,9 +8,6 @@ class CreateCmorLinksCategories < ActiveRecord::Migration[4.2]
       t.string :markup_language
       t.integer :link_footer_column
 
-      # associations
-      t.integer :cmor_links_links_count, default: 0, null: false
-
       # awesome nested set
       t.integer :lft
       t.integer :rgt
