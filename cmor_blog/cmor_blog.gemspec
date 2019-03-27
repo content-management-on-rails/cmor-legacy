@@ -16,4 +16,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts_as_list'
   s.add_dependency 'acts_as_published'
   s.add_dependency 'friendly_id'
+  s.add_dependency 'haml-rails'
+  s.add_dependency 'kramdown'
+  s.add_dependency 'rails-i18n'
+  s.add_dependency 'rao-resources_controller'
+
+  s.add_development_dependency 'bootstrap4-kaminari-views'
 end
