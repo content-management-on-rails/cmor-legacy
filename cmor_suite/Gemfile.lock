@@ -17,23 +17,6 @@ GIT
       activerecord (~> 5.0)
 
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.1.pre)
-    cmor_core (0.0.1.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.1.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.1.pre)
-      administrador (>= 0.0.3.pre)
-      rails (>= 5.2.0)
-
-PATH
   remote: ../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.1.pre)
@@ -197,6 +180,7 @@ PATH
       rails (>= 5.2.0)
       rao-service (>= 0.0.15.pre)
       rao-service_controller (>= 0.0.15.pre)
+      responders
 
 PATH
   remote: ../cmor_user_area_backend
@@ -219,6 +203,23 @@ PATH
       rao-resources_controller (>= 0.0.15.pre)
       rao-service (>= 0.0.15pre)
       simple_form
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.1.pre)
+    cmor_core (0.0.1.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.1.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
+      route_translator
+    cmor_core_backend (0.0.1.pre)
+      administrador (>= 0.0.3.pre)
+      rails (>= 5.2.0)
 
 PATH
   remote: .

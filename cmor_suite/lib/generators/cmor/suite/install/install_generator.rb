@@ -8,6 +8,8 @@ module Cmor
 
         source_root File.expand_path('../templates', __FILE__)
 
+        class_option :excluded_modules, type: 'array', default: [], aliases: '-e'
+
         def initialize(*args)
           ENV['CMOR_RBAC_USER_CLASS_NAME'] ||= 'Cmor::UserArea::User'
           super
@@ -23,23 +25,33 @@ module Cmor
         end
 
         def generate_initializer
-          copy_file 'config/initializers/cmor_suite.rb', 'config/initializers/cmor_suite.rb'
+          template 'config/initializers/cmor_suite.rb', 'config/initializers/cmor_suite.rb'
         end
 
         def run_frontend_generators
-          %w(blog carousels core cms contact files galleries links rbac tags user_area).each do |m|
+          sub_modules.each do |m|
             generate "cmor:#{m}:install"
           end
         end
         
         def run_backend_generators
-          %w(blog carousels core cms contact files galleries links rbac tags user_area).each do |m|
+          sub_modules.each do |m|
             generate "cmor:#{m}:backend:install"
           end
         end
 
         def run_migrations_generator
-          generate "cmor:suite:migrations"
+          if options['excluded_modules'].any?
+            generate "cmor:suite:migrations", "-e #{options['excluded_modules'].join(' ')}"
+          else
+            generate "cmor:suite:migrations"
+          end
+        end
+
+        private
+
+        def sub_modules
+          @sub_modules ||= %w(blog carousels core cms contact files galleries links rbac tags user_area) - options['excluded_modules']
         end
       end
     end

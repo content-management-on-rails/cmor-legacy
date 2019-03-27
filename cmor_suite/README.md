@@ -25,11 +25,27 @@ install the initializer and needed configuration files.
 $ rails g cmor:suite:install
 ```
 
-install migrations and migrate.
+This will install prerequisites and following modules:
+
+  * blog
+  * carousels
+  * core
+  * cms
+  * contact
+  * files
+  * galleries
+  * links
+  * rbac
+  * tags
+  * user_area
+
+If you want to omit certain modules you can do so by using the exclude_modules flag:
+
 ```bash
-$ rails g cmor:suite:migrations
-$ rails db:migrate
+$ rails g cmor:suite:install -e rbac user_area
 ```
+
+This will not install the rbac and user_area modules.
 
 ## Contributing
 Contribution directions go here.
