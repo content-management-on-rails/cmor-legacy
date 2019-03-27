@@ -7,6 +7,7 @@ class CreateCmorBlogPosts < ActiveRecord::Migration[4.2]
       t.integer :created_by_id
       t.integer :updated_by_id
       t.string :slug
+      t.integer :position
 
       t.timestamps null: false
 
