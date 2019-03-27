@@ -19,7 +19,7 @@
     .row
       - post.asset_details.images.order(position: :asc).each do |picture_detail|
         .col-lg-4.d-flex.align-items-stretch
-          = bootstrap_helper(self).card(additional_css_classes: 'text-center border-0') do
+          .card.text-center.border-0
             %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(post) } }
               %img{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)) }
             .card-body
