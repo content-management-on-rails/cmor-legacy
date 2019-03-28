@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class NavigationItemPolicy < Itsf::Backend::BasePolicy
+  class NavigationItemPolicy # < Itsf::Backend::BasePolicy
   end
 end

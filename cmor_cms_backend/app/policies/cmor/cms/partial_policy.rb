@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class PartialPolicy < Itsf::Backend::BasePolicy
+  class PartialPolicy # < Itsf::Backend::BasePolicy
   end
 end

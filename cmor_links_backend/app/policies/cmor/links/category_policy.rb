@@ -1,4 +1,4 @@
 module Cmor::Links
-  class CategoryPolicy < Itsf::Backend::BasePolicy
+  class CategoryPolicy # < Itsf::Backend::BasePolicy
   end
 end

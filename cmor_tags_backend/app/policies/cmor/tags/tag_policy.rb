@@ -1,4 +1,4 @@
 module Cmor::Tags
-  class TagPolicy < Itsf::Backend::BasePolicy
+  class TagPolicy # < Itsf::Backend::BasePolicy
   end
 end
