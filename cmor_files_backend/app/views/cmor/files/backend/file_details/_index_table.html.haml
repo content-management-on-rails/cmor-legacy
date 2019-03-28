@@ -1,6 +1,5 @@
 = table.batch_actions( actions: { destroy: destroy_many_attachments_path })
 = table.id
-/=# table.association :record, label_method: ->(r) { r.try_all(*Itsf::Backend.resource_title_methods) }
 = table.column :filename do |resource|
   - resource.asset.blob.filename
 = table.column :blob_content_type do |resource|

@@ -1,7 +1,7 @@
 module Cmor
   module UserArea
     module Backend
-      class CurrentUsersController < Itsf::Backend::Resource::BaseController
+      class CurrentUsersController < Cmor::Core::Backend::ResourceController::Base
         def self.resource_class
           Cmor::UserArea::User
         end

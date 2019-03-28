@@ -1,4 +1,4 @@
 module Cmor::UserArea::Backend
-  class HomeController < Itsf::Backend::HomeController
+  class HomeController < Cmor::Core::Backend::HomeController::Base
   end
 end
