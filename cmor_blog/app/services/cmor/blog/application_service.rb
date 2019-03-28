@@ -1,7 +1,7 @@
 module Cmor
   module Blog
-    class ApplicationService < Rails::AddOns::Service::Base
-      class Result < Rails::AddOns::Service::Result::Base
+    class ApplicationService < Rao::Service::Base
+      class Result < Rao::Service::Result::Base
       end
     end
   end

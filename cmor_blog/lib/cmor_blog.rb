@@ -6,5 +6,6 @@ require 'haml-rails'
 require 'kramdown'
 require 'rails-i18n'
 require 'rao-resources_controller'
+require 'rao-service'
 
 require 'cmor/blog'

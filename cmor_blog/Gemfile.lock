@@ -1,14 +1,9 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.1.pre)
-
-PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.1.pre)
+    cmor_core (0.0.2.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.1.pre)
+      cmor (= 0.0.2.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -17,18 +12,24 @@ PATH
       route_translator
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.2.pre)
+
+PATH
   remote: .
   specs:
-    cmor_blog (0.0.1.pre)
+    cmor_blog (0.0.2.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.1.pre)
+      cmor_core (= 0.0.2.pre)
       friendly_id
       haml-rails
       kramdown
       rails (>= 5.2.0)
       rails-i18n
       rao-resources_controller (>= 0.0.16.pre)
+      rao-service (>= 0.0.16.pre)
 
 GEM
   remote: https://rubygems.org/
@@ -254,6 +255,10 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
+    rao-service (0.0.16.pre)
+      activemodel
+      activesupport
+      rao
     rao-shoulda_matchers (0.0.16.pre)
       rao
     rao-view_helper (0.0.16.pre)
