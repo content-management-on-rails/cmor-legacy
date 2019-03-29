@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "administrador", '>= 0.0.3.pre'
+  s.add_dependency 'administrador', '>= 0.0.6.pre'
 
   s.add_development_dependency 'delayed_job_active_record'
 end

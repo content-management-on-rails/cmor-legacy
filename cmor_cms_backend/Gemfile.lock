@@ -1,10 +1,10 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.1.pre)
-    cmor_core (0.0.1.pre)
+    cmor (0.0.4.pre)
+    cmor_core (0.0.4.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.1.pre)
+      cmor (= 0.0.4.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -15,10 +15,10 @@ PATH
 PATH
   remote: ../cmor_cms
   specs:
-    cmor_cms (0.0.1.pre)
+    cmor_cms (0.0.4.pre)
       RedCloth
       awesome_nested_set
-      cmor_core (= 0.0.1.pre)
+      cmor_core (= 0.0.4.pre)
       coffee-rails
       draper
       rails (>= 5.2.0)
@@ -28,16 +28,16 @@ PATH
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.1.pre)
-      administrador (>= 0.0.3.pre)
+    cmor_core_backend (0.0.4.pre)
+      administrador (>= 0.0.6.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: .
   specs:
-    cmor_cms_backend (0.0.1.pre)
-      cmor_cms (= 0.0.1.pre)
-      cmor_core_backend (= 0.0.1.pre)
+    cmor_cms_backend (0.0.4.pre)
+      cmor_cms (= 0.0.4.pre)
+      cmor_core_backend (= 0.0.4.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -91,18 +91,18 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.4.pre)
+    administrador (0.0.6.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.15.pre)
-      rao-query (>= 0.0.15.pre)
-      rao-resource_controller (>= 0.0.15.pre)
-      rao-resources_controller (>= 0.0.15.pre)
-      rao-service_controller (>= 0.0.15.pre)
-      rao-view_helper (>= 0.0.15.pre)
+      rao-component (>= 0.0.16.pre)
+      rao-query (>= 0.0.16.pre)
+      rao-resource_controller (>= 0.0.16.pre)
+      rao-resources_controller (>= 0.0.16.pre)
+      rao-service_controller (>= 0.0.16.pre)
+      rao-view_helper (>= 0.0.16.pre)
       route_translator
       simple_form
     ansi (1.5.0)
@@ -117,7 +117,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
-    capybara (3.15.0)
+    capybara (3.16.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
