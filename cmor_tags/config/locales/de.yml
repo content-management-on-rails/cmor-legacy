@@ -5,21 +5,23 @@ de:
     tag_list: Tags
   activerecord:
     models:
-      cmor/tags/tag:
+      acts_as_taggable_on/tag: &tag_model
         one: Tag
         other: Tags
-      cmor/tags/tagging:
+      acts_as_taggable_on/tagging: &tagging_model
         one: Tagging
         other: Taggings
+      cmor/tags/tag: *tag_model
+      cmor/tags/tagging: *tagging_model
     attributes:
-      cmor/tags/tag:
+      acts_as_taggable_on/tag: &tag_attributes
         id: ID
         color: Farbe
         name: Name
         taggings_count: Getagte Objekte
         created_at: Erstellt am
         updated_at: Aktualisiert am
-      cmor/tags/tagging:
+      acts_as_taggable_on/tagging: &tagging_attributes
         id: ID
         color: Farbe
         context: Kontext
@@ -33,6 +35,8 @@ de:
         tagger_type: Ersteller-Typ
         created_at: Erstellt am
         updated_at: Aktualisiert am
+      cmor/tags/tag: *tag_attributes
+      cmor/tags/tagging: *tagging_attributes
       cmor/tags/search:
         exact: Wortgenau
         tag_list: Tags

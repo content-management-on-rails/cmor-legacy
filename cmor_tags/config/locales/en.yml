@@ -5,21 +5,23 @@ en:
     tag_list: Tags
   activerecord:
     models:
-      cmor/tags/tag:
+      acts_as_taggable_on/tag: &tag_model
         one: Tag
         other: Tags
-      cmor/tags/tagging:
+      acts_as_taggable_on/tagging: &tagging_model
         one: Tagging
         other: Taggings
+      cmor/tags/tag: *tag_model
+      cmor/tags/tagging: *tagging_model
     attributes:
-      cmor/tags/tag:
+      acts_as_taggable_on/tag: &tag_attributes
         id: ID
         color: Color
         name: Name
         taggings_count: Tagged Items
         created_at: Created at
         updated_at: Updated at
-      cmor/tags/tagging:
+      acts_as_taggable_on/tagging: &tagging_attributes
         id: ID
         color: Color
         context: Context
@@ -36,6 +38,8 @@ en:
       cmor/tags/tag_search:
         exact: Exact
         tag_list: Tags
+      cmor/tags/tag: *tag_attributes
+      cmor/tags/tagging: *tagging_attributes
   cmor:
     tags:
       search_box:
