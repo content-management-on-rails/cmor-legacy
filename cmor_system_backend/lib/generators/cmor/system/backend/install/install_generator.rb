@@ -12,8 +12,8 @@ module Cmor
 
           def initialize(*args)
             super
-            @cmor_system_backend_enable_active_storage = ENV.fetch('CMOR_CORE_BACKEND_ENABLE_ACTIVE_STORAGE') { false }
-            @cmor_system_backend_enable_delayed_job = ENV.fetch('CMOR_CORE_BACKEND_ENABLE_DELAYED_JOB') { false }
+            @cmor_system_backend_enable_active_storage = ENV.fetch('CMOR_SYSTEM_BACKEND_ENABLE_ACTIVE_STORAGE') { false }
+            @cmor_system_backend_enable_delayed_job = ENV.fetch('CMOR_SYSTEM_BACKEND_ENABLE_DELAYED_JOB') { false }
           end
 
           def generate_initializer

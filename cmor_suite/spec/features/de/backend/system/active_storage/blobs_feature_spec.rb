@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/system/active_storage/blobs', type: :feature do
+  let(:user) { create(:cmor_user_area_user, :authenticable) }
+  before(:each) { sign_in(user) }
+
   let(:resource_class) { ActiveStorage::Blob }
   let(:resource) { create(:active_storage_blob) }
   let(:resources) { create_list(:active_storage_blob, 3) }

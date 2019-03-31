@@ -19,7 +19,6 @@ module Cmor
           
           s.add_development_dependency 'capybara'
           s.add_development_dependency 'coveralls'
-          s.add_development_dependency 'factory_bot_rails'
           s.add_development_dependency 'git_log_generator'
           s.add_development_dependency 'guard-bundler'
           s.add_development_dependency 'guard-rails'
@@ -29,6 +28,7 @@ module Cmor
           s.add_development_dependency 'rails-i18n'
           s.add_development_dependency 'rao-shoulda_matchers'
           s.add_development_dependency 'rspec-rails'
+          s.add_development_dependency 'factory_bot_rails' # This has to be after rspec-rails
           s.add_development_dependency 'rubocop'
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'

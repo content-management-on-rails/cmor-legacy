@@ -53,4 +53,4 @@ rails g model Post title
 rails db:migrate db:test:prepare
 
 # Install
-CMOR_CORE_BACKEND_ENABLE_ACTIVE_STORAGE=true CMOR_CORE_BACKEND_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install
+CMOR_SYSTEM_BACKEND_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_BACKEND_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install

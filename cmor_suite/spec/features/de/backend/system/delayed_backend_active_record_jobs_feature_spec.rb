@@ -2,6 +2,9 @@ require 'rails_helper'
 require 'delayed_job_active_record'
 
 RSpec.describe '/de/backend/system/delayed_backend_active_record_jobs', type: :feature do
+  let(:user) { create(:cmor_user_area_user, :authenticable) }
+  before(:each) { sign_in(user) }
+
   let(:resource_class) { Delayed::Backend::ActiveRecord::Job }
   let(:resource) { create(:delayed_backend_active_record_job) }
   let(:resources) { create_list(:delayed_backend_active_record_job, 3) }
