@@ -57,4 +57,16 @@ Cmor::UserArea.configure do |config|
   # default: config.allow_users_to_destroy_self = true
   # 
   config.allow_users_to_destroy_self = true
+
+  # Additional rows to show in the current user table.
+  #
+  # For example, you can intergrate Cmor::Rbac here:
+  #
+  #     config.current_user_additional_table_rows_proc = lambda do |view, table|
+  #       view.render partial: 'cmor/rbac/current_user_additional_table_rows', locals: { table: table }
+  #     end
+  #
+  # default: config.current_user_additional_table_rows_proc = nil
+  #
+  config.current_user_additional_table_rows_proc = nil
 end
