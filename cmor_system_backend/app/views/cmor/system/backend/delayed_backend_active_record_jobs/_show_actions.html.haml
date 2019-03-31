@@ -1,0 +1,12 @@
+= link_to({ action: :index }, class: 'btn btn-light btn-responsive') do
+  %i.fas.fa-arrow-left
+  %span.btn-text= t('.back')
+
+.ml-auto
+  - if available_rest_actions.include?(:destroy)
+    = link_to({ action: :show, id: resource.to_param }, class: 'destroy btn btn-danger btn-circle btn-lg', method: :delete, 'data-confirm': I18n.t('administrador.controller.confirmations.destroy')) do
+      %i.fas.fa-fire
+
+  - if available_rest_actions.include?(:edit)
+    = link_to({ action: :edit, id: resource.to_param }, class: 'btn btn-success btn-circle btn-lg') do
+      %i.fas.fa-edit

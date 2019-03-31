@@ -1,4 +1,0 @@
-
-  localized do
-    mount Cmor::Core::Backend::Engine, at: '/backend/cmor-core-backend-engine'
-  end

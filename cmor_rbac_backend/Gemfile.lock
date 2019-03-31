@@ -1,10 +1,10 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.4.pre)
-    cmor_core (0.0.4.pre)
+    cmor (0.0.5.pre)
+    cmor_core (0.0.5.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.4.pre)
+      cmor (= 0.0.5.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -15,24 +15,24 @@ PATH
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.4.pre)
+    cmor_core_backend (0.0.5.pre)
       administrador (>= 0.0.6.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_rbac
   specs:
-    cmor_rbac (0.0.4.pre)
-      cmor_core (= 0.0.4.pre)
+    cmor_rbac (0.0.5.pre)
+      cmor_core (= 0.0.5.pre)
       rails (>= 5.2.0)
       rao-service (>= 0.0.16.pre)
 
 PATH
   remote: .
   specs:
-    cmor_rbac_backend (0.0.4.pre)
-      cmor_core_backend (= 0.0.4.pre)
-      cmor_rbac (= 0.0.4.pre)
+    cmor_rbac_backend (0.0.5.pre)
+      cmor_core_backend (= 0.0.5.pre)
+      cmor_rbac (= 0.0.5.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -105,7 +105,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
-    capybara (3.16.0)
+    capybara (3.16.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -231,7 +231,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    parallel (1.16.1)
+    parallel (1.16.2)
     parser (2.6.2.0)
       ast (~> 2.4.0)
     pry (0.12.2)

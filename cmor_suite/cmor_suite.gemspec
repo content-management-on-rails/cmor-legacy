@@ -8,17 +8,10 @@ require_relative "../cmor_core/lib/cmor/core/gemspec"
 Gem::Specification.new do |s|
   Cmor::Core::Gemspec.defaults(s)
   s.name        = "cmor_suite"
-  # s.version     = ::Cmor::VERSION
-  # s.authors     = ["Roberto Vasquez Angel"]
-  # s.email       = ["roberto@vasquez-angel.de"]
   s.summary     = "Easy Content Management Suite."
   s.description = "Modular, scalable content management on rails."
-  # s.license     = "MIT"
 
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-
-  # s.add_dependency 'rails', '>= 5.0.0'
-  # s.add_dependency 'cmor', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_blog', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_blog_backend', "= #{Cmor::VERSION}"
@@ -44,26 +37,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_rbac', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_rbac_backend', "= #{Cmor::VERSION}"
 
+  s.add_dependency 'cmor_system_backend', "= #{Cmor::VERSION}"
+
   s.add_dependency 'cmor_tags', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_tags_backend', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_user_area', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_user_area_backend', "= #{Cmor::VERSION}"
-
-  # s.add_development_dependency 'sqlite3', "~> 1.3.6"
-  # s.add_development_dependency 'responders'
-
-  # s.add_development_dependency 'capybara'
-  # s.add_development_dependency 'factory_bot_rails'
-  # s.add_development_dependency 'git_log_generator'
-  # s.add_development_dependency 'guard-bundler'
-  # s.add_development_dependency 'guard-rspec'
-  # s.add_development_dependency 'i18n-debug'
-  # s.add_development_dependency 'pry-rails'
-  # s.add_development_dependency 'puma'
-  # s.add_development_dependency 'rake'
-  # s.add_development_dependency 'rails-dummy'
-  # s.add_development_dependency 'rao-shoulda_matchers'
-  # s.add_development_dependency 'rspec-rails'
-  # s.add_development_dependency 'simplecov'
 end

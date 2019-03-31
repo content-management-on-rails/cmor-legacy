@@ -1,47 +1,4 @@
 de:
-  activerecord:
-    models:
-      active_storage/attachment:
-        one: Anhang
-        other: Anhänge
-      active_storage/blob:
-        one: BLOB
-        other: BLOBs
-      delayed/backend/active_record/job:
-        one: Hintergrundjob
-        other: Hintergrundjobs
-    attributes:
-      active_storage/attachment:
-        id: ID
-        name: Name
-        record_type: Objekt Typ
-        record_id: Objekt ID
-        record: Objekt
-        blob_id: BLOB
-        blob: BLOB
-        created_at: Erstellt am
-      active_storage/blob:
-        id: ID
-        key: Schlüssel
-        filename: Dateiname
-        content_type: Content Typ
-        metadata: Metadaten
-        byte_size: Größe
-        checksum: Checksumme
-        created_at: Erstellt am
-      delayed/backend/active_record/job:
-        id: ID
-        priority: Priorität
-        attempts: Versuche
-        handler: Handler
-        last_error: Letzter Fehler
-        run_at: Gelaufen am
-        locked_at: Gesperrt am
-        failed_at: Fehlgeschlagen am
-        locked_by: Gesperrt durch
-        queue: Warteschlange
-        created_at: Erstellt am
-        updated_at: Aktualisiert am
   classes:
     cmor/core/backend/engine: Core
   routes:

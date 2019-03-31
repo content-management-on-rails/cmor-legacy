@@ -1,8 +1,7 @@
 module Cmor
   module Core
     module Backend
-      module HomeController
-        class Base < Administrador::HomeController::Base
+      class HomeController::Base < Administrador::HomeController::Base
         # class Base < Cmor::Core::Backend::Configuration.home_controller_base_class_name.constantize
         #   include Administrador::Controller::EngineConcern
         #   include Administrador::Controller::ApplicationConcern
@@ -16,8 +15,7 @@ module Cmor
         #     )
         #   end
 
-          def index; end
-        end
+        def index; end
       end
     end
   end

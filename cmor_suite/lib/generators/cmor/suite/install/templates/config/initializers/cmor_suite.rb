@@ -1,5 +1,5 @@
 Cmor::Suite.configure do |config|
-<% sub_modules.each do |submodule| %>
+<% (sub_modules - ['core']).each do |submodule| %>
   <%= "  config.administrador.register_engine 'Cmor::#{submodule.camelize}::Backend::Engine', {}" %>
 <% end %>
 

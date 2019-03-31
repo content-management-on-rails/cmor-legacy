@@ -11,10 +11,23 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
+
+## Always require rspec and factory_bot_rails in dummy app
+sed -i '17i\require "rspec-rails"' config/application.rb
+sed -i '17i\require "factory_bot_rails"' config/application.rb
+
+# Add ActiveStorage
 rails active_storage:install
+
+# Configure I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
+
+# Satisfy prerequisistes for cmor_system_backend
+rails g model Post title body
+sed -i '17i\require "delayed_job_active_record"' config/application.rb
+rails generate delayed_job:active_record
 
 # Install
 CMOR_RBAC_USER_FACTORY_NAME='cmor_user_area_user' \

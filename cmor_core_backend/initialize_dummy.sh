@@ -16,7 +16,7 @@ rm spec/dummy/.ruby-version
 cd spec/dummy
 
 # responders for rao-service_controller
-sed -i '17i\  require "responders"' config/application.rb
+# sed -i '17i\  require "responders"' config/application.rb
 
 ## Always require rspec and factory_bot_rails in dummy app
 sed -i '17i\  require "rspec-rails"' config/application.rb
@@ -28,10 +28,10 @@ echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/in
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
 ## I18n routing
-touch config/initializers/route_translator.rb
-echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
-echo "  config.force_locale = true" >> config/initializers/route_translator.rb
-echo "end" >> config/initializers/route_translator.rb
+# touch config/initializers/route_translator.rb
+# echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
+# echo "  config.force_locale = true" >> config/initializers/route_translator.rb
+# echo "end" >> config/initializers/route_translator.rb
 
 # Install administrador
 rails generate administrador:install
@@ -40,16 +40,16 @@ rails generate administrador:install
 rails generate simple_form:install --bootstrap
 
 # Add DelayedJob::ActiveRecord
-sed -i '17i\  require "delayed_job_active_record"' config/application.rb
-rails generate delayed_job:active_record
+# sed -i '17i\  require "delayed_job_active_record"' config/application.rb
+# rails generate delayed_job:active_record
 
 # Add ActiveStorage
-rails active_storage:install
+# rails active_storage:install
 
 # Example model for ActiveStorage specs
-rails g model Post title
+# rails g model Post title
 
-rails db:migrate db:test:prepare
+# rails db:migrate db:test:prepare
 
 # Install
-CMOR_CORE_BACKEND_ENABLE_ACTIVE_STORAGE=true CMOR_CORE_BACKEND_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install
+rails generate $BACKEND_INSTALL_NAME:install

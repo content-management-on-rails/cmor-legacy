@@ -51,7 +51,7 @@ module Cmor
         private
 
         def sub_modules
-          @sub_modules ||= %w(blog carousels core cms contact files galleries links rbac tags user_area) - options['excluded_modules']
+          @sub_modules ||= %w(blog carousels core cms contact files galleries links rbac system tags user_area) - options['excluded_modules']
         end
       end
     end

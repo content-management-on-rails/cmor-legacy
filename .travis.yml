@@ -23,6 +23,7 @@ env:
   - GEM=cmor_links_backend
   - GEM=cmor_rbac
   - GEM=cmor_rbac_backend
+  - GEM=cmor_system_backend
   - GEM=cmor_tags
   - GEM=cmor_tags_backend
   - GEM=cmor_user_area

@@ -1,0 +1,16 @@
+= table.column(:actions, title: false) do |resource|
+  - capture_haml do
+    .w-100.d-flex
+      .btn-group.ml-auto
+        - if available_rest_actions.include?(:show)
+          = link_to({ action: :show, id: resource.to_param }, class: 'show btn btn-xs btn-responsive btn-primary') do
+            %i.fas.fa-eye
+            %span.btn-text= t('.show')
+        - if available_rest_actions.include?(:edit)
+          = link_to({ action: :edit, id: resource.to_param }, class: 'edit btn btn-xs btn-responsive btn-secondary') do
+            %i.fas.fa-edit
+            %span.btn-text= t('.edit')
+        - if available_rest_actions.include?(:destroy)
+          = link_to(url_for({ action: :show, id: resource.to_param }), class: 'destroy btn btn-xs btn-responsive btn-danger', method: :delete, 'data-confirm': I18n.t('administrador.controller.confirmations.destroy')) do
+            %i.fas.fa-fire
+            %span.btn-text= t('.destroy')
