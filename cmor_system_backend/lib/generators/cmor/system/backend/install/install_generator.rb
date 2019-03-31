@@ -15,7 +15,7 @@ module Cmor
             super
             @cmor_system_backend_enable_active_storage = ENV.fetch('CMOR_SYSTEM_BACKEND_ENABLE_ACTIVE_STORAGE') { false }
             @cmor_system_backend_enable_delayed_job = ENV.fetch('CMOR_SYSTEM_BACKEND_ENABLE_DELAYED_JOB') { false }
-            @record_factory_name = ENV.fetch('CMOR_SYSTEM_BACKEND_RECORD_FACTORY_NAME') { 'user' }
+            @record_factory_name = ENV.fetch('CMOR_SYSTEM_BACKEND_RECORD_FACTORY_NAME') { 'post' }
           end
 
           def generate_initializer
