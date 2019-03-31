@@ -12,7 +12,7 @@ PATH
       request_store_rails
       route_translator
     cmor_core_backend (0.0.5.pre)
-      administrador (>= 0.0.6.pre)
+      administrador (>= 0.0.7.pre)
       rails (>= 5.2.0)
     cmor_tags (0.0.5.pre)
       acts-as-taggable-on
@@ -78,7 +78,7 @@ GEM
       activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.6.pre)
+    administrador (0.0.7.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
