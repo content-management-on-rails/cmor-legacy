@@ -9,22 +9,11 @@ module Cmor
           yield self
         end
 
-        mattr_accessor :registered_controllers do
-          lambda do
-            [
-              # Cmor::Contact::Backend::FoosController
-            ]
-          end
-        end
-
-        mattr_accessor :registered_services do
-          lambda do
-            []
-          end
-        end
-
+        mattr_accessor(:registered_controllers) { -> {[]} }
+        mattr_accessor(:registered_services) { -> {[]} }
         mattr_accessor(:enable_active_storage_backend) { false }
         mattr_accessor(:enable_delayed_job_backend) { false }
+        mattr_accessor(:record_factory_name) { 'user' }
 
         def self.registered_controllers
           rc = @@registered_controllers.call

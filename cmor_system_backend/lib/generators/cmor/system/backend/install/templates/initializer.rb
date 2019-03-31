@@ -21,6 +21,12 @@ Cmor::System::Backend.configure do |config|
   config.registered_services = -> {[
   ]}
 
+  # Factory name to use for creators and updaters.
+  #
+  # default: config.record_factory_name = 'post'
+  #
+  config.record_factory_name = '<%= record_factory_name %>'
+
   # Enable support for ActiveStorage.
   # 
   # default: config.enable_active_storage_backend = false
