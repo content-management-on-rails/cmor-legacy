@@ -48,7 +48,7 @@ module Cmor
           return I18n.t('cmor.cms.navigation.messages.not_found', lang: I18n.locale.to_s, name: name.to_s)
         end
 
-        roots = navigation.cmor_cms_navigation_items.roots.all
+        roots = navigation.navigation_items.roots.all
         if roots.empty?
           return I18n.t('cmor.cms.navigation.messages.empty', lang: I18n.locale.to_s, name: name)
         end

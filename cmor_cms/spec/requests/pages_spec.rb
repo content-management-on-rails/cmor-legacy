@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "requesting '/' redirects to the default locale" do
   it 'redirects' do
     get '/'
-    response.should redirect_to("/#{I18n.default_locale}")
+    expect(response).to redirect_to("/#{I18n.default_locale}")
   end
 end
 
@@ -20,7 +20,7 @@ describe 'localized home page' do
     end
     get '/en'
 
-    response.body.should include(page_model.body)
+    expect(response.body).to include(page_model.body)
   end
 
   describe 'requesting nested page' do
@@ -36,7 +36,7 @@ describe 'localized home page' do
       end
       get '/en/foo/bar/baz'
 
-      response.body.should include(page_model.body)
+      expect(response.body).to include(page_model.body)
     end
   end
 
@@ -52,7 +52,7 @@ describe 'localized home page' do
       end
       get '/de/test.txt'
 
-      response.body.should include(page_model.body)
+      expect(response.body).to include(page_model.body)
     end
   end
 end
@@ -78,6 +78,6 @@ describe 'page with content blocks' do
     end
     get '/de/test'
 
-    response.body.should include(footer_content_block.body)
+    expect(response.body).to include(footer_content_block.body)
   end
 end

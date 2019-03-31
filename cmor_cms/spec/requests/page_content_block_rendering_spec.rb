@@ -29,7 +29,7 @@ describe 'content block rendering' do
     end # before
 
     it 'should render the content block body' do
-      response.body.should include('<h1>Sidebar</h1>')
+      expect(response.body).to include('<h1>Sidebar</h1>')
     end # it
   end # context 'when rendering the page'
 end # describe "content block rendering"

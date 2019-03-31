@@ -12,7 +12,7 @@ module Cmor
           @yaml.each do |page_data|
             navigation_items = extract_navigation_items(page_data.delete('navigation_items'))
             page = Cmor::Cms::Page.new(page_data)
-            page.cmor_cms_navigation_item_ids = navigation_items.map(&:id)
+            page.navigation_item_ids = navigation_items.map(&:id)
             pages << page
           end if @yaml.respond_to?(:each)
           pages
@@ -22,7 +22,7 @@ module Cmor
           navigation_items = []
           navigation_item_data.each do |nid|
             navigation = Cmor::Cms::Navigation.where(locale: nid['navigation_locale'], name: nid['navigation_name']).first
-            navigation_items << navigation.cmor_cms_navigation_items.where(name: nid['name']).first if navigation.respond_to?(:cmor_cms_navigation_items)
+            navigation_items << navigation.navigation_items.where(name: nid['name']).first if navigation.respond_to?(:navigation_items)
           end
           navigation_items
         end

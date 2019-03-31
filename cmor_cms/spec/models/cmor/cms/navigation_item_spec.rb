@@ -32,7 +32,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         foo  = create(:cmor_cms_navigation_item, parent: root)
 
         foo.valid?
-        foo.navigation.should eq(root.navigation)
+        expect(foo.navigation).to eq(root.navigation)
       end
     end
 
@@ -46,7 +46,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         new_navigation = create(:cmor_cms_navigation, name: 'new_navigation')
         first_level_item.navigation = new_navigation
         first_level_item.save!
-        second_level_item.reload.navigation.should == new_navigation
+        expect(second_level_item.reload.navigation).to eq(new_navigation)
       end
     end
 
@@ -58,7 +58,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         ni = build(:cmor_cms_navigation_item, url: nil, page: page)
 
         ni.valid?
-        ni.url.should eq('/en/about-us')
+        expect(ni.url).to eq('/en/about-us')
       end
 
       it 'should set the correct url for home pages' do
@@ -66,7 +66,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         ni = build(:cmor_cms_navigation_item, url: nil, page: page)
 
         ni.valid?
-        ni.url.should eq('/en')
+        expect(ni.url).to eq('/en')
       end
     end
   end

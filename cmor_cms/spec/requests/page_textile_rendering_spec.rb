@@ -13,6 +13,6 @@ describe 'textile rendering' do
     end
     get '/en/foo'
 
-    response.body.should include('<h1>Home</h1>')
+    expect(response.body).to include('<h1>Home</h1>')
   end
 end

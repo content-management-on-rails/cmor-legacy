@@ -78,8 +78,8 @@ en:
         body: Body
         cmor_cms_folder_id: Folder
         cmor_cms_folder: Folder
-        cmor_cms_navigation_items: Navigation items
-        cmor_cms_navigation_item_ids: Navigation items
+        navigation_items: Navigation items
+        navigation_item_ids: Navigation items
         filename: Filename
         format: Format
         handler: Handler
@@ -133,7 +133,7 @@ en:
   resources:
     cmor_cms_folders: folders
     cmor_cms_navigations: navigations
-    cmor_cms_navigation_items: navigation_items
+    navigation_items: navigation_items
     pages: pages
     partials: partials
     templates: templates

@@ -8,4 +8,4 @@
 = form.input :handler, collection: ActionView::Template::Handlers.extensions
 = form.input :layout
 - Cmor::Cms::Navigation.where(locale: I18n.locale).all.each do |navigation|
-  = form.association :navigation_items, as: :check_boxes, collection: navigation.cmor_cms_navigation_items.joins(:navigation).where(cmor_cms_navigations: { locale: locale }), label_method: :key
+  = form.association :navigation_items, as: :check_boxes, collection: navigation.navigation_items.joins(:navigation).where(cmor_cms_navigations: { locale: locale }), label_method: :key

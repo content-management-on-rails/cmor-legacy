@@ -43,8 +43,8 @@ de:
       cmor/cms/navigation:
         id: ID
         created_at: Erstellt am
-        cmor_cms_navigation_items: Navigationseinträge
-        cmor_cms_navigation_items_count: Navigationseinträge
+        navigation_items: Navigationseinträge
+        navigation_items_count: Navigationseinträge
         locale: Sprache
         name: Name
         slug: Freundliche ID
@@ -78,8 +78,8 @@ de:
         body: Inhalt
         cmor_cms_folder_id: Ordner
         cmor_cms_folder: Ordner
-        cmor_cms_navigation_items: Verlinkt von
-        cmor_cms_navigation_item_ids: Verlinkt von
+        navigation_items: Verlinkt von
+        navigation_item_ids: Verlinkt von
         filename: Dateiname
         format: Format
         handler: Handler
@@ -131,9 +131,8 @@ de:
           empty: Navigation  %{name} (%{lang}) ist leer
           not_found: Navigation %{name} (%{lang}) nicht gefunden
   resources:
-    cmor_cms_folders: ordner
-    cmor_cms_navigations: navigationen
-    cmor_cms_navigation_items: navigationseintraege
+    navigations: navigationen
+    navigation_items: navigationseintraege
     pages: seiten
     partials: fragmente
     templates: vorlagen    

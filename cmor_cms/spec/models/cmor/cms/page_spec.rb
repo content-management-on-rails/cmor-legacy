@@ -33,7 +33,7 @@ RSpec.describe Cmor::Cms::Page, type: :model do
       page = build(:cmor_cms_page, pathname: '/', basename: 'bar', locale: 'de')
       page.navigation_items << navigation_item
       page.save!
-      navigation_item.url.should eq('/de/bar')
+      expect(navigation_item.url).to eq('/de/bar')
     end
   end
 

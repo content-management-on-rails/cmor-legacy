@@ -22,13 +22,13 @@ module Cmor
           ]
         end
 
-        it { subject.should respond_to :find_templates }
+        it { expect(subject).to respond_to :find_templates }
         it 'should return an Array' do
-          subject.find_templates(*@valid_args).should be_a(Array)
+          expect(subject.find_templates(*@valid_args)).to be_a(Array)
         end
 
         it 'should not return templates' do
-          subject.find_templates(*@template_args).should be_empty
+          expect(subject.find_templates(*@template_args)).to be_empty
         end
 
         context 'page lookup'do
@@ -48,7 +48,7 @@ module Cmor
               true,
               { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
             ]
-            subject.find_templates(*@args).size.should eq(1)
+            expect(subject.find_templates(*@args).size).to eq(1)
           end
         end
 
@@ -69,7 +69,7 @@ module Cmor
               true,
               { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
             ]
-            subject.find_templates(*@args).size.should eq(1)
+            expect(subject.find_templates(*@args).size).to eq(1)
           end
         end
 
@@ -91,13 +91,13 @@ module Cmor
               true,
               { formats: [:html], locale: [:en, :de], handlers: [:textile, :erb, :arb, :builder] }
             ]
-            subject.find_templates(*@args).size.should eq(1)
+            expect(subject.find_templates(*@args).size).to eq(1)
           end
         end
       end
 
       describe '#initialize_template' do
-        it { subject.should respond_to :initialize_template }
+        it { expect(subject).to respond_to :initialize_template }
         it 'returns an ActionView Template' do
           record = Cmor::Cms::Partial.create! do |record|
             record.pathname = '/'
@@ -106,15 +106,15 @@ module Cmor
             record.handler  = 'erb'
           end
           details = { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
-          subject.initialize_template(record, details).should be_a(::ActionView::Template)
+          expect(subject.initialize_template(record, details)).to be_a(::ActionView::Template)
         end
       end
 
       describe '#assert_slashs' do
-        it { subject.should respond_to :assert_slashs }
+        it { expect(subject).to respond_to :assert_slashs }
 
         it 'should assert it has slashs on both ends' do
-          subject.assert_slashs('foo/bar').should eq('/foo/bar/')
+          expect(subject.assert_slashs('foo/bar')).to eq('/foo/bar/')
         end
       end
 
@@ -124,11 +124,11 @@ module Cmor
             [1, 2, 3, 4, 5]
           ]
         end
-        it { subject.should respond_to :normalize_array }
+        it { expect(subject).to respond_to :normalize_array }
         it 'should convert all items to strings' do
           result = subject.normalize_array(@valid_args)
           result.each do |r|
-            r.should be_a(String)
+            expect(r).to be_a(String)
           end
         end
       end
@@ -143,7 +143,7 @@ module Cmor
         end
 
         it 'should use the body as source' do
-          subject.build_source(@record).should eq(@record.body)
+          expect(subject.build_source(@record)).to eq(@record.body)
         end
       end
     end

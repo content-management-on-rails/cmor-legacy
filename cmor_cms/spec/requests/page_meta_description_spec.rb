@@ -14,6 +14,6 @@ describe 'meta description rendering' do
     end
     get '/en'
 
-    response.body.should include("<meta name=\"description\" content=\"#{page_model.meta_description}\">")
+    expect(response.body).to include("<meta name=\"description\" content=\"#{page_model.meta_description}\">")
   end
 end

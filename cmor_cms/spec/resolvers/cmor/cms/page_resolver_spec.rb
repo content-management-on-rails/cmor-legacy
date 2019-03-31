@@ -22,7 +22,7 @@ module Cmor
           ]
         end
 
-        it { subject.should respond_to :find_templates }
+        it { expect(subject).to respond_to(:find_templates) }
         it 'should return an Array' do
           expect(subject.find_templates(*@valid_args)).to be_a(Array)
         end
@@ -100,7 +100,7 @@ module Cmor
       end
 
       describe '#initialize_template' do
-        it { subject.should respond_to :initialize_template }
+        it { expect(subject).to respond_to(:initialize_template) }
         it 'returns an ActionView Template' do
           record = Cmor::Cms::Page.create! do |page|
             page.pathname = '/'
@@ -115,10 +115,10 @@ module Cmor
       end
 
       describe '#assert_slashs' do
-        it { subject.should respond_to :assert_slashs }
+        it { expect(subject).to respond_to(:assert_slashs) }
 
         it 'should assert it has slashs on both ends' do
-          subject.assert_slashs('foo/bar').should eq('/foo/bar/')
+          expect(subject.assert_slashs('foo/bar')).to eq('/foo/bar/')
         end
       end
 
