@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib,spec}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'acts-as-taggable-on'
-  s.add_dependency 'rao-service', '>= 0.0.16.pre'
-  s.add_dependency 'rao-service_controller', '>= 0.0.16.pre'
+  s.add_dependency 'rao-service', '>= 0.0.17.pre'
+  s.add_dependency 'rao-service_controller', '>= 0.0.17.pre'
   s.add_dependency 'responders'
 end

@@ -6,6 +6,11 @@ GIT
       activerecord (>= 5.0, < 6.1)
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.5.pre)
+
+PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.5.pre)
@@ -19,19 +24,14 @@ PATH
       route_translator
 
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.5.pre)
-
-PATH
   remote: .
   specs:
     cmor_tags (0.0.5.pre)
       acts-as-taggable-on
       cmor_core (= 0.0.5.pre)
       rails (>= 5.2.0)
-      rao-service (>= 0.0.16.pre)
-      rao-service_controller (>= 0.0.16.pre)
+      rao-service (>= 0.0.17.pre)
+      rao-service_controller (>= 0.0.17.pre)
       responders
 
 GEM
@@ -205,7 +205,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    parallel (1.16.2)
+    parallel (1.17.0)
     parser (2.6.2.0)
       ast (~> 2.4.0)
     pry (0.12.2)
@@ -249,19 +249,19 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.16.pre)
-    rao-service (0.0.16.pre)
+    rao (0.0.17.pre)
+    rao-service (0.0.17.pre)
       activemodel
       activesupport
       rao
-    rao-service_controller (0.0.16.pre)
+    rao-service_controller (0.0.17.pre)
       font-awesome-rails
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.16.pre)
+    rao-shoulda_matchers (0.0.17.pre)
       rao
-    rao-view_helper (0.0.16.pre)
+    rao-view_helper (0.0.17.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)

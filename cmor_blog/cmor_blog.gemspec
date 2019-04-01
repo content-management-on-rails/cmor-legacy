@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'haml-rails'
   s.add_dependency 'kramdown'
   s.add_dependency 'rails-i18n'
-  s.add_dependency 'rao-resources_controller', '>= 0.0.16.pre'
-  s.add_dependency 'rao-service', '>= 0.0.16.pre'
+  s.add_dependency 'rao-resources_controller', '>= 0.0.17.pre'
+  s.add_dependency 'rao-service', '>= 0.0.17.pre'
 
   s.add_development_dependency 'bootstrap4-kaminari-views'
 end
