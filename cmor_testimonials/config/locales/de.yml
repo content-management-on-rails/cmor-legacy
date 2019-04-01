@@ -1,0 +1,13 @@
+de:
+  activerecord:
+    models:
+    attributes:     
+  resources:
+  cmor:
+    testimonials:
+      application_view_helper:
+        render:
+          next: Vor
+          previous: Zurück
+  routes:
+    cmor_testimonials_engine: testimonials
