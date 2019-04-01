@@ -1,7 +1,7 @@
 module Cmor
-  module Carousels
+  module Testimonials
     class Engine < ::Rails::Engine
-      isolate_namespace Cmor::Carousels
+      isolate_namespace Cmor::Testimonials
 
     end
   end  

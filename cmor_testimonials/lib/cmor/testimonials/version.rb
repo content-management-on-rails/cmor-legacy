@@ -1,7 +1,7 @@
 require 'cmor/version'
 
 module Cmor
-  module Carousels
+  module Testimonials
     VERSION = ::Cmor::VERSION
   end
 end
