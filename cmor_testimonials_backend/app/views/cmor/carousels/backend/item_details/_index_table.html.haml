@@ -1,8 +1,0 @@
-= table.batch_actions actions: { destroy: url_for(action: :destroy_many) }
-= table.acts_as_list_actions scope: :carousel_id
-= table.association :carousel, label_method: :human, link_to: ->(resource) { url_for([resource.carousel]) }, sort: { column_name: :'cmor_carousels_carousels.name' }
-= table.thumbnail :asset
--# = table.column :asset do |resource|
--#   - image_tag(main_app.url_for(resource.asset.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
-= table.timestamps sort: true
-= table.acts_as_published_actions

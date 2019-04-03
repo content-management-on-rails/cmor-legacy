@@ -1,4 +1,4 @@
-# Cmor::Carousels::Backend
+# Cmor::Testimonials::Backend
 Short description and motivation.
 
 ## Usage

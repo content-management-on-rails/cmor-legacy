@@ -1,5 +1,5 @@
 de:
   classes:
-    cmor/carousels/backend/engine: 'Carousels'
+    cmor/testimonials/backend/engine: 'Testimonials'
   routes:
-    cmor-carousels-backend-engine: 'carousels'
+    cmor-testimonials-backend-engine: 'testimonials'

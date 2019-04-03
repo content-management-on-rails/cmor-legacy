@@ -1,5 +1,5 @@
 module Cmor
-  module Carousels
+  module Testimonials
     module Backend
       module Generators
         class InstallGenerator < Rails::Generators::Base

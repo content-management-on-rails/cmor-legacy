@@ -1,5 +1,5 @@
 module Cmor
-  module Carousels
+  module Testimonials
     module Backend
       class HomeController < Cmor::Core::Backend::HomeController::Base
       end

@@ -8,9 +8,9 @@ require_relative "../cmor_core_backend/lib/cmor/core/backend/gemspec"
 Gem::Specification.new do |s|
   Cmor::Core::Backend::Gemspec.defaults(s)
   s.name        = "cmor_testimonials_backend"
-  s.summary     = "Cmor::Carousels::Backend."
+  s.summary     = "Cmor::Testimonials::Backend."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "cmor_carousels", "= #{Cmor::VERSION}"
+  s.add_dependency "cmor_testimonial", "= #{Cmor::VERSION}"
 end

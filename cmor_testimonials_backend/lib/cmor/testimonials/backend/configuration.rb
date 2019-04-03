@@ -1,10 +1,10 @@
-module Cmor::Carousels::Backend
+module Cmor::Testimonials::Backend
   module Configuration
     def configure
       yield self
     end
 
-    mattr_accessor :registered_controllers do
+    mattr_accessor :registered_resources do
       -> { [] }
     end
 
