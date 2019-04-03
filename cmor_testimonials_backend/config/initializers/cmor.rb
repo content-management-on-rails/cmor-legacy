@@ -1,3 +1,3 @@
 Cmor.configure do |config|
-  config.administrador.register_engine('Cmor::Carousels::Backend::Engine', {})
+  config.administrador.register_engine('Cmor::Testimonials::Backend::Engine', {})
 end

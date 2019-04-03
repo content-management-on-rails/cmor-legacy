@@ -1,12 +1,12 @@
 Cmor::Testimonials::Backend.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   #
-  # Default: config.registered_controllers = -> {[
+  # Default: config.registered_resources = -> {[
   #            Cmor::Testimonials::Backend::CategoriesController,
   #            Cmor::Testimonials::Backend::TestimonialsController
   #          ]}
   #
-  config.registered_controllers = lambda {
+  config.registered_resources = lambda {
     [
       Cmor::Testimonials::Backend::CategoriesController,
       Cmor::Testimonials::Backend::TestimonialsController
