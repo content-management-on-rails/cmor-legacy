@@ -3,7 +3,7 @@ FactoryBot.define do
     association :carousel, factory: :cmor_carousels_carousel
     after(:build) { |resource|
       assets = resource.carousel.assets.attach(
-        io:           File.open(Cmor::Carousels::Engine.root.join(*%w( spec files cmor carousels item_details example.png))),
+        io:           File.open(Cmor::Carousels::Engine.root.join(*%w(spec files cmor carousels item_details example.png))),
         filename:     'example.png',
         content_type: 'image/png'
       )
