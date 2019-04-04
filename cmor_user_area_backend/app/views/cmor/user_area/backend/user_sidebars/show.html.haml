@@ -3,7 +3,7 @@
     .col-12
       - if user_signed_in?
         .alert.alert-info
-          = t('.signed_in_as', user: administrador_helper(self).resource_label_for(current_user))
+          = t('.signed_in_as', user: administrador_helper(self).label_for(current_user))
         .btn-group.d-flex
           = link_to t('.show'), cmor_user_area.current_user_path, class: 'btn btn-primary w-100 ml-0'
           = link_to t('.sign_out'), cmor_user_area.user_session_path, method: :delete, class: 'btn btn-warning w-100'
