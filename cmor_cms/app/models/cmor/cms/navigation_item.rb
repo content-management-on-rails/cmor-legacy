@@ -48,7 +48,7 @@ module Cmor::Cms
     end
 
     def to_s
-      "#{navigation}: #{name}"
+      "#{navigation.human}: #{name}"
     end
 
     def update_navigation_from_parent!
