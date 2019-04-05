@@ -1,0 +1,14 @@
+= form.association :category, label_method: :human
+= form.input :full_name
+= form.input :role
+= form.input :company
+= form.input :body
+= form.input :position
+- unless form.object.image.attached?
+  = form.input :image, as: :file
+- else
+  .row.mb-4
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :overwrite_image, as: :file, input_html: { multiple: true }
+= form.input :published, as: :boolean

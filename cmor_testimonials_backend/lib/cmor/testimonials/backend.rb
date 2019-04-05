@@ -1,6 +1,5 @@
 require 'cmor/testimonials/backend/configuration'
-require "cmor/testimonials/backend/engine"
-
+require 'cmor/testimonials/backend/engine'
 module Cmor
   module Testimonials
     module Backend
