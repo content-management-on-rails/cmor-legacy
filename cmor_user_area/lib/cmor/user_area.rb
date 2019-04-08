@@ -1,5 +1,6 @@
 require 'cmor/user_area/configuration'
 require 'cmor/user_area/engine'
+require 'cmor/user_area/routes'
 
 module Cmor
   module UserArea

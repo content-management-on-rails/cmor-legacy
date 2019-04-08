@@ -1,5 +1,6 @@
 require 'cmor/galleries/configuration'
 require "cmor/galleries/engine"
+require "cmor/galleries/routes"
 
 module Cmor
   module Galleries

@@ -1,5 +1,6 @@
 require 'cmor/links/configuration'
 require 'cmor/links/engine'
+require 'cmor/links/routes'
 
 module Cmor
   module Links

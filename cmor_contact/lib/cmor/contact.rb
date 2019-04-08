@@ -1,5 +1,6 @@
 require "cmor/contact/configuration"
 require "cmor/contact/engine"
+require "cmor/contact/routes"
 
 module Cmor
   module Contact

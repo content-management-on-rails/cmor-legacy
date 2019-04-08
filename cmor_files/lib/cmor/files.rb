@@ -1,5 +1,6 @@
 require 'cmor/files/configuration'
 require "cmor/files/engine"
+require "cmor/files/routes"
 
 module Cmor
   module Files

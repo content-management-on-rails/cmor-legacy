@@ -3,6 +3,7 @@ require 'cmor/cms/action_view/template_renderer_patch'
 
 require 'cmor/cms/engine'
 require 'cmor/cms/configuration'
+require 'cmor/cms/routes'
 
 require 'cmor/cms/database_template'
 

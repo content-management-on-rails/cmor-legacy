@@ -1,6 +1,7 @@
 require 'cmor/blog/feature'
 require 'cmor/blog/configuration'
 require 'cmor/blog/engine'
+require 'cmor/blog/routes'
 
 
 module Cmor

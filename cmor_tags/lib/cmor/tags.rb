@@ -1,5 +1,6 @@
 require 'cmor/tags/configuration'
 require 'cmor/tags/engine'
+require 'cmor/tags/routes'
 
 module Cmor
   module Tags
