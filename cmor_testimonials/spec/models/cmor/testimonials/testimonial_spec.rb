@@ -20,7 +20,7 @@ RSpec.describe Cmor::Testimonials::Testimonial, type: :model do
 
   describe "attach image" do
     let(:filename) { 'homer.png' } 
-    let(:file) { File.open(Cmor::Testimonials::Engine.root.join(*%W(spec files cmor testimonials images #{filename}))) }    
+    let(:file) { File.open(Cmor::Testimonials::Engine.root.join(*%W(spec files cmor testimonials testimonials #{filename}))) }    
     
     before(:each) do
       subject.image.attach(io: file, filename: filename, content_type: 'image/png')
