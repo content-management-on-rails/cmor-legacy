@@ -23,5 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts_as_published'
   s.add_dependency 'mini_magick'
   s.add_dependency 'friendly_id'
+  s.add_dependency 'haml'
+  s.add_dependency 'haml-rails'
 end
 

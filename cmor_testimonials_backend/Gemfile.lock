@@ -14,6 +14,8 @@ PATH
       acts_as_published
       cmor_core (= 0.0.6.pre)
       friendly_id
+      haml
+      haml-rails
       mini_magick
       rails (>= 5.2.0)
 
@@ -37,6 +39,8 @@ PATH
     cmor_testimonials_backend (0.0.6.pre)
       cmor_core_backend (= 0.0.6.pre)
       cmor_testimonials (= 0.0.6.pre)
+      haml
+      haml-rails
       rails (>= 5.2.0)
 
 GEM

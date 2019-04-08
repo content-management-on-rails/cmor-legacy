@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :cmor_testimonials_testimonial, class: "Cmor::Testimonials::Testimonial" do
     association(:category, factory: :cmor_testimonials_category)
-    full_name { "MyString" }
+    sequence(:full_name) {|n| "John_Doe_#{n}" }
     role { "MyString" }
     company { "MyString" }
     body { "MyText" }
