@@ -1,8 +1,23 @@
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core (0.0.6.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.6.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
+      route_translator
+
+PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.6.pre)
-      administrador (>= 0.0.8.pre)
+      administrador (>= 0.0.10.pre)
+      cmor (= 0.0.6.pre)
       rails (>= 5.2.0)
 
 PATH
@@ -20,23 +35,10 @@ PATH
       rails (>= 5.2.0)
 
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core (0.0.6.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.6.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
-      request_store_rails
-      route_translator
-
-PATH
   remote: .
   specs:
     cmor_testimonials_backend (0.0.6.pre)
+      cmor (= 0.0.6.pre)
       cmor_core_backend (= 0.0.6.pre)
       cmor_testimonials (= 0.0.6.pre)
       haml
@@ -97,20 +99,21 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.8.pre)
+    administrador (0.0.10.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.16.pre)
-      rao-query (>= 0.0.16.pre)
-      rao-resource_controller (>= 0.0.16.pre)
-      rao-resources_controller (>= 0.0.16.pre)
-      rao-service_controller (>= 0.0.16.pre)
-      rao-view_helper (>= 0.0.16.pre)
+      rao-component (>= 0.0.18.pre)
+      rao-query (>= 0.0.18.pre)
+      rao-resource_controller (>= 0.0.18.pre)
+      rao-resources_controller (>= 0.0.18.pre)
+      rao-service_controller (>= 0.0.18.pre)
+      rao-view_helper (>= 0.0.18.pre)
       route_translator
       simple_form
+      simple_sidebar (>= 0.0.4.pre)
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
@@ -251,7 +254,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.17.0)
-    parser (2.6.2.0)
+    parser (2.6.2.1)
       ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -294,31 +297,31 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.17.pre)
-    rao-component (0.0.17.pre)
+    rao (0.0.18.pre)
+    rao-component (0.0.18.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.17.pre)
+    rao-query (0.0.18.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.17.pre)
+    rao-resource_controller (0.0.18.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.17.pre)
+    rao-resources_controller (0.0.18.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.17.pre)
+    rao-service_controller (0.0.18.pre)
       font-awesome-rails
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.17.pre)
+    rao-shoulda_matchers (0.0.18.pre)
       rao
-    rao-view_helper (0.0.17.pre)
+    rao-view_helper (0.0.18.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -354,7 +357,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.66.0)
+    rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -373,6 +376,10 @@ GEM
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simple_sidebar (0.0.4.pre)
+      coffee-rails
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.17.pre)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)

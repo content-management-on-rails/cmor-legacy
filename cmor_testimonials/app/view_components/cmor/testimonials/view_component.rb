@@ -5,6 +5,7 @@ module Cmor
 
       attr_accessor :context
       attr_accessor :options
+      
       validates_presence_of :context
 
       def render
