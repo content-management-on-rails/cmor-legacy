@@ -16,7 +16,7 @@ rm spec/dummy/.ruby-version
 cd spec/dummy
 
 # install simple form
-rails generage simple_form:install --bootstrap
+rails generate simple_form:install --bootstrap
 
 # responders for rao-service_controller
 ## Always require rspec and factory_bot_rails in dummy app
