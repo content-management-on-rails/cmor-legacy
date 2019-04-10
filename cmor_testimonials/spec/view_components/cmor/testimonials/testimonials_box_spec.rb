@@ -12,9 +12,9 @@ RSpec.describe Cmor::Testimonials::TestimonialsBox, type: :model do
     it { expect(subject.testimonials.count).to eq(testimonials.count) }
   end
 
-  # describe "#render" do
-  #   subject { described_class.new({ context: ApplicationController, category_identifier: category.identifier })}
+  describe "#render" do
+    subject { described_class.new({ context: ApplicationController, category_identifier: category.identifier })}
 
-  #   it { expect(subject.render).to eq("foo") }
-  # end
+    it { expect(subject.render).to include(category.identifier) }
+  end
 end

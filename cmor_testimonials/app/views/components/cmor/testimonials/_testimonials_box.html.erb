@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-center m-auto">
+			<h2><%= Cmor::Testimonials::Category.human_attribute_name(component.category_identifier) %></h2>
+			<div id="<%= component.category_identifier %>" class="carousel slide" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+          <% component.testimonials.each_with_index do |t, i| %>
+					<li data-target="<%= "##{component.category_identifier}" %>" data-slide-to="<%= t.id %>" class="<%= (i == 0) ? "active" : "" %>"></li>
+          <% end %>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+          <% component.testimonials.each_with_index do |t, i| %>
+            <div class="item carousel-item <%= (i == 0) ? "active" : "" %>">
+              <p class="testimonial"><%= t.body.html_safe %></p>
+              <div class="img-box"><img src="<%= main_app.url_for(t.image.variant(resize: "100x100"))%>" alt=""></div>
+              <p class="overview">
+                <b><%= t.full_name %></b>, <%= t.role %> @ <%= t.company %>
+              </p>
+            </div>
+          <% end %>
+				</div>
+				<!-- Carousel controls -->
+				<% if options[:controls] %>
+          <a class="carousel-control-prev" href="#<%= component.category_identifier %>" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"><%= t('.previous') %></span>
+          </a>
+          <a class="carousel-control-next" href="#<%= component.category_identifier %>" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"><%= t('.next') %></span>
+          </a>
+        <% end %>
+			</div>
+		</div>
+	</div>
+</div>
