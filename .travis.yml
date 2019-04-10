@@ -28,5 +28,7 @@ env:
   - GEM=cmor_tags_backend
   - GEM=cmor_user_area
   - GEM=cmor_user_area_backend
+  - GEM=cmor_testimonials
+  - GEM=cmor_testimonials_backend
 
 script: ./rspec.sh
