@@ -7,6 +7,7 @@ rvm install $rvm_ruby_string
 rvm use $rvm_ruby_string
 echo "RUBY VERSION"
 ruby -v
+bundle update --bundler
 bundle install
 echo "RAILS VERSION"
 rails -v
