@@ -3,10 +3,9 @@ require 'pry'
 
 class DummyController < ApplicationController
   helper Cmor::Testimonials::ComponentHelper
-
 end
 
-RSpec.describe DummyController, type: controller do
+RSpec.describe DummyControllerdo
   let(:test_controller) {DummyController.new}
 
   subject { test_controller.view_context }
