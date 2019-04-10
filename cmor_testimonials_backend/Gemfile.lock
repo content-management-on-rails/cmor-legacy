@@ -41,8 +41,6 @@ PATH
       cmor (= 0.0.6.pre)
       cmor_core_backend (= 0.0.6.pre)
       cmor_testimonials (= 0.0.6.pre)
-      haml
-      haml-rails
       rails (>= 5.2.0)
 
 GEM
