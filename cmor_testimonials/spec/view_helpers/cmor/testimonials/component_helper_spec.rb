@@ -5,11 +5,11 @@ class DummyController < ApplicationController
   helper Cmor::Testimonials::ComponentHelper
 end
 
-RSpec.describe DummyControllerdo
+RSpec.describe DummyController do
   let(:test_controller) {DummyController.new}
 
   subject { test_controller.view_context }
 
-  it { should respond_to(:render_component)}
+  it { should respond_to(:render_component) }
   it { should respond_to(:render_testimonials) }
 end
