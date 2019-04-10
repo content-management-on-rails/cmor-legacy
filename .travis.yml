@@ -31,4 +31,7 @@ env:
   - GEM=cmor_testimonials
   - GEM=cmor_testimonials_backend
 
+before_script: 
+  - bundle update --bundler
+  
 script: ./rspec.sh
