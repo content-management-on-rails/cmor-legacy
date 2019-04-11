@@ -3,10 +3,12 @@ module Cmor
     class Category < ActiveRecord::Base
       has_many :testimonials, -> { order(position: :asc) }, dependent: :destroy
 
-      validates :identifier, presence: true, uniqueness: true
+      validates :locale, presence: true, inclusion: { in: I18n.available_locales.map(&:to_s) }
+      validates :identifier, presence: true, uniqueness: { scope: [ :locale ] }
+      validates :name, presence: true, uniqueness: { scope: [ :locale ] }
 
       def human
-        identifier
+        name
       end
     end
   end

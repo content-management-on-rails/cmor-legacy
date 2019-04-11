@@ -15,6 +15,8 @@ de:
       cmor/testimonials/category:
         <<: *default_attributes
         identifier: Bezeichner
+        name: Name
+        locale: Sprache
         slug: Slug
       cmor/testimonials/testimonial:
         <<: *default_attributes

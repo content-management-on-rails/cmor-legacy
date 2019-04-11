@@ -19,8 +19,12 @@ cd spec/dummy
 rails generate simple_form:install --bootstrap
 
 ## Always require rspec and factory_bot_rails in dummy app
-required_gems="require 'responders'\nrequire 'rspec-rails'\nrequire 'factory_bot_rails'\n"
+required_gems="require 'rspec-rails'\nrequire 'factory_bot_rails'\nrequire 'rails-i18n'\n"
 echo "$(awk 'NR==17{print "'"$required_gems"'"}1' config/application.rb)" > config/application.rb
+
+## raise on unpermitted params
+echo "$(awk 'NR==46{print "'"  config.action_controller.action_on_unpermitted_parameters = :raise"'"}1' config/environments/development.rb)" > config/environments/development.rb
+echo "$(awk 'NR==62{print "'"  config.action_controller.action_on_unpermitted_parameters = :raise"'"}1' config/environments/test.rb)" > config/environments/test.rb
 
 ## I18n configuration
 touch config/initializers/i18n.rb

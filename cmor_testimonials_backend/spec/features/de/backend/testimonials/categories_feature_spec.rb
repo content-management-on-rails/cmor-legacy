@@ -14,7 +14,9 @@ RSpec.describe '/de/backend/testimonials/categories', type: :feature do
       expect(subject).to implement_create_action(self)
         .for(Cmor::Testimonials::Category)
         .within_form('#new_category') {
-          fill_in 'category[identifier]', with: 'example'
+          select I18n.locale, from: 'category[locale]'
+          fill_in 'category[name]', with: 'Example Category #1'
+          fill_in 'category[identifier]', with: 'category-1'
         }
         .increasing { Cmor::Testimonials::Category.count }.by(1)
     }

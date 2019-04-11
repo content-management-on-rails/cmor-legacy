@@ -28,13 +28,12 @@ RSpec.describe '/de/backend/testimonials/testimonials', type: :feature do
   }
 
   describe 'appending image on create' do
-    before(:each) { category.save!}
-
-    it { 
+    it {
+      category
       expect(subject).to implement_create_action(self)
         .for(Cmor::Testimonials::Testimonial)
         .within_form('#new_testimonial') {
-          select category.identifier, from: 'testimonial_category_id'
+          select category.human, from: 'testimonial[category_id]'
           fill_in 'testimonial[fullname]', with: 'John Doe'
           attach_file 'testimonial[image]', Cmor::Testimonials::Engine.root.join(*%w( spec files cmor testimonials testimonials homer.png))
         }

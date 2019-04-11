@@ -1,6 +1,6 @@
 = table.batch_actions actions: { destroy: url_for(action: :destroy_many) }
 = table.acts_as_list_actions scope: :category_id
-= table.association :category, label_method: :human, link_to: ->(resource) { url_for([resource.category]) }, sort: { column_name: 'cmor_testimonials_categories.identifier' }
+= table.association :category, label_method: :human, link_to: ->(resource) { url_for([resource.category]) }, sort: { column_name: 'cmor_testimonials_categories.name' }
 = table.column :image do |resource|
   - if resource.image.attached?
     - image_tag(main_app.url_for(resource.image.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
