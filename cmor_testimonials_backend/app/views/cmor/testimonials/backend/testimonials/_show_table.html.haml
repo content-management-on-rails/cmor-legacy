@@ -1,5 +1,5 @@
 = table.thumbnail :image
-= table.row :category, as: :association, label_method: :human
+= table.association :category, label_method: :human, link_to: ->(r) { url_for(r) }
 = table.row :full_name
 = table.row :role
 = table.row :company
