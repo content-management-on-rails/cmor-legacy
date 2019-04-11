@@ -6,7 +6,7 @@ module Cmor
       validates :identifier, presence: true, uniqueness: true
 
       def human
-        "#{identifier}"
+        identifier
       end
     end
   end
