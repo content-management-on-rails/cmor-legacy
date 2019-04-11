@@ -4,6 +4,8 @@ Cmor::Galleries::Engine.routes.draw do
       resources :picture_galleries do
         post :toggle_published, on: :member
       end
+
+      root to: 'picture_galleries#index'
     end
   end
 end

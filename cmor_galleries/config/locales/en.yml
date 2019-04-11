@@ -1,4 +1,6 @@
 en:
+  classes:
+    cmor/galleries/engine: Pictures
   routes:
     cmor_galleries_engine: pictures
     picture_galleries: galleries
