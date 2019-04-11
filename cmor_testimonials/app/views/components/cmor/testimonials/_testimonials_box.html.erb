@@ -16,7 +16,7 @@
               <p class="testimonial"><%= t.body.html_safe %></p>
               <div class="img-box"><img src="<%= main_app.url_for(t.image.variant(resize: "100x100"))%>" alt=""></div>
               <p class="overview">
-                <b><%= t.full_name %></b>, <%= t.role %> @ <%= t.company %>
+                <b><%= t.fullname %></b>, <%= t.role %> @ <%= t.company %>
               </p>
             </div>
           <% end %>

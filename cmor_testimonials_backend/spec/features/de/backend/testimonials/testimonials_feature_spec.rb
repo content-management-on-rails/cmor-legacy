@@ -35,7 +35,7 @@ RSpec.describe '/de/backend/testimonials/testimonials', type: :feature do
         .for(Cmor::Testimonials::Testimonial)
         .within_form('#new_testimonial') {
           select category.identifier, from: 'testimonial_category_id'
-          fill_in 'testimonial[full_name]', with: 'John Doe'
+          fill_in 'testimonial[fullname]', with: 'John Doe'
           attach_file 'testimonial[image]', Cmor::Testimonials::Engine.root.join(*%w( spec files cmor testimonials testimonials homer.png))
         }
         .increasing{ Cmor::Testimonials::Testimonial.count }.by(1)

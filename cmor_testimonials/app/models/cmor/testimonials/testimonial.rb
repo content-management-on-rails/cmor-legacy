@@ -10,7 +10,7 @@ module Cmor
       acts_as_published
 
       def human
-        "#{full_name} (#{role}) - #{company}"
+        "#{fullname} (#{role}) - #{company}"
       end
     end
   end

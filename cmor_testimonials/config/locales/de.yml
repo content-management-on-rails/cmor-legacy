@@ -23,7 +23,7 @@ de:
         published_at: Veröffentlicht am
         category: Kategorie
         category_id: Kategorie
-        full_name: Name
+        fullname: Name
         role: Rolle
         company: Unternehmen
         body: Text

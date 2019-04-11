@@ -23,7 +23,7 @@ en:
         published_at: Published at
         category: Category
         category_id: Category ID
-        full_name: Name
+        fullname: Name
         role: Role
         company: Company
         body: Text

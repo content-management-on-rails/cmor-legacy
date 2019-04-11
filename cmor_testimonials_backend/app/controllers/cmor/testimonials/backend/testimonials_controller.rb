@@ -16,7 +16,7 @@ module Cmor
         end
 
         def permitted_params
-          params.require(:testimonial).permit(:category_id, :full_name, :role, :company, :body, :position, :published, :image)
+          params.require(:testimonial).permit(:category_id, :fullname, :role, :company, :body, :position, :published, :image)
         end
       end
     end
