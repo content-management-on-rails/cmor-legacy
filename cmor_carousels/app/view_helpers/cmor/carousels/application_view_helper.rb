@@ -11,9 +11,9 @@ module Cmor
       # Example:
       #
       #     # This will render a bootstrap 4 compatible carousel
-      #     = carousels_helper(self).render(:main, autostart: true, interval: 5.0, variant_options: { resize: "1920x1080" })
+      #     = carousels_helper(self).render_carousel(:main, autostart: true, interval: 5.0, variant_options: { resize: "1920x1080" })
       #
-      def render(identifier, options = {})
+      def render_carousel(identifier, options = {})
         options.reverse_merge!(autostart: true, interval: 5.0, keyboard: true, pause: :hover, ride: false, wrap: true, controls: true)
         carousel_options = options.slice(:autostart, :interval, :pause, :ride, :wrap)
         data_attributes = carousel_options_to_data_attributes(carousel_options)

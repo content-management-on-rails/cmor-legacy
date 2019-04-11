@@ -29,13 +29,13 @@ Add the helper to your controller:
 
   # app/controllers/application_controller.rb
   class ApplicationController < ActionController::Base
-    helper Cmor::CarouselsHelper
+    view_helper Cmor::Carousels::ApplicationViewHelper, as: :carousel_helper
     #...
   end
 
 Use the helper to display a carousel:
 
-  <%= render_carousel 'My Carousel' %>
+  <%= carousel_helper(self).render_carousel 'My Carousel' %>
 
 = License
 
