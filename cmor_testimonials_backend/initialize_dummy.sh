@@ -15,10 +15,9 @@ rm spec/dummy/.ruby-version
 # Satisfy prerequisites
 cd spec/dummy
 
-# install simple form
+# Install simple form
 rails generate simple_form:install --bootstrap
 
-# responders for rao-service_controller
 ## Always require rspec and factory_bot_rails in dummy app
 required_gems="require 'responders'\nrequire 'rspec-rails'\nrequire 'factory_bot_rails'\n"
 echo "$(awk 'NR==17{print "'"$required_gems"'"}1' config/application.rb)" > config/application.rb
@@ -35,7 +34,7 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Add ActiveStorage
-rails active_storage:install
+rails active_storage:install:migrations
 
 # Install cmor core backend gem
 rails generate administrador:install
