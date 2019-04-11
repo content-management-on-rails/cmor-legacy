@@ -1,4 +1,6 @@
 en:
+  classes:
+    cmor/files/engine: Files
   routes:
     cmor_files_engine: files
     folders: folders

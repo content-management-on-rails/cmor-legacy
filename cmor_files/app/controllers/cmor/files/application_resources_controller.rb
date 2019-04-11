@@ -1,5 +1,5 @@
 module Cmor::Files
-  class ApplicationResourcesController < Cmor::Blog::Configuration.base_controller.constantize
+  class ApplicationResourcesController < Cmor::Files::Configuration.base_controller.constantize
     include Rao::ResourcesController::RestActionsConcern
     include Rao::ResourcesController::ResourcesConcern
     include Rao::ResourcesController::RestResourceUrlsConcern
