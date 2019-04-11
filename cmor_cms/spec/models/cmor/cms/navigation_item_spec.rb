@@ -8,12 +8,6 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
     it { expect(subject).to belong_to(:page).optional }
   end
 
-  context '#to_s' do
-    it 'should return the correct string' do
-      expect(subject.to_s).to eq("#{subject.navigation}: #{subject.name}")
-    end
-  end
-
   context 'properties' do
     it { expect(subject).to respond_to(:li_attributes) }
     it { expect(subject).to respond_to(:highlights_on) }
