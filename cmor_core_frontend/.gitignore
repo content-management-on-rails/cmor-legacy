@@ -1,0 +1,15 @@
+.bundle/
+log/*.log
+pkg/
+
+# Ignore built gems.
+*.gem
+
+# Initialize the dummy app with ./initialize_dummy.sh.
+spec/dummy
+
+# Ignore backup files.
+*~
+
+# Ignore coverage files.
+coverage/

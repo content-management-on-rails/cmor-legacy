@@ -1,0 +1,62 @@
+!!!
+%html{ lang: I18n.locale }
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title= cms_helper(self).title
+    
+    / Rails meta tags
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    / Bootstrap core CSS
+    %link{href: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel: "stylesheet", integrity: "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin: "anonymous"}
+    / Custom styles for this template
+    = stylesheet_link_tag 'frontend/application', media: 'all', 'data-turbolinks-track': 'reload'
+    / Fonts
+    %link{:href => "https://fonts.googleapis.com/css?family=Poppins", :rel => "stylesheet"}/
+    / Font Awesome Icons
+    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.8.1/css/all.css", :integrity => "sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf", :rel => "stylesheet"}/
+    / jQuery JS
+    %script{:crossorigin => "anonymous", :integrity => "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", :src => "https://code.jquery.com/jquery-3.3.1.min.js"}
+    / Bootstrap core JavaScript
+    %script{src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js", integrity: "sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o", crossorigin: "anonymous"}
+    / Frontend Javascript
+    = javascript_include_tag 'frontend/application', 'data-turbolinks-track': 'reload'
+  %body{ frontend_helper(self).body_html }
+    / Navigation
+    %nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        = link_to("/#{I18n.locale}", class: 'navbar-brand') do
+          = image_tag(frontend_helper(self).main_logo_url)
+          = frontend_helper(self).home_title
+        %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+          %span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          = cms_navigation_helper(self).render(:main, renderer: :list, container_css_class: 'navbar-nav ml-auto', selected_class: 'active', item_html: { class: 'nav-item' }, link_html: { class: 'nav-link' })
+          = user_area_helper(self).render_navigation(dropdown: false)
+
+    %header
+      - if cms_page_helper(self).home?
+        = carousels_helper(self).render_carousel(:main, variant_options: { combine_options: { resize: "1920x1080^", gravity: 'center', crop: "1920x1080+0+0" } })
+
+    / Page Content
+    .container
+      .mb-4.mt-4
+        = yield  
+    
+    
+    / /.container
+    / Footer
+    %footer.py-5.bg-light
+      .container
+        = links_helper(self).render_footer
+    %footer.py-5.bg-dark
+      .container
+        %p.m-0.text-center.text-white
+          = frontend_helper(self).copyright_message
+      / /.container
+    = blueimp_gallery_helper(self).prepare_modal
+    = eu_gdpr_helper(self).render_cookie_consent_banner

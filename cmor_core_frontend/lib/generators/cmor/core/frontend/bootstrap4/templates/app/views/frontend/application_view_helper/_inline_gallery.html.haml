@@ -1,0 +1,6 @@
+.inline-gallery{ id: id }
+  .row
+    - images.each do |image|
+      .col-6.col-md-4.col-lg-3
+        %a{ href: main_app.url_for(image), data: { gallery: id } }
+          %img{ class: 'img-fluid mb-4', src: main_app.url_for(image.variant(variant_options)) }/

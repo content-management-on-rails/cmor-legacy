@@ -1,0 +1,9 @@
+en:
+  layouts:
+    frontend:
+      application:
+        home: "Jane Does' Website"
+  site:
+    owner: "Jane Doe"
+    copyright_message: "Copyright © %{owner} 2009 - %{to}"
+    primary_title: "Jane Does' Website - %{subtitle}"
