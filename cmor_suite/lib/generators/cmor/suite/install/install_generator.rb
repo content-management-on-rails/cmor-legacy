@@ -29,6 +29,7 @@ module Cmor
         end
 
         def run_frontend_generators
+          generate "cmor:core:frontend:install"
           sub_modules.each do |m|
             generate "cmor:#{m}:install"
           end

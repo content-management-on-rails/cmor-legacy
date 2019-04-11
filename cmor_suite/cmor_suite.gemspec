@@ -2,11 +2,11 @@ $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require_relative "../lib/cmor/version"
-require_relative "../cmor_core/lib/cmor/core/gemspec"
+require_relative "../cmor_core_frontend/lib/cmor/core/frontend/gemspec"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  Cmor::Core::Gemspec.defaults(s)
+  Cmor::Core::Frontend::Gemspec.defaults(s)
   s.name        = "cmor_suite"
   s.summary     = "Easy Content Management Suite."
   s.description = "Modular, scalable content management on rails."
