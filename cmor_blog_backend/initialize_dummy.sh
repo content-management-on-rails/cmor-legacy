@@ -15,9 +15,6 @@ rm spec/dummy/.ruby-version
 # Satisfy prerequisites
 cd spec/dummy
 
-# responders for rao-service_controller
-sed -i '17i\  require "responders"' config/application.rb
-
 ## Always require rspec and factory_bot_rails in dummy app
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
@@ -34,7 +31,7 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Add ActiveStorage
-rails active_storage:install
+rails active_storage:Install
 
 # Add User model for userstamping
 rails g model User email
