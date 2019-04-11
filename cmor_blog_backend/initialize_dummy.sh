@@ -31,7 +31,7 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Add ActiveStorage
-rails active_storage:Install
+rails active_storage:install:migrations
 
 # Add User model for userstamping
 rails g model User email
