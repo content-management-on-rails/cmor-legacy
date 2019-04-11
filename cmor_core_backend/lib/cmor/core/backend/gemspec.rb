@@ -12,7 +12,8 @@ module Cmor
           s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
           s.add_dependency "rails", ">= 5.2.0"
-          s.add_dependency "cmor", "= #{Cmor::VERSION}"
+          # s.add_dependency "cmor", "= #{Cmor::VERSION}"
+          s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" unless s.files.include?("lib/cmor/core/backend.rb")
 
           s.add_development_dependency "sqlite3", '~> 1.3.6'

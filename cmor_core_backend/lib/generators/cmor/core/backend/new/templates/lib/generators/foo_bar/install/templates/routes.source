@@ -1,0 +1,4 @@
+
+  localized do
+    mount <%= name %>::Engine, at: '<%= mountpoint %>'
+  end
