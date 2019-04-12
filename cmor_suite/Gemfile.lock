@@ -17,6 +17,28 @@ GIT
       activerecord (~> 5.0)
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core (0.0.6.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.6.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
+      route_translator
+    cmor_core_backend (0.0.6.pre)
+      administrador (>= 0.0.10.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+    cmor_core_frontend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
+
+PATH
   remote: ../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.6.pre)
@@ -215,6 +237,29 @@ PATH
       responders
 
 PATH
+  remote: ../cmor_testimonials_backend
+  specs:
+    cmor_testimonials_backend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      cmor_core_backend (= 0.0.6.pre)
+      cmor_testimonials (= 0.0.6.pre)
+      rails (>= 5.2.0)
+
+PATH
+  remote: ../cmor_testimonials
+  specs:
+    cmor_testimonials (0.0.6.pre)
+      acts_as_list
+      acts_as_markup
+      acts_as_published
+      cmor_core (= 0.0.6.pre)
+      cmor_core_frontend (= 0.0.6.pre)
+      friendly_id
+      haml-rails
+      mini_magick
+      rails (>= 5.2.0)
+
+PATH
   remote: ../cmor_user_area_backend
   specs:
     cmor_user_area_backend (0.0.6.pre)
@@ -237,28 +282,6 @@ PATH
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
       simple_form
-
-PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core (0.0.6.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.6.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.6.pre)
-      administrador (>= 0.0.10.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-    cmor_core_frontend (0.0.6.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
 
 PATH
   remote: .
@@ -285,6 +308,8 @@ PATH
       cmor_system_backend (= 0.0.6.pre)
       cmor_tags (= 0.0.6.pre)
       cmor_tags_backend (= 0.0.6.pre)
+      cmor_testimonials (= 0.0.6.pre)
+      cmor_testimonials_backend (= 0.0.6.pre)
       cmor_user_area (= 0.0.6.pre)
       cmor_user_area_backend (= 0.0.6.pre)
       rails (>= 5.2.0)
@@ -384,7 +409,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
-    capybara (3.16.1)
+    capybara (3.16.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -531,7 +556,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.17.0)
-    parser (2.6.2.0)
+    parser (2.6.2.1)
       ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -540,7 +565,7 @@ GEM
       pry (>= 0.10.4)
     psych (3.1.0)
     public_suffix (3.0.3)
-    rack (2.0.6)
+    rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -578,7 +603,7 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.17.pre)
+    rao (0.0.18.pre)
     rao-component (0.0.18.pre)
       haml-rails
       rails
@@ -604,7 +629,7 @@ GEM
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.17.pre)
+    rao-shoulda_matchers (0.0.18.pre)
       rao
     rao-view_helper (0.0.18.pre)
       rao
@@ -612,7 +637,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdiscount (2.2.0.1)
-    regexp_parser (1.3.0)
+    regexp_parser (1.4.0)
     request_store (1.4.1)
       rack (>= 1.4)
     request_store_rails (1.0.3)
@@ -644,7 +669,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubocop (0.66.0)
+    rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -736,6 +761,8 @@ DEPENDENCIES
   cmor_system_backend!
   cmor_tags!
   cmor_tags_backend!
+  cmor_testimonials!
+  cmor_testimonials_backend!
   cmor_user_area!
   cmor_user_area_backend!
   coveralls
@@ -756,4 +783,4 @@ DEPENDENCIES
   sqlite3 (~> 1.3.6)
 
 BUNDLED WITH
-   1.17.3
+   1.16.2
