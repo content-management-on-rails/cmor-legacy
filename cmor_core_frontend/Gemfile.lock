@@ -1,4 +1,9 @@
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+
+PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.6.pre)
@@ -10,11 +15,6 @@ PATH
       rao-view_helper (>= 0.0.14.pre)
       request_store_rails
       route_translator
-
-PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
 
 PATH
   remote: .
