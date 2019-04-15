@@ -2,3 +2,5 @@ source "http://rubygems.org"
 gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
+
+gem 'rao-view_helper', path: '~/rails/gems/rao/rao-view_helper'

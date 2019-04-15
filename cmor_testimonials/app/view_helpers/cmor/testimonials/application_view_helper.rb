@@ -16,6 +16,7 @@ module Cmor
           font_awesome:    false
         )
         category = Cmor::Testimonials::Category.where(identifier: identifier).first
+
         if category.present?
           render category: category, options: options
         end

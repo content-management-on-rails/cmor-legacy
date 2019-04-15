@@ -10,7 +10,7 @@
       .item.carousel-item.text-center{ class: ((i == 0) ? 'active' : '') }
         .img-box
           %img.img-thumbnail.rounded-circle{:alt => "", :src => main_app.url_for(testimonial.image.variant(options[:variant_options])) }/
-        %p.testimonial= markup_helper(self).render(testimonial, :body)
+        %p.testimonial= markup_helper(self).to_html(testimonial, :body)
         %p.overview
           = "<b>#{testimonial.fullname}</b>, #{testimonial.role} - #{testimonial.company}".html_safe
   - if options[:controls]

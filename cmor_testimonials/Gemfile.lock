@@ -1,13 +1,4 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core_frontend (0.0.6.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-
-PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.6.pre)
@@ -19,6 +10,15 @@ PATH
       rao-view_helper (>= 0.0.14.pre)
       request_store_rails
       route_translator
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core_frontend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
 
 PATH
   remote: .
@@ -33,6 +33,12 @@ PATH
       haml-rails
       mini_magick
       rails (>= 5.2.0)
+
+PATH
+  remote: ../../../gems/rao/rao-view_helper
+  specs:
+    rao-view_helper (0.0.18.pre)
+      rao
 
 GEM
   remote: http://rubygems.org/
@@ -266,8 +272,6 @@ GEM
     rao (0.0.18.pre)
     rao-shoulda_matchers (0.0.18.pre)
       rao
-    rao-view_helper (0.0.18.pre)
-      rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -366,6 +370,7 @@ DEPENDENCIES
   rails-dummy
   rails-i18n
   rao-shoulda_matchers
+  rao-view_helper!
   rspec-rails
   rubocop
   shoulda-matchers
