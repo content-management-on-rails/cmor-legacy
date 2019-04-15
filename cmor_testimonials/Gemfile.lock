@@ -1,10 +1,4 @@
 PATH
-  remote: ../../../gems/rao/rao-view_helper
-  specs:
-    rao-view_helper (0.0.19.pre)
-      rao
-
-PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.6.pre)
@@ -273,6 +267,8 @@ GEM
     rao (0.0.18.pre)
     rao-shoulda_matchers (0.0.18.pre)
       rao
+    rao-view_helper (0.0.19.pre)
+      rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -371,7 +367,6 @@ DEPENDENCIES
   rails-dummy
   rails-i18n
   rao-shoulda_matchers
-  rao-view_helper!
   rspec-rails
   rubocop
   shoulda-matchers
