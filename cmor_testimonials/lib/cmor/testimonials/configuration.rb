@@ -8,6 +8,8 @@ module Cmor
       def configure
         yield self
       end
+
+      mattr_accessor(:image_variant_options) { {} }
     end
   end
 end

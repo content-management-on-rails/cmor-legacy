@@ -1,0 +1,15 @@
+.cmor-testimonials-category .carousel-control-prev,
+.cmor-testimonials-category .carousel-control-next {
+  color: gray;
+}
+
+
+.carousel-control-prev-icon:before {
+  content:"\2039";
+  font-size: 250%;
+}
+
+.carousel-control-next-icon:before {
+  content:"\203A";
+  font-size: 250%;
+}

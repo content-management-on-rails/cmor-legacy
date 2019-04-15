@@ -1,0 +1,28 @@
+.cmor-testimonials-category.carousel.slide{class: dom_class(category), id: dom_id(category), data: { ride: 'carousel', interval: (options[:interval].to_f * 1000).to_i, keyboard: options[:keyboard].to_s, pause: options[:pause], wrap: options[:wrap].to_s } }
+  - if options[:indicators]
+    / Carousel indicators
+    %ol.carousel-indicators
+      - category.testimonials.count.times do |i|
+        %li{ class: (i == 0) ? "active" : "", "data-slide-to" => i, "data-target" => "##{dom_id(category)}"}
+  / Wrapper for carousel items
+  .carousel-inner
+    - category.testimonials.each_with_index do |testimonial, i|
+      .item.carousel-item.text-center{ class: ((i == 0) ? 'active' : '') }
+        .img-box
+          %img.img-thumbnail.rounded-circle{:alt => "", :src => main_app.url_for(testimonial.image.variant(options[:variant_options])) }/
+        %p.testimonial= markup_helper(self).render(testimonial, :body)
+        %p.overview
+          = "<b>#{testimonial.fullname}</b>, #{testimonial.role} - #{testimonial.company}".html_safe
+  - if options[:controls]
+    %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(category)}", :role => "button"}
+      - if options[:font_awesome]
+        %i.fa.fa-angle-left
+      - else
+        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+        %span.sr-only= t('.previous')
+    %a.carousel-control-next{"data-slide" => "next", :href => "##{dom_id(category)}", :role => "button"}
+      - if options[:font_awesome]
+        %i.fa.fa-angle-right
+      - else
+        %span.carousel-control-next-icon{"aria-hidden" => "true"}
+        %span.sr-only= t('.next')
