@@ -1,22 +1,4 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core (0.0.6.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.6.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
-      request_store_rails
-      route_translator
-    cmor_core_frontend (0.0.6.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-
-PATH
   remote: ../cmor_carousels
   specs:
     cmor_carousels (0.0.6.pre)
@@ -35,6 +17,24 @@ PATH
       administrador (>= 0.0.10.pre)
       cmor_core (= 0.0.6.pre)
       rails (>= 5.2.0)
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core (0.0.6.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.6.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
+      route_translator
+    cmor_core_frontend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
 
 PATH
   remote: .

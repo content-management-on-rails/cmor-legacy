@@ -21,5 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id'
   s.add_dependency 'haml-rails'
   s.add_dependency 'mini_magick'
+  s.add_dependency 'rao-view_helper', '>= 0.0.19.pre'
 end
 

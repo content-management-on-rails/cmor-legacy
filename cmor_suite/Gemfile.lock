@@ -17,28 +17,6 @@ GIT
       activerecord (~> 5.0)
 
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core (0.0.6.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.6.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.6.pre)
-      administrador (>= 0.0.10.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-    cmor_core_frontend (0.0.6.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-
-PATH
   remote: ../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.6.pre)
@@ -258,6 +236,7 @@ PATH
       haml-rails
       mini_magick
       rails (>= 5.2.0)
+      rao-view_helper (>= 0.0.19.pre)
 
 PATH
   remote: ../cmor_user_area_backend
@@ -282,6 +261,28 @@ PATH
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
       simple_form
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core (0.0.6.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.6.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.14.pre)
+      request_store_rails
+      route_translator
+    cmor_core_backend (0.0.6.pre)
+      administrador (>= 0.0.10.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+    cmor_core_frontend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
 
 PATH
   remote: .
@@ -631,7 +632,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.18.pre)
       rao
-    rao-view_helper (0.0.18.pre)
+    rao-view_helper (0.0.19.pre)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)

@@ -1,4 +1,10 @@
 PATH
+  remote: ../../../gems/rao/rao-view_helper
+  specs:
+    rao-view_helper (0.0.19.pre)
+      rao
+
+PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.6.pre)
@@ -33,12 +39,7 @@ PATH
       haml-rails
       mini_magick
       rails (>= 5.2.0)
-
-PATH
-  remote: ../../../gems/rao/rao-view_helper
-  specs:
-    rao-view_helper (0.0.18.pre)
-      rao
+      rao-view_helper (>= 0.0.19.pre)
 
 GEM
   remote: http://rubygems.org/
