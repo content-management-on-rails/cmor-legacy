@@ -10,7 +10,7 @@ module Cmor
           class_option :name, type: 'string', default: 'main', aliases: '-n'
           class_option :locales, type: 'array', default: I18n.available_locales, aliases: '-l'
           class_option :force, type: 'boolean', default: false, aliases: '-f'
-          class_option :modules, type: 'array', default: %w(blog galleries files tags contact), aliases: '-m'
+          class_option :modules, type: 'array', default: %w(Cmor::Blog::Engine Cmor::Galleries::Engine Cmor::Files::Engine Cmor::Tags::Engine Cmor::Contact::Engine), aliases: '-m'
 
 
           def generate_navigation
@@ -55,8 +55,8 @@ module Cmor
             name = nil
             url = nil
             I18n.with_locale(navigation.locale) do
-              name = I18n.t("classes.cmor/#{modyule}/engine")
-              url  = "/" + I18n.locale.to_s + "/" + I18n.t("routes.cmor_#{modyule}_engine")
+              name = I18n.t("classes.#{modyule.underscore}")
+              url  = "/" + I18n.locale.to_s + "/" + I18n.t("routes.#{modyule.underscore}".gsub('/', '_'))
             end
             Cmor::Cms::NavigationItem.where(navigation: navigation, name: name, key: modyule).first_or_initialize.tap do |ni|
               ni.url = url
