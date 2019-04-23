@@ -1,0 +1,7 @@
+= table.thumbnail :image
+= table.association :category, label_method: :human, link_to: ->(r) { url_for(r) }
+= table.row :fullname
+= table.row :role
+= table.row :company
+= table.row :body
+= table.timestamp :published_at

@@ -1,5 +1,5 @@
 require 'awesome_nested_set'
-require 'cmor_core'
+require 'cmor_core_frontend'
 require 'rao-service'
 require 'rao-view_helper'
 require 'redcloth'

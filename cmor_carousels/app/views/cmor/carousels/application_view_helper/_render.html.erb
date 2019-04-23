@@ -10,7 +10,7 @@
         <img class="d-block w-100" src="<%= main_app.url_for(item_detail.asset.variant(variant_options)) %>">
         <% if item_detail.description.present? %>
           <div class="carousel-caption d-none d-md-block">
-            <%= markup_helper(self).render(item_detail, :description) %>
+            <%= markup_helper(self).to_html(item_detail, :description) %>
           </div>
         <% end %>
       </div>

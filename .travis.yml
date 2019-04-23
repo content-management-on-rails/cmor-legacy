@@ -28,5 +28,11 @@ env:
   - GEM=cmor_tags_backend
   - GEM=cmor_user_area
   - GEM=cmor_user_area_backend
+  - GEM=cmor_testimonials
+  - GEM=cmor_testimonials_backend
+
+before_install:
+  - gem update --system
+  - gem install bundler
 
 script: ./rspec.sh

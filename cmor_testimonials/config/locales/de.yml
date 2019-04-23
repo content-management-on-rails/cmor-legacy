@@ -1,0 +1,40 @@
+de:
+  activerecord:
+    models:
+      cmor/testimonials/category:
+        one: Kategorie
+        other: Kategorien
+      cmor/testimonials/testimonial:
+        one: Testimonial
+        other: Testimonials
+    default_attributes: &default_attributes
+      id: ID
+      created_at: Erstellt am
+      updated_at: Aktualisiert am
+    attributes:
+      cmor/testimonials/category:
+        <<: *default_attributes
+        identifier: Bezeichner
+        name: Name
+        locale: Sprache
+        slug: Slug
+      cmor/testimonials/testimonial:
+        <<: *default_attributes
+        image: Bild
+        position: Position
+        published_at: Veröffentlicht am
+        category: Kategorie
+        category_id: Kategorie
+        fullname: Name
+        role: Rolle
+        company: Unternehmen
+        body: Text
+  resources:
+  cmor:
+    testimonials:
+      application_view_helper:
+        render:
+          next: Vor
+          previous: Zurück
+  routes:
+    cmor_testimonials_engine: testimonials

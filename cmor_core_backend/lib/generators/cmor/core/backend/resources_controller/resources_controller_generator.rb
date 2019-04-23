@@ -5,6 +5,7 @@ module Cmor
         # Example:
         #
         #     rails g cmor:core:backend:resources_controller -c Cmor::Services::ServicesController
+        #
         class ResourcesControllerGenerator < Rails::Generators::Base
           desc 'Generates a resources controller with CRUD actions.'
 

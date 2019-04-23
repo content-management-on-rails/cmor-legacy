@@ -1,0 +1,4 @@
+source "http://rubygems.org"
+gemspec
+gem 'cmor', path: '../'
+gem 'cmor_core', path: '../cmor_core'

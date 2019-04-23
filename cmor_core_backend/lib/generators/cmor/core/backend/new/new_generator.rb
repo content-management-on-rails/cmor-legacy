@@ -2,6 +2,10 @@ module Cmor
   module Core
     module Backend
       module Generators
+        # Example:
+        #
+        #     rails g cmor:core:backend:new --name=Cmor::Partners
+        #
         class NewGenerator < Rails::Generators::Base
           desc 'Installs the initializer, routes and itsf_backend integration'
 
@@ -9,7 +13,7 @@ module Cmor
 
           class_option :name, type: 'string', aliases: '-n' # Cmor::Faq
           class_option :author, type: 'string', aliases: '-ga'
-          class_option :email, type: 'string', aliases: '-gn'
+          class_option :email, type: 'string', aliases: '-ge'
 
           def generate_engine
             empty_directory "engines/#{flat_path}"

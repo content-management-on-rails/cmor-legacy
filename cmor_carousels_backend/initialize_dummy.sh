@@ -16,11 +16,9 @@ rm spec/dummy/.ruby-version
 cd spec/dummy
 
 # responders for rao-service_controller
-sed -i '17i\  require "responders"' config/application.rb
-
 ## Always require rspec and factory_bot_rails in dummy app
-sed -i '17i\  require "rspec-rails"' config/application.rb
-sed -i '17i\  require "factory_bot_rails"' config/application.rb
+required_gems="require 'responders'\nrequire 'rspec-rails'\nrequire 'factory_bot_rails'\n"
+echo "$(awk 'NR==17{print "'"$required_gems"'"}1' config/application.rb)" > config/application.rb
 
 ## I18n configuration
 touch config/initializers/i18n.rb

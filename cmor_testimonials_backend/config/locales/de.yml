@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/testimonials/backend/engine: 'Testimonials'
+  routes:
+    cmor-testimonials-backend-engine: 'testimonials'
