@@ -9,27 +9,17 @@ RSpec.describe Cmor::Links::Category, type: :model do
   context 'acts as markup' do
     subject do
       create(:cmor_links_category,
-              short_description: 'h1. This is a heading',
-              long_description: 'h1. This is a heading'
+              short_description: '# This is a heading',
+              long_description: '# This is a heading'
             )
     end
 
-    it { expect(subject).to validate_presence_of(:markup_language) }
-
-    %w(textile).each do |value|
-      it { expect(subject).to allow_value(value).for(:markup_language) }
-    end
-
-    %w(some other values that are not allowed).each do |value|
-      it { expect(subject).not_to allow_value(value).for(:markup_language) }
-    end
-
     context 'short_description.to_html' do
-      it { expect(subject.short_description(as: :html)).to eq('<h1>This is a heading</h1>') }
+      it { expect(subject.short_description(:html)).to eq("<h1 id=\"this-is-a-heading\">This is a heading</h1>\n") }
     end
 
     context 'long_description.to_html' do
-      it { expect(subject.long_description(as: :html)).to eq('<h1>This is a heading</h1>') }
+      it { expect(subject.long_description(:html)).to eq("<h1 id=\"this-is-a-heading\">This is a heading</h1>\n") }
     end
   end
 

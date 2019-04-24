@@ -16,14 +16,4 @@ Cmor::Links.configure do |config|
   # Default: config.base_controller = '<%= base_controller_class_name %>'
   #
   config.base_controller = '<%= base_controller_class_name %>'
-
-  # Accepted markup languages
-  #
-  # default: config.markup_languages = %w[ textile ]
-  config.markup_languages = %w( textile )
-
-  # Default markup language
-  #
-  # default: config.default_markup_language = 'textile'
-  config.default_markup_language = 'textile'
 end

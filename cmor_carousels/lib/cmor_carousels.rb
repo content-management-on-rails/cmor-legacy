@@ -1,5 +1,5 @@
 require 'acts_as_list'
-require 'acts_as_markup'
+require 'markup-rails'
 require 'acts_as_published'
 require 'cmor_core_frontend'
 require 'mini_magick'

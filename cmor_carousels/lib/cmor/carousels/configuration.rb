@@ -14,10 +14,6 @@ module Cmor
       mattr_accessor(:carousel_interval)
 
       mattr_accessor(:item_image_styles) { {} }
-
-      mattr_accessor(:markup_languages) { [] }
-
-      mattr_accessor(:default_markup_language)
     end
   end
 end

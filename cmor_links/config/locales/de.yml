@@ -19,7 +19,6 @@ de:
         links_count: Links
         locale: Sprache
         long_description: Langbeschreibung
-        markup_language: Markup Sprache
         name: Name
         parent: Übergeordnete Kategorie
         parent_id: Übergeordnete Kategorie
@@ -34,7 +33,6 @@ de:
         created_at: Erstellt am
         description: Beschreibung
         link_actions: ''
-        markup_language: Markup Sprache
         name: Name
         position: Position
         updated_at: Aktualisiert am

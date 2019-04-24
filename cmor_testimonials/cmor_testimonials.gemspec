@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   # Engine dependencies
   s.add_dependency 'acts_as_list'
-  s.add_dependency 'acts_as_markup'
+  s.add_dependency 'markup-rails'
   s.add_dependency 'acts_as_published'
   s.add_dependency 'friendly_id'
   s.add_dependency 'haml-rails'
