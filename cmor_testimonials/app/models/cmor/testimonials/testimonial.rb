@@ -9,7 +9,7 @@ module Cmor
 
       acts_as_list scope: :category
       acts_as_published
-      acts_as_markup :description, format: Cmor::Core::Configuration.default_markup_language
+      acts_as_markup :body, Cmor::Core::Configuration.default_markup_options
 
       def human
         "#{fullname} (#{role}) - #{company}"

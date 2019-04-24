@@ -5,7 +5,7 @@ RSpec.describe Cmor::Testimonials::ApplicationViewHelper, type: :view_helper do
   let(:category) { create(:cmor_testimonials_category, testimonials: testimonials) }
   let(:args) { [category.identifier, {}] }
   before(:each) do
-    register_view_helper Cmor::Core::MarkupViewHelper, as: :markup_helper
+    register_view_helper Markup::Rails::ApplicationViewHelper, as: :markup_helper
   end
 
   
