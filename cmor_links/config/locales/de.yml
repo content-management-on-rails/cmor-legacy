@@ -37,6 +37,11 @@ de:
         position: Position
         updated_at: Aktualisiert am
         url: URL
+  cmor:
+    links:
+      category:
+        messages:
+          no_links_available: Keine Links vorhanden.
   routes:
     cmor_links_engine: links
     categories: kategorien
