@@ -20,14 +20,6 @@ module Cmor
       mattr_accessor :base_controller do
         'ApplicationController'
       end
-
-      mattr_accessor :default_markup_language do
-        'textile'
-      end
-
-      mattr_accessor :markup_languages do
-        ['textile']
-      end
     end
   end
 end

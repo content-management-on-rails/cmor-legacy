@@ -9,8 +9,9 @@ module Cmor
       end
 
       mattr_accessor(:base_controller) { '::FrontendController' }
-      mattr_accessor(:markup_languages) {  %w[ markdown rdoc textile ] }
-      mattr_accessor(:default_markup_language) { 'textile' }
+      # mattr_accessor(:markup_languages) {  %w[ markdown rdoc textile ] }
+      # mattr_accessor(:default_markup_language) { 'textile' }
+      mattr_accessor(:default_markup_options) { { processor: :markdown } }
     end
   end
 end

@@ -4,7 +4,6 @@ class CreateCmorLinksLinks < ActiveRecord::Migration[4.2]
       t.string :name
       t.string :url
       t.text :description
-      t.string :markup_language
 
       # associations
       t.references :category

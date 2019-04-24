@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :cmor_links_category, class: Cmor::Links::Category do
     locale { I18n.locale }
     sequence(:name) { |i| "Link category #{i}" }
-    markup_language { 'textile' }
 
     factory(:cmor_links_category_with_parent) do
       locale { nil }

@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,spec}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency 'acts_as_list'
-  s.add_dependency 'acts_as_markup'
+  s.add_dependency 'markup-rails'
   s.add_dependency 'acts_as_published'
   s.add_dependency 'mini_magick'
 end

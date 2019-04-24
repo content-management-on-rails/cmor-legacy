@@ -5,7 +5,6 @@ class CreateCmorLinksCategories < ActiveRecord::Migration[4.2]
       t.string :name
       t.text :short_description
       t.text :long_description
-      t.string :markup_language
       t.integer :link_footer_column
 
       # awesome nested set

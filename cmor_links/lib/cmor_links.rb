@@ -4,6 +4,7 @@ require 'awesome_nested_set'
 require 'awesome_nested_set-tools'
 require 'friendly_id'
 require 'draper'
+require 'markup-rails'
 require 'rao-view_helper'
 require 'redcloth'
 
