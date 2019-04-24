@@ -6,6 +6,15 @@ GIT
       activerecord (>= 5.0, < 6.1)
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.6.pre)
+    cmor_core_frontend (0.0.6.pre)
+      cmor_core (= 0.0.6.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
+
+PATH
   remote: ../cmor_core
   specs:
     cmor_core (0.0.6.pre)
@@ -14,18 +23,9 @@ PATH
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.14.pre)
+      rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-
-PATH
-  remote: ..
-  specs:
-    cmor (0.0.6.pre)
-    cmor_core_frontend (0.0.6.pre)
-      cmor_core (= 0.0.6.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
 
 PATH
   remote: .
@@ -93,7 +93,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.3)
-    capybara (3.16.2)
+    capybara (3.18.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -123,12 +123,12 @@ GEM
     erubis (2.7.0)
     factory_bot (5.0.2)
       activesupport (>= 4.2.0)
-    factory_bot_rails (5.0.1)
-      factory_bot (~> 5.0.0)
+    factory_bot_rails (5.0.2)
+      factory_bot (~> 5.0.2)
       railties (>= 4.2.0)
     ffi (1.10.0)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     formatador (0.2.5)
     git_log_generator (0.0.5)
     globalid (0.4.2)
@@ -210,7 +210,7 @@ GEM
     minitest (5.11.3)
     nenv (0.3.0)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -263,19 +263,22 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
-    rao (0.0.18.pre)
-    rao-service (0.0.18.pre)
+    rao (0.0.20.pre)
+    rao-service (0.0.20.pre)
       activemodel
       activesupport
+      rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.18.pre)
+    rao-service_controller (0.0.20.pre)
       font-awesome-rails
+      rails (>= 3.2.0)
       rao
       simple_form
       twitter-bootstrap-components-rails
-    rao-shoulda_matchers (0.0.18.pre)
+    rao-shoulda_matchers (0.0.20.pre)
       rao
-    rao-view_helper (0.0.18.pre)
+    rao-view_helper (0.0.20.pre)
+      rails (>= 4.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -295,7 +298,7 @@ GEM
       rspec-mocks (~> 3.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-expectations (3.8.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-mocks (3.8.0)
