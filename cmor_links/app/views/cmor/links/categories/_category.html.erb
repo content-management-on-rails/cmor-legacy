@@ -11,7 +11,7 @@
     <%= render partial: 'cmor/links/categories/category_in_index', collection: Cmor::Links::CategoryDecorator.decorate_collection(category.descendants), as: :category %>
   </div>
 
-  <div class="download_category-downloads item_list">
+  <div class="links_category-links item_list">
     <h2><%= Cmor::Links::Category.human_attribute_name(:cmor_links_links) %></h2>
     <% if category.links.count == 0 %>
       <p><%= t('cmor.links.category.messages.no_links_available') %></p>
