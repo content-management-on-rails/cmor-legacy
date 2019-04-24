@@ -10,6 +10,6 @@ RSpec.describe Cmor::Testimonials::ApplicationViewHelper, type: :view_helper do
 
   
   describe 'render_category' do
-    it { expect(rendered).to have_css('div.cmor-testimonials-category') }
+    it { expect(html).to have_css('div.cmor-testimonials-category') }
   end
 end
