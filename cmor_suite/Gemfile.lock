@@ -30,7 +30,7 @@ PATH
       request_store_rails
       route_translator
     cmor_core_backend (0.0.6.pre)
-      administrador (>= 0.0.10.pre)
+      administrador (>= 0.0.11.pre)
       cmor_core (= 0.0.6.pre)
       rails (>= 5.2.0)
     cmor_core_frontend (0.0.6.pre)
