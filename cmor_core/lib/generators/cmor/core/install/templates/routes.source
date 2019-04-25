@@ -1,3 +1,0 @@
-
-
-  mount Cmor::Core::Engine, at: '/'

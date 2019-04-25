@@ -1,7 +1,7 @@
 Cmor::Core.configure do |config|
-  # Set the base controller for the contact form
+  # Set the default markup options to be used in cmor modules.
   #
-  # Default: config.base_controller = '<%= base_controller_class_name %>'
+  # Default: config.default_markup_options = { processor: :markdown }
   #
-  config.base_controller = '<%= base_controller_class_name %>'
+  config.default_markup_options = { processor: :markdown }
 end
