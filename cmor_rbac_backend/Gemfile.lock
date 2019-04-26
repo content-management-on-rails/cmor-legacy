@@ -1,4 +1,21 @@
 PATH
+  remote: ../cmor_core_backend
+  specs:
+    cmor_core_backend (0.0.8.pre)
+      administrador (>= 0.0.11.pre)
+      cmor_core (= 0.0.8.pre)
+      rails (>= 5.2.0)
+
+PATH
+  remote: ../cmor_rbac
+  specs:
+    cmor_rbac (0.0.8.pre)
+      cmor_core (= 0.0.8.pre)
+      cmor_core_frontend (= 0.0.8.pre)
+      rails (>= 5.2.0)
+      rao-service (>= 0.0.17.pre)
+
+PATH
   remote: ..
   specs:
     cmor (0.0.8.pre)
@@ -15,23 +32,6 @@ PATH
       cmor_core (= 0.0.8.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
-
-PATH
-  remote: ../cmor_core_backend
-  specs:
-    cmor_core_backend (0.0.8.pre)
-      administrador (>= 0.0.11.pre)
-      cmor_core (= 0.0.8.pre)
-      rails (>= 5.2.0)
-
-PATH
-  remote: ../cmor_rbac
-  specs:
-    cmor_rbac (0.0.8.pre)
-      cmor_core (= 0.0.8.pre)
-      cmor_core_frontend (= 0.0.8.pre)
-      rails (>= 5.2.0)
-      rao-service (>= 0.0.17.pre)
 
 PATH
   remote: .
