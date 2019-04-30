@@ -1,7 +1,11 @@
 module Cmor
   module Testimonials
     class Category < ActiveRecord::Base
-      has_many :testimonials, -> { order(position: :asc) }, dependent: :destroy
+      has_many :testimonials, -> { order(position: :asc) }, dependent: :destroy do
+        def published 
+          merge(Testimonial.published)
+        end
+      end
 
       validates :locale, presence: true, inclusion: { in: I18n.available_locales.map(&:to_s) }
       validates :identifier, presence: true, uniqueness: { scope: [ :locale ] }

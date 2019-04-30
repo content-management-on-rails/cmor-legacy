@@ -17,7 +17,7 @@ module Cmor
         )
         category = Cmor::Testimonials::Category.where(identifier: identifier).first
 
-        if category.present?
+        if category.present? && category.testimonials.published.any?
           render category: category, options: options
         end
       end
