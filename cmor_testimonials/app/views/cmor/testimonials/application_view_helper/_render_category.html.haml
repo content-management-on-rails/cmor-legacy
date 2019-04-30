@@ -14,15 +14,11 @@
         %p.overview
           = "<b>#{testimonial.fullname}</b>, #{testimonial.role} - #{testimonial.company}".html_safe
   - if options[:controls]
-    %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(category)}", :role => "button"}
-      - if options[:font_awesome]
-        %i.fa.fa-angle-left
-      - else
-        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+    - if options[:font_awesome]
+      %i.fa.fa-angle-left
+      %i.fa.fa-angle-right
+    - else
+      %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(category)}", :role => "button"}
         %span.sr-only= t('.previous')
-    %a.carousel-control-next{"data-slide" => "next", :href => "##{dom_id(category)}", :role => "button"}
-      - if options[:font_awesome]
-        %i.fa.fa-angle-right
-      - else
-        %span.carousel-control-next-icon{"aria-hidden" => "true"}
+      %a.carousel-control-next{"data-slide" => "next", :href => "##{dom_id(category)}", :role => "button"}
         %span.sr-only= t('.next')

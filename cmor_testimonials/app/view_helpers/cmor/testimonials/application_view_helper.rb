@@ -1,7 +1,7 @@
 module Cmor
   module Testimonials
     class ApplicationViewHelper < Rao::ViewHelper::Base
-      def render_category(identifier, options = {})
+      def render_category(category_or_identifier, options = {})
         default_variant_options = Cmor::Testimonials::Configuration.image_variant_options[:category]
         options.reverse_merge!(
           autostart:       true,
@@ -15,17 +15,15 @@ module Cmor
           variant_options: default_variant_options,
           font_awesome:    false
         )
-        category = Cmor::Testimonials::Category.where(identifier: identifier).first
+        category = if category_or_identifier.is_a?(Cmor::Testimonials::Category)
+          category_or_identifier
+        else
+          Cmor::Testimonials::Category.where(identifier: category_or_identifier).first
+        end
 
         if category.present? && category.testimonials.published.any?
           render category: category, options: options
         end
-      end
-
-      private
-
-      def render(locals = {})
-        c.render partial: "/#{self.class.name.underscore}/#{caller_locations(1,1)[0].label}", locals: locals
       end
     end
   end
