@@ -33,7 +33,7 @@ en:
   cmor:
     testimonials:
       application_view_helper:
-        render:
+        render_category:
           next: Next
           previous: Previous
   routes:

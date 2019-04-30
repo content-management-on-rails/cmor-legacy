@@ -4,12 +4,12 @@
 }
 
 
-.carousel-control-prev-icon:before {
+.carousel-control-prev:before {
   content:"\2039";
   font-size: 250%;
 }
 
-.carousel-control-next-icon:before {
+.carousel-control-next:before {
   content:"\203A";
   font-size: 250%;
 }
