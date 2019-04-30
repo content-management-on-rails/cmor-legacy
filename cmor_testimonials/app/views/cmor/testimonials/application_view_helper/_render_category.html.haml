@@ -2,11 +2,11 @@
   - if options[:indicators]
     / Carousel indicators
     %ol.carousel-indicators
-      - category.testimonials.count.times do |i|
+      - category.testimonials.published.count.times do |i|
         %li{ class: (i == 0) ? "active" : "", "data-slide-to" => i, "data-target" => "##{dom_id(category)}"}
   / Wrapper for carousel items
   .carousel-inner
-    - category.testimonials.each_with_index do |testimonial, i|
+    - category.testimonials.published.each_with_index do |testimonial, i|
       .item.carousel-item.text-center{ class: ((i == 0) ? 'active' : '') }
         .img-box
           %img.img-thumbnail.rounded-circle{:alt => "", :src => main_app.url_for(testimonial.image.variant(options[:variant_options])) }/
