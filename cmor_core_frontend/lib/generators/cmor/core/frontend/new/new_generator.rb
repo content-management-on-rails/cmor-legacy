@@ -3,7 +3,7 @@ module Cmor
     module Frontend
       module Generators
         class NewGenerator < Rails::Generators::Base
-          desc 'Installs the initializer, routes and itsf_backend integration'
+          desc 'Creates a new frontend engine'
 
           source_root File.expand_path('../templates', __FILE__)
 
