@@ -26,6 +26,15 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+# Install administrador
+rails generate administrador:install
+
+# Install SimpleForm
+rails generate simple_form:install --bootstrap
+
+# Install cmor_core_backend
+rails g cmor:core:backend:install
+
 # Install
 rails generate $INSTALL_NAME:install
 rails $GEM_NAME:install:migrations db:migrate db:test:prepare
