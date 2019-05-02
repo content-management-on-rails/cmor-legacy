@@ -1,18 +1,18 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.9.pre)
-    cmor_core_frontend (0.0.9.pre)
-      cmor_core (= 0.0.9.pre)
+    cmor (0.0.10.pre)
+    cmor_core_frontend (0.0.10.pre)
+      cmor_core (= 0.0.10.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.9.pre)
+    cmor_core (0.0.10.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.9.pre)
+      cmor (= 0.0.10.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -23,11 +23,11 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_blog (0.0.9.pre)
+    cmor_blog (0.0.10.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.9.pre)
-      cmor_core_frontend (= 0.0.9.pre)
+      cmor_core (= 0.0.10.pre)
+      cmor_core_frontend (= 0.0.10.pre)
       friendly_id
       haml-rails
       kramdown
