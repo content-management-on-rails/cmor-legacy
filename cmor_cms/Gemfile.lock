@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.8.pre)
+    cmor_core (0.0.9.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.8.pre)
+      cmor (= 0.0.9.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,20 +14,20 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.8.pre)
-    cmor_core_frontend (0.0.8.pre)
-      cmor_core (= 0.0.8.pre)
+    cmor (0.0.9.pre)
+    cmor_core_frontend (0.0.9.pre)
+      cmor_core (= 0.0.9.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_cms (0.0.8.pre)
+    cmor_cms (0.0.9.pre)
       RedCloth
       awesome_nested_set
-      cmor_core (= 0.0.8.pre)
-      cmor_core_frontend (= 0.0.8.pre)
+      cmor_core (= 0.0.9.pre)
+      cmor_core_frontend (= 0.0.9.pre)
       coffee-rails
       draper
       rails (>= 5.2.0)
@@ -259,14 +259,14 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.20.pre)
-    rao-service (0.0.20.pre)
+    rao-service (0.0.22.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
     rao-shoulda_matchers (0.0.20.pre)
       rao
-    rao-view_helper (0.0.20.pre)
+    rao-view_helper (0.0.22.pre)
       rails (>= 4.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -277,9 +277,9 @@ GEM
       rack (>= 1.4)
     request_store_rails (1.0.3)
       concurrent-ruby (~> 1.0)
-    route_translator (5.9.0)
-      actionpack (>= 5.0.0.1, <= 6.0.0.beta3)
-      activesupport (>= 5.0.0.1, <= 6.0.0.beta3)
+    route_translator (5.10.0)
+      actionpack (>= 5.0.0.1, < 6.1)
+      activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
