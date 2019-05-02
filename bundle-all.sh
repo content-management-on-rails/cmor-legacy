@@ -1,5 +1,5 @@
 #!/bin/bash -l
 gem update --system
-bundle install
+bundle update
 
-for d in ./cmor_*/ ; do (cd "$d" && bundle); done
+for d in ./cmor_*/ ; do (cd "$d" && bundle update); done
