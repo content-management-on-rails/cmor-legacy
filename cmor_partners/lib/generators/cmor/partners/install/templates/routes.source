@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Partners::Engine, at: '/backend/cmor-partners-engine'
+  end

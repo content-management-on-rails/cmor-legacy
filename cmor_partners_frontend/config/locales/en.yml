@@ -1,0 +1,17 @@
+en:
+  cmor:
+    partners:
+      frontend:
+        application_view_helper:
+          render_partner:
+            more: 'More'
+        categories:
+          show:
+            back: 'Back'
+        partners:
+          show:
+            back: 'Back'
+  classes:
+    cmor/partners/frontend/engine: Partners
+  routes:
+    cmor_partners_frontend_engine: partners
