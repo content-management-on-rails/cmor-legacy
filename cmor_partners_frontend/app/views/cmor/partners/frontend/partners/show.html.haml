@@ -1,0 +1,15 @@
+.row
+  .col-12
+    %h1= @resource.name
+
+.row
+  .col-md-4
+    %img.img-thumbnail.p-4.img-fluid{:alt => "", :src => main_app.url_for(@resource.logo.variant(resize: "512x512>", gravity: :center, extent: "512x512")) }/
+  .col-md-8
+    %p= markup_helper(self).to_html(@resource, :body).html_safe
+
+.row
+  .col-12
+    = link_to(root_path, class: "btn btn-primary btn-responsive") do
+      %i.fas.fa-chevron-left
+      = t('.back')
