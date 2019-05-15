@@ -14,3 +14,6 @@ spec/dummy/tmp/
 
 # Ignore wwtd files
 vendor/
+
+# Ignore visual code configs
+*.code-workspace
