@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Addresses::Engine, at: '/backend/cmor-addresses-engine'
+  end

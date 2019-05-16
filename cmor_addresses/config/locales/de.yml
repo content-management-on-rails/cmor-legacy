@@ -1,0 +1,29 @@
+de:
+  activerecord:
+    models:
+      cmor/addresses/role:
+        one: Role
+        other: Rolen
+      cmor/addresses/address:
+        one: Adresse
+        other: Adressen
+    attributes:
+      defaults: &defaults
+        id: ID
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/addresses/role:
+        <<: *defaults
+        identifier: Bezeichner
+        name: Name
+      cmor/addresses/address:
+        <<: *defaults
+        role_id: Role
+        identifier: Bezeichner
+        name: Name
+  classes:
+    cmor/addresses/engine: Adresse
+  routes:
+    cmor-addresses-engine: 'address'
+    roles: 'rolen'
+    addresses: 'adressen'
