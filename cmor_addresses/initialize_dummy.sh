@@ -12,9 +12,6 @@ rm spec/dummy/.ruby-version
 # Satisfy prerequisites
 cd spec/dummy
 
-# Add ActiveStorage
-rails active_storage:install
-
 # I18n configuration
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb

@@ -1,6 +1,11 @@
--# = table.acts_as_list_actions
--# = table.association :category, label_method: :name, link_to: ->(r) { url_for(r.category) }
--# = table.column :identifier
--# = table.column :name
--# = table.timestamps
--# = table.acts_as_published_actions
+= table.column :id
+= table.column :line1
+= table.column :line2
+= table.column :line3
+= table.column :street
+= table.column :housenumber
+= table.column :zipcode
+= table.column :city
+= table.column :country
+= table.column :addressable_type
+= table.association :role, label_method: :name, link_to: ->(r) { url_for(r.role) }

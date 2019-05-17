@@ -1,6 +1,26 @@
--# = form.association :category
--# = form.input :identifier
--# = form.input :name
--# = form.input :body
--# = form.input :logo
--# = form.input :published, as: :boolean
+
+= form.association :role
+.form-row
+  .col-4.mb-2
+    = form.input :line1
+  .col-4.mb-2
+    = form.input :line2
+  .col-4.mb-2
+    = form.input :line3
+.form-row
+  .col-4.mb-2
+    = form.input :street
+  .col-4.mb-2
+    = form.input :housenumber
+.form-row
+  .col-4.mb-2
+    = form.input :zipcode
+  .col-4.mb-2
+    = form.input :city
+  .col-4.mb-2
+    = form.input :country, collection: ['Deutschland']
+.form-row
+  .col-4.mb-2
+    = form.input :addressable_type
+  .col-4.mb-2
+    = form.input :addressable_id

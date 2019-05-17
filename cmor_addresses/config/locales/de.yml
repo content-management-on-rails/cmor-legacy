@@ -22,7 +22,7 @@ de:
         identifier: Bezeichner
         name: Name
   classes:
-    cmor/addresses/engine: Adresse
+    cmor/addresses/engine: Adressen
   routes:
     cmor-addresses-engine: 'address'
     roles: 'rolen'

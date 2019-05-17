@@ -7,7 +7,7 @@ module Cmor::Addresses
     private
 
     def permitted_params
-      params.require(:role).permit()
+      params.require(:role).permit(:identifier, :name)
     end
   end
 end
