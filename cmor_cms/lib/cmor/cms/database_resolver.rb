@@ -46,25 +46,44 @@ module Cmor
       end
 
       # Initialize an ActionView::Template object based on the record found.
-      def initialize_template(record, details)
-        source     = build_source(record)
-        identifier = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
-        handler    = ::ActionView::Template.registered_template_handler(record.handler)
+      if Rails.version < '6.0'
+        def initialize_template(record, details)
+          source     = build_source(record)
+          identifier = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
+          handler    = ::ActionView::Template.registered_template_handler(record.handler)
 
-        # 5) Check for the record.format, if none is given, try the template
-        # handler format and fallback to the one given on conditions
-        format   = record.format && Mime[record.format]
-        format ||= handler.default_format if handler.respond_to?(:default_format)
-        format ||= details[:formats]
-        details = {
-          format: format,
-          updated_at: record.updated_at,
-          virtual_path: "#{record.pathname}#{record.basename}"
-        }
-        
-        details[:layout] = record.layout if record.respond_to?(:layout) && record.layout.present?
+          # 5) Check for the record.format, if none is given, try the template
+          # handler format and fallback to the one given on conditions
+          format   = record.format && Mime[record.format]
+          format ||= handler.default_format if handler.respond_to?(:default_format)
+          format ||= details[:formats]
+          details = {
+            format: format,
+            updated_at: record.updated_at,
+            virtual_path: "#{record.pathname}#{record.basename}"
+          }
 
-        ::ActionView::Template.new(source, identifier, handler, details)
+          details[:layout] = record.layout if record.respond_to?(:layout) && record.layout.present?
+
+          ::ActionView::Template.new(source, identifier, handler, details)
+        end
+      else
+        def initialize_template(record, details)
+          source       = build_source(record)
+          identifier   = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
+          handler      = ::ActionView::Template.registered_template_handler(record.handler)
+          virtual_path = "#{record.pathname}#{record.basename}"
+          layout = record.layout if record.respond_to?(:layout) && record.layout.present?
+          locals       = []
+
+          # 5) Check for the record.format, if none is given, try the template
+          # handler format and fallback to the one given on conditions
+          format   = record.format && Mime[record.format]
+          format ||= handler.default_format if handler.respond_to?(:default_format)
+          format ||= details[:formats]
+
+          ::ActionView::Template.new(source, identifier, handler, format: format.symbol, virtual_path: virtual_path, layout: layout, locals: locals)
+        end
       end
 
       def assert_slashs(prefix)
