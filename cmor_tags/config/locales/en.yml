@@ -3,6 +3,11 @@ en:
     cmor/tags/engine: Tags
   attributes:
     tag_list: Tags
+  activemodel:
+    attributes:
+      cmor/tags/search:
+        exact: Exact
+        tags: Tags
   activerecord:
     models:
       acts_as_taggable_on/tag: &tag_model
