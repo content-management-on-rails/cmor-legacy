@@ -12,7 +12,11 @@ module Cmor
       acts_as_markup :body, Cmor::Core::Configuration.default_markup_options
 
       def human
-        "#{fullname} (#{role}) - #{company}"
+        if role.present?
+          "#{fullname} (#{role}) - #{company}"
+        else
+          "#{fullname} - #{company}"
+        end
       end
     end
   end

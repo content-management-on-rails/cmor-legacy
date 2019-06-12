@@ -13,7 +13,8 @@ module Cmor
           controls:        true,
           indicators:      false,
           variant_options: default_variant_options,
-          font_awesome:    false
+          font_awesome:    false,
+          show_image:      true
         )
         category = if category_or_identifier.is_a?(Cmor::Testimonials::Category)
           category_or_identifier
