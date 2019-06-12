@@ -1,18 +1,9 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.10.pre)
-    cmor_core_frontend (0.0.10.pre)
-      cmor_core (= 0.0.10.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-
-PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.10.pre)
+    cmor_core (0.0.11.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.10.pre)
+      cmor (= 0.0.11.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -21,14 +12,23 @@ PATH
       route_translator
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.11.pre)
+    cmor_core_frontend (0.0.11.pre)
+      cmor_core (= 0.0.11.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
+
+PATH
   remote: .
   specs:
-    cmor_user_area (0.0.10.pre)
+    cmor_user_area (0.0.11.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.10.pre)
-      cmor_core_frontend (= 0.0.10.pre)
+      cmor_core (= 0.0.11.pre)
+      cmor_core_frontend (= 0.0.11.pre)
       rails (>= 5.2.0)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -96,7 +96,7 @@ GEM
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
     awesome_print (1.8.0)
-    bcrypt (3.1.12)
+    bcrypt (3.1.13)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -165,10 +165,10 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.0.4)
+    haml (5.1.1)
       temple (>= 0.8.0)
       tilt
-    haml-rails (2.0.0)
+    haml-rails (2.0.1)
       actionpack (>= 5.1)
       activesupport (>= 5.1)
       haml (>= 4.0.6, < 6.0)
@@ -186,7 +186,7 @@ GEM
     js_cookie_rails (2.2.0)
       railties (>= 3.1)
     json (2.2.0)
-    jsonapi-renderer (0.2.0)
+    jsonapi-renderer (0.2.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -271,23 +271,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.23.pre)
+    rao-component (0.0.29.pre)
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.23.pre)
+    rao-resources_controller (0.0.29.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.23.pre)
+    rao-service (0.0.29.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.23.pre)
-      rails (>= 4.2.0)
+    rao-view_helper (0.0.29.pre)
+      rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -295,12 +295,12 @@ GEM
     regexp_parser (1.4.0)
     request_store (1.4.1)
       rack (>= 1.4)
-    request_store_rails (1.0.3)
+    request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    route_translator (5.10.0)
+    route_translator (6.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
@@ -337,7 +337,7 @@ GEM
       sexp_processor (~> 4.9)
     scrypt (3.0.6)
       ffi-compiler (>= 1.0, < 2.0)
-    sexp_processor (4.12.0)
+    sexp_processor (4.12.1)
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)

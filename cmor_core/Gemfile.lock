@@ -1,14 +1,14 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.10.pre)
+    cmor (0.0.11.pre)
 
 PATH
   remote: .
   specs:
-    cmor_core (0.0.10.pre)
+    cmor_core (0.0.11.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.10.pre)
+      cmor (= 0.0.11.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -199,16 +199,16 @@ GEM
     rao (0.0.23.pre)
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.23.pre)
-      rails (>= 4.2.0)
+    rao-view_helper (0.0.29.pre)
+      rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.4.0)
-    request_store_rails (1.0.3)
+    request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    route_translator (5.10.0)
+    route_translator (6.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)

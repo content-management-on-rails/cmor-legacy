@@ -1,18 +1,9 @@
 PATH
-  remote: ..
-  specs:
-    cmor (0.0.10.pre)
-    cmor_core_frontend (0.0.10.pre)
-      cmor_core (= 0.0.10.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-
-PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.10.pre)
+    cmor_core (0.0.11.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.10.pre)
+      cmor (= 0.0.11.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -21,15 +12,24 @@ PATH
       route_translator
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.11.pre)
+    cmor_core_frontend (0.0.11.pre)
+      cmor_core (= 0.0.11.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
+
+PATH
   remote: .
   specs:
-    cmor_links (0.0.10.pre)
+    cmor_links (0.0.11.pre)
       RedCloth
       acts_as_list
       awesome_nested_set
       awesome_nested_set-tools
-      cmor_core (= 0.0.10.pre)
-      cmor_core_frontend (= 0.0.10.pre)
+      cmor_core (= 0.0.11.pre)
+      cmor_core_frontend (= 0.0.11.pre)
       draper
       friendly_id
       markup-rails
@@ -264,8 +264,8 @@ GEM
     rao (0.0.23.pre)
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.23.pre)
-      rails (>= 4.2.0)
+    rao-view_helper (0.0.29.pre)
+      rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
@@ -273,9 +273,9 @@ GEM
     regexp_parser (1.4.0)
     request_store (1.4.1)
       rack (>= 1.4)
-    request_store_rails (1.0.3)
+    request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    route_translator (5.10.0)
+    route_translator (6.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
