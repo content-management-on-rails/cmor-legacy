@@ -1,6 +1,6 @@
 #!/bin/bash
 GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
+INSTALL_NAME=${GEM_NAME//cmor_core_/cmor\:core\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
@@ -11,8 +11,8 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
-RAILS_ENV=development rails g model User email
-sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
+RAILS_ENV=development rails g model User email --no-test-framework
+# sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
 
 
 # Add ActiveStorage
@@ -31,4 +31,4 @@ echo "end" >> config/initializers/route_translator.rb
 
 # Install
 rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+# rails $GEM_NAME:install:migrations db:migrate db:test:prepare
