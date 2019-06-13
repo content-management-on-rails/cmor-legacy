@@ -5,9 +5,15 @@ Cmor::Links.configure do |config|
   #
   config.link_footer_columns = 4
 
+  # Configure your link footer wrapper css classes here.
+  #
+  # Default: config.link_footer_wrapper_css_classes = %w( row link-footer )
+  #
+  config.link_footer_wrapper_css_classes = %w( row link-footer )
+
   # Configure your link footer colum css classes here.
   #
-  # Default: config.link_footer_column_css_classes = %w[ link-footer-column col-lg-3 ]
+  # Default: config.link_footer_column_css_classes = %w( link-footer-column col-lg-3 )
   #
   config.link_footer_column_css_classes = %w( link-footer-column col-lg-3 )
 

@@ -1,4 +1,4 @@
-<div class="row link-footer">
+<div class="<%= Cmor::Links::Configuration.link_footer_wrapper_css_classes.join(' ') %>">
   <% Cmor::Links::Configuration.link_footer_columns.times do |column| %>
     <div class="column-<%= column + 1 %> <%= Cmor::Links::Configuration.link_footer_column_css_classes.join(' ') %>">
       <% categories[column + 1].each do |c| %>

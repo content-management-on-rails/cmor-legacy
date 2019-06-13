@@ -13,6 +13,10 @@ module Cmor
         4
       end
 
+      mattr_accessor :link_footer_wrapper_css_classes do
+        'row link-footer'
+      end
+
       mattr_accessor :link_footer_column_css_classes do
         'link-footer-column col-lg-3'
       end
