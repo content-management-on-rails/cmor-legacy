@@ -6,3 +6,14 @@ en:
       never_signed_in: Never signed in
   routes:
     cmor-user-area-backend-engine: 'authentication'
+  cmor:
+    user_area:
+      backend:
+        user_sidebars:
+          show:
+            signed_in_as: "Signed in as %{user}"
+            show: "Profile"
+            sign_out: "Sign out"
+            not_signed_in: "Not signed in"
+            sign_in: "Sign in"
+            new: "Sign up"
