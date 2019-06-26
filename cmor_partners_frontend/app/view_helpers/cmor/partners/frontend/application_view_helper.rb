@@ -12,10 +12,17 @@ module Cmor::Partners::Frontend
       #     # app/layouts/application.html.haml
       #     = partners_helper(self).render_partners(category_identifier)
       #
-    def render_partners(category_identifier, options = {})
+    def render_partners(category_or_identifier, options = {})
       options.reverse_merge!(center_mode: true, slides_to_show: 6, autoplay: true)
-      category = Cmor::Partners::Category.where(identifier: category_identifier).first
-      render category: category, options: options
+      category = if category_or_identifier.is_a?(Cmor::Partners::Category)
+        category_or_identifier
+      else
+        Cmor::Partners::Category.where(identifier: category_or_identifier).first
+      end
+
+      if category.present?
+        render category: category, options: options
+      end
     end
   end
 end
