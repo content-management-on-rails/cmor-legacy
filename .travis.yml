@@ -6,7 +6,7 @@ rvm:
 env:
   - GEM=cmor_partners
   - GEM=cmor_partners_frontend
-  # - GEM=cmor_suite
+  - GEM=cmor_suite
   # - GEM=cmor_blog
   # - GEM=cmor_blog_backend
   # - GEM=cmor_carousels
