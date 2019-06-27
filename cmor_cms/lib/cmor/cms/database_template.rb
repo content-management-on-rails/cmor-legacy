@@ -4,12 +4,6 @@ module Cmor
       def self.included(base)
         base.extend(ClassMethods)
 
-        # associations
-        base.belongs_to :cmor_cms_folder,
-                        class_name: 'Cmor::Cms::Folder',
-                        foreign_key: 'cmor_cms_folder_id',
-                        optional: true
-
         # callbacks
         base.after_initialize :set_defaults
         base.before_validation :assert_trailing_slash_on_pathname
