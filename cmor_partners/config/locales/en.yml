@@ -1,0 +1,39 @@
+en:
+  activerecord:
+    models:
+      cmor/partners/category:
+        one: Category
+        other: Categories
+      cmor/partners/partner:
+        one: Partner
+        other: Partners
+    attributes:
+      defaults: &defaults
+        id: ID
+        created_at: Created at
+        updated_at: Updated at
+      cmor/partners/category:
+        <<: *defaults
+        locale: Locale
+        identifier: Identifier
+        name: Name
+        body: Body
+        position: Position
+        published: Published
+        published_at: Published at
+      cmor/partners/partner:
+        <<: *defaults
+        category: Category
+        category_id: Category
+        identifier: Identifier
+        name: Name
+        body: Body
+        position: Position
+        published: Published
+        published_at: Published at
+  classes:
+    cmor/partners/engine: Partners
+  routes:
+    cmor-partners-engine: 'partners'
+    categories: 'categories'
+    partners: 'partners'

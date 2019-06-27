@@ -1,0 +1,6 @@
+= table.acts_as_list_actions
+= table.association :category, label_method: :name, link_to: ->(r) { url_for(r.category) }
+= table.column :identifier
+= table.column :name
+= table.timestamps
+= table.acts_as_published_actions

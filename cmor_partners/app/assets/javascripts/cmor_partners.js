@@ -1,0 +1,2 @@
+//= require ./cmor/partners/application
+

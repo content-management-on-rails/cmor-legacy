@@ -30,14 +30,20 @@ module Cmor
 
         def run_frontend_generators
           generate "cmor:core:frontend:install"
-          sub_modules.each do |m|
+          legacy_sub_modules.each do |m|
             generate "cmor:#{m}:install"
+          end
+          sub_modules.each do |m|
+            generate "cmor:#{m}:frontend:install"
           end
         end
         
         def run_backend_generators
-          sub_modules.each do |m|
+          legacy_sub_modules.each do |m|
             generate "cmor:#{m}:backend:install"
+          end
+          sub_modules.each do |m|
+            generate "cmor:#{m}:install"
           end
         end
 
@@ -51,8 +57,12 @@ module Cmor
 
         private
 
+        def legacy_sub_modules
+          @legacy_sub_modules ||= %w(blog carousels core cms contact files galleries links rbac system tags testimonials user_area) - options['excluded_modules']
+        end
+
         def sub_modules
-          @sub_modules ||= %w(blog carousels core cms contact files galleries links rbac system tags testimonials user_area) - options['excluded_modules']
+          @sub_modules ||= %w(partners) - options['excluded_modules']
         end
       end
     end

@@ -1,0 +1,16 @@
+.row
+  .col-12
+    = partners_helper(self).render_partners(@collection.first.identifier)
+.row
+  .col-12
+    %h1= t('.title', inflections)
+
+- @collection.each do |category| 
+  .row
+    .col-12
+      %a{ href: url_for(category) }
+        %h2= category.name
+
+  .row
+    - category.partners.published.each do |partner|
+      = render partial: 'cmor/partners/frontend/partners/partner', locals: { partner: partner }
