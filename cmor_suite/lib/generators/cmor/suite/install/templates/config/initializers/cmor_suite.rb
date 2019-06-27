@@ -1,6 +1,9 @@
 Cmor::Suite.configure do |config|
-<% (sub_modules - ['core']).each do |submodule| %>
+<% (legacy_sub_modules - ['core']).each do |submodule| %>
   <%= "config.administrador.register_engine 'Cmor::#{submodule.camelize}::Backend::Engine', {}" %>
+<% end %>
+<% (sub_modules - ['core']).each do |submodule| %>
+  <%= "config.administrador.register_engine 'Cmor::#{submodule.camelize}::Engine', {}" %>
 <% end %>
 
   config.administrador.enable_feature :kaminari,  {}
