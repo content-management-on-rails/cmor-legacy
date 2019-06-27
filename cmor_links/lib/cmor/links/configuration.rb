@@ -14,11 +14,11 @@ module Cmor
       end
 
       mattr_accessor :link_footer_wrapper_css_classes do
-        'row link-footer'
+        %w( row link-footer )
       end
 
       mattr_accessor :link_footer_column_css_classes do
-        'link-footer-column col-lg-3'
+        %w( link-footer-column col-lg-3 )
       end
 
       mattr_accessor :base_controller do
