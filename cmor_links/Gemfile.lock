@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.14.pre)
+    cmor_core (0.0.15.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.14.pre)
+      cmor (= 0.0.15.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,22 +14,22 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.14.pre)
-    cmor_core_frontend (0.0.14.pre)
-      cmor_core (= 0.0.14.pre)
+    cmor (0.0.15.pre)
+    cmor_core_frontend (0.0.15.pre)
+      cmor_core (= 0.0.15.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_links (0.0.14.pre)
+    cmor_links (0.0.15.pre)
       RedCloth
       acts_as_list
       awesome_nested_set
       awesome_nested_set-tools
-      cmor_core (= 0.0.14.pre)
-      cmor_core_frontend (= 0.0.14.pre)
+      cmor_core (= 0.0.15.pre)
+      cmor_core_frontend (= 0.0.15.pre)
       draper
       friendly_id
       markup-rails
@@ -119,7 +119,7 @@ GEM
       thor (>= 0.19.4, < 2.0)
       tins (~> 1.6)
     crass (1.0.4)
-    delayed_job (4.1.5)
+    delayed_job (4.1.7)
       activesupport (>= 3.0, < 5.3)
     delayed_job_active_record (4.1.3)
       activerecord (>= 3.0, < 5.3)

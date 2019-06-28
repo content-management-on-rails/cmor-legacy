@@ -8,18 +8,18 @@ GIT
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.14.pre)
+    cmor_core_backend (0.0.15.pre)
       administrador (>= 0.0.14.pre)
-      cmor_core (= 0.0.14.pre)
+      cmor_core (= 0.0.15.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_tags
   specs:
-    cmor_tags (0.0.14.pre)
+    cmor_tags (0.0.15.pre)
       acts-as-taggable-on
-      cmor_core (= 0.0.14.pre)
-      cmor_core_frontend (= 0.0.14.pre)
+      cmor_core (= 0.0.15.pre)
+      cmor_core_frontend (= 0.0.15.pre)
       rails (>= 5.2.0)
       rao-service (>= 0.0.17.pre)
       rao-service_controller (>= 0.0.17.pre)
@@ -28,28 +28,28 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.14.pre)
-    cmor_core (0.0.14.pre)
+    cmor (0.0.15.pre)
+    cmor_core (0.0.15.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.14.pre)
+      cmor (= 0.0.15.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.14.pre)
-      cmor_core (= 0.0.14.pre)
+    cmor_core_frontend (0.0.15.pre)
+      cmor_core (= 0.0.15.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_tags_backend (0.0.14.pre)
-      cmor_core (= 0.0.14.pre)
-      cmor_core_backend (= 0.0.14.pre)
-      cmor_tags (= 0.0.14.pre)
+    cmor_tags_backend (0.0.15.pre)
+      cmor_core (= 0.0.15.pre)
+      cmor_core_backend (= 0.0.15.pre)
+      cmor_tags (= 0.0.15.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -150,7 +150,7 @@ GEM
       thor (>= 0.19.4, < 2.0)
       tins (~> 1.6)
     crass (1.0.4)
-    delayed_job (4.1.5)
+    delayed_job (4.1.7)
       activesupport (>= 3.0, < 5.3)
     delayed_job_active_record (4.1.3)
       activerecord (>= 3.0, < 5.3)

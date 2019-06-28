@@ -1,47 +1,47 @@
 PATH
+  remote: ../cmor_core_backend
+  specs:
+    cmor_core_backend (0.0.15.pre)
+      administrador (>= 0.0.14.pre)
+      cmor_core (= 0.0.15.pre)
+      rails (>= 5.2.0)
+
+PATH
+  remote: ../cmor_partners
+  specs:
+    cmor_partners (0.0.15.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.15.pre)
+      cmor_core_backend (= 0.0.15.pre)
+      markup-rails (>= 0.0.2)
+      rails (>= 5.2.0)
+
+PATH
   remote: ..
   specs:
-    cmor (0.0.10.pre)
-    cmor_core (0.0.10.pre)
+    cmor (0.0.15.pre)
+    cmor_core (0.0.15.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.10.pre)
+      cmor (= 0.0.15.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.10.pre)
-      cmor_core (= 0.0.10.pre)
+    cmor_core_frontend (0.0.15.pre)
+      cmor_core (= 0.0.15.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
-  remote: ../cmor_core_backend
-  specs:
-    cmor_core_backend (0.0.10.pre)
-      administrador (>= 0.0.12.pre)
-      cmor_core (= 0.0.10.pre)
-      rails (>= 5.2.0)
-
-PATH
-  remote: ../cmor_partners
-  specs:
-    cmor_partners (0.0.10.pre)
-      acts_as_list
-      acts_as_published
-      cmor_core (= 0.0.10.pre)
-      cmor_core_backend (= 0.0.10.pre)
-      markup-rails (>= 0.0.2)
-      rails (>= 5.2.0)
-
-PATH
   remote: .
   specs:
-    cmor_partners_frontend (0.0.10.pre)
-      cmor_core (= 0.0.10.pre)
-      cmor_core_frontend (= 0.0.10.pre)
-      cmor_partners (= 0.0.10.pre)
+    cmor_partners_frontend (0.0.15.pre)
+      cmor_core (= 0.0.15.pre)
+      cmor_core_frontend (= 0.0.15.pre)
+      cmor_partners (= 0.0.15.pre)
       rails (>= 5.2.0)
       slick-rails (>= 0.0.1)
 
@@ -95,13 +95,13 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.12.pre)
+    administrador (0.0.14.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.23.pre)
+      rao-component (>= 0.0.29.pre)
       rao-query (>= 0.0.23.pre)
       rao-resource_controller (>= 0.0.23.pre)
       rao-resources_controller (>= 0.0.23.pre)
@@ -147,7 +147,7 @@ GEM
       thor (>= 0.19.4, < 2.0)
       tins (~> 1.6)
     crass (1.0.4)
-    delayed_job (4.1.5)
+    delayed_job (4.1.7)
       activesupport (>= 3.0, < 5.3)
     delayed_job_active_record (4.1.3)
       activerecord (>= 3.0, < 5.3)
@@ -190,10 +190,10 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.0.4)
+    haml (5.1.1)
       temple (>= 0.8.0)
       tilt
-    haml-rails (2.0.0)
+    haml-rails (2.0.1)
       actionpack (>= 5.1)
       activesupport (>= 5.1)
       haml (>= 4.0.6, < 6.0)
@@ -208,7 +208,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
-    jquery-rails (4.3.3)
+    jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -304,23 +304,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.23.pre)
+    rao-component (0.0.29.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.23.pre)
+    rao-query (0.0.29.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.23.pre)
+    rao-resource_controller (0.0.29.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.23.pre)
+    rao-resources_controller (0.0.29.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.23.pre)
+    rao-service_controller (0.0.29.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -328,19 +328,19 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.22.pre)
       rao
-    rao-view_helper (0.0.23.pre)
-      rails (>= 4.2.0)
+    rao-view_helper (0.0.29.pre)
+      rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.4.0)
-    request_store_rails (1.0.3)
+    request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    responders (2.4.1)
-      actionpack (>= 4.2.0, < 6.0)
-      railties (>= 4.2.0, < 6.0)
-    route_translator (5.10.0)
+    responders (3.0.0)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+    route_translator (6.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
@@ -375,7 +375,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
-    sexp_processor (4.12.0)
+    sexp_processor (4.12.1)
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)
