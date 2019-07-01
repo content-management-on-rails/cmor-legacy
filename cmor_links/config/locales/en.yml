@@ -19,6 +19,7 @@ en:
         links_count: links
         locale: language
         long_description: long description
+        markup_language: markup language
         name: name
         parent: parent category
         parent_id: parent category
@@ -32,7 +33,8 @@ en:
         category_id: link category
         created_at: created at
         description: description
-        link_action: ''
+        link_actions: ''
+        markup_language: markup language
         name: name
         position: position
         updated_at: updated at
