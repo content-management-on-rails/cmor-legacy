@@ -17,6 +17,41 @@ GIT
       activerecord (~> 5.0)
 
 PATH
+  remote: ..
+  specs:
+    cmor (0.0.16.pre)
+    cmor_core (0.0.16.pre)
+      bootstrap-kaminari-views
+      cmor (= 0.0.16.pre)
+      delayed_job_active_record
+      kaminari
+      rails (>= 5.0.0)
+      rao-view_helper (>= 0.0.20.pre)
+      request_store_rails
+      route_translator
+    cmor_core_backend (0.0.16.pre)
+      administrador (>= 0.0.15.pre)
+      cmor_core (= 0.0.16.pre)
+      rails (>= 5.2.0)
+    cmor_core_frontend (0.0.16.pre)
+      cmor_core (= 0.0.16.pre)
+      rails (>= 5.2.0)
+      rails_eu_gdpr
+    cmor_partners (0.0.16.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.16.pre)
+      cmor_core_backend (= 0.0.16.pre)
+      markup-rails (>= 0.0.2)
+      rails (>= 5.2.0)
+    cmor_partners_frontend (0.0.16.pre)
+      cmor_core (= 0.0.16.pre)
+      cmor_core_frontend (= 0.0.16.pre)
+      cmor_partners (= 0.0.16.pre)
+      rails (>= 5.2.0)
+      slick-rails (>= 0.0.1)
+
+PATH
   remote: ../cmor_blog_backend
   specs:
     cmor_blog_backend (0.0.16.pre)
@@ -261,41 +296,6 @@ PATH
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
       simple_form
-
-PATH
-  remote: ..
-  specs:
-    cmor (0.0.16.pre)
-    cmor_core (0.0.16.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.16.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 5.0.0)
-      rao-view_helper (>= 0.0.20.pre)
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.16.pre)
-      administrador (>= 0.0.15.pre)
-      cmor_core (= 0.0.16.pre)
-      rails (>= 5.2.0)
-    cmor_core_frontend (0.0.16.pre)
-      cmor_core (= 0.0.16.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
-    cmor_partners (0.0.16.pre)
-      acts_as_list
-      acts_as_published
-      cmor_core (= 0.0.16.pre)
-      cmor_core_backend (= 0.0.16.pre)
-      markup-rails (>= 0.0.2)
-      rails (>= 5.2.0)
-    cmor_partners_frontend (0.0.16.pre)
-      cmor_core (= 0.0.16.pre)
-      cmor_core_frontend (= 0.0.16.pre)
-      cmor_partners (= 0.0.16.pre)
-      rails (>= 5.2.0)
-      slick-rails (>= 0.0.1)
 
 PATH
   remote: .
