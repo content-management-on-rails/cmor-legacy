@@ -1,15 +1,27 @@
-.cmor-testimonials-category .carousel-control-prev,
-.cmor-testimonials-category .carousel-control-next {
-  color: gray;
-}
-
-
-.carousel-control-prev:before {
+.cmor-testimonials-category .carousel-control-prev .control:before {
   content:"\2039";
   font-size: 250%;
 }
 
-.carousel-control-next:before {
+.cmor-testimonials-category .carousel-control-next .control:before {
   content:"\203A";
   font-size: 250%;
+}
+
+.cmor-testimonials-category .carousel-control-prev {
+  justify-content: flex-start;
+}
+
+.cmor-testimonials-category .carousel-control-next {
+  justify-content: flex-end;
+}
+
+.cmor-testimonials-category .testimonial,
+.cmor-testimonials-category .title {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.cmor-testimonials-category .testimonial {
+  font-style: italic;
 }

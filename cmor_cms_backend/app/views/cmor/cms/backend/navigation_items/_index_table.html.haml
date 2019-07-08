@@ -1,4 +1,4 @@
-= table.awesome_nested_set_actions scope: ->(navigation_item) { navigation_item.root.navigation.to_param }
+= table.awesome_nested_set_actions :parent, scope: ->(navigation_item) { navigation_item.root.navigation.to_param }
 = table.association(:navigation, sort: { column_name: 'cmor_cms_navigations.name'}, link_to: ->(navigation_item) { navigation_path(navigation_item.navigation) }, label_method: :human)
 = table.column(:name, sort: true) do |navigation_item|
   - capture_haml do

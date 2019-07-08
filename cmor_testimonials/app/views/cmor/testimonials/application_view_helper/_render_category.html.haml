@@ -1,4 +1,4 @@
-.cmor-testimonials-category.carousel.slide{class: dom_class(category), id: dom_id(category), data: { ride: 'carousel', interval: (options[:interval].to_f * 1000).to_i, keyboard: options[:keyboard].to_s, pause: options[:pause], wrap: options[:wrap].to_s } }
+.cmor-testimonials-category.carousel.slide{class: "#{dom_class(category)} #{category.identifier}", id: dom_id(category), data: { ride: 'carousel', interval: (options[:interval].to_f * 1000).to_i, keyboard: options[:keyboard].to_s, pause: options[:pause], wrap: options[:wrap].to_s } }
   - if options[:indicators]
     / Carousel indicators
     %ol.carousel-indicators
@@ -7,24 +7,29 @@
   / Wrapper for carousel items
   .carousel-inner
     - category.testimonials.published.each_with_index do |testimonial, i|
-      .item.carousel-item.text-center{ class: ((i == 0) ? 'active' : '') }
-        - if options[:show_image] && testimonial.image.respond_to?(:variant)
-          .img-box
-            %img.img-thumbnail.rounded-circle{:alt => "", :src => main_app.url_for(testimonial.image.variant(options[:variant_options])) }/
-        %p.testimonial= markup_helper(self).to_html(testimonial, :body)
-        %p.overview
-          - if testimonial.role.present?
-            = "<b>#{testimonial.fullname}</b>, #{testimonial.role} - #{testimonial.company}".html_safe
-          - else
-            = "<b>#{testimonial.fullname}</b> - #{testimonial.company}".html_safe
+      .item.carousel-item{ class: ((i == 0) ? 'active' : '') }
+        .row
+          - if options[:show_image] && testimonial.image.respond_to?(:variant)
+            .testimonial-image-container{ options[:image_container_html] }
+              %img.img-thumbnail.rounded-circle{ alt: "", src: main_app.url_for(testimonial.image.variant(options[:variant_options])) }/
+          .testimonial-text-container{ options[:text_container_html] }
+            %div.testimonial
+              = markup_helper(self).to_html(testimonial, :body)
+            %div.title
+              - if testimonial.role.present?
+                %p= "<b>#{testimonial.fullname}</b>, #{testimonial.role} - #{testimonial.company}".html_safe
+              - else
+                %p= "<b>#{testimonial.fullname}</b> - #{testimonial.company}".html_safe
   - if options[:controls]
-    %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(category)}", :role => "button"}
+    %a.carousel-control-prev{options[:control_html], "data-slide" => "prev", :href => "##{dom_id(category)}", :role => "button"}
       - if options[:font_awesome]
         %i.fa.fa-angle-left
       - else
+        %span.control
         %span.sr-only= t('.previous')
-    %a.carousel-control-next{"data-slide" => "next", :href => "##{dom_id(category)}", :role => "button"}
+    %a.carousel-control-next{options[:control_html], "data-slide" => "next", :href => "##{dom_id(category)}", :role => "button"}
       - if options[:font_awesome]
         %i.fa.fa-angle-right
       - else
+        %span.control
         %span.sr-only= t('.next')
