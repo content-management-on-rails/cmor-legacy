@@ -4,8 +4,6 @@ rvm:
   # - 2.5.3
   # - 2.3.7
 env:
-  - GEM=cmor_partners
-  - GEM=cmor_partners_frontend
   - GEM=cmor_suite
   - GEM=cmor_blog
   - GEM=cmor_blog_backend
@@ -23,6 +21,8 @@ env:
   - GEM=cmor_galleries_backend
   - GEM=cmor_links
   - GEM=cmor_links_backend
+  - GEM=cmor_partners
+  - GEM=cmor_partners_frontend
   - GEM=cmor_rbac
   - GEM=cmor_rbac_backend
   - GEM=cmor_system_backend
