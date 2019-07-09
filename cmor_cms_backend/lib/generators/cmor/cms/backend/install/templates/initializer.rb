@@ -3,8 +3,8 @@ Cmor::Cms::Backend.configure do |config|
   #
   # Default: config.registered_controllers = -> {[
   #            Cmor::Cms::Backend::ContentBoxesController,
-  #            Cmor::Cms::Backend::NavigationItemsController,
   #            Cmor::Cms::Backend::NavigationsController,
+  #            Cmor::Cms::Backend::NavigationItemsController,
   #            Cmor::Cms::Backend::PagesController,
   #            Cmor::Cms::Backend::PartialsController,
   #            Cmor::Cms::Backend::TemplatesController
@@ -13,8 +13,8 @@ Cmor::Cms::Backend.configure do |config|
   config.registered_controllers = lambda {
     [
       Cmor::Cms::Backend::ContentBoxesController,
-      Cmor::Cms::Backend::NavigationItemsController,
       Cmor::Cms::Backend::NavigationsController,
+      Cmor::Cms::Backend::NavigationItemsController,
       Cmor::Cms::Backend::PagesController,
       Cmor::Cms::Backend::PartialsController,
       Cmor::Cms::Backend::TemplatesController
