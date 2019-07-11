@@ -22,9 +22,10 @@ module Cmor
         #     <%= core_helper(self).render_flash %>
         #
         def render_flash
-          c.flash.each_with_object({}) do |(key, value), memo|
+          messages = c.flash.each_with_object({}) do |(key, value), memo|
             memo[map_message_type_to_context(key)] = value
           end
+          render(messages: messages)
         end
 
         private
