@@ -1,44 +1,44 @@
 PATH
   remote: ../cmor_contact
   specs:
-    cmor_contact (0.0.20.pre)
-      cmor_core (= 0.0.20.pre)
-      cmor_core_frontend (= 0.0.20.pre)
+    cmor_contact (0.0.21.pre)
+      cmor_core (= 0.0.21.pre)
+      cmor_core_frontend (= 0.0.21.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.20.pre)
+    cmor_core_backend (0.0.21.pre)
       administrador (>= 0.0.17.pre)
-      cmor_core (= 0.0.20.pre)
+      cmor_core (= 0.0.21.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.20.pre)
-    cmor_core (0.0.20.pre)
+    cmor (0.0.21.pre)
+    cmor_core (0.0.21.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.20.pre)
+      cmor (= 0.0.21.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.20.pre)
-      cmor_core (= 0.0.20.pre)
+    cmor_core_frontend (0.0.21.pre)
+      cmor_core (= 0.0.21.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_contact_backend (0.0.20.pre)
-      cmor_contact (= 0.0.20.pre)
-      cmor_core (= 0.0.20.pre)
-      cmor_core_backend (= 0.0.20.pre)
+    cmor_contact_backend (0.0.21.pre)
+      cmor_contact (= 0.0.21.pre)
+      cmor_core (= 0.0.21.pre)
+      cmor_core_backend (= 0.0.21.pre)
       rails (>= 5.2.0)
 
 GEM
