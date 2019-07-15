@@ -31,8 +31,8 @@ echo "end" >> config/initializers/route_translator.rb
 sed -i '2i\  view_helper Cmor::Core::ApplicationViewHelper, as: :core_helper' app/controllers/application_controller.rb
 sed -i '3i\  view_helper Cmor::UserArea::ApplicationViewHelper, as: :user_area_helper' app/controllers/application_controller.rb
 
-sed -i '2i\    <%= user_area_helper(self).render_navigation %>' app/views/layouts/application.html.erb
-sed -i '3i\    <%= core_helper(self).render_flash %>' app/views/layouts/application.html.erb
+sed -i '13i\    <%= user_area_helper(self).render_navigation %>' app/views/layouts/application.html.erb
+sed -i '14i\    <%= core_helper(self).render_flash %>' app/views/layouts/application.html.erb
 
 sed -i '3i\  localized { root to: "home#index" }' config/routes.rb
 
