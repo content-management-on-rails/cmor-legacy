@@ -1,20 +1,20 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.21.pre)
+    cmor_core_backend (0.0.22.pre)
       administrador (>= 0.0.17.pre)
-      cmor_core (= 0.0.21.pre)
+      cmor_core (= 0.0.22.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_user_area
   specs:
-    cmor_user_area (0.0.21.pre)
+    cmor_user_area (0.0.22.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.21.pre)
-      cmor_core_frontend (= 0.0.21.pre)
+      cmor_core (= 0.0.22.pre)
+      cmor_core_frontend (= 0.0.22.pre)
       rails (>= 5.2.0)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -24,28 +24,28 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.21.pre)
-    cmor_core (0.0.21.pre)
+    cmor (0.0.22.pre)
+    cmor_core (0.0.22.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.21.pre)
+      cmor (= 0.0.22.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.21.pre)
-      cmor_core (= 0.0.21.pre)
+    cmor_core_frontend (0.0.22.pre)
+      cmor_core (= 0.0.22.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_user_area_backend (0.0.21.pre)
-      cmor_core (= 0.0.21.pre)
-      cmor_core_backend (= 0.0.21.pre)
-      cmor_user_area (= 0.0.21.pre)
+    cmor_user_area_backend (0.0.22.pre)
+      cmor_core (= 0.0.22.pre)
+      cmor_core_backend (= 0.0.22.pre)
+      cmor_user_area (= 0.0.22.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -74,9 +74,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    active_model_serializers (0.10.9)
-      actionpack (>= 4.1, < 6)
-      activemodel (>= 4.1, < 6)
+    active_model_serializers (0.10.10)
+      actionpack (>= 4.1, < 6.1)
+      activemodel (>= 4.1, < 6.1)
       case_transform (>= 0.2)
       jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (5.2.3)
@@ -99,7 +99,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.17.pre)
+    administrador (0.0.18.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
