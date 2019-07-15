@@ -1,21 +1,25 @@
 Cmor::Contact.configure do |config|
-  # Configure your contact requiest recipients here.
+  # Configure your contact request recipients here.
   #
   # You can specify multiple recipients and multiple environments.
   #
   # Default:
   #
-  # config.recipients = {
-  #   development: %w( info@development.example.com ),
-  #   test:        %w( info@test.example.com ),
-  #   production:  %w( info@production.example.com )
-  # }
+  # config.recipients = lambda do |environment|
+  #   {
+  #     development: %w( info@development.example.com ),
+  #     test:        %w( info@test.example.com ),
+  #     production:  %w( info@production.example.com )
+  #   }[environment]
+  # end
   #
-  config.recipients = {
-    development: %w( info@development.example.com ),
-    test:        %w( info@test.example.com ),
-    production:  %w( info@production.example.com )
-  }
+  config.recipients = lambda do |environment|
+    {
+      development: %w( info@development.example.com ),
+      test:        %w( info@test.example.com ),
+      production:  %w( info@production.example.com )
+    }[environment]
+  end
 
   # Configure your input field css classes here.
   #

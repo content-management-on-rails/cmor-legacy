@@ -33,7 +33,7 @@ module Cmor
       end
 
       mattr_accessor :recipients do
-        {}
+        ->(environment) { "jane.doe@domain.local" }
       end
 
       mattr_accessor :sender do
@@ -50,10 +50,6 @@ module Cmor
 
       mattr_accessor :after_create_url do
         ->(controller) { controller.root_path }
-      end
-
-      def recipients=(recipients)
-        @@recipients = HashWithIndifferentAccess.new(recipients)
       end
     end
   end
