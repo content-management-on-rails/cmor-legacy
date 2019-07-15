@@ -10,7 +10,7 @@ Cmor::Contact.configure do |config|
   #     development: %w( info@development.example.com ),
   #     test:        %w( info@test.example.com ),
   #     production:  %w( info@production.example.com )
-  #   }[environment]
+  #   }.with_indifferent_access[environment.to_sym]
   # end
   #
   config.recipients = lambda do |environment|
@@ -18,7 +18,7 @@ Cmor::Contact.configure do |config|
       development: %w( info@development.example.com ),
       test:        %w( info@test.example.com ),
       production:  %w( info@production.example.com )
-    }[environment]
+    }.with_indifferent_access[environment.to_sym]
   end
 
   # Configure your input field css classes here.
