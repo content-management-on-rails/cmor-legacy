@@ -1,21 +1,25 @@
 Cmor::Contact.configure do |config|
-  # Configure your contact requiest recipients here.
+  # Configure your contact request recipients here.
   #
   # You can specify multiple recipients and multiple environments.
   #
   # Default:
   #
-  # config.recipients = {
-  #   development: %w( info@development.example.com ),
-  #   test:        %w( info@test.example.com ),
-  #   production:  %w( info@production.example.com )
-  # }
+  # config.recipients = lambda do |environment|
+  #   {
+  #     development: %w( info@development.example.com ),
+  #     test:        %w( info@test.example.com ),
+  #     production:  %w( info@production.example.com )
+  #   }.with_indifferent_access[environment.to_sym]
+  # end
   #
-  config.recipients = {
-    development: %w( info@development.example.com ),
-    test:        %w( info@test.example.com ),
-    production:  %w( info@production.example.com )
-  }
+  config.recipients = lambda do |environment|
+    {
+      development: %w( info@development.example.com ),
+      test:        %w( info@test.example.com ),
+      production:  %w( info@production.example.com )
+    }.with_indifferent_access[environment.to_sym]
+  end
 
   # Configure your input field css classes here.
   #
@@ -80,4 +84,15 @@ Cmor::Contact.configure do |config|
   # default: config.sender = ->(mail_form) { %("#{mail_form.name}" <#{mail_form.email}>) }
   # 
   config.sender = ->(mail_form) { %("#{mail_form.name}" <#{mail_form.email}>) }
+
+  # Modules listed here will be included in Cmor::Contact::ContactRequest.
+  #
+  # Available modules are:
+  #
+  # - Cmor::Contact::ContactRequest::PhoneConcern
+  # - Cmor::Contact::ContactRequest::SubjectConcern
+  #
+  # Default: config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
+  #
+  config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
 end

@@ -20,4 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rao-component', '>= 0.0.17.pre'
   s.add_dependency 'rao-resources_controller', '>= 0.0.17.pre'
   s.add_dependency 'simple_form'
+
+  # Why do we need this?!
+  s.add_development_dependency 'coffee-rails'
 end

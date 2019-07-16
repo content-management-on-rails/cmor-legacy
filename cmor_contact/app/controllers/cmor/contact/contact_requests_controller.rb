@@ -46,7 +46,11 @@ module Cmor
       end
 
       def permitted_params
-        params.require(:contact_request).permit(:nickname, :name, :email, :phone, :message, :accept_terms_of_service)
+        # Allow only available attributes and add nickname for spam protection.
+        attrs = (
+          resource_class.attribute_names.map(&:to_sym) & [:nickname, :name, :email, :phone, :subject, :message, :accept_terms_of_service]
+        ) + [:nickname]
+        params.require(:contact_request).permit(attrs)
       end
 
       def after_create_url

@@ -25,7 +25,7 @@ module Cmor::Contact
     end
 
     def notification_recipients
-      ENV.fetch('CMOR_CONTACT_RECIPIENTS') { Cmor::Contact::Configuration.recipients[Rails.env] }
+      ENV.fetch('CMOR_CONTACT_RECIPIENTS') { Cmor::Contact::Configuration.recipients.call(Rails.env) }
     end
   end
 end

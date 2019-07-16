@@ -33,7 +33,7 @@ module Cmor
       end
 
       mattr_accessor :recipients do
-        {}
+        ->(environment) { "jane.doe@domain.local" }
       end
 
       mattr_accessor :sender do
@@ -52,8 +52,8 @@ module Cmor
         ->(controller) { controller.root_path }
       end
 
-      def recipients=(recipients)
-        @@recipients = HashWithIndifferentAccess.new(recipients)
+      mattr_accessor :contact_request_include_modules do
+        ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
       end
     end
   end

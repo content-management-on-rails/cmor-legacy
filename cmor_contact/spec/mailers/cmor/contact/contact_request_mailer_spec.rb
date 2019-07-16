@@ -7,7 +7,7 @@ RSpec.describe Cmor::Contact::ContactRequestMailer, type: :mailer do
     let(:contact_request) { create(:cmor_contact_contact_request) }
 
     let(:sender)       { [contact_request.email] }
-    let(:recipients)   { Cmor::Contact::Configuration.recipients[Rails.env] }
+    let(:recipients)   { Cmor::Contact::Configuration.recipients.call(Rails.env) }
     let(:mail_subject) { "[Dummy] Neue Kontaktanfrage" }
 
     subject { described_class.notify(contact_request) }
