@@ -1,4 +1,7 @@
 = table.acts_as_list_actions
+= table.column :preview do |resource|
+  - if resource.try(:logo).present?
+    - bootstrap_card(image_options: { src: main_app.url_for(resource.logo.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))) })
 = table.association :category, label_method: :name, link_to: ->(r) { url_for(r.category) }
 = table.column :identifier
 = table.column :name
