@@ -1,6 +1,7 @@
 = table.row :name
 = table.row :email
-= table.row :phone
+= table.row(:phone) if resource_class.attribute_names.include?('phone')
+= table.row(:subject) if resource_class.attribute_names.include?('subject')
 = table.row :ip_address
 = table.row :notified_at
 = table.row :created_at

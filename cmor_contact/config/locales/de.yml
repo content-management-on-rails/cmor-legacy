@@ -48,3 +48,4 @@ de:
         email: "max.mustermann@example.com"
         message: "Meine Nachricht"
         phone: "+49 69 12345678"
+        subject: "Meine Anfrage"

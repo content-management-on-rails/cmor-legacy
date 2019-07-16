@@ -51,6 +51,10 @@ module Cmor
       mattr_accessor :after_create_url do
         ->(controller) { controller.root_path }
       end
+
+      mattr_accessor :contact_request_include_modules do
+        ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
+      end
     end
   end
 end

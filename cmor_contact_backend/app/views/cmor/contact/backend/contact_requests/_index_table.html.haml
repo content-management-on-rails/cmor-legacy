@@ -1,7 +1,8 @@
 = table.column :id, sort: true
 = table.column :name, sort: true
 = table.column :email, sort: true
-= table.column :phone, sort: true
+= table.column(:phone, sort: true) if resource_class.attribute_names.include?('phone')
+= table.column(:subject, sort: true) if resource_class.attribute_names.include?('subject')
 = table.column :ip_address, sort: true
 = table.column :message, sort: true
 = table.column :notified_at, sort: true

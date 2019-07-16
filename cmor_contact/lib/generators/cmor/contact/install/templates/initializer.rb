@@ -84,4 +84,15 @@ Cmor::Contact.configure do |config|
   # default: config.sender = ->(mail_form) { %("#{mail_form.name}" <#{mail_form.email}>) }
   # 
   config.sender = ->(mail_form) { %("#{mail_form.name}" <#{mail_form.email}>) }
+
+  # Modules listed here will be included in Cmor::Contact::ContactRequest.
+  #
+  # Available modules are:
+  #
+  # - Cmor::Contact::ContactRequest::PhoneConcern
+  # - Cmor::Contact::ContactRequest::SubjectConcern
+  #
+  # Default: config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
+  #
+  config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
 end
