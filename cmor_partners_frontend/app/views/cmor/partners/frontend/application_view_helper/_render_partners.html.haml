@@ -1,9 +1,9 @@
 = Slick::Rails::ApplicationViewHelper.new(self).render_carousel(options) do
   - capture_haml do
     - category.partners.published.each do |partner|
-      %div
+      %div.mx-4
         - if options[:link_to_show]
           %a{ href: cmor_partners_frontend.url_for(partner) }
-            %img.img-fluid{ src: main_app.url_for(partner.logo.variant(resize: "128x64>", gravity: :center, extent: "128x64")) }/
+            %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)) }/
         - else
-          %img.img-fluid{ src: main_app.url_for(partner.logo.variant(resize: "128x64>", gravity: :center, extent: "128x64")) }/
+          %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)) }/
