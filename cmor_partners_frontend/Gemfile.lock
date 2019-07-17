@@ -1,49 +1,49 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.23.pre)
+    cmor_core_backend (0.0.24.pre)
       administrador (>= 0.0.17.pre)
-      cmor_core (= 0.0.23.pre)
+      cmor_core (= 0.0.24.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_partners
   specs:
-    cmor_partners (0.0.23.pre)
+    cmor_partners (0.0.24.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.23.pre)
-      cmor_core_backend (= 0.0.23.pre)
+      cmor_core (= 0.0.24.pre)
+      cmor_core_backend (= 0.0.24.pre)
       markup-rails (>= 0.0.2)
       rails (>= 5.2.0)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.23.pre)
-    cmor_core (0.0.23.pre)
+    cmor (0.0.24.pre)
+    cmor_core (0.0.24.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.23.pre)
+      cmor (= 0.0.24.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.23.pre)
-      cmor_core (= 0.0.23.pre)
+    cmor_core_frontend (0.0.24.pre)
+      cmor_core (= 0.0.24.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
 
 PATH
   remote: .
   specs:
-    cmor_partners_frontend (0.0.23.pre)
-      cmor_core (= 0.0.23.pre)
-      cmor_core_frontend (= 0.0.23.pre)
-      cmor_partners (= 0.0.23.pre)
+    cmor_partners_frontend (0.0.24.pre)
+      cmor_core (= 0.0.24.pre)
+      cmor_core_frontend (= 0.0.24.pre)
+      cmor_partners (= 0.0.24.pre)
       rails (>= 5.2.0)
-      slick-rails (>= 0.0.1)
+      slick-rails (>= 0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -391,7 +391,7 @@ GEM
       hirb
       simplecov
     simplecov-html (0.10.2)
-    slick-rails (0.0.1)
+    slick-rails (0.0.2)
       coffee-rails
       haml-rails
       rao-view_helper

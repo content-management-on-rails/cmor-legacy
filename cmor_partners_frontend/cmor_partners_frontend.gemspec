@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "cmor_partners", "= #{Cmor::VERSION}"
-  spec.add_dependency "slick-rails", ">= 0.0.1"
+  spec.add_dependency "slick-rails", ">= 0.0.2"
 end
