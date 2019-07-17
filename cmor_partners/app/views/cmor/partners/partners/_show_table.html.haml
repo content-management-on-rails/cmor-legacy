@@ -2,6 +2,6 @@
 = table.association :category, label_method: :name, link_to: ->(r) { url_for(r.category) }
 = table.row :identifier
 = table.row :name
-= table.row :description
+= table.row :body
 = table.timestamp :published_at
 = table.timestamps
