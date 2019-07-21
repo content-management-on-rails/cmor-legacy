@@ -1,3 +1,4 @@
+require 'responders'
 require 'cmor_core_frontend'
 require 'acts-as-taggable-on'
 require 'rao-service'

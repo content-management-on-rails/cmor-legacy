@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'acts-as-taggable-on'
   s.add_dependency 'rao-service', '>= 0.0.17.pre'
   s.add_dependency 'rao-service_controller', '>= 0.0.17.pre'
+  s.add_dependency 'responders'
 end
