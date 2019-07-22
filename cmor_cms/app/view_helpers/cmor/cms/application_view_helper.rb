@@ -9,7 +9,7 @@ module Cmor
     #
     class ApplicationViewHelper < Rao::ViewHelper::Base
       def title
-        c.content_for(:title)
+        "#{Cmor::Cms::Configuration.site_title} - #{c.content_for(:title)}"
       end
 
       def meta_description
