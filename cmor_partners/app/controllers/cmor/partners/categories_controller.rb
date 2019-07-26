@@ -1,5 +1,7 @@
 module Cmor::Partners
   class CategoriesController < Cmor::Core::Backend::ResourcesController::Base
+    include Rao::ResourcesController::ActsAsListConcern
+
     def self.resource_class
       Cmor::Partners::Category
     end

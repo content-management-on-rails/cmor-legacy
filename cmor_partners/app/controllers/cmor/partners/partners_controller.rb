@@ -1,5 +1,6 @@
 module Cmor::Partners
   class PartnersController < Cmor::Core::Backend::ResourcesController::Base
+    include Rao::ResourcesController::ActsAsListConcern
     helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper
 
     def self.resource_class
