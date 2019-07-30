@@ -4,14 +4,14 @@ module Cmor
       module Generators
         # Example:
         #
-        #     rails g cmor:core:backend:resources_controller -c Cmor::Services::ServicesController
+        #     rails g cmor:core:backend:resources_controller -c Cmor::Showcase::CategoriesController
         #
         class ResourcesControllerGenerator < Rails::Generators::Base
           desc 'Generates a resources controller with CRUD actions.'
 
           source_root File.expand_path('../templates', __FILE__)
 
-          class_option :controller_class, type: 'string', aliases: '-c'
+          class_option :controller_class, type: 'string', aliases: '-c', required: true, desc: 'Specifies the full class name of the controller. Example: "--controller-class Cmor::Showcase::CategoriesController"'
           class_option :resource_class, type: 'string', aliases: '-m'
 
           def generate_controller
