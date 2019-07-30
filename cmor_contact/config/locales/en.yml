@@ -9,7 +9,7 @@ en:
     attributes:
       cmor/contact/contact_request:
         id: ID
-        accept_terms_of_service: 'I hereby allow the site owner to use my personal data for the purpose of answering this request.'
+        accept_terms_of_service: 'Terms'
         name: Name
         email: E-Mail
         phone: Phone
@@ -42,6 +42,9 @@ en:
     cmor_contact_engine: contact
     contact_requests: request
   simple_form:
+    labels:
+      contact_request:
+        accept_terms_of_service: 'I hereby allow the site owner to use my personal data for the purpose of answering this request.'
     placeholders:
       contact_request:
         name: "John Doe"

@@ -9,7 +9,7 @@ de:
     attributes:
       cmor/contact/contact_request:
         id: ID
-        accept_terms_of_service: 'Hiermit erlaube ich dem Seitenbetreiber die Nutzung meiner Daten zwecks Beantwortung dieser Kontaktanfrage.'
+        accept_terms_of_service: 'Bedingung'
         name: Name
         email: E-Mail
         phone: Telefonnummer
@@ -39,9 +39,12 @@ de:
       contact_request:
         create: Absenden
   routes:
-    cmor_contact_engine: kontakt
+    cmor_contact_engine: kontakts
     contact_requests: anfrage
   simple_form:
+    labels:
+      contact_request:
+        accept_terms_of_service: 'Hiermit erlaube ich dem Seitenbetreiber die Nutzung meiner Daten zwecks Beantwortung dieser Kontaktanfrage.'
     placeholders:
       contact_request:
         name: "Max Mustermann"
