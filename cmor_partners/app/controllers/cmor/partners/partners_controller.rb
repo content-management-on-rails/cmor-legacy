@@ -8,6 +8,10 @@ module Cmor::Partners
       Cmor::Partners::Partner
     end
 
+    def load_collection_scope
+      super.includes(:category)
+    end
+
     private
 
     def permitted_params

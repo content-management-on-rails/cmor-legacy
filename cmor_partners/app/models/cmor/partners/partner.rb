@@ -11,6 +11,8 @@ module Cmor::Partners
     acts_as_published
     acts_as_markup :body, Cmor::Core::Configuration.default_markup_options
 
-    validates :name, presence: true, uniqueness: { scope: [ :category_id ] }  
+    default_scope -> { order(position: :asc) }
+
+    validates :name, presence: true, uniqueness: { scope: [ :category_id ] }
   end
 end

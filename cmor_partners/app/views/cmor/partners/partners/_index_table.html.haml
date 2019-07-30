@@ -1,7 +1,7 @@
 = table.acts_as_list_actions
 = table.thumbnail :logo
-= table.association :category, label_method: :name, link_to: ->(r) { url_for(r.category) }
-= table.column :identifier
-= table.column :name
-= table.timestamps
+= table.association :category, sort: { column_name: 'cmor_partners_categories.name' }, label_method: :name, link_to: ->(r) { url_for(r.category) }
+= table.column :identifier, sort: true
+= table.column :name, sort: true
+= table.timestamps sort: true
 = table.acts_as_published_actions

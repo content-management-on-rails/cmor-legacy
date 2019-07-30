@@ -1,6 +1,6 @@
 = table.acts_as_list_actions
-= table.column :locale, collection: I18n.available_locales
-= table.column :identifier
-= table.column :name
-= table.timestamps
+= table.column :locale, sort: true, collection: I18n.available_locales
+= table.column :identifier, sort: true
+= table.column :name, sort: true
+= table.timestamps sort: true
 = table.acts_as_published_actions
