@@ -1,0 +1,30 @@
+de:
+  classes:
+    cmor/showcase/engine: Schaufenster
+  activerecord:
+    models:
+      cmor/showcase/category:
+        one: Kategorie
+        other: Kategorien
+      cmor/showcase/item:
+        one: Eintrag
+        other: Einträge
+    shared_attributes: &shared_attributes
+      body: Beschreibung
+      created_at: Erstellt am
+      id: ID
+      identifier: Bezeichner
+      name: Name
+      position: Position
+      published_at: Veröffentlicht am
+      published: Veröffentlicht
+      updated_at: Aktualisiert am
+    attributes: 
+      cmor/showcase/category:
+        <<: *shared_attributes
+        locale: Sprache
+      cmor/showcase/item:
+        <<: *shared_attributes
+        category: Kategorie
+        category_id: Kategorie
+        preview_picture: Vorschaubild
