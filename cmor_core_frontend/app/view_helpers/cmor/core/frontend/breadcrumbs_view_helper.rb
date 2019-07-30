@@ -30,6 +30,9 @@ module Cmor
 
             # Are we inside a resources controller?
             if c.controller.class.respond_to?(:resource_class)
+              # Add a text breadcrumb for the current engine
+              b.push(breadcrumb_for_current_engine)
+
               # Add a breadrumb for collection page
               b.push(Breadcrumb.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: c.url_for(action: :index, page: nil)))
 
@@ -51,9 +54,38 @@ module Cmor
                 end
               end
             end
+
+            # Are we inside a service controller?
+            if c.controller.class.respond_to?(:service_class)
+              # Add a text breadcrumb for the engine
+              b.push(breadcrumb_for_current_engine)
+
+              # Add a text breadcrumb for the service name
+              b.push(Breadcrumb.new(label: c.controller.class.service_class.model_name.human))
+            end
           end
           breadcrumbs.last.url = nil
           render breadcrumbs: breadcrumbs
+        end
+
+        private
+
+        def breadcrumb_for_current_engine
+          return if current_engine.nil?
+          breadcrumb_for_engine(current_engine)
+        end
+
+        def breadcrumb_for_engine(engine)
+          Breadcrumb.new(label: I18n.t("classes.#{engine.name.underscore}"))
+        end
+
+        def current_engine
+          klass_name_parts = c.controller.class.name.split("::")
+          klass_name_parts.size.downto(1).each do |i|
+            if klass_name_parts.take(i).join("::").constantize.const_defined?("Engine")
+              break [klass_name_parts.take(i), ['Engine']].flatten.join("::").constantize
+            end
+          end
         end
 
         def t(identifier, options = {})
