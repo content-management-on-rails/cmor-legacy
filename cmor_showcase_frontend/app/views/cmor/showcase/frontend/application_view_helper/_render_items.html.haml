@@ -1,0 +1,10 @@
+.row{ class: dom_class(category), id: dom_id(category) }
+  - category.items.each do |item|
+    .col-lg-3.col-md-4.col-sm-6{ class: dom_class(item) }
+      .card.h-100
+        %a{:href => "#"}
+          %img.card-img-top{:alt => "", :src => main_app.url_for(item.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+        .card-body
+          %h4.card-title
+            %a{:href => "#"}= item.name
+          %p.card-text= markup_helper(self).to_html(item, :body)

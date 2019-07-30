@@ -1,0 +1,3 @@
+
+
+  mount Cmor::Showcase::Frontend::Engine, at: '/'

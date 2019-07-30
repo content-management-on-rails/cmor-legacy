@@ -1,0 +1,13 @@
+.row
+  .col-12
+    %h2= @resource.name
+
+.row
+  - @resource.items.published.each do |partner|
+    = render partial: 'cmor/showcase/frontend/items/item', locals: { item: item }
+
+.row
+  .col-12
+    = link_to(root_path, class: "btn btn-primary btn-responsive") do
+      %i.fas.fa-chevron-left
+      = t('.back')

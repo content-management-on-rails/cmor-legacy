@@ -1,0 +1,16 @@
+.row
+  .col-12
+    = showcase_helper(self).render_items(@collection.first.identifier)
+.row
+  .col-12
+    %h1= t('.title', inflections)
+
+- @collection.each do |category| 
+  .row
+    .col-12
+      %a{ href: url_for(category) }
+        %h2= category.name
+
+  .row
+    - category.items.published.each do |item|
+      = render partial: 'cmor/showcase/frontend/items/item', locals: { item: item }
