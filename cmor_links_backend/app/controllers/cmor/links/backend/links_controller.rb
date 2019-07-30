@@ -8,6 +8,10 @@ module Cmor
 
         private
 
+        def load_collection_scope
+          super.includes(:category)
+        end
+
         def permitted_params
           params
             .require(:link)

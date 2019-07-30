@@ -1,5 +1,5 @@
 = table.id sort: true
-= table.association :category, sort: true, link_to: ->(resource) { resource.category }
+= table.association :category, sort: { column_name: 'cmor_links_categories.name' }, link_to: ->(resource) { resource.category }
 = table.column :name, sort: true, class: 'truncate-chars truncate-chars-30'
 = table.column :description, sort: true, class: 'truncate-chars truncate-chars-30'
 = table.timestamps sort: true
