@@ -2,4 +2,4 @@
 gem update --system
 bundle update
 
-for d in ./cmor_*/ ; do (cd "$d" && bundle update); done
+for d in ./cmor_*/ ; do (cd "$d" && bundle); done
