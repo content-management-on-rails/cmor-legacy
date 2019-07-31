@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.27.pre)
+    cmor_core (0.0.28.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.27.pre)
+      cmor (= 0.0.28.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,13 +14,13 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.27.pre)
+    cmor (0.0.28.pre)
 
 PATH
   remote: .
   specs:
-    cmor_core_frontend (0.0.27.pre)
-      cmor_core (= 0.0.27.pre)
+    cmor_core_frontend (0.0.28.pre)
+      cmor_core (= 0.0.28.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -239,7 +239,7 @@ GEM
     regexp_parser (1.4.0)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    route_translator (6.0.0)
+    route_translator (7.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
