@@ -14,7 +14,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.28.pre)
-      administrador (>= 0.0.17.pre)
+      administrador (>= 0.0.20.pre)
       cmor_core (= 0.0.28.pre)
       rails (>= 5.2.0)
 
@@ -96,7 +96,7 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.18.pre)
+    administrador (0.0.20.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
