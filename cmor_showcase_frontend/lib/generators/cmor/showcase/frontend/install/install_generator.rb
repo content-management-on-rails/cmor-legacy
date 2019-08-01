@@ -19,6 +19,12 @@ module Cmor::Showcase::Frontend
       def generate_routes
         route File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
       end
+
+      def mount_application_view_helper
+        inject_into_file 'app/controllers/application_controller.rb', before: "end\n" do
+          "  view_helper Cmor::Showcase::Frontend::ApplicationViewHelper, as: :showcase_helper\n"
+        end
+      end
     end
   end
 end

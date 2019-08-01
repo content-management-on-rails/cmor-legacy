@@ -1,1 +1,3 @@
 en:
+  routes:
+    cmor_showcase_frontend_engine: "showcase"

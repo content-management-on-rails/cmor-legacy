@@ -1,1 +1,5 @@
 de:
+  routes:
+    cmor_showcase_frontend_engine: "schaufenster"
+    categories: "kategorien"
+    items: "eintraege"
