@@ -39,7 +39,7 @@ de:
       contact_request:
         create: Absenden
   routes:
-    cmor_contact_engine: kontakts
+    cmor_contact_engine: kontakt
     contact_requests: anfrage
   simple_form:
     labels:
