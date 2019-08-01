@@ -3,6 +3,10 @@ module Cmor
     module Backend
       module ActiveStorage
         class AttachmentsController < Cmor::Core::Backend::ResourcesController::Base
+          def self.engine_class
+            ::Cmor::System::Backend::Engine
+          end
+
           def self.resource_class
             ::ActiveStorage::Attachment
           end
