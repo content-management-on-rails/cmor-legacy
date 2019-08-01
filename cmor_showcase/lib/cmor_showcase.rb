@@ -1,5 +1,10 @@
+require "cmor_core"
 require "cmor_core_backend"
+require "acts_as_published"
+require "acts_as_list"
+require "markup-rails"
 
+require "cmor/showcase/version"
 require "cmor/showcase/configuration"
 require "cmor/showcase/engine"
 

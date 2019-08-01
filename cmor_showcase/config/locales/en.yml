@@ -1,1 +1,32 @@
 en:
+  classes:
+    cmor/showcase/engine: Showcase
+  activerecord:
+    models:
+      cmor/showcase/category:
+        one: Category
+        other: Categories
+      cmor/showcase/item:
+        one: Item
+        other: Items
+    shared_attributes: &shared_attributes
+      body: Description
+      created_at: Created at
+      id: ID
+      identifier: Identifier
+      name: Name
+      position: Position
+      published_at: Published at
+      published: Published
+      updated_at: Updated at
+    attributes:
+      cmor/showcase/category:
+        <<: *shared_attributes
+        locale: Locale
+      cmor/showcase/item:
+        <<: *shared_attributes
+        category: Category
+        category_id: Category
+        preview_picture: Preview
+  routes:
+    cmor-showcase-engine: showcase

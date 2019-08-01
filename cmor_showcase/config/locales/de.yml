@@ -28,3 +28,5 @@ de:
         category: Kategorie
         category_id: Kategorie
         preview_picture: Vorschaubild
+  routes:
+    cmor-showcase-engine: schaufenster

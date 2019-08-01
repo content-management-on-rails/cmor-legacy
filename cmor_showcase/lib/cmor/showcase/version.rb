@@ -1,6 +1,7 @@
+require 'cmor/version'
+
 module Cmor
   module Showcase
-    VERSION = '0.0.1'.freeze
+    VERSION = ::Cmor::VERSION
   end
 end
-
