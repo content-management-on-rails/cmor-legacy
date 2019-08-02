@@ -23,11 +23,11 @@ module Cmor
         private
 
         def sub_modules
-          @sub_modules ||= %w(blog carousels cms contact files galleries links partners rbac tags testimonials user_area) - options['excluded_modules']
+          @sub_modules ||= %w(blog carousels cms contact files galleries links partners rbac showcase tags testimonials user_area) - options['excluded_modules']
         end
 
         def needs_active_storage?
-          (%w(blog carousels files galleries partners testimonials) & sub_modules).any?
+          (%w(blog carousels files galleries partners showcase testimonials) & sub_modules).any?
         end
 
         def needs_acts_as_taggable?

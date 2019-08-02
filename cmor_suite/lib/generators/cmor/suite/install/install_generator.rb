@@ -62,7 +62,7 @@ module Cmor
         end
 
         def sub_modules
-          @sub_modules ||= %w(partners) - options['excluded_modules']
+          @sub_modules ||= %w(partners showcase) - options['excluded_modules']
         end
       end
     end

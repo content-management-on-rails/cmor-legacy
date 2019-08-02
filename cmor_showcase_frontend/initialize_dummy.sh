@@ -33,9 +33,6 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Add turbolinks
-sed -i "2i\  view_helper Markup::Rails::ApplicationViewHelper, as: :markup_helper" app/controllers/application_controller.rb
-
-# Add turbolinks
 sed -i "15irequire 'turbolinks'" config/application.rb
 
 # Install

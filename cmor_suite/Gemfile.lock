@@ -297,6 +297,17 @@ PATH
       cmor_partners (= 0.0.31.pre)
       rails (>= 5.2.0)
       slick-rails (>= 0.0.2)
+    cmor_showcase (0.0.27.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.27.pre)
+      cmor_core_backend (= 0.0.27.pre)
+      markup-rails (>= 0.0.2)
+      rails (>= 5.2.0)
+    cmor_showcase_frontend (0.0.27.pre)
+      cmor_core (= 0.0.27.pre)
+      cmor_core_frontend (= 0.0.27.pre)
+      rails (>= 5.2.0)
 
 PATH
   remote: .

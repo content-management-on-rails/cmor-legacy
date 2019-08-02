@@ -5,6 +5,8 @@ module Cmor::Showcase::Frontend
     include Rao::ResourcesController::RestResourceUrlsConcern
     include Rao::ResourcesController::ResourceInflectionsConcern
 
+    view_helper Markup::Rails::ApplicationViewHelper, as: :markup_helper
+
     def self.resource_class
       Cmor::Showcase::Item
     end

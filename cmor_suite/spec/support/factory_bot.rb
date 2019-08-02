@@ -15,6 +15,7 @@ FactoryBot.definition_file_paths << Cmor::Galleries::Engine.root.join(*%w(spec f
 FactoryBot.definition_file_paths << Cmor::Links::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Partners::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Rbac::Engine.root.join(*%w(spec factories))
+FactoryBot.definition_file_paths << Cmor::Showcase::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::System::Backend::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Tags::Engine.root.join(*%w(spec factories))
 FactoryBot.definition_file_paths << Cmor::Testimonials::Engine.root.join(*%w(spec factories))

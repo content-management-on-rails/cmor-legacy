@@ -50,4 +50,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cmor_partners', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_partners_frontend', "= #{Cmor::VERSION}"
+
+  s.add_dependency 'cmor_showcase', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_showcase_frontend', "= #{Cmor::VERSION}"
 end
