@@ -1,3 +1,16 @@
 en:
+  cmor:
+    showcase:
+      frontend:
+        categories:
+          index:
+            title: "%{collection_name}"
+        items:
+          item:
+            more: "More"
+          show:
+            back: "Back"
   routes:
     cmor_showcase_frontend_engine: "showcase"
+    categories: "categories"
+    items: "items"

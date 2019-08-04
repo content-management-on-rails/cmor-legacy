@@ -4,12 +4,12 @@
 
 .row
   - if @resource.preview_picture.present?
-    .col-md-4
-      %img.img-thumbnail.p-4.img-fluid{:alt => "", :src => main_app.url_for(@resource.preview_picture.variant(resize: "512x512>", gravity: :center, extent: "512x512")) }/
-    .col-md-8
+    .col-12
+      %img.w-100.img-thumbnail.img-fluid{:alt => "", :src => main_app.url_for(@resource.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+    .col-12
       %p= markup_helper(self).to_html(@resource, :body).html_safe
   - else
-    .col-md-12
+    .col-12
       %p= markup_helper(self).to_html(@resource, :body).html_safe
 
 .row

@@ -1,8 +1,5 @@
 .row
   .col-12
-    = showcase_helper(self).render_items(@collection.first.identifier)
-.row
-  .col-12
     %h1= t('.title', inflections)
 
 - @collection.each do |category| 

@@ -1,4 +1,15 @@
 de:
+  cmor:
+    showcase:
+      frontend:
+        categories:
+          index:
+            title: "%{collection_name}"
+        items:
+          item:
+            more: "Mehr"
+          show:
+            back: Zurück
   routes:
     cmor_showcase_frontend_engine: "schaufenster"
     categories: "kategorien"

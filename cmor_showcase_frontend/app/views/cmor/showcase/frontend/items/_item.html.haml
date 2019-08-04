@@ -1,3 +1,9 @@
-.col-lg-3.mb-4
-  %a{ href: url_for(item) }
-    %img.img-thumbnail.p-4{:alt => "...", :src => main_app.url_for(item.logo.variant(resize: "512x512>", gravity: :center, extent: "512x512", fx: '(r+g+b)/3', level: '0%,75%')) }/
+.col-12.col-lg-3.mb-4
+  .card.h-100
+    = link_to([cmor_showcase_frontend, item]) do
+      %img.card-img-top{ src: main_app.url_for(item.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+    .card-body
+      %h5.card-title= item.name
+      %p.card-text= markup_helper(self).to_html(item, :body).html_safe
+      = link_to([cmor_showcase_frontend, item], class: 'btn btn-primary') do
+        %span.btn-text= t('.more')
