@@ -1,0 +1,31 @@
+%div{:class => "carousel #{"carousel-#{carousel.identifier}"} slide", "data-ride" => "carousel", :id => dom_id(carousel) }
+  - if options[:indicators]
+    %ol.carousel-indicators
+      - carousel.item_details.count.times do |i|
+        %li{:class => (i == 0) ? "active" : "", "data-slide-to" => i, "data-target" => "##{dom_id(carousel)}"}
+  .carousel-inner
+    - carousel.item_details.each_with_index do |item_detail, i|
+      %div{:class => "carousel-item #{(i == 0) ? "active" : ""}"}
+        - if item_detail.image?
+          %img.d-block.w-100{:src => main_app.url_for(item_detail.asset.variant(variant_options))}/
+          - if item_detail.description.present?
+            .carousel-caption.d-none.d-md-block
+              = markup_helper(self).to_html(item_detail, :description)
+        - elsif item_detail.video?
+          .carousel-video
+            -# %video#foo.w-100{ autoplay: "", loop: "", muted: ""}
+            %video.w-100{ id: "#{dom_id(item_detail)}-video", autoplay: "", muted: ""}
+              %source{ src: main_app.url_for(item_detail.asset), type: "video/mp4" }
+            .video-overlay.h-100
+              .container.content
+                -# overlayed content goes here.
+              .video-controls.text-white
+                %a{ data: { video: { target: "##{dom_id(item_detail)}-video", control: :toggle } } }
+                  ❚❚
+  - if options[:controls]
+    %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(carousel)}", :role => "button"}
+      %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+      %span.sr-only= t('.previous')
+    %a.carousel-control-next{"data-slide" => "next", :href => "##{dom_id(carousel)}", :role => "button"}
+      %span.carousel-control-next-icon{"aria-hidden" => "true"}
+      %span.sr-only= t('.next')

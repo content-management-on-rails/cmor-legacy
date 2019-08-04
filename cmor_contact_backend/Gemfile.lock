@@ -10,7 +10,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.32.pre)
-      administrador (>= 0.0.20.pre)
+      administrador (>= 0.0.21.pre)
       cmor_core (= 0.0.32.pre)
       rails (>= 5.2.0)
 
@@ -88,13 +88,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.20.pre)
+    administrador (0.0.21.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.30.pre)
+      rao-component (>= 0.0.31.pre)
       rao-query (>= 0.0.23.pre)
       rao-resource_controller (>= 0.0.23.pre)
       rao-resources_controller (>= 0.0.23.pre)
@@ -288,23 +288,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.30.pre)
+    rao-component (0.0.31.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.30.pre)
+    rao-query (0.0.31.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.30.pre)
+    rao-resource_controller (0.0.31.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.30.pre)
+    rao-resources_controller (0.0.31.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.30.pre)
+    rao-service_controller (0.0.31.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao

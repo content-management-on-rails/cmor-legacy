@@ -1,0 +1,29 @@
+.carousel-video {
+  position:relative;
+
+  video {
+      position:relative;
+      z-index:0;
+  }
+
+  .video-overlay {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .video-controls {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    padding: 1.5rem 1rem;
+  }
+
+  .video-controls:hover {
+    cursor: pointer;
+  }
+}

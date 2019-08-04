@@ -7,7 +7,11 @@
     = collection_table(collection: resource.item_details, resource_class: Cmor::Carousels::ItemDetail) do |table|
       = table.acts_as_list_actions scope: :carousel_id
       = table.column :image do |resource|
-        - image_tag(main_app.url_for(resource.asset.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
+        - capture_haml do
+          - if resource.asset.variable?
+            = image_tag(main_app.url_for(resource.asset.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
+          - if resource.asset.previewable?
+            = image_tag(main_app.url_for(resource.asset.preview(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
       = table.timestamps
       = table.acts_as_published_actions
       = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: table }

@@ -13,6 +13,20 @@ module Cmor
       def human
         "#{carousel.class.model_name.human} #{carousel.human} - #{self.class.model_name.human} #{id}"
       end
+
+      module ContentTypesConcern
+        extend ActiveSupport::Concern
+
+        def video?
+          asset.content_type.start_with?('video/')
+        end
+
+        def image?
+          asset.content_type.start_with?('image/')
+        end
+      end
+
+      include ContentTypesConcern
     end
   end
 end

@@ -252,7 +252,7 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.30.pre)
+    rao-component (0.0.31.pre)
       haml-rails
       rails
       rao
