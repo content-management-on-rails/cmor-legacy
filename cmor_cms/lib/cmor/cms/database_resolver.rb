@@ -8,6 +8,9 @@ module Cmor
 
       # class methods go here
       module ClassMethods
+        def caching
+          Cmor::Cms::Configuration.resolver_caching.call
+        end
       end
 
       # instance methods go here

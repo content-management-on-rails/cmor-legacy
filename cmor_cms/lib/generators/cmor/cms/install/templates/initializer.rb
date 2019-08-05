@@ -50,4 +50,10 @@ Cmor::Cms.configure do |config|
   # Default: config.site_title = Rails.application.class.to_s.deconstantize
   #
   config.site_title = Rails.application.class.to_s.deconstantize
+
+  # Enable or disable caching at resolver level.
+  #
+  # Default: config.resolver_caching = -> { true }
+  #
+  config.resolver_caching = -> { true }
 end

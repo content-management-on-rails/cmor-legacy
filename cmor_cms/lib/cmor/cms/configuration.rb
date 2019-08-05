@@ -27,6 +27,8 @@ module Cmor
 
       mattr_accessor(:navigation_locale_fallback) { ->(navigation_name, locale) {false} }
 
+      mattr_accessor(:resolver_caching) { -> { true } }
+
       def default_handlers=(default_handlers)
         @@default_handlers = HashWithIndifferentAccess.new(default_handlers)
       end
