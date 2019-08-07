@@ -4,4 +4,10 @@ Cmor::Core::Frontend.configure do |config|
   # Default: config.resource_label_methods = %i(human name email to_s)
   #
   config.resource_label_methods = %i(human name email to_s)
+
+  # Sets the first breadcrumb. This is usually the home link.
+  #
+  # Default: config.first_breadcrumb = ->() { Cmor::Core::Frontend::Breadcrumb::Base.new(label: t('.home'), url: c.main_app.root_path) }
+  #
+  config.first_breadcrumb = ->() { Cmor::Core::Frontend::Breadcrumb::Base.new(label: t('.home'), url: c.main_app.root_path) }
 end
