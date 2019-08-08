@@ -1,20 +1,20 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.33.pre)
+    cmor_core_backend (0.0.34.pre)
       administrador (>= 0.0.21.pre)
-      cmor_core (= 0.0.33.pre)
+      cmor_core (= 0.0.34.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_user_area
   specs:
-    cmor_user_area (0.0.33.pre)
+    cmor_user_area (0.0.34.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.33.pre)
-      cmor_core_frontend (= 0.0.33.pre)
+      cmor_core (= 0.0.34.pre)
+      cmor_core_frontend (= 0.0.34.pre)
       rails (>= 5.2.0)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -24,18 +24,18 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.33.pre)
-    cmor_core (0.0.33.pre)
+    cmor (0.0.34.pre)
+    cmor_core (0.0.34.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.33.pre)
+      cmor (= 0.0.34.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.33.pre)
-      cmor_core (= 0.0.33.pre)
+    cmor_core_frontend (0.0.34.pre)
+      cmor_core (= 0.0.34.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -43,10 +43,10 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_user_area_backend (0.0.33.pre)
-      cmor_core (= 0.0.33.pre)
-      cmor_core_backend (= 0.0.33.pre)
-      cmor_user_area (= 0.0.33.pre)
+    cmor_user_area_backend (0.0.34.pre)
+      cmor_core (= 0.0.34.pre)
+      cmor_core_backend (= 0.0.34.pre)
+      cmor_user_area (= 0.0.34.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -207,7 +207,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.1.1)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     haml-rails (2.0.1)

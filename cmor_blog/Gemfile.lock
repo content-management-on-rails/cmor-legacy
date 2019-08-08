@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.33.pre)
+    cmor_core (0.0.34.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.33.pre)
+      cmor (= 0.0.34.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,9 +14,9 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.33.pre)
-    cmor_core_frontend (0.0.33.pre)
-      cmor_core (= 0.0.33.pre)
+    cmor (0.0.34.pre)
+    cmor_core_frontend (0.0.34.pre)
+      cmor_core (= 0.0.34.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -24,11 +24,11 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_blog (0.0.33.pre)
+    cmor_blog (0.0.34.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.33.pre)
-      cmor_core_frontend (= 0.0.33.pre)
+      cmor_core (= 0.0.34.pre)
+      cmor_core_frontend (= 0.0.34.pre)
       friendly_id
       haml-rails
       kramdown
@@ -159,7 +159,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.1.1)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     haml-rails (2.0.1)
