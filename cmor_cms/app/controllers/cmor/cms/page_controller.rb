@@ -7,11 +7,14 @@ module Cmor
       def respond
         respond_to do |format|
           format.html { render template: params[:page] }
+          format.json do
+            render json: { content: render_to_string(template: params[:page], layout: false, formats: [:html]) }.to_json
+          end
+          format.xml do
+            # We don't support xml atm, but we want to handle xml requests by failing with a 404.
+            handle_missing_template
+          end
           format.txt  { render template: params[:page], layout: false, formats: [:text] }
-          # format.pdf do
-          #   output = render_to_string template: params[:page], formats: [:html, :pdf], layout: false
-          #   self.response_body = WickedPdf.new.pdf_from_string(output)
-          # end if Gem::Specification.find_all_by_name('wicked_pdf').any?
         end
       end
 
@@ -19,30 +22,39 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          # avoid error 500 on missing template
-          rescue_from ActionView::MissingTemplate do
-            if params[:page] == 'home'
-              render_fallback_page
+          rescue_from ActionView::MissingTemplate do |exception|
+            if exception.message.start_with?('Missing partial')
+              handle_missing_partial(exception)
             else
-              respond_to do |format|
-                format.html do
-                  render(file: "#{Rails.root}/public/404", formats: [:html],
-                        layout: false,
-                        status: 404
-                        )
-                end
-                format.xml  { head :not_found }
-                format.any  { head :not_found }
-              end
+              handle_missing_template(exception)
             end
           end
         end
 
         private
 
+        def handle_missing_partial(exception)
+          raise exception
+        end
+
+        def handle_missing_template(exception = nil)
+          if params[:page] == 'home'
+            render_fallback_page
+          else
+            respond_to do |format|
+              format.html { raise ActionController::RoutingError.new("No page matches [GET] \"/#{params[:page]}\"") }
+              format.xml  { head :not_found }
+              format.json { head :not_found }
+              format.any  { head :not_found }
+            end
+          end
+        end
+
+
         def render_fallback_page
           respond_to do |format|
             format.html { render :fallback }
+            format.json { render json: { content: render_to_string(:fallback, layout: false, formats: [:html]) }.to_json }
             format.txt  { render :fallback }
           end
         end
