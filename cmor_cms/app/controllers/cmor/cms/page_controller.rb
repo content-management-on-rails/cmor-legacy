@@ -10,6 +10,10 @@ module Cmor
           format.json do
             render json: { content: render_to_string(template: params[:page], layout: false, formats: [:html]) }.to_json
           end
+          format.xml do
+            # We don't support xml atm, but we want to handle xml requests by failing with a 404.
+            handle_missing_template
+          end
           format.txt  { render template: params[:page], layout: false, formats: [:text] }
         end
       end
@@ -33,12 +37,12 @@ module Cmor
           raise exception
         end
 
-        def handle_missing_template(exception)
+        def handle_missing_template(exception = nil)
           if params[:page] == 'home'
             render_fallback_page
           else
             respond_to do |format|
-              format.html { binding.pry; raise ActionController::RoutingError.new("No page matches [GET] \"/#{params[:page]}\"") }
+              format.html { raise ActionController::RoutingError.new("No page matches [GET] \"/#{params[:page]}\"") }
               format.xml  { head :not_found }
               format.json { head :not_found }
               format.any  { head :not_found }
