@@ -5,6 +5,7 @@
 = table.association :asset, label_method: ->(r) { r.filename }
 = table.timestamps sort: true
 = table.column :asset_actions do |resource|
-  - link_to(main_app.url_for(resource.asset), class: 'btn btn-sm btn-xs btn-primary') do
-    %span.glyphicon.glyphicon-download
-    = t('.download')
+  - if resource.asset.present?
+    - link_to(main_app.url_for(resource.asset), class: 'btn btn-sm btn-xs btn-primary') do
+      %span.glyphicon.glyphicon-download
+      = t('.download')

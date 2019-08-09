@@ -9,7 +9,7 @@ module Cmor::Blog
     scope :non_images, -> { joins(asset: [:blob]).where("active_storage_blobs.content_type NOT LIKE '%image/%'") }
 
     def filename
-      asset.blob.filename
+      asset&.blob&.filename
     end
 
     def human

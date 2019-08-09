@@ -1,16 +1,13 @@
 - if @resource.asset_details.any?
   = collection_table(collection: @resource.asset_details) do |t|
     = t.acts_as_list_actions
-    = t.column(:preview_picture) do |resource|
-      - capture_haml do
-        - begin
-          %img.img-responsive.bottom-margin-2{ src: main_app.url_for(resource.asset.variant(thumbnail: '160x120^')) }
-        - rescue ActiveStorage::InvariableError
+    = t.thumbnail :asset
     = t.column :filename
     = t.column :asset_actions do |resource|
-      - link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-primary btn-responsive') do
-        %span.glyphicon.glyphicon-download
-        %span.btn-text= t('.download')
+      - if resource.asset.present?
+        - link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-primary btn-responsive') do
+          %span.glyphicon.glyphicon-download
+          %span.btn-text= t('.download')
     = t.column :actions do |resource|
       - capture_haml do
         - id_base = "link-to-#{controller.class.name.underscore.gsub('_controller', '').gsub(/[\/_]/, '-')}-#{resource.to_param}"

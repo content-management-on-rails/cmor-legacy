@@ -5,6 +5,7 @@
         %li{:class => (i == 0) ? "active" : "", "data-slide-to" => i, "data-target" => "##{dom_id(carousel)}"}
   .carousel-inner
     - carousel.item_details.each_with_index do |item_detail, i|
+      - next if item_detail.asset.nil?
       %div{:class => "carousel-item #{(i == 0) ? "active" : ""}"}
         - if item_detail.image?
           %img.d-block.w-100{:src => main_app.url_for(item_detail.asset.variant(variant_options))}/
