@@ -19,7 +19,7 @@ for i in blog carousels cms contact core files galleries links rbac system testi
   cd ..
 done
 
-for i in partners showvase; do
+for i in partners showcase; do
   cd "cmor_${i}_frontend"
   echo $PWD
   publish_gem
