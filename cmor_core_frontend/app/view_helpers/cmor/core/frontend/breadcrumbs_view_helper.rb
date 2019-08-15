@@ -10,6 +10,7 @@ module Cmor
       #     end
       #
       class BreadcrumbsViewHelper < Rao::ViewHelper::Base
+        include Cmor::Core::Frontend::Breadcrumb::I18nConcern
         # Usage:
         #
         #     # app/views/layouts/application.html.erb
@@ -31,6 +32,15 @@ module Cmor
           breadcrumbs = [].tap do |b|
             # Add breadcrumb to home page
             b.push(instance_exec(&Cmor::Core::Frontend::Configuration.first_breadcrumb))
+
+            begin
+              klass_name = "#{c.controller.class.name}::#{c.action_name.camelize}BreadcrumbPath".constantize
+              b.push << klass_name.new(context: c).breadcrumbs
+              exclude = []
+              next
+            rescue NameError => e
+              puts "No custom breadcrumb found: #{e}. Continuing with generic creation."
+            end
 
             # Are we showing a cms page?
             if c.controller.class.name == 'Cmor::Cms::PageController' && c.action_name == 'respond' && c.params[:page] != 'home'
@@ -75,6 +85,7 @@ module Cmor
             end
           end
 
+          breadcrumbs.flatten!
           breadcrumbs.last.url = nil
 
           if exclude.any?
@@ -107,27 +118,6 @@ module Cmor
             if klass_name_parts.take(i).join("::").constantize.const_defined?("Engine")
               break [klass_name_parts.take(i), ['Engine']].flatten.join("::").constantize
             end
-          end
-        end
-
-        def t(identifier, options = {})
-          if identifier.start_with?('.')
-            prefix = self.class.name.underscore
-
-            # Check if we are in a proc by matching the caller string
-            caller_method = if caller[0] =~ /\(required\)>/
-              # If yes omit the last call (that has to be instance_exec) and
-              # fetch the previous one that should be the method that is really
-              # calling us.
-              caller[2].split(' ').last.gsub("'", '').gsub("`", '')
-            else
-              # Otherwise take the first caller
-              caller[0].split(' ').last.gsub("'", '').gsub("`", '')
-            end
-
-            I18n.t("#{prefix}.#{caller_method}.#{identifier}", options)
-          else
-            I18n.t(identifier, options)
           end
         end
 

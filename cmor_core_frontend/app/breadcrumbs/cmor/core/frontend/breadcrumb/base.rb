@@ -4,7 +4,6 @@ module Cmor
       module Breadcrumb
         class Base
           extend ActiveModel::Model
-
           attr_accessor :label, :url, :link_html_options, :li_html_options
           
           def initialize(attrs)
