@@ -4,8 +4,11 @@ module Cmor::Showcase::Frontend
     include Rao::ResourcesController::ResourcesConcern
     include Rao::ResourcesController::RestResourceUrlsConcern
     include Rao::ResourcesController::ResourceInflectionsConcern
+    include Rao::ResourcesController::FriendlyIdConcern
 
     view_helper Markup::Rails::ApplicationViewHelper, as: :markup_helper
+
+    helper Rao::Component::ApplicationHelper
 
     def self.resource_class
       Cmor::Showcase::Item

@@ -1,0 +1,6 @@
+= table.association :category, label_method: :name, url: ->(r) { url_for(r) }
+= table.row :identifier
+= table.row :name
+= table.row :description
+= table.row :published
+= table.timestamps

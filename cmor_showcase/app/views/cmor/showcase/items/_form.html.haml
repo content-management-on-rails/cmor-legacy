@@ -3,4 +3,13 @@
 = form.input :name
 = form.input :body
 = form.input :published, as: :boolean
-= form.input :assets, as: :file, input_html: { multiple: true }
+- if form.object.assets.empty?
+  = form.input :assets, as: :file, input_html: { multiple: true }
+- else
+  .row.mb-4
+    .col-md-6
+      .bg-success.p-4
+        = form.input :append_assets, as: :file, input_html: { multiple: true }
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :overwrite_assets, as: :file, input_html: { multiple: true }

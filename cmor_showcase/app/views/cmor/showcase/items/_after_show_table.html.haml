@@ -1,0 +1,22 @@
+%h2= Cmor::Showcase::FileDetail.model_name.human(count: :other)
+
+= collection_table(collection: @resource.file_details, resource_class: Cmor::Showcase::FileDetail) do |table|
+  = table.acts_as_list_actions
+  = table.id
+  = table.thumbnail :asset
+  = table.column :title
+  = table.column :blob_filename do |resource|
+    - resource.asset.blob.filename
+  = table.column :blob_byte_size do |resource|
+    - number_to_human_size(resource.asset.blob.byte_size)
+  = table.column :blob_checksum do |resource|
+    - resource.asset.blob.checksum
+  = table.timestamps format: :short
+  = table.column :actions do |resource|
+    - capture_haml do
+      = link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-responsive btn-primary') do
+        %i.fas.fa-download
+        %span.btn-text= t('.download')
+      = link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: I18n.t('.confirmations.delete') }) do
+        %i.fas.fa-fire
+        %span.btn-text= t('.destroy')

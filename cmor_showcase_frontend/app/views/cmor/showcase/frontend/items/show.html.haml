@@ -5,12 +5,42 @@
 .row
   - if @resource.preview_picture.present?
     .col-12
-      %img.w-100.img-thumbnail.img-fluid{:alt => "", :src => main_app.url_for(@resource.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+      %img.w-100.img-thumbnail.img-fluid{:alt => "", :src => main_app.url_for(@resource.preview_picture.asset.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+
+  .col-12
+    %p= markup_helper(self).to_html(@resource, :body).html_safe
+
+%div{ id: dom_id(@resource), class: dom_class(@resource) }
+  .row
+    - @resource.file_details.images.each do |file_detail|
+      .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
+        .card.text-center.border-0
+          %a{ href: main_app.url_for(file_detail.asset), data: { gallery: dom_id(@resource) } }
+            %img.img-fluid{ src: main_app.url_for(file_detail.asset.variant(Cmor::Showcase::Frontend::Configuration.thumbnail_variant_options)) }
+          .card-body
+            %h5.card-title
+              = file_detail.title
+            %p.card-text
+              = file_detail.description
+
+- if @resource.file_details.non_images.any?
+  .row
     .col-12
-      %p= markup_helper(self).to_html(@resource, :body).html_safe
-  - else
+      %h2= Cmor::Showcase::FileDetail.model_name.human(count: :other)
+
+  .row
     .col-12
-      %p= markup_helper(self).to_html(@resource, :body).html_safe
+      = collection_table(collection: @resource.file_details.non_images, resource_class: Cmor::Showcase::FileDetail) do |table|
+        = table.column :title
+        = table.column :blob_filename do |resource|
+          - resource.asset.blob.filename
+        = table.column :blob_byte_size do |resource|
+          - number_to_human_size(resource.asset.blob.byte_size)
+        = table.timestamps format: :short
+        = table.column :actions do |resource|
+          - link_to(main_app.url_for(resource.asset), id: "#{dom_id(resource)}-download", class: 'btn btn-responsive btn-primary', title: t('.checksum', checksum: resource.asset.blob.checksum)) do
+            %i.fas.fa-download
+            %span.btn-text= t('.download')
 
 .row
   .col-12

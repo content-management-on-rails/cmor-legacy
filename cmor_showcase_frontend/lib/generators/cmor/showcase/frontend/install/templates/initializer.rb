@@ -10,4 +10,10 @@ Cmor::Showcase::Frontend.configure do |config|
   # Default: config.default_render_items_variant_options = { combine_options: { resize: "768x432^", gravity: :center, extent: "768x432" } }
   #
   config.default_render_items_variant_options = { combine_options: { resize: "768x432^", gravity: :center, extent: "768x432" } }
+
+  # This options will be applied when rendering thumbails in galleries.
+  #
+  # Default: config.thumbnail_variant_options = { combine_options: { resize: "384x216^", extent: "384x216", gravity: "center" } }
+  #
+  config.thumbnail_variant_options = { combine_options: { resize: "384x216^", extent: "384x216", gravity: "center" } }
 end

@@ -10,8 +10,9 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
   ]
 
   {
-    Cmor::Showcase::Category => {},
-    Cmor::Showcase::Item     => {},
+    Cmor::Showcase::Category   => {},
+    Cmor::Showcase::Item       => {},
+    Cmor::Showcase::FileDetail => {},
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)

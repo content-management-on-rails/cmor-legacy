@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "acts_as_list"
   spec.add_dependency "acts_as_published"
   spec.add_dependency "markup-rails", ">= 0.0.2"
+  spec.add_dependency "friendly_id"
 
   spec.add_development_dependency 'bootsnap'
   spec.add_development_dependency 'turbolinks'

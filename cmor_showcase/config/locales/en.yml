@@ -6,6 +6,9 @@ en:
       cmor/showcase/category:
         one: Category
         other: Categories
+      cmor/showcase/file_detail:
+        one: File
+        other: Files
       cmor/showcase/item:
         one: Item
         other: Items
@@ -18,11 +21,20 @@ en:
       position: Position
       published_at: Published at
       published: Published
+      slug: Slug
       updated_at: Updated at
     attributes:
       cmor/showcase/category:
         <<: *shared_attributes
         locale: Locale
+      cmor/showcase/file_detail:
+        <<: *shared_attributes
+        description:  Description
+        asset: Asset
+        asset_id: Asset
+        item: Item
+        item_id: Item
+        title: Title
       cmor/showcase/item:
         <<: *shared_attributes
         category: Category

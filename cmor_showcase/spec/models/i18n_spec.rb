@@ -4,6 +4,7 @@ RSpec.describe 'Translations', type: :model do
   {
     Cmor::Showcase::Category => {},
     Cmor::Showcase::Item     => {},
+    Cmor::Showcase::FileDetail => {},
   }.each do |model, options|
     I18n.available_locales.each do |locale|
       I18n.locale = locale

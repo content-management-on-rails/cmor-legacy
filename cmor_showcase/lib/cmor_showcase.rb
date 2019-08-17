@@ -2,6 +2,7 @@ require "cmor_core"
 require "cmor_core_backend"
 require "acts_as_published"
 require "acts_as_list"
+require "friendly_id"
 require "markup-rails"
 
 require "cmor/showcase/version"

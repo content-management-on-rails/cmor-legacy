@@ -4,7 +4,7 @@
 
 ENGINE_ROOT = File.expand_path('..', __dir__)
 ENGINE_PATH = File.expand_path('../lib/cmor/showcase/engine', __dir__)
-app_path = File.expand_path('../spec/dummy', __dir__)
+app_path = File.expand_path('../spec/dummy/config/application', __dir__)
 APP_PATH = app_path if Dir.exist?(app_path)
 
 # Set up gems listed in the Gemfile.

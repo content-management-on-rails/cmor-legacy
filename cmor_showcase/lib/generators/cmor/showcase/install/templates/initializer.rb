@@ -3,12 +3,14 @@ Cmor::Showcase.configure do |config|
   # 
   # Default: config.resources_controllers = -> {[
   #            Cmor::Showcase::CategoriesController,
-  #            Cmor::Showcase::ItemsController
+  #            Cmor::Showcase::ItemsController,
+  #            Cmor::Showcase::FileDetailsController
   #          ]}
   # 
   config.resources_controllers = -> {[
     Cmor::Showcase::CategoriesController,
-    Cmor::Showcase::ItemsController
+    Cmor::Showcase::ItemsController,
+    Cmor::Showcase::FileDetailsController
   ]}
 
   # Set the resources, that will be shown in the backend menu.

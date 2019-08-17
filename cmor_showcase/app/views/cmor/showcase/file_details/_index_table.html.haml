@@ -1,0 +1,13 @@
+= table.batch_actions( actions: { destroy: destroy_many_file_details_path })
+= table.id
+= table.column :filename do |resource|
+  - resource.asset.blob.filename
+= table.column :blob_content_type do |resource|
+  - resource.asset.blob.content_type
+= table.column :blob_byte_size do |resource|
+  - resource.asset.blob.byte_size
+= table.column :blob_checksum do |resource|
+  - resource.asset.blob.checksum
+= table.column :blob_created_at do |resource|
+  - I18n.l(resource.asset.blob.created_at, format: :short)
+= table.timestamp :created_at

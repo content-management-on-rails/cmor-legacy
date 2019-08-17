@@ -7,8 +7,11 @@ class CreateCmorShowcaseItems < ActiveRecord::Migration[5.2]
       t.text :body
       t.integer :position
       t.timestamp :published_at
+      t.string :slug
 
       t.timestamps
+
+      t.index :slug, unique: true
     end
   end
 end
