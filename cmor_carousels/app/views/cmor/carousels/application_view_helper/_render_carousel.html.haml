@@ -15,7 +15,7 @@
         - elsif item_detail.video?
           .carousel-video
             -# %video#foo.w-100{ autoplay: "", loop: "", muted: ""}
-            %video.w-100{ id: "#{dom_id(item_detail)}-video", autoplay: "", muted: ""}
+            %video.w-100{ video_html_options.reverse_merge(id: "#{dom_id(item_detail)}-video") }
               %source{ src: main_app.url_for(item_detail.asset), type: "video/mp4" }
             .video-overlay.h-100
               .container.content
