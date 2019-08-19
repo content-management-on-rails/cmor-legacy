@@ -1,4 +1,6 @@
 de:
+  classes:
+    cmor/showcase/frontend/engine: Schaufenster
   cmor:
     showcase:
       frontend:
