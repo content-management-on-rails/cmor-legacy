@@ -15,6 +15,7 @@ env:
   - GEM=cmor_contact_backend
   - GEM=cmor_core
   - GEM=cmor_core_backend
+  - GEM=cmor_core_frontend
   - GEM=cmor_files
   - GEM=cmor_files_backend
   - GEM=cmor_galleries
@@ -25,6 +26,8 @@ env:
   - GEM=cmor_partners_frontend
   - GEM=cmor_rbac
   - GEM=cmor_rbac_backend
+  - GEM=cmor_showcase
+  - GEM=cmor_showcase_frontend
   - GEM=cmor_system_backend
   - GEM=cmor_tags
   - GEM=cmor_tags_backend

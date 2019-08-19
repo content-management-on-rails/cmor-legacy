@@ -10,6 +10,7 @@ module Cmor
       #     end
       #
       class BreadcrumbsViewHelper < Rao::ViewHelper::Base
+        include Cmor::Core::Frontend::Breadcrumb::I18nConcern
         # Usage:
         #
         #     # app/views/layouts/application.html.erb
@@ -31,6 +32,13 @@ module Cmor
           breadcrumbs = [].tap do |b|
             # Add breadcrumb to home page
             b.push(instance_exec(&Cmor::Core::Frontend::Configuration.first_breadcrumb))
+
+            # Are custom breadcrumbs defined?
+            if custom_breadcrumbs.any?
+              b.push << custom_breadcrumbs
+              exclude = []
+              next
+            end
 
             # Are we showing a cms page?
             if c.controller.class.name == 'Cmor::Cms::PageController' && c.action_name == 'respond' && c.params[:page] != 'home'
@@ -75,6 +83,7 @@ module Cmor
             end
           end
 
+          breadcrumbs.flatten!
           breadcrumbs.last.url = nil
 
           if exclude.any?
@@ -92,6 +101,34 @@ module Cmor
 
         private
 
+        def custom_breadcrumbs
+          klass = custom_breadcrumb_path_class
+          if klass.present?
+            klass.new(context: c).breadcrumbs
+          else
+            []
+          end
+        end
+
+        def custom_breadcrumb_path_class
+          klass_name = "#{c.controller.class.name}::#{c.action_name.camelize}BreadcrumbPath"
+          # Are we eager loading?
+          if Rails.application.config.eager_load
+            # If so we can ask const_defined?
+            if klass_name.split("::")[0...-1].join("::").constantize.const_defined?(klass_name.split("::").last)
+              klass_name.constantize
+            end
+          else
+            # Else we have to try to constantize the klass name to see if it lazy loads.
+            begin
+              klass_name.constantize
+            rescue NameError => e
+              Rails.logger.debug "No custom breadcrumb path class found. Define #{klass_name} to customize breadcrumbs. Continuing with default breadcrumbs."
+              nil
+            end
+          end
+        end
+
         def breadcrumb_for_current_engine
           return if current_engine.nil?
           breadcrumb_for_engine(current_engine)
@@ -107,27 +144,6 @@ module Cmor
             if klass_name_parts.take(i).join("::").constantize.const_defined?("Engine")
               break [klass_name_parts.take(i), ['Engine']].flatten.join("::").constantize
             end
-          end
-        end
-
-        def t(identifier, options = {})
-          if identifier.start_with?('.')
-            prefix = self.class.name.underscore
-
-            # Check if we are in a proc by matching the caller string
-            caller_method = if caller[0] =~ /\(required\)>/
-              # If yes omit the last call (that has to be instance_exec) and
-              # fetch the previous one that should be the method that is really
-              # calling us.
-              caller[2].split(' ').last.gsub("'", '').gsub("`", '')
-            else
-              # Otherwise take the first caller
-              caller[0].split(' ').last.gsub("'", '').gsub("`", '')
-            end
-
-            I18n.t("#{prefix}.#{caller_method}.#{identifier}", options)
-          else
-            I18n.t(identifier, options)
           end
         end
 
