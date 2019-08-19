@@ -10,7 +10,7 @@ module Cmor
               prefix = self.class.name.underscore
 
               # Check if we are in a proc by matching the caller string
-              caller_method = if caller[0] =~ /\(required\)>/
+              caller_method = if caller[0] =~ /.*<.*>/
                                 # If yes omit the last call (that has to be instance_exec) and
                                 # fetch the previous one that should be the method that is really
                                 # calling us.

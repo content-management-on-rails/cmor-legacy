@@ -11,12 +11,6 @@ rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
 cd spec/dummy
-RAILS_ENV=development rails g model User email --no-test-framework
-# sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
-
-
-# Add ActiveStorage
-rails active_storage:install
 
 # I18n configuration
 touch config/initializers/i18n.rb
@@ -31,4 +25,3 @@ echo "end" >> config/initializers/route_translator.rb
 
 # Install
 rails generate $INSTALL_NAME:install
-# rails $GEM_NAME:install:migrations db:migrate db:test:prepare

@@ -33,13 +33,11 @@ module Cmor
             # Add breadcrumb to home page
             b.push(instance_exec(&Cmor::Core::Frontend::Configuration.first_breadcrumb))
 
-            begin
-              klass_name = "#{c.controller.class.name}::#{c.action_name.camelize}BreadcrumbPath".constantize
-              b.push << klass_name.new(context: c).breadcrumbs
+            # Are custom breadcrumbs defined?
+            if custom_breadcrumbs.any?
+              b.push << custom_breadcrumbs
               exclude = []
               next
-            rescue NameError => e
-              puts "No custom breadcrumb found: #{e}. Continuing with generic creation."
             end
 
             # Are we showing a cms page?
@@ -102,6 +100,34 @@ module Cmor
         end
 
         private
+
+        def custom_breadcrumbs
+          klass = custom_breadcrumb_path_class
+          if klass.present?
+            klass.new(context: c).breadcrumbs
+          else
+            []
+          end
+        end
+
+        def custom_breadcrumb_path_class
+          klass_name = "#{c.controller.class.name}::#{c.action_name.camelize}BreadcrumbPath"
+          # Are we eager loading?
+          if Rails.application.config.eager_load
+            # If so we can ask const_defined?
+            if klass_name.split("::")[0...-1].join("::").constantize.const_defined?(klass_name.split("::").last)
+              klass_name.constantize
+            end
+          else
+            # Else we have to try to constantize the klass name to see if it lazy loads.
+            begin
+              klass_name.constantize
+            rescue NameError => e
+              Rails.logger.debug "No custom breadcrumb path class found. Define #{klass_name} to customize breadcrumbs. Continuing with default breadcrumbs."
+              nil
+            end
+          end
+        end
 
         def breadcrumb_for_current_engine
           return if current_engine.nil?
