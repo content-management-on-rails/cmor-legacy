@@ -14,15 +14,16 @@
               = markup_helper(self).to_html(item_detail, :description)
         - elsif item_detail.video?
           .carousel-video
-            -# %video#foo.w-100{ autoplay: "", loop: "", muted: ""}
             %video.w-100{ video_html_options.reverse_merge(id: "#{dom_id(item_detail)}-video") }
               %source{ src: main_app.url_for(item_detail.asset), type: "video/mp4" }
             .video-overlay.h-100
               .container.content
                 -# overlayed content goes here.
               .video-controls.text-white
-                %a{ data: { video: { target: "##{dom_id(item_detail)}-video", control: :toggle } } }
-                  ❚❚
+                %a{ data: { video: { target: "##{dom_id(item_detail)}-video", control: :play } } }
+                  %i.fas.fa-play
+                %a{ data: { video: { target: "##{dom_id(item_detail)}-video", control: :pause } } }
+                  %i.fas.fa-pause
   - if options[:controls]
     %a.carousel-control-prev{"data-slide" => "prev", :href => "##{dom_id(carousel)}", :role => "button"}
       %span.carousel-control-prev-icon{"aria-hidden" => "true"}
