@@ -708,6 +708,14 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
+    sassc (2.1.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     scrypt (3.0.6)
       ffi-compiler (>= 1.0, < 2.0)
     sexp_processor (4.12.1)
@@ -808,6 +816,7 @@ DEPENDENCIES
   rao-shoulda_matchers
   rspec-rails
   rubocop
+  sassc-rails
   shoulda-matchers
   simplecov
   simplecov-console

@@ -13,6 +13,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
+  # I don't know why we need this all of a sudden
+  s.add_development_dependency 'sassc-rails'
+
   s.add_dependency 'cmor_blog', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_blog_backend', "= #{Cmor::VERSION}"
 
