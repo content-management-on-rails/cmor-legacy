@@ -43,7 +43,7 @@ de:
   cmor:
     carousels:
       application_view_helper:
-        render:
+        render_carousel:
           next: Vor
           previous: Zurück
       item_detail:
