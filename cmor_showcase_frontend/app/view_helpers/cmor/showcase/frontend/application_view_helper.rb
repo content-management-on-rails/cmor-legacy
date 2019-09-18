@@ -10,7 +10,7 @@ module Cmor::Showcase
     class ApplicationViewHelper < Rao::ViewHelper::Base
       # Example:
       #
-      #     # app/layouts/application.html.haml
+      #     # app/views/layouts/application.html.haml
       #     = showcase_helper(self).render_items(category_identifier)
       #
       def render_items(category_or_identifier, options = {})
