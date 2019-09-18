@@ -51,7 +51,7 @@ de:
         search: "Katzen, Baum, grün, ..."
   helpers:
     submit:
-      search:
+      cmor/tags/search:
         create: 'Suchen'
   routes:
     cmor_tags_engine: tags

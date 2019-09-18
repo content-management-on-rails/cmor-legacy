@@ -51,7 +51,7 @@ en:
         search: "cats, tree, green, ..."
   helpers:
     submit:
-      tag_search:
+      cmor/tags/search:
         create: 'Search'
   routes:
     cmor_tags_engine: tags
