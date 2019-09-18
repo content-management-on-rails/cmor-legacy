@@ -43,6 +43,7 @@ module Cmor
             generate "cmor:#{m}:backend:install"
           end
           sub_modules.each do |m|
+            next if m == 'system'
             generate "cmor:#{m}:install"
           end
         end
