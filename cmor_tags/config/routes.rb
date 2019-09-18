@@ -6,7 +6,7 @@ Cmor::Tags::Engine.routes.draw do
       #   get '/', on: :collection, to: "tag_searchs#create"
       # end
 
-      get '/:tag_list', to: "searchs#create" # , as: 'tag'
+      get '/:tag_list', to: "searchs#create", as: 'tag'
 
       root to: 'searchs#new'
     end

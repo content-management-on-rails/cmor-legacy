@@ -1,4 +1,0 @@
-%span.tags-for-resource
-  - resource.tags.each do |tag|
-    = link_to(cmor_tags.tag_path(tag: CGI::escape(tag.name)), class: 'label label-default', style: "background-color: #{tag.color}") do
-      = tag.name

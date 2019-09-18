@@ -12,7 +12,7 @@
       - if Cmor::Blog.features?(:cmor_tags)
         |
         %span.post-tags
-          = tag_labels_for(post)
+          = tags_helper(self).render_tags_for(post)
 
     .post-body.truncate-lines-3
       = post.body(format: :html).html_safe
