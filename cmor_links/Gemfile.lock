@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.38.pre)
+    cmor_core (0.0.39.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.38.pre)
+      cmor (= 0.0.39.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,9 +14,9 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.38.pre)
-    cmor_core_frontend (0.0.38.pre)
-      cmor_core (= 0.0.38.pre)
+    cmor (0.0.39.pre)
+    cmor_core_frontend (0.0.39.pre)
+      cmor_core (= 0.0.39.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -24,13 +24,13 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_links (0.0.38.pre)
+    cmor_links (0.0.39.pre)
       RedCloth
       acts_as_list
       awesome_nested_set
       awesome_nested_set-tools
-      cmor_core (= 0.0.38.pre)
-      cmor_core_frontend (= 0.0.38.pre)
+      cmor_core (= 0.0.39.pre)
+      cmor_core_frontend (= 0.0.39.pre)
       draper
       friendly_id
       markup-rails
@@ -92,8 +92,8 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
-    awesome_nested_set (3.1.4)
-      activerecord (>= 4.0.0, < 5.3)
+    awesome_nested_set (3.2.0)
+      activerecord (>= 4.0.0, < 7.0)
     awesome_nested_set-tools (1.0.2)
       rails (>= 3.2)
     awesome_print (1.8.0)
@@ -111,7 +111,7 @@ GEM
       xpath (~> 3.2)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
-    cookies_eu (1.7.5)
+    cookies_eu (1.7.6)
       js_cookie_rails (~> 2.2.0)
     coveralls (0.8.23)
       json (>= 1.8, < 3)
@@ -122,8 +122,8 @@ GEM
     crass (1.0.4)
     delayed_job (4.1.8)
       activesupport (>= 3.0, < 6.1)
-    delayed_job_active_record (4.1.3)
-      activerecord (>= 3.0, < 5.3)
+    delayed_job_active_record (4.1.4)
+      activerecord (>= 3.0, < 6.1)
       delayed_job (>= 3.0, < 5)
     diff-lcs (1.3)
     docile (1.3.1)
@@ -141,7 +141,7 @@ GEM
       railties (>= 4.2.0)
     ffi (1.10.0)
     formatador (0.2.5)
-    friendly_id (5.2.5)
+    friendly_id (5.3.0)
       activerecord (>= 4.0.0)
     git_log_generator (0.0.5)
     globalid (0.4.2)
@@ -265,7 +265,7 @@ GEM
     rao (0.0.23.pre)
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.31.pre)
+    rao-view_helper (0.0.32.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -276,7 +276,7 @@ GEM
       rack (>= 1.4)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    route_translator (7.0.0)
+    route_translator (7.0.1)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
     rspec (3.8.0)
