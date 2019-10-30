@@ -82,7 +82,10 @@ module Cmor
           format ||= handler.default_format if handler.respond_to?(:default_format)
           format ||= details[:formats]
 
-          ::ActionView::Template.new(source, identifier, handler, format: format.symbol, virtual_path: virtual_path, layout: layout, locals: locals)
+          # Rails 6 passes an array of formats instead of a symbol
+          format = format.is_a?(Array) ? format.first : format.symbol
+
+          ::ActionView::Template.new(source, identifier, handler, format: format, virtual_path: virtual_path, layout: layout, locals: locals)
         end
       end
 
