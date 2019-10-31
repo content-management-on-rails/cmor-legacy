@@ -50,12 +50,17 @@ Install routes and initializer:
 $ rails g cmor:frontend:install
 ```
 
-## Updating to 1.3.0
-
-Version 1.3.0 brings you positionable posts via acts_as_list. You have to migrate and initialize the post positions like this:
+## Adding a bootstrap 4 frontend
 
 ```bash
-$ rake cmor_frontend:install:migrations db:migrate cmor:frontend:initialize_post_positions
+$ rails g cmor:core:frontend:bootstrap4
+```
+
+You will need to add the rails_eu_gdpr and rails-blueimp-gallery gems to use the generated frontend:
+
+```ruby
+gem 'rails-blueimp-gallery'
+gem 'rails_eu_gdpr'
 ```
 
 ## Configuration
