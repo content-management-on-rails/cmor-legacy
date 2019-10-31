@@ -1,5 +1,3 @@
-require 'cmor/cms/database_resolver'
-
 module Cmor
   module Cms
     class PageResolver < ::ActionView::Resolver
