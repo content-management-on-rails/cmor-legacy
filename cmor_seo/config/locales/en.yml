@@ -1,0 +1,24 @@
+en:
+  classes:
+    cmor/seo/engine: Seo
+  activerecord:
+    models:
+      cmor/seo/item:
+        one: Item
+        other: Items
+    shared_attributes: &shared_attributes
+      body: Description
+      created_at: Created at
+      id: ID
+      identifier: Identifier
+      name: Name
+      position: Position
+      published_at: Published at
+      published: Published
+      slug: Slug
+      updated_at: Updated at
+    attributes:
+      cmor/seo/item:
+        <<: *shared_attributes
+  routes:
+    cmor-seo-engine: seo

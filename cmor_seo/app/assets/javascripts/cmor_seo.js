@@ -1,0 +1,2 @@
+//= require ./cmor/seo/application
+

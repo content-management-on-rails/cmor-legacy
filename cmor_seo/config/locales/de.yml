@@ -1,0 +1,24 @@
+de:
+  classes:
+    cmor/seo/engine: Schaufenster
+  activerecord:
+    models:
+      cmor/seo/item:
+        one: Eintrag
+        other: Einträge
+    shared_attributes: &shared_attributes
+      body: Beschreibung
+      created_at: Erstellt am
+      id: ID
+      identifier: Bezeichner
+      name: Name
+      position: Position
+      published_at: Veröffentlicht am
+      published: Veröffentlicht
+      slug: Slug
+      updated_at: Aktualisiert am
+    attributes:
+      cmor/seo/item:
+        <<: *shared_attributes
+  routes:
+    cmor-seo-engine: seo
