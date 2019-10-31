@@ -9,20 +9,31 @@ module Cmor
         yield self
       end
 
-      mattr_accessor(:base_controller) { '::FrontendController' }
-      mattr_accessor(:creator_class_name) { 'User' }
-      mattr_accessor(:user_factory_name) { :user }
-      mattr_accessor(:posts_index_page_title_proc) { ->(view) { view.resource_class.model_name.human(count: :other) } }
-      mattr_accessor(:pagination_options_proc) { ->(view) { { theme: 'twitter-bootstrap-3' } } }
-      mattr_accessor(:preview_picture_asset_variant_options) { { resize: '320x240' } }
-      mattr_accessor(:creator_label_method_name) { :to_s }
-      mattr_accessor(:features) { {} }
-      def enable_feature(name, options = {})
-        @@features[name] = Cmor::Blog::Feature.new(name, options)
+      mattr_accessor(:base_controller) do
+        '::FrontendController'
       end
 
-      def features?(name)
-        @@features.has_key?(name)
+      mattr_accessor(:creator_class_name) do
+        'User'
+      end
+
+      mattr_accessor(:user_factory_name) do
+        :user
+      end
+
+      mattr_accessor(:posts_index_page_title_proc) do
+        ->(view) { view.resource_class.model_name.human(count: :other) }
+      end
+
+      mattr_accessor(:pagination_options_proc) do
+        ->(view) { { theme: 'twitter-bootstrap-3' } }
+      end
+      mattr_accessor(:preview_picture_asset_variant_options) do
+        { resize: '320x240' }
+      end
+
+      mattr_accessor(:creator_label_method_name) do
+        :to_s
       end
     end
   end

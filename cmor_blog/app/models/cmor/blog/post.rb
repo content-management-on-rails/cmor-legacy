@@ -1,8 +1,8 @@
 module Cmor
   module Blog
     class Post < ActiveRecord::Base
-      include Model::Cmor::Comments::CommentableConcern if Cmor::Blog.features?(:cmor_comments)
-      include Model::Cmor::Tags::TaggableConcern if Cmor::Blog.features?(:cmor_tags)
+      include Model::Cmor::Comments::CommentableConcern if Cmor::Core.features?(:cmor_comments)
+      include Model::Cmor::Tags::TaggableConcern if Cmor::Core.features?(:cmor_tags)
 
       # publishing
       include ActsAsPublished::ActiveRecord

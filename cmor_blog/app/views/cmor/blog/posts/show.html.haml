@@ -1,4 +1,4 @@
 = render @resource
 
-- if Cmor::Blog.features?(:cmor_comments)
+- if Cmor::Core.features?(:cmor_comments)
   = commentable(@resource)

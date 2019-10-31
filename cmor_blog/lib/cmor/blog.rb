@@ -1,4 +1,3 @@
-require 'cmor/blog/feature'
 require 'cmor/blog/configuration'
 require 'cmor/blog/engine'
 

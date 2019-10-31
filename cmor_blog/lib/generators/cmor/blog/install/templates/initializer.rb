@@ -46,14 +46,6 @@ Cmor::Blog.configure do |config|
   #
   config.preview_picture_asset_variant_options = { resize: '320x240' }
 
-  # Enables the Cmor::Comments integration
-  #
-  # config.enable_feature :cmor_comments, {}
-
-  # Enables the Cmor::Tags integration
-  #
-  # config.enable_feature :cmor_tags, {}
-
   # Method to call on creator for display.
   #
   # default: config.creator_label_method_name = :to_s
