@@ -16,5 +16,5 @@
       .bg-danger.p-4
         = form.input :overwrite_assets, as: :file, input_html: { multiple: true }
 
-- if Cmor::Blog.features?(:cmor_tags)
+- if Cmor::Core.features?(:cmor_tags)
   = form.input :tag_list

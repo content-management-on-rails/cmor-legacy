@@ -6,7 +6,7 @@ module Cmor
         include Rao::ResourcesController::ActsAsPublishedConcern
         include Rao::ResourcesController::FriendlyIdConcern
 
-        helper Cmor::Tags::Backend::ApplicationHelper if Cmor::Blog.features?(:cmor_tags)
+        helper Cmor::Tags::Backend::ApplicationHelper if Cmor::Core.features?(:cmor_tags)
 
         include Rao::Query::Controller::QueryConcern
         view_helper Rao::Query::ApplicationHelper, as: :query_helper
