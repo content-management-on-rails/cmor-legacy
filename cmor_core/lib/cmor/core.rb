@@ -1,3 +1,4 @@
+require "cmor/core/feature"
 require "cmor/core/configuration"
 require "cmor/core/engine"
 
