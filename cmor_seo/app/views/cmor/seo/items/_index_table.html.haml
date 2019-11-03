@@ -1,0 +1,9 @@
+= table.batch_actions actions: { destroy_many: url_for(action: :destroy_many) }
+= table.column :target do |resource|
+  - resource.path.presence || resource.resource&.human
+= table.column :meta_tags_count
+= table.column :meta_tags_to_html do |resource|
+  - capture_haml do
+    %pre= resource.meta_tags_to_html
+= table.acts_as_published_actions sort: { column_name: :published_at }
+= table.timestamps sort: true

@@ -19,5 +19,9 @@ module Cmor::Seo
     mattr_accessor :sidebar_controllers do
       -> {[]}
     end
+
+    mattr_accessor :items_resource_autocomplete_options do
+      {}
+    end
   end
 end

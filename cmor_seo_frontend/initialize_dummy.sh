@@ -35,6 +35,9 @@ echo "end" >> config/initializers/route_translator.rb
 # Add turbolinks
 sed -i "15irequire 'turbolinks'" config/application.rb
 
+# Add needed models
+rails g model Post title
+
 # Install
 rails generate $INSTALL_NAME:install
 rails $MIGRATION_NAME:install:migrations db:migrate db:test:prepare

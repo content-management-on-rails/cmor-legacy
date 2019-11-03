@@ -10,7 +10,8 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
   ]
 
   {
-    Cmor::Seo::Item       => {},
+    Cmor::Seo::Item    => {},
+    Cmor::Seo::MetaTag => {},
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)

@@ -1,18 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe '/de/backend/seo/items', type: :feature do
-  let(:resource_class) { Cmor::Seo::Item }
-  let(:resource) { create(:cmor_seo_item) }
-  let(:resources) { create_list(:cmor_seo_item, 3) }
+RSpec.describe '/de/backend/seo/meta_tags', type: :feature do
+  let(:resource_class) { Cmor::Seo::MetaTag }
+  let(:resource) { create(:cmor_seo_meta_tag) }
+  let(:resources) { create_list(:cmor_seo_meta_tag, 3) }
+
+  let(:item) { create(:cmor_seo_item) }
 
   # List
   it { resources; expect(subject).to implement_index_action(self) }
 
   # Create
   it {
+    item
     expect(subject).to implement_create_action(self)
       .for(resource_class)
-      .within_form('#new_item') {
+      .within_form('#new_meta_tag') {
         # fill the needed form inputs via capybara here
         #
         # Example:
@@ -21,9 +24,11 @@ RSpec.describe '/de/backend/seo/items', type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        fill_in 'item[path]', with: '/de'
+        select item.human, from: 'meta_tag[item_id]'
+        fill_in 'meta_tag[name]', with: 'description'
+        fill_in 'meta_tag[content]', with: 'This is the meta description'
       }
-      .increasing{ Cmor::Seo::Item.count }.by(1)
+      .increasing{ Cmor::Seo::MetaTag.count }.by(1)
   }
   
   # Read
@@ -33,17 +38,17 @@ RSpec.describe '/de/backend/seo/items', type: :feature do
   it {
     expect(subject).to implement_update_action(self)
       .for(resource)
-      .within_form('.edit_item') {
+      .within_form('.edit_meta_tag') {
         # fill the needed form inputs via capybara here
         # 
         # Example:
         # 
         #     fill_in 'slider[name]', with: 'New name'
-        fill_in 'item[path]', with: '/de/foo'
+        fill_in 'meta_tag[content]', with: 'This is the new meta description'
       }
       .updating
       .from(resource.attributes)
-      .to({ "path" => "/de/foo" }) # Example: .to({ 'name' => 'New name' })
+      .to({ "content" => 'This is the new meta description' }) # Example: .to({ 'name' => 'New name' })
   }
 
   # Delete

@@ -1,11 +1,14 @@
 en:
   classes:
-    cmor/seo/engine: Seo
+    cmor/seo/engine: SEO
   activerecord:
     models:
       cmor/seo/item:
         one: Item
         other: Items
+      cmor/seo/meta_tag:
+        one: Meta Tag
+        other: Meta Tags
     shared_attributes: &shared_attributes
       body: Description
       created_at: Created at
@@ -15,10 +18,29 @@ en:
       position: Position
       published_at: Published at
       published: Published
-      slug: Slug
       updated_at: Updated at
     attributes:
       cmor/seo/item:
         <<: *shared_attributes
+        meta_tags_count: Meta Tags
+        meta_tags_to_html: Meta Tags (HTML)
+        path: Path
+        resource: Resource
+        resource_id: Resource
+        resource_type: Resource Type
+        target: Ziel
+      cmor/seo/meta_tag:
+        <<: *shared_attributes
+        content: Content
+        item: Item
+        item_id: Item
+        to_html: HTML
+  cmor:
+    seo:
+      items:
+        form:
+          add_association: 'Add Meta Tag'
+        meta_tag_fields:
+          remove_association: 'Delete Meta Tag'
   routes:
     cmor-seo-engine: seo
