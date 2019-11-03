@@ -185,6 +185,46 @@ PATH
       rao-service (>= 0.0.17.pre)
 
 PATH
+  remote: ../cmor_seo_frontend
+  specs:
+    cmor_seo_frontend (0.0.39.pre)
+      cmor_core (= 0.0.39.pre)
+      cmor_core_frontend (= 0.0.39.pre)
+      rails (>= 5.2.0)
+
+PATH
+  remote: ../cmor_seo
+  specs:
+    cmor_seo (0.0.39.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.39.pre)
+      cmor_core_backend (= 0.0.39.pre)
+      cocoon
+      rails (>= 5.2.0)
+      simple_form-polymorphic_associations
+
+PATH
+  remote: ../cmor_showcase_frontend
+  specs:
+    cmor_showcase_frontend (0.0.39.pre)
+      cmor_core (= 0.0.39.pre)
+      cmor_core_frontend (= 0.0.39.pre)
+      rails (>= 5.2.0)
+
+PATH
+  remote: ../cmor_showcase
+  specs:
+    cmor_showcase (0.0.39.pre)
+      acts_as_list
+      acts_as_published
+      cmor_core (= 0.0.39.pre)
+      cmor_core_backend (= 0.0.39.pre)
+      friendly_id
+      markup-rails (>= 0.0.2)
+      rails (>= 5.2.0)
+
+PATH
   remote: ../cmor_system_backend
   specs:
     cmor_system_backend (0.0.39.pre)
@@ -297,18 +337,6 @@ PATH
       cmor_partners (= 0.0.39.pre)
       rails (>= 5.2.0)
       slick-rails (>= 0.0.2)
-    cmor_showcase (0.0.39.pre)
-      acts_as_list
-      acts_as_published
-      cmor_core (= 0.0.39.pre)
-      cmor_core_backend (= 0.0.39.pre)
-      friendly_id
-      markup-rails (>= 0.0.2)
-      rails (>= 5.2.0)
-    cmor_showcase_frontend (0.0.39.pre)
-      cmor_core (= 0.0.39.pre)
-      cmor_core_frontend (= 0.0.39.pre)
-      rails (>= 5.2.0)
 
 PATH
   remote: .
@@ -334,6 +362,8 @@ PATH
       cmor_partners_frontend (= 0.0.39.pre)
       cmor_rbac (= 0.0.39.pre)
       cmor_rbac_backend (= 0.0.39.pre)
+      cmor_seo (= 0.0.39.pre)
+      cmor_seo_frontend (= 0.0.39.pre)
       cmor_showcase (= 0.0.39.pre)
       cmor_showcase_frontend (= 0.0.39.pre)
       cmor_system_backend (= 0.0.39.pre)
@@ -446,6 +476,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    cocoon (1.2.14)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -727,6 +758,8 @@ GEM
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simple_form-polymorphic_associations (0.0.1)
+      simple_form
     simple_sidebar (0.0.4.pre)
       coffee-rails
       rails (>= 5.0.0)
@@ -796,6 +829,10 @@ DEPENDENCIES
   cmor_links_backend!
   cmor_rbac!
   cmor_rbac_backend!
+  cmor_seo!
+  cmor_seo_frontend!
+  cmor_showcase!
+  cmor_showcase_frontend!
   cmor_suite!
   cmor_system_backend!
   cmor_tags!
