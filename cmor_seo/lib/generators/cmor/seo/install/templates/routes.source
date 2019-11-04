@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Seo::Engine, at: '/backend/cmor-seo-engine'
+  end

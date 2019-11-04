@@ -1,0 +1,6 @@
+= table.association :item, label_method: :human
+= table.row :to_html do |resource|
+  - capture_haml do
+    %pre= resource.to_html
+= table.timestamp :published_at
+= table.timestamps

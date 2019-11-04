@@ -37,8 +37,17 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_links', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_links_backend', "= #{Cmor::VERSION}"
 
+  s.add_dependency 'cmor_partners', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_partners_frontend', "= #{Cmor::VERSION}"
+
   s.add_dependency 'cmor_rbac', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_rbac_backend', "= #{Cmor::VERSION}"
+
+  s.add_dependency 'cmor_seo', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_seo_frontend', "= #{Cmor::VERSION}"
+
+  s.add_dependency 'cmor_showcase', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_showcase_frontend', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_system_backend', "= #{Cmor::VERSION}"
 
@@ -50,10 +59,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cmor_user_area', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_user_area_backend', "= #{Cmor::VERSION}"
-
-  s.add_dependency 'cmor_partners', "= #{Cmor::VERSION}"
-  s.add_dependency 'cmor_partners_frontend', "= #{Cmor::VERSION}"
-
-  s.add_dependency 'cmor_showcase', "= #{Cmor::VERSION}"
-  s.add_dependency 'cmor_showcase_frontend', "= #{Cmor::VERSION}"
 end

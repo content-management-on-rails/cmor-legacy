@@ -26,6 +26,8 @@ env:
   - GEM=cmor_partners_frontend
   - GEM=cmor_rbac
   - GEM=cmor_rbac_backend
+  - GEM=cmor_seo
+  - GEM=cmor_seo_frontend
   - GEM=cmor_showcase
   - GEM=cmor_showcase_frontend
   - GEM=cmor_system_backend
