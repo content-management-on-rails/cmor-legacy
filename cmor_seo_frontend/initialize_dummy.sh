@@ -9,13 +9,14 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
+
 rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
 
 # Satisfy prerequisites
 cd spec/dummy
 
 # Use correct Gemfile
-rm Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Add ActiveStorage
@@ -39,5 +40,6 @@ sed -i "15irequire 'turbolinks'" config/application.rb
 rails g model Post title
 
 # Install
+rails generate cmor:seo:install
 rails generate $INSTALL_NAME:install
 rails $MIGRATION_NAME:install:migrations db:migrate db:test:prepare

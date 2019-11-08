@@ -16,6 +16,8 @@ PATH
       cmor_core_backend (= 0.0.40.pre)
       cocoon
       rails (>= 5.2.0)
+      rao-or_validator
+      rao-service (>= 0.0.34.pre)
       simple_form-polymorphic_associations
 
 PATH
@@ -302,6 +304,8 @@ GEM
       haml-rails
       rails
       rao
+    rao-or_validator (0.0.1)
+      rails
     rao-query (0.0.33.pre)
       rails
       rao
@@ -314,6 +318,11 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
+    rao-service (0.0.34.pre)
+      activemodel
+      activesupport
+      rails (>= 3.2.0)
+      rao
     rao-service_controller (0.0.33.pre)
       font-awesome-rails
       rails (>= 3.2.0)

@@ -25,6 +25,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "acts_as_published"
   spec.add_dependency "simple_form-polymorphic_associations"
   spec.add_dependency "cocoon"
+  spec.add_dependency "rao-service", ">= 0.0.34.pre"
+  spec.add_dependency "rao-or_validator"
 
   spec.add_development_dependency 'bootsnap'
   spec.add_development_dependency 'turbolinks'

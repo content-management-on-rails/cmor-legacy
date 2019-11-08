@@ -2,22 +2,24 @@ module Cmor::Seo
   class Item < ApplicationRecord
     include ActsAsPublished::ActiveRecord
 
-    class OrValidator < ActiveModel::EachValidator
-      def validate_each(record, attribute, value)
-        values = options[:others].map{ |o| record.send(o) } + [value]
-        attribute_names = [attribute] + options[:others]
+    # class OrValidator < ActiveModel::EachValidator
+    #   def validate_each(record, attribute, value)
+    #     values = options[:others].map{ |o| record.send(o) } + [value]
+    #     attribute_names = [attribute] + options[:others]
 
-        if options[:exclusive]
-          if values.count { |x| x.present? } != 1
-            record.errors[attribute] << (options[:message] || "exactly one of #{attribute_names.to_sentence} may be present.")
-          end
-        else
-          if values.all? { |x| x.blank? }
-            record.errors[attribute] << (options[:message] || "at least one of #{attribute_names.to_sentence} must be present.")
-          end
-        end
-      end
-    end
+    #     if options[:exclusive]
+    #       if values.count { |x| x.present? } != 1
+    #         record.errors.add(attribute, options[:message] || :or)
+    #         # record.errors[attribute] << (options[:message] || "exactly one of #{attribute_names.to_sentence} may be present.")
+    #       end
+    #     else
+    #       if values.all? { |x| x.blank? }
+    #         record.errors.add(attribute, options[:message] || :or)
+    #         # record.errors[attribute] << (options[:message] || "at least one of #{attribute_names.to_sentence} must be present.")
+    #       end
+    #     end
+    #   end
+    # end
 
     belongs_to :resource, polymorphic: true, optional: true
     has_many :meta_tags, -> { order(position: :asc) }, inverse_of: :item

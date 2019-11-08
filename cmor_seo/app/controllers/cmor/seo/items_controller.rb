@@ -36,7 +36,7 @@ module Cmor::Seo
       private
 
       def autocomplete_options_for(resource_class_name)
-        Cmor::Seo::Configuration.items_resource_autocomplete_options[resource_class_name]
+        Cmor::Seo::Configuration.resources_autocomplete_options[resource_class_name][:autocomplete_options]
       end
     end
 

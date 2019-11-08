@@ -26,6 +26,8 @@ PATH
       cmor_core_backend (= 0.0.40.pre)
       cocoon
       rails (>= 5.2.0)
+      rao-or_validator
+      rao-service (>= 0.0.34.pre)
       simple_form-polymorphic_associations
 
 GEM
@@ -272,23 +274,30 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.30.pre)
-    rao-component (0.0.33.pre)
+    rao-component (0.0.34.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.33.pre)
+    rao-or_validator (0.0.1)
+      rails
+    rao-query (0.0.34.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.33.pre)
+    rao-resource_controller (0.0.34.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.33.pre)
+    rao-resources_controller (0.0.34.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.33.pre)
+    rao-service (0.0.34.pre)
+      activemodel
+      activesupport
+      rails (>= 3.2.0)
+      rao
+    rao-service_controller (0.0.34.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -296,7 +305,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.30.pre)
       rao
-    rao-view_helper (0.0.32.pre)
+    rao-view_helper (0.0.34.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

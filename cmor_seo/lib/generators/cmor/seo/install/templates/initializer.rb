@@ -26,28 +26,44 @@ Cmor::Seo.configure do |config|
   # Set the sidebars, that will be shown in the backend menu.
   # 
   # Default: config.sidebar_controllers = -> {[]}
-  # 
   config.sidebar_controllers = -> {[]}
+
+  # This proc will handle any exception that happens in the after_save callback
+  # that creates items and meta tags.
+  #
+  # Default: config.handle_seoable_after_save_exception = ->(exception) { raise exception }
+  #
+  config.handle_seoable_after_save_exception = ->(exception) { raise exception }
 
   # Set the resources that will be available as seo targets when creating new
   # Cmor::Seo::Items.
   #
-  # Example:
+  # Examples:
   #
-  # config.items_resource_autocomplete_options = {
-  #   'Cmor::Blog::Post' => {
+  # config.add_resource(
+  #   'Cmor::Blog::Post',
+  #   meta_tags: -> {{
+  #     'description' => ->(resource) { { content: resource.title } },
+  #     'og:title'    => ->(resource) { { content: resource.title } },
+  #     'og:url'      => ->(resource) { { content: cmor_blog.url_for(resource) } },
+  #   }},
+  #   autocomplete_options: {
   #     scope: ->(term) { Cmor::Blog::Post.where("LOWER(title) LIKE :term", term: "%#{term.downcase}%") },
   #     id_method: :id,
   #     text_method: :title
-  #   },
-  #   'Cmor::Cms::Page' => {
+  #   }
+  # )
+  #
+  # config.add_resource(
+  #   'Cmor::Cms::Page',
+  #   meta_tags: -> {{
+  #     'description' => ->(resource) { { content: resource.meta_description } },
+  #     'og:title'    => ->(resource) { { content: resource.title } },
+  #   }},
+  #   autocomplete_options: {
   #     scope: ->(term) { Cmor::Cms::Page.where("LOWER(title) LIKE :term", term: "%#{term.downcase}%") },
   #     id_method: :id,
   #     text_method: :title
   #   }
-  # }
-  #
-  # Default: config.items_resource_autocomplete_options = {}
-  #
-  config.items_resource_autocomplete_options = {}
+  # )
 end

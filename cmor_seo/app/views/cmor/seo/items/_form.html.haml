@@ -1,4 +1,4 @@
-= form.input :resource, as: :polymorphic_association, classes: Cmor::Seo::Configuration.items_resource_autocomplete_options.each_with_object({}) { |(k, v), m| m[k.constantize] = url_for(action: :autocomplete_resource, resource_class_name: k) }
+= form.input :resource, as: :polymorphic_association, classes: Cmor::Seo::Configuration.resources_autocomplete_options.each_with_object({}) { |(k, v), m| m[k.constantize] = url_for(action: :autocomplete_resource, resource_class_name: k) }
 = form.input :path
 = form.input :published, as: :boolean
 
