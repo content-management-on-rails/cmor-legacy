@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Cmor::Seo::Frontend
   module Configuration
     def configure
       yield self
     end
 
-    mattr_accessor(:base_controller) { '::FrontendController' }
+    mattr_accessor(:base_controller) { "::FrontendController" }
   end
 end

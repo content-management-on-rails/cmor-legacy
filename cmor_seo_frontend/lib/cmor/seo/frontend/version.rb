@@ -1,4 +1,6 @@
-require 'cmor/version'
+# frozen_string_literal: true
+
+require "cmor/version"
 
 module Cmor
   module Seo

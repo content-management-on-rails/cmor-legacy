@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Seo
   module Frontend
     # Example:
@@ -18,35 +20,34 @@ module Cmor::Seo
       end
 
       private
+        def find_item
+          if item = find_item_by_path(c.request.path)
+            return item
+          end
 
-      def find_item
-        if item = find_item_by_path(c.request.path)
-          return item
+          if c.respond_to?(:resource_class) && c.instance_variable_get(:@resource).nil?
+            raise "not implemented"
+            return
+          end
+
+          if c.respond_to?(:resource_class) && c.instance_variable_get(:@resource).present?
+            resource = c.instance_variable_get(:@resource)
+            return Cmor::Seo::Item.where(resource_type: resource.class.name, resource_id: resource.id).published.first
+          end
+
+          if c.controller.class.name == "Cmor::Cms::PageController" && c.params[:page]
+            return find_item_by_page(c.params[:page])
+          end
         end
 
-        if c.respond_to?(:resource_class) && c.instance_variable_get(:@resource).nil?
-          raise "not implemented"
-          return
+        def find_item_by_page(page)
+          page = Cmor::Cms::Page.where(pathname: "/#{page.split('/')[0..-2].join('/')}", basename: page.split("/").last, locale: I18n.locale, format: :html).first
+          Cmor::Seo::Item.where(resource_type: page.class.name, resource_id: page.id).published.first
         end
 
-        if c.respond_to?(:resource_class) && c.instance_variable_get(:@resource).present?
-          resource = c.instance_variable_get(:@resource)
-          return Cmor::Seo::Item.where(resource_type: resource.class.name, resource_id: resource.id).published.first
+        def find_item_by_path(path)
+          Cmor::Seo::Item.where(path: path).published.first
         end
-
-        if c.controller.class.name == "Cmor::Cms::PageController" && c.params[:page]
-          return find_item_by_page(c.params[:page])
-        end
-      end
-
-      def find_item_by_page(page)
-        page = Cmor::Cms::Page.where(pathname: "/#{page.split('/')[0..-2].join('/')}", basename: page.split('/').last, locale: I18n.locale, format: :html).first
-        Cmor::Seo::Item.where(resource_type: page.class.name, resource_id: page.id).published.first
-      end
-
-      def find_item_by_path(path)
-        Cmor::Seo::Item.where(path: path).published.first
-      end
     end
   end
 end
