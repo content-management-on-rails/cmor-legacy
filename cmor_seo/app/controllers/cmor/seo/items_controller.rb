@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Seo
   class ItemsController < Cmor::Core::Backend::ResourcesController::Base
     include Rao::ResourcesController::ActsAsPublishedConcern
@@ -11,8 +13,7 @@ module Cmor::Seo
 
       def autocomplete_resource
         resource_class_name = params[:resource_class_name]
-        term                = params[:term] || ''
-        resource_class      = resource_class_name.constantize
+        term                = params[:term] || ""
 
         autocomplete_options = autocomplete_options_for(resource_class_name)
 
@@ -34,22 +35,20 @@ module Cmor::Seo
       end
 
       private
-
-      def autocomplete_options_for(resource_class_name)
-        Cmor::Seo::Configuration.resources_autocomplete_options[resource_class_name][:autocomplete_options]
-      end
+        def autocomplete_options_for(resource_class_name)
+          Cmor::Seo::Configuration.resources_autocomplete_options[resource_class_name][:autocomplete_options]
+        end
     end
 
     include AutocompleteConcern
 
     private
+      def load_collection_scope
+        super.eager_load(:meta_tags)
+      end
 
-    def load_collection_scope
-      super.eager_load(:meta_tags)
-    end
-
-    def permitted_params
-      params.require(:item).permit(:resource_type, :resource_id, :path, :published, meta_tags_attributes: [:id, :name, :content, :published, :_destroy])
-    end
+      def permitted_params
+        params.require(:item).permit(:resource_type, :resource_id, :path, :published, meta_tags_attributes: [:id, :name, :content, :published, :_destroy])
+      end
   end
 end

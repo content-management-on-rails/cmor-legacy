@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Seo
   class MetaTagsController < Cmor::Core::Backend::ResourcesController::Base
     include Rao::ResourcesController::ActsAsListConcern
@@ -8,17 +10,16 @@ module Cmor::Seo
     end
 
     private
+      def load_collection_scope
+        super.includes(:item)
+      end
 
-    def load_collection_scope
-      super.includes(:item)
-    end
+      def after_reposition_location
+        last_location
+      end
 
-    def after_reposition_location
-      last_location
-    end
-
-    def permitted_params
-      params.require(:meta_tag).permit(:item_id, :name, :content, :published)
-    end
+      def permitted_params
+        params.require(:meta_tag).permit(:item_id, :name, :content, :published)
+      end
   end
 end

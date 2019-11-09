@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Cmor::Seo
   class MetaTag < ApplicationRecord
     include ActsAsPublished::ActiveRecord
-    
+
     belongs_to :item
 
     acts_as_list scope: :item

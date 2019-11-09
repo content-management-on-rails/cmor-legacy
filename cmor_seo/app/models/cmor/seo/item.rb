@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Seo
   class Item < ApplicationRecord
     include ActsAsPublished::ActiveRecord
@@ -46,9 +48,8 @@ module Cmor::Seo
     end
 
     private
-
-    def resource_label
-      resource.try(:human).presence || resource.try(:email).presence || resource.try(:name) || resource.try(:identifier).presence || resource.to_s
-    end
+      def resource_label
+        resource.try(:human).presence || resource.try(:email).presence || resource.try(:name) || resource.try(:identifier).presence || resource.to_s
+      end
   end
 end
