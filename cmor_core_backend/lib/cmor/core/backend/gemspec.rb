@@ -32,6 +32,7 @@ module Cmor
           s.add_development_dependency 'rspec-rails'
           s.add_development_dependency 'factory_bot_rails' # This has to be after rspec-rails
           s.add_development_dependency 'rubocop'
+          s.add_development_dependency 'rubocop-rails_config'
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
