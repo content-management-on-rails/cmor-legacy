@@ -6,17 +6,23 @@ INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
+
 rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
 
 # Satisfy prerequisites
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Configure simpleform
 rails generate simple_form:install --bootstrap
 
 # I don't know why we need this all of a sudden
 sed -i '17i\require "sassc-rails"' config/application.rb
+sed -i '18i\require "turbolinks"' config/application.rb
 
 ## Always require rspec and factory_bot_rails in dummy app
 sed -i '17i\require "rspec-rails"' config/application.rb
