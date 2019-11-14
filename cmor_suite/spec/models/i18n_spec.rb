@@ -28,6 +28,8 @@ RSpec.describe 'Translations', type: :model do
     Cmor::Rbac::Role                => {},
     Cmor::Rbac::RolePermission      => {},
     Cmor::Rbac::UserRole            => {},
+    Cmor::Seo::Item                 => {},
+    Cmor::Seo::MetaTag              => {},
     Cmor::Showcase::Category        => {},
     Cmor::Showcase::Item            => {},
     Cmor::Tags::Tag                 => {},

@@ -3,6 +3,9 @@
 require "rails_helper"
 
 RSpec.describe "/de/backend/seo/items", type: :feature do
+  let(:user) { create(:cmor_user_area_user, :authenticable) }
+  before(:each) { sign_in(user) }
+
   let(:resource_class) { Cmor::Seo::Item }
   let(:resource) { create(:cmor_seo_item) }
   let(:resources) { create_list(:cmor_seo_item, 3) }

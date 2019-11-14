@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/michelson/acts-as-taggable-on
+  revision: b06f17165007c35929a1ed4cd2e0f0e509cacd02
+  specs:
+    acts-as-taggable-on (6.0.1)
+      activerecord (~> 5.0)
+
 PATH
   remote: ../cmor_blog_backend
   specs:
@@ -413,8 +420,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (6.5.0)
-      activerecord (>= 5.0, < 6.1)
     acts_as_list (0.9.19)
       activerecord (>= 3.0)
     acts_as_published (1.1.0)
@@ -836,6 +841,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   bootsnap
   capybara
   cmor!
