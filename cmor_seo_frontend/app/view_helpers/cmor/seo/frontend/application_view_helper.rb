@@ -35,14 +35,18 @@ module Cmor::Seo
             return Cmor::Seo::Item.where(resource_type: resource.class.name, resource_id: resource.id).published.first
           end
 
-          if c.controller.class.name == "Cmor::Cms::PageController" && c.params[:page]
+          if c.controller.class.name == "Cmor::Cms::PageController" && c.params.has_key?(:page)
             return find_item_by_page(c.params[:page])
           end
         end
 
-        def find_item_by_page(page)
-          page = Cmor::Cms::Page.where(pathname: "/#{page.split('/')[0..-2].join('/')}", basename: page.split("/").last, locale: I18n.locale, format: :html).first
-          Cmor::Seo::Item.where(resource_type: page.class.name, resource_id: page.id).published.first
+        def find_item_by_page(page_name)
+          page = Cmor::Cms::Page.where(pathname: "/#{page_name.split('/')[0..-2].join('/')}", basename: page_name.split("/").last, locale: I18n.locale, format: :html).first
+          if page.present?
+            Cmor::Seo::Item.where(resource_type: page.class.name, resource_id: page.id).published.first
+          else
+            nil
+          end
         end
 
         def find_item_by_path(path)
