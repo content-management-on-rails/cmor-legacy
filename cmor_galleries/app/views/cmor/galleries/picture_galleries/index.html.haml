@@ -7,7 +7,8 @@
         - { src: main_app.url_for(picture_gallery.picture_details.first.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
       - else
         - {}
-      = bootstrap_card(image_options: image_options, additional_css_classes: 'text-center border-0') do
+      .card.text-center.border-0
+        %img.card-img-top{ image_options }
         .card-body
           %h5.card-title
             = picture_gallery.name

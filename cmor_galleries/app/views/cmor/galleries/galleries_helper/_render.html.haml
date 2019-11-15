@@ -5,7 +5,7 @@
       .row
         - resource.picture_details.published.each do |picture_detail|
           .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
-            = bootstrap_card(additional_css_classes: 'text-center border-0 w-100') do
+            .card.text-center.border-0.w-100
               %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(resource) } }
                 %img{ src: main_app.url_for(picture_detail.asset.variant(variant_options)) }
               - if show_details

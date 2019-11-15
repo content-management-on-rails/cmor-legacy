@@ -4,7 +4,7 @@
   .row
     - @resource.picture_details.each do |picture_detail|
       .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
-        = bootstrap_card(additional_css_classes: 'text-center border-0' ) do
+        .card.text-center.border-0
           %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(@resource) } }
             %img.img-fluid{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
           .card-body

@@ -128,6 +128,7 @@ PATH
       acts_as_published
       cmor_core (= 0.0.40.pre)
       cmor_core_frontend (= 0.0.40.pre)
+      haml-rails
       rails (>= 5.2.0)
       rao-resources_controller (>= 0.0.14.pre)
 

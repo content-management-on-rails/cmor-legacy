@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
   s.add_dependency "acts_as_list"
   s.add_dependency "acts_as_published"
   s.add_dependency "rao-resources_controller", '>= 0.0.14.pre'
+  s.add_dependency "haml-rails"
 end
