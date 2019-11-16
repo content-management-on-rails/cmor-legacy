@@ -26,10 +26,10 @@ module Cmor
       end
 
       mattr_accessor(:pagination_options_proc) do
-        ->(view) { { theme: 'twitter-bootstrap-3' } }
+        ->(view) { { { theme: 'twitter-bootstrap-4', pagination_class: 'justify-content-center' } } }
       end
       mattr_accessor(:preview_picture_asset_variant_options) do
-        { resize: '320x240' }
+        { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
       end
 
       mattr_accessor(:creator_label_method_name) do
