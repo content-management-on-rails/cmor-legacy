@@ -42,5 +42,10 @@ en:
         published_at: Published at
         created_at: Created at
         updated_at: Updated at
+  cmor:
+    blog:
+      application_view_helper:
+        render_post:
+          more: 'More'
   routes:
     cmor_blog_engine: blog
