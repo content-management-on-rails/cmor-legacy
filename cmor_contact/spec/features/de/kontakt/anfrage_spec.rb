@@ -7,7 +7,7 @@ RSpec.describe '/de/kontakt/anfrage', type: :feature do
   let(:base_path) { "/de/kontakt/anfrage" }
 
   describe 'index/create' do
-    let(:submit_button) { find("input[type='submit']") }
+    let(:submit_button) { within('#new_contact_request') { find("input[type='submit']") } }
 
     before(:each) do
       visit(base_path)
