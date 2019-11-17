@@ -95,4 +95,12 @@ Cmor::Contact.configure do |config|
   # Default: config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
   #
   config.contact_request_include_modules = ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
+
+  # Set the whatsapp number for the whatsapp contact widget.
+  #
+  # Example: config.default_whatsapp_number = "+49 123 4567890"
+  #
+  # Default: config.whatsapp_number = nil
+  #
+  config.whatsapp_number = nil
 end

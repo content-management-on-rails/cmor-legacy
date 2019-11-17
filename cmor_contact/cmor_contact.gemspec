@@ -12,4 +12,9 @@ Gem::Specification.new do |s|
   s.summary     = "Cmor Contact Module."
 
   s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+
+  s.add_dependency 'responders'
+  s.add_dependency 'haml-rails'
+  s.add_dependency 'simple_form'
+  s.add_dependency 'coffee-rails'
 end

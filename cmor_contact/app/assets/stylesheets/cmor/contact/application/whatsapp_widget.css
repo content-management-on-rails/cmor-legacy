@@ -1,0 +1,32 @@
+.page-action {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px !important;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 28px;
+}
+
+.btn-whatsapp {
+  background-color: #00E676 !important;
+  border-color: #00E676 !important;
+  color: white !important;
+}
+
+.popover #new_whatsapp_request textarea {
+  font-size: 80%;
+}

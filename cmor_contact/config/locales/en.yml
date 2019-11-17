@@ -1,6 +1,14 @@
 en:
   classes:
     cmor/contact/engine: Contact
+  activemodel:
+    models:
+      cmor/contact/whatsapp_request:
+        one: WhatsApp Request
+        other: WhatsApp Requests
+    attributes:
+      cmor/contact/whatsapp_request:
+        message: Message
   activerecord:
     models:
       cmor/contact/contact_request:
@@ -28,6 +36,9 @@ en:
         notify:
           subject: "[%{application_name}] New contact request"
           title: "New contact request"
+      whatsapp_requests:
+        new:
+          title: Contact Request via WhatsApp
   flash:
     cmor:
       contact:
@@ -38,9 +49,12 @@ en:
     submit:
       contact_request:
         create: Submit
+      whatsapp_request:
+        create: Submit
   routes:
     cmor_contact_engine: contact
     contact_requests: request
+    whatsapp_requests: whatsapp
   simple_form:
     labels:
       contact_request:
@@ -51,3 +65,5 @@ en:
         email: "john.doe@example.com"
         message: "Hi Dave..."
         phone: "+1-541-754-3010"
+      whatsapp_request:
+        message: "Hallo, how may we help you? Send us a message via WhatsApp."

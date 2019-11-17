@@ -55,6 +55,9 @@ module Cmor
       mattr_accessor :contact_request_include_modules do
         ->() { [Cmor::Contact::ContactRequest::PhoneConcern] }
       end
+      mattr_accessor :whatsapp_number do
+        nil
+      end
     end
   end
 end

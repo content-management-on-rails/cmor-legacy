@@ -1,0 +1,6 @@
+%h1= t('.title')
+
+= simple_form_for(@resource) do |f|
+  = render 'form_errors', resource: f.object
+  = render 'form', form: f
+  = f.submit class: 'btn btn-primary'

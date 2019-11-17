@@ -1,0 +1,3 @@
+= simple_form_for(@resource, html: { target: '_blank' }) do |f|
+  = render 'form_errors', resource: f.object
+  = render 'form_xhr', form: f

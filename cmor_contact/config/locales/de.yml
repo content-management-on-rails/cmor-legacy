@@ -1,6 +1,14 @@
 de:
   classes:
     cmor/contact/engine: Kontakt
+  activemodel:
+    models:
+      cmor/contact/whatsapp_request:
+        one: WhatsApp Anfrage
+        other: WhatsApp Anfragen
+    attributes:
+      cmor/contact/whatsapp_request:
+        message: Nachricht
   activerecord:
     models:
       cmor/contact/contact_request:
@@ -28,6 +36,9 @@ de:
         notify:
           subject: "[%{application_name}] Neue Kontaktanfrage"
           title: "Neue Kontaktanfrage"
+      whatsapp_requests:
+        new:
+          title: Anfrage über WhatsApp
   flash:
     cmor:
       contact:
@@ -38,9 +49,12 @@ de:
     submit:
       contact_request:
         create: Absenden
+      whatsapp_request:
+        create: Absenden
   routes:
     cmor_contact_engine: kontakt
     contact_requests: anfrage
+    whatsapp_requests: whatsapp
   simple_form:
     labels:
       contact_request:
@@ -52,3 +66,5 @@ de:
         message: "Meine Nachricht"
         phone: "+49 69 12345678"
         subject: "Meine Anfrage"
+      whatsapp_request:
+        message: "Hallo, wie können wir Ihnen helfen? Senden Sie uns eine Nachricht über WhatsApp."

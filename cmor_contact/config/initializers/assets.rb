@@ -1,0 +1,1 @@
+Rails.application.config.assets.precompile += %w( cmor_contact.css cmor_contact.js )
