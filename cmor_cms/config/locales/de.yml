@@ -102,6 +102,7 @@ de:
         handler: Handler
         layout: Layout
         locale: Sprache
+        path_and_filename: Dateipfad
         pathname: Pfad
         created_at: Erstellt am
         updated_at: Aktualisiert am
@@ -116,6 +117,7 @@ de:
         handler: Handler
         layout: Layout
         locale: Sprache
+        path_and_filename: Dateipfad
         pathname: Pfad
         created_at: Erstellt am
         updated_at: Aktualsiert am

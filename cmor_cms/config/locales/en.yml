@@ -102,6 +102,7 @@ en:
         handler: Handler
         layout: Layout
         locale: Language
+        path_and_filename: Filepath
         pathname: Path
         created_at: Created at
         updated_at: Updated at
@@ -116,6 +117,7 @@ en:
         handler: Handler
         layout: Layout
         locale: Language
+        path_and_filename: Filepath
         pathname: Path
         created_at: Created at
         updated_at: Updated at
