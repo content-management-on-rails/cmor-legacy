@@ -2,11 +2,11 @@ de:
   activerecord:
     models:
       cmor/carousels/item_detail:
-        one: Carousel Item
-        other: Carousel Items
+        one: Karussell Element
+        other: Karussell Elemente
       cmor/carousels/carousel:
-        one: Carousel
-        other: Carousel
+        one: Karussell
+        other: Karussell
     attributes:
       cmor/carousels/item_detail:
         id: ID
@@ -21,17 +21,18 @@ de:
         image_fingerprint: Dateifingerabdruck
         image_updated_at: Datei erstellt am
         position: Position
+        published: Veröffentlicht
         published_at: Veröffentlicht am
-        carousel: Carousel
-        carousel_id: Carousel
+        carousel: Karussell
+        carousel_id: Karussell
         updated_at: Aktualisiert am
         url: URL
       cmor/carousels/carousel:
         id: ID
         created_at: Erstellt am
         description: Beschreibung
-        item_details: Carousel Items
-        item_details_count: Carousel Items
+        item_details: Karussell Elemente
+        item_details_count: Karussell Elemente
         locale: Sprache
         name: Name
         updated_at: Aktualisiert am
@@ -51,6 +52,6 @@ de:
           more: Weiterlesen
       carousel:
         warnings:
-          not_found: Carousel %{identifier} nicht gefunden.
+          not_found: Karussell %{identifier} nicht gefunden.
   routes:
     cmor_carousels_engine: carousel

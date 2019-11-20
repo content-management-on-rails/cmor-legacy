@@ -21,6 +21,7 @@ en:
         image_fingerprint: image fingerprint
         image_updated_at: image updated at
         position: position
+        published: published
         published_at: published at
         carousel: Carousel
         carousel_id: Carousel
