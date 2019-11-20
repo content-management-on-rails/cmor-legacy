@@ -15,10 +15,6 @@ module Cmor
     # You can set this option in the initializer.
     #
     class GalleriesHelper < Rao::ViewHelper::Base
-      def initialize(context)
-        @context = context
-      end
-
       def render(options = {})
         options.reverse_merge!(Cmor::Galleries::Configuration.galleries_helper_render_default_options)
         
