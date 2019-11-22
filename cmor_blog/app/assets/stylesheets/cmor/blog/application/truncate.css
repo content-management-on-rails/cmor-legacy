@@ -1,18 +1,18 @@
 [class*="truncate-lines-"] {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .truncate-lines-3 {
-    height: 9ex;
-  }
-  
-  [class*="truncate-lines-"]:after {
-    background: linear-gradient(rgba(255,255,255,0), #fff);
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 8ex;
-    position: absolute;
-    width: 100%;
-  }
+  overflow: hidden;
+  position: relative;
+}
+
+.truncate-lines-3 {
+  height: 9ex;
+}
+
+[class*="truncate-lines-"]:after {
+  background: linear-gradient(rgba(255,255,255,0), #fff);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 8ex;
+  position: absolute;
+  width: 100%;
+}
