@@ -2,6 +2,22 @@ module Cmor
   module Api
     module SchemaObjects
       module Resources
+        # Example:
+        #
+        #     query {
+        #       posts(limit: 1, offset: 2, orderBy: { field: "position", direction: "asc" }) {
+        #         body
+        #         createdAt
+        #         createdById
+        #         id
+        #         position
+        #         publishedAt
+        #         slug
+        #         title
+        #         updatedAt
+        #         updatedById
+        #       }
+        #     }
         class Base < GraphQL::Schema::Object
           class OrderByType < GraphQL::Schema::InputObject
             argument :field, String, required: true,

@@ -9,7 +9,7 @@ module Cmor
         protect_from_forgery with: :null_session
 
         include ::Cmor::Api::GraphqlController::BaseConcern
-        include ::Cmor::Api::GraphqlController::BearerAuthenticationConcern
+        include ::Cmor::UserArea::Controller::BearerAuthenticationConcern
 
         def self.schema_class
           Cmor::Api::Backend::Schema

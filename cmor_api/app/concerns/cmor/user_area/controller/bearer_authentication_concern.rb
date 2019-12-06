@@ -1,6 +1,8 @@
 module Cmor
-  module Api
-    module GraphqlController
+  module UserArea
+    module Controller
+      # Lets you authenticate with the single access token as bearer authorization
+      # header.
       module BearerAuthenticationConcern
         extend ActiveSupport::Concern
 
