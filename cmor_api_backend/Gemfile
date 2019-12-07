@@ -6,3 +6,8 @@ gemspec
 
 gem "cmor", path: "../"
 gem "cmor_api", path: "../cmor_api"
+
+gem "cmor_blog", path: "../cmor_blog"
+gem "cmor_blog_backend", path: "../cmor_blog_backend"
+gem "cmor_user_area", path: "../cmor_user_area"
+gem "cmor_user_area_backend", path: "../cmor_user_area_backend"
