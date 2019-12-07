@@ -41,8 +41,13 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 
 # install dependencies
 CMOR_BLOG_USER_FACTORY_NAME="cmor_user_area_user" CMOR_BLOG_CREATOR_CLASS_NAME="Cmor::UserArea::User" rails generate cmor:blog:install
+
 rails generate cmor:blog:backend:install
+rails generate cmor:cms:backend:install
+rails generate cmor:user_area:backend:install
+
 rails cmor_blog:install:migrations
+rails cmor_cms:install:migrations
 rails cmor_user_area:install:migrations
 
 # Install
