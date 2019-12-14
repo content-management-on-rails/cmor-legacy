@@ -18,14 +18,15 @@ module Cmor
           Cmor::UserArea::User
           Cmor::Cms::Page
         ).each do |model_class_name|
-          method_name = model_class_name.demodulize.underscore
+          method_name = model_class_name.demodulize.underscore.pluralize.to_sym
           type = "#{model_class_name}Type"
           # queries are just represented as fields
           # `all_links` is automatically camelcased to `allLinks`
-          field method_name.to_sym, [type], null: false
+          puts "field #{method_name}, [#{type}], null: false"
+          field method_name, [type], null: false
 
           # this method is invoked, when `all_link` fields is being resolved
-          define_singleton_method method_name do
+          define_method method_name do
             model_class_name.constantize.all
           end
         end

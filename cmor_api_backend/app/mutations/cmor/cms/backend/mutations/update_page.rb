@@ -16,15 +16,15 @@ module Cmor
           initialize!
           
           argument :id, ID, required: true
-          argument :basename, String, required: true
+          argument :basename, String, required: false
           argument :body, String, required: false
           argument :format, String, required: false
-          argument :handler, String, required: true
+          argument :handler, String, required: false
           argument :layout, String, required: false
           argument :locale, String, required: false
           argument :meta_description, String, required: false
-          argument :pathname, String, required: true
-          argument :title, String, required: true
+          argument :pathname, String, required: false
+          argument :title, String, required: false
         end
       end
     end
