@@ -9,6 +9,10 @@ module Cmor
         def configure
           yield self
         end
+
+        mattr_accessor(:mutations) {}
+        mattr_accessor(:models) {}
+        mattr_accessor(:services) {}
       end
     end
   end

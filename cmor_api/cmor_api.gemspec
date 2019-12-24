@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "cmor", "= #{Cmor::VERSION}"
   s.add_dependency 'graphql'
   s.add_dependency 'search_object_graphql'
+  # s.add_dependency 'rack-cors'
 
   s.add_development_dependency "sqlite3", '~> 1.3.6'
 
