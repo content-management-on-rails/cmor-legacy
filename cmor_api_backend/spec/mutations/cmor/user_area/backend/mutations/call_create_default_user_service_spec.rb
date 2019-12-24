@@ -80,6 +80,10 @@ RSpec.describe Cmor::UserArea::Backend::Mutations::CallCreateDefaultUserService,
             describe "response body data mutation_name messages" do
               it { expect(parsed_response_body['data'][mutation_name]['messages']).to be_a(Array) }
             end
+
+            describe "response body data mutation_name user" do
+              it { expect(parsed_response_body['data'][mutation_name]['user']).to be_a(Hash) }
+            end
           end
         end
       end

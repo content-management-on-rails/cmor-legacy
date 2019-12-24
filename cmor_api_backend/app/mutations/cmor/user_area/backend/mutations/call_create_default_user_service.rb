@@ -29,6 +29,7 @@ module Cmor
           end
 
           initialize!
+          field :user, Cmor::UserArea::UserType, null: true
         end
       end
     end
