@@ -59,11 +59,11 @@ module Cmor
         private
 
         def legacy_sub_modules
-          @legacy_sub_modules ||= %w(blog carousels core cms contact files galleries links rbac system tags testimonials user_area) - options['excluded_modules']
+          @legacy_sub_modules ||= %w(blog carousels core cms files galleries links rbac system tags testimonials user_area) - options['excluded_modules']
         end
 
         def sub_modules
-          @sub_modules ||= %w(partners seo showcase) - options['excluded_modules']
+          @sub_modules ||= %w(contact partners seo showcase) - options['excluded_modules']
         end
       end
     end

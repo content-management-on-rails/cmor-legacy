@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gemspec
+gem "cmor", path: "../"
+gem "cmor_contact", path: "../cmor_contact"
+

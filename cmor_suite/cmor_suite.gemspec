@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_cms_backend', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_contact', "= #{Cmor::VERSION}"
-  s.add_dependency 'cmor_contact_backend', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_contact_frontend', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_files', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_files_backend', "= #{Cmor::VERSION}"

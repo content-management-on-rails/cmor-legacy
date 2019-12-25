@@ -1,0 +1,41 @@
+de:
+  classes:
+    cmor/contact/frontend/engine: Kontakt
+  cmor:
+    contact:
+      frontend:
+        contact_requests:
+          new:
+            title: "Kontaktanfrage"
+        whatsapp_requests:
+          new:
+            title: Anfrage über WhatsApp
+  flash:
+    cmor:
+      contact:
+        contact_requests:
+          create:
+            notice: "Ihre Kontaktanfrage wurde versandt."
+  helpers:
+    submit:
+      contact_request:
+        create: Absenden
+      whatsapp_request:
+        create: Absenden
+  routes:
+    cmor_contact_frontend_engine: kontakt
+    contact_requests: anfrage
+    whatsapp_requests: whatsapp
+  simple_form:
+    labels:
+      contact_request:
+        accept_terms_of_service: 'Hiermit erlaube ich dem Seitenbetreiber die Nutzung meiner Daten zwecks Beantwortung dieser Kontaktanfrage.'
+    placeholders:
+      contact_request:
+        name: "Max Mustermann"
+        email: "max.mustermann@example.com"
+        message: "Meine Nachricht"
+        phone: "+49 69 12345678"
+        subject: "Meine Anfrage"
+      whatsapp_request:
+        message: "Hallo, wie können wir Ihnen helfen? Senden Sie uns eine Nachricht über WhatsApp."

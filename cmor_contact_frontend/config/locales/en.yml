@@ -1,0 +1,40 @@
+en:
+  classes:
+    cmor/contact/frontend/engine: Contact
+  cmor:
+    contact:
+      frontend:
+        contact_requests:
+          new:
+            title: "Contact Request"
+        whatsapp_requests:
+          new:
+            title: Contact Request via WhatsApp
+  flash:
+    cmor:
+      contact:
+        contact_requests:
+          create:
+            notice: "Your contact request has been delivered."
+  helpers:
+    submit:
+      contact_request:
+        create: Submit
+      whatsapp_request:
+        create: Submit
+  routes:
+    cmor_contact_frontend_engine: contact
+    contact_requests: request
+    whatsapp_requests: whatsapp
+  simple_form:
+    labels:
+      contact_request:
+        accept_terms_of_service: 'I hereby allow the site owner to use my personal data for the purpose of answering this request.'
+    placeholders:
+      contact_request:
+        name: "John Doe"
+        email: "john.doe@example.com"
+        message: "Hi Dave..."
+        phone: "+1-541-754-3010"
+      whatsapp_request:
+        message: "Hallo, how may we help you? Send us a message via WhatsApp."

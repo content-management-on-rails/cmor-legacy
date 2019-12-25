@@ -1,6 +1,19 @@
 de:
+  cmor:
+    contact:
+      contact_requests:
+        notify:
+          success: 'Benachrichtigung erneut versandt.'
+        table:
+          notify: 'Erneut benachrichtigen'
+      contact_request_mailer:
+        notify:
+          subject: "[%{application_name}] Neue Kontaktanfrage"
+          title: "Neue Kontaktanfrage"
   classes:
     cmor/contact/engine: Kontakt
+  routes:
+    cmor-contact-engine: 'kontakt'
   activemodel:
     models:
       cmor/contact/whatsapp_request:
@@ -27,44 +40,3 @@ de:
         created_at: Erstellt am
         updated_at: Aktualisiert am
         additional_actions: Zusatzliche Aktionen
-  cmor:
-    contact:
-      contact_requests:
-        new:
-          title: "Kontaktanfrage"
-      contact_request_mailer:
-        notify:
-          subject: "[%{application_name}] Neue Kontaktanfrage"
-          title: "Neue Kontaktanfrage"
-      whatsapp_requests:
-        new:
-          title: Anfrage über WhatsApp
-  flash:
-    cmor:
-      contact:
-        contact_requests:
-          create:
-            notice: "Ihre Kontaktanfrage wurde versandt."
-  helpers:
-    submit:
-      contact_request:
-        create: Absenden
-      whatsapp_request:
-        create: Absenden
-  routes:
-    cmor_contact_engine: kontakt
-    contact_requests: anfrage
-    whatsapp_requests: whatsapp
-  simple_form:
-    labels:
-      contact_request:
-        accept_terms_of_service: 'Hiermit erlaube ich dem Seitenbetreiber die Nutzung meiner Daten zwecks Beantwortung dieser Kontaktanfrage.'
-    placeholders:
-      contact_request:
-        name: "Max Mustermann"
-        email: "max.mustermann@example.com"
-        message: "Meine Nachricht"
-        phone: "+49 69 12345678"
-        subject: "Meine Anfrage"
-      whatsapp_request:
-        message: "Hallo, wie können wir Ihnen helfen? Senden Sie uns eine Nachricht über WhatsApp."

@@ -2,19 +2,12 @@ module Cmor
   module Contact
     module Generators
       class InstallGenerator < Rails::Generators::Base
-        desc 'Generates the intializer'
+        desc 'Installs the initializer, routes and backend integration'
 
         source_root File.expand_path('../templates', __FILE__)
 
-        attr_reader :base_controller_class_name
-
-        def initialize(*args)
-          super
-          @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::ApplicationController' }
-        end
-
         def generate_initializer
-          template 'initializer.rb', 'config/initializers/cmor_contact.rb'
+          copy_file 'initializer.rb', 'config/initializers/cmor_contact.rb'
         end
 
         def generate_routes

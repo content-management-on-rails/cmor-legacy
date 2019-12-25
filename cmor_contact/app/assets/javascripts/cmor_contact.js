@@ -1,1 +1,1 @@
-//= require cmor/contact/application
+//= require cmor/contact/application.js
