@@ -16,8 +16,10 @@ module Cmor::Showcase
       def render_items(category_or_identifier, options = {})
         options.reverse_merge!(
           variant_options: Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options,
+          limit: nil
         )
         variant_options = options.delete(:variant_options)
+
         category = if category_or_identifier.is_a?(Cmor::Showcase::Category)
           category_or_identifier
         else

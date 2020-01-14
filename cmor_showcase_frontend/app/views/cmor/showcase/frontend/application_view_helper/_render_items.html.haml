@@ -1,5 +1,5 @@
 .row{ class: "cmor-showcase-category cmor-showcase-category-#{dom_class(category)", id: dom_id(category) }
-  - category.items.each do |item|
+  - category.items.limit(options[:limit]).each do |item|
     .col-lg-3.col-md-4.col-sm-6{ class: dom_class(item) }
       .card.h-100
         %a{:href => "#"}
