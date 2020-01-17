@@ -89,7 +89,11 @@ PATH
     cmor_contact (0.0.40.pre)
       cmor_core (= 0.0.40.pre)
       cmor_core_frontend (= 0.0.40.pre)
+      coffee-rails
+      haml-rails
       rails (>= 5.2.0)
+      responders
+      simple_form
 
 PATH
   remote: ../cmor_files_backend
@@ -895,4 +899,4 @@ DEPENDENCIES
   turbolinks (~> 5)
 
 BUNDLED WITH
-   2.0.2
+   2.1.2
