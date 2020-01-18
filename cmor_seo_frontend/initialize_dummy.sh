@@ -36,6 +36,7 @@ echo "end" >> config/initializers/route_translator.rb
 # Add turbolinks
 sed -i "15irequire 'turbolinks'" config/application.rb
 sed -i "16irequire 'factory_bot_rails'" config/application.rb
+sed -i "17irequire 'rspec-rails'" config/application.rb
 
 # Add needed models
 rails g model Post title
