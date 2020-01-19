@@ -33,14 +33,16 @@ module Cmor
           when options.has_key?(:identifier)
             { identifier: options[:identifier] }
           end
-        
-        resource = if Rails.env.test? || Rails.env.development?
-          Cmor::Galleries::PictureDetail.where(where_conditions).first!
-        else
-          Cmor::Galleries::PictureDetail.where(where_conditions).first
+
+        resource = Cmor::Galleries::PictureDetail.where(where_conditions).first
+
+        if resource.nil?
+          Rails.logger.warn "[Cmor::Galleries::PicturesHelper#render] Couldn't find Cmor::Galleries::PictureDetail with #{where_conditions}"
+          return
         end
+
         if url_only
-          c.main_app.url_for(resource.asset.variant(variant_options))
+          c.main_app.url_for(resource.asset.variant(variant_options)) if resource.asset.present?
         else
           c.render(partial: 'cmor/galleries/pictures_helper/render', locals: { resource: resource, variant_options: variant_options, show_details: show_details, image_tag_only: image_tag_only })
         end
