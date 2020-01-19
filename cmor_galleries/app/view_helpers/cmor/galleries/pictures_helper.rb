@@ -21,14 +21,24 @@ module Cmor
     class PicturesHelper < Rao::ViewHelper::Base
       def render(options = {})
         options.reverse_merge!(Cmor::Galleries::Configuration.pictures_helper_render_default_options)
-        
-        id              = options.delete(:id)
+
         variant_options = options.delete(:variant_options) || {}
         show_details    = options.delete(:show_details)
         image_tag_only  = options.delete(:image_tag_only)
         url_only        = options.delete(:url_only)
+
+        where_conditions = case
+          when options.has_key?(:id)
+            { id: options[:id] }
+          when options.has_key?(:identifier)
+            { identifier: options[:identifier] }
+          end
         
-        resource = Cmor::Galleries::PictureDetail.where(id: id).first
+        resource = if Rails.env.test? || Rails.env.development?
+          Cmor::Galleries::PictureDetail.where(where_conditions).first!
+        else
+          Cmor::Galleries::PictureDetail.where(where_conditions).first
+        end
         if url_only
           c.main_app.url_for(resource.asset.variant(variant_options))
         else

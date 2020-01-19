@@ -2,6 +2,7 @@
   - bootstrap_card(image_options: { src: main_app.url_for(resource.asset) })
 = table.row :picture_gallery, as: :association, label_method: :name
 = table.row :title
+= table.row :identifier
 = table.row :description
 = table.timestamp :published_at
 = table.row :display_code_for_erb

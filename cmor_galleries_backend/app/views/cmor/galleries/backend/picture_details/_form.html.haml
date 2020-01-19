@@ -6,5 +6,6 @@
   .col-lg-12
     = form.input :picture_gallery_id, collection: Cmor::Galleries::PictureGallery.all
     = form.input :title
+    = form.input :identifier
     = form.input :description
     = form.input :published, as: :boolean

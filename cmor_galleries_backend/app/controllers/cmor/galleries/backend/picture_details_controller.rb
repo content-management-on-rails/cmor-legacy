@@ -24,7 +24,7 @@ module Cmor
         end
 
         def permitted_params
-          params.require(:picture_detail).permit(:title, :description, :picture_gallery_id, :published)
+          params.require(:picture_detail).permit(:title, :identifier, :description, :picture_gallery_id, :published)
         end
       end
     end

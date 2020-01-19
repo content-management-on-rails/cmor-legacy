@@ -8,6 +8,8 @@ module Cmor
 
       acts_as_list scope: :picture_gallery
 
+      validates :identifier, uniqueness: true, allow_nil: true
+
       def human
         title || id
       end

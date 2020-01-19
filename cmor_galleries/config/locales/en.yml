@@ -30,6 +30,7 @@ en:
         asset: File
         description: Description
         display_code_for_erb: Display code (erb)
+        identifier: Identifier
         picture_gallery_id: Gallery
         picture_gallery: Gallery
         position: Position

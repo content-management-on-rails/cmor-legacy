@@ -32,6 +32,7 @@ de:
         asset: Datei
         description: Beschreibung
         display_code_for_erb: Anzeigecode (erb)
+        identifier: Bezeichner
         picture_gallery_id: Galerie
         picture_gallery: Galerie
         position: Position
