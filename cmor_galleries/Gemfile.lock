@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.40.pre)
+    cmor_core (0.0.41.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.40.pre)
+      cmor (= 0.0.41.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,9 +14,9 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.40.pre)
-    cmor_core_frontend (0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
+    cmor (0.0.41.pre)
+    cmor_core_frontend (0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -24,11 +24,11 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_galleries (0.0.40.pre)
+    cmor_galleries (0.0.41.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.40.pre)
-      cmor_core_frontend (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_frontend (= 0.0.41.pre)
       haml-rails
       rails (>= 5.2.0)
       rao-resources_controller (>= 0.0.14.pre)
@@ -255,13 +255,13 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-resources_controller (0.0.34.pre)
+    rao-resources_controller (0.0.38.pre)
       rails (>= 4.2.0)
       rao
       responders
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.32.pre)
+    rao-view_helper (0.0.38.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

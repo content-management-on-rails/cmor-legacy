@@ -1,20 +1,20 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.40.pre)
+    cmor_core_backend (0.0.41.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ../cmor_user_area
   specs:
-    cmor_user_area (0.0.40.pre)
+    cmor_user_area (0.0.41.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.40.pre)
-      cmor_core_frontend (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_frontend (= 0.0.41.pre)
       rails (>= 5.2.0)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -24,18 +24,18 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.40.pre)
-    cmor_core (0.0.40.pre)
+    cmor (0.0.41.pre)
+    cmor_core (0.0.41.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.40.pre)
+      cmor (= 0.0.41.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
+    cmor_core_frontend (0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -43,10 +43,10 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_user_area_backend (0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
-      cmor_core_backend (= 0.0.40.pre)
-      cmor_user_area (= 0.0.40.pre)
+    cmor_user_area_backend (0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_backend (= 0.0.41.pre)
+      cmor_user_area (= 0.0.41.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -313,28 +313,28 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.32.pre)
+    rao-component (0.0.38.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.33.pre)
+    rao-query (0.0.38.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.33.pre)
+    rao-resource_controller (0.0.38.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.32.pre)
+    rao-resources_controller (0.0.38.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.32.pre)
+    rao-service (0.0.38.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.33.pre)
+    rao-service_controller (0.0.38.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -342,14 +342,14 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.32.pre)
+    rao-view_helper (0.0.38.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     regexp_parser (1.4.0)
-    request_store (1.4.1)
+    request_store (1.5.0)
       rack (>= 1.4)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
@@ -394,7 +394,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
-    scrypt (3.0.6)
+    scrypt (3.0.7)
       ffi-compiler (>= 1.0, < 2.0)
     sexp_processor (4.13.0)
     shellany (0.0.1)

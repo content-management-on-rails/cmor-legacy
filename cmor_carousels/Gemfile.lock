@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.40.pre)
+    cmor_core (0.0.41.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.40.pre)
+      cmor (= 0.0.41.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,9 +14,9 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.40.pre)
-    cmor_core_frontend (0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
+    cmor (0.0.41.pre)
+    cmor_core_frontend (0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -24,11 +24,11 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_carousels (0.0.40.pre)
+    cmor_carousels (0.0.41.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.40.pre)
-      cmor_core_frontend (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_frontend (= 0.0.41.pre)
       markup-rails
       mini_magick
       rails (>= 5.2.0)
@@ -187,7 +187,7 @@ GEM
       rao-view_helper
     method_source (0.9.2)
     mimemagic (0.3.3)
-    mini_magick (4.9.5)
+    mini_magick (4.10.1)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -248,7 +248,7 @@ GEM
     rao (0.0.23.pre)
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.32.pre)
+    rao-view_helper (0.0.38.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

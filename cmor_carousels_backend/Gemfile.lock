@@ -1,11 +1,11 @@
 PATH
   remote: ../cmor_carousels
   specs:
-    cmor_carousels (0.0.40.pre)
+    cmor_carousels (0.0.41.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.40.pre)
-      cmor_core_frontend (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_frontend (= 0.0.41.pre)
       markup-rails
       mini_magick
       rails (>= 5.2.0)
@@ -13,26 +13,26 @@ PATH
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.40.pre)
+    cmor_core_backend (0.0.41.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.40.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.40.pre)
-    cmor_core (0.0.40.pre)
+    cmor (0.0.41.pre)
+    cmor_core (0.0.41.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.40.pre)
+      cmor (= 0.0.41.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
+    cmor_core_frontend (0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
       rails (>= 5.2.0)
       rails_eu_gdpr
       rao-view_helper
@@ -40,10 +40,10 @@ PATH
 PATH
   remote: .
   specs:
-    cmor_carousels_backend (0.0.40.pre)
-      cmor_carousels (= 0.0.40.pre)
-      cmor_core (= 0.0.40.pre)
-      cmor_core_backend (= 0.0.40.pre)
+    cmor_carousels_backend (0.0.41.pre)
+      cmor_carousels (= 0.0.41.pre)
+      cmor_core (= 0.0.41.pre)
+      cmor_core_backend (= 0.0.41.pre)
       rails (>= 5.2.0)
 
 GEM
@@ -243,7 +243,7 @@ GEM
       rao-view_helper
     method_source (0.9.2)
     mimemagic (0.3.3)
-    mini_magick (4.9.5)
+    mini_magick (4.10.1)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -302,23 +302,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.33.pre)
+    rao-component (0.0.38.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.33.pre)
+    rao-query (0.0.38.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.33.pre)
+    rao-resource_controller (0.0.38.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.33.pre)
+    rao-resources_controller (0.0.38.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.33.pre)
+    rao-service_controller (0.0.38.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -326,7 +326,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.32.pre)
+    rao-view_helper (0.0.38.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
