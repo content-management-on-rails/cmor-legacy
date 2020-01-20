@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe 'title rendering', type: :request do
   let(:page) do
     Cmor::Cms::Page.create! do |page|
-      page.pathname = '/'
-      page.basename = 'home'
-      page.locale   = 'en'
-      page.format   = 'html'
-      page.handler  = 'erb'
-      page.title    = 'This is the title'
-      page.body     = '<h1>Home</h1>'
+      page.pathname  = '/'
+      page.basename  = 'home'
+      page.locale    = 'en'
+      page.format    = 'html'
+      page.handler   = 'erb'
+      page.title     = 'This is the title'
+      page.body      = '<h1>Home</h1>'
+      page.published = true
     end
   end
 

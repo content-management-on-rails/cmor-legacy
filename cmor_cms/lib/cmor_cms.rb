@@ -1,3 +1,4 @@
+require 'acts_as_published'
 require 'awesome_nested_set'
 require 'cmor_core_frontend'
 require 'rao-service'

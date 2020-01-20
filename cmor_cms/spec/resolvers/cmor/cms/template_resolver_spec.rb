@@ -31,13 +31,36 @@ module Cmor
           expect(subject.find_templates(*@partial_args)).to be_empty
         end
 
-        context 'page lookup'do
+        context 'unpublished template lookup'do
           before(:each) do
             @template = Cmor::Cms::Template.create! do |template|
-              template.pathname = '/'
-              template.basename = 'foo'
-              template.format   = 'html'
-              template.handler  = 'erb'
+              template.pathname  = '/'
+              template.basename  = 'foo'
+              template.format    = 'html'
+              template.handler   = 'erb'
+              template.published = false
+            end
+          end
+
+          it 'should find templates' do
+            @args = [
+              'foo',
+              '',
+              false,
+              { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
+            ]
+            expect(subject.find_templates(*@args).size).to eq(0)
+          end
+        end
+
+        context 'published template lookup'do
+          before(:each) do
+            @template = Cmor::Cms::Template.create! do |template|
+              template.pathname  = '/'
+              template.basename  = 'foo'
+              template.format    = 'html'
+              template.handler   = 'erb'
+              template.published = true
             end
           end
 
@@ -55,10 +78,11 @@ module Cmor
         context 'template in subfolder lookup'do
           before(:each) do
             @template = Cmor::Cms::Template.create! do |template|
-              template.pathname = '/foo/bar/'
-              template.basename = 'baz'
-              template.format   = 'html'
-              template.handler  = 'erb'
+              template.pathname  = '/foo/bar/'
+              template.basename  = 'baz'
+              template.format    = 'html'
+              template.handler   = 'erb'
+              template.published = true
             end
           end
 
@@ -76,11 +100,12 @@ module Cmor
         context 'template lookup without format'do
           before(:each) do
             @page = Cmor::Cms::Template.create! do |template|
-              template.pathname = '/'
-              template.basename = 'foo'
-              template.locale   = ''
-              template.format   = ''
-              template.handler  = 'textile'
+              template.pathname  = '/'
+              template.basename  = 'foo'
+              template.locale    = ''
+              template.format    = ''
+              template.handler   = 'textile'
+              template.published = true
             end
           end
 

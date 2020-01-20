@@ -23,34 +23,34 @@ en:
         one: Template
         other: Templates
     attributes:
-      cmor/cms/content_block:
+      defaults: &defaults
         id: ID
+        created_at: Created at
+        updated_at: Updated at
+        published_at: Published at
+        published: Published
+      cmor/cms/content_block:
+        <<: *defaults
         body: Body
         page: Page
         page_id: Page
         content_box: Content box
         content_box_id: Content box
-        created_at: Created at
-        updated_at: Updated at
       cmor/cms/content_box:
-        id: ID
+        <<: *defaults
         name: Name
         body: Body
         content_blocks: Content blocks
-        content_blocks_count: Content blocks
-        created_at: Created at
-        updated_at: updated at
+        content_blocks_count: Content blocksx
       cmor/cms/navigation:
-        id: ID
+        <<: *defaults
         navigation_items: Navigation items
         navigation_items_count: Navigation items
         locale: Language
         name: Name
         slug: Slug
-        created_at: Created at
-        updated_at: updated at
       cmor/cms/navigation_item:
-        id: ID
+        <<: *defaults
         children_count: Subitems
         data_add_icon: Icon
         depth: Tree depth
@@ -70,10 +70,8 @@ en:
         rgt: Right
         slug: Slug
         url: Target url
-        created_at: Created at
-        updated_at: Updated at
       cmor/cms/page:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Body
         cmor_cms_folder_id: Folder
@@ -89,10 +87,8 @@ en:
         path_and_filename: Filepath
         pathname: Path
         title: Title
-        created_at: Created at
-        updated_at: Updated at
       cmor/cms/partial:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Body
         cmor_cms_folder_id: Folder
@@ -104,10 +100,8 @@ en:
         locale: Language
         path_and_filename: Filepath
         pathname: Path
-        created_at: Created at
-        updated_at: Updated at
       cmor/cms/template:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Body
         cmor_cms_folder_id: Folder
@@ -119,8 +113,6 @@ en:
         locale: Language
         path_and_filename: Filepath
         pathname: Path
-        created_at: Created at
-        updated_at: Updated at
   classes:
     cmor/cms/add_homepages_service: 'Add homepages service'
     cmor/cms/import_partials_service: 'Import partials service'

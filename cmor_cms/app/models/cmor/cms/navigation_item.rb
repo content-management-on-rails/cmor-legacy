@@ -1,14 +1,16 @@
-require_dependency 'model/cmor/cms/navigation_item/properties_concern'
-
 module Cmor::Cms
   class NavigationItem < ActiveRecord::Base
-    include Model::Cmor::Cms::NavigationItem::PropertiesConcern
+    include Cmor::Cms::NavigationItem::PropertiesConcern
 
     # associations
     belongs_to :navigation,
                optional: true
     belongs_to :page,
                optional: true
+
+    # publishing
+    include ActsAsPublished::ActiveRecord
+    acts_as_published
 
     # awesome nested set
     acts_as_nested_set dependent: :destroy, counter_cache: :children_count, scope: :navigation_id

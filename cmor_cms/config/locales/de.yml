@@ -23,8 +23,14 @@ de:
         one: Vorlage
         other: Vorlagen
     attributes:
-      cmor/cms/content_block:
+      defaults: &defaults
         id: ID
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+      cmor/cms/content_block:
+        <<: *defaults
         body: Inhalt
         page: Seite
         page_id: Seite
@@ -33,24 +39,20 @@ de:
         created_at: Erstellt am
         updated_at: Aktualisiert am
       cmor/cms/content_box:
-        id: ID
+        <<: *defaults
         name: Name
         body: Inhalt
         content_blocks: Content Blöcke
         content_blocks_count: Content Blöcke
-        created_at: Erstellt am
-        updated_at: Aktualisiert am
       cmor/cms/navigation:
-        id: ID
-        created_at: Erstellt am
+        <<: *defaults
         navigation_items: Navigationseinträge
         navigation_items_count: Navigationseinträge
         locale: Sprache
         name: Name
         slug: Freundliche ID
-        updated_at: Aktualisiert am
       cmor/cms/navigation_item:
-        id: ID
+        <<: *defaults
         children_count: Unterelemente
         data_add_icon: Symbol
         depth: Baumtiefe
@@ -70,10 +72,8 @@ de:
         rgt: Rechts
         slug: Freundliche ID
         url: Ziel-URL
-        created_at: Erstellt am
-        updated_at: Aktualisiert am
       cmor/cms/page:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Inhalt
         cmor_cms_folder_id: Ordner
@@ -89,10 +89,8 @@ de:
         path_and_filename: Dateipfad
         pathname: Pfad
         title: Titel
-        created_at: Erstellt am
-        updated_at: Aktualisiert am
       cmor/cms/partial:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Inhalt
         cmor_cms_folder_id: Ordner
@@ -104,10 +102,8 @@ de:
         locale: Sprache
         path_and_filename: Dateipfad
         pathname: Pfad
-        created_at: Erstellt am
-        updated_at: Aktualisiert am
       cmor/cms/template:
-        id: ID
+        <<: *defaults
         basename: Name
         body: Inhalt
         cmor_cms_folder_id: Ordner
@@ -119,8 +115,6 @@ de:
         locale: Sprache
         path_and_filename: Dateipfad
         pathname: Pfad
-        created_at: Erstellt am
-        updated_at: Aktualsiert am
   classes:
     cmor/cms/add_homepages_service: 'Dienst zum hinzufügen von Homepages'
     cmor/cms/import_partials_service: 'Dienst zum importieren von Fragmenten'
@@ -130,7 +124,7 @@ de:
         menu: CMS
       navigation:
         messages:
-          empty: Navigation  %{name} (%{lang}) ist leer
+          empty: Navigation %{name} (%{lang}) ist leer
           not_found: Navigation %{name} (%{lang}) nicht gefunden
   resources:
     navigations: navigationen
