@@ -11,6 +11,7 @@ describe 'meta description rendering' do
       page.title               = 'Some title'
       page.meta_description    = 'This is the meta description'
       page.body                = '<h1>Home</h1>'
+      page.published           = true
     end
     get '/en'
 

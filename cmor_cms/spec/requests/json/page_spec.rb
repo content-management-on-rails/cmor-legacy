@@ -4,13 +4,14 @@ describe 'json format / page' do
   let(:parsed_response) { JSON.parse(response.body) }
   let(:page_model) do
     Cmor::Cms::Page.create! do |page|
-      page.pathname = '/'
-      page.basename = 'foo'
-      page.locale   = 'en'
-      page.format   = 'html'
-      page.handler  = 'erb'
-      page.title    = 'Home'
-      page.body     = '<h1>Home</h1>'
+      page.pathname  = '/'
+      page.basename  = 'foo'
+      page.locale    = 'en'
+      page.format    = 'html'
+      page.handler   = 'erb'
+      page.title     = 'Home'
+      page.body      = '<h1>Home</h1>'
+      page.published = true
     end
   end
 

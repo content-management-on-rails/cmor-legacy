@@ -1,12 +1,20 @@
-class Cmor::Cms::Backend::TemplatesController < Cmor::Core::Backend::ResourcesController::Base
-  def self.resource_class
-    Cmor::Cms::Template
-  end
+module Cmor
+  module Cms
+    module Backend
+      class TemplatesController < Cmor::Core::Backend::ResourcesController::Base
+        include Rao::ResourcesController::ActsAsPublishedConcern
 
-  private
+        def self.resource_class
+          Cmor::Cms::Template
+        end
 
-  def permitted_params
-    params.require(:template)
-          .permit(:body, :pathname, :basename, :locale, :format, :handler)
+        private
+
+        def permitted_params
+          params.require(:template)
+                .permit(:body, :pathname, :basename, :locale, :format, :handler, :published)
+        end
+      end
+    end
   end
 end

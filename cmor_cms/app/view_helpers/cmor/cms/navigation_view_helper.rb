@@ -22,7 +22,7 @@ module Cmor
       #
       def render(name, options = {})
         options.reverse_merge!(
-          renderer:       :bootstrap,
+          renderer:       :list,
           expand_all:     true,
           level:          1,
           selected_class: nil,
@@ -48,7 +48,7 @@ module Cmor
           return I18n.t('cmor.cms.navigation.messages.not_found', lang: I18n.locale.to_s, name: name.to_s)
         end
 
-        roots = navigation.navigation_items.roots.all
+        roots = navigation.navigation_items.roots.published.all
         if roots.empty?
           return I18n.t('cmor.cms.navigation.messages.empty', lang: I18n.locale.to_s, name: name)
         end
@@ -72,9 +72,9 @@ module Cmor
         options.reverse_merge!(html: item_html.dup, link_html: link_html)
 
         navigation.dom_class = container_css_class
-        if item.children.present?
+        if item.children.published.present?
           navigation.item(item.key, item.name, item.url, options) do |sub_navigation|
-            item.children.each do |sub_item|
+            item.children.published.each do |sub_item|
               build_navigation_item(sub_navigation, sub_item, container_css_class, item_html, link_html)
             end
           end

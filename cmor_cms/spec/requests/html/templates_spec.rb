@@ -10,6 +10,7 @@ RSpec.describe 'rendering a view from a controller', type: :request do
       record.handler  = 'erb'
       record.title    = 'Page Test - index'
       record.body     = '<h1>page_test#index</h1>\nFind me in page_test/index.html.erb\n'
+      record.published  = true
     end
   end
 

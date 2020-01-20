@@ -1,7 +1,7 @@
 module Cmor::Cms
   class Page < ActiveRecord::Base
     # add shared behaviour for database backed templates
-    include DatabaseTemplate
+    include Cmor::Cms::DatabaseTemplate
 
     # associations
     has_many :navigation_items,
@@ -11,6 +11,10 @@ module Cmor::Cms
              inverse_of: :page
 
     accepts_nested_attributes_for :content_blocks, allow_destroy: true
+
+    # publishing
+    include ActsAsPublished::ActiveRecord
+    acts_as_published
 
     # callbacks
     after_save :touch_navigation_items

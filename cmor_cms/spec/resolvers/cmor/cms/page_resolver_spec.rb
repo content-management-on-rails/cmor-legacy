@@ -31,14 +31,38 @@ module Cmor
           expect(subject.find_templates(*@partial_args)).to be_empty
         end
 
-        context 'page lookup'do
+        context 'unpublished page lookup'do
           before(:each) do
             @page = Cmor::Cms::Page.create! do |page|
-              page.pathname = '/'
-              page.basename = 'foo'
-              page.format   = 'html'
-              page.handler  = 'erb'
-              page.title    = 'Foo Page'
+              page.pathname  = '/'
+              page.basename  = 'foo'
+              page.format    = 'html'
+              page.handler   = 'erb'
+              page.title     = 'Foo Page'
+              page.published = false
+            end
+          end
+
+          it 'should not find unpublished templates' do
+            @args = [
+              'foo',
+              '',
+              false,
+              { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
+            ]
+            expect(subject.find_templates(*@args).size).to eq(0)
+          end
+        end
+
+        context 'published page lookup'do
+          before(:each) do
+            @page = Cmor::Cms::Page.create! do |page|
+              page.pathname  = '/'
+              page.basename  = 'foo'
+              page.format    = 'html'
+              page.handler   = 'erb'
+              page.title     = 'Foo Page'
+              page.published = true
             end
           end
 
@@ -56,11 +80,12 @@ module Cmor
         context 'nested page lookup'do
           before(:each) do
             @page = Cmor::Cms::Page.create! do |page|
-              page.pathname = '/foo/bar/'
-              page.basename = 'baz'
-              page.format   = 'html'
-              page.handler  = 'erb'
-              page.title    = 'Foo Page'
+              page.pathname  = '/foo/bar/'
+              page.basename  = 'baz'
+              page.format    = 'html'
+              page.handler   = 'erb'
+              page.title     = 'Foo Page'
+              page.published = true
             end
           end
 
@@ -78,12 +103,13 @@ module Cmor
         context 'page lookup without format'do
           before(:each) do
             @page = Cmor::Cms::Page.create! do |page|
-              page.pathname = '/'
-              page.basename = 'foo'
-              page.locale   = ''
-              page.format   = ''
-              page.handler  = 'textile'
-              page.title    = 'h1. A textilized page'
+              page.pathname  = '/'
+              page.basename  = 'foo'
+              page.locale    = ''
+              page.format    = ''
+              page.handler   = 'textile'
+              page.title     = 'h1. A textilized page'
+              page.published = true
             end
           end
 

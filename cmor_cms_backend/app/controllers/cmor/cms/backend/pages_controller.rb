@@ -1,12 +1,20 @@
-class Cmor::Cms::Backend::PagesController < Cmor::Core::Backend::ResourcesController::Base
-  def self.resource_class
-    Cmor::Cms::Page
-  end
+module Cmor
+  module Cms
+    module Backend
+      class PagesController < Cmor::Core::Backend::ResourcesController::Base
+        include Rao::ResourcesController::ActsAsPublishedConcern
 
-  private
+        def self.resource_class
+          Cmor::Cms::Page
+        end
 
-  def permitted_params
-    params.require(:page)
-          .permit(:title, :meta_description, :body, :pathname, :basename, :locale, :format, :handler, :layout, navigation_item_ids: [])
+        private
+
+        def permitted_params
+          params.require(:page)
+                .permit(:title, :meta_description, :body, :pathname, :basename, :locale, :format, :handler, :layout, :published, navigation_item_ids: [])
+        end
+      end
+    end
   end
 end

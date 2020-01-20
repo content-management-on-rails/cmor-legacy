@@ -31,13 +31,36 @@ module Cmor
           expect(subject.find_templates(*@template_args)).to be_empty
         end
 
-        context 'page lookup'do
+        context 'unpublished partial lookup'do
           before(:each) do
             @partial = Cmor::Cms::Partial.create! do |record|
-              record.pathname = '/'
-              record.basename = '_foo'
-              record.format   = 'html'
-              record.handler  = 'erb'
+              record.pathname  = '/'
+              record.basename  = '_foo'
+              record.format    = 'html'
+              record.handler   = 'erb'
+              record.published = false
+            end
+          end
+
+          it 'should not find partials' do
+            @args = [
+              'foo',
+              '',
+              true,
+              { handlers: [:builder, :erb], locale: [:de], formats: [:html] }
+            ]
+            expect(subject.find_templates(*@args).size).to eq(0)
+          end
+        end
+
+        context 'published partial lookup'do
+          before(:each) do
+            @partial = Cmor::Cms::Partial.create! do |record|
+              record.pathname  = '/'
+              record.basename  = '_foo'
+              record.format    = 'html'
+              record.handler   = 'erb'
+              record.published = true
             end
           end
 
@@ -55,10 +78,11 @@ module Cmor
         context 'partial in subfolder lookup'do
           before(:each) do
             @partial = Cmor::Cms::Partial.create! do |record|
-              record.pathname = '/foo/bar/'
-              record.basename = '_baz'
-              record.format   = 'html'
-              record.handler  = 'erb'
+              record.pathname  = '/foo/bar/'
+              record.basename  = '_baz'
+              record.format    = 'html'
+              record.handler   = 'erb'
+              record.published = true
             end
           end
 
@@ -76,11 +100,12 @@ module Cmor
         context 'partial lookup without format'do
           before(:each) do
             @partial = Cmor::Cms::Partial.create! do |record|
-              record.pathname = '/'
-              record.basename = '_foo'
-              record.locale   = ''
-              record.format   = ''
-              record.handler  = 'textile'
+              record.pathname  = '/'
+              record.basename  = '_foo'
+              record.locale    = ''
+              record.format    = ''
+              record.handler   = 'textile'
+              record.published = true
             end
           end
 

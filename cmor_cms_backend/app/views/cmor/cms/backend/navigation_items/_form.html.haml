@@ -21,3 +21,6 @@
 .well
   - Cmor::Cms::Configuration.navigation_item_properties.each do |navigation_item_property|
     = form.input navigation_item_property
+
+.well
+  = form.input :published, as: :boolean

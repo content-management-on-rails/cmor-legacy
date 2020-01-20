@@ -1,12 +1,20 @@
-class Cmor::Cms::Backend::PartialsController < Cmor::Core::Backend::ResourcesController::Base
-  def self.resource_class
-    Cmor::Cms::Partial
-  end
+module Cmor
+  module Cms
+    module Backend
+      class PartialsController < Cmor::Core::Backend::ResourcesController::Base
+        include Rao::ResourcesController::ActsAsPublishedConcern
 
-  private
+        def self.resource_class
+          Cmor::Cms::Partial
+        end
 
-  def permitted_params
-    params.require(:partial)
-          .permit(:body, :pathname, :basename, :locale, :format, :handler)
+        private
+
+        def permitted_params
+          params.require(:partial)
+                .permit(:body, :pathname, :basename, :locale, :format, :handler, :published)
+        end
+      end
+    end
   end
 end

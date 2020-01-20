@@ -6,3 +6,4 @@
 = table.column(:navigation_items, sortable: false) do |page|
   - page.navigation_items.collect{ |navigation_item| link_to(navigation_item, navigation_item_path(navigation_item)) }.join('<br />').html_safe
 = table.timestamps(sort: true)
+= table.acts_as_published_actions

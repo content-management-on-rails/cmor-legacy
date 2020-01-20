@@ -27,6 +27,9 @@ module Cmor
 
         query  = template_class.constantize.where(conditions)
 
+        # 1) Only include published templates
+        query = query.published
+
         # 2) Check for templates with the given format or format is nil
         query = query.where(["format = ? OR format = '' OR format IS NULL", format])
 

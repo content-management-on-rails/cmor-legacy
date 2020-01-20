@@ -1,7 +1,5 @@
-require 'active_support/concern'
-
-module Model::Cmor::Cms::NavigationItem
-  module PropertiesConcern
+module Cmor::Cms
+  module NavigationItem::PropertiesConcern
     extend ActiveSupport::Concern
 
     included do

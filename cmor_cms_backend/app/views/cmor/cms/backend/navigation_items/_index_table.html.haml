@@ -7,3 +7,4 @@
 = table.column(:page, sort: { column_name: 'cmor_cms_pages.title' }) do |navigation_item|
   - link_to navigation_item.page.title, page_path(navigation_item.page) if navigation_item.page.present?
 = table.timestamps(sort: true)
+= table.acts_as_published_actions
