@@ -1,5 +1,5 @@
 Cmor::Contact::Backend::Engine.routes.draw do
-  resources :contact_requests, only: [:index, :delete, :show] do
+  resources :contact_requests, only: [:index, :destroy, :show] do
     post :notify, on: :member
   end
 

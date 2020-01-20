@@ -10,4 +10,11 @@ RSpec.describe '/de/backend/kontakt/contact_requests', type: :feature do
   
   # Read
   it { expect(subject).to implement_show_action(self).for(resource) }
+
+  # Destroy
+  it {
+  expect(subject).to implement_delete_action(self)
+    .for(resource)
+    .reducing{ resource_class.count }.by(1)
+  }
 end
