@@ -12,7 +12,7 @@ module ActionView
             original_initialize(source, identifier, handler, details)
           end
         else
-          def initialize(source, identifier, handler, format: nil, variant: nil, locals: nil, virtual_path: nil, layout: layout)
+          def initialize(source, identifier, handler, format: nil, variant: nil, locals: nil, virtual_path: nil, layout: nil)
             @layout = layout
             original_initialize(source, identifier, handler, format: format, variant: variant, locals: locals, virtual_path: virtual_path)
           end
