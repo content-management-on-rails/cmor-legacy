@@ -32,6 +32,10 @@ module Cmor
         'controls form-actions well'
       end
 
+      mattr_accessor :sender do
+        ->(contact_request) { "#{contact_request.name} <#{contact_request.email}>" }
+      end
+
       mattr_accessor :recipients do
         ->(environment) { "jane.doe@domain.local" }
       end

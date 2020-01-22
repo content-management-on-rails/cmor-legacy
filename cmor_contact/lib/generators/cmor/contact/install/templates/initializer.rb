@@ -21,6 +21,28 @@ Cmor::Contact.configure do |config|
     }.with_indifferent_access[environment.to_sym]
   end
 
+  # Configure your contact request sender here.
+  #
+  # Default:
+  #
+  # config.sender = lambda do |contact_request|
+  #   "#{contact_request.name} <#{contact_request.email}>"
+  # end
+  #
+  # You may want to reconfigure this to use a static email address from
+  # your domain to avoid being marked as spammer when contact requests
+  # are sent from invalid addresses.
+  #
+  # Example:
+  #
+  # config.sender = lambda do |contact_request|
+  #   "My Application <contact@example.com>"
+  # end
+  #
+  config.sender = lambda do |contact_request|
+    "#{contact_request.name} <#{contact_request.email}>"
+  end
+
   # Configure your input field css classes here.
   #
   # Default: config.input_name_css_classes = 'form-control'

@@ -21,7 +21,8 @@ module Cmor::Contact
     end
 
     def notification_sender(contact_request)
-      "#{contact_request.name} <#{contact_request.email}>"
+      Cmor::Contact::Configuration.sender.call(contact_request)
+      # "#{contact_request.name} <#{contact_request.email}>"
     end
 
     def notification_recipients
