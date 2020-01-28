@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe '/de/backend/system/changelogs', type: :feature do
+  let(:user) { create(:cmor_user_area_user, :authenticable) }
+  before(:each) { sign_in(user) }
+
   let(:resource_class) { Cmor::System::Changelog }
   let(:resource) { Cmor::System::Changelog.first }
   let(:resources) { Cmor::System::Changelog.all }

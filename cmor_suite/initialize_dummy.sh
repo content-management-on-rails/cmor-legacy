@@ -50,8 +50,8 @@ CMOR_RBAC_USER_FACTORY_NAME='cmor_user_area_user' \
 CMOR_RBAC_USER_CLASS_NAME='Cmor::UserArea::User' \
 CMOR_BLOG_USER_FACTORY_NAME='cmor_user_area_user' \
 CMOR_BLOG_CREATOR_CLASS_NAME='Cmor::UserArea::User' \
-CMOR_SYSTEM_BACKEND_ENABLE_ACTIVE_STORAGE=true \
-CMOR_SYSTEM_BACKEND_ENABLE_DELAYED_JOB=true \
+CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true \
+CMOR_SYSTEM_ENABLE_DELAYED_JOB=true \
 rails generate $INSTALL_NAME:install
 rails db:migrate db:test:prepare
 
