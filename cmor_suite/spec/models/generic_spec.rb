@@ -36,6 +36,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     Cmor::Seo::MetaTag               => {},
     Cmor::Showcase::Category         => {},
     Cmor::Showcase::Item             => {},
+    Cmor::System::Changelog          => { specs_to_skip: [ :is_an_active_record, :saves_with_valid_attributes ] },
     Cmor::Tags::Tag                  => {},
     Cmor::Tags::Tagging              => {},
     Cmor::UserArea::User             => {},

@@ -41,7 +41,7 @@ rails generate delayed_job:active_record
 # Add ActiveStorage
 rails active_storage:install
 
-# Example model for Cmor::System::Backend specs
+# Example model for Cmor::System specs
 rails g model Post title body
 rails g factory_bot:model Post title body # @TODO find out why we need this here bot not in other cmor gems.
 

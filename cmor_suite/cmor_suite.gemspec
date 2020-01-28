@@ -52,7 +52,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_showcase', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_showcase_frontend', "= #{Cmor::VERSION}"
 
-  s.add_dependency 'cmor_system_backend', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_system', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_tags', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_tags_backend', "= #{Cmor::VERSION}"

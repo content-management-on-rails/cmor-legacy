@@ -18,7 +18,7 @@ FactoryBot.tap do |f|
   f.definition_file_paths << Cmor::Rbac::Engine.root.join(*%w(spec factories))
   f.definition_file_paths << Cmor::Seo::Engine.root.join(*%w(spec factories))
   f.definition_file_paths << Cmor::Showcase::Engine.root.join(*%w(spec factories))
-  f.definition_file_paths << Cmor::System::Backend::Engine.root.join(*%w(spec factories))
+  f.definition_file_paths << Cmor::System::Engine.root.join(*%w(spec factories))
   f.definition_file_paths << Cmor::Tags::Engine.root.join(*%w(spec factories))
   f.definition_file_paths << Cmor::Testimonials::Engine.root.join(*%w(spec factories))
   f.definition_file_paths << Cmor::UserArea::Engine.root.join(*%w(spec factories))
