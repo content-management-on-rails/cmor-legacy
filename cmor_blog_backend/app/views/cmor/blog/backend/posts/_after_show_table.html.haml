@@ -1,5 +1,5 @@
 - if @resource.asset_details.any?
-  = collection_table(collection: @resource.asset_details) do |t|
+  = collection_table(collection: @resource.asset_details.order(position: :asc)) do |t|
     = t.acts_as_list_actions
     = t.thumbnail :asset
     = t.column :filename
