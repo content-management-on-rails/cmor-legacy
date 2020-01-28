@@ -13,6 +13,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     ActiveStorage::Attachment           => { specs_to_skip: [ :not_valid_with_empty_attributes ] },
     ActiveStorage::Blob                 => { specs_to_skip: [ :not_valid_with_empty_attributes ] },
     Delayed::Backend::ActiveRecord::Job => { specs_to_skip: [ :not_valid_with_empty_attributes ] },
+    Cmor::System::Changelog             => { specs_to_skip: [ :is_an_active_record, :saves_with_valid_attributes ] },
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)

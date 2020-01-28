@@ -1,4 +1,15 @@
 de:
+  activemodel:
+    models:
+      cmor/system/changelog:
+        one: Changelog
+        other: Changelogs
+    attributes:
+      cmor/system/changelog:
+        id: ID
+        file: Datei
+        content: Inhalt
+        version: Version
   activerecord:
     models:
       active_storage/attachment:
