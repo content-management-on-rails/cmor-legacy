@@ -18,7 +18,8 @@ module Cmor
       end
 
       def load_collection
-        @collection = if respond_to?(:per_page)
+        # @collection = if respond_to?(:per_page)
+        @collection = if Object.const_defined?('Kaminari')
           Kaminari.paginate_array(self.resource_class.all).page(params[:page]).per(per_page)
         else
           super
