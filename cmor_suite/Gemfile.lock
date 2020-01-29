@@ -222,12 +222,12 @@ PATH
       rails (>= 5.2.0)
 
 PATH
-  remote: ../cmor_system_backend
+  remote: ../cmor_system
   specs:
-    cmor_system_backend (0.0.43.pre)
+    cmor_system (0.0.43.pre)
       cmor_core (= 0.0.43.pre)
       cmor_core_backend (= 0.0.43.pre)
-      cmor_tags (= 0.0.43.pre)
+      markup-rails
       rails (>= 5.2.0)
 
 PATH
@@ -363,7 +363,7 @@ PATH
       cmor_seo_frontend (= 0.0.43.pre)
       cmor_showcase (= 0.0.43.pre)
       cmor_showcase_frontend (= 0.0.43.pre)
-      cmor_system_backend (= 0.0.43.pre)
+      cmor_system (= 0.0.43.pre)
       cmor_tags (= 0.0.43.pre)
       cmor_tags_backend (= 0.0.43.pre)
       cmor_testimonials (= 0.0.43.pre)
@@ -873,7 +873,7 @@ DEPENDENCIES
   cmor_showcase!
   cmor_showcase_frontend!
   cmor_suite!
-  cmor_system_backend!
+  cmor_system!
   cmor_tags!
   cmor_tags_backend!
   cmor_testimonials!
