@@ -1,5 +1,9 @@
-= table.column :id
-= table.column :name
-= table.column :gem
-= table.column :file
-= table.column :version
+= table.column(:id, sort: true)
+= table.column(:name, sort: true)
+= table.column(:gem, sort: true) do |resource|
+  - if resource.gem.respond_to?(:homepage)
+    - capture_haml do
+      = link_to(resource.gem.homepage) do
+        = "#{resource.gem.name} (#{resource.gem.version}, #{resource.gem.platform})"
+= table.column(:file, sort: true)
+= table.column(:version, sort: true)

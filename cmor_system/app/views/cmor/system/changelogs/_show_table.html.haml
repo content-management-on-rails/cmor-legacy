@@ -1,3 +1,7 @@
-= table.row :gem
+= table.row :gem do |resource|
+  - if resource.gem.respond_to?(:homepage)
+    - capture_haml do
+      = link_to(resource.gem.homepage) do
+        = "#{resource.gem.name} (#{resource.gem.version}, #{resource.gem.platform})"
 = table.row :version
 = table.row :file

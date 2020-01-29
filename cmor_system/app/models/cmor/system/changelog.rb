@@ -1,11 +1,20 @@
 module Cmor
   module System
     class Changelog
+      if Object.const_defined?('Kaminari')
+        class Collection < Kaminari::PaginatableArray
+        end
+      else
+        class Collection < Array
+        end
+      end
+
       extend ActiveModel::Model
       extend ActiveModel::Naming
       include ActiveModel::Conversion
       extend ActiveModel::Translation
       include ActiveModel::Validations
+      include Markup::Rails::ActiveRecord
 
       validates :name, presence: true
       validates :file, presence: true
@@ -50,6 +59,14 @@ module Cmor
         extend ActiveSupport::Concern
 
         class_methods do
+          def reorder(order)
+            key = order.first[0].to_sym
+            value = order.first[1].to_sym
+            sorted = _all.sort { |a, b| a.send(key) <=> b.send(key) }
+            value == :asc ? sorted : sorted.reverse
+            Collection.new(value == 'asc' ? sorted : sorted.reverse)
+          end
+
           def count
             all.size
           end
@@ -58,7 +75,7 @@ module Cmor
             all.first
           end
 
-          def all
+          def _all
             application_changelog = Rails.root.join("CHANGELOG.md")
             app_changelog = if File.exist?(application_changelog)
               version = if Rails.application.class.parent.const_defined?("VERSION")
@@ -76,6 +93,10 @@ module Cmor
             end
 
             [app_changelog, gem_changelogs].flatten.compact
+          end
+
+          def all
+            Collection.new(_all)
           end
 
           def find(id)
@@ -110,41 +131,19 @@ module Cmor
 
       include ActiveRecordLikeConcern
 
-      module MarkdownConcern
+      module PaginationConcern
         extend ActiveSupport::Concern
 
-        included do
-        end
-
         class_methods do
-          def markdown(*attributes)
-            attributes.each do |attr|
-              define_method(attr) do |format = nil|
-                case format
-                when :html
-                  to_markdown(read_attribute(attr.to_sym)).to_html
-                when :markup
-                  to_markdown(read_attribute(attr.to_sym))
-                else
-                  read_attribute(attr.to_sym)
-                end
-              end
-            end
+          def page(page)
+            all.page(page)
           end
-        end
-
-        def save!
-        end
-
-        private
-
-        def to_markdown(string)
-          Kramdown::Document.new(string.to_s)
         end
       end
 
-      include MarkdownConcern
-      markdown :content
+      include PaginationConcern
+
+      acts_as_markup :content, processor: :markdown
 
       def read_attribute(name)
         if name.to_sym == :content

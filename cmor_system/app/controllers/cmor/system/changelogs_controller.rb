@@ -16,15 +16,6 @@ module Cmor
       def permitted_params
         params.require(:changelog).permit()
       end
-
-      def load_collection
-        # @collection = if respond_to?(:per_page)
-        @collection = if Object.const_defined?('Kaminari') && respond_to?(:per_page)
-          Kaminari.paginate_array(self.resource_class.all).page(params[:page]).per(per_page)
-        else
-          super
-        end
-      end
     end
   end
 end
