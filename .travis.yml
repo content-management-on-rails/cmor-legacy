@@ -30,7 +30,7 @@ env:
   - GEM=cmor_seo_frontend
   - GEM=cmor_showcase
   - GEM=cmor_showcase_frontend
-  - GEM=cmor_system_backend
+  - GEM=cmor_system
   - GEM=cmor_tags
   - GEM=cmor_tags_backend
   - GEM=cmor_user_area
