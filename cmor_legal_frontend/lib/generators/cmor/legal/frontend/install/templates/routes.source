@@ -1,0 +1,3 @@
+
+
+  mount Cmor::Legal::Frontend::Engine, at: '/'
