@@ -16,6 +16,9 @@ rm $DUMMY_APP_PATH/Gemfile
 
 cd $DUMMY_APP_PATH
 
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
 # I18n configuration
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
