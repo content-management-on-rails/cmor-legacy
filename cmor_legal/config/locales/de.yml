@@ -1,0 +1,6 @@
+de:
+  classes:
+    cmor/legal/engine: Juristisches
+  routes:
+    cmor-legal-engine: juristisches
+

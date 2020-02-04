@@ -1,0 +1,2 @@
+//= require ./cmor/legal/application
+

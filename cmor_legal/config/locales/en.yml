@@ -1,0 +1,6 @@
+en:
+  classes:
+    cmor/legal/engine: Legal
+  routes:
+    cmor-legal-engine: legal
+
