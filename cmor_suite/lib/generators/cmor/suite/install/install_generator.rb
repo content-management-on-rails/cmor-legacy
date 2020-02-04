@@ -64,7 +64,7 @@ module Cmor
         end
 
         def sub_modules
-          @sub_modules ||= (options['included_modules'] & %w(legal partners seo showcase system)) - options['excluded_modules']
+          @sub_modules ||= %w(legal partners seo showcase system) - options['excluded_modules']
         end
       end
     end
