@@ -1,1 +1,29 @@
 en:
+  # i18n_routing
+  resource:
+    cookie_preferences: cookie-preferences
+    privacy_policy: privacy-policy
+  # route_translator
+  routes:
+    cmor_legal_frontend_engine: ""
+    privacy_policy: privacy-policy
+    controllers:
+      cmor:
+        legal:
+          frontend:
+            cookie_preferences:
+              cookie_preferences: cookie-preferences
+  cmor:
+    legal:
+      frontend:
+        cookie_preferences:
+          update:
+            success: 'Settings successfully saved.'
+        cookies:
+          consent_banner:
+            title: "We use cookies"
+  helpers:
+    submit:
+      cookie_preferences:
+        create: "I consent"
+        update: "I consent"

@@ -27,6 +27,9 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+# Turbolinks
+sed -i "15irequire 'turbolinks'" config/application.rb
+
 # Satisfy prerequisites
 rails generate simple_form:install --bootstrap
 rails generate administrador:install
@@ -36,6 +39,11 @@ rails generate cmor:legal:install
 # rails generate eu_gdpr:install
 # rails generate cmor:cms:install
 # rails cmor_cms:install:migrations
+
+# Root route
+rails generate controller Home index --no-controller-specs --no-view-specs
+sed -i "2i  root to: 'home#index'" config/routes.rb
+
 
 # Install gem
 rails generate cmor:legal:frontend:install

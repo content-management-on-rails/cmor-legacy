@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-module Cmor::Legal
-  class ApplicationViewHelper < Rao::ViewHelper::Base
+module Cmor
+  module Legal
+    class ApplicationViewHelper < Rao::ViewHelper::Base
+    end
   end
 end

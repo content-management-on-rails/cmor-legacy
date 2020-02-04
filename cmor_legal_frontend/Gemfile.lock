@@ -4,13 +4,13 @@ PATH
     cmor_core_frontend (0.0.44.pre)
       cmor_core (= 0.0.44.pre)
       rails (>= 5.2.3)
-      rails_eu_gdpr
       rao-view_helper
 
 PATH
   remote: ../cmor_legal
   specs:
     cmor_legal (0.0.44.pre)
+      cmor_cms
       cmor_core (= 0.0.44.pre)
       cmor_core_backend (= 0.0.44.pre)
       rails (>= 5.2.3)
@@ -19,6 +19,17 @@ PATH
   remote: ..
   specs:
     cmor (0.0.44.pre)
+    cmor_cms (0.0.44.pre)
+      RedCloth
+      acts_as_published
+      awesome_nested_set
+      cmor_core (= 0.0.44.pre)
+      cmor_core_frontend (= 0.0.44.pre)
+      coffee-rails
+      draper
+      rails (>= 5.2.3)
+      rao-service (>= 0.0.17.pre)
+      simple-navigation (>= 4.0.0)
     cmor_core (0.0.44.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.44.pre)
@@ -44,6 +55,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.3.2)
     actioncable (5.2.4.1)
       actionpack (= 5.2.4.1)
       nio4r (~> 2.0)
@@ -72,6 +84,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.2.4.1)
       activesupport (= 5.2.4.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.2.4.1)
       activemodel (= 5.2.4.1)
       activesupport (= 5.2.4.1)
@@ -85,6 +101,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_published (1.1.0)
+      rails (>= 3.2.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     administrador (0.0.22.pre)
@@ -105,7 +123,8 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
-    awesome_print (1.8.0)
+    awesome_nested_set (3.2.0)
+      activerecord (>= 4.0.0, < 7.0)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     bootstrap-kaminari-views (0.0.5)
@@ -123,6 +142,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    childprocess (3.0.0)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -132,8 +152,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    cookies_eu (1.7.6)
-      js_cookie_rails (~> 2.2.0)
     coveralls (0.7.1)
       multi_json (~> 1.3)
       rest-client
@@ -150,6 +168,12 @@ GEM
     docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    draper (3.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -206,8 +230,6 @@ GEM
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
-    js_cookie_rails (2.2.0)
-      railties (>= 3.1)
     kaminari (1.2.0)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.0)
@@ -258,6 +280,8 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.3)
+    puma (4.3.1)
+      nio4r (~> 2.0)
     rack (2.1.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -284,10 +308,6 @@ GEM
     rails-i18n (5.1.3)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
-    rails_eu_gdpr (0.0.4)
-      awesome_print
-      cookies_eu
-      rails (>= 3.2.0)
     railties (5.2.4.1)
       actionpack (= 5.2.4.1)
       activesupport (= 5.2.4.1)
@@ -313,6 +333,11 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
+    rao-service (0.0.39.pre)
+      activemodel
+      activesupport
+      rails (>= 3.2.0)
+      rao
     rao-service_controller (0.0.39.pre)
       font-awesome-rails
       rails (>= 3.2.0)
@@ -328,6 +353,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.6.0)
+    request_store (1.5.0)
+      rack (>= 1.4)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     responders (3.0.0)
@@ -383,10 +410,16 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
+    rubyzip (2.2.0)
+    selenium-webdriver (3.142.7)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
     sexp_processor (4.13.0)
     shellany (0.0.1)
     shoulda-matchers (4.2.0)
       activesupport (>= 4.2.0)
+    simple-navigation (4.1.0)
+      activesupport (>= 2.3.2)
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -457,12 +490,14 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   pry-rails
+  puma
   rails-dummy
   rails-i18n
   rao-shoulda_matchers
   rspec-rails
   rubocop
   rubocop-rails_config
+  selenium-webdriver
   shoulda-matchers
   simplecov
   simplecov-console

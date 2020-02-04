@@ -1,0 +1,5 @@
+= table.column :locale, sort: true
+- if table.method(:timestamps).arity > 0
+  = table.timestamps(sort: true)
+- else
+  = table.timestamps

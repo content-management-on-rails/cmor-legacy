@@ -25,4 +25,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "turbolinks"
+  spec.add_development_dependency "selenium-webdriver"
+  spec.add_development_dependency "puma"
 end

@@ -1,0 +1,22 @@
+<div id="cookies-eu-modal" class="modal fade cookies-eu js-cookies-eu" tabindex="-1" role="dialog">
+  <div class="modal-lg modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t('.title') %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <%= legal_helper(self).render_cookie_preferences(collapsible_preferences: true) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if legal_helper(self).cookie_preferences_pending? %>
+  <script>
+    $(window).on('load',function(){
+      $('#cookies-eu-modal').modal({ backdrop: 'static', keyboard: false })
+    });
+  </script>
+<% end %>

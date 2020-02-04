@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <h1><%= Cmor::Legal::CookiePreferences.model_name.human %></h1>
+
+  <%= render partial: 'hint', locals: { collapsible_preferences: false } %>
+  <%= render partial: 'form', locals: { resource: @resource, collapsible_preferences: false } %>
+</div>
