@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '/de/cookie-einstellungen/edit', type: :feature, js: true do
+RSpec.describe '/de/cookie-einstellungen/edit', type: :system do
   let(:base_path) { '/de/cookie-einstellungen' }
   let(:edit_path) { "#{base_path}/edit" }
 

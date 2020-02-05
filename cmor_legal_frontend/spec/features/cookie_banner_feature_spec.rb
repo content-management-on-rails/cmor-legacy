@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Cookie Banner', type: :feature, js: true do
+RSpec.describe 'Cookie Banner', type: :system do
   describe 'visibility' do
     before(:each) do
       visit '/'
