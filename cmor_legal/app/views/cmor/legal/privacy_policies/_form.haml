@@ -2,9 +2,13 @@
   = form.input :locale,  collection: I18n.available_locales.map(&:to_s)
 
 .well
-  ~ form.input :meta_description
+  ~ form.input :title
+  ~ form.input :meta_description, as: :string
   ~ form.input :body
 
 .well
   = form.input :format,  collection: Mime::SET.symbols
   = form.input :handler, collection: ActionView::Template::Handlers.extensions
+
+.well
+  = form.input :published, as: :boolean

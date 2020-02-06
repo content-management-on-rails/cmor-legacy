@@ -3,6 +3,11 @@ de:
     cmor/legal/engine: Juristisches
   routes:
     cmor-legal-engine: juristisches
+  activerecord:
+    models:
+      cmor/legal/privacy_policy:
+        one: Datenschutzerklärung
+        other: Datenschutzerklärungen
   activemodel:
     models:
       cmor/legal/cookie_preferences:

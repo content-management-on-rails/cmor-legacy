@@ -20,7 +20,6 @@ Or install it yourself as:
 ```bash
 $ gem install cmor_legal
 ```
-
 ## Contributing
 Contribution directions go here.
 

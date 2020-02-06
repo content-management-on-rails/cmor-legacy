@@ -4,13 +4,13 @@ module Cmor
       after_initialize :set_defaults, :if => :new_record?
       before_validation :set_locale_dependent_defaults, :if => :new_record?
 
-      default_scope { where(:pathname => '/cmor/legal/privacy_policies/', :basename => 'show') }
+      default_scope { where(:pathname => '/cmor/legal/', :basename => 'show') }
 
       private
 
       def set_defaults
-        self.pathname ||= '/cmor/legal/privacy_policies/'
-        self.basename ||= 'show'
+        self.pathname ||= '/cmor/legal/'
+        self.basename ||= 'privacy_policy'
         self.handler  ||= 'textile'
       end
 
