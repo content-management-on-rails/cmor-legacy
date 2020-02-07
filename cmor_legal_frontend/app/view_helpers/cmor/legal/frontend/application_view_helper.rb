@@ -14,7 +14,7 @@ module Cmor::Legal
         return unless ::Cmor::Legal::Configuration.enable_cookie_consent_banner
 
         unless c.request.path == c.cmor_legal_frontend.privacy_policy_path(options_for_url_helper) || c.request.path == c.cmor_legal_frontend.edit_cookie_preferences_path(options_for_url_helper)
-          c.render('cmor/legal/frontend/cookies/consent_banner') 
+          c.render("cmor/legal/frontend/cookies/consent_banner")
         end
       end
 
@@ -34,8 +34,8 @@ module Cmor::Legal
         resource = ::Cmor::Legal::CookiePreferences.new(cookie_store: ::Cmor::Legal::CookieStore.new(cookie_storage))
 
         c.capture do
-          c.concat c.render :partial => 'cmor/legal/frontend/cookie_preferences/hint', locals: { collapsible_preferences: collapsible_preferences } if show_hint
-          c.concat c.render :partial => 'cmor/legal/frontend/cookie_preferences/form', locals: { resource: resource, collapsible_preferences: collapsible_preferences }
+          c.concat c.render partial: "cmor/legal/frontend/cookie_preferences/hint", locals: { collapsible_preferences: collapsible_preferences } if show_hint
+          c.concat c.render partial: "cmor/legal/frontend/cookie_preferences/form", locals: { resource: resource, collapsible_preferences: collapsible_preferences }
         end.html_safe
       end
 
@@ -50,10 +50,9 @@ module Cmor::Legal
       end
 
       private
-
-      def cookie_storage
-        c.send(::Cmor::Legal::Configuration.cookie_storage)
-      end
+        def cookie_storage
+          c.send(::Cmor::Legal::Configuration.cookie_storage)
+        end
     end
   end
 end

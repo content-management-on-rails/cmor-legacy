@@ -1,1 +1,3 @@
-require 'webdrivers'
+# frozen_string_literal: true
+
+require "webdrivers"
