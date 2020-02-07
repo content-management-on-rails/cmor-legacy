@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Legal
     class CookiePreferences
@@ -10,7 +12,7 @@ module Cmor
         @cookies ||= ::Cmor::Legal::Configuration.cookies.call(cookie_store)
         @cookies.map(&:identifier).each do |identifier|
           singleton_class.class_eval do
-            # attr_accessor c 
+            # attr_accessor c
             define_method(identifier) do
               @cookies.find { |c| c.identifier == identifier }.value
             end

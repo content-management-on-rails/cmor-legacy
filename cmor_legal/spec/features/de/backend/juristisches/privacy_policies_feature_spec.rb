@@ -1,6 +1,8 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
-RSpec.describe '/de/backend/juristisches/privacy_policies', type: :feature do
+require "rails_helper"
+
+RSpec.describe "/de/backend/juristisches/privacy_policies", type: :feature do
   # let(:resource_class) { EuGdpr::PrivacyPolicy }
   let(:resource_class) { Cmor::Legal::PrivacyPolicy }
   let(:resource) { create(:cmor_legal_privacy_policy) }
@@ -22,7 +24,7 @@ RSpec.describe '/de/backend/juristisches/privacy_policies', type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        select 'en', from: 'privacy_policy[locale]'
+        select "en", from: "privacy_policy[locale]"
         fill_in "privacy_policy[title]", with: "Privacy Policy"
         fill_in "privacy_policy[body]", with: "<h1>Privacy Policy</h1>"
       }

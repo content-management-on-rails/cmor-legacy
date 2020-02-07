@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Legal
     class CookieStore
@@ -21,7 +23,7 @@ module Cmor
 
       def set_value(identifier, value, expires = nil)
         if @store.is_a?(ActionDispatch::Cookies::CookieJar)
-          @store[self.class.add_prefix_to_identifier(identifier)] = { :value => value, :expires => expires }
+          @store[self.class.add_prefix_to_identifier(identifier)] = { value: value, expires: expires }
         else
           @store[self.class.add_prefix_to_identifier(identifier)] = value
         end
@@ -29,7 +31,7 @@ module Cmor
 
       def cookies
         @store.select { |key, value| key.to_s.start_with?(self.class.cookie_prefix) }.each_with_object({}) do |(k, v), m|
-          m[k.gsub(self.class.cookie_prefix, '')] = v
+          m[k.gsub(self.class.cookie_prefix, "")] = v
         end
       end
     end

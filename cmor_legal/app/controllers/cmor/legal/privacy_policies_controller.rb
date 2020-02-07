@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Legal
     class PrivacyPoliciesController < Cmor::Core::Backend::ResourcesController::Base
@@ -8,10 +10,9 @@ module Cmor
       end
 
       private
-
-      def permitted_params
-        params.require(:privacy_policy).permit(:locale, :meta_description, :title, :body, :format, :handler, :published)
-      end
+        def permitted_params
+          params.require(:privacy_policy).permit(:locale, :meta_description, :title, :body, :format, :handler, :published)
+        end
     end
   end
 end

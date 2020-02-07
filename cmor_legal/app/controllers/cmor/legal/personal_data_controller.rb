@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Legal
     class PersonalDataController < Cmor::Core::Backend::ResourcesController::Base
@@ -10,14 +12,13 @@ module Cmor
       end
 
       private
+        def load_collection
+          @collection = Kaminari.paginate_array(load_collection_scope.all).page(params[:page])
+        end
 
-      def load_collection
-        @collection = Kaminari.paginate_array(load_collection_scope.all).page(params[:page])
-      end
-
-      def permitted_params
-        params.require(:personal_data_registry).permit()
-      end
+        def permitted_params
+          params.require(:personal_data_registry).permit()
+        end
     end
   end
 end

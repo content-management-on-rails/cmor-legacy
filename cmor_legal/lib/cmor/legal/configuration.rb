@@ -30,9 +30,9 @@ module Cmor::Legal
     mattr_accessor(:enforce_ssl) { true }
     mattr_accessor(:enable_cookie_consent_banner) { true }
     mattr_accessor(:cookies) do
-      ->(cookie_store = ::Cmor::Legal::CookieStore.new({})) {[
+      ->(cookie_store = ::Cmor::Legal::CookieStore.new({})) { [
         ::Cmor::Legal::Cookie.new(identifier: :basic, adjustable: false, default: true,  cookie_store: cookie_store)
-      ]} 
+      ]}
     end
     mattr_accessor(:cookie_prefix) { "#{Rails.application.class.name.deconstantize.underscore}-eu_gdpr-" }
     mattr_accessor(:cookie_storage) { :cookies }
@@ -54,7 +54,7 @@ module Cmor::Legal
     end
 
     def self.privacy_policy_available_for(locale)
-      Cmor::Legal::PrivacyPolicy.where(:locale => locale).any?
+      Cmor::Legal::PrivacyPolicy.where(locale: locale).any?
     end
 
     def self.filtered_log_parameters

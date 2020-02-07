@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Legal
     class PersonalData
@@ -10,7 +12,7 @@ module Cmor
       end
 
       def build_hash_with_options!
-        Cmor::Legal::PersonalDataHashBuilder.new({ :root => root, :options => options, :block => block }, { :with_options => true }).hash
+        Cmor::Legal::PersonalDataHashBuilder.new({ root: root, options: options, block: block }, { with_options: true }).hash
       end
 
       def to_hash
@@ -18,7 +20,7 @@ module Cmor
       end
 
       def build_hash!
-        Cmor::Legal::PersonalDataHashBuilder.new({ :root => root, :options => options, :block => block }, { :with_options => false }).hash
+        Cmor::Legal::PersonalDataHashBuilder.new({ root: root, options: options, block: block }, { with_options: false }).hash
       end
 
       def self.all
@@ -34,11 +36,11 @@ module Cmor
       end
 
       def self.find(id)
-        all.find {|x| x.root == id.gsub('-', '/').camelize }
+        all.find { |x| x.root == id.gsub("-", "/").camelize }
       end
 
       def id
-        root.underscore.gsub('/', '-')
+        root.underscore.gsub("/", "-")
       end
 
       def to_param
@@ -46,14 +48,13 @@ module Cmor
       end
 
       def to_s
-        [self.class.model_name.human, root_model_human].compact.join(' - ')
+        [self.class.model_name.human, root_model_human].compact.join(" - ")
       end
 
       def root_model_human
         return if root.nil?
         root.constantize.model_name.human
       end
-
     end
   end
 end
