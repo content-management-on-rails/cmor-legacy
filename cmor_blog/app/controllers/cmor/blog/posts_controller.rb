@@ -18,14 +18,14 @@ module Cmor
 
       def load_collection_scope
         if params.has_key?(:year)
-          super.published.for_date(params[:year], params[:month], params[:day])
+          super.published.for_locale.for_date(params[:year], params[:month], params[:day])
         else
-          super.published
+          super.published.for_locale
         end
       end
 
       def load_resource_scope
-        super.published.friendly
+        super.published.for_locale.friendly
       end
     end
   end

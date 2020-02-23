@@ -58,6 +58,24 @@ Version 1.3.0 brings you positionable posts via acts_as_list. You have to migrat
 $ rake cmor_blog:install:migrations db:migrate cmor:blog:initialize_post_positions
 ```
 
+## Updating to 0.0.45.pre
+
+0.0.45.pre makes post creators optional. Configuration.creator_label_method_name is replaced by Configuration.creator_label_for_post_proc(post). You have to remove config.creator_label_method_name from config/initializers/cmor_blog and replace it:
+
+Assume you had the following:
+
+    # config/initializers/cmor_blog.rb
+    Cmor::Blog.configure do |config|
+      config.creator_label_method_name = :to_s
+    end
+
+Replace it with:
+
+    # config/initializers/cmor_blog.rb
+    Cmor::Blog.configure do |config|
+      config.creator_label_for_post_proc = -> (post) { post.creator.to_s }
+    end
+
 ## Configuration
 
 See the generated initializer in config/initializers/cmor_blog.rb for configuration options.

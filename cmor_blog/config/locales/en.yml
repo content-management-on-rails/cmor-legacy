@@ -12,17 +12,18 @@ en:
     attributes:
       cmor/blog/post:
         id: ID
-        assets: Asset
         asset_details_count: Assets
-        title: Title
-        tags: Tags
+        assets: Asset
         body: Body
+        created_by_id: Created by
+        creator: Created by
+        locale: Locale
         position: Position
         published: Published
         published_at: Published at
-        created_by_id: Created by
-        creator: Created by
         slug: Slug
+        tags: Tags
+        title: Title
         updated_by_id: Updated by
         updater: Updated by
         created_at: Created at

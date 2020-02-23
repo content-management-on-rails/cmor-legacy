@@ -12,17 +12,18 @@ de:
     attributes:
       cmor/blog/post:
         id: ID
-        assets: Anhänge
         asset_details_count: Anhänge
-        title: Titel
-        tags: Tags
+        assets: Anhänge
         body: Inhalt
+        created_by_id: Erstellt von
+        creator: Erstellt von
+        locale: Sprache
         position: Position
         published: Veröffentlicht
         published_at: Veröffentlicht am
-        created_by_id: Erstellt von
-        creator: Erstellt von
         slug: Freundliche ID
+        tags: Tags
+        title: Titel
         updated_by_id: Aktualisiert von
         updater: Aktualisiert von
         created_at: Erstellt am

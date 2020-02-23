@@ -19,10 +19,12 @@ module Cmor
       extend FriendlyId
       friendly_id :title, use: :slugged
 
-      belongs_to :creator, class_name: Cmor::Blog.creator_class_name, foreign_key: 'created_by_id'
+      belongs_to :creator, class_name: Cmor::Blog.creator_class_name, foreign_key: 'created_by_id', optional: true
       belongs_to :updater, class_name: Cmor::Blog.creator_class_name, foreign_key: 'updated_by_id', optional: true
 
       scope :for_date, ->(year, month, day) { where(created_at: "#{year}-#{month || 1}-#{day || 1}".to_date.beginning_of_month.."#{year}-#{month || 1}-#{day || 1}".to_date.end_of_month) }
+
+      validates :title, :body, presence: true
 
       def human
         title
@@ -112,6 +114,8 @@ module Cmor
       end
 
       include PreviewPictureConcern
+
+      include Cmor::Core::Model::LocalizationConcern
     end
   end
 end

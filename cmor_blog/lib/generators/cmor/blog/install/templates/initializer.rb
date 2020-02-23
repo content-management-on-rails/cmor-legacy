@@ -46,9 +46,17 @@ Cmor::Blog.configure do |config|
   #
   config.preview_picture_asset_variant_options = { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
 
-  # Method to call on creator for display.
+  # Define how the author will be shown on posts.
   #
-  # default: config.creator_label_method_name = :to_s
+  # You can generalize the label by not taking the creator into account at all:
   #
-  config.creator_label_method_name = :to_s
+  #     config.creator_label_for_post_proc = -> (post) { "Site Owner" }
+  #
+  # You can show a default when the creator is not set:
+  #
+  #     config.creator_label_for_post_proc = -> (post) { post.creator&.to_s || "Site owner" }
+  #
+  # default: config.creator_label_for_post_proc = -> (post) { post.creator&.to_s }
+  #
+  config.creator_label_for_post_proc = -> (post) { post.creator&.to_s }
 end
