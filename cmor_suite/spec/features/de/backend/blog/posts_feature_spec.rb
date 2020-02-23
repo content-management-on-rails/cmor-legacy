@@ -27,6 +27,7 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
           #     check 'slider[auto_start]'
           #     fill_in 'slider[interval]', with: '3'
           fill_in 'post[title]', with: 'My first blog post'
+          fill_in 'post[body]', with: 'Lorem Ipsum.'
           attach_file('post[assets][]', File.absolute_path(Cmor::Blog::Engine.root.join('spec', 'files', 'cmor', 'blog', 'asset', 'example.jpg')))
         }
         .increasing{ Cmor::Blog::Post.count }.by(1)
