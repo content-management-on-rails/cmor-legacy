@@ -4,10 +4,10 @@ module Cmor
       module SpecHelpers
         module Feature
           def accept_eu_gdpr_cookies
-            if has_css?('#eu-gdpr-cookies-accept')
-              find('#eu-gdpr-cookies-accept').click
+            if has_css?('#cmor-legal-cookies-accept')
+              find('#cmor-legal-cookies-accept').click
             else
-              puts "WARNING: Could not accept EU GDPR Cookies as the consent button (#eu-gdpr-cookies-accept) was not found."
+              puts "WARNING: Could not accept EU GDPR Cookies as the consent button ('#cmor-legal-cookies-accept') was not found."
             end
           end
         end
