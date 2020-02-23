@@ -5,6 +5,7 @@ module Cmor
         desc 'Generates the migrations'
 
         class_option :excluded_modules, type: 'array', default: [], aliases: '-e'
+        class_option :included_modules, type: 'array', default: %w(blog carousels cms contact files galleries links partners rbac seo showcase tags testimonials user_area), aliases: '-e'
 
         def generate_active_storage_migrations
           `rails active_storage:install:migrations` if needs_active_storage?
@@ -23,7 +24,7 @@ module Cmor
         private
 
         def sub_modules
-          @sub_modules ||= %w(blog carousels cms contact files galleries links partners rbac seo showcase tags testimonials user_area) - options['excluded_modules']
+          @sub_modules ||= options['included_modules'] - options['excluded_modules']
         end
 
         def needs_active_storage?

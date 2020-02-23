@@ -9,6 +9,7 @@ module Cmor
         source_root File.expand_path('../templates', __FILE__)
 
         class_option :excluded_modules, type: 'array', default: [], aliases: '-e'
+        class_option :included_modules, type: 'array', default: %w(blog carousels cms contact core files galleries links partners rbac seo showcase system tags testimonials user_area), aliases: '-i'
 
         def initialize(*args)
           ENV['CMOR_RBAC_USER_CLASS_NAME'] ||= 'Cmor::UserArea::User'
@@ -50,20 +51,20 @@ module Cmor
 
         def run_migrations_generator
           if options['excluded_modules'].any?
-            generate "cmor:suite:migrations", "-e #{options['excluded_modules'].join(' ')}"
+            generate "cmor:suite:migrations", "-i #{options['included_modules'].join(' ')} -e #{options['excluded_modules'].join(' ')}"
           else
-            generate "cmor:suite:migrations"
+            generate "cmor:suite:migrations", "-i #{options['included_modules'].join(' ')}"
           end
         end
 
         private
 
         def legacy_sub_modules
-          @legacy_sub_modules ||= %w(blog carousels core cms contact files galleries links rbac tags testimonials user_area) - options['excluded_modules']
+          @legacy_sub_modules ||= (options['included_modules'] & %w(blog carousels core cms contact files galleries links rbac tags testimonials user_area)) - options['excluded_modules']
         end
 
         def sub_modules
-          @sub_modules ||= %w(partners seo showcase system) - options['excluded_modules']
+          @sub_modules ||= (options['included_modules'] & %w(legal partners seo showcase system)) - options['excluded_modules']
         end
       end
     end
