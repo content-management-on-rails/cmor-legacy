@@ -8,4 +8,5 @@ require 'haml-rails'
 
 require 'cmor/core/model/collection_concern'
 require 'cmor/core/model/localization_concern'
+require 'cmor/core/model/identifier_concern'
 require 'cmor/galleries'
