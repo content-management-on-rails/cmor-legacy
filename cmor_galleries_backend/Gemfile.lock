@@ -4,7 +4,7 @@ PATH
     cmor_core_backend (0.0.44.pre)
       administrador (>= 0.0.22.pre)
       cmor_core (= 0.0.44.pre)
-      rails (>= 5.2.0)
+      rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_galleries
@@ -14,8 +14,9 @@ PATH
       acts_as_published
       cmor_core (= 0.0.44.pre)
       cmor_core_frontend (= 0.0.44.pre)
+      friendly_id
       haml-rails
-      rails (>= 5.2.0)
+      rails (>= 5.2.3)
       rao-resources_controller (>= 0.0.14.pre)
 
 PATH
@@ -33,8 +34,7 @@ PATH
       route_translator
     cmor_core_frontend (0.0.44.pre)
       cmor_core (= 0.0.44.pre)
-      rails (>= 5.2.0)
-      rails_eu_gdpr
+      rails (>= 5.2.3)
       rao-view_helper
 
 PATH
@@ -44,7 +44,7 @@ PATH
       cmor_core (= 0.0.44.pre)
       cmor_core_backend (= 0.0.44.pre)
       cmor_galleries (= 0.0.44.pre)
-      rails (>= 5.2.0)
+      rails (>= 5.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -114,7 +114,6 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
-    awesome_print (1.8.0)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -139,8 +138,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    cookies_eu (1.7.6)
-      js_cookie_rails (~> 2.2.0)
     coveralls (0.8.23)
       json (>= 1.8, < 3)
       simplecov (~> 0.16.1)
@@ -167,6 +164,8 @@ GEM
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
     formatador (0.2.5)
+    friendly_id (5.3.0)
+      activerecord (>= 4.0.0)
     git_log_generator (0.0.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -209,8 +208,6 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
-    js_cookie_rails (2.2.0)
-      railties (>= 3.1)
     json (2.2.0)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -283,10 +280,6 @@ GEM
     rails-i18n (5.1.3)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
-    rails_eu_gdpr (0.0.4)
-      awesome_print
-      cookies_eu
-      rails (>= 3.2.0)
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)

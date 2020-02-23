@@ -1,3 +1,5 @@
+= table.acts_as_list_actions
+= table.column :locale, sort: true
 = table.column :preview do |resource|
   - if resource.picture_details.first.try(:asset).present?
     - bootstrap_card(image_options: { src: main_app.url_for(resource.picture_details.first.asset.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))) })
