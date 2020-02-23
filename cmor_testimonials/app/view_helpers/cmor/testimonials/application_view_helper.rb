@@ -1,6 +1,18 @@
 module Cmor
   module Testimonials
+    # Example:
+    #
+    #     # app/controllers/application_controller.rb
+    #     class ApplicationController < ActionController::Base
+    #       view_helper Cmor::Testimonials::ApplicationViewHelper, as: :testimonials_helper
+    #     end
+    #
     class ApplicationViewHelper < Rao::ViewHelper::Base
+      # Example:
+      #
+      #     # app/views/layouts/application.html.haml
+      #     = testimonials_helper(self).render_category(category_identifier)
+      #
       def render_category(category_or_identifier, options = {})
         default_variant_options = Cmor::Testimonials::Configuration.image_variant_options[:category]
         options.reverse_merge!(
