@@ -1,11 +1,11 @@
 module Cmor::Files
-  class FoldersController < ApplicationResourcesController
+  class FileDetailsController < ApplicationResourcesController
     include Rao::ResourcesController::FriendlyIdConcern
 
     helper Rao::Component::ApplicationHelper
 
     def self.resource_class
-      Cmor::Files::Folder
+      Cmor::Files::FileDetail
     end
 
     private

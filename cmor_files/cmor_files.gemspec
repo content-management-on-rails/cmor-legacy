@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "acts_as_published"
+  s.add_dependency "acts_as_list"
+  s.add_dependency "friendly_id"
   s.add_dependency "rao-resources_controller"
   s.add_dependency "rao-component"
 end

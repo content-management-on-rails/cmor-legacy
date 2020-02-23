@@ -1,71 +1,85 @@
-module Cmor::Files
-  class Folder < ApplicationRecord
-    include ActsAsPublished::ActiveRecord
+module Cmor
+  module Files
+    class Folder < ApplicationRecord
+      include Cmor::Core::Model::LocalizationConcern
 
-    has_many_attached :assets
+      has_many_attached :assets
 
-    acts_as_published
+      # acts as published
+      include ActsAsPublished::ActiveRecord
+      acts_as_published
 
-    validates :name, presence: true, uniqueness: true
+      # acts as list
+      acts_as_list
+      default_scope { order(position: :asc) }
 
-    def human
-      "#{self.class.model_name.human}: #{I18n.l(created_at)}"
-    end
+      # slugs
+      extend FriendlyId
+      friendly_id :name, use: :slugged
 
-    def assets_count
-      assets.count
-    end
 
-    module FileDetailsConcern
-      extend ActiveSupport::Concern
+      validates :name, presence: true, uniqueness: { scope: [ :locale ] }
+      validates :identifier, uniqueness: { scope: [ :locale ] }, allow_nil: true, allow_blank: true
 
-      included do
-        has_many :file_details, inverse_of: :folder, dependent: :destroy, autosave: true
-        before_validation :cleanup_orphaned_file_details
-        before_validation :ensure_file_details
+      def human
+        "#{self.class.model_name.human}: #{self.name}"
       end
 
-      def append_assets
-        assets
+      def assets_count
+        assets.count
       end
 
-       def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
+      module FileDetailsConcern
+        extend ActiveSupport::Concern
+
+        included do
+          has_many :file_details, inverse_of: :folder, dependent: :destroy, autosave: true
+          before_validation :cleanup_orphaned_file_details
+          before_validation :ensure_file_details
+        end
+
+        def append_assets
+          assets
+        end
+
+         def append_assets=(assets)
+            if Rails.version < '6.0.0'
+              self.assets = assets
+            else
+              self.assets.attach(assets)
+            end
+          end
+
+        def overwrite_assets
+          assets
+        end
+
+        def overwrite_assets=(assets)
+          return if assets.nil? || assets.empty?
+          self.file_details.map { |fd| fd.mark_for_destruction }
+          self.assets = assets
+        end
+
+        private
+
+        def cleanup_orphaned_file_details
+          file_details.each do |file_detail|
+            file_detail.destroy if file_detail.asset.nil?
           end
         end
 
-      def overwrite_assets
-        assets
-      end
+        def ensure_file_details
+          (assets - file_details.all.map(&:asset)).map do |asset|
+            build_file_detail_for_asset(asset)
+          end
+        end
 
-      def overwrite_assets=(assets)
-        return if assets.nil? || assets.empty?
-        self.file_details.map { |fd| fd.mark_for_destruction }
-        self.assets = assets
-      end
-
-      private
-
-      def cleanup_orphaned_file_details
-        file_details.each do |file_detail|
-          file_detail.destroy if file_detail.asset.nil?
+        def build_file_detail_for_asset(asset)
+          file_details.build(asset: asset)
         end
       end
 
-      def ensure_file_details
-        (assets - file_details.all.map(&:asset)).map do |asset|
-          build_file_detail_for_asset(asset)
-        end
-      end
-
-      def build_file_detail_for_asset(asset)
-        file_details.build(asset: asset)
-      end
+      include FileDetailsConcern
     end
-
-    include FileDetailsConcern
   end
 end

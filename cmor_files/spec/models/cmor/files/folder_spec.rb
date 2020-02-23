@@ -7,6 +7,6 @@ module Cmor::Files
     it { expect(subject).to respond_to(:assets_count) }
     
     it { expect(subject).to validate_presence_of(:name) }
-    it { expect(subject).to validate_uniqueness_of(:name) }
+    it { expect(subject).to validate_uniqueness_of(:name).scoped_to([:locale]) }
   end
 end

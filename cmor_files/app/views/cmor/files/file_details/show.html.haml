@@ -1,13 +1,13 @@
-%h1= @resource.name
+%h1= @resource.title
 
 .row
   .col-12
-    = collection_table(collection: @resource.file_details, resource_class: Cmor::Files::FileDetail, header: false) do |table|
-      = table.column :filename do |resource|
+    = resource_table(resource: @resource, resource_class: Cmor::Files::FileDetail, header: false) do |table|
+      = table.row :filename do |resource|
         - resource.asset.blob.filename
-      = table.column :blob_byte_size do |resource|
+      = table.row :blob_byte_size do |resource|
         - number_to_human_size(resource.asset.blob.byte_size)
-      = table.column :actions do |resource|
+      = table.row :actions do |resource|
         - capture_haml do
           = link_to(t('.download'), main_app.url_for(resource.asset), class: 'btn btn-primary')
 
