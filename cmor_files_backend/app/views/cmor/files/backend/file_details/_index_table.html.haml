@@ -1,5 +1,5 @@
 = table.batch_actions( actions: { destroy: destroy_many_attachments_path })
-= table.id
+= table.acts_as_list_actions
 = table.column :filename do |resource|
   - resource.asset.blob.filename
 = table.column :blob_content_type do |resource|
@@ -11,3 +11,4 @@
 = table.column :blob_created_at do |resource|
   - I18n.l(resource.asset.blob.created_at, format: :short)
 = table.timestamp :created_at
+= table.acts_as_published_actions

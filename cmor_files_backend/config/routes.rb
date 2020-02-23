@@ -4,14 +4,19 @@ Cmor::Files::Backend::Engine.routes.draw do
   end
 
   resources :folders do
-    post :toggle_published, on: :member
+    acts_as_list
+    acts_as_published
     post :destroy_many, on: :collection
     post :unpublish_many, on: :collection
     post :publish_many, on: :collection
   end
 
   resources :file_details do
+    acts_as_list
+    acts_as_published
     post :destroy_many, on: :collection
+    post :unpublish_many, on: :collection
+    post :publish_many, on: :collection
   end
 
   root to: 'home#index'

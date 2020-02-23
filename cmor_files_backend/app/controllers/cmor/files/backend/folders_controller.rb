@@ -2,7 +2,9 @@ module Cmor
   module Files
     module Backend
       class FoldersController < Cmor::Core::Backend::ResourcesController::Base
+        include Rao::ResourcesController::ActsAsListConcern
         include Rao::ResourcesController::ActsAsPublishedConcern
+        include Rao::ResourcesController::FriendlyIdConcern
 
         def self.resource_class
           Cmor::Files::Folder
