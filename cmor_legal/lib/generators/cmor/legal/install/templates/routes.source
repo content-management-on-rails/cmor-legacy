@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Legal::Engine, at: '/backend/cmor-legal-engine'
+  end

@@ -13,6 +13,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib,spec}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
-  s.add_dependency 'rails_eu_gdpr'
   s.add_dependency 'rao-view_helper'
 end

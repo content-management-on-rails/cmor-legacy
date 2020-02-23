@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-lg-12 span6">
+    <p>Cookies helfen uns bei der Bereitstellung unserer Dienste. Durch die Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies setzen.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 span6">
+    <h5>Erforderliche Cookies</h5>
+    <p>Diese Cookies sind für die Kernfunktionen der Website erforderlich und werden automatisch aktiviert, wenn Sie diese Website nutzen.</p>
+    <p>
+      <% if defined?(link).present? %>
+        <a href="<%= link %>" class="btn btn-secondary btn-default cookies-eu-link" target="<%= target.present? ? target : '' %>">Mehr erfahren</a>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-lg-6 span12">
+    <h5>Gestattete Funktionalität</h5>
+    <p>Speichern die Anmeldeinformationen und sorgen für sichere Anmeldung</p>
+    <p>Speichern Ihren Aufgaben- oder Transaktionsfortschritt</p>
+  </div>
+</div>

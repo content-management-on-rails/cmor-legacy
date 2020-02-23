@@ -1,0 +1,6 @@
+= table.column :locale, sort: true
+= table.acts_as_published_actions
+- if table.method(:timestamps).arity > 0
+  = table.timestamps(sort: true)
+- else
+  = table.timestamps

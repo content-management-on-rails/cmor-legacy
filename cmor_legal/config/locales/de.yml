@@ -1,0 +1,20 @@
+de:
+  classes:
+    cmor/legal/engine: Juristisches
+  routes:
+    cmor-legal-engine: juristisches
+  activerecord:
+    models:
+      cmor/legal/privacy_policy:
+        one: Datenschutzerklärung
+        other: Datenschutzerklärungen
+  activemodel:
+    models:
+      cmor/legal/cookie_preferences:
+        one: Cookie-Einstellungen
+        other: Cookie-Einstellungen
+      cmor/legal/personal_data:
+        one: Persönliche Daten
+        other: Persönliche Daten
+
+

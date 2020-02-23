@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-lg-12 span6">
+    <p>Cookies help us in providing our services. By using our services, you agree that we set cookies.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 span6">
+    <h5>Required cookies</h5>
+    <p>
+      These cookies are required for the core functionality of the website and are automatically activated when you use this website.</p>
+    <p>
+      <% if defined?(link).present? %>
+        <a href="<%= link %>" class="btn btn-secondary btn-default cookies-eu-link" target="<%= target.present? ? target : '' %>">Learn more</a>
+      <% end %>
+    </p>
+  </div>
+  <div class="col-lg-6 span12">
+    <h5>Permitted functionality</h5>
+    <p>Save your credentials and ensure secure login</p>
+    <p>Save your task or transaction progress</p>
+  </div>
+</div>

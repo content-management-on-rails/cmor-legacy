@@ -1,0 +1,29 @@
+de:
+  # i18n_routing
+  resource:
+    cookie_preferences: cookie-einstellungen
+    privacy_policy: datenschutzerklaerung
+  # route_translator
+  routes:
+    cmor_legal_frontend_engine: ""
+    privacy_policy: datenschutzerklaerung
+    controllers:
+      cmor:
+        legal:
+          frontend:
+            cookie_preferences:
+              cookie_preferences: cookie-einstellungen
+  cmor:
+    legal:
+      frontend:
+        cookie_preferences:
+          update:
+            success: 'Ihre Einstellungen wurden gespeichert.'
+        cookies:
+          consent_banner:
+            title: "Wir verwenden Cookies"
+  helpers:
+    submit:
+      cookie_preferences:
+        create: "Ich stimme zu"
+        update: "Ich stimme zu"

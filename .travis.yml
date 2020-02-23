@@ -20,6 +20,8 @@ env:
   - GEM=cmor_files_backend
   - GEM=cmor_galleries
   - GEM=cmor_galleries_backend
+  - GEM=cmor_legal
+  - GEM=cmor_legal_frontend
   - GEM=cmor_links
   - GEM=cmor_links_backend
   - GEM=cmor_partners

@@ -1,0 +1,15 @@
+en:
+  classes:
+    cmor/legal/engine: Legal
+  routes:
+    cmor-legal-engine: legal
+  activemodel:
+    models:
+      cmor/legal/cookie_preferences:
+        one: Cookie preferences
+        other: Cookie preferences
+      cmor/legal/personal_data:
+        one: Personal Data
+        other: Personal Data
+
+
