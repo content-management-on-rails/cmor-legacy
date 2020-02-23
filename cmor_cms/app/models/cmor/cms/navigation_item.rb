@@ -78,7 +78,7 @@ module Cmor::Cms
     end
 
     def update_navigation_from_parent
-      self.navigation = parent.navigation
+      self.navigation = parent.navigation if parent.present?
     end
 
     def update_url_form_page
