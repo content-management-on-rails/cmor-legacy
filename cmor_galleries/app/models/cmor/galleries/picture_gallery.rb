@@ -1,13 +1,9 @@
 module Cmor
   module Galleries
     class PictureGallery < ApplicationRecord
-      include ActsAsPublished::ActiveRecord
+      include Cmor::Core::Model::CollectionConcern
 
       has_many_attached :assets
-
-      acts_as_published
-
-      validates :name, presence: true, uniqueness: true
 
       module PictureDetails
         extend ActiveSupport::Concern

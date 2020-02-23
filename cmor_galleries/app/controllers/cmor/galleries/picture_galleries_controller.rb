@@ -1,17 +1,21 @@
-module Cmor::Galleries
-  class PictureGalleriesController < ApplicationResourcesController
-    def self.resource_class
-      Cmor::Galleries::PictureGallery
-    end
+module Cmor
+  module Galleries
+    class PictureGalleriesController < ApplicationResourcesController
+      include Rao::ResourcesController::FriendlyIdConcern
 
-    private
+      def self.resource_class
+        Cmor::Galleries::PictureGallery
+      end
 
-    def load_collection_scope
-      super.published
-    end
+      private
 
-    def load_resource_scope
-      super.published
+      def load_collection_scope
+        super.published
+      end
+
+      def load_resource_scope
+        super.published
+      end
     end
   end
 end

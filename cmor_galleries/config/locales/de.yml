@@ -18,12 +18,16 @@ de:
         append_assets: Bilder hinzufügen
         description: Beschreibung
         display_code_for_erb: Anzeigecode (erb)
+        identifier: Bezeichner
+        locale: Sprache
         name: Name
         overwrite_assets: Bilder ersetzen
         picture_details_count: Bilder
+        position: Position
         preview: Vorschau
-        published_at: Veröffentlicht am
         published: Veröffentlicht
+        published_at: Veröffentlicht am
+        slug: Freundliche ID
         created_at: Erstellt am
         updated_at: Aktualisiert am
       cmor/galleries/picture_detail:
