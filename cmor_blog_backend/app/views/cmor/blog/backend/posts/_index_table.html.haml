@@ -1,9 +1,10 @@
 = table.acts_as_list_actions
+= table.column :locale, sort: true
 = table.column :title, sort: true
 = table.column :body, sort: true do |resource|
   - resource.body[0..100]
 = table.column :asset_details_count
-= table.association :creator, label_method: ->(r) { r.send(Cmor::Blog::Configuration.creator_label_method_name) }
-= table.association :updater, label_method: ->(r) { r.send(Cmor::Blog::Configuration.creator_label_method_name) }
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.association :updater, label_method: ->(r) { administrador_helper(self).label_for(r) }
 = table.timestamps sort: true
 = table.acts_as_published_actions

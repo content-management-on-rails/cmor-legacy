@@ -1,6 +1,7 @@
 .bottom-margin-1
-  = "#{Cmor::Blog::Post.human_attribute_name(:creator)}: #{form.object.creator.send(Cmor::Blog::Configuration.creator_label_method_name) }"
+  = "#{Cmor::Blog::Post.human_attribute_name(:creator)}: #{administrador_helper(self).label_for(form.object.creator)}"
 
+= form.input :locale, collection: I18n.available_locales.map(&:to_s)
 = form.input :title
 = form.input :body
 = form.input :published, as: :boolean
