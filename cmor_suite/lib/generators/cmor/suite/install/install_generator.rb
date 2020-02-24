@@ -9,7 +9,7 @@ module Cmor
         source_root File.expand_path('../templates', __FILE__)
 
         class_option :excluded_modules, type: 'array', default: [], aliases: '-e'
-        class_option :included_modules, type: 'array', default: %w(blog carousels cms contact core files galleries links partners rbac seo showcase system tags testimonials user_area), aliases: '-i'
+        class_option :included_modules, type: 'array', default: %w(blog carousels cms contact core files galleries legal links partners rbac seo showcase system tags testimonials user_area), aliases: '-i'
 
         def initialize(*args)
           ENV['CMOR_RBAC_USER_CLASS_NAME'] ||= 'Cmor::UserArea::User'
