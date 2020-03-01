@@ -1,55 +1,55 @@
 PATH
   remote: ../cmor_core_frontend
   specs:
-    cmor_core_frontend (0.0.44.pre)
-      cmor_core (= 0.0.44.pre)
+    cmor_core_frontend (0.0.45.pre)
+      cmor_core (= 0.0.45.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: ../cmor_legal
   specs:
-    cmor_legal (0.0.44.pre)
+    cmor_legal (0.0.45.pre)
       cmor_cms
-      cmor_core (= 0.0.44.pre)
-      cmor_core_backend (= 0.0.44.pre)
+      cmor_core (= 0.0.45.pre)
+      cmor_core_backend (= 0.0.45.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.44.pre)
-    cmor_cms (0.0.44.pre)
+    cmor (0.0.45.pre)
+    cmor_cms (0.0.45.pre)
       RedCloth
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.44.pre)
-      cmor_core_frontend (= 0.0.44.pre)
+      cmor_core (= 0.0.45.pre)
+      cmor_core_frontend (= 0.0.45.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       simple-navigation (>= 4.0.0)
-    cmor_core (0.0.44.pre)
+    cmor_core (0.0.45.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.44.pre)
+      cmor (= 0.0.45.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.44.pre)
+    cmor_core_backend (0.0.45.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.44.pre)
+      cmor_core (= 0.0.45.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_legal_frontend (0.0.44.pre)
-      cmor_core (= 0.0.44.pre)
-      cmor_core_frontend (= 0.0.44.pre)
+    cmor_legal_frontend (0.0.45.pre)
+      cmor_core (= 0.0.45.pre)
+      cmor_core_frontend (= 0.0.45.pre)
       rails (>= 5.2.3)
 
 GEM
@@ -168,7 +168,7 @@ GEM
     docile (1.3.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    draper (3.1.0)
+    draper (4.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
       activemodel-serializers-xml (>= 1.0)
@@ -408,19 +408,19 @@ GEM
       rubocop-performance (~> 1.3)
       rubocop-rails (~> 2.0)
     ruby-progressbar (1.10.1)
-    ruby_parser (3.14.1)
+    ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
     rubyzip (2.2.0)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sexp_processor (4.13.0)
+    sexp_processor (4.14.1)
     shellany (0.0.1)
     shoulda-matchers (4.2.0)
       activesupport (>= 4.2.0)
     simple-navigation (4.1.0)
       activesupport (>= 2.3.2)
-    simple_form (5.0.1)
+    simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     simple_sidebar (0.0.4.pre)
