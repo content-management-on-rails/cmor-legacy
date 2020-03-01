@@ -2,6 +2,9 @@ module Cmor
   module Galleries
     module Backend
       class PictureDetailsController < Cmor::Core::Backend::ResourcesController::Base
+        include Rao::ResourcesController::ActsAsPublishedConcern
+        include Rao::ResourcesController::ActsAsListConcern
+
         helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper
 
         def self.resource_class
