@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.45.pre)
+    cmor_core (0.0.46.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.45.pre)
+      cmor (= 0.0.46.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,13 +14,13 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.45.pre)
+    cmor (0.0.46.pre)
 
 PATH
   remote: .
   specs:
-    cmor_core_frontend (0.0.45.pre)
-      cmor_core (= 0.0.45.pre)
+    cmor_core_frontend (0.0.46.pre)
+      cmor_core (= 0.0.46.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
