@@ -24,7 +24,7 @@ RSpec.describe "/de/backend/juristisches/privacy_policies", type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        select "en", from: "privacy_policy[locale]"
+        select I18n.locale, from: "privacy_policy[locale]"
         fill_in "privacy_policy[title]", with: "Privacy Policy"
         fill_in "privacy_policy[body]", with: "<h1>Privacy Policy</h1>"
       }
