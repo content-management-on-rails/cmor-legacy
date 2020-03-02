@@ -41,7 +41,7 @@ rails generate cmor:core:backend:install
 rails generate cmor:legal:install
 # rails generate eu_gdpr:install
 # rails generate cmor:cms:install
-# rails cmor_cms:install:migrations
+rails cmor_cms:install:migrations
 
 # Root route
 rails generate controller Home index --no-controller-specs --no-view-specs

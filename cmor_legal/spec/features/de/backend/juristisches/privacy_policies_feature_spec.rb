@@ -28,7 +28,7 @@ RSpec.describe "/de/backend/juristisches/privacy_policies", type: :feature do
         fill_in "privacy_policy[title]", with: "Privacy Policy"
         fill_in "privacy_policy[body]", with: "<h1>Privacy Policy</h1>"
       }
-      .increasing { Cmor::Legal::PrivacyPolicy.count }.by(1)
+      .increasing { Cmor::Legal::PrivacyPolicy.published.count }.by(1)
   }
 
   # Read
