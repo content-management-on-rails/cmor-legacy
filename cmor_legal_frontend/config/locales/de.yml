@@ -1,9 +1,22 @@
 de:
-  # i18n_routing
+  activemodel:
+    models:
+      cmor/legal/allowed_cookie:
+        one: Cookie
+        other: Cookies
+    attributes:
+      cmor/legal/allowed_cookie:
+        name:  Name
+        domain: Domain
+        expiry: Ablauf
+        description: Beschreibung
+    values:
+      cmor/legal/allowed_cookie:
+        expiry:
+          session: Session
   resource:
     cookie_preferences: cookie-einstellungen
     privacy_policy: datenschutzerklaerung
-  # route_translator
   routes:
     cmor_legal_frontend_engine: ""
     privacy_policy: datenschutzerklaerung
@@ -17,6 +30,8 @@ de:
     legal:
       frontend:
         cookie_preferences:
+          allowed_cookies:
+            more: Mehr
           update:
             success: 'Ihre Einstellungen wurden gespeichert.'
         cookies:

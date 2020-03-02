@@ -26,12 +26,12 @@ RSpec.describe "/de/cookie-einstellungen/edit", type: :system do
       visit(edit_path)
     end
 
-    it { expect(page).to have_field("cmor_legal_cookie_checkbox_basic", disabled: true) }
-    it { expect(page.find("input#cmor_legal_cookie_checkbox_basic")).to be_checked }
-    it { expect(page.find("input#cmor_legal_cookie_checkbox_basic")).to be_checked }
-    it { expect(page.find("input#cmor_legal_cookie_checkbox_analytics")).to be_checked }
-    it { expect(page.find("input#cmor_legal_cookie_checkbox_marketing")).to be_checked }
-    it { expect(page.find("input#cmor_legal_cookie_checkbox_social_media")).not_to be_checked }
+    it { expect(page).to have_field("cmor-legal-cookie-basic-accept", disabled: true) }
+    it { expect(page.find("input#cmor-legal-cookie-basic-accept")).to be_checked }
+    it { expect(page.find("input#cmor-legal-cookie-basic-accept")).to be_checked }
+    it { expect(page.find("input#cmor-legal-cookie-analytics-accept")).to be_checked }
+    it { expect(page.find("input#cmor-legal-cookie-marketing-accept")).to be_checked }
+    it { expect(page.find("input#cmor-legal-cookie-social_media-accept")).not_to be_checked }
   end
 
   describe "enabling a cookie" do
@@ -48,18 +48,18 @@ RSpec.describe "/de/cookie-einstellungen/edit", type: :system do
 
     it do
       # First make sure we have
-      expect(page).to have_field("cmor_legal_cookie_checkbox_basic")
-      expect(page.find("input#cmor_legal_cookie_checkbox_basic")).not_to be_checked
+      expect(page).to have_field("cmor-legal-cookie-basic-accept")
+      expect(page.find("input#cmor-legal-cookie-basic-accept")).not_to be_checked
 
       # Check and submit
-      page.find("input#cmor_legal_cookie_checkbox_basic").set(true)
-      within("#new_cookie_preferences") { find("input[type='submit']").click }
+      page.find("input#cmor-legal-cookie-basic-accept").set(true)
+      within("#new_cookie_preferences") { find("input#cmor-legal-cookies-accept[type='submit']").click }
 
       # Check result
       expect(current_path).to eq(edit_path)
       expect(page.body).to include(sucess_message)
 
-      expect(page.find("input#cmor_legal_cookie_checkbox_basic")).to be_checked
+      expect(page.find("input#cmor-legal-cookie-basic-accept")).to be_checked
     end
   end
 end

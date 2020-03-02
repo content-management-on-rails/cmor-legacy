@@ -70,18 +70,33 @@ module Cmor
         value_from_cookie_store.nil?
       end
 
+      module AllowedCookiesConcern
+        extend ActiveSupport::Concern
+
+        def allowed_cookies=(allowed_cookies)
+          @allowed_cookies = allowed_cookies.map { |attributes| Cmor::Legal::AllowedCookie.new(attributes) }
+        end
+
+        def allowed_cookies
+          @allowed_cookies || []
+        end
+      end
+
+      include AllowedCookiesConcern
+
       private
-        def default_expire
-          1.year.from_now
-        end
 
-        def initialize_value
-          @value = pending? ? default : value_from_cookie_store
-        end
+      def default_expire
+        1.year.from_now
+      end
 
-        def cookie_store
-          @cookie_store ||= ::Cmor::Legal::CookieStore.new({})
-        end
+      def initialize_value
+        @value = pending? ? default : value_from_cookie_store
+      end
+
+      def cookie_store
+        @cookie_store ||= ::Cmor::Legal::CookieStore.new({})
+      end
     end
   end
 end

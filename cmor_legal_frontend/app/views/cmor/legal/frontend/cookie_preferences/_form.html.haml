@@ -1,0 +1,30 @@
+#cmor_legal_cookie_preferences
+  = form_for resource, url: cmor_legal_frontend.cookie_preferences_path(legal_helper(self).options_for_url_helper), method: :put do |f|
+    - if collapsible_preferences
+      .actions
+        .row
+          .col-lg-12.mb-4
+            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: "Alle akzeptieren"
+            %a.btn.btn-link.text-secondary{ id: "cmor-legal-cookies-expand_preferences", 'data-toggle' => 'collapse', href: '#collapsible_cookie_preferences', class: "text-secondary" }
+              Einstellungen anpassen
+    %div{:class => collapsible_preferences ? 'collapse' : nil, :id => collapsible_preferences ? 'collapsible_cookie_preferences' : nil}
+      - resource.cookies.each do |cookie|
+        .cmor-legal-cookie.border.mb-4{ id: "cmor_legal-cookie-#{dom_id(cookie)}", class: dom_class(cookie) }
+          .row.p-2
+            .cmor-legal-cookie-hint.col-11
+              = render :partial => "cmor/legal/frontend/cookies/multiple/#{cookie.identifier}"
+            .cmor-legal-cookie-actions.col-1
+              .checkbox
+                - opts = {}
+                - opts.merge!(:class => 'cmor-legal-cookie-accept', :id => "cmor-legal-cookie-#{cookie.identifier}-accept")
+                - opts.merge!(:disabled => :disabled) if cookie.readonly?
+                = f.check_box cookie.identifier, opts
+          - if cookie.allowed_cookies.any?
+            .row
+              .col-12
+                = render :partial => "cmor/legal/frontend/cookie_preferences/allowed_cookies", locals: { cookie_identifier: cookie.identifier, allowed_cookies: cookie.allowed_cookies }
+      .actions
+        .row
+          .col-lg-12
+            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: "Alle akzeptieren"
+            = f.submit class: 'btn btn-link text-secondary', id: 'cmor-legal-cookies-accept', value: "Einstellungen übernehmen"
