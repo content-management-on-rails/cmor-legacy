@@ -15,7 +15,7 @@ module Cmor
         private
 
         def permitted_params
-          params.require(:picture_gallery).permit(:locale, :name, :description, :published, { assets: [], overwrite_assets: [], append_assets: [] })
+          params.require(:picture_gallery).permit(:locale, :name, :identifier, :description, :published, { assets: [], overwrite_assets: [], append_assets: [] })
         end
       end
     end
