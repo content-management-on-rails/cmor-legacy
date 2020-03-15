@@ -3,7 +3,7 @@ FactoryBot.define do
     association(:post, factory: :cmor_blog_post)
     after(:build) { |resource| 
       assets = resource.post.assets.attach(
-        io:           File.open(File.join(Cmor::Blog::Engine.root.join(*%w( spec files cmor blog asset example.jpg)))),
+        io:           File.open(File.join(Cmor::Blog::Engine.root.join(*%w( spec files cmor blog post asset example.jpg)))),
         filename:     'example.jpg',
         content_type: 'image/jpeg'
       )
