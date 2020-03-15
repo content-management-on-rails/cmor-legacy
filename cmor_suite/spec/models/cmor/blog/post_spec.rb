@@ -19,8 +19,8 @@ RSpec.describe Cmor::Blog::Post, type: :model do
 
   describe 'appending assets' do
     let(:original_assets) {[
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor post blog asset example.jpg))), filename: 'example.jpg'},
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor post blog asset example.jpg))), filename: 'example.jpg'}
+      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: 'example.jpg'},
+      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: 'example.jpg'}
     ]}
 
     let(:new_assets) {[
