@@ -1,19 +1,19 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.48.pre)
+    cmor_core_backend (0.0.49.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.48.pre)
+      cmor_core (= 0.0.49.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_files
   specs:
-    cmor_files (0.0.48.pre)
+    cmor_files (0.0.49.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.48.pre)
-      cmor_core_frontend (= 0.0.48.pre)
+      cmor_core (= 0.0.49.pre)
+      cmor_core_frontend (= 0.0.49.pre)
       friendly_id
       rails (>= 5.2.3)
       rao-component
@@ -22,28 +22,28 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.48.pre)
-    cmor_core (0.0.48.pre)
+    cmor (0.0.49.pre)
+    cmor_core (0.0.49.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.48.pre)
+      cmor (= 0.0.49.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.48.pre)
-      cmor_core (= 0.0.48.pre)
+    cmor_core_frontend (0.0.49.pre)
+      cmor_core (= 0.0.49.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_files_backend (0.0.48.pre)
-      cmor_core (= 0.0.48.pre)
-      cmor_core_backend (= 0.0.48.pre)
-      cmor_files (= 0.0.48.pre)
+    cmor_files_backend (0.0.49.pre)
+      cmor_core (= 0.0.49.pre)
+      cmor_core_backend (= 0.0.49.pre)
+      cmor_files (= 0.0.49.pre)
       rails (>= 5.2.3)
 
 GEM
@@ -289,23 +289,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.39.pre)
+    rao-component (0.0.40.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.39.pre)
+    rao-query (0.0.40.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.39.pre)
+    rao-resource_controller (0.0.40.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.39.pre)
+    rao-resources_controller (0.0.40.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.39.pre)
+    rao-service_controller (0.0.40.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -313,7 +313,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.39.pre)
+    rao-view_helper (0.0.40.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

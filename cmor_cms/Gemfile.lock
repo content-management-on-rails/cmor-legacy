@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.48.pre)
+    cmor_core (0.0.49.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.48.pre)
+      cmor (= 0.0.49.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,21 +14,21 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.48.pre)
-    cmor_core_frontend (0.0.48.pre)
-      cmor_core (= 0.0.48.pre)
+    cmor (0.0.49.pre)
+    cmor_core_frontend (0.0.49.pre)
+      cmor_core (= 0.0.49.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_cms (0.0.48.pre)
+    cmor_cms (0.0.49.pre)
       RedCloth
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.48.pre)
-      cmor_core_frontend (= 0.0.48.pre)
+      cmor_core (= 0.0.49.pre)
+      cmor_core_frontend (= 0.0.49.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
@@ -252,14 +252,14 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-service (0.0.39.pre)
+    rao-service (0.0.40.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.39.pre)
+    rao-view_helper (0.0.40.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
