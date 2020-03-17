@@ -40,6 +40,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_links', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_links_backend', "= #{Cmor::VERSION}"
 
+  s.add_dependency 'cmor_legal', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor_legal_frontend', "= #{Cmor::VERSION}"
+
   s.add_dependency 'cmor_partners', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_partners_frontend', "= #{Cmor::VERSION}"
 
