@@ -32,6 +32,10 @@ de:
         cookie_preferences:
           allowed_cookies:
             more: Mehr
+          form:
+            accept_all: "Alle akzeptieren"
+            apply: "Einstellungen übernehmen"
+            customize: "Einstellungen anpassen"
           update:
             success: 'Ihre Einstellungen wurden gespeichert.'
         cookies:

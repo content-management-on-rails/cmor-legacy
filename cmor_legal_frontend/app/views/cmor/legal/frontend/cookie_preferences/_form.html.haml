@@ -4,9 +4,9 @@
       .actions
         .row
           .col-lg-12.mb-4
-            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: "Alle akzeptieren"
+            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: t('.accept_all'), data: { 'disable-with': t('.accept_all') }
             %a.btn.btn-link.text-secondary{ id: "cmor-legal-cookies-expand_preferences", 'data-toggle' => 'collapse', href: '#collapsible_cookie_preferences', class: "text-secondary" }
-              Einstellungen anpassen
+              = t(".customize")
     %div{:class => collapsible_preferences ? 'collapse' : nil, :id => collapsible_preferences ? 'collapsible_cookie_preferences' : nil}
       - resource.cookies.each do |cookie|
         .cmor-legal-cookie.border.mb-4{ id: "cmor_legal-cookie-#{dom_id(cookie)}", class: dom_class(cookie) }
@@ -26,5 +26,5 @@
       .actions
         .row
           .col-lg-12
-            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: "Alle akzeptieren"
-            = f.submit class: 'btn btn-link text-secondary', id: 'cmor-legal-cookies-accept', value: "Einstellungen übernehmen"
+            = f.submit class: 'btn btn-primary cmor-legal-cookies-accept_all', value: t('.accept_all'), data: { 'disable-with': t('.accept_all') }
+            = f.submit class: 'btn btn-link text-secondary', id: 'cmor-legal-cookies-accept', value: t('.apply'), data: { 'disable-with': t('.apply') }
