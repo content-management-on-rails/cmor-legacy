@@ -1,11 +1,11 @@
 PATH
   remote: ../cmor_carousels
   specs:
-    cmor_carousels (0.0.49.pre)
+    cmor_carousels (0.0.50.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.49.pre)
-      cmor_core_frontend (= 0.0.49.pre)
+      cmor_core (= 0.0.50.pre)
+      cmor_core_frontend (= 0.0.50.pre)
       markup-rails
       mini_magick
       rails (>= 5.2.3)
@@ -13,36 +13,36 @@ PATH
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.49.pre)
+    cmor_core_backend (0.0.50.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.49.pre)
+      cmor_core (= 0.0.50.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.49.pre)
-    cmor_core (0.0.49.pre)
+    cmor (0.0.50.pre)
+    cmor_core (0.0.50.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.49.pre)
+      cmor (= 0.0.50.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.49.pre)
-      cmor_core (= 0.0.49.pre)
+    cmor_core_frontend (0.0.50.pre)
+      cmor_core (= 0.0.50.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_carousels_backend (0.0.49.pre)
-      cmor_carousels (= 0.0.49.pre)
-      cmor_core (= 0.0.49.pre)
-      cmor_core_backend (= 0.0.49.pre)
+    cmor_carousels_backend (0.0.50.pre)
+      cmor_carousels (= 0.0.50.pre)
+      cmor_core (= 0.0.50.pre)
+      cmor_core_backend (= 0.0.50.pre)
       rails (>= 5.2.3)
 
 GEM
