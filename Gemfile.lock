@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cmor (0.0.50.pre)
+    cmor (0.0.51.pre)
 
 GEM
   remote: https://rubygems.org/
