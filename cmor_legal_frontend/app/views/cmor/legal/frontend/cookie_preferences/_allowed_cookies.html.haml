@@ -1,19 +1,21 @@
-.cmor-legal-allowed_cookies{ id: "cmor-legal-allowed_cookies-#{cookie_identifier}" }
+.cmor-legal-allowed_cookies.accordion{ id: "cmor-legal-allowed_cookies-#{cookie_identifier}" }
   .card.rounded-0
     #headingOne.card-header.rounded-0.border-0.p-0
-      %a.btn.btm-link.btm-sm.text-secondary{ "data-toggle" => "collapse", "data-target" => "#cmor-legal-allowed_cookies-#{cookie_identifier}-table_container", "aria-expanded" => false, "aria-controls" => "cmor-legal-allowed_cookies-#{cookie_identifier}-table_container" }
+      %a.text-secondary.collapsed.d-bock.btn.btn-block.text-left{ "data-toggle" => "collapse", "data-target" => "#cmor-legal-allowed_cookies-#{cookie_identifier}-table_container", "aria-expanded" => false, "aria-controls" => "cmor-legal-allowed_cookies-#{cookie_identifier}-table_container" }
+        %i.fa.fa-chevron-down.float-right.py-1
         = Cmor::Legal::AllowedCookie.model_name.human(count: :other)
 
     .collapse{ id: "cmor-legal-allowed_cookies-#{cookie_identifier}-table_container", "aria-labelledby" => "headingOne", "data-parent" => "#cmor-legal-allowed_cookies-#{cookie_identifier}" }
       .card-body.p-0.small
-        = collection_table(collection: allowed_cookies, size: :small) do |table|
-          = table.column :name
-          = table.column :domain
-          = table.column :expiry do |resource|
-            - resource.expiry(locale: I18n.locale)
-          = table.column :description
-          = table.column :actions, title: "" do |resource|
-            - if resource.url.present?
-              - capture_haml do
-                = link_to(resource.url) do
-                  = t('cmor.legal.frontend.cookie_preferences.allowed_cookies.more')
+        .table-responsive
+          = collection_table(collection: allowed_cookies, size: :small) do |table|
+            = table.column :name
+            = table.column :domain
+            = table.column :expiry do |resource|
+              - resource.expiry(locale: I18n.locale)
+            = table.column :description
+            = table.column :actions, title: "" do |resource|
+              - if resource.url.present?
+                - capture_haml do
+                  = link_to(resource.url) do
+                    = t('cmor.legal.frontend.cookie_preferences.allowed_cookies.more')
