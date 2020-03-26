@@ -1,55 +1,55 @@
 PATH
   remote: ../cmor_core_frontend
   specs:
-    cmor_core_frontend (0.0.52.pre)
-      cmor_core (= 0.0.52.pre)
+    cmor_core_frontend (0.0.53.pre)
+      cmor_core (= 0.0.53.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: ../cmor_legal
   specs:
-    cmor_legal (0.0.52.pre)
+    cmor_legal (0.0.53.pre)
       cmor_cms
-      cmor_core (= 0.0.52.pre)
-      cmor_core_backend (= 0.0.52.pre)
+      cmor_core (= 0.0.53.pre)
+      cmor_core_backend (= 0.0.53.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.52.pre)
-    cmor_cms (0.0.52.pre)
+    cmor (0.0.53.pre)
+    cmor_cms (0.0.53.pre)
       RedCloth
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.52.pre)
-      cmor_core_frontend (= 0.0.52.pre)
+      cmor_core (= 0.0.53.pre)
+      cmor_core_frontend (= 0.0.53.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       simple-navigation (>= 4.0.0)
-    cmor_core (0.0.52.pre)
+    cmor_core (0.0.53.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.52.pre)
+      cmor (= 0.0.53.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.52.pre)
+    cmor_core_backend (0.0.53.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.52.pre)
+      cmor_core (= 0.0.53.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_legal_frontend (0.0.52.pre)
-      cmor_core (= 0.0.52.pre)
-      cmor_core_frontend (= 0.0.52.pre)
+    cmor_legal_frontend (0.0.53.pre)
+      cmor_core (= 0.0.53.pre)
+      cmor_core_frontend (= 0.0.53.pre)
       rails (>= 5.2.3)
 
 GEM

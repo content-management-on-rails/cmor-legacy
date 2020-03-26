@@ -1,27 +1,27 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.52.pre)
-    cmor_core (0.0.52.pre)
+    cmor (0.0.53.pre)
+    cmor_core (0.0.53.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.52.pre)
+      cmor (= 0.0.53.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.52.pre)
+    cmor_core_backend (0.0.53.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.52.pre)
+      cmor_core (= 0.0.53.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_system (0.0.52.pre)
-      cmor_core (= 0.0.52.pre)
-      cmor_core_backend (= 0.0.52.pre)
+    cmor_system (0.0.53.pre)
+      cmor_core (= 0.0.53.pre)
+      cmor_core_backend (= 0.0.53.pre)
       markup-rails
       rails (>= 5.2.3)
 
