@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.description = 'Provides a Backend for CMOR CMS'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
-  s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'cmor_cms', "= #{Cmor::VERSION}"
   # s.add_development_dependency 'jquery-turbolinks'

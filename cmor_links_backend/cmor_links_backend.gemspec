@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.description = 'Provides a Backend for CMOR Links'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
-  s.test_files = Dir['test/**/*']
 
   s.add_dependency 'cmor_links', "= #{Cmor::VERSION}"
 end
