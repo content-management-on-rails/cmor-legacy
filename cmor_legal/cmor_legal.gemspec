@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files = Dir["{app,config,db,lib,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "cmor_cms"
   spec.add_development_dependency "bootsnap"

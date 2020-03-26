@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Cmor::Core::Frontend.'
   s.description = 'Cmor::Core::Frontend Module.'
 
-  s.files = Dir['{app,config,db,lib,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rao-view_helper'
 end

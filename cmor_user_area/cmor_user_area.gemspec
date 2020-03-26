@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'CMOR User Area.'
   s.description = 'CMOR User Area.'
 
-  s.files = Dir['{app,config,db,lib,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib,spec/factories,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'active_model_serializers'
   s.add_dependency 'authlogic'

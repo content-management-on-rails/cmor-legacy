@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Cmor::Rbac.'
   s.description = 'Cmor::Rbac Module.'
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'spec/factories/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib,spec/factories,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'rao-service', '>= 0.0.17.pre'
 end

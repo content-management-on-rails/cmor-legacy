@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "acts_as_list"
   spec.add_dependency "acts_as_published"

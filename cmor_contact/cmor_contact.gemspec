@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/content-management-on-rails"
   s.summary     = "Cmor Contact Module."
 
-  s.files = Dir["{app,config,db,lib,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency 'responders'
   s.add_dependency 'haml-rails'

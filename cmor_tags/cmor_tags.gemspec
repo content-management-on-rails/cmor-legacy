@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'CMOR Tags Module'
   s.description = 'CMOR Tags Module'
 
-  s.files = Dir['{app,config,db,lib,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib,spec/factories,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'acts-as-taggable-on'
   s.add_dependency 'rao-service', '>= 0.0.17.pre'

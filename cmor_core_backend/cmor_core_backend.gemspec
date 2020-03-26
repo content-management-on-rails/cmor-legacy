@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.name        = "cmor_core_backend"
   s.summary     = "Cmor Core Module."
 
-  s.files = Dir["{app,config,db,lib,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency 'administrador', '>= 0.0.22.pre'
 end

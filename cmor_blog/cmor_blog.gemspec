@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Cmor::Blog.'
   s.description = 'Cmor::Blog Module.'
 
-  s.files = Dir['{app,config,db,lib,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib,spec/factories,spec/files}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
   s.add_dependency 'acts_as_list'
   s.add_dependency 'acts_as_published'
