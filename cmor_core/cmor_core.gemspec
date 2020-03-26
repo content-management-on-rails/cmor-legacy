@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Cmor Core Module."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", ">= 5.0.0"
   s.add_dependency "cmor", "= #{Cmor::VERSION}"

@@ -8,9 +8,9 @@ GIT
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.51.pre)
+    cmor_core (0.0.52.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.51.pre)
+      cmor (= 0.0.52.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -21,19 +21,19 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.51.pre)
-    cmor_core_frontend (0.0.51.pre)
-      cmor_core (= 0.0.51.pre)
+    cmor (0.0.52.pre)
+    cmor_core_frontend (0.0.52.pre)
+      cmor_core (= 0.0.52.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_tags (0.0.51.pre)
+    cmor_tags (0.0.52.pre)
       acts-as-taggable-on
-      cmor_core (= 0.0.51.pre)
-      cmor_core_frontend (= 0.0.51.pre)
+      cmor_core (= 0.0.52.pre)
+      cmor_core_frontend (= 0.0.52.pre)
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       rao-service_controller (>= 0.0.17.pre)
@@ -250,12 +250,12 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-service (0.0.40.pre)
+    rao-service (0.0.41.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.40.pre)
+    rao-service_controller (0.0.41.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -263,7 +263,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.40.pre)
+    rao-view_helper (0.0.41.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.name        = "cmor_system"
   s.summary     = "Cmor System Module."
 
-  s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   # s.add_dependency 'cmor_tags', "= #{Cmor::VERSION}"
   s.add_dependency 'markup-rails'

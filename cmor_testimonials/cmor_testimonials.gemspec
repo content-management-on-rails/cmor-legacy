@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "CMOR Testimonials Module."
   s.description = "CMOR Testimonials Module."
 
-  s.files = Dir["{app,config,db,lib,spec}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,spec/files}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   # Engine dependencies
   s.add_dependency 'acts_as_list'
