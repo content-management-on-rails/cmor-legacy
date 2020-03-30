@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::MultiTenancy::Engine, at: '/backend/cmor-multi-tenancy-engine'
+  end

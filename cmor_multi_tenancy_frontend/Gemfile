@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gemspec
+
+gem 'cmor_multi_tenancy', path: '../cmor_multi_tenancy'
