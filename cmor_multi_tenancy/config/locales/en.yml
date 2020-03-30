@@ -9,9 +9,16 @@ en:
         id: ID
         active_from: Active from
         active_to: Active to
+        default: Default
+        default_at: Default since
         description: Description
         identifier: Identifier
         position: Position
         title: Title
         created_at: Created at
         updated_at: Updated at
+  classes:
+    cmor/multi_tenancy/engine: Multi Tenancy
+  routes:
+    cmor-multi-tenancy-engine: multi-tenancy
+

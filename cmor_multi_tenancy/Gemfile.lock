@@ -5,6 +5,7 @@ PATH
       cmor (= 0.0.53.pre)
       cmor_core_backend (= 0.0.53.pre)
       rails (>= 5.2.0)
+      request_store
 
 GEM
   remote: https://rubygems.org/
@@ -79,7 +80,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.4)
-    capybara (3.31.0)
+    capybara (3.32.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -181,6 +182,8 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    i18n-debug (1.2.0)
+      i18n (< 2)
     jaro_winkler (1.5.4)
     kaminari (1.2.0)
       activesupport (>= 4.1.0)
@@ -299,6 +302,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
+    request_store (1.5.0)
+      rack (>= 1.4)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     responders (3.0.0)
@@ -395,6 +400,9 @@ GEM
     tilt (2.0.10)
     tins (1.24.1)
       sync
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     twitter-bootstrap-components-rails (1.0.0)
       haml-rails
       rails (>= 3.2)
@@ -405,7 +413,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
     unicode-display_width (1.6.1)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
@@ -427,6 +435,7 @@ DEPENDENCIES
   guard-bundler
   guard-rails
   guard-rspec
+  i18n-debug
   pry-rails
   puma (~> 3.11)
   rails-dummy
@@ -439,6 +448,7 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sqlite3 (~> 1.3.6)
+  turbolinks
   uglifier (>= 1.3.0)
 
 BUNDLED WITH

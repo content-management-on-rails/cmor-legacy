@@ -7,6 +7,12 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
+
+if [ ! -d "spec/dummy" ]; then
+  echo "Dummy app was not generated. Exiting..."
+  exit 1
+fi
+
 rm spec/dummy/.ruby-version
 
 # Satisfy prerequisites
@@ -29,6 +35,9 @@ touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
+
+# Add turbolinks
+sed -i "15irequire 'turbolinks'" config/application.rb
 
 # Install administrador
 rails generate administrador:install

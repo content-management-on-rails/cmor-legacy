@@ -7,6 +7,7 @@ class CreateCmorMultiTenancyClients < ActiveRecord::Migration[5.2]
       t.string :position
       t.timestamp :active_from
       t.timestamp :active_to
+      t.boolean :default, default: false
 
       t.timestamps
     end

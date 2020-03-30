@@ -19,7 +19,7 @@ for i in blog carousels cms contact core files galleries links rbac testimonials
   cd ..
 done
 
-for i in legal partners seo showcase; do
+for i in legal partners seo showcase multi_tenancy; do
   cd "cmor_${i}_frontend"
   echo $PWD
   publish_gem

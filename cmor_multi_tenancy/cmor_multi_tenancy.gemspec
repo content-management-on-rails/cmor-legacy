@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", ">= 5.2.0"
   spec.add_dependency "cmor", "= 0.0.53.pre"
   spec.add_dependency "cmor_core_backend", "= 0.0.53.pre"
+  spec.add_dependency "request_store"
 
   spec.add_development_dependency "sqlite3", '~> 1.3.6'
 
@@ -52,4 +53,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'uglifier', '>= 1.3.0'
   spec.add_development_dependency 'coffee-rails', '~> 4.2'
   spec.add_development_dependency 'bootsnap'
+  spec.add_development_dependency 'turbolinks'
+  spec.add_development_dependency 'i18n-debug'
 end

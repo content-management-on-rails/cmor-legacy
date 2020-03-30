@@ -53,4 +53,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'uglifier', '>= 1.3.0'
   spec.add_development_dependency 'coffee-rails', '~> 4.2'
   spec.add_development_dependency 'bootsnap'
+  spec.add_development_dependency 'turbolinks'
 end

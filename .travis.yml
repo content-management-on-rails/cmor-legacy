@@ -24,6 +24,8 @@ env:
   - GEM=cmor_legal_frontend
   - GEM=cmor_links
   - GEM=cmor_links_backend
+  - GEM=cmor_multi_tenancy
+  - GEM=cmor_multi_tenancy_frontend
   - GEM=cmor_partners
   - GEM=cmor_partners_frontend
   - GEM=cmor_rbac
