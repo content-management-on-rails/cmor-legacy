@@ -3,6 +3,10 @@ module Cmor::MultiTenancy
     validates :identifier, presence: true, uniqueness: true, format: { with: /\A[a-z0-9-]+\z/ }, length: { minimum: 3, maximum: 63 }
     validates :title, presence: true, uniqueness: true
 
+    def human
+      title
+    end
+
     module ActiveConcern
       extend ActiveSupport::Concern
 
@@ -33,14 +37,6 @@ module Cmor::MultiTenancy
 
         scope :default, -> { where.not(default: nil) }
       end
-
-      # def default
-      #   !!self.defaulted_at
-      # end
-
-      # def default=(value)
-      #   self.defaulted_at = !!value ? Time.zone.now : nil
-      # end
     end
 
     include DefaultConcern

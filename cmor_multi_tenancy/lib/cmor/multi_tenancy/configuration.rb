@@ -19,5 +19,9 @@ module Cmor::MultiTenancy
     mattr_accessor :sidebar_controllers do
       -> {[]}
     end
+
+    mattr_accessor :current_client_key do
+      :subdomain
+    end
   end
 end

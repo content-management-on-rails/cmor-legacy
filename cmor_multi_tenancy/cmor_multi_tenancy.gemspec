@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "cmor", "= 0.0.53.pre"
   spec.add_dependency "cmor_core_backend", "= 0.0.53.pre"
   spec.add_dependency "request_store"
+  spec.add_dependency "rao-service"
 
   spec.add_development_dependency "sqlite3", '~> 1.3.6'
 

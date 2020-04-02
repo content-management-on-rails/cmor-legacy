@@ -8,6 +8,10 @@ module Cmor
           yield
           Capybara.default_host = @_original_host
         end
+
+        def with_client(client)
+          Cmor::MultiTenancy.with_client(client) { yield }
+        end
       end
     end
   end

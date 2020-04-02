@@ -54,11 +54,17 @@ cat <<EOT > config/routes.rb
 Rails.application.routes.draw do
 
   localized do
+    constraints Cmor::MultiTenancy::Routing::SubdomainConstraint do
+      root to: 'home#index'
+    end
+
     scope path: "(/:client_identifier)" do
       root to: 'home#index'
     end
+
     mount Cmor::MultiTenancy::Engine, at: '/backend/cmor-multi-tenancy-engine'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
 EOT

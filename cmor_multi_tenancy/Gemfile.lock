@@ -5,6 +5,7 @@ PATH
       cmor (= 0.0.53.pre)
       cmor_core_backend (= 0.0.53.pre)
       rails (>= 5.2.0)
+      rao-service
       request_store
 
 GEM
@@ -287,6 +288,11 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
+    rao-service (0.0.41.pre)
+      activemodel
+      activesupport
+      rails (>= 3.2.0)
+      rao
     rao-service_controller (0.0.41.pre)
       font-awesome-rails
       rails (>= 3.2.0)

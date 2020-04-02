@@ -10,7 +10,7 @@ module Cmor
       private
 
       def permitted_params
-        params.require(:client).permit(:identifier, :title, :description, :active_from, :active_to)
+        params.require(:client).permit(:identifier, :title, :description, :active_from, :active_to, :default)
       end
     end
   end

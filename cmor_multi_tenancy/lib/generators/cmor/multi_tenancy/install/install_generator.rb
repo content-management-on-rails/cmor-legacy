@@ -20,6 +20,10 @@ module Cmor
         def generate_routes
           route File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
         end
+
+        def generate_client_model
+          copy_file 'app/models/client.rb', 'app/models/client.rb'
+        end
       end
     end
   end

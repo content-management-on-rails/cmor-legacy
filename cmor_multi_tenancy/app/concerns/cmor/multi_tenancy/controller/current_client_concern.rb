@@ -20,13 +20,12 @@ module Cmor
         private
         
         def current_client
-          RequestStore[:current_client]
+          Cmor::MultiTenancy.current_client
         end
 
         def set_current_client
-          RequestStore.store[:current_client] = load_current_client || redirect_to(subdomain: load_default_client.identifier) # load_default_client
-          yield
-          RequestStore.store[:current_client] = nil
+          client = load_current_client || redirect_to_client
+          with_client(client) { yield }
         end
 
         def load_current_client
@@ -34,11 +33,23 @@ module Cmor
         end
 
         def load_default_client
-          Cmor::MultiTenancy::Client.active.default.first! # || raise Cmor::MultiTenancy::DefaultClientNotFound
+          Cmor::MultiTenancy::Client.active.default.first!
         end
 
         def current_client_identifier
           params[:client_identifier]
+        end
+
+        def with_client(client)
+          Cmor::MultiTenancy.with_client(client) { yield }
+        end
+
+        def redirect_to_client
+          redirect_to(current_client_key => load_default_client.identifier)
+        end
+
+        def current_client_key
+          :subdomain
         end
       end
     end

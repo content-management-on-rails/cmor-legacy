@@ -26,4 +26,11 @@ Cmor::MultiTenancy.configure do |config|
   # Default: config.sidebar_controllers = -> {[]}
   # 
   config.sidebar_controllers = -> {[]}
+
+  # Set which key to use when redirecting to a client. This can
+  # either be :subdomain or :client_identifier
+  #
+  # Default: config.current_client_key = :subdomain
+  #
+  config.current_client_key = :subdomain
 end
