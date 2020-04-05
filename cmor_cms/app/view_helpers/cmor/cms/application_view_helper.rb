@@ -16,8 +16,8 @@ module Cmor
         "<meta name=\"description\" content=\"#{c.content_for(:meta_description)}\">"
       end
 
-      def link_to_top
-        c.render partial: '/cmor/cms/link_to_top'
+      def link_to_top(icons: :glyphicons)
+        render icons: icons
       end
 
       def is_page?

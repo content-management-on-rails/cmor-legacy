@@ -1,0 +1,12 @@
+<%= content_tag(:div, class: 'pull-right') do %>
+  <%= link_to('#top', id: 'top-link', class: 'btn btn-primary') do %>
+    <% case icons %>
+    <% when :glyphicons %>
+      <%= content_tag(:span, nil, class: 'glyphicon glyphicon-arrow-up') %>
+    <% when :font_awesome %>
+      <%= content_tag(:i, nil, class: 'fas fa-arrow-up') %>
+    <% else %>
+      <%= content_tag(:span, "&#8963;".html_safe) %>
+    <% end %>
+  <% end %>
+<% end %>
