@@ -1,6 +1,8 @@
+require "cmor/version"
+
 module Cmor
   module MultiTenancy
-    VERSION = '0.0.53.pre'.freeze
+    VERSION = ::Cmor::VERSION
   end
 end
 

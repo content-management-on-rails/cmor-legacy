@@ -1,7 +1,9 @@
+require "cmor/version"
+
 module Cmor
   module MultiTenancy
     module Frontend
-      VERSION = '0.0.53.pre'.freeze
+      VERSION = ::Cmor::VERSION
     end
   end
 end

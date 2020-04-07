@@ -24,8 +24,11 @@ module Cmor
         end
 
         def set_current_client
-          client = load_current_client || redirect_to_client
-          with_client(client) { yield }
+          if client = load_current_client
+            with_client(client) { yield }
+          else
+            redirect_to_default_client
+          end
         end
 
         def load_current_client
@@ -48,7 +51,7 @@ module Cmor
           Cmor::MultiTenancy.with_client(client) { yield }
         end
 
-        def redirect_to_client
+        def redirect_to_default_client
           redirect_to(current_client_key => load_default_client.identifier)
         end
 

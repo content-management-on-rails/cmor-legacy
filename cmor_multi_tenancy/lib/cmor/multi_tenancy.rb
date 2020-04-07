@@ -19,7 +19,7 @@ module Cmor
     #       it { expect(subject.client).to eq(default_client) }
     #     end
     def self.with_client(client)
-      Cmor::MultiTenancy::Client.active.default.first! if client == :default
+      client = Cmor::MultiTenancy::Client.active.default.first! if client == :default
       puts "[Cmor::MultiTenancy] With client #{client.identifier}"
       previous_client = RequestStore.store[:current_client]
       RequestStore.store[:current_client] = client
