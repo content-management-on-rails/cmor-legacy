@@ -35,7 +35,7 @@ module Cmor
 
       def client_attribute_defaults
         {
-          identifier: "default",
+          identifier: "www",
           title: "Default",
           description: "This is the default client.",
           active_from: Time.at(0),

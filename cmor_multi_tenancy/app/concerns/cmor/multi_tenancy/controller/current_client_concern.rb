@@ -29,15 +29,19 @@ module Cmor
         end
 
         def load_current_client
-          Cmor::MultiTenancy::Client.active.where(identifier: current_client_identifier).first
+          if Cmor::MultiTenancy::Configuration.aliases_for_default_client.include?(current_client_identifier)
+            ::Client.active.default.first!
+          else
+            ::Client.active.where(identifier: current_client_identifier).first
+          end
         end
 
         def load_default_client
-          Cmor::MultiTenancy::Client.active.default.first!
+          ::Client.active.default.first!
         end
 
         def current_client_identifier
-          params[:client_identifier]
+          params[:client_identifier] || ENV.fetch('client_identifier')
         end
 
         def with_client(client)

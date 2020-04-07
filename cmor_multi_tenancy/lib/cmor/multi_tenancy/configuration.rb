@@ -23,5 +23,9 @@ module Cmor::MultiTenancy
     mattr_accessor :current_client_key do
       :subdomain
     end
+
+    mattr_accessor :aliases_for_default_client do
+      %w( www )
+    end
   end
 end

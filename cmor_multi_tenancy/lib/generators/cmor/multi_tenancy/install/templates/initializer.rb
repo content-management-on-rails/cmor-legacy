@@ -33,4 +33,10 @@ Cmor::MultiTenancy.configure do |config|
   # Default: config.current_client_key = :subdomain
   #
   config.current_client_key = :subdomain
+
+  # Sets the aliases that will match the default client.
+  #
+  # Default: aliases_for_default_client = %w( www )
+  #
+  config.aliases_for_default_client = %w( www )
 end
