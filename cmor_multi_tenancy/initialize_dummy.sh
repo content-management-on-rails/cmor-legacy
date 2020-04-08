@@ -13,10 +13,10 @@ if [ ! -d "spec/dummy" ]; then
   exit 1
 fi
 
-rm spec/dummy/.ruby-version
-
 # Satisfy prerequisites
 cd spec/dummy
+
+rm .ruby-version
 
 # Use correct Gemfile
 rm Gemfile
