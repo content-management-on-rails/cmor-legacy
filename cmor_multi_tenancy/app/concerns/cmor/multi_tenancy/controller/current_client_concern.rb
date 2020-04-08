@@ -44,7 +44,7 @@ module Cmor
         end
 
         def current_client_identifier
-          params[:client_identifier] || ENV.fetch('client_identifier')
+          params[:client_identifier] || ENV.fetch('client_identifier') { Cmor::MultiTenancy::Configuration.aliases_for_default_client.first }
         end
 
         def with_client(client)
