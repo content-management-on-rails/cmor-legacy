@@ -35,7 +35,7 @@ module Cmor::MultiTenancy
       included do
         validates :default, uniqueness: true, if: :default
 
-        scope :default, -> { where.not(default: nil) }
+        scope :default, -> { where(default: true) }
       end
     end
 

@@ -48,6 +48,7 @@ rails generate $INSTALL_NAME:install
 # Customize dummy app
 rails generate controller Home index --no-helper --no-assets --no-request-specs --no-controller-specs --no-view-specs
 sed -i "2i  include Cmor::MultiTenancy::Controller::CurrentClientConcern" app/controllers/application_controller.rb
+sed -i "3i  around_action :set_current_client" app/controllers/application_controller.rb
 echo "= current_client.title" >> app/views/home/index.html.haml
 
 cat <<EOT > config/routes.rb
