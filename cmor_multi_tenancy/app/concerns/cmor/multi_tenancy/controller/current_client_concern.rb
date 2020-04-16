@@ -6,7 +6,7 @@ module Cmor
       #     # app/controllers/application_controller.rb
       #     class ApplicationController < ActionController::Base
       #       include Cmor::MultiTenancy::Controller::CurrentClientConcern
-      #       
+      #
       #       around_action :set_current_client
       #     end
       #
@@ -14,7 +14,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          helper_method :current_client
+          helper_method :current_client if respond_to?(:helper_method)
         end
         
         private
