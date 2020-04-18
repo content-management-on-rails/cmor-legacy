@@ -20,8 +20,10 @@ de:
         asset_id: Datei
         blob_byte_size: Dateigröße
         blob_checksum: Checksumme
+        blob_created_at: Datei erstellt am
         blob_filename: Dateiname
         description: Beschreibung
+        filename: Dateiname
         folder: Ordner
         folder_id: Ordner
         identifier: Bezeichner

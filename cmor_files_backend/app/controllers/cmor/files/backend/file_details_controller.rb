@@ -12,6 +12,10 @@ module Cmor
 
         private
 
+        def load_collection_scope
+          super.joins(:folder)
+        end
+
         def permitted_params
           params.require(:file_detail).permit(:title, :description)
         end

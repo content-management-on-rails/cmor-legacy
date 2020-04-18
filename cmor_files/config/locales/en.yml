@@ -20,8 +20,10 @@ en:
         asset_id: Asset
         blob_byte_size: Filesize
         blob_checksum: Checksum
+        blob_created_at: File created at
         blob_filename: Filename
         description: Description
+        filename: Filename
         folder: Folder
         folder_id: Folder
         identifier: Identifier

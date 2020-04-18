@@ -1,0 +1,26 @@
+= table.association :folder, label_method: :human, link_to: ->(r) { url_for(r.folder) }
+= table.row :identifier
+= table.row :title
+= table.row :filename do |resource|
+  - resource.asset.blob.filename
+= table.row :blob_content_type do |resource|
+  - resource.asset.blob.content_type
+= table.row :blob_byte_size do |resource|
+  - resource.asset.blob.byte_size
+= table.row :blob_checksum do |resource|
+  - resource.asset.blob.checksum
+= table.row :blob_created_at do |resource|
+  - I18n.l(resource.asset.blob.created_at, format: :short)
+= table.row :asset do |resource|
+  - capture_haml do
+    = link_to(main_app.url_for(resource.asset), class: 'btn btn-primary btn-responsive btn-xs') do
+      %i.fas.fa-download
+      %span.btn-text= "#{t('.download')} (#{resource.asset.blob.content_type.split('/').last}, #{number_to_human_size(resource.asset.blob.byte_size)})"
+= table.row :title
+= table.row :description
+= table.row :slug
+= table.row :published_at
+= table.timestamps
+
+
+

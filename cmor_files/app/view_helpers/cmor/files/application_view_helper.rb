@@ -11,11 +11,15 @@ module Cmor
       # Example:
       #
       #     # app/views/layouts/application.html.haml
-      #     = files_helper(self).render_download(name: 'Quick reference manual')
+      #     = files_helper(self).render_download(identifier: 'Quick reference manual')
       #
       def render_file(identifier:)
-        resource = Cmor::Files::FileDetail.where(identifier: identifier).first
-        render resource: resource
+        resource = Cmor::Files::FileDetail.published.where(identifier: identifier).first
+        if resource.nil?
+          "Could not find published file detail with identifier: '#{identifier}'."
+        else
+          render resource: resource
+        end
       end
     end
   end
