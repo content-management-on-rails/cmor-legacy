@@ -20,6 +20,7 @@ module Cmor
     #     end
     def self.with_client(client)
       client = Cmor::MultiTenancy::Client.active.default.first! if client == :default
+      client = Cmor::MultiTenancy::Client.active.where(identifier: client.to_s).first unless client.is_a?(Cmor::MultiTenancy::Client)
       puts "[Cmor::MultiTenancy] With client #{client.identifier}"
       previous_client = RequestStore.store[:current_client]
       RequestStore.store[:current_client] = client
