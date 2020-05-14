@@ -37,5 +37,9 @@ module Cmor
     def self.current_client!
       current_client || raise(Cmor::MultiTenancy::CurrentClientNotSet)
     end
+
+    def self.default_client
+      Cmor::MultiTenancy::Client.active.default.first!
+    end
   end
 end
