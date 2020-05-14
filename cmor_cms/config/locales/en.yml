@@ -7,6 +7,9 @@ en:
       cmor/cms/content_box:
         one: Content box
         other: Content boxes
+      cmor/cms/layout:
+        one: Layout
+        other: Layouts
       cmor/cms/navigation:
         one: Navigation
         other: Navigations
@@ -41,7 +44,17 @@ en:
         name: Name
         body: Body
         content_blocks: Content blocks
-        content_blocks_count: Content blocksx
+        content_blocks_count: Content blocks
+      cmor/cms/layout:
+        <<: *defaults
+        basename: Name
+        body: Body
+        filename: Filename
+        format: Format
+        handler: Handler
+        locale: Language
+        path_and_filename: Filepath
+        pathname: Path
       cmor/cms/navigation:
         <<: *defaults
         navigation_items: Navigation items
@@ -91,8 +104,6 @@ en:
         <<: *defaults
         basename: Name
         body: Body
-        cmor_cms_folder_id: Folder
-        cmor_cms_folder: Folder
         filename: Filename
         format: Format
         handler: Handler
@@ -104,8 +115,6 @@ en:
         <<: *defaults
         basename: Name
         body: Body
-        cmor_cms_folder_id: Folder
-        cmor_cms_folder: Folder
         filename: Filename
         format: Format
         handler: Handler

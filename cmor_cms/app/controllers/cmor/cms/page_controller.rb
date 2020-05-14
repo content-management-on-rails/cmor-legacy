@@ -1,6 +1,7 @@
 module Cmor
   module Cms
     class PageController < Cmor::Cms::Configuration.base_controller.constantize
+      include Cmor::Cms::ControllerExtensions::LayoutResolver
       include Cmor::Cms::ControllerExtensions::PageResolver
       include Cmor::Cms::ControllerExtensions::PartialResolver
 

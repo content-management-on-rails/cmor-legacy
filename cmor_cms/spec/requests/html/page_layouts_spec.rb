@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'pages with different layouts', type: :request do
   let(:layout) do
-    create(:cmor_cms_page,
+    create(:cmor_cms_layout,
       pathname: '/layouts/',
       basename: 'foo',
       locale: '',

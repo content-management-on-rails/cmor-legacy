@@ -5,6 +5,7 @@ Cmor::Cms::Backend.configure do |config|
   #            Cmor::Cms::Backend::ContentBoxesController,
   #            Cmor::Cms::Backend::NavigationsController,
   #            Cmor::Cms::Backend::NavigationItemsController,
+  #            Cmor::Cms::Backend::LayoutsController,
   #            Cmor::Cms::Backend::PagesController,
   #            Cmor::Cms::Backend::PartialsController,
   #            Cmor::Cms::Backend::TemplatesController
@@ -15,6 +16,7 @@ Cmor::Cms::Backend.configure do |config|
       Cmor::Cms::Backend::ContentBoxesController,
       Cmor::Cms::Backend::NavigationsController,
       Cmor::Cms::Backend::NavigationItemsController,
+      Cmor::Cms::Backend::LayoutsController,
       Cmor::Cms::Backend::PagesController,
       Cmor::Cms::Backend::PartialsController,
       Cmor::Cms::Backend::TemplatesController

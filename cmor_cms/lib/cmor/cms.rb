@@ -6,6 +6,7 @@ require 'cmor/cms/configuration'
 
 require 'cmor/cms/database_template'
 
+require 'cmor/cms/controller_extensions/layout_resolver'
 require 'cmor/cms/controller_extensions/page_resolver'
 require 'cmor/cms/controller_extensions/partial_resolver'
 require 'cmor/cms/controller_extensions/template_resolver'
