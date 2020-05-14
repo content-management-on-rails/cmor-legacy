@@ -1,27 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe 'pages with different layouts', type: :request do
-  it 'uses page specific layouts' do
-    pending("Newer rails versions changed the way the layout is specified when rendering ActionView::Templates. It isn't possible to pass options[:layout] anymore. Need to find a way around this.")
-    # TODO: replace this with a template as soon as the template model is done.
-    layout_model = create(:cmor_cms_page,
-                                      pathname: '/layouts/',
-                                      basename: 'foo',
-                                      locale: '',
-                                      format: 'html',
-                                      handler: 'erb',
-                                      body: 'Foo Layout <%= yield %>'
-                                     )
+  let(:layout) do
+    create(:cmor_cms_layout,
+      pathname: '/layouts/',
+      basename: 'foo',
+      locale: '',
+      format: 'html',
+      handler: 'erb',
+      body: 'Foo Layout <%= yield %>',
+      published: true
+    )
+  end
 
-    page_model = create(:cmor_cms_page,
-                                    pathname: '/',
-                                    basename: 'home',
-                                    locale: 'en',
-                                    format: 'html',
-                                    layout: 'layouts/foo',
-                                    handler: 'erb'
-                                   )
+  let(:page) do
+    create(:cmor_cms_page,
+      pathname: '/',
+      basename: 'home',
+      locale: 'en',
+      format: 'html',
+      layout: '/layouts/foo',
+      handler: 'erb',
+      published: true
+    )
+  end
+
+  before(:each) do
+    layout
+    page
     get '/en'
+  end
+
+  it 'uses page specific layouts' do
     expect(response.body).to include('Foo Layout')
   end
 end

@@ -1,6 +1,7 @@
 module Cmor
   module Cms
     class PageController < Cmor::Cms::Configuration.base_controller.constantize
+      include Cmor::Cms::ControllerExtensions::LayoutResolver
       include Cmor::Cms::ControllerExtensions::PageResolver
       include Cmor::Cms::ControllerExtensions::PartialResolver
 
@@ -22,11 +23,13 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          rescue_from ActionView::MissingTemplate do |exception|
-            if exception.message.start_with?('Missing partial')
-              handle_missing_partial(exception)
-            else
-              handle_missing_template(exception)
+          unless Rails.env.development?
+            rescue_from ActionView::MissingTemplate do |exception|
+              if exception.message.start_with?('Missing partial')
+                handle_missing_partial(exception)
+              else
+                handle_missing_template(exception)
+              end
             end
           end
         end

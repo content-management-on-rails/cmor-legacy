@@ -10,6 +10,10 @@ Cmor::Cms::Backend::Engine.routes.draw do
     post :reposition, on: :member
   end
   
+  resources :layouts do
+    post :toggle_published, on: :member
+  end
+
   resources :pages do
     post :toggle_published, on: :member
   end
