@@ -41,7 +41,7 @@ module ActionView
             @view    = context
             @details = extract_details(options)
             template = determine_template(options)
-            layout   = template.repond_to?(:layout) && template.layout.present? ? template.layout : options[:layout]
+            layout   = template.respond_to?(:layout) && template.layout.present? ? template.layout : options[:layout]
 
             prepend_formats(template.formats)
 
