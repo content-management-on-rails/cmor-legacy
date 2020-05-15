@@ -41,12 +41,13 @@ module ActionView
             @view    = context
             @details = extract_details(options)
             template = determine_template(options)
+            layout   = template.repond_to?(:layout) && template.layout.present? ? template.layout : options[:layout]
 
             prepend_formats(template.formats)
 
             @lookup_context.rendered_format ||= (template.formats.first || formats.first)
 
-            render_template(template, (template.layout || options[:layout]), options[:locals])
+            render_template(template, layout, options[:locals])
           end
         else
           def render(context, options)
