@@ -1,0 +1,23 @@
+de:
+  activerecord:
+    models:
+      cmor/multi_tenancy/client:
+        one: Mandant
+        other: Mandanten
+    attributes:
+      cmor/multi_tenancy/client:
+        id: ID
+        active_from: Aktiv ab
+        active_to: Aktiv bis
+        default: Standard
+        default_at: Standard seit
+        description: Beschreibung
+        identifier: Bezeichner
+        position: Position
+        title: Titel
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  classes:
+    cmor/multi_tenancy/engine: Mandantensteuerung
+  routes:
+    cmor-multi-tenancy-engine: mandantensteuerung
