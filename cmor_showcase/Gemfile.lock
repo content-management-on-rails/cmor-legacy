@@ -1,29 +1,29 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.53.pre)
-    cmor_core (0.0.53.pre)
+    cmor (0.0.54.pre)
+    cmor_core (0.0.54.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.53.pre)
+      cmor (= 0.0.54.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.53.pre)
+    cmor_core_backend (0.0.54.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.53.pre)
+      cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_showcase (0.0.53.pre)
+    cmor_showcase (0.0.54.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.53.pre)
-      cmor_core_backend (= 0.0.53.pre)
+      cmor_core (= 0.0.54.pre)
+      cmor_core_backend (= 0.0.54.pre)
       friendly_id
       markup-rails (>= 0.0.2)
       rails (>= 5.2.3)
@@ -204,7 +204,8 @@ GEM
       activerecord
       kaminari-core (= 1.2.0)
     kaminari-core (1.2.0)
-    kramdown (2.1.0)
+    kramdown (2.2.1)
+      rexml
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -222,7 +223,7 @@ GEM
       rails
       rao-view_helper
     method_source (0.9.2)
-    mimemagic (0.3.4)
+    mimemagic (0.3.5)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -314,6 +315,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
     route_translator (7.0.1)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
@@ -441,4 +443,4 @@ DEPENDENCIES
   turbolinks
 
 BUNDLED WITH
-   2.1.2
+   2.1.4

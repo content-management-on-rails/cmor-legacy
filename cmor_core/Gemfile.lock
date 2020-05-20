@@ -1,14 +1,14 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.53.pre)
+    cmor (0.0.54.pre)
 
 PATH
   remote: .
   specs:
-    cmor_core (0.0.53.pre)
+    cmor_core (0.0.54.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.53.pre)
+      cmor (= 0.0.54.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -284,4 +284,4 @@ DEPENDENCIES
   sqlite3 (~> 1.3.6)
 
 BUNDLED WITH
-   2.1.2
+   2.1.4

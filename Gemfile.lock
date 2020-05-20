@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cmor (0.0.53.pre)
+    cmor (0.0.54.pre)
 
 GEM
   remote: https://rubygems.org/
@@ -75,4 +75,4 @@ DEPENDENCIES
   wwtd
 
 BUNDLED WITH
-   2.1.2
+   2.1.4

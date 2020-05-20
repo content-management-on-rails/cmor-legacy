@@ -1,17 +1,17 @@
 PATH
   remote: ../cmor_core_backend
   specs:
-    cmor_core_backend (0.0.53.pre)
+    cmor_core_backend (0.0.54.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.53.pre)
+      cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_multi_tenancy
   specs:
-    cmor_multi_tenancy (0.0.53.pre)
-      cmor_core (= 0.0.53.pre)
-      cmor_core_backend (= 0.0.53.pre)
+    cmor_multi_tenancy (0.0.54.pre)
+      cmor_core (= 0.0.54.pre)
+      cmor_core_backend (= 0.0.54.pre)
       rails (>= 5.2.3)
       rao-service
       request_store
@@ -19,27 +19,27 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.53.pre)
-    cmor_core (0.0.53.pre)
+    cmor (0.0.54.pre)
+    cmor_core (0.0.54.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.53.pre)
+      cmor (= 0.0.54.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_frontend (0.0.53.pre)
-      cmor_core (= 0.0.53.pre)
+    cmor_core_frontend (0.0.54.pre)
+      cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_multi_tenancy_frontend (0.0.53.pre)
-      cmor_core (= 0.0.53.pre)
-      cmor_core_frontend (= 0.0.53.pre)
+    cmor_multi_tenancy_frontend (0.0.54.pre)
+      cmor_core (= 0.0.54.pre)
+      cmor_core_frontend (= 0.0.54.pre)
       cmor_multi_tenancy
       rails (>= 5.2.3)
 
@@ -232,7 +232,7 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -339,7 +339,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.4)
-    route_translator (7.1.2)
+    route_translator (8.0.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
       addressable (~> 2.7)
@@ -473,4 +473,4 @@ DEPENDENCIES
   turbolinks
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
