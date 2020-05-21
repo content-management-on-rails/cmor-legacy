@@ -5,5 +5,5 @@
     = collection_table(collection: @collection, resource_class: resource_class) do |t|
       = t.column :name
       = t.column :assets_count
-      = t.column :actions do |resource|
+      = t.column :actions, title: false do |resource|
         - link_to(t('.show'), [resource], class: 'btn btn-primary')
