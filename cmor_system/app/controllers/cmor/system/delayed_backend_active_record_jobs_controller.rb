@@ -5,9 +5,9 @@ module Cmor
         ::Delayed::Backend::ActiveRecord::Job
       end
 
-      # def self.available_rest_actions
-      #   %i(index show edit update)
-      # end
+      def self.available_rest_actions
+        %i(index show edit update destroy)
+      end
 
       private
 
