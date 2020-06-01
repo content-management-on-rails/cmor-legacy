@@ -11,6 +11,6 @@
       = "#{resource.record_type}##{resource.record_id}"
 = table.column :blob do |resource|
   - link_to(resource.blob.filename, [:active_storage, resource.blob])
-= table.column :created_at
+= table.timestamp :created_at
 = table.column :additional_actions do |resource|
   - link_to(t('.download'), main_app.url_for(resource.blob), class: 'btn btn-primary btn-xs')
