@@ -46,17 +46,21 @@ Cmor::Blog.configure do |config|
   #
   config.preview_picture_asset_variant_options = { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
 
-  # Define how the author will be shown on posts.
+  # Define how the author and post date will be shown on posts.
   #
   # You can generalize the label by not taking the creator into account at all:
   #
-  #     config.creator_label_for_post_proc = -> (post) { "Site Owner" }
+  #     config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | "Site Owner" }
   #
   # You can show a default when the creator is not set:
   #
-  #     config.creator_label_for_post_proc = -> (post) { post.creator&.to_s || "Site owner" }
+  #     config.post_creation_information_proc = -> (post) { post.creator&.human || "Site owner" }
   #
-  # default: config.creator_label_for_post_proc = -> (post) { post.creator&.to_s }
+  # You can remove the date:
   #
-  config.creator_label_for_post_proc = -> (post) { post.creator&.to_s }
+  #     config.post_creation_information_proc = -> (post) { post.creator&.human }
+  #
+  # default: config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
+  #
+  config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
 end

@@ -76,6 +76,20 @@ Replace it with:
       config.creator_label_for_post_proc = -> (post) { post.creator.to_s }
     end
 
+## Updating to 0.0.55.pre
+
+0.0.55.pre makes displaying of post meta information more flexible by replacing config.creator_label_for_post_proc with config.post_creation_information_proc.
+
+For example if you had a creator label like this:
+
+    config.creator_label_for_post_proc = -> (post) { "Site Owner" }
+
+You have to replaced it like this:
+
+    config.creator_label_for_post_proc = -> (post) { "#{l(post.created_at)} | "Site Owner" }
+
+See lib/generators/cmor/blog/install/templates/initializer.rb for more information.
+
 ## Configuration
 
 See the generated initializer in config/initializers/cmor_blog.rb for configuration options.

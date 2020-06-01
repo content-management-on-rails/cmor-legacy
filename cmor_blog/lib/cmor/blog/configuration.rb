@@ -32,8 +32,8 @@ module Cmor
         { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
       end
 
-      mattr_accessor(:creator_label_for_post_proc) do
-        -> (post) { post.creator&.to_s }
+      mattr_accessor(:post_creation_information_proc) do
+        -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
       end
     end
   end
