@@ -1,5 +1,14 @@
 = table.column :name
-= table.column :record
+= table.association :record do |resource|
+  - capture_haml do
+    - begin
+      - engine_name = resource.record.class.name.deconstantize.underscore.gsub("/", "_")
+      - engine_name = 'main_app' if engine_name.empty?
+      - url = send(engine_name).polymorphic_path(resource.record)
+      = link_to(url) do
+        = administrador_helper(self).label_for(resource.record)
+    - rescue NameError => e
+      = "#{resource.record_type}##{resource.record_id}"
 = table.column :blob do |resource|
   - link_to(resource.blob.filename, [:active_storage, resource.blob])
 = table.column :created_at
