@@ -1,10 +1,13 @@
 %div{ id: dom_id(post), class: "row #{dom_class(post)} bottom-margin-5 mb-4" }
-  .col-lg-12
+  .col-lg-4
+    .post-preview-picture
+      = image_tag(main_app.url_for(post.preview_picture.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)), class: 'img-fluid')
+  .col-lg-8
     %h2.post-title
       = link_to(post.title, cmor_blog.url_for(post))
     %small
       %span.post-creation-information.text-muted
-        = "#{l(post.created_at)} | #{Cmor::Blog::Configuration.creator_label_for_post_proc.call(post)}"
+        = instance_exec(post, &Cmor::Blog::Configuration.post_creation_information_proc)
       - if Cmor::Core.features?(:cmor_comments)
         |
         %span.comments-information
