@@ -1,0 +1,9 @@
+de:
+  classes:
+    cmor/transports/engine: Transporte
+  cmor:
+    transports:
+      exports:
+        export:
+          success: "Ihr Export wurde eingeplant. Klicken Sie <a href=\"%{url}\" class=\"alert-link\">hier</a> um ihn sich anzeigen zu lassen."
+          error: "Ihr Export konnte nicht eingeplant werden."

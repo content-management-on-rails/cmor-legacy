@@ -1,0 +1,11 @@
+= table.id
+= table.column :root_model
+= table.column :query
+= table.column :output_format
+= table.aasm_state
+= table.aasm_actions
+= table.column :description
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.column :job_id
+= table.attachment :output
+= table.timestamps
