@@ -19,5 +19,13 @@ module Cmor::Transports
     mattr_accessor :sidebar_controllers do
       -> {[]}
     end
+
+    mattr_accessor :export_formats do
+      -> {{
+        csv: "Cmor::Transports::Exports::CsvService",
+        json: "Cmor::Transports::Exports::JsonService",
+        yaml: "Cmor::Transports::Exports::YamlService",
+      }}
+    end
   end
 end

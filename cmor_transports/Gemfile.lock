@@ -1,14 +1,18 @@
 PATH
   remote: .
   specs:
-    cmor_transports (0.0.53.pre)
-      cmor_core (= 0.0.53.pre)
-      cmor_core_backend (= 0.0.53.pre)
+    cmor_transports (0.0.54.pre)
+      aasm
+      cmor_core (= 0.0.54.pre)
+      cmor_core_backend (= 0.0.54.pre)
       rails (>= 5.2.3)
+      rao-service
 
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.0.8)
+      concurrent-ruby (~> 1.0)
     actioncable (5.2.4.2)
       actionpack (= 5.2.4.2)
       nio4r (~> 2.0)
@@ -87,19 +91,19 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    cmor (0.0.53.pre)
-    cmor_core (0.0.53.pre)
+    cmor (0.0.54.pre)
+    cmor_core (0.0.54.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.53.pre)
+      cmor (= 0.0.54.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.53.pre)
+    cmor_core_backend (0.0.54.pre)
       administrador (>= 0.0.22.pre)
-      cmor_core (= 0.0.53.pre)
+      cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
     coderay (1.1.2)
     coffee-rails (5.0.0)
@@ -178,18 +182,18 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     json (2.2.0)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -258,23 +262,28 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     rao (0.0.41.pre)
-    rao-component (0.0.41.pre)
+    rao-component (0.0.42.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.41.pre)
+    rao-query (0.0.42.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.41.pre)
+    rao-resource_controller (0.0.42.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.41.pre)
+    rao-resources_controller (0.0.42.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.41.pre)
+    rao-service (0.0.41.pre)
+      activemodel
+      activesupport
+      rails (>= 3.2.0)
+      rao
+    rao-service_controller (0.0.42.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -282,7 +291,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.41.pre)
       rao
-    rao-view_helper (0.0.41.pre)
+    rao-view_helper (0.0.42.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -391,9 +400,9 @@ GEM
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
-    websocket-driver (0.7.1)
+    websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 

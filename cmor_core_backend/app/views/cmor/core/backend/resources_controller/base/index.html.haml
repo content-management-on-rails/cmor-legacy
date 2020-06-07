@@ -1,0 +1,41 @@
+.row
+  .col-12
+    %h1= t('.title', inflections)
+
+- if Administrador.features?(:rao_query)
+  .row
+    .col-12
+      = query_helper(self).form_for(@collection, url: {}, html: { class: 'administrador-query-form form-inline' }, method: :get) do |f|
+        = render partial: 'query_form', locals: { form: f }
+        = render partial: 'query_form_buttons', locals: { form: f }
+
+- if Cmor::Core.features?(:transports)
+  .row
+    .col-12
+      = link_to(export_path, class: 'btn btn-primary') do
+        = t('.export')
+        %i.fas.fa-file-export
+
+.row
+  .col-12
+    .before-index-table= render partial: 'before_index_table', locals: { collection: @collection }
+
+.row
+  .col-12
+    = collection_table(collection: @collection, resource_class: resource_class, table_html: "collection-table table table-responsive #{resource_class.name.underscore.pluralize.gsub('/', '-')} table-xs") do |table|
+      = render partial: 'index_table', locals: { table: table }
+      = render partial: 'index_table_actions', locals: { table: table }
+  
+- if Administrador.features?(:kaminari) && @collection.respond_to?(:total_pages)
+  .row
+    .col-12.d-flex
+      .mx-auto
+        = render partial: 'pagination', locals: { collection: @collection }
+
+.row
+  .col-12
+    .after-index-table= render 'after_index_table', locals: { collection: @collection }
+
+.row
+  .index-actions.col-12.d-flex
+    = render partial: 'index_actions'

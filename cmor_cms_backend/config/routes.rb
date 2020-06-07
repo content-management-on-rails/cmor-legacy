@@ -24,6 +24,8 @@ Cmor::Cms::Backend::Engine.routes.draw do
   resources :pages do
     post :toggle_published, on: :member
     Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+    get :export, on: :collection
+    post :dump, on: :collection
   end
   
   resources :partials do

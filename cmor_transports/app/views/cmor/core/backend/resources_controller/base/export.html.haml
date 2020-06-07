@@ -1,0 +1,6 @@
+%h1= t('.title', inflections)
+
+= simple_form_for(@resource, url: dump_path) do |f|
+  = render 'form_errors',  resource: f.object
+  = render 'export_form',  form: f
+  = render 'form_buttons', form: f

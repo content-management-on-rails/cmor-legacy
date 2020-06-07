@@ -1,14 +1,9 @@
 module Cmor::Transports
-  class Export < ApplicationRecord
+  class Incoming < ApplicationRecord
     include AASM
 
-    belongs_to :creator, optional: true, polymorphic: true
-    # belongs_to :job, optional: true
-    has_many :outgoing_exports
-    has_one_attached :output
-
-    validates :root_model, presence: true
-    validates :query, presence: true
+    belongs_to :creator, polymorphic: true
+    belongs_to :job
 
     aasm(:default, column: 'state') do
       state :created, initial: true
@@ -34,13 +29,5 @@ module Cmor::Transports
       end
     end
 
-    def enqueue_service_call
-      result = export_service_class_name.constantize.call_later!(export: self)
-      self.job_id = result.job_id
-    end
-
-    def export_service_class_name
-      "Cmor::Transports::Exports::#{self.output_format.camelize}Service"
-    end
   end
 end

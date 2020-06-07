@@ -5,23 +5,43 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          before_action(only: :export) { load_collection }
+          before_action(only: :export) { initialize_export_for_export }
+          before_action(only: :dump) { initialize_export_for_dump }
+
+          helper_method :dump_path
+          helper_method :export_path
         end
 
-        def export
-          @resource = Cmor::Transports::Export.new(permitted_params_for_export)
-          @resource.creator = current_user
-          @resource.query = load_collection_scope.to_sql
-          @resource.root_model = self.resource_class.to_s
-          if @resource.aasm.fire!(:enqueue)
-            flash[:success] = t('cmor.transports.exports.export.success', url: cmor_transports.url_for(@resource)).html_safe
-          else
-            flash[:error] = t('cmor.transports.exports.export.error')
+        def export; end
+        def dump; end
+
+        private
+
+        def initialize_export_for_export
+          @resource = Cmor::Transports::Export.new
+        end
+
+        def initialize_export_for_dump
+          @resource = Cmor::Transports::Export.new(permitted_params_for_dump).tap do |resource|
+            resource.creator = current_user
+            resource.query = load_collection_scope.all.to_sql
+            resource.root_model = self.resource_class.to_s
+            resource
           end
-          respond_with(@resource, location: last_location)
+
+          @resource.aasm.fire!(:enqueue)
+          respond_with(@resource, location: url_for([cmor_transports, @resource]))
         end
 
-        def permitted_params_for_export
+        def dump_path
+          url_for(request.GET.clone.merge(action: :dump, only_path: true))
+        end
+
+        def export_path
+          url_for(request.GET.clone.merge(action: :export))
+        end
+
+        def permitted_params_for_dump
           params.require(:export).permit(:description, :output_format)
         end
       end
