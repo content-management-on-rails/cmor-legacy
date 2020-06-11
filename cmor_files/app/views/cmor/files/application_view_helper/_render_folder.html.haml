@@ -1,0 +1,15 @@
+.row
+  .col-12
+    %h4= resource.name
+
+.row
+  .col-12
+    .table-responsive
+      = collection_table(collection: resource.file_details, resource_class: Cmor::Files::FileDetail, header: false) do |table|
+        = table.column :filename do |resource|
+          - resource.asset.blob.filename.to_s.truncate(64)
+        = table.column :actions, html: "text-right" do |resource|
+          - capture_haml do
+            .text-right
+              = link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do
+                = files_helper(self).asset_download_button_label(resource.asset)
