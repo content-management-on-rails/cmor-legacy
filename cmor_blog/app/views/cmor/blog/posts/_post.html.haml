@@ -1,20 +1,24 @@
 %div{ id: dom_id(post), class: dom_class(post) }
-  %h1.post-title
-    = link_to(post.title, cmor_blog.url_for(post))
-  %small
-    %span.post-creation-information.text-muted
-      = Cmor::Blog::Configuration.post_creation_information_proc.call(post)
+  .row
+    .col-12
+      %h1.post-title
+        = post.title
+      %small
+        %span.post-creation-information.text-muted
+          = Cmor::Blog::Configuration.post_creation_information_proc.call(post)
 
-    - if Cmor::Core.features?(:cmor_comments)
-      |
-      %span.comments-information
-        = link_to(t('cmor.comments.commentable.comments_information', comments_count: post.comments.count), cmor_blog.post_url(post, anchor: 'comments'))
-    - if Cmor::Core.features?(:cmor_tags)
-      |
-      %span.post-tags
-        = tags_helper(self).render_tags_for(post)
+        - if Cmor::Core.features?(:cmor_comments)
+          |
+          %span.comments-information
+            = link_to(t('cmor.comments.commentable.comments_information', comments_count: post.comments.count), cmor_blog.post_url(post, anchor: 'comments'))
+        - if Cmor::Core.features?(:cmor_tags)
+          |
+          %span.post-tags
+            = tags_helper(self).render_tags_for(post)
 
-  %p.post-body= post.body(format: :html).html_safe
+  .row
+    .col-12
+      %p.post-body= post.body(format: :html).html_safe
 
   - if post.asset_details.images.any?
     .row
@@ -22,7 +26,7 @@
         .col-lg-4.d-flex.align-items-stretch
           .card.text-center.border-0
             %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(post) } }
-              %img{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)) }
+              %img.ing-fluid.w-100{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)) }
             .card-body
               %h5.card-title
                 = picture_detail.title
@@ -30,8 +34,14 @@
                 = picture_detail.description
 
   - if post.asset_details.non_images.any?
-    = collection_table(collection: post.asset_details.non_images.order(position: :asc)) do |t|
-      = t.column :filename
-      = t.column :actions do |resource|
-        - link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do
-          - t('.download')
+    .row
+      .col-12
+        = collection_table(collection: post.asset_details.non_images.order(position: :asc)) do |t|
+          = t.column :filename
+          = t.column :actions do |resource|
+            - link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do
+              - t('.download')
+  
+.row.mt-4
+  .col-12
+    = link_to(t('.back'), last_location, class: 'btn btn-primary')

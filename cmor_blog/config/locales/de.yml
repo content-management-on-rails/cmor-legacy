@@ -48,5 +48,8 @@ de:
       application_view_helper:
         render_post:
           more: 'Mehr'
+      posts:
+        post:
+          back: 'Zurück'
   routes:
     cmor_blog_engine: blog
