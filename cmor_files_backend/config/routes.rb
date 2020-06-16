@@ -11,7 +11,7 @@ Cmor::Files::Backend::Engine.routes.draw do
     post :publish_many, on: :collection
   end
 
-  resources :file_details do
+  resources :file_details, except: [:new, :create] do
     acts_as_list
     acts_as_published
     post :destroy_many, on: :collection

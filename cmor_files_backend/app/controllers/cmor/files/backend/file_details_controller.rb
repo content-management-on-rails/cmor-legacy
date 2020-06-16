@@ -10,6 +10,10 @@ module Cmor
           Cmor::Files::FileDetail
         end
 
+        def self.available_rest_actions
+          super - [:new, :create]
+        end
+
         private
 
         def load_collection_scope
