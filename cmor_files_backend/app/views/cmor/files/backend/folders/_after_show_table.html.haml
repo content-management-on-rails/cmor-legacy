@@ -11,6 +11,6 @@
     - resource.asset.blob.checksum
   = t.timestamps format: :short
   = t.column :actions do |resource|
-    - link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: I18n.t('.confirmations.delete') }) do
+    - link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
       %span.glyphicon.glyphicon-fire
       %span.btn-text= t('.destroy')
