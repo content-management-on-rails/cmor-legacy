@@ -36,6 +36,45 @@ module Cmor
       end
 
       include FlashConcern
+
+      module PageTitleConcern
+        extend ActiveSupport::Concern
+
+        def application_title
+          t("#{Rails.application.class.to_s.deconstantize.underscore}.application.name")
+        end
+    
+        def page_title
+          page_title = t(page_title_i18n_key, default: page_title_fallbacks)
+          [application_title, page_title].join(" - ")
+        end
+    
+        private
+    
+        def page_title_fallbacks
+          page_title_from_content || page_title_from_resource
+        end
+    
+        def page_title_i18n_key
+          splitted_controller_name = c.params[:controller].split('/')
+          controller_namespace = splitted_controller_name[0..1].join('.')
+          controller_demodulized_name = splitted_controller_name.last
+
+          [controller_namespace, 'pages', controller_demodulized_name, c.controller.action_name].join('.')
+        end
+    
+        def page_title_from_resource
+          if(resource = c.controller.instance_variable_get(:@resource)).respond_to?(:title)
+            resource.title
+          end
+        end
+    
+        def page_title_from_content
+          c.content_for(:title)
+        end
+      end
+
+      include PageTitleConcern
     end
   end
 end
