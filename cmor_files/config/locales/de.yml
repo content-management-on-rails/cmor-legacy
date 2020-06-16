@@ -36,12 +36,14 @@ de:
         updated_at: Aktualisiert am
       cmor/files/folder:
         id: ID
+        append_assets: Dateien hinzufügen
         assets: Dateien
         assets_count: Dateien
         description: Beschreibung
         identifier: Bezeichner
         locale: Sprache
         name: Name
+        overwrite_assets: Dateien ersetzen
         position: Position
         published: Veröffentlicht
         published_at: Veröffentlicht am
