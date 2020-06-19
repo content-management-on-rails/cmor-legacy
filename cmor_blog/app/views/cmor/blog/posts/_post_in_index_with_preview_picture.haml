@@ -8,6 +8,7 @@
     %small
       %span.post-creation-information.text-muted
         = instance_exec(post, &Cmor::Blog::Configuration.post_creation_information_proc)
+
       - if Cmor::Core.features?(:cmor_comments)
         |
         %span.comments-information

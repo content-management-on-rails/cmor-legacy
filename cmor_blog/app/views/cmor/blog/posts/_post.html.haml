@@ -5,7 +5,7 @@
         = post.title
       %small
         %span.post-creation-information.text-muted
-          = Cmor::Blog::Configuration.post_creation_information_proc.call(post)
+          = instance_exec(post, &Cmor::Blog::Configuration.post_creation_information_proc)
 
         - if Cmor::Core.features?(:cmor_comments)
           |

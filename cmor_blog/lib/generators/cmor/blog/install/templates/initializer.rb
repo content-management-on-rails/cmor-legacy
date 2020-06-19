@@ -54,13 +54,13 @@ Cmor::Blog.configure do |config|
   #
   # You can show a default when the creator is not set:
   #
-  #     config.post_creation_information_proc = -> (post) { post.creator&.human || "Site owner" }
+  #     config.post_creation_information_proc = -> (post) { post.creator&.to_s || "Site owner" }
   #
   # You can remove the date:
   #
-  #     config.post_creation_information_proc = -> (post) { post.creator&.human }
+  #     config.post_creation_information_proc = -> (post) { post.creator&.to_s }
   #
-  # default: config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
+  # default: config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.to_s}" }
   #
-  config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
+  config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.to_s}" }
 end
