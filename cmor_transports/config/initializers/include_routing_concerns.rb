@@ -1,0 +1,1 @@
+ActionDispatch::Routing::Mapper.send(:include, Cmor::Transports::Routing::ExportResourcesConcern)

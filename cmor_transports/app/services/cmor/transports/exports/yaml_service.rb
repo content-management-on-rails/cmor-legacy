@@ -8,7 +8,7 @@ module Cmor
         private
 
         def generate_output!
-          @output = load_collection.to_yaml
+          @output = load_collection.collect { |r| r.attributes.slice(*resource_attributes) }.to_yaml
         end
 
         def attributes_for_attachment

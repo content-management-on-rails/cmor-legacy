@@ -6,6 +6,8 @@ de:
       backend:
         resources_controller:
           base:
+            export:
+              title: "%{collection_name} exportieren"
             index:
               export: "Exportieren"
     transports:
