@@ -11,9 +11,9 @@ module Cmor
 
         def generate_output!
           @output = CSV.generate(headers: true) do |csv|
-            csv << resource_attributes_name
+            csv << resource_attributes
             load_collection.each do |resource|
-              csv << resource.attributes.values
+              csv << resource.attributes.slice(*resource_attributes).values
             end
           end
         end

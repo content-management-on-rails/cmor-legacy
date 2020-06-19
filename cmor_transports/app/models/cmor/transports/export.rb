@@ -9,6 +9,9 @@ module Cmor::Transports
 
     validates :root_model, presence: true
     validates :query, presence: true
+    validates :output_format, presence: true
+
+    serialize :output_attributes, Array
 
     aasm(:default, column: 'state') do
       state :created, initial: true

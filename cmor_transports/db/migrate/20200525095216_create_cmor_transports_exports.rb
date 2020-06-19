@@ -3,6 +3,7 @@ class CreateCmorTransportsExports < ActiveRecord::Migration[5.2]
     create_table :cmor_transports_exports do |t|
       t.string :root_model
       t.string :query
+      t.text :output_attributes, default: [].to_yaml
       t.string :output_format
       t.string :state
       t.text :service_messages

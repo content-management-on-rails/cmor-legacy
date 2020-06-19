@@ -17,12 +17,17 @@ module Cmor
 
         private
 
+        def attributes_for_export
+          resource_class.attribute_names
+        end
+
         def initialize_export_for_export
           @resource = Cmor::Transports::Export.new
         end
 
         def initialize_export_for_dump
-          @resource = Cmor::Transports::Export.new(permitted_params_for_dump).tap do |resource|
+          @resource = Cmor::Transports::Export.new(permitted_params_for_dump.except('output_attributes')).tap do |resource|
+            resource.output_attributes = permitted_params_for_dump['output_attributes'].reject { |e| e.empty? }
             resource.creator = current_user
             resource.query = load_collection_scope.all.to_sql
             resource.root_model = self.resource_class.to_s
@@ -42,7 +47,7 @@ module Cmor
         end
 
         def permitted_params_for_dump
-          params.require(:export).permit(:description, :output_format)
+          params.require(:export).permit(:description, :output_format, output_attributes: [])
         end
       end
     end

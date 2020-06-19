@@ -1,6 +1,6 @@
 .row
   .col-12
-    %h1= t('.title', inflections)
+    %h1= t('administrador.resources_controller.base.index.title', inflections)
 
 - if Administrador.features?(:rao_query)
   .row
@@ -9,7 +9,7 @@
         = render partial: 'query_form', locals: { form: f }
         = render partial: 'query_form_buttons', locals: { form: f }
 
-- if Cmor::Core.features?(:transports)
+- if Cmor::Core.features?(:transports) && controller.class.available_rest_actions.include?(:export)
   .row
     .col-12
       = link_to(export_path, class: 'btn btn-primary') do

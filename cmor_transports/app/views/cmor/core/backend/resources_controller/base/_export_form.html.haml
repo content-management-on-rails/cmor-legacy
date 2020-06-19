@@ -1,2 +1,3 @@
 = form.input :output_format, as: :select, collection: Cmor::Transports.export_formats.call.keys
+= form.input :output_attributes, as: :check_boxes, collection: controller.send(:attributes_for_export)
 = form.input :description

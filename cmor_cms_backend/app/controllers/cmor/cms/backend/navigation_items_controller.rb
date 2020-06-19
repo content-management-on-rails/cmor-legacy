@@ -4,9 +4,14 @@ module Cmor
       class NavigationItemsController < Cmor::Core::Backend::ResourcesController::Base
         include Rao::ResourcesController::AwesomeNestedSetConcern
         include Rao::ResourcesController::ActsAsPublishedConcern
+        include Cmor::Transports::ResourcesController::ExportConcern
 
         def self.resource_class
           Cmor::Cms::NavigationItem
+        end
+
+        def self.available_rest_actions
+          super + [:export]
         end
 
         private

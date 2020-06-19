@@ -8,6 +8,10 @@ module Cmor
           Cmor::Cms::Page
         end
 
+        def self.available_rest_actions
+          super + [:export]
+        end
+
         private
 
         def permitted_params

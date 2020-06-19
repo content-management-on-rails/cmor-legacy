@@ -58,8 +58,8 @@ module Cmor
           export.root_model.constantize
         end
 
-        def resource_attributes_name
-          resource_class.attribute_names
+        def resource_attributes
+          export.output_attributes || resource_class.attribute_names
         end
       end
     end
