@@ -25,6 +25,10 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 # Add ActiveStorage
 rails active_storage:install
 
+# Add turbolinks
+sed -i "15irequire 'turbolinks'" config/application.rb
+sed -i "16irequire 'factory_bot_rails'" config/application.rb
+
 # I18n configuration
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
@@ -46,7 +50,12 @@ rails generate simple_form:install --bootstrap
 rails g cmor:core:backend:install
 
 # Add stuff for specs
-rails g model Post title body:text
+rails g scaffold Post title body:text published_at:timestamp --no-test-framework
+rails g factory_bot:model Post title body:text published_at:timestamp
+rails g cmor:core:install
+rails g cmor:cms:install
+rails g cmor:cms:backend:install
+rails cmor_cms:install:migrations
 
 # Install
 rails generate $INSTALL_NAME:install

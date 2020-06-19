@@ -2,8 +2,16 @@ de:
   classes:
     cmor/transports/engine: Transporte
   cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            index:
+              export: "Exportieren"
     transports:
       exports:
         export:
           success: "Ihr Export wurde eingeplant. Klicken Sie <a href=\"%{url}\" class=\"alert-link\">hier</a> um ihn sich anzeigen zu lassen."
           error: "Ihr Export konnte nicht eingeplant werden."
+  routes:
+    cmor-transports-engine: transporte

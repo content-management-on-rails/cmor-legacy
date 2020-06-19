@@ -12,9 +12,9 @@
 - if Cmor::Core.features?(:transports) && controller.class.available_rest_actions.include?(:export)
   .row
     .col-12
-      = link_to(export_path, class: 'btn btn-primary') do
-        = t('.export')
+      = link_to(export_path, class: 'btn btn-primary btn-responsive') do
         %i.fas.fa-file-export
+        %span.btn-text= t('.export')
 
 .row
   .col-12

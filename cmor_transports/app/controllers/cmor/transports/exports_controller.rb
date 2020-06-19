@@ -8,8 +8,16 @@ module Cmor::Transports
 
     private
 
+    def permitted_params
+      params.require(:export).permit(:root_model, :query, :output_format, :description, output_attributes: [])
+    end
+
     def after_create_location
-      url_for(:back)
+      if last_location.start_with?(url_for)
+        url_for(@resource)
+      else
+        last_location
+      end
     end
   end
 end

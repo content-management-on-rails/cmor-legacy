@@ -8,7 +8,7 @@ module Cmor
         private
 
         def generate_output!
-          @output = load_collection.to_json
+          @output = load_collection.collect { |r| r.attributes.slice(*resource_attributes) }.to_json
         end
 
         def attributes_for_attachment

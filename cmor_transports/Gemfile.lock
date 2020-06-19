@@ -1,4 +1,21 @@
 PATH
+  remote: ../cmor_cms_backend
+  specs:
+    cmor_cms_backend (0.0.54.pre)
+      cmor_cms (= 0.0.54.pre)
+      cmor_core (= 0.0.54.pre)
+      cmor_core_backend (= 0.0.54.pre)
+      rails (>= 5.2.3)
+
+PATH
+  remote: ../cmor_core_backend
+  specs:
+    cmor_core_backend (0.0.54.pre)
+      administrador (>= 0.0.23.pre)
+      cmor_core (= 0.0.54.pre)
+      rails (>= 5.2.3)
+
+PATH
   remote: .
   specs:
     cmor_transports (0.0.54.pre)
@@ -11,6 +28,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    RedCloth (4.3.2)
     aasm (5.0.8)
       concurrent-ruby (~> 1.0)
     actioncable (5.2.4.2)
@@ -41,6 +59,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.2.4.2)
       activesupport (= 5.2.4.2)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.2.4.2)
       activemodel (= 5.2.4.2)
       activesupport (= 5.2.4.2)
@@ -54,15 +76,17 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_published (1.1.0)
+      rails (>= 3.2.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    administrador (0.0.22.pre)
+    administrador (0.0.23.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.31.pre)
+      rao-component (>= 0.0.43.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
       rao-resources_controller (>= 0.0.23.pre)
@@ -74,6 +98,8 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
+    awesome_nested_set (3.2.0)
+      activerecord (>= 4.0.0, < 7.0)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     bootstrap-kaminari-views (0.0.5)
@@ -92,6 +118,17 @@ GEM
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
     cmor (0.0.54.pre)
+    cmor_cms (0.0.54.pre)
+      RedCloth
+      acts_as_published
+      awesome_nested_set
+      cmor_core (= 0.0.54.pre)
+      cmor_core_frontend (= 0.0.54.pre)
+      coffee-rails
+      draper
+      rails (>= 5.2.3)
+      rao-service (>= 0.0.17.pre)
+      simple-navigation (>= 4.0.0)
     cmor_core (0.0.54.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.54.pre)
@@ -101,10 +138,10 @@ GEM
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.54.pre)
-      administrador (>= 0.0.22.pre)
+    cmor_core_frontend (0.0.54.pre)
       cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
+      rao-view_helper
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -128,6 +165,12 @@ GEM
       delayed_job (>= 3.0, < 5)
     diff-lcs (1.3)
     docile (1.3.2)
+    draper (4.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -262,19 +305,19 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     rao (0.0.41.pre)
-    rao-component (0.0.42.pre)
+    rao-component (0.0.43.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.42.pre)
+    rao-query (0.0.43.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.42.pre)
+    rao-resource_controller (0.0.43.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.42.pre)
+    rao-resources_controller (0.0.43.pre)
       rails (>= 4.2.0)
       rao
       responders
@@ -283,7 +326,7 @@ GEM
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.42.pre)
+    rao-service_controller (0.0.43.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -298,6 +341,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
+    request_store (1.5.0)
+      rack (>= 1.4)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     responders (3.0.0)
@@ -351,10 +396,12 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
-    sexp_processor (4.14.1)
+    sexp_processor (4.15.0)
     shellany (0.0.1)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
+    simple-navigation (4.1.0)
+      activesupport (>= 2.3.2)
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -412,6 +459,9 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  cmor_cms
+  cmor_cms_backend!
+  cmor_core_backend!
   cmor_transports!
   coveralls
   factory_bot_rails

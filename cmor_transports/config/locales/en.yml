@@ -1,1 +1,17 @@
 en:
+  classes:
+    cmor/transports/engine: Transports
+  cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            index:
+              export: "Export"
+    transports:
+      exports:
+        export:
+          success: "The export was scheduled. Click on <a href=\"%{url}\" class=\"alert-link\">hier</a> to see details."
+          error: "The export could not be scheduled."
+  routes:
+    cmor-transports-engine: transports

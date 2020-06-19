@@ -5,5 +5,8 @@ RSpec.configure do |config|
 end
 
 FactoryBot.factories.clear
-FactoryBot.definition_file_paths += [Rails.root.join(*%w(spec factories))]
+FactoryBot.definition_file_paths += [
+  Rails.root.join(*%w(spec factories)),
+  Cmor::Transports::Engine.root.join(*%w(spec factories))
+]
 FactoryBot.find_definitions 
