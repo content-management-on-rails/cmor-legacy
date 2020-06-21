@@ -12,12 +12,14 @@ de:
     attributes:
       cmor/blog/post:
         id: ID
+        append_assets: Dateien hinzufügen
         asset_details_count: Anhänge
         assets: Anhänge
         body: Inhalt
         created_by_id: Erstellt von
         creator: Erstellt von
         locale: Sprache
+        overwrite_assets: Dateien ersetzen
         position: Position
         published: Veröffentlicht
         published_at: Veröffentlicht am
@@ -40,6 +42,7 @@ de:
         title: Titel
         preview_picture: Vorschau
         position: Position
+        published: Veröffentlicht
         published_at: Veröffentlicht am
         created_at: Erstellt am
         updated_at: Aktualisiert am

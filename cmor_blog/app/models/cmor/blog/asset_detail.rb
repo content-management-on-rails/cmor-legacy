@@ -5,6 +5,10 @@ module Cmor::Blog
 
     acts_as_list scope: :post_id
 
+    # acts as published
+    include ActsAsPublished::ActiveRecord
+    acts_as_published
+
     scope :images,     -> { joins(asset: [:blob]).where("active_storage_blobs.content_type LIKE '%image/%'") }
     scope :non_images, -> { joins(asset: [:blob]).where("active_storage_blobs.content_type NOT LIKE '%image/%'") }
 

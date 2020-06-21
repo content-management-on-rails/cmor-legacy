@@ -12,6 +12,10 @@ module Cmor
           Cmor::Blog::AssetDetail
         end
 
+        def self.available_rest_actions
+          super - [:new, :create]
+        end
+
         private
 
         def after_destroy_location
@@ -23,7 +27,7 @@ module Cmor
         end
 
         def permitted_params
-          params.require(:asset_detail).permit(:title, :description)
+          params.require(:asset_detail).permit(:title, :description, :published)
         end
       end
     end
