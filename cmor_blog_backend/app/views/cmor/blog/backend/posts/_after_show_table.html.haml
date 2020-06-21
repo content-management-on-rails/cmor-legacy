@@ -6,18 +6,19 @@
     = t.column :asset_actions do |resource|
       - if resource.asset.present?
         - link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-primary btn-responsive') do
-          %span.glyphicon.glyphicon-download
+          %i.fas.fa-download
           %span.btn-text= t('.download')
-    = t.column :actions do |resource|
+    = t.column :actions, title: '' do |resource|
       - capture_haml do
         - id_base = "link-to-#{controller.class.name.underscore.gsub('_controller', '').gsub(/[\/_]/, '-')}-#{resource.to_param}"
-        .btn-group
-          = link_to(resource, id: "#{id_base}-show", class: 'btn btn-xs btn-responsive btn-primary') do
-            %span.glyphicon.glyphicon-eye-open
-            %span.btn-text= t('.show')
-          = link_to([:edit, resource], id: "#{id_base}-edit", class: 'btn btn-xs btn-responsive btn-default') do
-            %span.glyphicon.glyphicon-pencil
-            %span.btn-text= t('.edit')
-          = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
-            %span.glyphicon.glyphicon-fire
-            %span.btn-text= t('.destroy')
+        .text-right.w-100
+          .btn-group
+            = link_to(resource, id: "#{id_base}-show", class: 'btn btn-xs btn-responsive btn-primary') do
+              %i.fas.fa-eye
+              %span.btn-text= t('.show')
+            = link_to([:edit, resource], id: "#{id_base}-edit", class: 'btn btn-xs btn-responsive btn-secondary') do
+              %i.fas.fa-pen
+              %span.btn-text= t('.edit')
+            = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
+              %i.fas.fa-fire
+              %span.btn-text= t('.destroy')
