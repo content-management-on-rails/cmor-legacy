@@ -52,7 +52,7 @@ de:
         render_post:
           more: 'Mehr'
       posts:
-        post:
+        show:
           back: 'Zurück'
   routes:
     cmor_blog_engine: blog

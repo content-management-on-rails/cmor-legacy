@@ -41,7 +41,3 @@
           = t.column :actions do |resource|
             - link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do
               - t('.download')
-  
-.row.mt-4
-  .col-12
-    = link_to(t('.back'), last_location, class: 'btn btn-primary')

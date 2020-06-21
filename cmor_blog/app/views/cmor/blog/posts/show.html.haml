@@ -1,4 +1,9 @@
-= render @resource
+.mb-4
+  = render @resource
+
+.page-actions.row
+  .col-12
+    = link_to(t('.back'), last_location, class: 'btn btn-primary')
 
 - if Cmor::Core.features?(:cmor_comments)
   = commentable(@resource)
