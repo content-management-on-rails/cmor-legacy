@@ -1,5 +1,6 @@
 module Cmor::Transports
   class Export < ApplicationRecord
+    include Cmor::Transports::Models::UuidConcern
     include AASM
 
     belongs_to :creator, optional: true, polymorphic: true
@@ -9,9 +10,18 @@ module Cmor::Transports
 
     validates :root_model, presence: true
     validates :query, presence: true
+    validates :count_query, presence: true
     validates :output_format, presence: true
 
     serialize :output_attributes, Array
+
+    def human
+      [root_model, output_format, updated_at, creator].compact.join(" | ")
+    end
+
+    def count
+      root_model.constantize.count_by_sql(count_query)
+    end
 
     aasm(:default, column: 'state') do
       state :created, initial: true

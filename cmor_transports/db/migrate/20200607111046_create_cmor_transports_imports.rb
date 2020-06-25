@@ -1,6 +1,8 @@
 class CreateCmorTransportsImports < ActiveRecord::Migration[5.2]
   def change
     create_table :cmor_transports_imports do |t|
+      t.string :uuid, null: :false
+      t.string :state
       t.string :root_model
       t.string :input_format
       t.text :service_messages

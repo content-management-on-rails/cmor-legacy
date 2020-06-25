@@ -1,9 +1,10 @@
 module Cmor::Transports
   class Import < ApplicationRecord
+    include Cmor::Transports::Models::UuidConcern
     include AASM
 
-    belongs_to :creator, polymorphic: true
-    belongs_to :job
+    belongs_to :creator, polymorphic: true, optional: true
+    belongs_to :job, optional: true
 
     validates :root_model, presence: true
 

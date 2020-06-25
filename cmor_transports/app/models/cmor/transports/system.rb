@@ -5,5 +5,9 @@ module Cmor::Transports
     validates :identifier, presence: true, uniqueness: true
     validates :endpoint, presence: true, uniqueness: true
     validates :api_key, presence: true
+
+    def human
+      "#{identifier} | #{endpoint}"
+    end
   end
 end

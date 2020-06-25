@@ -11,7 +11,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.54.pre)
-      administrador (>= 0.0.23.pre)
+      administrador (>= 0.0.24.pre)
       cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
 
@@ -22,8 +22,11 @@ PATH
       aasm
       cmor_core (= 0.0.54.pre)
       cmor_core_backend (= 0.0.54.pre)
+      httparty
       rails (>= 5.2.3)
+      rao-api-service_controller
       rao-service
+      rubyzip
 
 GEM
   remote: https://rubygems.org/
@@ -80,7 +83,7 @@ GEM
       rails (>= 3.2.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    administrador (0.0.23.pre)
+    administrador (0.0.24.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -89,7 +92,7 @@ GEM
       rao-component (>= 0.0.43.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
-      rao-resources_controller (>= 0.0.23.pre)
+      rao-resources_controller (>= 0.0.43.pre)
       rao-service_controller (>= 0.0.23.pre)
       rao-view_helper (>= 0.0.23.pre)
       route_translator
@@ -157,6 +160,8 @@ GEM
       term-ansicolor (~> 1.3)
       thor (>= 0.19.4, < 2.0)
       tins (~> 1.6)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.6)
     delayed_job (4.1.8)
       activesupport (>= 3.0, < 6.1)
@@ -216,11 +221,15 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    hashdiff (1.0.1)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
+    httparty (0.18.1)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -249,11 +258,15 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2020.0512)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     msgpack (1.3.3)
+    multi_xml (0.6.0)
     nenv (0.3.0)
     nio4r (2.5.2)
     nokogiri (1.10.9)
@@ -270,6 +283,8 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.3)
+    puma (4.3.5)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -305,6 +320,9 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     rao (0.0.41.pre)
+    rao-api-service_controller (0.0.43.pre)
+      rails
+      rao
     rao-component (0.0.43.pre)
       haml-rails
       rails
@@ -396,6 +414,8 @@ GEM
     ruby-progressbar (1.10.1)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
+    rubyzip (2.3.0)
+    safe_yaml (1.0.5)
     sexp_processor (4.15.0)
     shellany (0.0.1)
     shoulda-matchers (4.3.0)
@@ -447,6 +467,11 @@ GEM
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
+    vcr (6.0.0)
+    webmock (3.8.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -470,6 +495,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   pry-rails
+  puma
   rails-dummy
   rails-i18n
   rao-shoulda_matchers
@@ -482,6 +508,8 @@ DEPENDENCIES
   simplecov-console
   sqlite3 (~> 1.3.6)
   turbolinks
+  vcr
+  webmock
 
 BUNDLED WITH
    2.1.4

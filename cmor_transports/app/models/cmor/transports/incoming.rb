@@ -1,9 +1,14 @@
 module Cmor::Transports
   class Incoming < ApplicationRecord
+    include Cmor::Transports::Models::UuidConcern
     include AASM
 
-    belongs_to :creator, polymorphic: true
-    belongs_to :job
+    belongs_to :creator, optional: true, polymorphic: true
+    # belongs_to :job, optional: true
+
+    has_one_attached :input
+
+    validates :outgoing_uuid, presence: true, uniqueness: true
 
     aasm(:default, column: 'state') do
       state :created, initial: true

@@ -4,7 +4,8 @@ Cmor::Transports.configure do |config|
   # Default: config.resources_controllers = -> {[]}
   # 
   config.resources_controllers = -> {[
-    Cmor::Transports::ExportsController
+    Cmor::Transports::ExportsController,
+    Cmor::Transports::OutgoingsController
   ]}
 
   # Set the resources, that will be shown in the backend menu.
@@ -24,4 +25,10 @@ Cmor::Transports.configure do |config|
   # Default: config.sidebar_controllers = -> {[]}
   # 
   config.sidebar_controllers = -> {[]}
+
+  # Configure the api key for incoming transports.
+  #
+  # Default: config.api_key = ENV.fetch('CMOR_TRANSPORTS_API_KEY') { '<secure-random-string>' }
+  #
+  config.api_key = ENV.fetch('CMOR_TRANSPORTS_API_KEY') { '<secure-random-string>' }
 end

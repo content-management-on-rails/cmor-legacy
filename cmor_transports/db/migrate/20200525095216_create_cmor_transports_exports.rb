@@ -1,8 +1,10 @@
 class CreateCmorTransportsExports < ActiveRecord::Migration[5.2]
   def change
     create_table :cmor_transports_exports do |t|
+      t.string :uuid, null: :false
       t.string :root_model
-      t.string :query
+      t.text :query
+      t.text :count_query
       t.text :output_attributes, default: [].to_yaml
       t.string :output_format
       t.string :state

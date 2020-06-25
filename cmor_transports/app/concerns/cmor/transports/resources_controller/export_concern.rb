@@ -39,6 +39,7 @@ module Cmor
             resource.output_attributes = permitted_params_for_dump['output_attributes'].reject { |e| e.empty? }
             resource.creator = current_user if respond_to?(:current_user)
             resource.query = load_collection_scope.all.to_sql
+            resource.count_query = load_collection_scope.select(Arel.star.count).to_sql
             resource.root_model = self.resource_class.to_s
             resource
           end

@@ -9,7 +9,7 @@ module Cmor::Transports
     private
 
     def permitted_params
-      params.require(:export).permit(:root_model, :query, :output_format, :description, output_attributes: [])
+      params.require(:export).permit(:root_model, :query, :count_query, :output_format, :description, output_attributes: [])
     end
 
     def after_create_location

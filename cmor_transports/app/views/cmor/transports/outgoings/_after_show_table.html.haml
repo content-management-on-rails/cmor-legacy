@@ -1,0 +1,26 @@
+.row
+  .col-12
+    %h1= Cmor::Transports::System.model_name.human(count: :other)
+
+.row
+  .col-12
+    = collection_table(collection: @resource.outgoing_targets, resource_class: Cmor::Transports::System) do |table|
+      = table.id
+      = table.column :incoming_status
+      = table.column :system_identifier
+      = table.column :system_endpoint
+      = table.timestamps
+
+.row
+  .col-12
+    %h1= Cmor::Transports::Export.model_name.human(count: :other)
+
+.row
+  .col-12
+    = collection_table(collection: @resource.exports, resource_class: Cmor::Transports::Export) do |table|
+      = table.column :id
+      = table.column :uuid
+      = table.column :root_model
+      = table.column :count
+      = table.column :description
+      = table.timestamps

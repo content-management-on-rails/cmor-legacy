@@ -25,6 +25,7 @@ RSpec.describe "/de/backend/transporte/exports", type: :feature do
         #     fill_in 'slider[interval]', with: '3'
         fill_in "export[root_model]", with: "Cmor::Cms::Page"
         fill_in "export[query]", with: "SELECT * FROM cmor_cms_pages;"
+        fill_in "export[count_query]", with: "SELECT count(*) FROM cmor_cms_pages;"
         select "csv", from: "export[output_format]"
       }
       .increasing { Cmor::Transports::Export.count }.by(1)

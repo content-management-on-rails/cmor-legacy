@@ -13,6 +13,8 @@ RSpec.describe "ActiveRecord::Base models", type: :model do
 
   {
     Cmor::Transports::Export         => {},
+    Cmor::Transports::Import         => {},
+    Cmor::Transports::Incoming       => {},
     Cmor::Transports::Outgoing       => { specs_to_skip: [ :not_valid_with_empty_attributes ] },
     Cmor::Transports::OutgoingExport => {},
     Cmor::Transports::OutgoingTarget => {},

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3001/de/backend/transporte/api/incoming/create_services.json
+    body:
+      encoding: UTF-8
+      string: '{"create_service":{"outgoing":{"id":1,"uuid":"f0b78597-760e-41fc-ae12-9484f057fc1a","state":"transferring","creator_type":null,"creator_id":null,"job_id":null,"service_messages":null,"service_errors":null,"description":null,"created_at":"2020-06-25T15:14:11.021Z","updated_at":"2020-06-25T15:14:11.254Z","output_base64":"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\n"}}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer da39a3ee5e6b4b0d3255bfef95601890afd80709
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9f82c6a91238fe6fc87f77eb01148814"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 29fc0959-6d67-4792-ab0a-b46ddbc1585e
+      X-Runtime:
+      - '0.157664'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"messages":[{"indent_level":0,"prefix":"Cmor::Transports::Api::Incoming::CreateService","suffix":"...","content":"Performing"},{"indent_level":0,"prefix":"Cmor::Transports::Api::Incoming::CreateService","suffix":null,"content":"=\u003e
+        Done"},{"indent_level":0,"prefix":"Cmor::Transports::Api::Incoming::CreateService","suffix":null,"content":"Saved
+        incoming with id 3"}],"errors":{}}'
+  recorded_at: Thu, 25 Jun 2020 15:14:11 GMT
+recorded_with: VCR 6.0.0

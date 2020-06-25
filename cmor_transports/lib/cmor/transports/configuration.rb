@@ -20,6 +20,10 @@ module Cmor::Transports
       -> {[]}
     end
 
+    mattr_accessor :api_key do
+      nil
+    end
+
     mattr_accessor :export_formats do
       -> {{
         csv: "Cmor::Transports::Exports::CsvService",
