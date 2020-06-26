@@ -7,6 +7,7 @@ module Cmor::Transports
     # belongs_to :job, optional: true
 
     has_one_attached :input
+    has_one_attached :payload
 
     validates :outgoing_uuid, presence: true, uniqueness: true
 

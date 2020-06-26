@@ -15,3 +15,8 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 gem 'cmor_core_backend', path: '../cmor_core_backend'
 gem 'cmor_cms_backend', path: '../cmor_cms_backend'
+
+# gem 'rao-component', path: '../../rao/rao-component'
+# gem 'rao-resources_controller', path: '../../rao/rao-resources_controller'
+gem 'rao-component', git: 'https://github.com/rails-add-ons/rao', glob: 'rao-component/*.gemspec'
+gem 'rao-resources_controller', git: 'https://github.com/rails-add-ons/rao', glob: 'rao-resources_controller/*.gemspec'

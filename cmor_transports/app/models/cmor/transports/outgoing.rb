@@ -5,10 +5,10 @@ module Cmor::Transports
 
     belongs_to :creator, optional: true, polymorphic: true
 
-    has_many :outgoing_exports
+    has_many :outgoing_exports, dependent: :destroy
     has_many :exports, through: :outgoing_exports
 
-    has_many :outgoing_targets
+    has_many :outgoing_targets, dependent: :destroy
     has_many :systems, through: :outgoing_targets
 
     has_one_attached :output
@@ -42,6 +42,10 @@ module Cmor::Transports
         transitions from: :packing, to: :succeeded_packing
       end
 
+      event :reset_packing do
+        transitions from: [:enqueued_for_packing, :failed_packing], to: :created
+      end
+
       event :enqueue_for_transfer, after: :enqueue_transferring_service_call do
         transitions from: :succeeded_packing, to: :enqueued_for_transfer
       end
@@ -54,7 +58,7 @@ module Cmor::Transports
         transitions from: :transferring, to: :failed_transferring
       end
 
-      event :reset_transfer do
+      event :reset_transferring do
         transitions from: [:enqueued_for_transfer, :failed_transferring], to: :succeeded_packing
       end
 

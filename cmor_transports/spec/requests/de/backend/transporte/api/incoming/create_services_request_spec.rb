@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "/de/backend/transporte/api/incoming/create_services.json", type: :request do
   let(:base_url) { "/de/backend/transporte/api/incoming/create_services.json" }
-  let(:outgoing) { create(:cmor_transports_outgoing) }
+  let(:output) { Rack::Test::UploadedFile.new(Cmor::Transports::Engine.root.join(*%w(spec files cmor transports outgoing output example.zip)), 'application/zip') }
+  let(:outgoing) { create(:cmor_transports_outgoing, output: output) }
   let(:params) { { create_service: { outgoing: outgoing.as_json(methods: :output_base64) } } }
   let(:headers) { {} }
 

@@ -1,3 +1,23 @@
+GIT
+  remote: https://github.com/rails-add-ons/rao
+  revision: e955f30edcd1cbb72eae2fcd72de5cb424c67888
+  glob: rao-resources_controller/*.gemspec
+  specs:
+    rao-resources_controller (0.0.43.pre)
+      rails (>= 4.2.0)
+      rao
+      responders
+
+GIT
+  remote: https://github.com/rails-add-ons/rao
+  revision: e955f30edcd1cbb72eae2fcd72de5cb424c67888
+  glob: rao-component/*.gemspec
+  specs:
+    rao-component (0.0.43.pre)
+      haml-rails
+      rails
+      rao
+
 PATH
   remote: ../cmor_cms_backend
   specs:
@@ -323,19 +343,11 @@ GEM
     rao-api-service_controller (0.0.43.pre)
       rails
       rao
-    rao-component (0.0.43.pre)
-      haml-rails
-      rails
-      rao
     rao-query (0.0.43.pre)
       rails
       rao
       rao-view_helper
     rao-resource_controller (0.0.43.pre)
-      rails (>= 4.2.0)
-      rao
-      responders
-    rao-resources_controller (0.0.43.pre)
       rails (>= 4.2.0)
       rao
       responders
@@ -498,6 +510,8 @@ DEPENDENCIES
   puma
   rails-dummy
   rails-i18n
+  rao-component!
+  rao-resources_controller!
   rao-shoulda_matchers
   responders
   rspec-rails
