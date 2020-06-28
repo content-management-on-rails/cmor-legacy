@@ -23,6 +23,6 @@
             = link_to([:edit, picture_detail], class: 'btn btn-xs btn-responsive btn-primary') do
               %span.glyphicon.glyphicon-pencil
               %span.btn-text= t('.edit')
-            = link_to([picture_detail], class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
+            = link_to([picture_detail], class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('rao.component.collection_table.destroy_confirmation') }) do
               %span.glyphicon.glyphicon-fire
               %span.btn-text= t('.destroy')

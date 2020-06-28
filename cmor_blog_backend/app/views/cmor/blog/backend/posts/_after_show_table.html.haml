@@ -19,6 +19,6 @@
             = link_to([:edit, resource], id: "#{id_base}-edit", class: 'btn btn-xs btn-responsive btn-secondary') do
               %i.fas.fa-pen
               %span.btn-text= t('.edit')
-            = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
+            = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('rao.component.collection_table.destroy_confirmation') }) do
               %i.fas.fa-fire
               %span.btn-text= t('.destroy')

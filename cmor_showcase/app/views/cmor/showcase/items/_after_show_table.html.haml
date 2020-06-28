@@ -17,6 +17,6 @@
       = link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-responsive btn-primary') do
         %i.fas.fa-download
         %span.btn-text= t('.download')
-      = link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('.destroy_confirmation') }) do
+      = link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('rao.component.collection_table.destroy_confirmation') }) do
         %i.fas.fa-fire
         %span.btn-text= t('.destroy')
