@@ -248,7 +248,7 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-resources_controller (0.0.41.pre)
+    rao-resources_controller (0.0.44.pre)
       rails (>= 4.2.0)
       rao
       responders
@@ -263,7 +263,7 @@ GEM
     regexp_parser (1.4.0)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    responders (3.0.0)
+    responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     route_translator (7.0.1)

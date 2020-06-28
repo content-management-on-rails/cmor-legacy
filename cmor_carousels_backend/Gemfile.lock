@@ -14,7 +14,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.54.pre)
-      administrador (>= 0.0.22.pre)
+      administrador (>= 0.0.25.pre)
       cmor_core (= 0.0.54.pre)
       rails (>= 5.2.3)
 
@@ -95,16 +95,16 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.22.pre)
+    administrador (0.0.25.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.31.pre)
+      rao-component (>= 0.0.44.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
-      rao-resources_controller (>= 0.0.23.pre)
+      rao-resources_controller (>= 0.0.43.pre)
       rao-service_controller (>= 0.0.23.pre)
       rao-view_helper (>= 0.0.23.pre)
       route_translator
@@ -293,23 +293,23 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.41.pre)
+    rao-component (0.0.44.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.41.pre)
+    rao-query (0.0.44.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.41.pre)
+    rao-resource_controller (0.0.44.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.41.pre)
+    rao-resources_controller (0.0.44.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service_controller (0.0.41.pre)
+    rao-service_controller (0.0.44.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -368,7 +368,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
-    sexp_processor (4.14.1)
+    sexp_processor (4.15.0)
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)
