@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.54.pre)
+    cmor_core (0.0.55.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.54.pre)
+      cmor (= 0.0.55.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,21 +14,21 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.54.pre)
-    cmor_core_frontend (0.0.54.pre)
-      cmor_core (= 0.0.54.pre)
+    cmor (0.0.55.pre)
+    cmor_core_frontend (0.0.55.pre)
+      cmor_core (= 0.0.55.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_user_area (0.0.54.pre)
+    cmor_user_area (0.0.55.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.54.pre)
-      cmor_core_frontend (= 0.0.54.pre)
+      cmor_core (= 0.0.55.pre)
+      cmor_core_frontend (= 0.0.55.pre)
       rails (>= 5.2.3)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -186,18 +186,18 @@ GEM
     jaro_winkler (1.5.2)
     json (2.2.0)
     jsonapi-renderer (0.2.2)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -274,14 +274,14 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.41.pre)
+    rao-service (0.0.44.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.41.pre)
+    rao-view_helper (0.0.44.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

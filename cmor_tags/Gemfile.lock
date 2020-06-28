@@ -8,9 +8,9 @@ GIT
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.54.pre)
+    cmor_core (0.0.55.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.54.pre)
+      cmor (= 0.0.55.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -21,19 +21,19 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.54.pre)
-    cmor_core_frontend (0.0.54.pre)
-      cmor_core (= 0.0.54.pre)
+    cmor (0.0.55.pre)
+    cmor_core_frontend (0.0.55.pre)
+      cmor_core (= 0.0.55.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_tags (0.0.54.pre)
+    cmor_tags (0.0.55.pre)
       acts-as-taggable-on
-      cmor_core (= 0.0.54.pre)
-      cmor_core_frontend (= 0.0.54.pre)
+      cmor_core (= 0.0.55.pre)
+      cmor_core_frontend (= 0.0.55.pre)
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       rao-service_controller (>= 0.0.17.pre)
@@ -170,18 +170,18 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
     json (2.2.0)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -250,12 +250,12 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-service (0.0.41.pre)
+    rao-service (0.0.44.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.41.pre)
+    rao-service_controller (0.0.44.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -263,7 +263,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.41.pre)
+    rao-view_helper (0.0.44.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -272,7 +272,7 @@ GEM
     regexp_parser (1.4.0)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    responders (3.0.0)
+    responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
     route_translator (7.0.1)
@@ -313,7 +313,7 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
-    sexp_processor (4.14.1)
+    sexp_processor (4.15.0)
     shellany (0.0.1)
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)

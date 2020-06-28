@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.54.pre)
+    cmor_core (0.0.55.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.54.pre)
+      cmor (= 0.0.55.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,20 +14,20 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.54.pre)
-    cmor_core_frontend (0.0.54.pre)
-      cmor_core (= 0.0.54.pre)
+    cmor (0.0.55.pre)
+    cmor_core_frontend (0.0.55.pre)
+      cmor_core (= 0.0.55.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_carousels (0.0.54.pre)
+    cmor_carousels (0.0.55.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.54.pre)
-      cmor_core_frontend (= 0.0.54.pre)
+      cmor_core (= 0.0.55.pre)
+      cmor_core_frontend (= 0.0.55.pre)
       markup-rails
       mini_magick
       rails (>= 5.2.3)
@@ -150,18 +150,18 @@ GEM
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.2)
     json (2.2.0)
-    kaminari (1.2.0)
+    kaminari (1.2.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
       actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
       activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     kramdown (2.2.1)
       rexml
     listen (3.1.5)
@@ -239,7 +239,7 @@ GEM
     rao (0.0.23.pre)
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.41.pre)
+    rao-view_helper (0.0.44.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
