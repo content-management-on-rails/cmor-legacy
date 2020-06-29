@@ -31,5 +31,9 @@ module Cmor::Transports
         yaml: "Cmor::Transports::Exports::YamlService",
       }}
     end
+
+    mattr_accessor :factory_root_model_class_name do
+      'Post'
+    end
   end
 end
