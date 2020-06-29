@@ -5,6 +5,6 @@
       %div.mx-4
         - if options[:link_to_show]
           %a{ href: cmor_partners_frontend.url_for(partner) }
-            %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)) }/
+            %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)), alt: t('.alt_logo', name: partner.name.titleize) }/
         - else
-          %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)) }/
+          %img.w-100{ src: main_app.url_for(partner.logo.variant(variant_options)), alt: t('.alt_logo', name: partner.name.titleize) }/
