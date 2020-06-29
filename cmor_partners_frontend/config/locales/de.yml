@@ -4,7 +4,7 @@ de:
       frontend:
         application_view_helper:
           render_partner:
-            more: 'Mehr'
+            more: 'Mehr'          
         categories:
           show:
             back: 'Zurück'
@@ -15,3 +15,8 @@ de:
     cmor/partners/frontend/engine: Partner
   routes:
     cmor_partners_frontend_engine: partner
+  slick:
+    rails:
+      application_view_helper:
+        render_carousel:
+          alt_logo: "%{name} Firmenlogo"
