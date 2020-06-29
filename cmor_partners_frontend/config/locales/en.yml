@@ -15,3 +15,8 @@ en:
     cmor/partners/frontend/engine: Partners
   routes:
     cmor_partners_frontend_engine: partners
+  slick:
+    rails:
+      application_view_helper:
+        render_carousel:
+          alt_text: "%{name} Company Logo"
