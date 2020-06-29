@@ -4,7 +4,7 @@ de:
       frontend:
         application_view_helper:
           render_partner:
-            more: 'Mehr'          
+            more: 'Mehr'
         categories:
           show:
             back: 'Zurück'
@@ -19,4 +19,4 @@ de:
     rails:
       application_view_helper:
         render_carousel:
-          alt_logo: "%{name} Firmenlogo"
+          alt_text: "%{name} Firmenlogo"
