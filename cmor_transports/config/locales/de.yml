@@ -1,4 +1,28 @@
 de:
+  activerecord:
+    models:
+      cmor/transports/export:
+        one: Export
+        other: Exporte
+    attributes:
+      cmor/transports/export:
+        id: ID
+        count_query: Zähl-Abfrage
+        creator_id: Ersteller
+        creator: Ersteller
+        creator_type: Ersteller-Typ
+        description: Beschreibung
+        job_id: Job ID
+        output_attributes: Ausgabe-Attribute
+        output_format: Ausgabe-Format
+        query: Abfrage
+        root_model: Wurzel-Modell
+        service_errors: Dienstfehler
+        service_messages: Dienstnachrichten
+        state: Status
+        uuid: UUID
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
   classes:
     cmor/transports/engine: Transporte
   cmor:

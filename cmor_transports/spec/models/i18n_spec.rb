@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe "Translations", type: :model do
   {
-    # Cmor::Transports::Export         => {},
+    Cmor::Transports::Export         => {},
     # Cmor::Transports::Outgoing       => {},
     # Cmor::Transports::OutgoingExport => {},
     # Cmor::Transports::OutgoingTarget => {},
