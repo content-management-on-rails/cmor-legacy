@@ -13,7 +13,8 @@ module Cmor
           @output = CSV.generate(headers: true) do |csv|
             csv << resource_attributes
             load_collection.each do |resource|
-              csv << resource.attributes.slice(*resource_attributes).values
+              csv << build_resource_hash(resource).values
+              # csv << resource.attributes.slice(*resource_attributes).values
             end
           end
         end

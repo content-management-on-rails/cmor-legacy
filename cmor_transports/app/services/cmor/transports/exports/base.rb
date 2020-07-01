@@ -61,6 +61,12 @@ module Cmor
         def resource_attributes
           export.output_attributes || resource_class.attribute_names
         end
+
+        def build_resource_hash(resource)
+          resource_attributes.each_with_object({}) do |attr, memo|
+            memo[attr] = resource.send(attr)
+          end
+        end
       end
     end
   end
