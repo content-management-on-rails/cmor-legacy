@@ -34,6 +34,8 @@ en:
         id: ID
         asset_id: File
         asset: File
+        asset_permanent_path: Permanent asset path
+        asset_permanent_url: Permanent asset url
         description: Description
         display_code_for_erb: Display code (erb)
         identifier: Identifier

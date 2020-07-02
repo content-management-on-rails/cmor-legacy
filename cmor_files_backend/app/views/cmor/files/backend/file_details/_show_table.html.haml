@@ -18,7 +18,10 @@
       %span.btn-text= "#{t('.download')} (#{resource.asset.blob.content_type.split('/').last}, #{number_to_human_size(resource.asset.blob.byte_size)})"
 = table.row :title
 = table.row :description
-= table.row :slug
+= table.row :asset_permanent_path do |resource|
+  - main_app.rails_blob_path(resource.asset)
+= table.row :asset_permanent_url do |resource|
+  - main_app.rails_blob_url(resource.asset)
 = table.row :published_at
 = table.timestamps
 

@@ -18,8 +18,11 @@ de:
         id: ID
         asset: Datei
         asset_id: Datei
+        asset_permanent_path: Permanenter Datei-Pfad
+        asset_permanent_url: Permanente Datei-URL
         blob_byte_size: Dateigröße
         blob_checksum: Checksumme
+        blob_content_type: Dateityp
         blob_created_at: Datei erstellt am
         blob_filename: Dateiname
         description: Beschreibung

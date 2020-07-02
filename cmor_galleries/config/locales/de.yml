@@ -34,6 +34,8 @@ de:
         id: ID
         asset_id: Datei
         asset: Datei
+        asset_permanent_path: Permanenter Datei-Pfad
+        asset_permanent_url: Permanente Datei-URL
         description: Beschreibung
         display_code_for_erb: Anzeigecode (erb)
         identifier: Bezeichner

@@ -18,8 +18,11 @@ en:
         id: ID
         asset: Asset
         asset_id: Asset
+        asset_permanent_path: Permanent asset path
+        asset_permanent_url: Permanent asset ur
         blob_byte_size: Filesize
         blob_checksum: Checksum
+        blob_content_type: Content-Type
         blob_created_at: File created at
         blob_filename: Filename
         description: Description
