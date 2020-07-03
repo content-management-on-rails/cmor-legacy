@@ -55,8 +55,9 @@ module ActionView
             template = determine_template(options)
       
             prepend_formats(template.format)
-      
-            render_template(context, template, (template.layout || options[:layout]), options[:locals] || {})
+
+            layout = (template.respond_to?(:layout) ? template.layout : nil) || options[:layout]
+            render_template(context, template, (layout || options[:layout]), options[:locals] || {})
           end
         end
       end
