@@ -3,8 +3,8 @@
   %span.btn-text= t('.back')
 
 .ml-auto
-  - if Cmor::Core.features?(:cmor_audits) && available_rest_actions.include?(:paper_trails)
-    = link_to([:paper_trails, resource_namespace, resource], class: 'btn btn-secondary btn-circle btn-lg') do
+  - if Cmor::Core.features?(:cmor_audits) && available_rest_actions.include?(:versions)
+    = link_to([:versions, resource_namespace, resource], class: 'btn btn-secondary btn-circle btn-lg') do
       %i.fas.fa-history
 
   - if available_rest_actions.include?(:destroy)
