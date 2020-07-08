@@ -1,0 +1,30 @@
+.row.mb-2
+  .col-12
+    %h1= "#{PaperTrail::Version.model_name.human(count: :other)} (#{@versions.size})"
+
+.row.mb-4
+  .col-12
+    = simple_form_for(:paper_trail, url: url_for(action: :version_at), html: { method: :get, class: 'form-inline' }) do |f|
+      .form-row
+        = render partial: 'versions_form', locals: { form: f }
+        = render partial: 'versions_form_buttons', locals: { form: f }
+
+.row
+  .col-12
+    = collection_table(collection: @versions, resource_class: PaperTrail::Version) do |table|
+      = table.id
+      = table.column :event
+      = table.column :whodunnit
+      = table.timestamp :created_at
+      = table.column :actions, title: '' do |resource|
+        - capture_haml do
+          .w-100.text-right
+            = link_to({ action: :version, version_id: resource.id }, class: 'btn btn-responsive btn-primary btn-xs') do
+              %i.fas.fa-eye
+              %span.btn-text= t('.show')
+
+.row
+  .page-actions.col-12.d-flex
+    = link_to({ action: :index }, class: 'btn btn-light btn-responsive') do
+      %i.fas.fa-arrow-left
+      %span.btn-text= t('.back')

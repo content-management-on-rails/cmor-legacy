@@ -1,1 +1,1 @@
-ActionDispatch::Routing::Mapper.send(:include, Cmor::Audits::Routing::PaperTrailResourcesConcern)
+# ActionDispatch::Routing::Mapper.send(:include, Cmor::Audits::Routing::PaperTrailResourcesConcern)

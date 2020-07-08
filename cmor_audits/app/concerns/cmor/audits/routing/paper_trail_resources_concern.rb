@@ -17,9 +17,9 @@ module Cmor
           # }
           # get "paper_trails", on: :member, action: :paper_trails
 
-          get "paper_trails/:version_id", on: :member, action: :paper_trails_show
-          get "paper_trails_at(/:version_at)", on: :member, action: :paper_trails_show_at
-          get "paper_trails", on: :member, action: :paper_trails_index
+          get "versions/:version_id", on: :member, action: :version
+          get "versions_at(/:version_at)", on: :member, action: :version_at
+          get "versions", on: :member, action: :versions
 
           # namespace :paper_trail do
           #   resources :versions, only: [:index, :show], :controller: 'cmor/audits/paper_trail/resources/versions_controller'

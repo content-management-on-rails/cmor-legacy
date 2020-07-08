@@ -10,12 +10,12 @@
 .row.resource-actions.mb-4
   .col-6
     - if @resource.paper_trail.previous_version&.version.present?
-      = link_to({ action: :paper_trails_show, id: @resource.id, version_id: @resource.paper_trail.previous_version.version.id }, class: 'btn btn-primary btn-responsive') do
+      = link_to({ action: :version, id: @resource.id, version_id: @resource.paper_trail.previous_version.version.id }, class: 'btn btn-primary btn-responsive') do
         %i.fas.fa-arrow-left
         %span.btn-text= t('.previous')  
   .col-6.text-right
     - if @resource.paper_trail.next_version&.version.present?
-      = link_to({ action: :paper_trails_show, id: @resource.id, version_id: @resource.paper_trail.next_version.version.id }, class: 'btn btn-primary btn-responsive') do
+      = link_to({ action: :version, id: @resource.id, version_id: @resource.paper_trail.next_version.version.id }, class: 'btn btn-primary btn-responsive') do
         %span.btn-text= t('.next')  
         %i.fas.fa-arrow-right
 
@@ -26,6 +26,6 @@
 
 .row
   .show-actions.col-12.d-flex
-    = link_to({ action: :paper_trails_index }, class: 'btn btn-light btn-responsive') do
+    = link_to({ action: :versions }, class: 'btn btn-light btn-responsive') do
       %i.fas.fa-arrow-left
       %span.btn-text= t('.back')

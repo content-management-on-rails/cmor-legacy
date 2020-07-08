@@ -5,18 +5,18 @@ module Cmor
         extend ActiveSupport::Concern
         
         included do
-          before_action(only: :paper_trails_index) { load_resource; load_versions }
-          before_action(only: :paper_trails_show) { load_resource; load_version }
-          before_action(only: :paper_trails_show_at) { load_resource; load_version_by_timestamp }
+          before_action(only: :versions) { load_resource; load_versions }
+          before_action(only: :version) { load_resource; load_version }
+          before_action(only: :version_at) { load_resource; load_version_by_timestamp }
         end
 
-        def paper_trails_index
+        def versions
         end
 
-        def paper_trails_show
+        def version
         end
 
-        def paper_trails_show_at
+        def versions_show_at
         end
 
         private

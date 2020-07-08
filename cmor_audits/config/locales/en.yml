@@ -16,5 +16,18 @@ en:
         object: Objekt
         created_at: Created at
         whodunnit: Changed by
+  cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            version:
+              back: Zurück
+              next: Next
+              previous: Previous
+            versions:
+              back: Zurück
+            versions_form_buttons:
+              submit: Show
   routes:
     cmor-audits-engine: audits
