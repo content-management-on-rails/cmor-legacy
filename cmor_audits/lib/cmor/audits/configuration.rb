@@ -19,5 +19,9 @@ module Cmor::Audits
     mattr_accessor :sidebar_controllers do
       -> {[]}
     end
+
+    mattr_accessor :resources do
+      -> {{}}
+    end
   end
 end

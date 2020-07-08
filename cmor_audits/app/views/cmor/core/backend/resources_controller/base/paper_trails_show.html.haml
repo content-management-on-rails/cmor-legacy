@@ -1,0 +1,31 @@
+.row
+  .col-12
+    %h1
+      = administrador_helper(self).label_for(@resource)
+      - if @version.present?
+        %small.text-muted= "@version #{[@version.id, I18n.l(@version.created_at, format: :short_with_year), @version.event, @version.whodunnit].compact.join(' | ')}"
+      - else
+        %small.text-muted= t(".live")
+
+.row.resource-actions.mb-4
+  .col-6
+    - if @resource.paper_trail.previous_version&.version.present?
+      = link_to({ action: :paper_trails_show, id: @resource.id, version_id: @resource.paper_trail.previous_version.version.id }, class: 'btn btn-primary btn-responsive') do
+        %i.fas.fa-arrow-left
+        %span.btn-text= t('.previous')  
+  .col-6.text-right
+    - if @resource.paper_trail.next_version&.version.present?
+      = link_to({ action: :paper_trails_show, id: @resource.id, version_id: @resource.paper_trail.next_version.version.id }, class: 'btn btn-primary btn-responsive') do
+        %span.btn-text= t('.next')  
+        %i.fas.fa-arrow-right
+
+.row
+  .col-12
+    = resource_table(resource: @resource) do |table|
+      = render partial: 'show_table', locals: { table: table }
+
+.row
+  .show-actions.col-12.d-flex
+    = link_to({ action: :paper_trails_index }, class: 'btn btn-light btn-responsive') do
+      %i.fas.fa-arrow-left
+      %span.btn-text= t('.back')

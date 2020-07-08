@@ -35,6 +35,10 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+# Add turbolinks
+sed -i "15irequire 'turbolinks'" config/application.rb
+# sed -i "16irequire 'factory_bot_rails'" config/application.rb
+
 # Install administrador
 rails generate administrador:install
 
@@ -43,6 +47,12 @@ rails generate simple_form:install --bootstrap
 
 # Install cmor_core_backend
 rails g cmor:core:backend:install
+
+# Install paper trail
+rails g paper_trail:install
+
+# Setup specs
+rails g model Post title body:text
 
 # Install
 rails generate $INSTALL_NAME:install

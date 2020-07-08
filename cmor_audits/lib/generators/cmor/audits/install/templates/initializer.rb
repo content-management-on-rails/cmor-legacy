@@ -1,9 +1,13 @@
 Cmor::Audits.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   # 
-  # Default: config.resources_controllers = -> {[]}
+  # Default: config.resources_controllers = -> {[
+  #   Cmor::Audits::PaperTrail::VersionsController,
+  # ]}
   # 
-  config.resources_controllers = -> {[]}
+  config.resources_controllers = -> {[
+    Cmor::Audits::PaperTrail::VersionsController,
+  ]}
 
   # Set the resources, that will be shown in the backend menu.
   # 

@@ -1,1 +1,20 @@
 de:
+  classes:
+    cmor/audits/engine: Audits
+  activerecord:
+    models:
+      paper_trail/version:
+        one: Version
+        other: Versionen
+    attributes:
+      paper_trail/version:
+        id: ID
+        event: Ereignis
+        item: Element
+        item_id: Element-ID
+        item_type: Element-Typ
+        object: Objekt
+        created_at: Erstellt am
+        whodunnit: Geändert durch
+  routes:
+    cmor-audits-engine: audits
