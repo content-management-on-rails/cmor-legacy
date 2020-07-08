@@ -2,7 +2,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.55.pre)
-      administrador (>= 0.0.25.pre)
+      administrador (>= 0.0.26.pre)
       cmor_core (= 0.0.55.pre)
       rails (>= 5.2.3)
 
@@ -98,7 +98,7 @@ GEM
       rails (>= 3.2.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.25.pre)
+    administrador (0.0.26.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -112,6 +112,7 @@ GEM
       rao-view_helper (>= 0.0.23.pre)
       route_translator
       simple_form
+      simple_form-datetimepicker (>= 0.0.1)
       simple_sidebar (>= 0.0.4.pre)
     ansi (1.5.0)
     arel (9.0.0)
@@ -119,6 +120,8 @@ GEM
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
+    bootstrap3-datetimepicker-rails (4.17.47)
+      momentjs-rails (>= 2.8.1)
     bootstrap4-kaminari-views (1.0.1)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -247,6 +250,8 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
+    momentjs-rails (2.20.1)
+      railties (>= 3.1)
     nenv (0.3.0)
     nio4r (2.3.1)
     nokogiri (1.10.3)
@@ -380,6 +385,11 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simple_form-datetimepicker (0.0.1)
+      bootstrap3-datetimepicker-rails
+      coffee-rails
+      momentjs-rails
+      rails (>= 5.0.0)
     simple_sidebar (0.0.4.pre)
       coffee-rails
       rails (>= 5.0.0)
