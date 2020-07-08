@@ -5,7 +5,7 @@ source ~/.bash_aliases
 echo $PWD
 publish_gem
 
-for i in blog carousels cms contact core core_frontend files galleries legal links multi_tenancy partners seo showcase system rbac suite testimonials tags user_area; do
+for i in audits blog carousels cms contact core core_frontend files galleries legal links multi_tenancy partners seo showcase system rbac suite testimonials tags user_area; do
   cd "cmor_${i}"
   echo $PWD
   publish_gem
