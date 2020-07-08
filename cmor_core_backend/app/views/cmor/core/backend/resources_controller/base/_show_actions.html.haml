@@ -1,0 +1,16 @@
+= link_to({ action: :index }, class: 'btn btn-light btn-responsive') do
+  %i.fas.fa-arrow-left
+  %span.btn-text= t('.back')
+
+.ml-auto
+  - if Cmor::Core.features?(:cmor_audits) && available_rest_actions.include?(:paper_trails)
+    = link_to([:paper_trails, resource_namespace, resource], class: 'btn btn-secondary btn-circle btn-lg') do
+      %i.fas.fa-history
+
+  - if available_rest_actions.include?(:destroy)
+    = link_to([resource_namespace, resource], class: 'destroy btn btn-danger btn-circle btn-lg', method: :delete, 'data-confirm': I18n.t('administrador.controller.confirmations.destroy')) do
+      %i.fas.fa-fire
+
+  - if available_rest_actions.include?(:edit)
+    = link_to([:edit, resource_namespace, resource], class: 'btn btn-success btn-circle btn-lg') do
+      %i.fas.fa-edit
