@@ -53,6 +53,7 @@ rails g paper_trail:install
 
 # Setup specs
 rails g model Post title body:text
+rails g factory_bot:model Post title body:text
 
 # Install
 rails generate $INSTALL_NAME:install
