@@ -1,7 +1,8 @@
 = table.batch_actions actions: { destroy: url_for(action: :destroy_many) }
 = table.acts_as_list_actions scope: :picture_gallery_id
 = table.column :preview do |resource|
-  - bootstrap_card(image_options: { src: main_app.url_for(resource.asset) })
+  - capture_haml do
+    %img.img-fluid{ src: main_app.url_for(resource.asset.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))) }
 = table.column :picture_gallery, as: :association, label_method: :name, link_to: ->(r) { url_for(r.picture_gallery) }, sort: { column_name: 'cmor_galleries_picture_galleries.name'  }
 = table.column :title
 = table.column :identifier
