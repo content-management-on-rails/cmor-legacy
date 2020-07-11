@@ -3,7 +3,7 @@
   %span.btn-text= t('.back')
 
 .ml-auto
-  - if Cmor::Core.features?(:cmor_audits) && available_rest_actions.include?(:versions)
+  - if Cmor::Core.features?(:cmor_audits) && controller.respond_to?(:versions)
     = link_to([:versions, resource_namespace, resource], class: 'btn btn-secondary btn-circle btn-lg') do
       %i.fas.fa-history
 
