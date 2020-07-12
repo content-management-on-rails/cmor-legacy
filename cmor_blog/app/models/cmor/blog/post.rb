@@ -34,7 +34,7 @@ module Cmor
         def body(format: nil)
           case format
           when :html
-            to_markdown(read_attribute(:body))
+            markdown_to_html(read_attribute(:body))
           else
             read_attribute(:body)
           end
@@ -42,8 +42,8 @@ module Cmor
 
         private
 
-        def to_markdown(string)
-          Kramdown::Document.new(string).to_html
+        def markdown_to_html(string)
+          instance_exec(string, &Cmor::Blog::Configuration.markdown_to_html_proc)
         end
       end
 

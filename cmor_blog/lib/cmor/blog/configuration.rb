@@ -35,6 +35,10 @@ module Cmor
       mattr_accessor(:post_creation_information_proc) do
         -> (post) { "#{l(post.created_at)} | #{post.creator&.human}" }
       end
+
+      mattr_accessor(:markdown_to_html_proc) do
+        -> (string) { Kramdown::Document.new(string).to_html }
+      end
     end
   end
 end

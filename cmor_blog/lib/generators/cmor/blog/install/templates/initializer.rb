@@ -63,4 +63,19 @@ Cmor::Blog.configure do |config|
   # default: config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.to_s}" }
   #
   config.post_creation_information_proc = -> (post) { "#{l(post.created_at)} | #{post.creator&.to_s}" }
+
+  # Configure how the post body is transformed from markup to html. The default
+  # format is markdown. Kramdown is used for the transformation and is a
+  # dependency of this gem.
+  #
+  # If you want to use a different markdown language you can configure it here.
+  #
+  # For example you may want to use textile as markup. First you will need to
+  # add RedCloth to your Gemfile. Then you can configure it as follows:
+  #
+  #     config.markdown_to_html_proc = -> (string) { RedCloth.new(string).to_html }
+  #
+  # default: config.markdown_to_html_proc = -> (string) { Kramdown::Document.new(string).to_html }
+  #
+  config.markdown_to_html_proc = -> (string) { Kramdown::Document.new(string).to_html }
 end
