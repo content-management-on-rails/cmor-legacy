@@ -25,6 +25,6 @@
 
 .row
   .page-actions.col-12.d-flex
-    = link_to({ action: :index }, class: 'btn btn-light btn-responsive') do
+    = link_to({ action: :show, id: @resource.to_param }, class: 'btn btn-light btn-responsive') do
       %i.fas.fa-arrow-left
       %span.btn-text= t('.back')
