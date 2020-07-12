@@ -14,7 +14,7 @@ module Cmor
       #
       #     $> rails routes
       #                             GET    /pages/:id/versions/:version_id(.:format)        cmor/cms/backend/pages#version
-      #                             GET    /pages/:id/versions_at(/:version_at)(.:format)   cmor/cms/backend/pages#version_at
+      #                             GET    /pages/:id/version_at(/:version_at)(.:format)    cmor/cms/backend/pages#version_at
       #               versions_page GET    /pages/:id/versions(.:format)                    cmor/cms/backend/pages#versions
       #                       pages GET    /pages(.:format)                                 cmor/cms/backend/pages#index
       #                             POST   /pages(.:format)                                 cmor/cms/backend/pages#create
@@ -29,7 +29,7 @@ module Cmor
 
         def paper_trail_resources
           get "versions/:version_id", on: :member, action: :version
-          get "versions_at(/:version_at)", on: :member, action: :version_at
+          get "version_at(/:version_at)", on: :member, action: :version_at
           get "versions", on: :member, action: :versions
         end
       end

@@ -16,7 +16,8 @@ module Cmor
         def version
         end
 
-        def versions_show_at
+        def version_at
+          render :version
         end
 
         private
@@ -34,7 +35,6 @@ module Cmor
           timestamp = DateTime.parse(params[:version_at])
           @version = @resource.versions.subsequent(timestamp, true).first
           @resource = @version&.reify || @resource
-          render :paper_trails_show
         end
       end
     end
