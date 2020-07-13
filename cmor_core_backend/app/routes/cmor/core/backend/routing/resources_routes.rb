@@ -65,7 +65,10 @@ module Cmor
               __namespaces = []
               __actual_scope = @router.instance_variable_get(:@scope)
               while __actual_scope.instance_variable_get(:@parent).present?
-                __namespaces << __actual_scope.instance_variable_get(:@parent).instance_variable_get(:@hash).try(:[], :module)
+                __namespace = __actual_scope.instance_variable_get(:@parent).instance_variable_get(:@hash).try(:[], :module)
+                if __namespace.present? && !__namespaces.any? { |n| n&.start_with?(__namespace) }
+                  __namespaces << __actual_scope.instance_variable_get(:@parent).instance_variable_get(:@hash).try(:[], :module)
+                end
                 __actual_scope = __actual_scope.instance_variable_get(:@parent)
               end
               __namespace = __namespaces.uniq.reverse.compact.join("/")
