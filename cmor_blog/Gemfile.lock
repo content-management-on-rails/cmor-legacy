@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.55.pre)
+    cmor_core (0.0.56.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.55.pre)
+      cmor (= 0.0.56.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,20 +14,20 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.55.pre)
-    cmor_core_frontend (0.0.55.pre)
-      cmor_core (= 0.0.55.pre)
+    cmor (0.0.56.pre)
+    cmor_core_frontend (0.0.56.pre)
+      cmor_core (= 0.0.56.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_blog (0.0.55.pre)
+    cmor_blog (0.0.56.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.55.pre)
-      cmor_core_frontend (= 0.0.55.pre)
+      cmor_core (= 0.0.56.pre)
+      cmor_core_frontend (= 0.0.56.pre)
       friendly_id
       haml-rails
       kramdown
@@ -186,7 +186,7 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    kramdown (2.2.1)
+    kramdown (2.3.0)
       rexml
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)

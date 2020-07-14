@@ -1,27 +1,27 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.55.pre)
-    cmor_core (0.0.55.pre)
+    cmor (0.0.56.pre)
+    cmor_core (0.0.56.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.55.pre)
+      cmor (= 0.0.56.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.55.pre)
+    cmor_core_backend (0.0.56.pre)
       administrador (>= 0.0.26.pre)
-      cmor_core (= 0.0.55.pre)
+      cmor_core (= 0.0.56.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_system (0.0.55.pre)
-      cmor_core (= 0.0.55.pre)
-      cmor_core_backend (= 0.0.55.pre)
+    cmor_system (0.0.56.pre)
+      cmor_core (= 0.0.56.pre)
+      cmor_core_backend (= 0.0.56.pre)
       markup-rails
       rails (>= 5.2.3)
 
@@ -197,7 +197,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    kramdown (2.2.1)
+    kramdown (2.3.0)
       rexml
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -355,7 +355,7 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    simple_form-datetimepicker (0.0.1)
+    simple_form-datetimepicker (0.0.2)
       bootstrap3-datetimepicker-rails
       coffee-rails
       momentjs-rails

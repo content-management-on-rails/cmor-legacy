@@ -1,55 +1,55 @@
 PATH
   remote: ../cmor_core_frontend
   specs:
-    cmor_core_frontend (0.0.55.pre)
-      cmor_core (= 0.0.55.pre)
+    cmor_core_frontend (0.0.56.pre)
+      cmor_core (= 0.0.56.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: ../cmor_legal
   specs:
-    cmor_legal (0.0.55.pre)
+    cmor_legal (0.0.56.pre)
       cmor_cms
-      cmor_core (= 0.0.55.pre)
-      cmor_core_backend (= 0.0.55.pre)
+      cmor_core (= 0.0.56.pre)
+      cmor_core_backend (= 0.0.56.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.55.pre)
-    cmor_cms (0.0.55.pre)
+    cmor (0.0.56.pre)
+    cmor_cms (0.0.56.pre)
       RedCloth
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.55.pre)
-      cmor_core_frontend (= 0.0.55.pre)
+      cmor_core (= 0.0.56.pre)
+      cmor_core_frontend (= 0.0.56.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       simple-navigation (>= 4.0.0)
-    cmor_core (0.0.55.pre)
+    cmor_core (0.0.56.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.55.pre)
+      cmor (= 0.0.56.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.55.pre)
+    cmor_core_backend (0.0.56.pre)
       administrador (>= 0.0.26.pre)
-      cmor_core (= 0.0.55.pre)
+      cmor_core (= 0.0.56.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_legal_frontend (0.0.55.pre)
-      cmor_core (= 0.0.55.pre)
-      cmor_core_frontend (= 0.0.55.pre)
+    cmor_legal_frontend (0.0.56.pre)
+      cmor_core (= 0.0.56.pre)
+      cmor_core_frontend (= 0.0.56.pre)
       rails (>= 5.2.3)
 
 GEM
@@ -428,7 +428,7 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    simple_form-datetimepicker (0.0.1)
+    simple_form-datetimepicker (0.0.2)
       bootstrap3-datetimepicker-rails
       coffee-rails
       momentjs-rails
@@ -481,7 +481,7 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
-    websocket-driver (0.7.2)
+    websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
