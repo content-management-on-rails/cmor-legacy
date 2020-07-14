@@ -26,4 +26,14 @@ Cmor::Audits.configure do |config|
   # Default: config.sidebar_controllers = -> {[]}
   # 
   config.sidebar_controllers = -> {[]}
+
+  # Specify the models that will be audited. Listing models here is the same
+  # as adding has_paper_trail to the model class directly. The hash is passed
+  # to has_paper_trail as options hash.
+  #
+  # Example: config.resources = -> { { "Post" => { on: [:update] } } }
+  #
+  # Default: config.resources = -> { {} }
+  #
+  config.resources = -> { {} }
 end

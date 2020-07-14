@@ -52,8 +52,16 @@ rails g cmor:core:backend:install
 rails g paper_trail:install
 
 # Setup specs
-rails g model Post title body:text
-rails g factory_bot:model Post title body:text
+rails g model User email
+rails g factory_bot:model User email
+sed -i "17irequire 'cmor_blog'" config/application.rb
+sed -i "18irequire 'cmor_blog_backend'" config/application.rb
+rails g cmor:core:install
+rails g cmor:blog:install
+rails g cmor:blog:backend:install
+rails cmor_blog:install:migrations
+sed -i "2i  config.enable_feature(:cmor_audits, {})" config/initializers/cmor_core.rb
+rpl -v "  config.resources = -> { {} }" "  config.resources = -> { { \"Cmor::Blog::Post\" => {} } }" config/initializers/cmor_audits.rb
 
 # Install
 rails generate $INSTALL_NAME:install

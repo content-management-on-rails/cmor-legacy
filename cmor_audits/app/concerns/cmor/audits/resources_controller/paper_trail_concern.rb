@@ -28,11 +28,16 @@ module Cmor
 
         def load_version
           @version = @resource.versions.find(params[:version_id])
-          @resource = @version.reify
+          @resource = @version&.reify || @resource
         end
 
         def load_version_by_timestamp
-          timestamp = DateTime.parse(params[:version_at])
+          timestamp = begin
+            DateTime.parse(params[:version_at])
+          rescue TypeError
+            Time.zone.now
+          end
+
           @version = @resource.versions.subsequent(timestamp, true).first
           @resource = @version&.reify || @resource
         end

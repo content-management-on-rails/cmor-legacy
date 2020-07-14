@@ -13,4 +13,6 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'cmor_core_backend', git: 'https://github.com/content-management-on-rails/cmor', branch: 'feature/cmor_audits'
+# gem 'cmor_core_backend', git: 'https://github.com/content-management-on-rails/cmor', branch: 'feature/cmor_audits'
+gem 'cmor_core_backend', path: '../cmor_core_backend'
+gem 'cmor_blog_backend', path: '../cmor_blog_backend'
