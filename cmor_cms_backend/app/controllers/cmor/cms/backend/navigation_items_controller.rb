@@ -4,7 +4,7 @@ module Cmor
       class NavigationItemsController < Cmor::Core::Backend::ResourcesController::Base
         include Rao::ResourcesController::AwesomeNestedSetConcern
         include Rao::ResourcesController::ActsAsPublishedConcern
-        include Cmor::Transports::ResourcesController::ExportConcern
+        include Cmor::Transports::ResourcesController::ExportConcern if Cmor::Core.features?(:cmor_transports)
 
         def self.resource_class
           Cmor::Cms::NavigationItem

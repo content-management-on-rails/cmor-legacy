@@ -1,5 +1,5 @@
 class Cmor::Cms::Backend::ContentBoxesController < Cmor::Core::Backend::ResourcesController::Base
-  include Cmor::Transports::ResourcesController::ExportConcern
+  include Cmor::Transports::ResourcesController::ExportConcern if Cmor::Core.features?(:cmor_transports)
 
   def self.resource_class
     Cmor::Cms::ContentBox
