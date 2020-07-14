@@ -5,6 +5,7 @@ module Cmor
         include Rao::ResourcesController::AwesomeNestedSetConcern
         include Rao::ResourcesController::ActsAsPublishedConcern
         include Cmor::Transports::ResourcesController::ExportConcern if Cmor::Core.features?(:cmor_transports)
+        include Cmor::Audits::ResourcesController::PaperTrailConcern if Cmor::Core.features?(:cmor_audits)
 
         def self.resource_class
           Cmor::Cms::NavigationItem

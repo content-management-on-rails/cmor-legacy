@@ -3,6 +3,7 @@ module Cmor
     module Backend
       class LayoutsController < Cmor::Core::Backend::ResourcesController::Base
         include Cmor::Transports::ResourcesController::ExportConcern if Cmor::Core.features?(:cmor_transports)
+        include Cmor::Audits::ResourcesController::PaperTrailConcern if Cmor::Core.features?(:cmor_audits)
         include Rao::ResourcesController::ActsAsPublishedConcern
 
         def self.resource_class
