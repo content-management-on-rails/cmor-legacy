@@ -49,13 +49,14 @@ rails generate simple_form:install --bootstrap
 # Install cmor_core_backend
 rails g cmor:core:backend:install
 
-# Add stuff for specs
+# Setup specs
 rails g scaffold Post title body:text published_at:timestamp --no-test-framework
 rails g factory_bot:model Post title body:text published_at:timestamp
 rails g cmor:core:install
 rails g cmor:cms:install
 rails g cmor:cms:backend:install
 rails cmor_cms:install:migrations
+sed -i "2i  config.enable_feature(:cmor_transports, {})" config/initializers/cmor_core.rb
 
 # Install
 rails generate $INSTALL_NAME:install
