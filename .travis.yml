@@ -4,9 +4,8 @@ rvm:
   # - 2.5.3
   # - 2.3.7
 env:
-  - GEM=cmor_audits
-  - GEM=cmor_transports
   - GEM=cmor_suite
+  - GEM=cmor_audits
   - GEM=cmor_blog
   - GEM=cmor_blog_backend
   - GEM=cmor_carousels
@@ -39,10 +38,11 @@ env:
   - GEM=cmor_system
   - GEM=cmor_tags
   - GEM=cmor_tags_backend
-  - GEM=cmor_user_area
-  - GEM=cmor_user_area_backend
   - GEM=cmor_testimonials
   - GEM=cmor_testimonials_backend
+  - GEM=cmor_transports
+  - GEM=cmor_user_area
+  - GEM=cmor_user_area_backend
 
 before_install:
   - gem update --system
