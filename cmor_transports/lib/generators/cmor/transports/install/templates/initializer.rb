@@ -1,13 +1,15 @@
 Cmor::Transports.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   # 
-  # Default: config.resources_controllers = -> {[]}
+  # Default: config.resources_controllers = -> {[
+  #            Cmor::Transports::ExportsController,
+  #            Cmor::Transports::OutgoingsController,
+  #            Cmor::Transports::IncomingsController,
+  #            Cmor::Transports::SystemsController
+  #          ]}
   # 
   config.resources_controllers = -> {[
-    Cmor::Transports::ExportsController,
-    Cmor::Transports::OutgoingsController,
-    Cmor::Transports::IncomingsController,
-    Cmor::Transports::SystemsController
+    Cmor::Transports::ExportsController
   ]}
 
   # Set the resources, that will be shown in the backend menu.
