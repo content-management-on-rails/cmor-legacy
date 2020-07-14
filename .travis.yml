@@ -5,6 +5,7 @@ rvm:
   # - 2.3.7
 env:
   - GEM=cmor_suite
+  - GEM=cmor_audits
   - GEM=cmor_blog
   - GEM=cmor_blog_backend
   - GEM=cmor_carousels

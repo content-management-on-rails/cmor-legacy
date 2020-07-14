@@ -6,6 +6,8 @@ module Cmor
         include Rao::ResourcesController::ActsAsPublishedConcern
         include Rao::ResourcesController::FriendlyIdConcern
 
+        include Cmor::Audits::ResourcesController::PaperTrailConcern if Cmor::Core.features?(:cmor_audits)
+
         helper Cmor::Tags::Backend::ApplicationHelper if Cmor::Core.features?(:cmor_tags)
 
         include Rao::Query::Controller::QueryConcern

@@ -22,7 +22,7 @@ Cmor::Blog::Backend.configure do |config|
   # This proc is used in context of the PostsController to retrieve the current
   # user to userstamp created/updated posts.
   #
-  # default: config.current_user_proc = ->(controller) { controller.send(:current_user) }
+  # default: config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
   #
-  config.current_user_proc = ->(controller) { controller.send(:current_user) }
+  config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
 end

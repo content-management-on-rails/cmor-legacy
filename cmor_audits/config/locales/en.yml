@@ -1,0 +1,33 @@
+en:
+  classes:
+    cmor/audits/engine: Audits
+  activerecord:
+    models:
+      paper_trail/version:
+        one: Version
+        other: Versions
+    attributes:
+      paper_trail/version:
+        id: ID
+        event: Event
+        item: Item
+        item_id: Item-ID
+        item_type: Item-Type
+        object: Objekt
+        created_at: Created at
+        whodunnit: Changed by
+  cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            version:
+              back: Zurück
+              next: Next
+              previous: Previous
+            versions:
+              back: Zurück
+            versions_form_buttons:
+              submit: Show
+  routes:
+    cmor-audits-engine: audits

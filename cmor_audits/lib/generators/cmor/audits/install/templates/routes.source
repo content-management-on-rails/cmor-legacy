@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Audits::Engine, at: '/backend/cmor-audits-engine'
+  end

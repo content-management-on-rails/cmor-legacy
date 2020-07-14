@@ -1,6 +1,13 @@
 en:
   classes:
     cmor/core/backend/engine: Core
+  cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            show_actions:
+              back: Back
   routes:
     cmor-core-backend-engine: core
   or: or

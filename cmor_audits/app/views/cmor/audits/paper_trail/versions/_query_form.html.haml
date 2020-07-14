@@ -1,0 +1,4 @@
+= form.input :item_type_eq, collection: PaperTrail::Version.distinct.pluck(:item_type).collect { |klass_name| [klass_name.constantize.model_name.human(count: :other), klass_name] }
+= form.input :item_id_eq
+= form.input :event_eq, collection: PaperTrail::Version.distinct.pluck(:event)
+= form.input :whodunnit_cont
