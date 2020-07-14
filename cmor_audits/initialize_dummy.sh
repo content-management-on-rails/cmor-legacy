@@ -61,7 +61,7 @@ rails g cmor:blog:install
 rails g cmor:blog:backend:install
 rails cmor_blog:install:migrations
 sed -i "2i  config.enable_feature(:cmor_audits, {})" config/initializers/cmor_core.rb
-rpl -v "  config.resources = -> { {} }" "  config.resources = -> { { \"Cmor::Blog::Post\" => {} } }" config/initializers/cmor_audits.rb
+sed -i "s/  config.resources = -> { {} }/  config.resources = -> { { \"Cmor::Blog::Post\" => {} } }/g" config/initializers/cmor_audits.rb
 
 # Install
 rails generate $INSTALL_NAME:install
