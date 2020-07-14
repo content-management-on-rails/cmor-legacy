@@ -5,6 +5,8 @@ module Cmor
   module Core
     module Backend
       module Configuration
+        extend self
+
         def configure
           yield self
         end
@@ -16,9 +18,10 @@ module Cmor
           }
         }
 
+        mattr_accessor(:resources_routes) { {} }
 
-        def self.image_variant_options_for(identifier)
-          @@image_variant_options[identifier]
+        def image_variant_options_for(identifier)
+          image_variant_options[identifier]
         end
 
         # You can add routes to resources based an any condition that can based
@@ -44,11 +47,7 @@ module Cmor
         #     )
         #
         def add_resources_routes(name, options)
-          (@@resources_routes ||= {})[name] = options
-        end
-
-        def self.resources_routes
-          @@resources_routes || {}
+          resources_routes[name] = options
         end
       end
     end
