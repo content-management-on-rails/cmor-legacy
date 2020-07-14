@@ -52,6 +52,8 @@ rails g cmor:core:backend:install
 # Setup specs
 rails g scaffold Post title body:text published_at:timestamp --no-test-framework
 rails g factory_bot:model Post title body:text published_at:timestamp
+sed -i "17irequire 'cmor_cms'" config/application.rb
+sed -i "18irequire 'cmor_cms_backend'" config/application.rb
 rails g cmor:core:install
 rails g cmor:cms:install
 rails g cmor:cms:backend:install
