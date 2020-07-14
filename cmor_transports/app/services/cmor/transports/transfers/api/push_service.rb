@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Transfers
@@ -9,7 +11,6 @@ module Cmor
           attr_accessor :outgoing
 
           private
-            
           def target_url(endpoint)
             [endpoint.chomp("/"), "incoming", "create_services.json"].join("/")
           end

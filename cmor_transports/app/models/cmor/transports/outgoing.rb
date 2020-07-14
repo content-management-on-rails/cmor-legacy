@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class Outgoing < ApplicationRecord
     include Cmor::Transports::Models::UuidConcern
@@ -15,7 +17,7 @@ module Cmor::Transports
 
     validates :state, presence: true
 
-    aasm(:default, column: 'state') do
+    aasm(:default, column: "state") do
       state :created, initial: true
       state :enqueued_for_pack
       state :packing

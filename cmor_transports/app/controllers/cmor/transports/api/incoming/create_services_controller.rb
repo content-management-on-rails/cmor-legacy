@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Api
@@ -10,7 +12,6 @@ module Cmor
           end
 
           private
-
           def permitted_params
             params.require(:create_service).permit(outgoing: [:id, :uuid, :state, :creator_type, :creator_id, :job_id, :service_messages, :service_errors, :description, :created_at, :updated_at, :output_base64])
           end

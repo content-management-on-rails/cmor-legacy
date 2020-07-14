@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class Export < ApplicationRecord
     include Cmor::Transports::Models::UuidConcern
@@ -23,7 +25,7 @@ module Cmor::Transports
       root_model.constantize.count_by_sql(count_query)
     end
 
-    aasm(:default, column: 'state') do
+    aasm(:default, column: "state") do
       state :created, initial: true
       state :enqueued
       state :processing

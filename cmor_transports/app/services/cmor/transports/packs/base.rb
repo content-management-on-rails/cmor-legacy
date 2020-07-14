@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Packs
@@ -8,7 +10,6 @@ module Cmor
         attr_accessor :outgoing
 
         private
-
         def _perform
           pack_and_attach!
         end

@@ -1,4 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
+
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Declare your gem's dependencies in cmor/transports.gemspec.
@@ -13,10 +15,10 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'cmor_core_backend', path: '../cmor_core_backend'
-gem 'cmor_cms_backend', path: '../cmor_cms_backend'
+gem "cmor_core_backend", path: "../cmor_core_backend"
+gem "cmor_cms_backend", path: "../cmor_cms_backend"
 
 # gem 'rao-component', path: '../../rao/rao-component'
 # gem 'rao-resources_controller', path: '../../rao/rao-resources_controller'
-gem 'rao-component', git: 'https://github.com/rails-add-ons/rao', glob: 'rao-component/*.gemspec'
-gem 'rao-resources_controller', git: 'https://github.com/rails-add-ons/rao', glob: 'rao-resources_controller/*.gemspec'
+gem "rao-component", git: "https://github.com/rails-add-ons/rao", glob: "rao-component/*.gemspec"
+gem "rao-resources_controller", git: "https://github.com/rails-add-ons/rao", glob: "rao-resources_controller/*.gemspec"

@@ -1,4 +1,6 @@
-require 'factory_bot_rails'
+# frozen_string_literal: true
+
+require "factory_bot_rails"
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
@@ -9,4 +11,4 @@ FactoryBot.definition_file_paths += [
   Rails.root.join(*%w(spec factories)),
   Cmor::Transports::Engine.root.join(*%w(spec factories))
 ]
-FactoryBot.find_definitions 
+FactoryBot.find_definitions

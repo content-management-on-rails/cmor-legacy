@@ -1,7 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Cmor::Transports::Exports::JsonService, type: :model do
-  describe 'basic usage' do
+  describe "basic usage" do
     let(:collection) { create_list(:post, 10) }
     let(:resource_class) { Post }
     let(:load_collection_scope) { resource_class }
@@ -16,7 +18,7 @@ RSpec.describe Cmor::Transports::Exports::JsonService, type: :model do
     it { expect(subject.export).to eq(export) }
     it { expect(subject.export.output).to be_attached }
 
-    describe 'output' do
+    describe "output" do
       subject { described_class.call!(export: export).export.output }
 
       it { expect(subject.blob).to be_a(ActiveStorage::Blob) }

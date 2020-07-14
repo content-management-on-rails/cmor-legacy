@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class SystemsController < Cmor::Core::Backend::ResourcesController::Base
     def self.resource_class
@@ -5,7 +7,6 @@ module Cmor::Transports
     end
 
     private
-
     def permitted_params
       params.require(:system).permit(:identifier, :endpoint, :api_key)
     end

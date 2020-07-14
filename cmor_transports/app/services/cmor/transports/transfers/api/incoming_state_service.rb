@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Transfers
@@ -10,7 +12,6 @@ module Cmor
           attr_accessor :system_identifier, :endpoint, :api_key, :outgoing_uuid
 
           private
-          
           def target_url
             [endpoint.chomp("/"), "incoming", "show_services.json"].join("/")
           end
@@ -26,7 +27,7 @@ module Cmor
             parsed_response_body = JSON.parse(response.body)
             if response.created?
               say "success fetching incoming for outgoing with uuid #{outgoing_uuid} on system #{system_identifier}. Incoming: #{parsed_response_body.inspect}"
-              @result.incoming = @incoming = parsed_response_body['incoming']
+              @result.incoming = @incoming = parsed_response_body["incoming"]
             else
               add_error_and_say(:base, "http error #{response.code} fetching import status for outgoing with uuid #{outgoing_uuid} on system #{system_identifier}: #{parsed_response_body["message"]}")
             end

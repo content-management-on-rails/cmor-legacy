@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Api
@@ -10,10 +12,9 @@ module Cmor
           attr_accessor :outgoing_uuid
 
           private
-
-          def _perform
-            @result.incoming = @incoming = Cmor::Transports::Incoming.where(outgoing_uuid: outgoing_uuid).first
-          end
+            def _perform
+              @result.incoming = @incoming = Cmor::Transports::Incoming.where(outgoing_uuid: outgoing_uuid).first
+            end
         end
       end
     end

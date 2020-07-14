@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Exports
@@ -9,7 +11,6 @@ module Cmor
         attr_accessor :export
 
         private
-
         def _perform
           export.aasm.fire(:process)
           generate_output!
@@ -53,7 +54,7 @@ module Cmor
         def load_collection
           resource_class.find_by_sql(export.query)
         end
-        
+
         def resource_class
           export.root_model.constantize
         end

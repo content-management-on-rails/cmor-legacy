@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   # First you have to add the helper and the export concern to your controller:
   #

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class Incoming < ApplicationRecord
     include Cmor::Transports::Models::UuidConcern
@@ -11,7 +13,7 @@ module Cmor::Transports
 
     validates :outgoing_uuid, presence: true, uniqueness: true
 
-    aasm(:default, column: 'state') do
+    aasm(:default, column: "state") do
       state :created, initial: true
       state :enqueued
       state :processing
@@ -34,6 +36,5 @@ module Cmor::Transports
         transitions from: :processing, to: :succeeded
       end
     end
-
   end
 end

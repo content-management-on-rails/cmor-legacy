@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class System < ApplicationRecord
     has_many :outgoing_targets

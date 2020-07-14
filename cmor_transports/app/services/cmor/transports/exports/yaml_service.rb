@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Exports
@@ -6,7 +8,6 @@ module Cmor
         end
 
         private
-
         def generate_output!
           @output = load_collection.collect { |r| build_resource_hash(r) }.to_yaml
         end
@@ -15,7 +16,7 @@ module Cmor
           {
             io: StringIO.new(@output),
             filename: "export_#{export.id}.yaml",
-            content_type: 'application/x-yaml'
+            content_type: "application/x-yaml"
           }
         end
       end

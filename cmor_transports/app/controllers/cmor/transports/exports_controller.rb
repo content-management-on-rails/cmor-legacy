@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class ExportsController < Cmor::Core::Backend::ResourcesController::Base
     include Rao::ResourcesController::AasmConcern
@@ -7,7 +9,6 @@ module Cmor::Transports
     end
 
     private
-
     def permitted_params
       params.require(:export).permit(:root_model, :query, :count_query, :output_format, :description, output_attributes: [])
     end

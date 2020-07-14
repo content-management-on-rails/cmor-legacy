@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Api
@@ -20,19 +22,18 @@ module Cmor
           end
 
           def outgoing_output_base64
-            outgoing['output_base64'] if outgoing.respond_to?(:[])
+            outgoing["output_base64"] if outgoing.respond_to?(:[])
           end
 
           private
-
           def _perform
             build_incoming!
           end
 
           def build_incoming!
             @incoming = Cmor::Transports::Incoming.new.tap do |i|
-              i.outgoing_uuid = outgoing['uuid']
-              i.payload.attach(io: StringIO.new(Base64.decode64(outgoing['output_base64'])), filename: "payload.zip", content_type: "application/zip")
+              i.outgoing_uuid = outgoing["uuid"]
+              i.payload.attach(io: StringIO.new(Base64.decode64(outgoing["output_base64"])), filename: "payload.zip", content_type: "application/zip")
               i.input.attach(io: StringIO.new(outgoing.to_json), filename: "outgoing.json", content_type: "application/json")
               i
             end

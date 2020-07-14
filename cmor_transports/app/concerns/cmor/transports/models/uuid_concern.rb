@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Models
@@ -9,7 +11,6 @@ module Cmor
         end
 
         private
-
         def set_uuid
           self.uuid ||= SecureRandom.uuid
         end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class OutgoingTarget < ApplicationRecord
     belongs_to :outgoing

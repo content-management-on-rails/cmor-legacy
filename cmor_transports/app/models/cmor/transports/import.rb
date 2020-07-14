@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Transports
   class Import < ApplicationRecord
     include Cmor::Transports::Models::UuidConcern
@@ -8,7 +10,7 @@ module Cmor::Transports
 
     validates :root_model, presence: true
 
-    aasm(:default, column: 'state') do
+    aasm(:default, column: "state") do
       state :created, initial: true
       state :enqueued
       state :processing

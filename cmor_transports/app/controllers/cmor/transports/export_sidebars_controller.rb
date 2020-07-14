@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     class ExportSidebarsController < Administrador::SidebarController::Base

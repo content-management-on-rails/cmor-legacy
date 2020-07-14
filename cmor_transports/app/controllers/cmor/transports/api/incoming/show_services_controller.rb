@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Transports
     module Api
@@ -10,7 +12,6 @@ module Cmor
           end
 
           private
-
           def permitted_params
             params.require(:show_service).permit(:outgoing_uuid)
           end
