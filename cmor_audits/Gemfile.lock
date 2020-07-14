@@ -1,5 +1,8 @@
-PATH
-  remote: ../cmor_blog_backend
+GIT
+  remote: https://github.com/content-management-on-rails/cmor
+  revision: c235da8fbc9b87e155092f74418b6f79d326c44a
+  branch: feature/cmor_audits
+  glob: cmor_blog_backend/*.gemspec
   specs:
     cmor_blog_backend (0.0.55.pre)
       cmor_blog (= 0.0.55.pre)
@@ -7,8 +10,11 @@ PATH
       cmor_core_backend (= 0.0.55.pre)
       rails (>= 5.2.3)
 
-PATH
-  remote: ../cmor_core_backend
+GIT
+  remote: https://github.com/content-management-on-rails/cmor
+  revision: c235da8fbc9b87e155092f74418b6f79d326c44a
+  branch: feature/cmor_audits
+  glob: cmor_core_backend/*.gemspec
   specs:
     cmor_core_backend (0.0.55.pre)
       administrador (>= 0.0.26.pre)
