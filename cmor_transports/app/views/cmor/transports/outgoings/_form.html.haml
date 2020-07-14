@@ -1,0 +1,2 @@
+= form.association :exports, as: :check_boxes, collection: Cmor::Transports::Export.all, label_method: :human
+= form.association :systems, as: :check_boxes, collection: Cmor::Transports::System.all, label_method: :human

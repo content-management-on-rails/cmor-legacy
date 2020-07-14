@@ -11,29 +11,29 @@ Cmor::Cms::Backend::Engine.routes.draw do
   end
   
   resources :navigation_items do
+    Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
     post :toggle_published, on: :member
     post :reposition, on: :member
-    Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
   end
   
   resources :layouts do
-    post :toggle_published, on: :member
     Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+    post :toggle_published, on: :member
   end
 
   resources :pages do
-    post :toggle_published, on: :member
     Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+    post :toggle_published, on: :member
   end
   
   resources :partials do
-    post :toggle_published, on: :member
     Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+    post :toggle_published, on: :member
   end
   
   resources :templates do
-    post :toggle_published, on: :member
     Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+    post :toggle_published, on: :member
   end
 
   root to: 'home#index'

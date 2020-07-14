@@ -1,0 +1,41 @@
+en:
+  activerecord:
+    models:
+      cmor/transports/export:
+        one: Export
+        other: Exports
+    attributes:
+      cmor/transports/export:
+        id: ID
+        count_query: Count query
+        creator: Creator
+        creator_id: Creator
+        creator_type: Creator type
+        description: Description
+        job_id: Job ID
+        output_attributes: Output attributes
+        output_format: Output format
+        query: Query
+        root_model: Root model
+        service_errors: Service errors
+        service_messages: Service messages
+        state: State
+        uuid: UUID
+        created_at: Created at
+        updated_at: Updated at
+  classes:
+    cmor/transports/engine: Transports
+  cmor:
+    core:
+      backend:
+        resources_controller:
+          base:
+            index:
+              export: "Export"
+    transports:
+      exports:
+        export:
+          success: "The export was scheduled. Click on <a href=\"%{url}\" class=\"alert-link\">hier</a> to see details."
+          error: "The export could not be scheduled."
+  routes:
+    cmor-transports-engine: transports

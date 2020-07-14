@@ -1,0 +1,6 @@
+= form.input :root_model
+= form.input :query
+= form.input :count_query
+= form.input :output_attributes
+= form.input :output_format, collection: Cmor::Transports.export_formats.call.keys
+= form.input :description

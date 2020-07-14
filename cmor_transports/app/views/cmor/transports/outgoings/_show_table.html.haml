@@ -1,0 +1,11 @@
+= table.id
+= table.row :uuid
+= table.aasm_state
+= table.aasm_actions
+= table.row :service_errors
+= table.row :service_messages
+= table.row :description
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.row :job_id
+= table.attachment :output
+= table.timestamps

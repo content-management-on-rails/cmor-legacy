@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+# Declare your gem's dependencies in cmor/transports.gemspec.
+# Bundler will treat runtime dependencies like base dependencies, and
+# development dependencies will be added by default to the :development group.
+gemspec
+
+# Declare any dependencies that are still in development here instead of in
+# your gemspec. These might include edge Rails or gems from your path or
+# Git. Remember to move these dependencies to your gemspec before releasing
+# your gem to rubygems.org.
+
+# To use a debugger
+# gem 'byebug', group: [:development, :test]
+gem "cmor_core_backend", path: "../cmor_core_backend"
+gem "cmor_cms_backend", path: "../cmor_cms_backend"
+
+# gem 'rao-component', path: '../../rao/rao-component'
+# gem 'rao-resources_controller', path: '../../rao/rao-resources_controller'
+gem "rao-component", git: "https://github.com/rails-add-ons/rao", glob: "rao-component/*.gemspec"
+gem "rao-resources_controller", git: "https://github.com/rails-add-ons/rao", glob: "rao-resources_controller/*.gemspec"

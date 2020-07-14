@@ -2,10 +2,15 @@ module Cmor
   module Cms
     module Backend
       class TemplatesController < Cmor::Core::Backend::ResourcesController::Base
+        include Cmor::Transports::ResourcesController::ExportConcern if Cmor::Core.features?(:cmor_transports)
         include Rao::ResourcesController::ActsAsPublishedConcern
 
         def self.resource_class
           Cmor::Cms::Template
+        end
+
+        def self.available_rest_actions
+          super + [:export]
         end
 
         private

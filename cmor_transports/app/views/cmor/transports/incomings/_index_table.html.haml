@@ -1,0 +1,12 @@
+= table.batch_actions
+= table.id
+= table.column :uuid
+= table.column :outgoing_uuid
+= table.aasm_state
+= table.column :source
+= table.column :creator_type
+= table.column :creator_id
+= table.column :job_id
+= table.attachment :input
+= table.attachment :payload
+= table.timestamps
