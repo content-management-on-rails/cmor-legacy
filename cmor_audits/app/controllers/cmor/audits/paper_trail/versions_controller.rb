@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor
   module Audits
     module PaperTrail
@@ -9,7 +11,7 @@ module Cmor
         def self.engine_class
           ::Cmor::Audits
         end
-        
+
         def self.available_rest_actions
           super - %i(new create edit update)
         end

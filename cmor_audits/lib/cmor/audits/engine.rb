@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Audits
   class Engine < ::Rails::Engine
     isolate_namespace Cmor::Audits
@@ -17,8 +19,8 @@ module Cmor::Audits
       Cmor::Core::Backend.configure do |config|
         config.add_resources_routes(
           :cmor_audits,
-          condition: ->{ PaperTrail.request.enabled_for_model?(resource_class) },
-          routes:    ->{ paper_trail_resources }
+          condition: -> { PaperTrail.request.enabled_for_model?(resource_class) },
+          routes:    -> { paper_trail_resources }
         )
       end
       puts " => [OK]"

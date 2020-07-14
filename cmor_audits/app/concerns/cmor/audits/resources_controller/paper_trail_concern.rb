@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Cmor
   module Audits
     module ResourcesController
       module PaperTrailConcern
         extend ActiveSupport::Concern
-        
+
         included do
           before_action(only: :versions) { load_resource; load_versions }
           before_action(only: :version) { load_resource; load_version }
@@ -21,7 +23,6 @@ module Cmor
         end
 
         private
-
         def load_versions
           @versions = @resource.versions
         end

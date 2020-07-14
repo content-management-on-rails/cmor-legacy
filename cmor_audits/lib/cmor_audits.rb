@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "cmor_core_backend"
 require "paper_trail"
 

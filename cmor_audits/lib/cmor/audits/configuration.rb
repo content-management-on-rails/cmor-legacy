@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cmor::Audits
   module Configuration
     def configure
@@ -5,23 +7,23 @@ module Cmor::Audits
     end
 
     mattr_accessor :resources_controllers do
-      -> {[]}
+      -> { [] }
     end
 
     mattr_accessor :resource_controllers do
-      -> {[]}
+      -> { [] }
     end
 
     mattr_accessor :service_controllers do
-      -> {[]}
+      -> { [] }
     end
 
     mattr_accessor :sidebar_controllers do
-      -> {[]}
+      -> { [] }
     end
 
     mattr_accessor :resources do
-      -> {{}}
+      -> { {} }
     end
   end
 end
