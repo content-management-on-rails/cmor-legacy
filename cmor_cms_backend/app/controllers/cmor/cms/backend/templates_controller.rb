@@ -11,7 +11,7 @@ module Cmor
         end
 
         def self.has_paper_trail?
-          PaperTrail.request.enabled_for_model?(resource_class)
+          Object.const_defined?('PaperTrail') && PaperTrail.request.enabled_for_model?(resource_class)
         end
 
         def self.available_rest_actions
