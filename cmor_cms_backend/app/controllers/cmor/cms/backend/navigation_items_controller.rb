@@ -11,8 +11,12 @@ module Cmor
           Cmor::Cms::NavigationItem
         end
 
+        def self.has_paper_trail?
+          PaperTrail.request.enabled_for_model?(resource_class)
+        end
+
         def self.available_rest_actions
-          super + [:export]
+          super + [:export, (has_paper_trail? ? :versions : nil)].compact
         end
 
         private
