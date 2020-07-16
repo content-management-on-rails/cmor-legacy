@@ -1,7 +1,7 @@
 module Cmor::Cms
   class Template < ActiveRecord::Base
     # add shared behaviour for database backed templates
-    include Cmor::Cms::DatabaseTemplate
+    include Cmor::Cms::Models::DatabaseTemplateConcern
 
     # publishing
     include ActsAsPublished::ActiveRecord
