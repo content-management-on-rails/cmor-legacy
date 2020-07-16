@@ -20,13 +20,6 @@ module Cmor
           validates :format, inclusion: { in: Mime::SET.symbols.map(&:to_s) },
                                   allow_nil: true,
                                   allow_blank: true
-          # validates :handler, inclusion: { in: ->(record) { ActionView::Template::Handlers.extensions.map(&:to_s) } }
-          # validates :locale, inclusion: { in: ->(record) { I18n.available_locales.map(&:to_s) } },
-          #                         allow_nil: true,
-          #                         allow_blank: true
-          # validates :format, inclusion: { in: ->(record) { Mime::SET.symbols.map(&:to_s) } },
-          #                         allow_nil: true,
-          #                         allow_blank: true
           validates :pathname, presence: true
         end
 
