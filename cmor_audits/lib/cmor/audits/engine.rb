@@ -14,7 +14,9 @@ module Cmor::Audits
         resource_class.constantize.send(:has_paper_trail, options)
         puts " => [OK]"
       end
+    end
 
+    config.after_initialize do
       print "[Cmor::Audits] Adding resources routes"
       Cmor::Core::Backend.configure do |config|
         config.add_resources_routes(
@@ -28,7 +30,7 @@ module Cmor::Audits
       unless Rails.application.config.instance_variable_get(:@eager_load)
         print "[Cmor::Audits] Reloading routes"
         Rails.application.reload_routes!
-        puts " => [OK)"
+        puts " => [OK]"
       end
     end
   end
