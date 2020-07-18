@@ -9,3 +9,7 @@ de:
             success: 'Tag hinzugefügt'
   routes:
     cmor-tags-backend-engine: 'tags'
+  simple_form:
+    hints:
+      post:
+        tag_list: "Kommagetrennt. Beispiel: Katzen, Tiere, Meme"

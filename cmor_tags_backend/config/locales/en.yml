@@ -9,3 +9,7 @@ en:
             success: 'Added tag'
   routes:
     cmor-tags-backend-engine: 'tags'
+  simple_form:
+    hints:
+      post:
+        tag_list: "Comma-separated. Example: Cats, animals, meme"
