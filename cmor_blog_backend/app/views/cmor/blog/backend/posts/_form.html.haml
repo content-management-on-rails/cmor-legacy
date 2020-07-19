@@ -18,4 +18,4 @@
         = form.input :overwrite_assets, as: :file, input_html: { multiple: true }
 
 - if Cmor::Core.features?(:cmor_tags)
-  = form.input :tag_list
+  = form.input :tag_list, input_html: { value: form.object.tag_list.to_s }
