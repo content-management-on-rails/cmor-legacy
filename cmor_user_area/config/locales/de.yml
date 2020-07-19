@@ -46,6 +46,7 @@ de:
       navigation_view_helper:
         defaults: &navigation_view_helper_defaults
           show: Mein Account
+          edit: Mein Account
           new: Registrieren
           not_signed_in: Nicht angemeldet
           sign_in: Einloggen

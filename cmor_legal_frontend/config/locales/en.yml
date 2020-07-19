@@ -32,7 +32,11 @@ en:
       frontend:
         cookie_preferences:
           allowed_cookies:
-            more: Mehr        
+            more: Mehr
+          form:
+            accept_all: "Accept all"
+            apply: "Apply settings"
+            customize: "Customize settings"
           update:
             success: 'Settings successfully saved.'
         cookies:

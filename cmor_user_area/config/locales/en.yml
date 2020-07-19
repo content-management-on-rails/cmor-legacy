@@ -43,18 +43,24 @@ en:
     cmor/user_area/create_default_user_service: 'Create Default User Service'
   cmor:
     user_area:
-      navigation: &navigation
-        show: My Account
-        edit: My Account
-        new: Register
-        not_signed_in: Not signed in
-        sign_in: Sign in
-        sign_out: Sign out
-      navigation_dropdown:
-        bootstrap3:
-          <<: *navigation
-        bootstrap4:
-          <<: *navigation
+      navigation_view_helper:
+        defaults: &navigation_view_helper_defaults
+          show: My Account
+          edit: My Account
+          new: Register
+          not_signed_in: Not signed in
+          sign_in: Sign in
+          sign_out: Sign out
+        bootstrap_3:
+          render:
+            <<: *navigation_view_helper_defaults
+          render_dropdown:
+            <<: *navigation_view_helper_defaults
+        bootstrap_4:
+          render:
+            <<: *navigation_view_helper_defaults
+          render_dropdown:
+            <<: *navigation_view_helper_defaults
       password_reset_requests:
         base:
           new:
