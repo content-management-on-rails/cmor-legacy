@@ -44,8 +44,9 @@ rails generate cmor:legal:install
 rails cmor_cms:install:migrations
 
 # Root route
-rails generate controller Home index --no-controller-specs --no-view-specs
-sed -i "2i  root to: 'home#index'" config/routes.rb
+rails generate controller Home index foo --no-controller-specs --no-view-specs
+sed -i "2i  get '/foo', to: 'home#foo'" config/routes.rb
+sed -i "3i  root to: 'home#index'" config/routes.rb
 
 # Application layout
 tee app/views/layouts/application.html.erb > /dev/null <<EOT
