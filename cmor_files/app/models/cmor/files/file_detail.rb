@@ -16,5 +16,9 @@ module Cmor::Files
     friendly_id :title, use: :slugged
 
     validates :identifier, uniqueness: { scope: [ :folder_id ] }, allow_blank: true, allow_nil: true
+
+    def label
+      title.presence || asset&.blob&.filename&.to_s&.truncate(64).presence
+    end
   end
 end

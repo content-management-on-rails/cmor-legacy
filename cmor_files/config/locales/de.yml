@@ -30,6 +30,7 @@ de:
         folder: Ordner
         folder_id: Ordner
         identifier: Bezeichner
+        label: Label
         position: Position
         published: Veröffentlicht
         published_at: Veröffentlicht am

@@ -30,6 +30,7 @@ en:
         folder: Folder
         folder_id: Folder
         identifier: Identifier
+        label: Label
         position: Position
         published: Published
         published_at: Published at

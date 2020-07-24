@@ -6,8 +6,7 @@
   .col-12
     .table-responsive
       = collection_table(collection: @resource.file_details, resource_class: Cmor::Files::FileDetail, header: false) do |table|
-        = table.column :filename do |resource|
-          - resource.asset.blob.filename.to_s.truncate(64)
+        = table.column :label
         = table.column :blob_byte_size do |resource|
           - number_to_human_size(resource.asset.blob.byte_size)
         = table.column :actions do |resource|
