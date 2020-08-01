@@ -15,6 +15,12 @@ module Cmor
         def self.available_rest_actions
           super - %i(new create edit update)
         end
+
+        private
+
+        def load_collection_scope
+          super.order(created_at: :desc)
+        end
       end
     end
   end
