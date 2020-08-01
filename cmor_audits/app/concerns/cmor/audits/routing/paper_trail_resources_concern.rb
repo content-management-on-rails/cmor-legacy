@@ -30,8 +30,8 @@ module Cmor
         #                             PUT    /pages/:id(.:format)                             cmor/cms/backend/pages#update
         #
         def paper_trail_resources
-          get "versions/:version_id", on: :member, action: :version
-          get "version_at(/:version_at)", on: :member, action: :version_at
+          get "versions/:version_id", on: :member, action: :version, as: :version
+          get "version_at(/:version_at)", on: :member, action: :version_at, as: :version_at
           get "versions", on: :member, action: :versions
         end
       end
