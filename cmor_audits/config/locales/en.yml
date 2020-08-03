@@ -13,20 +13,21 @@ en:
         item: Item
         item_id: Item-ID
         item_type: Item-Type
-        object: Objekt
-        created_at: Created at
+        object: Object
+        version_actions: Auditing
         whodunnit: Changed by
+        created_at: Created at
   cmor:
     core:
       backend:
         resources_controller:
           base:
             version:
-              back: Zurück
+              back: Back
               next: Next
               previous: Previous
             versions:
-              back: Zurück
+              back: Back
             versions_form_buttons:
               submit: Show
   routes:

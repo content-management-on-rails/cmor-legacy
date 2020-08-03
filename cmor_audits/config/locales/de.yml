@@ -14,8 +14,9 @@ de:
         item_id: Element-ID
         item_type: Element-Typ
         object: Objekt
-        created_at: Erstellt am
+        version_actions: Versionierung
         whodunnit: Geändert durch
+        created_at: Erstellt am
   cmor:
     core:
       backend:

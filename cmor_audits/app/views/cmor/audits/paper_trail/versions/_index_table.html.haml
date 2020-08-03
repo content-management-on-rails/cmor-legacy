@@ -1,3 +1,4 @@
+= table.batch_actions
 = table.id sort: true
 = table.column :item_type, sort: true
 = table.column :item_id, sort: true
@@ -5,3 +6,11 @@
 = table.column :whodunnit, sort: true
 = table.column :object
 = table.timestamp :created_at, sort: true
+= table.column :version_actions do |resource|
+  - if resource.item_type.constantize.respond_to?(:version_class_name) && resource.reify.present? && resource.item.present?
+    - capture_haml do
+      - router_method_name = (Administrador.engines.values.map(&:resources_controllers).flatten.find { |c| c.resource_class == resource.item_type.constantize }&.engine_class&.to_s&.deconstantize&.underscore.gsub('/', '_') || "main_app")
+      - target = send(router_method_name).polymorphic_path([:version, resource.reify], version_id: resource.id)
+      = link_to(target, class: 'btn btn-xs btn-primary btn-responsive') do
+        %i.fas.fa-history
+        %span.btn-text= t('.show')
