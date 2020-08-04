@@ -22,4 +22,10 @@ Cmor::Tags.configure do |config|
   # Default: config.taggable_class_names = %w()
   #
   config.taggable_class_names = %w()
+
+  # Factory name to use for taggable objects.
+  #
+  # Default: config.taggable_factory_name = :cmor_blog_post
+  #
+  config.taggable_factory_name = :cmor_blog_post
 end
