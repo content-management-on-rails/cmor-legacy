@@ -11,7 +11,7 @@ module Cmor::Audits
 
       Cmor::Audits::Configuration.resources.call.each do |resource_class, options|
         print "[Cmor::Audits] Enabling paper trail on #{resource_class}"
-        resource_class.constantize.send(:has_paper_trail, options)
+        resource_class.constantize.send(:has_paper_trail, (options[:paper_trail] || {}))
         puts " => [OK]"
       end
     end
