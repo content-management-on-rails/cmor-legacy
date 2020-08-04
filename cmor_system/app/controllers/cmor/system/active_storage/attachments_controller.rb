@@ -2,6 +2,8 @@ module Cmor
   module System
     module ActiveStorage
       class AttachmentsController < Cmor::Core::Backend::ResourcesController::Base
+        include Cmor::Audits::ResourcesController::PaperTrailConcern if Cmor::Core.features?(:cmor_audits)
+
         def self.engine_class
           ::Cmor::System::Engine
         end
