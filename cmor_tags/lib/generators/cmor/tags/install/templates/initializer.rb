@@ -25,7 +25,7 @@ Cmor::Tags.configure do |config|
 
   # Factory name to use for taggable objects.
   #
-  # Default: config.taggable_factory_name = :cmor_blog_post
+  # Default: config.taggable_factory_name = :post
   #
-  config.taggable_factory_name = :cmor_blog_post
+  config.taggable_factory_name = :post
 end

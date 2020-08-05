@@ -35,6 +35,7 @@ rails acts_as_taggable_on_engine:install:migrations
 
 # Example post model for specs
 rails generate model Post title
+rails g factory_bot:model Post title
 sed -i '2i\  include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
 mkdir -p app/views/posts
 touch app/views/posts/_post.html.haml
