@@ -1,5 +1,5 @@
 .ml-auto
-  - if Cmor::Core.features?(:cmor_transports) && controller.class.available_rest_actions.include?(:export)
+  - if Cmor::Core.features?(:cmor_transports) && available_rest_actions.include?(:export)
     = link_to(export_path, class: 'btn btn-secondary btn-circle btn-lg') do
       %i.fas.fa-file-export
   - if available_rest_actions.include?(:new)
