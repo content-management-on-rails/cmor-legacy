@@ -28,7 +28,7 @@ module Cmor
         private
 
         def after_update_location
-          last_location
+          last_location || main_app.root_path
         end
 
         def permitted_params
