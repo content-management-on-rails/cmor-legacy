@@ -9,7 +9,7 @@ class CreateCmorTransportsImports < ActiveRecord::Migration[5.2]
       t.text :service_errors
       t.text :description
       t.references :creator, polymorphic: true
-      t.references :job, foreign_key: true
+      t.references :job, foreign_key: false, index: true
 
       t.timestamps
     end
