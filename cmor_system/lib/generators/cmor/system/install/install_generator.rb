@@ -9,12 +9,14 @@ module Cmor
         attr_reader :cmor_system_enable_active_storage
         attr_reader :cmor_system_enable_delayed_job
         attr_reader :record_factory_name
+        attr_reader :record_attachment_name
 
         def initialize(*args)
           super
           @cmor_system_enable_active_storage = ENV.fetch('CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE') { false }
           @cmor_system_enable_delayed_job = ENV.fetch('CMOR_SYSTEM_ENABLE_DELAYED_JOB') { false }
           @record_factory_name = ENV.fetch('CMOR_SYSTEM_RECORD_FACTORY_NAME') { 'post' }
+          @record_attachment_name = ENV.fetch('CMOR_SYSTEM_RECORD_ATTACHMENT_NAME') { 'asset' }
         end
 
         def generate_initializer

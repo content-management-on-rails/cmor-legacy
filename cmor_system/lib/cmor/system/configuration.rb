@@ -13,6 +13,7 @@ module Cmor
       mattr_accessor(:enable_active_storage_backend) { false }
       mattr_accessor(:enable_delayed_job_backend) { false }
       mattr_accessor(:record_factory_name) { 'user' }
+      mattr_accessor(:record_attachment_name) { 'asset' }
 
       def self.registered_controllers
         rc = @@registered_controllers.call

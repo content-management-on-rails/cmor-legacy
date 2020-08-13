@@ -21,11 +21,17 @@ Cmor::System.configure do |config|
   config.registered_services = -> {[
   ]}
 
-  # Factory name to use for creators and updaters.
+  # Factory name to use for active storage attachment records.
   #
   # default: config.record_factory_name = 'post'
   #
   config.record_factory_name = '<%= record_factory_name %>'
+
+  # Attachment name to use for active storage attachments.
+  #
+  # default: config.record_attachment_name = 'asset'
+  #
+  config.record_attachment_name = '<%= record_attachment_name %>'
 
   # Enable support for ActiveStorage.
   # 
