@@ -8,6 +8,7 @@ Cmor::Cms::Backend.configure do |config|
   #            Cmor::Cms::Backend::LayoutsController,
   #            Cmor::Cms::Backend::PagesController,
   #            Cmor::Cms::Backend::PartialsController,
+  #            Cmor::Cms::Backend::RedirectsController,
   #            Cmor::Cms::Backend::TemplatesController
   # ]}
   #
@@ -19,6 +20,7 @@ Cmor::Cms::Backend.configure do |config|
       Cmor::Cms::Backend::LayoutsController,
       Cmor::Cms::Backend::PagesController,
       Cmor::Cms::Backend::PartialsController,
+      Cmor::Cms::Backend::RedirectsController,
       Cmor::Cms::Backend::TemplatesController
     ]
   }

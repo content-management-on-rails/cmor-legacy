@@ -1,0 +1,8 @@
+= table.row :source do |resource|
+  - capture_haml do
+    = link_to(resource.source, resource.source)
+= table.row :target do |resource|
+  - capture_haml do
+    = link_to(resource.target, resource.target)
+= table.timestamp :published_at
+= table.timestamps

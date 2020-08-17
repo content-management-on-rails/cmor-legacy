@@ -22,6 +22,9 @@ en:
       cmor/cms/partial:
         one: Partial
         other: Partials
+      cmor/cms/redirect:
+        one: Umleitung
+        other: Umleitungen
       cmor/cms/template:
         one: Template
         other: Templates
@@ -111,6 +114,11 @@ en:
         locale: Language
         path_and_filename: Filepath
         pathname: Path
+      cmor/cms/redirect:
+        <<: *defaults
+        source: Source
+        target: Target
+        position: Position
       cmor/cms/template:
         <<: *defaults
         basename: Name

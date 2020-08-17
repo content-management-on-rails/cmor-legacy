@@ -8,6 +8,7 @@ RSpec.describe 'Translations', type: :model do
     Cmor::Cms::ContentBlock   => {},
     Cmor::Cms::Layout         => {},
     Cmor::Cms::Partial        => {},
+    Cmor::Cms::Redirect       => {},
     Cmor::Cms::Template       => {},
   }.each do |model, options|
     I18n.available_locales.each do |locale|
