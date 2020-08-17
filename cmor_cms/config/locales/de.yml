@@ -22,6 +22,9 @@ de:
       cmor/cms/partial:
         one: Fragment
         other: Fragmente
+      cmor/cms/redirect:
+        one: Umleitung
+        other: Umleitungen
       cmor/cms/template:
         one: Vorlage
         other: Vorlagen
@@ -113,6 +116,11 @@ de:
         locale: Sprache
         path_and_filename: Dateipfad
         pathname: Pfad
+      cmor/cms/redirect:
+        <<: *defaults
+        source: Quelle
+        target: Ziel
+        position: Position
       cmor/cms/template:
         <<: *defaults
         basename: Name

@@ -16,6 +16,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     Cmor::Cms::ContentBlock   => {},
     Cmor::Cms::Layout         => {},
     Cmor::Cms::Partial        => {},
+    Cmor::Cms::Redirect       => {},
     Cmor::Cms::Template       => {},
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])

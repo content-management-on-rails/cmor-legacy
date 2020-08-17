@@ -3,6 +3,7 @@ PATH
   specs:
     cmor_cms (0.0.58.pre)
       RedCloth
+      acts_as_list
       acts_as_published
       awesome_nested_set
       cmor_core (= 0.0.58.pre)
@@ -97,6 +98,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.19)
+      activerecord (>= 3.0)
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
     addressable (2.6.0)
@@ -321,7 +324,7 @@ GEM
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.44.pre)
+    rao-service (0.0.45.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)

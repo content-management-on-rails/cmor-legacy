@@ -15,6 +15,10 @@ module Cmor
       initializer "cmor_cms_engine.register_template_handlers" do |app|
         ::ActionView::Template.register_template_handler :textile, ::ActionView::Template::Handlers::Textile.new
       end
+
+      initializer "cmor_cms_engine.add_redirect_middleware" do |app|
+        app.middleware.use Cmor::Cms::RedirectMiddleware
+      end
     end
   end
 end
