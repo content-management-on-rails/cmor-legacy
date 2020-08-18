@@ -1,9 +1,9 @@
 PATH
   remote: ../cmor_core
   specs:
-    cmor_core (0.0.58.pre)
+    cmor_core (0.0.59.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.58.pre)
+      cmor (= 0.0.59.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
@@ -14,21 +14,21 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.58.pre)
-    cmor_core_frontend (0.0.58.pre)
-      cmor_core (= 0.0.58.pre)
+    cmor (0.0.59.pre)
+    cmor_core_frontend (0.0.59.pre)
+      cmor_core (= 0.0.59.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: .
   specs:
-    cmor_user_area (0.0.58.pre)
+    cmor_user_area (0.0.59.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.58.pre)
-      cmor_core_frontend (= 0.0.58.pre)
+      cmor_core (= 0.0.59.pre)
+      cmor_core_frontend (= 0.0.59.pre)
       rails (>= 5.2.3)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -94,7 +94,7 @@ GEM
       activerecord (>= 5.2, < 6.1)
       activesupport (>= 5.2, < 6.1)
       request_store (~> 1.0)
-    bcrypt (3.1.13)
+    bcrypt (3.1.15)
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -266,22 +266,22 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.44.pre)
+    rao-component (0.0.45.pre)
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.44.pre)
+    rao-resources_controller (0.0.45.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.44.pre)
+    rao-service (0.0.45.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
     rao-shoulda_matchers (0.0.23.pre)
       rao
-    rao-view_helper (0.0.44.pre)
+    rao-view_helper (0.0.45.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)

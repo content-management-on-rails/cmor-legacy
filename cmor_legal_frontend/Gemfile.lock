@@ -1,55 +1,56 @@
 PATH
   remote: ../cmor_core_frontend
   specs:
-    cmor_core_frontend (0.0.58.pre)
-      cmor_core (= 0.0.58.pre)
+    cmor_core_frontend (0.0.59.pre)
+      cmor_core (= 0.0.59.pre)
       rails (>= 5.2.3)
       rao-view_helper
 
 PATH
   remote: ../cmor_legal
   specs:
-    cmor_legal (0.0.58.pre)
+    cmor_legal (0.0.59.pre)
       cmor_cms
-      cmor_core (= 0.0.58.pre)
-      cmor_core_backend (= 0.0.58.pre)
+      cmor_core (= 0.0.59.pre)
+      cmor_core_backend (= 0.0.59.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ..
   specs:
-    cmor (0.0.58.pre)
-    cmor_cms (0.0.58.pre)
+    cmor (0.0.59.pre)
+    cmor_cms (0.0.59.pre)
       RedCloth
+      acts_as_list
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.58.pre)
-      cmor_core_frontend (= 0.0.58.pre)
+      cmor_core (= 0.0.59.pre)
+      cmor_core_frontend (= 0.0.59.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       simple-navigation (>= 4.0.0)
-    cmor_core (0.0.58.pre)
+    cmor_core (0.0.59.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.58.pre)
+      cmor (= 0.0.59.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.58.pre)
+    cmor_core_backend (0.0.59.pre)
       administrador (>= 0.0.26.pre)
-      cmor_core (= 0.0.58.pre)
+      cmor_core (= 0.0.59.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: .
   specs:
-    cmor_legal_frontend (0.0.58.pre)
-      cmor_core (= 0.0.58.pre)
-      cmor_core_frontend (= 0.0.58.pre)
+    cmor_legal_frontend (0.0.59.pre)
+      cmor_core (= 0.0.59.pre)
+      cmor_core_frontend (= 0.0.59.pre)
       rails (>= 5.2.3)
 
 GEM
@@ -101,6 +102,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_list (0.9.19)
+      activerecord (>= 3.0)
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
     addressable (2.7.0)
@@ -322,28 +325,28 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     rao (0.0.39.pre)
-    rao-component (0.0.44.pre)
+    rao-component (0.0.45.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.44.pre)
+    rao-query (0.0.45.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.44.pre)
+    rao-resource_controller (0.0.45.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.44.pre)
+    rao-resources_controller (0.0.45.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.44.pre)
+    rao-service (0.0.45.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.44.pre)
+    rao-service_controller (0.0.45.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -351,7 +354,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.39.pre)
       rao
-    rao-view_helper (0.0.44.pre)
+    rao-view_helper (0.0.45.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -428,7 +431,7 @@ GEM
     simple_form (5.0.2)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
-    simple_form-datetimepicker (0.0.2)
+    simple_form-datetimepicker (0.0.3)
       bootstrap3-datetimepicker-rails
       coffee-rails
       momentjs-rails
