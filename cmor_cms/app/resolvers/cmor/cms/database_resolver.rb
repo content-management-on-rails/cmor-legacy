@@ -11,40 +11,79 @@ module Cmor
       end
 
       # instance methods go here
-      def find_templates(name, prefix, partial, details, outside_app_allowed = false)
-        return [] unless resolve(partial)
+      if Rails.version < '6.0'
+        def find_templates(name, prefix, partial, details, outside_app_allowed = false)
+          return [] unless resolve(partial)
 
-        conditions = {
-          pathname: assert_slashs(prefix.to_s),
-          basename: normalize_basename(name),
-          locale: normalize_array(details[:locale]).first,
-          format: normalize_array(details[:formats]).first,
-          handler: normalize_array(details[:handlers])
-        }
+          conditions = {
+            pathname: assert_slashs(prefix.to_s),
+            basename: normalize_basename(name),
+            locale: normalize_array(details[:locale]).first,
+            format: normalize_array(details[:formats]).first,
+            handler: normalize_array(details[:handlers])
+          }
 
-        format = conditions.delete(:format)
-        locale = conditions.delete(:locale)
+          format = conditions.delete(:format)
+          locale = conditions.delete(:locale)
 
-        query  = template_class.constantize.where(conditions)
+          query  = template_class.constantize.where(conditions)
 
-        # 1) Only include published templates
-        query = query.published
+          # 1) Only include published templates
+          query = query.published
 
-        # 2) Check for templates with the given format or format is nil
-        query = query.where(["format = ? OR format = '' OR format IS NULL", format])
+          # 2) Check for templates with the given format or format is nil
+          query = query.where(["format = ? OR format = '' OR format IS NULL", format])
 
-        # 3) Ensure templates with format come first
-        query = query.order('format DESC')
+          # 3) Ensure templates with format come first
+          query = query.order('format DESC')
 
-        # 4) Check for templates with the given locale or locale is nil
-        query = query.where(["locale = ? OR locale = '' OR locale IS NULL", locale])
+          # 4) Check for templates with the given locale or locale is nil
+          query = query.where(["locale = ? OR locale = '' OR locale IS NULL", locale])
 
-        # 5) Ensure templates with locale come first
-        query = query.order('locale DESC')
+          # 5) Ensure templates with locale come first
+          query = query.order('locale DESC')
 
-        # 6) Now trigger the query passing on conditions to initialization
-        query.map do |record|
-          initialize_template(record, details)
+          # 6) Now trigger the query passing on conditions to initialization
+          query.map do |record|
+            initialize_template(record, details)
+          end
+        end
+      else
+        def find_templates(name, prefix, partial, details, locals)
+          return [] unless resolve(partial)
+
+          conditions = {
+            pathname: assert_slashs(prefix.to_s),
+            basename: normalize_basename(name),
+            locale: normalize_array(details[:locale]).first,
+            format: normalize_array(details[:formats]).first,
+            handler: normalize_array(details[:handlers])
+          }
+
+          format = conditions.delete(:format)
+          locale = conditions.delete(:locale)
+
+          query  = template_class.constantize.where(conditions)
+
+          # 1) Only include published templates
+          query = query.published
+
+          # 2) Check for templates with the given format or format is nil
+          query = query.where(["format = ? OR format = '' OR format IS NULL", format])
+
+          # 3) Ensure templates with format come first
+          query = query.order('format DESC')
+
+          # 4) Check for templates with the given locale or locale is nil
+          query = query.where(["locale = ? OR locale = '' OR locale IS NULL", locale])
+
+          # 5) Ensure templates with locale come first
+          query = query.order('locale DESC')
+
+          # 6) Now trigger the query passing on conditions to initialization
+          query.map do |record|
+            initialize_template(record, details, locals)
+          end
         end
       end
 
@@ -71,13 +110,12 @@ module Cmor
           ::ActionView::Template.new(source, identifier, handler, details)
         end
       else
-        def initialize_template(record, details)
+        def initialize_template(record, details, locals)
           source       = build_source(record)
           identifier   = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
           handler      = ::ActionView::Template.registered_template_handler(record.handler)
           virtual_path = "#{record.pathname}#{record.basename}"
           layout = record.layout if record.respond_to?(:layout) && record.layout.present?
-          locals       = []
 
           # 5) Check for the record.format, if none is given, try the template
           # handler format and fallback to the one given on conditions
