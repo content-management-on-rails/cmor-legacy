@@ -76,7 +76,7 @@ module Cmor
             puts "    $> rails cmor:cms:add_homepages"
             puts ""
             puts "    # add default homepages for specific locale(s)"
-            puts "    $> rails cmor:cms:add_homepages[en,de]"
+            puts "    $> rails cmor:cms:add_homepages[\"en de\"]"
           end
         end
 
