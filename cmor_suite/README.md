@@ -28,15 +28,27 @@ This will install prerequisites and following modules:
 
   * blog
   * carousels
-  * core
   * cms
   * contact
+  * core
   * files
   * galleries
+  * legal
   * links
+  * partners
   * rbac
+  * seo
+  * showcase
+  * system
   * tags
+  * testimonials
   * user_area
+
+This will not install following modules, as you may want to install them explicitly:
+
+  * audits
+  * multi_tenancy
+  * transports
 
 If you want to omit certain modules you can do so by using the exclude_modules flag:
 
