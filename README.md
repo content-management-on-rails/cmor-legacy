@@ -3,7 +3,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a71fdca73c85a22125dc/maintainability)](https://codeclimate.com/github/content-management-on-rails/cmor/maintainability)
 
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
-Short description and motivation.
+
+CMOR is a content management system for ruby on rails.
 
 ## Usage
 How to use my plugin.
