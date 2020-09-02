@@ -18,16 +18,24 @@ module Cmor
         end
 
         def generate_routes
+          if Rails.application.routes.url_helpers.respond_to?(:root_path)
+            routes_source = 'routes_without_root.source'
+          else
+            routes_source = 'routes.source'
+          end
+
           inject_into_file 'config/routes.rb', before: "\nend" do
-            File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
+            File.read(File.join(File.expand_path('../templates', __FILE__), routes_source))
           end
         end
 
-        # def add_homepages
-        #   if yes? "Do you want to add homepages?"
-        #     AddHomepagesService.call
-        #   end
-        # end
+        def add_homepages
+          begin
+            AddHomepagesService.call(locales: [I18n.locale])
+          rescue ActiveRecord::StatementInvalid => e
+            puts "[Cmor::Cms] Could not generate homepage: #{e.message}"
+          end
+        end
       end
     end
   end

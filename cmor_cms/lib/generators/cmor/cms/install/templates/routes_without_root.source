@@ -8,4 +8,7 @@
   # it redirects to www.example.com/en. At /en the request is handled by
   # by Cmor::Cms.
   #
-  root to: redirect("/#{I18n.locale}")
+  # WARNING: As you already have a root route this default was not added.
+  # Please review your routing.
+  #
+  # root to: redirect("/#{I18n.locale}")

@@ -57,5 +57,5 @@ sed -i "s|<title>.*</title>|<title><%= cms_helper(self).title %></title>|" app/v
 sed -i '7i\    <%= cms_helper(self).meta_description.html_safe %>' app/views/layouts/application.html.erb
 
 # Install
-rails generate $INSTALL_NAME:install
 rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate $INSTALL_NAME:install
