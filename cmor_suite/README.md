@@ -1,7 +1,6 @@
-# Easy Content Management Suite on rails
+# CMOR Suite
 
-## Usage
-How to use my plugin.
+This is a meta gem that provides a way to install all cmor modules at once.
 
 ## Installation
 Add this line to your application's Gemfile:
