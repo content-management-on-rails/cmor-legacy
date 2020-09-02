@@ -4,10 +4,8 @@
 
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
 
-CMOR is a content management system for ruby on rails.git 
-
-## Usage
-How to use my plugin.
+CMOR is a content management system for ruby on rails. It is highlgy extensible
+and embraces the usage of engines.
 
 ## Architecture
 
@@ -44,7 +42,7 @@ the modules one by one.
 
 ## Installation
 
-See the README file in the cmor_suite folder for more information.
+See the [README file](cmor_suite/README.md) in [cmor_suite](cmor_suite) for more information.
 
 ## Running all specs
 ```bash
