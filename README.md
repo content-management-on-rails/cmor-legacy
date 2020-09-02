@@ -15,6 +15,8 @@ CMOR modules live in the subfolders of this repository. Each module is a
 separate gem that can be installed on its own. For convenience you can
 install the cmor_suite gem. This will install all cmor modules at once.
 
+## Installation
+
 See the README file in the cmor_suite folder for more information.
 
 ## Running all specs
