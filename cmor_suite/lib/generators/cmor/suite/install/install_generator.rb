@@ -57,6 +57,29 @@ module Cmor
           end
         end
 
+        def show_finished_hint
+          puts ""
+          puts "[Cmor::Suite] Install finished."
+        end
+
+        def show_migrate_hint
+          puts ""
+          puts "[Cmor::Suite] You may want to run 'rails db:migrate' to update your database."
+        end
+
+        def show_homepage_generation_hint
+          if (legacy_sub_modules + sub_modules).include?('cms')
+            puts ""
+            puts "[Cmor::Cms] You may want to add default homepages for your locales:"
+            puts ""
+            puts "    # add default homepages for all of your locales"
+            puts "    $> rails cmor:cms:add_homepages"
+            puts ""
+            puts "    # add default homepages for specific locale(s)"
+            puts "    $> rails cmor:cms:add_homepages[en,de]"
+          end
+        end
+
         private
 
         def legacy_sub_modules
