@@ -4,27 +4,18 @@
 
 # (C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!
 
-CMOR is a content management system for ruby on rails.
+CMOR is a content management system for ruby on rails.git 
 
 ## Usage
 How to use my plugin.
 
-## Installation
-Add this line to your application's Gemfile:
+## Architecture
 
-```ruby
-gem 'cmor'
-```
+CMOR modules live in the subfolders of this repository. Each module is a
+separate gem that can be installed on its own. For convenience you can
+install the cmor_suite gem. This will install all cmor modules at once.
 
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install cmor
-```
+See the README file in the cmor_suite folder for more information.
 
 ## Running all specs
 ```bash
