@@ -63,6 +63,7 @@ module Cmor::Cms
           page.basename         = 'home'
           page.locale           = locale
           page.handler          = 'textile'
+          page.published        = true
         end
         if page.save
           @created_pages << page
