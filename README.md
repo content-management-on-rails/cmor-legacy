@@ -31,7 +31,7 @@ the modules one by one.
   * galleries - Picture galleries with lightbox support
   * legal - Provides a eu gdpr compiant cookie banner and integration of a privacy policy
   * links - Provides nested lists of links and a link footer
-  * multi_tenancy - Provides multi tenancy across all modules
+  * multi_tenancy - Provides multi tenancy across all modules (not installed by default)
   * partners - Provides a showcase and a slider for your business partners
   * rbac - Role based authorization framework with a nice admin interface
   * seo - Integration of seo feature like automatic sitemap generation, meta tags and micro formats
@@ -39,7 +39,7 @@ the modules one by one.
   * system - A system insights dashbard for active storage, delayed job, changelogs, etc.
   * tags - A flexiable tagging solution for your models
   * testimonials - Display customer testimonials and opinions
-  * transports - An import/export system for your business models (work in progress)
+  * transports - An import/export system for your business models (not installed by default) (work in progress)
   * user_area - User authentication
 
 ## Installation
