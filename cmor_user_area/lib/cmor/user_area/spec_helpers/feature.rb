@@ -1,5 +1,15 @@
 module Cmor::UserArea
   module SpecHelpers
+    # Usage:
+    #
+    #    # spec/support/cmor_user_area.rb
+    #    require 'cmor/user_area/spec_helpers/feature'
+    #
+    #    RSpec.configure do |config|
+    #      config.include Cmor::UserArea::SpecHelpers::Feature, type: :feature
+    #      config.include Cmor::UserArea::SpecHelpers::Feature, type: :system
+    #    end
+    #
     module Feature
       def sign_up(user_attributes)
         visit "/#{I18n.locale}/#{I18n.t('routes.cmor_user_area_engine')}/#{I18n.t('routes.current_user')}/new"
@@ -13,6 +23,19 @@ module Cmor::UserArea
         end
       end
 
+      # Example:
+      #
+      #    # spec/features/de/backend/blog/posts
+      #    require 'rails_helper'
+      #
+      #    RSpec.describe '/de/backend/blog/posts', type: :feature do
+      #      let(:user) { create(:cmor_user_area_user, :authenticable) }
+      #      before(:each) { sign_in(user) }
+      #
+      #      let(:base_path) { "/de/backend/blog/posts" }
+      #      it { visit(base_path); expect(page).to have_text("Posts") }
+      #    end
+      #
       def sign_in(user)
         visit "/#{I18n.locale}/#{I18n.t('routes.cmor_user_area_engine')}/#{I18n.t('routes.user_session')}/new"
 
