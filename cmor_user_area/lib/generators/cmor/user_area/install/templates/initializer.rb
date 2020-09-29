@@ -23,6 +23,12 @@ Cmor::UserArea.configure do |config|
   #
   config.after_sign_in_url = ->(controller) { main_app.root_path }
 
+  # Where to redirect to after successful logout
+  #
+  # Default: config.after_sign_out_url = ->(controller) { main_app.root_path }
+  #
+  config.after_sign_out_url = ->(controller) { main_app.root_path }
+
   # This is the block, that will be passed to the acts_as_authentic call
   # in the user model.
   # 

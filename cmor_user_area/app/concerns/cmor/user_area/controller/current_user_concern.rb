@@ -11,7 +11,7 @@ module Cmor
         private
 
         def after_sign_out_url
-          "/#{I18n.locale}"
+          Cmor::UserArea::Configuration.after_sign_out_url
         end
 
         def authenticate_user!

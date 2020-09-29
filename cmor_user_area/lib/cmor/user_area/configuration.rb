@@ -27,6 +27,7 @@ module Cmor
       end
       mattr_accessor(:current_user_additional_table_rows_proc) { nil }
       mattr_accessor(:after_sign_in_url) { ->(controller) { main_app.root_path } }
+      mattr_accessor(:after_sign_out_url) { ->(controller) { main_app.root_path } }
     end
   end
 end
