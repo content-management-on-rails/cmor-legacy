@@ -15,6 +15,7 @@ de:
         version: Version
       cmor/system/rack/attack/banned_ip:
         id: ID
+        ip: IP Adresse
         key: Schlüssel
         value: Wert
   activerecord:
