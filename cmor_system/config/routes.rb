@@ -10,5 +10,11 @@ Cmor::System::Engine.routes.draw do
     end
   end if Cmor::System::Configuration.enable_active_storage_backend
 
+  namespace :rack do
+    namespace :attack do
+      resources :banned_ips, only: [:index, :show, :new, :create, :destroy]
+    end
+  end if Cmor::System::Configuration.enable_active_storage_backend
+
   root to: 'home#index'
 end

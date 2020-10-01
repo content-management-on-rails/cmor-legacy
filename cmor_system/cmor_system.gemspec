@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'markup-rails'
 
   s.add_development_dependency 'delayed_job_active_record'
+  s.add_development_dependency 'rack-attack'
 end

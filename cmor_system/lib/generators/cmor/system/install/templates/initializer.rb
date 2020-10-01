@@ -2,15 +2,19 @@ Cmor::System.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   # 
   # Default: config.registered_controllers = -> {[
+  #            Cmor::System::ChangelogsController,
   #            Cmor::System::DelayedBackendActiveRecordJobsController,
   #            Cmor::System::ActiveStorage::BlobsController,
-  #            Cmor::System::ActiveStorage::AttachmentsController
+  #            Cmor::System::ActiveStorage::AttachmentsController,
+  #            Cmor::System::Rack::Attack::BannedIpsController
   #          ]}
   # 
   config.registered_controllers = -> {[
+    Cmor::System::ChangelogsController,
     Cmor::System::DelayedBackendActiveRecordJobsController,
     Cmor::System::ActiveStorage::BlobsController,
-    Cmor::System::ActiveStorage::AttachmentsController
+    Cmor::System::ActiveStorage::AttachmentsController,
+    Cmor::System::Rack::Attack::BannedIpsController
   ]}
 
   # Set the services, that will be shown in the backend menu.
@@ -44,4 +48,10 @@ Cmor::System.configure do |config|
   # default: config.enable_delayed_job_backend = false
   #
   config.enable_delayed_job_backend = <%= cmor_system_enable_delayed_job %>
+
+  # Enable support for Rack::Attack.
+  #
+  # default: config.enable_rack_attack_backend = false
+  #
+  config.enable_rack_attack_backend = <%= cmor_system_enable_rack_attack %>
 end

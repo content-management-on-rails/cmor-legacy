@@ -14,11 +14,13 @@ module Cmor
       mattr_accessor(:enable_delayed_job_backend) { false }
       mattr_accessor(:record_factory_name) { 'user' }
       mattr_accessor(:record_attachment_name) { 'asset' }
+      mattr_accessor(:enable_rack_attack_backend) { false }
 
       def self.registered_controllers
         rc = @@registered_controllers.call
         rc.reject! { |c| c.name =~ /.*ActiveStorage.*/ } unless enable_active_storage_backend
         rc.reject! { |c| c.name =~ /.*Delayed.*/ } unless enable_delayed_job_backend
+        rc.reject! { |c| c.name =~ /.*Rack::Attack.*/ } unless enable_rack_attack_backend
         -> { rc }
       end
     end

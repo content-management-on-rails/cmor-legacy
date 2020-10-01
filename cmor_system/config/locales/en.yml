@@ -1,4 +1,22 @@
 en:
+  activemodel:
+    models:
+      cmor/system/changelog:
+        one: Changelog
+        other: Changelogs
+      cmor/system/rack/attack/banned_ip:
+        one: Blocked IP
+        other: Blocked IPs
+    attributes:
+      cmor/system/changelog:
+        id: ID
+        file: Datei
+        content: Inhalt
+        version: Version
+      cmor/system/rack/attack/banned_ip:
+        id: ID
+        key: Schlüssel
+        value: Wert
   activerecord:
     models:
       active_storage/attachment:

@@ -6,6 +6,7 @@ module Cmor
 
         source_root File.expand_path('../templates', __FILE__)
 
+        attr_reader :cmor_system_enable_rack_attack
         attr_reader :cmor_system_enable_active_storage
         attr_reader :cmor_system_enable_delayed_job
         attr_reader :record_factory_name
@@ -13,6 +14,7 @@ module Cmor
 
         def initialize(*args)
           super
+          @cmor_system_enable_rack_attack = ENV.fetch('CMOR_SYSTEM_ENABLE_RACK_ATTACK') { false }
           @cmor_system_enable_active_storage = ENV.fetch('CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE') { false }
           @cmor_system_enable_delayed_job = ENV.fetch('CMOR_SYSTEM_ENABLE_DELAYED_JOB') { false }
           @record_factory_name = ENV.fetch('CMOR_SYSTEM_RECORD_FACTORY_NAME') { 'post' }
