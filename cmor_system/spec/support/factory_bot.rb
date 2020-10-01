@@ -9,4 +9,4 @@ FactoryBot.definition_file_paths += [
   Cmor::System::Engine.root.join(*%w(spec factories)),
   Rails.root.join(*%w(spec factories))
 ]
-FactoryBot.find_definitions 
+FactoryBot.find_definitions

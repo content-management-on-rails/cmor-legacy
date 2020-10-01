@@ -7,6 +7,10 @@ module Cmor
 
           validates :key, presence: true
 
+          def human
+            key
+          end
+
           def self._all
             _keys.collect { |k| new(key: k) }
           end
@@ -20,6 +24,8 @@ module Cmor
               _store.instance_variable_get(:@data).keys
             elsif _store.is_a?(::Rack::Attack::StoreProxy::RedisCacheStoreProxy)
               _store.redis.keys
+            elsif _store.is_a?(::Rack::Attack::StoreProxy::RedisProxy)
+              _store.keys
             elsif _store.is_a?(ActiveSupport::Cache::NullStore)
               []
             end.find_all { |k| k.to_s.include?(":ban:") }
@@ -36,6 +42,7 @@ module Cmor
 
           def destroy
             self.class._store.delete(key)
+            self
           end
 
           def update(attributes)
@@ -51,7 +58,7 @@ module Cmor
           end
 
           def save
-            self.class._store.write(attributes['key'], attributes['value'])
+            !!self.class._store.write(attributes['key'], attributes['value'])
           end
 
           def ip

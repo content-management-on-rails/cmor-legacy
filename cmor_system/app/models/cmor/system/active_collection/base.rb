@@ -79,6 +79,10 @@ module Cmor
               Collection.new(_all)
             end
 
+            def destroy_all
+              all.map(&:destroy)
+            end
+
             def find(id)
               all.select { |cl| cl.id == id }.first || raise(ActiveRecord::RecordNotFound)
             end
