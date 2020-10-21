@@ -8,20 +8,20 @@ GIT
 PATH
   remote: ../cmor_blog_backend
   specs:
-    cmor_blog_backend (0.0.59.pre)
-      cmor_blog (= 0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+    cmor_blog_backend (0.0.60.pre)
+      cmor_blog (= 0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_blog
   specs:
-    cmor_blog (0.0.59.pre)
+    cmor_blog (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       friendly_id
       haml-rails
       kramdown
@@ -33,20 +33,20 @@ PATH
 PATH
   remote: ../cmor_carousels_backend
   specs:
-    cmor_carousels_backend (0.0.59.pre)
-      cmor_carousels (= 0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+    cmor_carousels_backend (0.0.60.pre)
+      cmor_carousels (= 0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_carousels
   specs:
-    cmor_carousels (0.0.59.pre)
+    cmor_carousels (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       markup-rails
       mini_magick
       rails (>= 5.2.3)
@@ -54,22 +54,22 @@ PATH
 PATH
   remote: ../cmor_cms_backend
   specs:
-    cmor_cms_backend (0.0.59.pre)
-      cmor_cms (= 0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+    cmor_cms_backend (0.0.60.pre)
+      cmor_cms (= 0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_cms
   specs:
-    cmor_cms (0.0.59.pre)
+    cmor_cms (0.0.60.pre)
       RedCloth
       acts_as_list
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       coffee-rails
       draper
       rails (>= 5.2.3)
@@ -79,18 +79,18 @@ PATH
 PATH
   remote: ../cmor_contact_backend
   specs:
-    cmor_contact_backend (0.0.59.pre)
-      cmor_contact (= 0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+    cmor_contact_backend (0.0.60.pre)
+      cmor_contact (= 0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_contact
   specs:
-    cmor_contact (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+    cmor_contact (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       coffee-rails
       haml-rails
       rails (>= 5.2.3)
@@ -100,20 +100,20 @@ PATH
 PATH
   remote: ../cmor_files_backend
   specs:
-    cmor_files_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_files (= 0.0.59.pre)
+    cmor_files_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_files (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_files
   specs:
-    cmor_files (0.0.59.pre)
+    cmor_files (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       friendly_id
       rails (>= 5.2.3)
       rao-component
@@ -122,20 +122,20 @@ PATH
 PATH
   remote: ../cmor_galleries_backend
   specs:
-    cmor_galleries_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_galleries (= 0.0.59.pre)
+    cmor_galleries_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_galleries (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_galleries
   specs:
-    cmor_galleries (0.0.59.pre)
+    cmor_galleries (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       friendly_id
       haml-rails
       rails (>= 5.2.3)
@@ -144,22 +144,22 @@ PATH
 PATH
   remote: ../cmor_links_backend
   specs:
-    cmor_links_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_links (= 0.0.59.pre)
+    cmor_links_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_links (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_links
   specs:
-    cmor_links (0.0.59.pre)
+    cmor_links (0.0.60.pre)
       RedCloth
       acts_as_list
       awesome_nested_set
       awesome_nested_set-tools
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       draper
       friendly_id
       markup-rails
@@ -168,37 +168,37 @@ PATH
 PATH
   remote: ../cmor_rbac_backend
   specs:
-    cmor_rbac_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_rbac (= 0.0.59.pre)
+    cmor_rbac_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_rbac (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_rbac
   specs:
-    cmor_rbac (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+    cmor_rbac (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
 
 PATH
   remote: ../cmor_seo_frontend
   specs:
-    cmor_seo_frontend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+    cmor_seo_frontend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_seo
   specs:
-    cmor_seo (0.0.59.pre)
+    cmor_seo (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       cocoon
       rails (>= 5.2.3)
       rao-or_validator
@@ -208,19 +208,19 @@ PATH
 PATH
   remote: ../cmor_showcase_frontend
   specs:
-    cmor_showcase_frontend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+    cmor_showcase_frontend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_showcase
   specs:
-    cmor_showcase (0.0.59.pre)
+    cmor_showcase (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       friendly_id
       markup-rails (>= 0.0.2)
       rails (>= 5.2.3)
@@ -228,28 +228,28 @@ PATH
 PATH
   remote: ../cmor_system
   specs:
-    cmor_system (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+    cmor_system (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       markup-rails
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_tags_backend
   specs:
-    cmor_tags_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_tags (= 0.0.59.pre)
+    cmor_tags_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_tags (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_tags
   specs:
-    cmor_tags (0.0.59.pre)
+    cmor_tags (0.0.60.pre)
       acts-as-taggable-on
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
       rao-service (>= 0.0.17.pre)
       rao-service_controller (>= 0.0.17.pre)
@@ -258,20 +258,20 @@ PATH
 PATH
   remote: ../cmor_testimonials_backend
   specs:
-    cmor_testimonials_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_testimonials (= 0.0.59.pre)
+    cmor_testimonials_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_testimonials (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_testimonials
   specs:
-    cmor_testimonials (0.0.59.pre)
+    cmor_testimonials (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       friendly_id
       haml-rails
       markup-rails
@@ -282,21 +282,21 @@ PATH
 PATH
   remote: ../cmor_user_area_backend
   specs:
-    cmor_user_area_backend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
-      cmor_user_area (= 0.0.59.pre)
+    cmor_user_area_backend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
+      cmor_user_area (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 PATH
   remote: ../cmor_user_area
   specs:
-    cmor_user_area (0.0.59.pre)
+    cmor_user_area (0.0.60.pre)
       active_model_serializers
       authlogic
       bcrypt
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
@@ -306,84 +306,84 @@ PATH
 PATH
   remote: ..
   specs:
-    cmor (0.0.59.pre)
-    cmor_core (0.0.59.pre)
+    cmor (0.0.60.pre)
+    cmor_core (0.0.60.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.59.pre)
+      cmor (= 0.0.60.pre)
       delayed_job_active_record
       kaminari
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.59.pre)
-      administrador (>= 0.0.26.pre)
-      cmor_core (= 0.0.59.pre)
+    cmor_core_backend (0.0.60.pre)
+      administrador (>= 0.0.27.pre)
+      cmor_core (= 0.0.60.pre)
       rails (>= 5.2.3)
-    cmor_core_frontend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
+    cmor_core_frontend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
       rails (>= 5.2.3)
       rao-view_helper
-    cmor_legal (0.0.59.pre)
+    cmor_legal (0.0.60.pre)
       cmor_cms
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
-    cmor_legal_frontend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
+    cmor_legal_frontend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
       rails (>= 5.2.3)
-    cmor_partners (0.0.59.pre)
+    cmor_partners (0.0.60.pre)
       acts_as_list
       acts_as_published
-      cmor_core (= 0.0.59.pre)
-      cmor_core_backend (= 0.0.59.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_backend (= 0.0.60.pre)
       markup-rails (>= 0.0.2)
       rails (>= 5.2.3)
-    cmor_partners_frontend (0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
-      cmor_partners (= 0.0.59.pre)
+    cmor_partners_frontend (0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
+      cmor_partners (= 0.0.60.pre)
       rails (>= 5.2.3)
       slick-rails (>= 0.0.2)
 
 PATH
   remote: .
   specs:
-    cmor_suite (0.0.59.pre)
-      cmor_blog (= 0.0.59.pre)
-      cmor_blog_backend (= 0.0.59.pre)
-      cmor_carousels (= 0.0.59.pre)
-      cmor_carousels_backend (= 0.0.59.pre)
-      cmor_cms (= 0.0.59.pre)
-      cmor_cms_backend (= 0.0.59.pre)
-      cmor_contact (= 0.0.59.pre)
-      cmor_contact_backend (= 0.0.59.pre)
-      cmor_core (= 0.0.59.pre)
-      cmor_core_frontend (= 0.0.59.pre)
-      cmor_files (= 0.0.59.pre)
-      cmor_files_backend (= 0.0.59.pre)
-      cmor_galleries (= 0.0.59.pre)
-      cmor_galleries_backend (= 0.0.59.pre)
-      cmor_legal (= 0.0.59.pre)
-      cmor_legal_frontend (= 0.0.59.pre)
-      cmor_links (= 0.0.59.pre)
-      cmor_links_backend (= 0.0.59.pre)
-      cmor_partners (= 0.0.59.pre)
-      cmor_partners_frontend (= 0.0.59.pre)
-      cmor_rbac (= 0.0.59.pre)
-      cmor_rbac_backend (= 0.0.59.pre)
-      cmor_seo (= 0.0.59.pre)
-      cmor_seo_frontend (= 0.0.59.pre)
-      cmor_showcase (= 0.0.59.pre)
-      cmor_showcase_frontend (= 0.0.59.pre)
-      cmor_system (= 0.0.59.pre)
-      cmor_tags (= 0.0.59.pre)
-      cmor_tags_backend (= 0.0.59.pre)
-      cmor_testimonials (= 0.0.59.pre)
-      cmor_testimonials_backend (= 0.0.59.pre)
-      cmor_user_area (= 0.0.59.pre)
-      cmor_user_area_backend (= 0.0.59.pre)
+    cmor_suite (0.0.60.pre)
+      cmor_blog (= 0.0.60.pre)
+      cmor_blog_backend (= 0.0.60.pre)
+      cmor_carousels (= 0.0.60.pre)
+      cmor_carousels_backend (= 0.0.60.pre)
+      cmor_cms (= 0.0.60.pre)
+      cmor_cms_backend (= 0.0.60.pre)
+      cmor_contact (= 0.0.60.pre)
+      cmor_contact_backend (= 0.0.60.pre)
+      cmor_core (= 0.0.60.pre)
+      cmor_core_frontend (= 0.0.60.pre)
+      cmor_files (= 0.0.60.pre)
+      cmor_files_backend (= 0.0.60.pre)
+      cmor_galleries (= 0.0.60.pre)
+      cmor_galleries_backend (= 0.0.60.pre)
+      cmor_legal (= 0.0.60.pre)
+      cmor_legal_frontend (= 0.0.60.pre)
+      cmor_links (= 0.0.60.pre)
+      cmor_links_backend (= 0.0.60.pre)
+      cmor_partners (= 0.0.60.pre)
+      cmor_partners_frontend (= 0.0.60.pre)
+      cmor_rbac (= 0.0.60.pre)
+      cmor_rbac_backend (= 0.0.60.pre)
+      cmor_seo (= 0.0.60.pre)
+      cmor_seo_frontend (= 0.0.60.pre)
+      cmor_showcase (= 0.0.60.pre)
+      cmor_showcase_frontend (= 0.0.60.pre)
+      cmor_system (= 0.0.60.pre)
+      cmor_tags (= 0.0.60.pre)
+      cmor_tags_backend (= 0.0.60.pre)
+      cmor_testimonials (= 0.0.60.pre)
+      cmor_testimonials_backend (= 0.0.60.pre)
+      cmor_user_area (= 0.0.60.pre)
+      cmor_user_area_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
 
 GEM
@@ -446,16 +446,16 @@ GEM
       rails (>= 3.2.0)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    administrador (0.0.26.pre)
+    administrador (0.0.27.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
       rails (>= 5.2.0)
       rails-i18n
-      rao-component (>= 0.0.44.pre)
+      rao-component (>= 0.0.46.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
-      rao-resources_controller (>= 0.0.43.pre)
+      rao-resources_controller (>= 0.0.46.pre)
       rao-service_controller (>= 0.0.23.pre)
       rao-view_helper (>= 0.0.23.pre)
       route_translator
@@ -465,7 +465,7 @@ GEM
     ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.0)
-    authlogic (6.1.0)
+    authlogic (6.2.0)
       activemodel (>= 5.2, < 6.1)
       activerecord (>= 5.2, < 6.1)
       activesupport (>= 5.2, < 6.1)
@@ -474,7 +474,7 @@ GEM
       activerecord (>= 4.0.0, < 7.0)
     awesome_nested_set-tools (1.0.2)
       rails (>= 3.2)
-    bcrypt (3.1.15)
+    bcrypt (3.1.16)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     bootstrap-kaminari-views (0.0.5)
@@ -496,7 +496,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
-    cocoon (1.2.14)
+    cocoon (1.2.15)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -566,7 +566,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (5.1.2)
+    haml (5.2.0)
       temple (>= 0.8.0)
       tilt
     haml-rails (2.0.1)
@@ -632,7 +632,7 @@ GEM
     multi_json (1.14.1)
     nenv (0.3.0)
     netrc (0.11.0)
-    nio4r (2.5.2)
+    nio4r (2.5.4)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.3)
@@ -682,30 +682,30 @@ GEM
     rainbow (3.0.0)
     rake (13.0.0)
     rao (0.0.34.pre)
-    rao-component (0.0.45.pre)
+    rao-component (0.0.46.pre)
       haml-rails
       rails
       rao
     rao-or_validator (0.0.1)
       rails
-    rao-query (0.0.45.pre)
+    rao-query (0.0.46.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.45.pre)
+    rao-resource_controller (0.0.46.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.45.pre)
+    rao-resources_controller (0.0.46.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.45.pre)
+    rao-service (0.0.46.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.45.pre)
+    rao-service_controller (0.0.46.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -713,7 +713,7 @@ GEM
       twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.34.pre)
       rao
-    rao-view_helper (0.0.45.pre)
+    rao-view_helper (0.0.46.pre)
       rails (>= 3.2.0)
       rao
     rb-fsevent (0.10.3)
@@ -733,7 +733,7 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.4)
-    route_translator (8.0.0)
+    route_translator (8.1.0)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
       addressable (~> 2.7)
@@ -776,7 +776,7 @@ GEM
       rubocop-performance (~> 1.3)
       rubocop-rails (~> 2.0)
     ruby-progressbar (1.10.1)
-    ruby_parser (3.14.2)
+    ruby_parser (3.15.0)
       sexp_processor (~> 4.9)
     sassc (2.2.1)
       ffi (~> 1.9)
@@ -786,13 +786,13 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sexp_processor (4.15.0)
+    sexp_processor (4.15.1)
     shellany (0.0.1)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
     simple-navigation (4.1.0)
       activesupport (>= 2.3.2)
-    simple_form (5.0.2)
+    simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     simple_form-datetimepicker (0.0.3)
