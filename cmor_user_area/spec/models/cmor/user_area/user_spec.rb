@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-module Cmor::UserArea
-  describe User do
-    it { expect(subject).to respond_to(:human) }
-  end
+RSpec.describe Cmor::UserArea::User do
+  it { expect(subject).to respond_to(:human) }
+  it { expect(subject).to respond_to(:tfa_state) }
 end
