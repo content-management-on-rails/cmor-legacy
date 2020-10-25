@@ -64,12 +64,8 @@ cat <<EOT > app/views/layouts/application.html.erb
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <%= value %>
-      </div>
-    <% end %>
+    <%= user_area_helper(self).render_navigation %>
+    <%= core_helper(self).render_flash %>
 
     <%= yield %>
 

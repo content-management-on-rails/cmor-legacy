@@ -19,10 +19,17 @@ module Cmor
         def create
           @session = resource_class.new(permitted_params)
 
-          if @session.save
-            flash[:notice] = I18n.t('messages.success.cmor_user_area.signed_in') unless request.xhr?
-            redirect_to(instance_eval(&Configuration.after_sign_in_url))
-            return
+          if @session.valid?
+            if @session.attempted_record.has_tfa?
+              session["#{@session.attempted_record.class.name.underscore}_tfa_candidate_id"] = @session.attempted_record.id
+              redirect_to new_user_two_factor_authentications_path
+              return
+            else
+              @session.save!
+              flash[:notice] = I18n.t('messages.success.cmor_user_area.signed_in') unless request.xhr?
+              redirect_to(instance_eval(&Configuration.after_sign_in_url))
+              return
+            end
           else
             render action: :new
           end

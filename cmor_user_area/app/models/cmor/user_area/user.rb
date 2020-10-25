@@ -65,6 +65,10 @@ module Cmor
           end
         end
 
+        def has_tfa?
+          self.tfa_state == "enabled"
+        end
+
         private
 
         def log_status_change

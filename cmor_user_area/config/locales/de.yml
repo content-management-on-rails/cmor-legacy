@@ -97,6 +97,10 @@ de:
             title: Einloggen
             password:
               new: 'Passwort vergessen'
+      two_factor_authentications:
+        base:
+          new:
+            title: Zwei Faktor Autentifizierung
       two_factor_authentication:
         disable_tfa: 'Zwei Faktor Autentifizierung deaktivieren'
         enable_tfa: 'Zwei Faktor Autentifizierung jetzt aktivieren'
@@ -164,6 +168,8 @@ de:
         create: 'Weiter'
       user_session:
         create: 'Einloggen'
+      user_two_factor_authentication:
+        create: 'Code prüfen'
   messages:
     confirmations:
       cmor_user_area:
@@ -182,3 +188,4 @@ de:
     user_password_reset_request: passwort-reset
     user_session: session
     two_factor_authentication_setup_service: 2fa-einrichtung
+    user_two_factor_authentications: 2fa

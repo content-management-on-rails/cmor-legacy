@@ -97,12 +97,16 @@ en:
             title: Sign in
             password:
               new: Forgot password
+      two_factor_authentications:
+        base:
+          new:
+            title: Two Factor Authentication
       two_factor_authentication:
         disable_tfa: 'Enable 2FA'
         enable_tfa: 'Disable 2FA'
         recommend_hint_html: >
           <h4 class='alert-heading'>
-          Two Factor Autentication App (TOTP) - Recommendation
+          Two Factor Authentication App (TOTP) - Recommendation
           </h4>
           <p>
             In order to offer the highest possible data protection, as well as the security
@@ -162,6 +166,8 @@ en:
         create: 'Proceed'
       user_session:
         create: 'Sign in'
+      user_two_factor_authentication:
+        create: 'Verify code'
   messages:
     confirmations:
       cmor_user_area:
@@ -180,3 +186,4 @@ en:
     user_password_reset_request: password-reset
     user_session: session
     two_factor_authentication_setup_service: 2fa-setup
+    user_two_factor_authentications: 2fa

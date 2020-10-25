@@ -15,6 +15,7 @@ Cmor::UserArea::Engine.routes.draw do
       end
 
       resource :user_session, only: [:new, :create, :destroy]
+      resource :user_two_factor_authentications, only: [:new, :create]
 
       root to: 'user#show'
     end

@@ -1,0 +1,12 @@
+%div.panel.panel-default.mb-2
+  %div.panel-heading
+    %h1= t('.title', inflections)
+  
+  %div.panel-body
+    = simple_form_for(@service) do |f|
+      - if f.object.errors.any?
+        = render partial: 'form_errors', locals: { form: f }
+      = render 'form', form: f
+      = f.button :submit, class: 'btn btn-success'
+
+  %div.panel-footer
