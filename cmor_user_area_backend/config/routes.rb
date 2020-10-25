@@ -4,6 +4,7 @@ Cmor::UserArea::Backend::Engine.routes.draw do
   # backend_resources :users do
   resources :users do
     get :autocomplete, on: :collection
+    post 'trigger_event/:machine_name/:event_name', on: :member, action: 'trigger_event', as: :trigger_event
   end
 
   resource :current_user, only: [:show]

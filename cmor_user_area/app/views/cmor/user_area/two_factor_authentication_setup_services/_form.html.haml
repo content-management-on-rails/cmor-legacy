@@ -4,27 +4,47 @@
   .qr_code td.white { background-color: white; }
 
 .row
-  .col-12
-    .backup_codes_hint
-      .alert.alert-info= t(".backup_codes_hint_html").html_safe
-  .col-12
-    .backup_codes_security_hint
-      .alert.alert-danger= t(".backup_codes_security_hint_html").html_safe
-  .col-12
+  .col-12.mb-3
     .backup_codes
-      %ul
-      - form.object.backup_codes.each do |code|
-        %li= code
+      .card
+        %h4.card-header= t(".backup_codes_heading")
+        .card-block.p-4.pb-0
+          .row
+            .col-12
+              %p= t(".backup_codes_hint_html").html_safe
+          .row.mb-3
+            .col-6.offset-3
+              .row.text-monospace.strong
+                - form.object.backup_codes.each do |code|
+                  .col-6.d-flex.justify-content-center= code
+          .row
+            .col-12
+              .backup_codes_security_hint
+                .alert.alert-danger.mb-0= t(".backup_codes_security_hint_html").html_safe
+
 
 .row
-  .col-12
+  .col-12.mb-3
     .qr_code
-      %h2= t(".qr_code_heading")
-      %p= t(".qr_code_instructions")
-      = form.object.qr_code.as_html.html_safe
+      .card
+        %h4.card-header= t(".qr_code_heading")
+        .card-block.p-4
+          .row
+            .col-12
+              %p= t(".qr_code_instructions")
+          .row
+            .col-6.offset-3.d-flex.justify-content-center
+              = form.object.qr_code.as_html.html_safe
 
 .row
-  .col-12
-    %h2= t(".code_heading")
-    %p= t(".code_instructions")
-    = form.input :code, input_html: { autocomplete: 'off' }, label: false
+  .col-12.mb-3
+    .qr_code
+      .card
+        %h4.card-header= t(".code_heading")
+        .card-block.p-4
+          .row
+            .col-12
+              %p= t(".code_instructions")
+          .row
+            .col-6.offset-3.d-flex.justify-content-center
+              = form.input :code, input_html: { autocomplete: 'off' }, label: false

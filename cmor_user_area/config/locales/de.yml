@@ -1,5 +1,7 @@
 de:
   activemodel:
+    cmor/user_area/user_two_factor_authentication:
+      invalid_code: "ist ungültig"
     models:
       cmor/user_area/two_factor_authentication_setup_service:
         one: 2FA Einrichtungsdienst
@@ -8,6 +10,11 @@ de:
         code: Sicherheits-Code
         code_confirmation: Bestätigungs-Code
   activerecord:
+    events:
+      cmor/user_area/user:
+        prepare_tfa: "2FA vorbereiten"
+        enable_tfa: "2FA aktivieren"
+        disable_tfa: "2FA deaktivieren"
     attributes:
       cmor/user_area/user_password_reset_request:
         email: E-Mail
@@ -38,6 +45,8 @@ de:
         created_at: Erstellt am
         updated_at: Aktualisiert am
         tfa_state: 2FA Status
+        tfa_state_state: 2FA Status
+        tfa_state_actions: 2FA Aktionen
         tfa_state/disabled: "Inaktiv"
         tfa_state/enabled: "Aktiv"
         tfa_state/in_preparation: "In Vorbereitung"
@@ -118,16 +127,19 @@ de:
           <hr>
           <a class="btn btn-success" href="%{link}">Zwei Faktor Autentifizierung jetzt aktivieren</a>
       two_factor_authentication_setup_services:
+        create:
+          success_message: "Zwei Faktor Autentifizierung aktiviert."
         form:
+          backup_codes_heading: "Speichern Sie Ihre Wiederherstellungscodes"
           backup_codes_hint_html: >
-            Sicherungscodes werden verwendet, um auf Ihr Konto zuzugreifen, falls Sie keine
+            Wiederherstellungscodes werden verwendet, um auf Ihr Konto zuzugreifen, falls Sie keine
             Zwei-Faktor-Authentifizierung über Ihre App erhalten können. Aus Sicherheitsgründen
             kann jeder Code nur einmal verwendet werden.
             <hr/>
-            Drucken oder kopieren Sie Ihre Sicherungscodes, bevor Sie mit der Einrichtung der
+            Drucken oder kopieren Sie Ihre Wiederherstellungscodes, bevor Sie mit der Einrichtung der
             Zwei-Faktor-Authentifizierung fortfahren.
           backup_codes_security_hint_html: >
-            Behandeln Sie Ihre Sicherungscodes mit der gleichen Maß an Sicherheit wie Ihr Passwort!
+            Behandeln Sie Ihre Wiederherstellungscodes mit der gleichen Maß an Sicherheit wie Ihr Passwort!
           qr_code_heading: "Scannen Sie diesen QR-Code mit Ihrer App"
           qr_code_instructions: "Scannen Sie den folgenden QR-Code mit der Zwei-Faktor-Authentifizierungs-App auf Ihrem Telefon:"
           code_heading: "Geben Sie den sechsstelligen Code aus der Anwendung ein"
@@ -189,3 +201,8 @@ de:
     user_session: session
     two_factor_authentication_setup_service: 2fa-einrichtung
     user_two_factor_authentications: 2fa
+  simple_form:
+    hints:
+      user_two_factor_authentication:
+        code: "Geben Sie den Code aus Ihrer Zwei-Faktor-App auf Ihrem Mobilgerät ein. Wenn Sie Ihr Gerät verloren haben, können Sie einen Ihrer Wiederherstellungscodes eingeben."
+

@@ -1,2 +1,8 @@
 = table.column :email, sort: true
+= table.aasm_state :tfa_state, sort: true
 = table.timestamps sort: true
+= table.aasm_actions :tfa_state, title: '' do |resource|
+  - capture_haml do
+    - if resource.may_disable_tfa?
+      = link_to({ action: 'trigger_event', id: resource.to_param, machine_name: 'tfa_state', event_name: 'disable_tfa'}, method: :post, class: 'btn btn-xs btn-danger') do
+        = resource.class.aasm(:tfa_state).human_event_name(:disable_tfa)

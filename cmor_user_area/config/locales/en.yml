@@ -1,5 +1,7 @@
 en:
   activemodel:
+    cmor/user_area/user_two_factor_authentication:
+      invalid_code: "is invalid"
     models:
       cmor/user_area/two_factor_authentication_setup_service:
         one: 2FA Setup Service
@@ -8,6 +10,12 @@ en:
         code: Code
         code_confirmation: Confirmation Code
   activerecord:
+  activerecord:
+    events:
+      cmor/user_area/user:
+        prepare_tfa: "Prepare 2FA"
+        enable_tfa: "Enable 2FA"
+        disable_tfa: "Disable 2FA"
     attributes:
       cmor/user_area/user_password_reset_request:
         email: E-Mail
@@ -37,7 +45,9 @@ en:
         single_access_token: Single access token
         created_at: Created at
         updated_at: Updated at
-        tfa_state: 2FA State
+        tfa_state: 2FA state
+        tfa_state_state: 2FA state
+        tfa_actions: 2FA actions
         tfa_state/disabled: "Disabled"
         tfa_state/enabled: "Enabled"
         tfa_state/in_preparation: "In preparation"
@@ -102,8 +112,8 @@ en:
           new:
             title: Two Factor Authentication
       two_factor_authentication:
-        disable_tfa: 'Enable 2FA'
-        enable_tfa: 'Disable 2FA'
+        disable_tfa: 'Disable 2FA'
+        enable_tfa: 'Enable 2FA'
         recommend_hint_html: >
           <h4 class='alert-heading'>
           Two Factor Authentication App (TOTP) - Recommendation
@@ -118,10 +128,10 @@ en:
           <hr>
           <a class="btn btn-success" href="%{link}">Enable 2FA now</a>
       two_factor_authentication_setup_services:
-        new:
-          title: Setup two factor authentication
-      two_factor_authentication_setup_services:
+        create:
+          success_message: "Successfully enabled Two Factor Authentication."
         form:
+          backup_codes_heading: "Save your security codes"
           backup_codes_hint_html: >
             Security codes are used to access your account in case you cannot get two-factor
             authentication through your app. For security reasons, each code can only be used once.
@@ -135,6 +145,8 @@ en:
           code_instructions: "After scanning the QR code, the app will display a six-digit code that you can enter here:"
         form_buttons:
           submit: Enable
+        new:
+          title: Setup Two Factor Authentication
       current_users:
         edit:
           back: Back
@@ -187,3 +199,7 @@ en:
     user_session: session
     two_factor_authentication_setup_service: 2fa-setup
     user_two_factor_authentications: 2fa
+  simple_form:
+    hints:
+      user_two_factor_authentication:
+        code: "Enter the code from the two-factor app on your mobile device. If you've lost your device, you may enter one of your recovery codes."

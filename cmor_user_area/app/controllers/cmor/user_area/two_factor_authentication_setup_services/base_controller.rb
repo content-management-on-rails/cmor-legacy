@@ -13,6 +13,10 @@ module Cmor
 
         private
 
+        def success_message
+          t('.success_message')
+        end
+
         def after_success_location
           current_user_path
         end

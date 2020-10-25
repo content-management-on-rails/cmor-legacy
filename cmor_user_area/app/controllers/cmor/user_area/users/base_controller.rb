@@ -14,7 +14,7 @@ module Cmor
           extend ActiveSupport::Concern
 
           included do
-            before_action :recommend_tfa, if: -> { @resource.may_enable_tfa? }
+            before_action :recommend_tfa, if: -> { Cmor::UserArea::Configuration.enable_tfa && load_resource.may_enable_tfa? }
           end
 
           private

@@ -36,7 +36,7 @@ module Cmor::UserArea
       #      it { visit(base_path); expect(page).to have_text("Posts") }
       #    end
       #
-      def sign_in(user)
+      def sign_in(user, otp_code: nil)
         sign_in_path = "/#{I18n.locale}/#{I18n.t('routes.cmor_user_area_engine')}/#{I18n.t('routes.user_session')}/new"
 
         visit(sign_in_path)
@@ -50,13 +50,13 @@ module Cmor::UserArea
           click_on I18n.t('helpers.submit.user_session.create')
         end
 
-        if user.has_tfa?
+        if Cmor::UserArea::Configuration.enable_tfa && user.has_tfa?
           tfa_path = "/#{I18n.locale}/#{I18n.t('routes.cmor_user_area_engine')}/#{I18n.t('routes.user_two_factor_authentications')}/new"
 
           expect(current_path).to eq(tfa_path)
 
           within('#new_user_two_factor_authentication') do
-            fill_in 'user_two_factor_authentication[code]', with: user.otp_code
+            fill_in 'user_two_factor_authentication[code]', with: (otp_code || user.otp_code)
 
             click_on I18n.t('helpers.submit.user_two_factor_authentication.create')
           end

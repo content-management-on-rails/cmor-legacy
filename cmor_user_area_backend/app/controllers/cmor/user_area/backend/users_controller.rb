@@ -3,6 +3,7 @@ module Cmor
     module Backend
       class UsersController < Cmor::Core::Backend::ResourcesController::Base
         include Rao::ResourcesController::SortingConcern
+        include Rao::ResourcesController::AasmConcern
 
         def self.resource_class
           Cmor::UserArea::User

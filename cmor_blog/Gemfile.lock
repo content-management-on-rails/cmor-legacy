@@ -256,7 +256,7 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders

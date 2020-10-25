@@ -43,7 +43,7 @@ module Cmor
             state :in_preparation
             state :enabled
 
-            after_all_transitions :log_status_change
+            # after_all_transitions :log_status_change
 
             event :prepare_tfa, before: :do_prepare_tfa do
               transitions from: [:disabled, :in_preparation], to: :in_preparation

@@ -2,7 +2,7 @@ PATH
   remote: ../cmor_core_backend
   specs:
     cmor_core_backend (0.0.60.pre)
-      administrador (>= 0.0.27.pre)
+      administrador (>= 0.0.28.pre)
       cmor_core (= 0.0.60.pre)
       rails (>= 5.2.3)
 
@@ -10,6 +10,8 @@ PATH
   remote: ../cmor_user_area
   specs:
     cmor_user_area (0.0.60.pre)
+      aasm
+      active_model_otp
       active_model_serializers
       authlogic
       bcrypt
@@ -19,6 +21,8 @@ PATH
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
+      rao-service_controller (>= 0.0.47.pre)
+      rqrcode
       simple_form
 
 PATH
@@ -51,6 +55,8 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.1.1)
+      concurrent-ruby (~> 1.0)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -74,6 +80,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_otp (2.0.1)
+      activemodel
+      rotp (~> 5.0.0)
     active_model_serializers (0.10.10)
       actionpack (>= 4.1, < 6.1)
       activemodel (>= 4.1, < 6.1)
@@ -99,7 +108,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    administrador (0.0.27.pre)
+    administrador (0.0.28.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -108,8 +117,8 @@ GEM
       rao-component (>= 0.0.46.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
-      rao-resources_controller (>= 0.0.46.pre)
-      rao-service_controller (>= 0.0.23.pre)
+      rao-resources_controller (>= 0.0.47.pre)
+      rao-service_controller (>= 0.0.47.pre)
       rao-view_helper (>= 0.0.23.pre)
       route_translator
       simple_form
@@ -143,6 +152,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chunky_png (1.3.13)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -304,28 +314,28 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.46.pre)
+    rao-component (0.0.47.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.46.pre)
+    rao-query (0.0.47.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.46.pre)
+    rao-resource_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.46.pre)
+    rao-service (0.0.47.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.46.pre)
+    rao-service_controller (0.0.47.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao
@@ -347,9 +357,15 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    rotp (5.0.0)
+      addressable (~> 2.5)
     route_translator (7.0.1)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
+    rqrcode (1.1.2)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 0.1)
+    rqrcode_core (0.1.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)

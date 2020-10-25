@@ -35,7 +35,7 @@ PATH
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
-      rao-service_controller (>= 0.0.46.pre)
+      rao-service_controller (>= 0.0.47.pre)
       rqrcode
       simple_form
 
@@ -278,20 +278,20 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.46.pre)
+    rao-component (0.0.47.pre)
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.46.pre)
+    rao-service (0.0.47.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.46.pre)
+    rao-service_controller (0.0.47.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao

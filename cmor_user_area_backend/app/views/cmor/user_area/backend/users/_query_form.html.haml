@@ -1,0 +1,2 @@
+= form.input :email_cont
+= form.input :tfa_state_eq, collection: resource_class.aasm(:tfa_state).states.collect { |s| [s.human_name, s.name] }
