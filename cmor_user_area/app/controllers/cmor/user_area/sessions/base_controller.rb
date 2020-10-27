@@ -20,7 +20,7 @@ module Cmor
           @session = resource_class.new(permitted_params)
 
           if @session.valid?
-            if Cmor::UserArea::Configuration.enable_tfa && @session.attempted_record.has_tfa?
+            if Cmor::UserArea::Configuration.tfa_enabled? && @session.attempted_record.has_tfa?
               session["#{@session.attempted_record.class.name.underscore}_tfa_candidate_id"] = @session.attempted_record.id
               redirect_to new_user_two_factor_authentications_path
               return

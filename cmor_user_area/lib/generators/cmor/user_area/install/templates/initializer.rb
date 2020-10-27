@@ -7,9 +7,9 @@ Cmor::UserArea.configure do |config|
 
   # Enable/disable two factor authentication.
   #
-  # default: config.enable_tfa = true
+  # default: config.enable_tfa = -> { true }
   #
-  config.enable_tfa = true
+  config.enable_tfa = -> { true }
 
   # Set the base controller
   #

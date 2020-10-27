@@ -25,4 +25,28 @@ RSpec.describe "/de/benutzer/profil" do
       it { expect(page.body).to have_text(user.email) }
     end
   end
+
+  describe "when 2fa is enabled" do
+    let(:user) { create(:cmor_user_area_user, :authenticable) }
+
+    before(:each) do
+      allow(Cmor::UserArea::Configuration).to receive(:tfa_enabled?).and_return(true)
+      sign_in(user, with_tfa: false)
+      visit(base_path)
+    end
+
+    it { expect(page.body).to have_text(Cmor::UserArea::User.human_attribute_name(:tfa_state))}
+  end
+
+  describe "when 2fa is disabled" do
+    let(:user) { create(:cmor_user_area_user, :authenticable) }
+
+    before(:each) do
+      allow(Cmor::UserArea::Configuration).to receive(:tfa_enabled?).and_return(false)
+      sign_in(user, with_tfa: false)
+      visit(base_path)
+    end
+
+    it { expect(page.body).not_to have_text(Cmor::UserArea::User.human_attribute_name(:tfa_state))}
+  end
 end

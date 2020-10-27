@@ -15,7 +15,7 @@ module Cmor
 
           included do
             before_action :recommend_tfa, if: -> {
-              Cmor::UserArea::Configuration.enable_tfa &&
+              Cmor::UserArea::Configuration.tfa_enabled? &&
               (load_resource.may_prepare_tfa? || load_resource.may_enable_tfa?)
             }
           end

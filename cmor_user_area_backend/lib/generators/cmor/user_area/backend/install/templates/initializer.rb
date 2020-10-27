@@ -28,4 +28,10 @@ Cmor::UserArea::Backend.configure do |config|
   config.sidebar_controllers = -> {[
     Cmor::UserArea::Backend::UserSidebarsController
   ]}
+
+  # Enable/disable the two factor authentication backend.
+  #
+  # default: config.enable_tfa = -> { true }
+  #
+  config.enable_tfa = -> { true }
 end

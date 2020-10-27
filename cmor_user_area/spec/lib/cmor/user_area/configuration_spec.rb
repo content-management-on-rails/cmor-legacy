@@ -14,4 +14,21 @@ RSpec.describe Cmor::UserArea::Configuration do
   it { expect(subject).to respond_to(:after_sign_in_url) }
   it { expect(subject).to respond_to(:after_sign_out_url) }
   it { expect(subject).to respond_to(:enable_tfa) }
+  it { expect(subject).to respond_to(:tfa_enabled?) }
+
+  describe "#tfa_enabled?" do
+    describe "when disabled" do
+      it do
+        allow(described_class).to receive(:enable_tfa).and_return(-> { false })
+        expect(subject.tfa_enabled?).to be_falsey
+      end
+    end
+
+    describe "when enabled" do
+      it do
+        allow(described_class).to receive(:enable_tfa).and_return(-> { true })
+        expect(subject.tfa_enabled?).to be_truthy
+      end
+    end
+  end
 end
