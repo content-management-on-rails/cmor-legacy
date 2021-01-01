@@ -8,4 +8,4 @@
 
 .row
   .col-lg-12.text-center
-    = paginate(@collection, Cmor::Blog::Configuration.pagination_options_proc.call(self))
+    = paginate(@collection, **Cmor::Blog::Configuration.pagination_options_proc.call(self))
