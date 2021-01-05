@@ -10,6 +10,26 @@ module Cmor
 
         before_action :authenticate_user!, except: [:new, :create]
 
+        module TwoFactorAuthenticationConcern
+          extend ActiveSupport::Concern
+
+          included do
+            before_action :recommend_tfa, if: -> {
+              Cmor::UserArea::Configuration.tfa_enabled? &&
+              (load_resource.may_prepare_tfa? || load_resource.may_enable_tfa?)
+            }
+          end
+
+          private
+
+          def recommend_tfa
+            flash.now[:warning] = t("cmor.user_area.two_factor_authentication.recommend_hint_html",
+              link: cmor_user_area.new_current_user_two_factor_authentication_setup_service_path).html_safe
+          end
+        end
+
+        include TwoFactorAuthenticationConcern
+
         def create
           @resource = resource_class.new(permitted_params)
           flash[:notice] = I18n.t('messages.confirmations.cmor_user_area.send_instructions') if @resource.save && !request.xhr?

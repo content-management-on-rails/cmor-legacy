@@ -28,6 +28,11 @@ module Cmor
       mattr_accessor(:current_user_additional_table_rows_proc) { nil }
       mattr_accessor(:after_sign_in_url) { ->(controller) { main_app.root_path } }
       mattr_accessor(:after_sign_out_url) { ->(controller) { main_app.root_path } }
+      mattr_accessor(:enable_tfa) { -> { true } }
+
+      def self.tfa_enabled?
+        enable_tfa.call
+      end
     end
   end
 end

@@ -24,6 +24,8 @@ PATH
   remote: .
   specs:
     cmor_user_area (0.0.60.pre)
+      aasm
+      active_model_otp
       active_model_serializers
       authlogic
       bcrypt
@@ -33,11 +35,15 @@ PATH
       rao-component (>= 0.0.17.pre)
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
+      rao-service_controller (>= 0.0.47.pre)
+      rqrcode
       simple_form
 
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.1.1)
+      concurrent-ruby (~> 1.0)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -61,6 +67,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_otp (2.0.1)
+      activemodel
+      rotp (~> 5.0.0)
     active_model_serializers (0.10.10)
       actionpack (>= 4.1, < 6.1)
       activemodel (>= 4.1, < 6.1)
@@ -109,6 +118,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chunky_png (1.3.13)
     coderay (1.1.2)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
@@ -141,6 +151,8 @@ GEM
       factory_bot (~> 5.0.2)
       railties (>= 4.2.0)
     ffi (1.10.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     formatador (0.2.5)
     git_log_generator (0.0.5)
     globalid (0.4.2)
@@ -266,19 +278,25 @@ GEM
     rainbow (3.0.0)
     rake (12.3.2)
     rao (0.0.23.pre)
-    rao-component (0.0.46.pre)
+    rao-component (0.0.47.pre)
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-service (0.0.46.pre)
+    rao-service (0.0.47.pre)
       activemodel
       activesupport
       rails (>= 3.2.0)
       rao
+    rao-service_controller (0.0.47.pre)
+      font-awesome-rails
+      rails (>= 3.2.0)
+      rao
+      simple_form
+      twitter-bootstrap-components-rails
     rao-shoulda_matchers (0.0.23.pre)
       rao
     rao-view_helper (0.0.46.pre)
@@ -295,9 +313,15 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rotp (5.0.0)
+      addressable (~> 2.5)
     route_translator (7.0.1)
       actionpack (>= 5.0.0.1, < 6.1)
       activesupport (>= 5.0.0.1, < 6.1)
+    rqrcode (1.1.2)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 0.1)
+    rqrcode_core (0.1.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -364,6 +388,10 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.10)
     tins (1.20.2)
+    twitter-bootstrap-components-rails (1.0.0)
+      haml-rails
+      rails (>= 3.2)
+      rao-view_helper
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.5.0)

@@ -1,0 +1,3 @@
+= button_tag class: 'btn btn-success', data: { disable_with: t('.submitted') } do
+  = fa_icon :check if respond_to?(:fa_icon)
+  = t('.submit', service_name: form.object.model_name.human)

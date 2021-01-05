@@ -29,6 +29,65 @@ module Cmor
         email
       end
 
+      module TwoFactorAuthenticationConcern
+        extend ActiveSupport::Concern
+
+        included do
+          has_one_time_password
+          serialize :otp_backup_codes, Array
+
+          include AASM
+
+          aasm(:tfa_state, column: "tfa_state") do
+            state :disabled, initial: true
+            state :in_preparation
+            state :enabled
+
+            # after_all_transitions :log_status_change
+
+            event :prepare_tfa, before: :do_prepare_tfa do
+              transitions from: [:disabled, :in_preparation], to: :in_preparation
+            end
+
+            event :enable_tfa do
+              transitions from: :in_preparation, to: :enabled
+            end
+
+            event :disable_tfa do
+              transitions from: [:in_preparation, :enabled], to: :disabled
+            end
+          end
+        end
+
+        class_methods do
+          def otp_backup_codes
+            10.times.collect { |i| SecureRandom.hex(5) }
+          end
+        end
+
+        def has_tfa?
+          self.tfa_state == "enabled"
+        end
+
+        private
+
+        def log_status_change
+          puts "changing from #{aasm(:tfa_state).from_state} to #{aasm(:tfa_state).to_state} (event: #{aasm(:tfa_state).current_event})"
+        end
+
+        def do_prepare_tfa
+          self.otp_secret_key ||= self.class.otp_random_secret
+          self.otp_backup_codes = self.class.otp_backup_codes if self.otp_backup_codes.empty?
+        end
+
+        def do_disable_tfa
+          self.otp_secret_key = nil
+          self.otp_backup_codes = []
+        end
+      end
+
+      include TwoFactorAuthenticationConcern
+
       module ValidationConcern
         extend ActiveSupport::Concern
 

@@ -1,0 +1,6 @@
+.alert.alert-danger.error-explanation
+  - message_default = t('errors.template.header', count: form.object.errors.count, model: form.object.class.model_name.human)
+  .error-heading= t('errors.template.services.header', count: form.object.errors.count, model: form.object.class.model_name.human, default: message_default)
+  %ul
+    - form.object.errors.full_messages.each do |msg|
+      %li= msg

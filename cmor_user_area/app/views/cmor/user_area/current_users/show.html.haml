@@ -1,5 +1,3 @@
-%p#notice= notice
-
 #page-title.bottom-margin-1
   .row
     .col-xs-8.col-8.mr-auto
@@ -15,7 +13,7 @@
 .panel.panel-default.panel-with-actions
   %table.table.table-striped.table-condensed.table-hover
     = resource_table(resource: @resource) do |table|
-      = render 'show', table: table
+      = render 'show_table', table: table
 
   .panel-footer
 

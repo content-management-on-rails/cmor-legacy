@@ -12,7 +12,7 @@ PATH
       request_store_rails
       route_translator
     cmor_core_backend (0.0.60.pre)
-      administrador (>= 0.0.27.pre)
+      administrador (>= 0.0.28.pre)
       cmor_core (= 0.0.60.pre)
       rails (>= 5.2.3)
 
@@ -72,7 +72,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    administrador (0.0.27.pre)
+    administrador (0.0.28.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -81,8 +81,8 @@ GEM
       rao-component (>= 0.0.46.pre)
       rao-query (>= 0.0.33.pre)
       rao-resource_controller (>= 0.0.23.pre)
-      rao-resources_controller (>= 0.0.46.pre)
-      rao-service_controller (>= 0.0.23.pre)
+      rao-resources_controller (>= 0.0.47.pre)
+      rao-service_controller (>= 0.0.47.pre)
       rao-view_helper (>= 0.0.23.pre)
       route_translator
       simple_form
@@ -278,19 +278,19 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     rao (0.0.41.pre)
-    rao-component (0.0.46.pre)
+    rao-component (0.0.47.pre)
       haml-rails
       rails
       rao
-    rao-query (0.0.46.pre)
+    rao-query (0.0.47.pre)
       rails
       rao
       rao-view_helper
-    rao-resource_controller (0.0.46.pre)
+    rao-resource_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders
@@ -299,7 +299,7 @@ GEM
       activesupport
       rails (>= 3.2.0)
       rao
-    rao-service_controller (0.0.46.pre)
+    rao-service_controller (0.0.47.pre)
       font-awesome-rails
       rails (>= 3.2.0)
       rao

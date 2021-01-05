@@ -252,7 +252,7 @@ GEM
       haml-rails
       rails
       rao
-    rao-resources_controller (0.0.46.pre)
+    rao-resources_controller (0.0.47.pre)
       rails (>= 4.2.0)
       rao
       responders

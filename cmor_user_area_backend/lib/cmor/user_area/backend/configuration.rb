@@ -20,6 +20,12 @@ module Cmor
         mattr_accessor :sidebar_controllers do
           -> {[]}
         end
+
+        mattr_accessor(:enable_tfa) { -> { true } }
+
+        def self.tfa_enabled?
+          enable_tfa.call
+        end
       end
     end
   end
