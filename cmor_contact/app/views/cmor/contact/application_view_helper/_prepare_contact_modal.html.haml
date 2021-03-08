@@ -1,0 +1,10 @@
+#contact-modal.modal{:role => "dialog", :tabindex => "-1"}
+  .modal-xl.modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        .d-flex.justify-content-center
+          .spinner-border.text-secondary{ role: "status" }
+            %span.sr-only Loading...

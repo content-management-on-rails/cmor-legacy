@@ -17,6 +17,25 @@ module Cmor
         resource = Cmor::Contact::WhatsappRequest.new
         render resource: resource
       end
+
+      # Example:
+      #
+      #     # app/views/layouts/application.html.haml
+      #     %body
+      #       = contact_helper(self).render_contact_widget
+      #
+      def render_contact_widget
+        render
+      end
+      # Example:
+      #
+      #     # app/views/layouts/application.html.haml
+      #     %body
+      #       = contact_helper(self).prepare_contact_modal
+      #
+      def prepare_contact_modal
+        render
+      end
     end
   end
 end

@@ -1,0 +1,6 @@
+<% if @resource.errors.any? %>
+  console.log("found errors");
+  $("#new_contact_request").html('<%= escape_javascript render("form", resource: @resource) %>');
+<% else %>
+  $("#new_contact_request").html('<div class="alert alert-success"><%= t("flash.cmor.contact.contact_requests.create.notice") %></div>');
+<% end %>

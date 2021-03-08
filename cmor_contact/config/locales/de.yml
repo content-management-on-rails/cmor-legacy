@@ -29,6 +29,9 @@ de:
         additional_actions: Zusatzliche Aktionen
   cmor:
     contact:
+      application_view_helper:
+        render_contact_widget:
+          contact_link_title: "Kontaktanfrage stellen"
       contact_requests:
         new:
           title: "Kontaktanfrage"

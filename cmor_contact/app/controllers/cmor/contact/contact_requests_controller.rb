@@ -5,6 +5,7 @@ module Cmor
       before_action :initialize_resource_for_create, only: [:create]
 
       respond_to :html
+      respond_to :js
       responders :flash
 
       def self.resource_class

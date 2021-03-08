@@ -1,0 +1,18 @@
+#contact-widget {
+  position: fixed;
+  top: 33vh;
+  right: 0;
+  padding: 0.5rem;
+  padding-left: 0.6rem;
+  line-height: 2.1rem;
+}
+
+#contact-widget a {
+  color: white;
+}
+
+@media (max-width: 575.98px) {
+  #contact-widget {
+    display: none;
+  }
+}

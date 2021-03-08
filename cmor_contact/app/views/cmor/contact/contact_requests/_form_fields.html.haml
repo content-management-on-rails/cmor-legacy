@@ -1,0 +1,7 @@
+= form.input :name
+= form.input :email
+= form.input :nickname, input_html: { style: 'display: none;' }, label_html: { style: 'display: none;' }
+= form.input :phone if form.object.respond_to?(:phone)
+= form.input :subject if form.object.respond_to?(:subject)
+= form.input :message, as: :text
+= form.input :accept_terms_of_service
