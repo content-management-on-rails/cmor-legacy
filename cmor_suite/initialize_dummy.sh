@@ -57,4 +57,4 @@ rails db:migrate db:test:prepare
 
 # Enable authentication
 sed -i '2i\  before_action :authenticate_user!' app/controllers/backend_controller.rb
-rails cmor:user_area:create_default_user
+rails cmor:user_area:create_user
