@@ -19,13 +19,16 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Use Webpacker
+sed -i '17i\require "webpacker"' config/application.rb
+rails webpacker:install
+
 # Configure simpleform
 rails generate simple_form:install --bootstrap
 
 # I don't know why we need this all of a sudden
 sed -i '17i\require "sassc-rails"' config/application.rb
 sed -i '17i\require "turbolinks"' config/application.rb
-sed -i '17i\require "webpacker"' config/application.rb
 
 ## Always require rspec and factory_bot_rails in dummy app
 sed -i '17i\require "rspec-rails"' config/application.rb

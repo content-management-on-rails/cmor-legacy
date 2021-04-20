@@ -20,7 +20,8 @@ cd spec/dummy
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Use Webpacker
-sed -i "17irequire 'webpacker'" config/application.rb
+sed -i '17i\require "webpacker"' config/application.rb
+rails webpacker:install
 
 rails active_storage:install
 touch config/initializers/i18n.rb

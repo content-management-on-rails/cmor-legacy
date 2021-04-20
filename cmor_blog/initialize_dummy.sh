@@ -19,10 +19,13 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Use Webpacker
+sed -i '17i\require "webpacker"' config/application.rb
+rails webpacker:install
+
 # Satisfy prerequisites
 RAILS_ENV=development rails g model User email
 sed -i '17irequire "sassc-rails"' config/application.rb
-sed -i '17irequire "webpacker"' config/application.rb
 sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
 
 
