@@ -3,5 +3,4 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
-
-gem 'acts-as-taggable-on', git: 'https://github.com/robotex82/acts-as-taggable-on'
+gem 'rails', '6.0.0.0'

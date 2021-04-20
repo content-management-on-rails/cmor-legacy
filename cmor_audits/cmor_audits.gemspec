@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "paper_trail"
 
-  spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "turbolinks"
   spec.add_development_dependency "jbuilder", "~> 2.5"
   spec.add_development_dependency "cmor_blog"

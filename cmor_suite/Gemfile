@@ -30,6 +30,4 @@ gem 'cmor_testimonials_backend', path: '../cmor_testimonials_backend'
 gem 'cmor_user_area', path: '../cmor_user_area'
 gem 'cmor_user_area_backend', path: '../cmor_user_area_backend'
 
-# fixes tagging not being save with rails > 5
-gem 'acts-as-taggable-on', git: 'https://github.com/michelson/acts-as-taggable-on'
-# gem 'authlogic', git: 'https://github.com/binarylogic/authlogic'
+gem 'rails', '6.0.0.0'

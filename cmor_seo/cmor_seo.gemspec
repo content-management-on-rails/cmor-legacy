@@ -30,6 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rao-service", ">= 0.0.34.pre"
   spec.add_dependency "rao-or_validator"
 
-  spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "turbolinks"
 end
