@@ -29,11 +29,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "httparty"
   spec.add_dependency "rao-api-service_controller"
 
-  spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "turbolinks"
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
-  spec.add_development_dependency "puma"
   spec.add_development_dependency "cmor_cms"
   spec.add_development_dependency "cmor_cms_backend"
 end

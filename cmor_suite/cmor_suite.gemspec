@@ -15,8 +15,6 @@ Gem::Specification.new do |s|
 
   # I don't know why we need this all of a sudden
   s.add_development_dependency 'sassc-rails'
-  # This seems to be needed when using rails >= 5.2.3
-  s.add_development_dependency "bootsnap"
   s.add_development_dependency "turbolinks", "~> 5"
 
   s.add_dependency 'cmor_blog', "= #{Cmor::VERSION}"
