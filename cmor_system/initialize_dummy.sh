@@ -10,10 +10,17 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # responders for rao-service_controller
 sed -i '17irequire "responders"' config/application.rb
@@ -49,6 +56,7 @@ rails active_storage:install
 
 # Example model for ActiveStorage specs
 rails g model Post title
+sed -i '2i\  has_one_attached Cmor::System::Configuration.record_attachment_name' app/models/post.rb
 
 rails db:migrate db:test:prepare
 

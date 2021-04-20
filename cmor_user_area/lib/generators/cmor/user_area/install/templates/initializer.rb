@@ -11,6 +11,14 @@ Cmor::UserArea.configure do |config|
   #
   config.enable_tfa = -> { true }
 
+  # Set the options for the one time password.
+  #
+  # See https://github.com/heapsource/active_model_otp
+  #
+  # default: config.one_time_password_options = { one_time_backup_codes: true, if: -> { false } }
+  #
+  config.one_time_password_options = { one_time_backup_codes: true, if: -> { false } }
+
   # Set the base controller
   #
   # Default: config.base_controller = '<%= base_controller_class_name %>'

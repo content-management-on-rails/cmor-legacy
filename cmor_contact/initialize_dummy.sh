@@ -7,12 +7,23 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
 rails active_storage:install
 rails generate simple_form:install --bootstrap
+
+# Add webpacker
+# sed -i '17i\  require "webpacker"' config/application.rb
 
 # Responders
 sed -i '17i\require "responders"' config/application.rb
@@ -66,9 +77,12 @@ cat <<EOT > app/views/layouts/application.html.erb
     <%= contact_helper(self).prepare_contact_modal %>
   </body>
 </html>
-
 EOT
 
+# Add application assets
+echo "//= require rails-ujs" >> app/assets/javascripts/application.js
+echo "//= require cmor_contact" >> app/assets/javascripts/application.js
+echo "Rails.application.config.assets.precompile += %w( application.js )" >> config/initializers/assets.rb
 
 # Install
 rails generate $INSTALL_NAME:install

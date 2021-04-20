@@ -50,7 +50,7 @@ RSpec.describe 'User Area -> Authentication', type: :feature do
           sign_in(user, otp_code: user.otp_backup_codes.first)
         }.to change{
           user.reload.otp_backup_codes.size
-        }.from(10).to(9)
+        }.from(12).to(11)
       end
     end
   end

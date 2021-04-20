@@ -9,8 +9,11 @@ RSpec.describe '/de/backend/tags/taggings', type: :feature do
 
   it { resources; expect(subject).to implement_index_action(self) }
 
-  it { 
+  let(:post) { create(:post) }
+
+  it {
     tag
+    post
     expect(subject).to implement_create_action(self)
       .for(resource_class)
       .within_form('#new_tagging') {
@@ -22,6 +25,7 @@ RSpec.describe '/de/backend/tags/taggings', type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
+        select post.title, from: 'tagging[taggable]'
         select tag.name, from: 'tagging[tag_id]'
         fill_in 'tagging[context]', with: 'default'
       }

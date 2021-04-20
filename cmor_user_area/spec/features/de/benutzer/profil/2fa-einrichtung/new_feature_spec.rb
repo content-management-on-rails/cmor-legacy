@@ -29,7 +29,7 @@ RSpec.describe "/de/benutzer/profil/2fa-einrichtung/new" do
 
     describe "changes" do
       it { expect{ visit(base_path) }.to change{ user.reload.tfa_state }.from("disabled").to("in_preparation") }
-      it { expect{ visit(base_path) }.to change{ user.reload.otp_backup_codes.size }.from(0).to(10) }
+      it { expect{ visit(base_path) }.to change{ user.reload.otp_backup_codes.size }.from(0).to(12) }
     end
     
     describe "enabling 2fa" do

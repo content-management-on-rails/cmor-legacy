@@ -10,10 +10,12 @@ rm -rf spec/dummy
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
 
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
 rm spec/dummy/.ruby-version
 rm spec/dummy/Gemfile
 
-# Satisfy prerequisites
 cd spec/dummy
 
 # Use correct Gemfile

@@ -11,7 +11,7 @@ module Cmor
 
           s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-          s.required_ruby_version = ">= 2.6.6"
+          s.required_ruby_version = ">= 2.6.0"
 
           s.add_dependency "rails", ">= 6.0.0.0"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"
@@ -37,9 +37,10 @@ module Cmor
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
-          s.add_development_dependency 'puma', '~> 5.2'
+          # s.add_development_dependency 'puma', '~> 5.2'
           s.add_development_dependency 'bootsnap'
-          s.add_development_dependency 'webpacker'
+          s.add_development_dependency 'webpacker', '~> 4.0'
+          # s.add_development_dependency 'byebug'
         end
       end
     end

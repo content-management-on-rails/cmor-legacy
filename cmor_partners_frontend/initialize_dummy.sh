@@ -8,15 +8,23 @@ COLONIZED_BASENAME=${BASENAME//_/\:}
 INSTALLER_NAME="${PREFIX}:${COLONIZED_NAME}:install"
 BACKEND_INSTALLER_NAME="${PREFIX}:${COLONIZED_BASENAME}:install"
 BACKEND_MIGRATION_NAME="${PREFIX}_${BASENAME}:install:migrations"
+
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Install simple form
 rails generate simple_form:install --bootstrap

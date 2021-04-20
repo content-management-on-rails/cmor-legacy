@@ -33,7 +33,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          has_one_time_password
+          has_one_time_password Cmor::UserArea::Configuration.one_time_password_options
           serialize :otp_backup_codes, Array
 
           include AASM
@@ -43,7 +43,7 @@ module Cmor
             state :in_preparation
             state :enabled
 
-            # after_all_transitions :log_status_change
+            after_all_transitions :log_status_change
 
             event :prepare_tfa, before: :do_prepare_tfa do
               transitions from: [:disabled, :in_preparation], to: :in_preparation
@@ -53,15 +53,9 @@ module Cmor
               transitions from: :in_preparation, to: :enabled
             end
 
-            event :disable_tfa do
+            event :disable_tfa, before: :do_disable_tfa do
               transitions from: [:in_preparation, :enabled], to: :disabled
             end
-          end
-        end
-
-        class_methods do
-          def otp_backup_codes
-            10.times.collect { |i| SecureRandom.hex(5) }
           end
         end
 
@@ -76,8 +70,8 @@ module Cmor
         end
 
         def do_prepare_tfa
-          self.otp_secret_key ||= self.class.otp_random_secret
-          self.otp_backup_codes = self.class.otp_backup_codes if self.otp_backup_codes.empty?
+          otp_regenerate_secret if !otp_column
+          otp_regenerate_backup_codes if self.otp_backup_codes.empty?
         end
 
         def do_disable_tfa

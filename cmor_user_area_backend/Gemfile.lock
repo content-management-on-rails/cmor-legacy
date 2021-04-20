@@ -11,7 +11,7 @@ PATH
   specs:
     cmor_user_area (0.0.60.pre)
       aasm
-      active_model_otp
+      active_model_otp (>= 2.1.1)
       active_model_serializers
       authlogic
       bcrypt

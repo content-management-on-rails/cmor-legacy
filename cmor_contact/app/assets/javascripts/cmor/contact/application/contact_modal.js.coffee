@@ -1,5 +1,4 @@
 $(document).ready ->
-  console.log("foo")
   $('[data-load][data-target]').on 'click', ->
     modal = $(this).attr('data-target')
 
@@ -22,4 +21,3 @@ $(document).ready ->
     else
       $(modal).find('.modal-body').load url
     $(modal).modal 'show'
-    console.log("bar")
