@@ -19,11 +19,14 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Use Webpacker
+sed -i '17i\require "webpacker"' config/application.rb
+rails webpacker:install
+
 # Responders for rao-service_controller
 sed -i '17i\require "responders"' config/application.rb
 
 # Require needed stuff dummy app
-sed -i '17i\require "webpacker"' config/application.rb
 sed -i '17i\require "rspec-rails"' config/application.rb
 sed -i '17i\require "factory_bot_rails"' config/application.rb
 
