@@ -21,6 +21,7 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Use webpacker
 sed -i '17irequire "webpacker"' config/application.rb
+rails webpacker:install
 
 # Install SimpleForm
 rails generate simple_form:install --bootstrap
