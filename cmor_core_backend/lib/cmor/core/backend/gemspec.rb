@@ -11,7 +11,7 @@ module Cmor
 
           s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-          s.required_ruby_version = ">= 2.6.6"
+          s.required_ruby_version = ">= 2.6.0"
 
           s.add_dependency "rails", ">= 6.0.0.0"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"

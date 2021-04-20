@@ -21,7 +21,7 @@ describe 'json format / page' do
   end
 
   it 'responds with json' do
-    expect(response.content_type).to eq("application/json")
+    expect(response.content_type).to eq("application/json; charset=utf-8")
     expect(response).to have_http_status(:success)
     expect(parsed_response).to be_a(Hash)
     expect(parsed_response.keys.sort).to eq(%w(content))

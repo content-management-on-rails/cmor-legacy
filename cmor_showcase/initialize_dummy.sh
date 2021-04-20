@@ -6,14 +6,17 @@ INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true bundle exec rake dummy:app
-rm spec/dummy/.ruby-version
+DISABLE_MIGRATE=true rake dummy:app
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
 
 # Use correct Gemfile
-rm Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Add ActiveStorage

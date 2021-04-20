@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Cmor::Cms::Page::ContentBlock, type: :model do
+RSpec.describe Cmor::Cms::ContentBlock, type: :model do
   context 'associations' do
     it { expect(subject).to belong_to(:content_box) }
     it { expect(subject).to belong_to(:page) }

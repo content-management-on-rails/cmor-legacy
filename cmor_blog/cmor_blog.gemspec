@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rao-service', '>= 0.0.17.pre'
 
   s.add_development_dependency 'bootstrap4-kaminari-views'
+  s.add_development_dependency 'sassc-rails'
 end

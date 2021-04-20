@@ -7,11 +7,22 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
+
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
 rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
+cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Satisfy prerequisites
-cd spec/dummy
 RAILS_ENV=development rails g model User email
+sed -i '17irequire "sassc-rails"' config/application.rb
+sed -i '17irequire "webpacker"' config/application.rb
 sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
 
 

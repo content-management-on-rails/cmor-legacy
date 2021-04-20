@@ -7,10 +7,20 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
+# Use Webpacker
+sed -i "17irequire 'webpacker'" config/application.rb
 
 rails active_storage:install
 touch config/initializers/i18n.rb

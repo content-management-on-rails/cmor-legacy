@@ -10,10 +10,17 @@ rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # responders for rao-service_controller
 sed -i '17i\  require "responders"' config/application.rb
@@ -39,6 +46,7 @@ rails acts_as_taggable_on_engine:install:migrations
 # Example post model for specs
 rails generate model Post title
 sed -i '2i\  include Model::Cmor::Tags::TaggableConcern' app/models/post.rb
+sed -i '2i\  alias_attribute :human, :title' app/models/post.rb
 
 # Install cmor core backend gem
 rails generate administrador:install
