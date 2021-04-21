@@ -50,4 +50,9 @@ before_install:
 script: ./rspec.sh
 
 addons:
-  chrome: stable
+  apt:
+    - google-chrome-stable
+    - chromium-chromedriver
+
+before_script:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
