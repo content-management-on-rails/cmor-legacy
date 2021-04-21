@@ -19,13 +19,13 @@ Cmor::Tags.configure do |config|
 
   # Specify the models to be tagged.
   # 
-  # Default: config.taggable_class_names = %w()
+  # Default: config.taggable_class_names = <%= taggable_class_names %>
   #
-  config.taggable_class_names = %w()
+  config.taggable_class_names = <%= taggable_class_names %>
 
   # Factory name to use for taggable objects.
   #
-  # Default: config.taggable_factory_name = :post
+  # Default: config.taggable_factory_name = <%= taggable_factory_name %>
   #
-  config.taggable_factory_name = :post
+  config.taggable_factory_name = <%= taggable_factory_name %>
 end

@@ -12,7 +12,7 @@ RSpec.describe '/de/backend/tags/taggings', type: :feature do
 
   it { resources; expect(subject).to implement_index_action(self) }
 
-  let(:post) { create(:post) }
+  let(:post) { create(:cmor_blog_post) }
 
   it {
     tag
@@ -46,7 +46,7 @@ RSpec.describe '/de/backend/tags/taggings', type: :feature do
         # Example:
         # 
         #     fill_in 'slider[name]', with: 'New name'
-          fill_in 'tagging[context]', with: 'new-context'
+        fill_in 'tagging[context]', with: 'new-context'
       }
       .updating
       .from(resource.attributes)

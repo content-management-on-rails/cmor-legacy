@@ -58,6 +58,10 @@ CMOR_BLOG_USER_FACTORY_NAME='cmor_user_area_user' \
 CMOR_BLOG_CREATOR_CLASS_NAME='Cmor::UserArea::User' \
 CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true \
 CMOR_SYSTEM_ENABLE_DELAYED_JOB=true \
+CMOR_TAGS_BACKEND_TAGGABLE_CLASSES='%w( Cmor::Blog::Post )' \
+CMOR_TAGS_BACKEND_TAGGER_CLASSES='%w( Cmor::UserArea::User )' \
+CMOR_TAGS_TAGGABLE_FACTORY_NAME=':cmor_blog_post' \
+CMOR_TAGS_TAGGABLE_CLASS_NAMES='%w( Cmor::Blog::Post )' \
 rails generate $INSTALL_NAME:install
 rails db:migrate db:test:prepare
 
