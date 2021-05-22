@@ -1,6 +1,5 @@
-= link_to({ action: :index }, class: 'btn btn-light btn-responsive') do
+= link_to({ action: :index }, class: 'btn btn-light btn-circle btn-lg') do
   %i.fas.fa-arrow-left
-  %span.btn-text= t('.back')
 
 .ml-auto
   - if Cmor::Core.features?(:cmor_audits) && available_rest_actions.include?(:versions)
