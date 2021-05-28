@@ -1,8 +1,8 @@
 require 'cmor/cms/action_view/template_patch'
 require 'cmor/cms/action_view/template_renderer_patch'
 
-require 'cmor/cms/engine'
 require 'cmor/cms/configuration'
+require 'cmor/cms/engine'
 
 require 'cmor/cms/controller_extensions/layout_resolver'
 require 'cmor/cms/controller_extensions/page_resolver'

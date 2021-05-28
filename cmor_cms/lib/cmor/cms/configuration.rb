@@ -27,6 +27,10 @@ module Cmor
 
       mattr_accessor(:navigation_locale_fallback) { ->(navigation_name, locale) {false} }
 
+      mattr_accessor :enable_redirect_middleware do
+        true
+      end
+
       def default_handlers=(default_handlers)
         @@default_handlers = HashWithIndifferentAccess.new(default_handlers)
       end

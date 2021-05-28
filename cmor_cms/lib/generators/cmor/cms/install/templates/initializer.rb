@@ -50,4 +50,10 @@ Cmor::Cms.configure do |config|
   # Default: config.site_title = Rails.application.class.to_s.deconstantize
   #
   config.site_title = Rails.application.class.to_s.deconstantize
+
+  # Enable/Disable redirects
+  #
+  # Default: config.enable_redirect_middleware = true
+  #
+  config.enable_redirect_middleware = true
 end
