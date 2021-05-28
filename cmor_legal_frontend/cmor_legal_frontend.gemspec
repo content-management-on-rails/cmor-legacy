@@ -23,7 +23,6 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "cmor_cms"
   spec.add_development_dependency "turbolinks"
   spec.add_development_dependency "selenium-webdriver"
