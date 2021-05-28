@@ -34,6 +34,7 @@ echo "end" >> config/initializers/route_translator.rb
 sed -i "15irequire 'turbolinks'" config/application.rb
 
 # Satisfy prerequisites
+sed -i "15irequire 'cmor_cms'" config/application.rb
 rails generate simple_form:install --bootstrap
 rails generate administrador:install
 rails generate cmor:core:install

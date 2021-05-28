@@ -21,6 +21,23 @@ Or install it yourself as:
 $ gem install cmor_legal_frontend
 ```
 
+## Usage
+
+### Rendering the cookie consent banner
+
+    # app/views/layouts/application.html.haml
+    = legal_helper(self).render_cookie_consent_banner
+
+### Rendering content depending on accepted cookies
+
+    # app/views/layouts/application.html.haml
+    %head
+      - legal_helper(self).cookie_preferences.accepted_cookies.each do |c|
+        = render "frontend/cookies/#{c.identifier}/head"
+    %body
+      - legal_helper(self).cookie_preferences.accepted_cookies.each do |c|
+        = render "frontend/cookies/#{c.identifier}/body"
+
 ## Migrating from rails_eu_gdpr_backend
 
 Install cmor_legal and cmor_legal_frontend.

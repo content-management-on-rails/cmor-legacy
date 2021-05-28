@@ -66,4 +66,20 @@ Cmor::Legal.configure do |config|
   #     end
   #   end
   # end
+
+  # Controls the integration with Cmor::Cms.
+  #
+  # When true if will enable the
+  # privacy policies backend and it will load privacy policies from the
+  # content management system.
+  #
+  # When false it will disable the privacy polcies backend and it will
+  # load privacy policies only from the default view paths.
+  #
+  # When set to :auto it will autodetect the presence of Cmor::Cms and
+  # enable the integration if available.
+  #
+  # Default: config.integrate_with_cmor_cms = :auto
+  #
+  config.integrate_with_cmor_cms = :auto
 end

@@ -26,6 +26,7 @@ module Cmor
       mattr_accessor :resources do
         {}
       end
+
       mattr_accessor(:personal_data_root_classes) { [] }
       mattr_accessor(:filter_personal_data_attributes) { [:email, :firstname, :lastname, :birthdate] }
       mattr_accessor(:enforce_ssl) { true }
@@ -37,6 +38,19 @@ module Cmor
       end
       mattr_accessor(:cookie_prefix) { "#{Rails.application.class.name.deconstantize.underscore}-eu_gdpr-" }
       mattr_accessor(:cookie_storage) { :cookies }
+      mattr_accessor(:integrate_with_cmor_cms) { :auto }
+
+      def self.integrate_with_cmor_cms?
+        if integrate_with_cmor_cms == :auto
+          begin
+            Cmor::Cms
+          rescue NameError => e
+            false
+          end
+        else
+          integrate_with_cmor_cms
+        end
+      end
 
       def personal_data
         @personal_data ||= ::Cmor::Legal::PersonalDataRegistry.instance

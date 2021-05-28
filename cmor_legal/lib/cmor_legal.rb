@@ -2,7 +2,7 @@
 
 require "cmor_core"
 require "cmor_core_backend"
-require "cmor_cms"
+# require "cmor_cms"
 
 require "cmor/legal/version"
 require "cmor/legal/configuration"
