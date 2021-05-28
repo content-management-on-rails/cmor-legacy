@@ -10,7 +10,6 @@ PATH
   remote: ../cmor_legal
   specs:
     cmor_legal (0.0.60.pre)
-      cmor_cms
       cmor_core (= 0.0.60.pre)
       cmor_core_backend (= 0.0.60.pre)
       rails (>= 5.2.3)
@@ -497,6 +496,7 @@ DEPENDENCIES
   bootsnap
   capybara
   cmor!
+  cmor_cms
   cmor_core_frontend!
   cmor_legal!
   cmor_legal_frontend!
