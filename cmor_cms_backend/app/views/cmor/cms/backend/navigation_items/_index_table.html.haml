@@ -2,7 +2,7 @@
 = table.association(:navigation, sort: { column_name: 'cmor_cms_navigations.name'}, link_to: ->(navigation_item) { navigation_path(navigation_item.navigation) }, label_method: :human)
 = table.column(:name, sort: true) do |navigation_item|
   - capture_haml do
-    %span{ class: "indent indent-chars-#{navigation_item.depth * 3}"}= navigation_item.name
+    %span{ class: "indent indent-chars-#{navigation_item.depth * 3}"}= navigation_item.name.html_safe
 = table.column :url, sort: true
 = table.column(:page, sort: { column_name: 'cmor_cms_pages.title' }) do |navigation_item|
   - link_to navigation_item.page.title, page_path(navigation_item.page) if navigation_item.page.present?

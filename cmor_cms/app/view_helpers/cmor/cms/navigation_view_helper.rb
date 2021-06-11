@@ -73,13 +73,13 @@ module Cmor
 
         navigation.dom_class = container_css_class
         if item.children.published.present?
-          navigation.item(item.key, item.name, item.url, options) do |sub_navigation|
+          navigation.item(item.key, item.name.html_safe, item.url, options) do |sub_navigation|
             item.children.published.each do |sub_item|
               build_navigation_item(sub_navigation, sub_item, container_css_class, item_html, link_html)
             end
           end
         else
-          navigation.item item.key, item.name, item.url, options
+          navigation.item item.key, item.name.html_safe, item.url, options
         end
       end
     end

@@ -1,5 +1,7 @@
 = table.row :parent, as: :association
-= table.row :name
+= table.row :name do |resource|
+  - capture_haml do
+    = resource.name.html_safe
 = table.row :url
 = table.row :key
 = table.row :highlights_on
