@@ -20,9 +20,9 @@ module Cmor
                                 caller[0].split(' ').last.gsub("'", '').gsub("`", '')
                               end
 
-              I18n.t("#{prefix}.#{caller_method}.#{identifier}", options)
+              I18n.t("#{prefix}.#{caller_method}.#{identifier}", **options)
             else
-              I18n.t(identifier, options)
+              I18n.t(identifier, **options)
             end
           end
         end
