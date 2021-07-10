@@ -16,8 +16,6 @@ module Cmor
           s.add_dependency "rails", ">= 6.0.0.0"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
-          require 'pry'
-          binding.pry
           s.add_dependency "cmor_core_frontend", "= #{Cmor::VERSION}" unless s.files.include?("lib/cmor/core/frontend.rb")
 
           s.add_development_dependency "sqlite3", '~> 1.4'
