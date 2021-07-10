@@ -6,10 +6,11 @@ require "cmor/core/frontend/gemspec"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  Cmor::Core::Frontend::Gemspec.defaults(s)
   s.name        = 'cmor_core_frontend'
   s.summary     = 'Cmor::Core::Frontend.'
   s.description = 'Cmor::Core::Frontend Module.'
+
+  Cmor::Core::Frontend::Gemspec.defaults(s)
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
 
