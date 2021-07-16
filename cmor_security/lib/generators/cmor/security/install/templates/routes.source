@@ -1,0 +1,4 @@
+
+  localized do
+    mount Cmor::Security::Engine, at: '/backend/cmor-security-engine'
+  end

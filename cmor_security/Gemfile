@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gemspec
+gem "cmor", path: "../"
+gem "cmor_core", path: "../cmor_core"
+gem 'rails', '6.0.0.0'
+
+gem 'tatoru_client', path: '~/projects/tatoru/tatoru_client-ruby'

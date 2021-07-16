@@ -1,0 +1,16 @@
+en:
+  activemodel:
+    models:
+      cmor/security/antivirus_configuration:
+        one: "Antivirus Configuration"
+        other: "Antivirus Configurations"
+    attributes:
+      cmor/security/antivirus_configuration:
+        model_class: "Model"
+        model_class_name: "Model name"
+        attachment_name: "Attachment Name"
+        options: "Options"
+  classes:
+    cmor/security/engine: "Security"
+  routes:
+    cmor-security-engine: "security"
