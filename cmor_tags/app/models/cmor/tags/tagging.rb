@@ -7,7 +7,8 @@ module Cmor::Tags
     end
 
     def taggable=(taggable)
-      if taggable.is_a?(String)
+      case taggable
+      when GlobalID, String
         super(GlobalID::Locator.locate(taggable))
       else
         super
@@ -15,7 +16,8 @@ module Cmor::Tags
     end
 
     def tagger=(tagger)
-      if tagger.is_a?(String)
+      case tagger
+      when GlobalID, String
         super(GlobalID::Locator.locate(tagger))
       else
         super
