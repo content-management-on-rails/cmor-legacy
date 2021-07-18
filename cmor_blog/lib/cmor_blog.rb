@@ -7,6 +7,7 @@ require 'kramdown'
 require 'rails-i18n'
 require 'rao-resources_controller'
 require 'rao-service'
+require 'rao-component'
 
 require 'cmor/core/model/localization_concern'
 require 'cmor/blog'
