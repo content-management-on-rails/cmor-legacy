@@ -1,5 +1,6 @@
-require 'sassc-rails'
 require 'cmor_core_backend'
+require 'sassc-rails'
+require 'tatoru_client'
 
 require 'cmor/security/version'
 require 'cmor/security/configuration'
