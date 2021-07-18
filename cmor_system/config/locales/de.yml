@@ -48,6 +48,7 @@ de:
         byte_size: Größe
         checksum: Checksumme
         created_at: Erstellt am
+        service_name: Service Name
       delayed/active_record/job:
         id: ID
         priority: Priorität
