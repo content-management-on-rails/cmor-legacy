@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  spec.add_dependency "tatoru_client"
+  spec.add_dependency "tatoru-client-rails"
   spec.add_dependency "sassc-rails"
   
   spec.add_development_dependency "turbolinks"

@@ -7,4 +7,5 @@ gem "cmor", path: "../"
 gem "cmor_core", path: "../cmor_core"
 gem 'rails', '6.0.0.0'
 
-gem 'tatoru_client', path: '~/projects/tatoru/tatoru_client-ruby'
+gem 'tatoru-client', path: '~/projects/tatoru/tatoru-client-ruby'
+gem 'tatoru-client-rails', path: '~/projects/tatoru/tatoru-client-rails'

@@ -1,7 +1,14 @@
 PATH
-  remote: ../../../tatoru/tatoru_client-ruby
+  remote: ../../../tatoru/tatoru-client-rails
   specs:
-    tatoru_client (0.0.1)
+    tatoru-client-rails (0.0.1)
+      rails (>= 6.0)
+      tatoru-client
+
+PATH
+  remote: ../../../tatoru/tatoru-client-ruby
+  specs:
+    tatoru-client (0.0.1)
       httparty
       zeitwerk
 
@@ -35,7 +42,7 @@ PATH
       cmor_core_backend (= 0.0.60.pre)
       rails (>= 6.0.0.0)
       sassc-rails
-      tatoru_client
+      tatoru-client-rails
 
 GEM
   remote: https://rubygems.org/
@@ -517,7 +524,8 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sqlite3 (~> 1.4.0)
-  tatoru_client!
+  tatoru-client!
+  tatoru-client-rails!
   turbolinks
   webpacker
 
