@@ -9,7 +9,7 @@ module Cmor
     #     end
     #
     #     # app/views/home/index.html.haml
-    #     = galleries_helper(self).render(name: 'main', variant_options: { combine_options: { resize: "255x255^", extent: "255x255", gravity: "center"} }, show_details: true)
+    #     = galleries_helper(self).render(name: 'main', variant_options: { resize: "255x255^", extent: "255x255", gravity: "center" }, show_details: true)
     #
     # Default options are taken from Cmor::Galleries::Configuration.galleries_helper_render_default_options.
     # You can set this option in the initializer.

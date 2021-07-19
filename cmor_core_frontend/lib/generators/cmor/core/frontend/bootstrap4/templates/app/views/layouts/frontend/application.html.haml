@@ -40,7 +40,7 @@
 
     %header
       - if cms_page_helper(self).home?
-        = carousels_helper(self).render_carousel(:main, variant_options: { combine_options: { resize: "1920x1080^", gravity: 'center', crop: "1920x1080+0+0" } })
+        = carousels_helper(self).render_carousel(:main, variant_options: { resize: "1920x1080^", gravity: 'center', crop: "1920x1080+0+0" })
 
     / Page Content
     .container
