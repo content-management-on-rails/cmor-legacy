@@ -2,7 +2,7 @@ module Cmor
   module Core
     module Backend
       class Gemspec
-        def self.defaults(s)
+        def self.defaults(s, load_self: true)
           s.version     = ::Cmor::VERSION
           s.authors     = ["Roberto Vasquez Angel"]
           s.email       = ["roberto@vasquez-angel.de"]
@@ -16,7 +16,8 @@ module Cmor
           s.add_dependency "rails", ">= 6.0.0.0"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
-          s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" unless s.files.include?("lib/cmor/core/backend.rb")
+
+          s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" if load_self
 
           s.add_development_dependency "sqlite3", '~> 1.4.0'
           s.add_development_dependency 'responders'
