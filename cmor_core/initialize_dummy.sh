@@ -1,12 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -25,4 +23,4 @@ echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/in
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
 # Install
-rails generate $INSTALL_NAME:install
+rails generate cmor:core:install

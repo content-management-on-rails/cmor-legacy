@@ -38,6 +38,7 @@ de:
         tagger_id: Ersteller
         tagger: Ersteller
         tagger_type: Ersteller-Typ
+        tenant: Mandant
         created_at: Erstellt am
         updated_at: Aktualisiert am
       cmor/tags/tag: *tag_attributes

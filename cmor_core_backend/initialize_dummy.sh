@@ -1,15 +1,10 @@
 #!/bin/bash
-BACKEND_GEM_NAME=${PWD##*/}
-BACKEND_INSTALL_NAME=${BACKEND_GEM_NAME//cmor_/cmor\:}
-BACKEND_INSTALL_NAME=${BACKEND_INSTALL_NAME//_backend/\:backend}
-GEM_NAME=${BACKEND_GEM_NAME//_backend/}
-INSTALL_NAME=${BACKEND_INSTALL_NAME//\:backend/}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -59,4 +54,4 @@ rails generate simple_form:install --bootstrap
 # rails db:migrate db:test:prepare
 
 # Install
-rails generate $BACKEND_INSTALL_NAME:install
+rails generate cmor:core:backend:install

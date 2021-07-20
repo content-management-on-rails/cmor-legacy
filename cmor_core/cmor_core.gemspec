@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari"
   s.add_dependency "bootstrap-kaminari-views"
 
-  s.add_development_dependency "sqlite3", '~> 1.3.6'
+  s.add_development_dependency "sqlite3", '~> 1.4'
 
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_bot_rails'
@@ -38,4 +38,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'bootsnap'
+  s.add_development_dependency 'webpacker'
 end

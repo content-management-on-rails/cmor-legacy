@@ -1,12 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -68,5 +66,5 @@ sed -i "s|<title>.*</title>|<title><%= cms_helper(self).title %></title>|" app/v
 sed -i '7i\    <%= cms_helper(self).meta_description.html_safe %>' app/views/layouts/application.html.erb
 
 # Install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
-rails generate $INSTALL_NAME:install
+rails cmor_cms:install:migrations db:migrate db:test:prepare
+rails generate cmor:cms:install

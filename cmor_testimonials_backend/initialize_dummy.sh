@@ -9,7 +9,7 @@ INSTALL_NAME=${BACKEND_INSTALL_NAME//\:backend/}
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 

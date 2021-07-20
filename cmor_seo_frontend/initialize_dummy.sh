@@ -1,14 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
-INSTALL_NAME=${INSTALL_NAME//_frontend/\:frontend}
-MIGRATION_NAME=${GEM_NAME//_frontend/}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -43,7 +39,9 @@ sed -i "17irequire 'rspec-rails'" config/application.rb
 # Add needed models
 rails g model Post title
 
-# Install
+# CMOR SEO
 rails generate cmor:seo:install
-rails generate $INSTALL_NAME:install
-rails $MIGRATION_NAME:install:migrations db:migrate db:test:prepare
+rails cmor_seo:install:migrations db:migrate db:test:prepare
+
+# Install
+rails generate cmor:seo:frontend:install

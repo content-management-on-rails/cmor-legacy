@@ -1,19 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-PREFIX="cmor"
-NAME=${GEM_NAME//${PREFIX}_/}
-COLONIZED_NAME=${NAME//_/\:}
-BASENAME=${NAME//_frontend/}
-COLONIZED_BASENAME=${BASENAME//_/\:}
-INSTALLER_NAME="${PREFIX}:${COLONIZED_NAME}:install"
-BACKEND_INSTALLER_NAME="${PREFIX}:${COLONIZED_BASENAME}:install"
-BACKEND_MIGRATION_NAME="${PREFIX}_${BASENAME}:install:migrations"
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -55,8 +46,9 @@ rails g cmor:core:backend:install
 # Install markup-rails
 rails g markup:rails:install
 
-# Install backend
-rails generate $BACKEND_INSTALLER_NAME
-rails $BACKEND_MIGRATION_NAME db:migrate db:test:prepare
+# CMOR Partners
+rails generate cmor:partners:install
+rails cmor_partners:install:migrations db:migrate db:test:prepare
+
 # Install
-rails generate $INSTALLER_NAME
+rails generate cmor:partners:frontend:install

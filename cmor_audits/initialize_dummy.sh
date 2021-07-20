@@ -1,12 +1,9 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 DUMMY_APP_PATH="spec/dummy"
 
 # Delete old dummy app
 if [ -d "$DUMMY_APP_PATH" ]; then rm -rf $DUMMY_APP_PATH; fi
-
 
 # Generate new dummy app
 DUMMY_APP_PATH=$DUMMY_APP_PATH DISABLE_MIGRATE=true bundle exec rake dummy:app
@@ -63,7 +60,6 @@ rails cmor_blog:install:migrations
 sed -i "2i  config.enable_feature(:cmor_audits, {})" config/initializers/cmor_core.rb
 
 # Install
-rails generate $INSTALL_NAME:install
-# rails $GEM_NAME:install:migrations
+rails generate cmor:audits:install
 rails db:migrate db:test:prepare
 sed -i "s/  config.resources = -> { {} }/  config.resources = -> { { \"Cmor::Blog::Post\" => {} } }/g" config/initializers/cmor_audits.rb

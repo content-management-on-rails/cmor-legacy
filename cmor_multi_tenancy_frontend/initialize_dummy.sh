@@ -1,12 +1,10 @@
 #!/bin/bash
-GEM_NAME=cmor_multi_tenancy_frontend
-INSTALL_NAME=cmor:multi_tenancy:frontend
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -44,7 +42,7 @@ rails generate cmor:multi_tenancy:install
 rails cmor_multi_tenancy:install:migrations db:migrate db:test:prepare
 
 # Install
-rails generate $INSTALL_NAME:install
+rails generate cmor:multi_tenancy:frontend:install
 
 # Customize dummy app
 rails generate controller Home index --no-helper --no-assets --no-request-specs --no-controller-specs --no-view-specs

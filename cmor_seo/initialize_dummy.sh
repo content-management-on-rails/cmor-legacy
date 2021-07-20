@@ -1,12 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -53,8 +51,8 @@ rails g scaffold Page title meta_description body:text published_at:timestamp --
 rails g factory_bot:model Page title meta_description body:text published_at:timestamp
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:seo:install
+rails cmor_seo:install:migrations db:migrate db:test:prepare
 
 # Conifgure Cmor::Seo
 sed -i "2i\  config.add_resource(" config/initializers/cmor_seo.rb

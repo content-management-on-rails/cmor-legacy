@@ -1,12 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -85,5 +83,5 @@ echo "//= require cmor_contact" >> app/assets/javascripts/application.js
 echo "Rails.application.config.assets.precompile += %w( application.js )" >> config/initializers/assets.rb
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:contact:install
+rails cmor_contact:install:migrations db:migrate db:test:prepare

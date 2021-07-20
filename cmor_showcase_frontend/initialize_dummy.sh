@@ -1,14 +1,10 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
-INSTALL_NAME=${INSTALL_NAME//_frontend/\:frontend}
-MIGRATION_NAME=${GEM_NAME//_frontend/}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -43,5 +39,5 @@ echo "end" >> config/initializers/route_translator.rb
 sed -i "15irequire 'turbolinks'" config/application.rb
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $MIGRATION_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:showcase:frontend:install
+rails cmor_showcase:install:migrations db:migrate db:test:prepare

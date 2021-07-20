@@ -6,7 +6,7 @@ INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -35,5 +35,5 @@ echo "end" >> config/initializers/route_translator.rb
 
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:links:install
+rails cmor_links:install:migrations db:migrate db:test:prepare

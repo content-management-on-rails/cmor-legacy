@@ -4,7 +4,7 @@
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -38,8 +38,6 @@ rails generate administrador:install
 rails generate cmor:core:install
 rails generate cmor:core:backend:install
 rails generate cmor:legal:install
-# rails generate eu_gdpr:install
-# rails generate cmor:cms:install
 rails cmor_cms:install:migrations
 
 # Root route

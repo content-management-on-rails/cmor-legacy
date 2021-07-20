@@ -1,15 +1,10 @@
 #!/bin/bash
-BACKEND_GEM_NAME=${PWD##*/}
-BACKEND_INSTALL_NAME=${BACKEND_GEM_NAME//cmor_/cmor\:}
-# BACKEND_INSTALL_NAME=${BACKEND_INSTALL_NAME//_backend/\:backend}
-GEM_NAME=${BACKEND_GEM_NAME//_backend/}
-INSTALL_NAME=${BACKEND_INSTALL_NAME//\:backend/}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
@@ -61,4 +56,4 @@ sed -i '2i\  has_one_attached Cmor::System::Configuration.record_attachment_name
 rails db:migrate db:test:prepare
 
 # Install
-CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install
+CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_ENABLE_DELAYED_JOB=true rails generate cmor:system:install
