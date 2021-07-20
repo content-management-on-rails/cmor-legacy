@@ -29,6 +29,9 @@ module Cmor
       mattr_accessor(:after_sign_in_url) { ->(controller) { main_app.root_path } }
       mattr_accessor(:after_sign_out_url) { ->(controller) { main_app.root_path } }
       mattr_accessor(:enable_tfa) { -> { true } }
+      mattr_accessor(:one_time_password_options) {
+        { one_time_backup_codes: true, if: -> { false } }
+      }
 
       def self.tfa_enabled?
         enable_tfa.call

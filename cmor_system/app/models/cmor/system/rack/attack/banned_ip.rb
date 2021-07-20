@@ -2,7 +2,7 @@ module Cmor
   module System
     module Rack
       module Attack
-        class BannedIp < Cmor::System::ActiveCollection::Base
+        class BannedIp < Cmor::Core::ActiveCollection::Base
           self.attribute_names = %w(id key value)
 
           validates :key, presence: true

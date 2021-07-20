@@ -6,7 +6,9 @@ RSpec.describe 'Contact Widget', type: :system do
     let(:submit_button) { within("form#new_contact_request") { find("input[type='submit']") } }
     before(:each) do
       visit("/")
+
       find("a[title='#{title}']").click
+
       within("form#new_contact_request") do
         fill_in "contact_request[name]", with: "Jane Doe"
         fill_in "contact_request[email]", with: "jane.doe@example.com"

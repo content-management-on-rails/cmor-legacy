@@ -29,7 +29,7 @@ module Cmor
         ->(view) { { theme: 'twitter-bootstrap-4', pagination_class: 'justify-content-center' } }
       end
       mattr_accessor(:preview_picture_asset_variant_options) do
-        { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
+        { resize: "320x240^", extent: "384x216", gravity: "center" }
       end
 
       mattr_accessor(:post_creation_information_proc) do

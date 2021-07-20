@@ -1,20 +1,18 @@
 #!/bin/bash
 
-DUMMY_APP_PATH="spec/dummy"
-
 # Delete old dummy app
-if [ -d "$DUMMY_APP_PATH" ]; then rm -rf $DUMMY_APP_PATH; fi
-
+rm -rf spec/dummy
 
 # Generate new dummy app
-DUMMY_APP_PATH=$DUMMY_APP_PATH DISABLE_MIGRATE=true bundle exec rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
-if [ ! -d "$DUMMY_APP_PATH/config" ]; then exit 1; fi
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
-rm $DUMMY_APP_PATH/.ruby-version
-rm $DUMMY_APP_PATH/Gemfile
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
 
-cd $DUMMY_APP_PATH
+cd spec/dummy
 
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb

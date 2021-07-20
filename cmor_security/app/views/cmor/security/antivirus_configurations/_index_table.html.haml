@@ -1,0 +1,7 @@
+= table.column :model_class do |resource|
+  - capture_haml do
+    = resource.model_class.model_name.human
+= table.column :attachment_name do |resource|
+  - capture_haml do
+    = resource.model_class.human_attribute_name(resource.attachment_name)
+= table.column :options

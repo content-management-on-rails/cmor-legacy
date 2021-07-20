@@ -1,6 +1,6 @@
 .panel.panel-default.mb-2
   .panel-heading
-    %h1= t('.title', inflections)
+    %h1= t('.title', **inflections)
   .panel-body
     = simple_form_for(@resource, url: current_user_path) do |f|
       = render partial: 'form_errors', locals: { resource: f.object }

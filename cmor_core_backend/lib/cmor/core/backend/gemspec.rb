@@ -2,7 +2,7 @@ module Cmor
   module Core
     module Backend
       class Gemspec
-        def self.defaults(s)
+        def self.defaults(s, load_self: true)
           s.version     = ::Cmor::VERSION
           s.authors     = ["Roberto Vasquez Angel"]
           s.email       = ["roberto@vasquez-angel.de"]
@@ -11,12 +11,15 @@ module Cmor
 
           s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-          s.add_dependency "rails", ">= 5.2.3"
+          s.required_ruby_version = ">= 2.6.0"
+
+          s.add_dependency "rails", ">= 6.0.0.0"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
-          s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" unless s.files.include?("lib/cmor/core/backend.rb")
 
-          s.add_development_dependency "sqlite3", '~> 1.3.6'
+          s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" if load_self
+
+          s.add_development_dependency "sqlite3", '~> 1.4.0'
           s.add_development_dependency 'responders'
           
           s.add_development_dependency 'capybara'
@@ -36,6 +39,9 @@ module Cmor
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
+          s.add_development_dependency 'bootsnap'
+          s.add_development_dependency 'puma', '~> 3.11'
+          s.add_development_dependency 'webpacker'
         end
       end
     end

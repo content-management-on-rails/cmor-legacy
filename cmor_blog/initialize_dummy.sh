@@ -1,17 +1,29 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
+
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
 rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
+cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
+# Use Webpacker
+sed -i '17i\require "webpacker"' config/application.rb
+rails webpacker:install
 
 # Satisfy prerequisites
-cd spec/dummy
 RAILS_ENV=development rails g model User email
+sed -i '17irequire "sassc-rails"' config/application.rb
 sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
 
 
@@ -30,5 +42,5 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:blog:install
+rails cmor_blog:install:migrations db:migrate db:test:prepare

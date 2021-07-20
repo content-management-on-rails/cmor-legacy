@@ -1,19 +1,20 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
 DISABLE_MIGRATE=true bundle exec rake dummy:app
-rm spec/dummy/.ruby-version
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
 
 # Use correct Gemfile
-rm Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Add ActiveStorage
@@ -43,5 +44,5 @@ rails generate simple_form:install --bootstrap
 rails g cmor:core:backend:install
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:showcase:install
+rails cmor_showcase:install:migrations db:migrate db:test:prepare

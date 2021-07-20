@@ -1,16 +1,25 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
+# Add webpacker
+sed -i '17i\  require "webpacker"' config/application.rb
+rails webpacker:install
 
 # I18n configuration
 touch config/initializers/i18n.rb
@@ -57,5 +66,5 @@ sed -i "s|<title>.*</title>|<title><%= cms_helper(self).title %></title>|" app/v
 sed -i '7i\    <%= cms_helper(self).meta_description.html_safe %>' app/views/layouts/application.html.erb
 
 # Install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
-rails generate $INSTALL_NAME:install
+rails cmor_cms:install:migrations db:migrate db:test:prepare
+rails generate cmor:cms:install

@@ -21,7 +21,7 @@ Cmor::Galleries.configure do |config|
 
   # This options will be applied when rendering thumbails in galleries.
   #
-  # Default: config.thumbnail_variant_options = { combine_options: { resize: "384x216^", extent: "384x216", gravity: "center" } }
+  # Default: config.thumbnail_variant_options = { resize: "384x216^", extent: "384x216", gravity: "center" }
   #
-  config.thumbnail_variant_options = { combine_options: { resize: "384x216^", extent: "384x216", gravity: "center" } }
+  config.thumbnail_variant_options = { resize: "384x216^", extent: "384x216", gravity: "center" }
 end

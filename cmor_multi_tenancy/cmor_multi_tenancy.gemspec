@@ -26,6 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "request_store"
   spec.add_dependency "rao-service"
 
-  spec.add_development_dependency "bootsnap"
   spec.add_development_dependency "turbolinks"
 end

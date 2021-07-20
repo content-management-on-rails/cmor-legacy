@@ -1,5 +1,5 @@
 module Cmor
-  module System
+  module Core
     module ActiveCollection
       class Base
         if Object.const_defined?('Kaminari')
@@ -15,7 +15,6 @@ module Cmor
         include ActiveModel::Conversion
         extend ActiveModel::Translation
         include ActiveModel::Validations
-        include Markup::Rails::ActiveRecord
 
         module AttributesConcern
           extend ActiveSupport::Concern
@@ -32,6 +31,16 @@ module Cmor
               return @attributes[m.to_s]
             elsif self.attribute_names.map { |an| "#{an}=" }.include?(m.to_s)
               return @attributes[m.to_s[0..-2]] = args.first
+            else
+              super
+            end
+          end
+
+          def respond_to_missing?(m, *args)
+            if self.attribute_names.map(&:to_s).include?(m.to_s)
+              true
+            elsif self.attribute_names.map { |an| "#{an}=" }.include?(m.to_s)
+              true
             else
               super
             end

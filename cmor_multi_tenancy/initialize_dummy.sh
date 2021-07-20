@@ -1,25 +1,20 @@
 #!/bin/bash
-GEM_NAME=cmor_multi_tenancy
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
-if [ ! -d "spec/dummy" ]; then
-  echo "Dummy app was not generated. Exiting..."
-  exit 1
-fi
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
-# Satisfy prerequisites
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
 
-rm .ruby-version
-
 # Use correct Gemfile
-rm Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Add ActiveStorage
@@ -49,5 +44,5 @@ rails generate simple_form:install --bootstrap
 rails g cmor:core:backend:install
 
 # Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+rails generate cmor:multi_tenancy:install
+rails cmor_multi_tenancy:install:migrations db:migrate db:test:prepare

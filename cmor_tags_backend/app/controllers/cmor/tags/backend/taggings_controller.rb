@@ -1,7 +1,5 @@
 module Cmor::Tags::Backend
   class TaggingsController < Cmor::Core::Backend::ResourcesController::Base
-    before_action :normalize_global_ids, only: [:create, :update]
-
     def self.resource_class
       Cmor::Tags::Tagging
     end
@@ -28,14 +26,6 @@ module Cmor::Tags::Backend
 
     private
 
-    def normalize_global_ids
-      taggable_gid = params[:tagging].delete(:taggable)
-      params[:tagging][:taggable] = GlobalID::Locator.locate(taggable_gid)
-
-      tagger_gid = params[:tagging].delete(:tagger)
-      params[:tagging][:tagger] = GlobalID::Locator.locate(tagger_gid)
-    end
-
     def load_taggable
       GlobalID::Locator.locate(params[:gid])
     end
@@ -45,7 +35,7 @@ module Cmor::Tags::Backend
     end
 
     def permitted_params
-      params.require(:tagging).permit(:name, :tag_id, :taggable, :tagger, :context)
+      params.require(:tagging).permit(:name, :tag_id, :tagger, :taggable, :context)
     end
   end
 end

@@ -49,7 +49,7 @@ module Cmor
           end
         end
       else
-        def find_templates(name, prefix, partial, details, locals)
+        def find_templates(name, prefix, partial, details, locals = [])
           return [] unless resolve(partial)
 
           conditions = {
@@ -110,7 +110,7 @@ module Cmor
           ::ActionView::Template.new(source, identifier, handler, details)
         end
       else
-        def initialize_template(record, details, locals)
+        def initialize_template(record, details, locals = [])
           source       = build_source(record)
           identifier   = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
           handler      = ::ActionView::Template.registered_template_handler(record.handler)

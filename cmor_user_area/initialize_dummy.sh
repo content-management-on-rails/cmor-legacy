@@ -6,11 +6,22 @@ INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
+
+# Use webpacker
+sed -i '17irequire "webpacker"' config/application.rb
+rails webpacker:install
 
 # Install SimpleForm
 rails generate simple_form:install --bootstrap
@@ -61,7 +72,7 @@ cat <<EOT > app/views/layouts/application.html.erb
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <%= user_area_helper(self).render_navigation %>

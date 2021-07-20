@@ -42,9 +42,9 @@ Cmor::Blog.configure do |config|
 
   # ActiveStorage options for rendering preview pictures in the posts index and show view.
   #
-  # Default: config.preview_picture_asset_variant_options = { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
+  # Default: config.preview_picture_asset_variant_options = { resize: "320x240^", extent: "384x216", gravity: "center" }
   #
-  config.preview_picture_asset_variant_options = { combine_options: { resize: "320x240^", extent: "384x216", gravity: "center" } }
+  config.preview_picture_asset_variant_options = { resize: "320x240^", extent: "384x216", gravity: "center" }
 
   # Define how the author and post date will be shown on posts.
   #

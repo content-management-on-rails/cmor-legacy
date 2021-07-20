@@ -8,6 +8,8 @@ module Cmor
       include Rao::ResourcesController::KaminariConcern
       include Rao::ResourcesController::LocationHistoryConcern
 
+      helper Rao::Component::ApplicationHelper
+
       helper Cmor::Comments::ApplicationHelper if Cmor::Core.features?(:cmor_comments)
 
       def self.resource_class

@@ -38,6 +38,7 @@ en:
         tagger_id: Tagger
         tagger_type: Tagger type
         tagger: Tagger
+        tenant: Tenant
         created_at: Created at
         updated_at: Updated at
       cmor/tags/tag_search:

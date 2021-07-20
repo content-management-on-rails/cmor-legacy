@@ -1,8 +1,6 @@
 language: ruby
 rvm:
-  - 2.6.2
-  # - 2.5.3
-  # - 2.3.7
+  - 2.6.6
 env:
   - GEM=cmor_suite
   - GEM=cmor_audits
@@ -31,6 +29,7 @@ env:
   - GEM=cmor_partners_frontend
   - GEM=cmor_rbac
   - GEM=cmor_rbac_backend
+  - GEM=cmor_security
   - GEM=cmor_seo
   - GEM=cmor_seo_frontend
   - GEM=cmor_showcase
@@ -45,7 +44,16 @@ env:
   - GEM=cmor_user_area_backend
 
 before_install:
+  - nvm install --lts
   - gem update --system
   - gem install bundler
 
 script: ./rspec.sh
+
+addons:
+  apt:
+    - google-chrome-stable
+    - chromium-chromedriver
+
+before_script:
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver

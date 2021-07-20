@@ -1,19 +1,21 @@
 #!/bin/bash
-BACKEND_GEM_NAME=${PWD##*/}
-BACKEND_INSTALL_NAME=${BACKEND_GEM_NAME//cmor_/cmor\:}
-# BACKEND_INSTALL_NAME=${BACKEND_INSTALL_NAME//_backend/\:backend}
-GEM_NAME=${BACKEND_GEM_NAME//_backend/}
-INSTALL_NAME=${BACKEND_INSTALL_NAME//\:backend/}
 
 # Delete old dummy app
 rm -rf spec/dummy
 
 # Generate new dummy app
-DISABLE_MIGRATE=true rake dummy:app
-rm spec/dummy/.ruby-version
+DISABLE_MIGRATE=true bundle exec rake dummy:app
 
-# Satisfy prerequisites
+if [ ! -d "spec/dummy/config" ]; then exit 1; fi
+
+# Cleanup
+rm spec/dummy/.ruby-version
+rm spec/dummy/Gemfile
+
 cd spec/dummy
+
+# Use correct Gemfile
+sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # responders for rao-service_controller
 sed -i '17irequire "responders"' config/application.rb
@@ -49,8 +51,9 @@ rails active_storage:install
 
 # Example model for ActiveStorage specs
 rails g model Post title
+sed -i '2i\  has_one_attached Cmor::System::Configuration.record_attachment_name' app/models/post.rb
 
 rails db:migrate db:test:prepare
 
 # Install
-CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_ENABLE_DELAYED_JOB=true rails generate $BACKEND_INSTALL_NAME:install
+CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_ENABLE_DELAYED_JOB=true rails generate cmor:system:install

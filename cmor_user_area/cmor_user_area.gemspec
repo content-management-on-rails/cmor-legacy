@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rao-component', '>= 0.0.17.pre'
   s.add_dependency 'rao-resources_controller', '>= 0.0.17.pre'
   s.add_dependency 'simple_form'
-  s.add_dependency 'active_model_otp'
+  s.add_dependency 'active_model_otp', '>= 2.1.1'
   s.add_dependency 'rqrcode'
   s.add_dependency 'aasm'
 

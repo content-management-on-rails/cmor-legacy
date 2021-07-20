@@ -16,7 +16,7 @@ RSpec.describe "/de/backend/transporte/api/incoming/create_services.json", type:
       post(base_url, params: params, headers: headers)
     end
 
-    it { expect(response.content_type).to eq("application/json") }
+    it { expect(response.content_type).to eq("application/json; charset=utf-8") }
     it { expect(response).to have_http_status(:created) }
     it { expect(parsed_response["errors"]).to eq({}) }
   end

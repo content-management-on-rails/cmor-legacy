@@ -6,11 +6,13 @@ module Cmor
 
         source_root File.expand_path('../templates', __FILE__)
 
-        attr_reader :base_controller_class_name
+        attr_reader :base_controller_class_name, :taggable_factory_name, :taggable_class_names
 
         def initialize(*args)
           super
           @base_controller_class_name = ENV.fetch('BASE_CONTROLLER_CLASS_NAME') { '::ApplicationController' }
+          @taggable_factory_name = ENV.fetch('CMOR_TAGS_TAGGABLE_FACTORY_NAME') { ':post' }
+          @taggable_class_names = ENV.fetch('CMOR_TAGS_TAGGABLE_CLASS_NAMES') { '%w()' }
         end
 
         def generate_initializer
