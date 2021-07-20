@@ -1,27 +1,27 @@
 PATH
   remote: ..
   specs:
-    cmor (0.0.60.pre)
-    cmor_core (0.0.60.pre)
+    cmor (0.0.61.pre)
+    cmor_core (0.0.61.pre)
       bootstrap-kaminari-views
-      cmor (= 0.0.60.pre)
+      cmor (= 0.0.61.pre)
       delayed_job_active_record
       kaminari
       rails (>= 6.0.0.0)
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.60.pre)
+    cmor_core_backend (0.0.61.pre)
       administrador (>= 0.0.28.pre)
-      cmor_core (= 0.0.60.pre)
+      cmor_core (= 0.0.61.pre)
       rails (>= 6.0.0.0)
 
 PATH
   remote: .
   specs:
-    cmor_system (0.0.60.pre)
-      cmor_core (= 0.0.60.pre)
-      cmor_core_backend (= 0.0.60.pre)
+    cmor_system (0.0.61.pre)
+      cmor_core (= 0.0.61.pre)
+      cmor_core_backend (= 0.0.61.pre)
       markup-rails
       rails (>= 6.0.0.0)
 
@@ -149,7 +149,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
-    execjs (2.7.0)
+    execjs (2.8.1)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.1.0)
@@ -401,10 +401,10 @@ GEM
       rubocop-performance (~> 1.3)
       rubocop-rails (~> 2.0)
     ruby-progressbar (1.11.0)
-    ruby_parser (3.15.1)
-      sexp_processor (~> 4.9)
+    ruby_parser (3.16.0)
+      sexp_processor (~> 4.15, >= 4.15.1)
     semantic_range (3.0.0)
-    sexp_processor (4.15.2)
+    sexp_processor (4.15.3)
     shellany (0.0.1)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
