@@ -1,0 +1,14 @@
+defaults:
+  permissions:
+    - cmor/security/engine
+    - cmor/security/home/index
+    - cmor/security/antivirus_configurations_controller/index
+  roles:
+    cmor/security/administrator:
+      - cmor/security/engine
+      - cmor/security/home/index
+      - cmor/security/antivirus_configurations_controller/index
+    cmor/security/reviewer:
+      - cmor/security/engine
+      - cmor/security/home/index
+      - cmor/security/antivirus_configurations_controller/index

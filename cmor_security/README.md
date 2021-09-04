@@ -1,29 +1,24 @@
 # Cmor::Security
 
-This module contains seucrity related features of cmor.
+This module contains security related features of cmor.
 
 ## Usage
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_/_security'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_security'
 
-## Setup
+Install bundle:
 
-Generate the initializer:
+    > bundle install
 
-```bash
-$ rails generate cmor:security:install
-```
+Install initalizer and routes:
+
+    > rails g cmor:security:install
 
 ## Contributing
 Contribution directions go here.
