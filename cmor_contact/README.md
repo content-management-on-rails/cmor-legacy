@@ -21,6 +21,15 @@ Or install it yourself as:
 $ gem install cmor_contact
 ```
 
+Install the initializer and routes:
+
+  > rails g cmor:contact:install
+
+Generate migrations and migrate:
+
+  > rake cmor_contact:install:migrations
+  > rake db:migrate
+
 ## Configuration
 
 You can use the environment variable CMOR_CONTACT_RECIPIENTS to override the recipients in config/initializers/cmor_contact.rb
