@@ -17,11 +17,7 @@ Install the module:
 
 Create migrations:
 
-  > rake cmor_carousels_engine:install:migrations
-
-Migrate:
-
-  > rake db:migrate
+  > rake cmor_carousels:install:migrations && rake db:migrate
 
 = Usage
 
