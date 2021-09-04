@@ -1,3 +1,20 @@
 = Cmor::Tags::Backend
 
+== Installation
+
+Add it to your gemfile:
+
+    # Gemfile
+    gem 'cmor_tags_backend'
+
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:tags:backend:install
+
+== License
+
 This project rocks and uses MIT-LICENSE.

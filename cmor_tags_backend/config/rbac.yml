@@ -1,7 +1,7 @@
 defaults:
   permissions:
-    - cmor/tags/backend/engine
     - cmor/tags/taggings/index
+    - cmor/tags/backend/home/index
     - cmor/tags/taggings/show
     - cmor/tags/taggings/new
     - cmor/tags/taggings/create
@@ -17,8 +17,8 @@ defaults:
     - cmor/tags/tags/destroy
   roles:
     cmor/tags/administrator:
-      - cmor/tags/backend/engine
       - cmor/tags/taggings/index
+      - cmor/tags/backend/home/index
       - cmor/tags/taggings/show
       - cmor/tags/taggings/new
       - cmor/tags/taggings/create
@@ -33,8 +33,8 @@ defaults:
       - cmor/tags/tags/update
       - cmor/tags/tags/destroy
     cmor/tags/reviewer:
-      - cmor/tags/backend/engine
       - cmor/tags/taggings/index
+      - cmor/tags/backend/home/index
       - cmor/tags/taggings/show
       - cmor/tags/tags/index
       - cmor/tags/tags/show
