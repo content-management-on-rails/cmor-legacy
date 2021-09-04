@@ -1,0 +1,43 @@
+defaults:
+  permissions:
+    - cmor/carousels/backend/engine
+    - cmor/carousels/backend/home/index
+    - cmor/carousels/carousel/index
+    - cmor/carousels/carousel/show
+    - cmor/carousels/carousel/new
+    - cmor/carousels/carousel/create
+    - cmor/carousels/carousel/edit
+    - cmor/carousels/carousel/update
+    - cmor/carousels/carousel/destroy
+    - cmor/carousels/item_detail/index
+    - cmor/carousels/item_detail/show
+    - cmor/carousels/item_detail/new
+    - cmor/carousels/item_detail/create
+    - cmor/carousels/item_detail/edit
+    - cmor/carousels/item_detail/update
+    - cmor/carousels/item_detail/destroy
+  roles:
+    cmor/carousels/administrator:
+      - cmor/carousels/backend/engine
+      - cmor/carousels/backend/home/index
+      - cmor/carousels/carousel/index
+      - cmor/carousels/carousel/show
+      - cmor/carousels/carousel/new
+      - cmor/carousels/carousel/create
+      - cmor/carousels/carousel/edit
+      - cmor/carousels/carousel/update
+      - cmor/carousels/carousel/destroy
+      - cmor/carousels/item_detail/index
+      - cmor/carousels/item_detail/show
+      - cmor/carousels/item_detail/new
+      - cmor/carousels/item_detail/create
+      - cmor/carousels/item_detail/edit
+      - cmor/carousels/item_detail/update
+      - cmor/carousels/item_detail/destroy
+    cmor/carousels/reviewer:
+      - cmor/carousels/backend/engine
+      - cmor/carousels/backend/home/index
+      - cmor/carousels/carousel/index
+      - cmor/carousels/carousel/show
+      - cmor/carousels/item_detail/index
+      - cmor/carousels/item_detail/show
