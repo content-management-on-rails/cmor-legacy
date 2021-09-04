@@ -1,41 +1,27 @@
-= CMOR CMS 2 Backend
+= CMOR CMS Backend
 
-= Installation
+== Installation
 
-Add it to your Gemfile:
+Add it to your gemfile:
 
     # Gemfile
-    gem 'route_translator'
-    gem 'itsf_backend'
     gem 'cmor_cms_backend'
 
-Generate the initializers:
+Install bundle:
 
-    rails g itsf:backend:install
-    rails g cmor:cms:backend:install
+    > bundle install
 
-Register the backend in the ITSF Backend configuration:
+Install initalizer and routes:
 
-    # config/initializers/itsf_backend.rb
-    Itsf::Backend.configure do |config|
-      config.backend_engines = [
-        Cmor::Cms::Backend::Engine
-      ]
-    end
+    > rails g cmor:cms:backend:install
 
-Mount the routes:
-
-    # config/routes.rb
-    localized do
-      mount Itsf::Backend::Engine => '/backend'
-      mount Cmor::Cms::Backend::Engine => '/backend/cmor/cms/'
-    end
-
-= How to run specs
+== Running specs
 
     gem install bundler
     bundle 
     cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
     guard
+
+== License
 
 This project rocks and uses MIT-LICENSE.

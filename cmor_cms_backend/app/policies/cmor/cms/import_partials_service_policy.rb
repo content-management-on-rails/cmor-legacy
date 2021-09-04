@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class ImportPartialsServicePolicy # < Itsf::Backend::Service::BasePolicy
+  class ImportPartialsServicePolicy < Cmor::Rbac::ServicePolicy::Base
   end
 end

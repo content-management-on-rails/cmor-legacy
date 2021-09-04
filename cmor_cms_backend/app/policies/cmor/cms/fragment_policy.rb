@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class FragmentPolicy # < Itsf::Backend::BasePolicy
+  class FragmentPolicy < Cmor::Rbac::ResourcesPolicy::Base
   end
 end

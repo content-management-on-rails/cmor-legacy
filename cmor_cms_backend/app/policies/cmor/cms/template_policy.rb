@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class TemplatePolicy # < Itsf::Backend::BasePolicy
+  class TemplatePolicy < Cmor::Rbac::ResourcesPolicy::Base
   end
 end

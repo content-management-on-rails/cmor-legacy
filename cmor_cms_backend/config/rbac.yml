@@ -1,6 +1,7 @@
 defaults:
   permissions:
     - cmor/cms/backend/engine
+    - cmor/cms/backend/home/index
     - cmor/cms/content_box/index
     - cmor/cms/content_box/show
     - cmor/cms/content_box/new
@@ -43,15 +44,14 @@ defaults:
     - cmor/cms/template/edit
     - cmor/cms/template/update
     - cmor/cms/template/destroy
-    - cmor/cms/add_homepages_service/index
-    - cmor/cms/add_homepages_service/invoke
-    - cmor/cms/add_homepages_service/call
-    - cmor/cms/import_partials_service/index
-    - cmor/cms/import_partials_service/invoke
-    - cmor/cms/import_partials_service/call
+    - cmor/cms/add_homepages_service/new
+    - cmor/cms/add_homepages_service/create
+    - cmor/cms/import_partials_service/new
+    - cmor/cms/import_partials_service/create
   roles:
     cmor/cms/administrator:
       - cmor/cms/backend/engine
+      - cmor/cms/backend/home/index
       - cmor/cms/content_box/index
       - cmor/cms/content_box/show
       - cmor/cms/content_box/new
@@ -94,14 +94,13 @@ defaults:
       - cmor/cms/template/edit
       - cmor/cms/template/update
       - cmor/cms/template/destroy
-      - cmor/cms/add_homepages_service/index
-      - cmor/cms/add_homepages_service/invoke
-      - cmor/cms/add_homepages_service/call
-      - cmor/cms/import_partials_service/index
-      - cmor/cms/import_partials_service/invoke
-      - cmor/cms/import_partials_service/call
+      - cmor/cms/add_homepages_service/new
+      - cmor/cms/add_homepages_service/create
+      - cmor/cms/import_partials_service/new
+      - cmor/cms/import_partials_service/create
     cmor/cms/reviewer:
       - cmor/cms/backend/engine
+      - cmor/cms/backend/home/index
       - cmor/cms/content_box/index
       - cmor/cms/content_box/show
       - cmor/cms/navigation/index

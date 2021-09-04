@@ -1,4 +1,4 @@
 module Cmor::Cms
-  class ContentBoxPolicy # < Itsf::Backend::BasePolicy
+  class ContentBoxPolicy < Cmor::Rbac::ResourcesPolicy::Base
   end
 end
