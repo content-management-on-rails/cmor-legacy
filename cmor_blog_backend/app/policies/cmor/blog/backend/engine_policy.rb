@@ -1,4 +1,4 @@
 module Cmor::Blog::Backend
-  class EnginePolicy # < Itsf::Backend::EnginePolicy
+  class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
   end
 end

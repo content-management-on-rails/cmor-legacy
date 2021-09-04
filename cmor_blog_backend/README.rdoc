@@ -1,3 +1,20 @@
 = Cmor::Blog::Backend
 
+== Installation
+
+Add it to your gemfile:
+
+    # Gemfile
+    gem 'cmor_blog_backend'
+
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:blog:backend:install
+
+== License
+
 This project rocks and uses MIT-LICENSE.

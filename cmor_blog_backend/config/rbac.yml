@@ -1,0 +1,27 @@
+defaults:
+  permissions:
+    - cmor/blog/backend/engine
+    - cmor/blog/backend/home/index
+    - cmor/blog/post/index
+    - cmor/blog/post/show
+    - cmor/blog/post/new
+    - cmor/blog/post/create
+    - cmor/blog/post/edit
+    - cmor/blog/post/update
+    - cmor/blog/post/destroy
+  roles:
+    cmor/blog/administrator:
+      - cmor/blog/backend/engine
+      - cmor/blog/backend/home/index
+      - cmor/blog/post/index
+      - cmor/blog/post/show
+      - cmor/blog/post/new
+      - cmor/blog/post/create
+      - cmor/blog/post/edit
+      - cmor/blog/post/update
+      - cmor/blog/post/destroy
+    cmor/blog/reviewer:
+      - cmor/blog/backend/engine
+      - cmor/blog/backend/home/index
+      - cmor/blog/post/index
+      - cmor/blog/post/show

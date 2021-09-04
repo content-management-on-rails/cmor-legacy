@@ -1,4 +1,4 @@
 module Cmor::Blog
-  class PostPolicy # < Itsf::Backend::BasePolicy
+  class PostPolicy < Cmor::Rbac::ResourcesPolicy::Base
   end
 end
