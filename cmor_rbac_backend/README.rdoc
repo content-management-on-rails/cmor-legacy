@@ -2,34 +2,29 @@
 
 This gem implements a backend for the cmor_rbac gem.
 
-
-= Why?
+== Motivation
 
   * Beautiful backend to edit your permissions.
 
+== Installation
 
-= Installation
+Add it to your gemfile:
 
-Add it to your gemfile, bundle and run installer:
+    # Gemfile
+    gem 'cmor_rbac_backend'
 
-    echo "\ngem 'cmor_rbac_backend'" >> Gemfile
-    bundle
-    rails g cmor:rbac:backend:install
+Install bundle:
 
-The installer will
+    > bundle install
 
-  * add an initializer with configuration options in initializers/cmor_rbac_backend.rb.
-  * add a routing entry to mount the engine.
+Install initalizer and routes:
 
+    > rails g cmor:rbac:backend:install
 
-= Configuration
+== Usage
 
+Open your browser and visit http://localhost:3000/en/backend/cmor/rbac
 
-= Usage
-
-Open your browser and visit http://your-app/en/backend/cmor/rbac
-
-
-= License
+== License
 
 This project rocks and uses MIT-LICENSE.

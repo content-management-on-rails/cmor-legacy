@@ -1,20 +1,18 @@
+%h3= Cmor::Rbac::Configuration.user_class.model_name.human(count: :other)
 
-.panel.panel-default
-  .panel-heading
-    .panel-title= Cmor::Rbac::Configuration.user_class.model_name.human(count: :other)
-  %table.table.table-striped.table-condensed.table-hover
-    = collection_table(collection: @resource.users) do |table|
-      = table.column :email
-      = table.column :actions do |resource|
+.table-responsive
+  = collection_table(collection: @resource.users) do |table|
+    = table.column :email
+    = table.column :actions, title: "" do |resource|
+      - capture_haml do
         = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
-  .panel-footer
 
-.panel.panel-default
-  .panel-heading
-    .panel-title= Cmor::Rbac::Permission.model_name.human(count: :other)
-  %table.table.table-striped.table-condensed.table-hover
-    = collection_table(collection: @resource.permissions) do |table|
-      = table.column :identifier
-      = table.column :actions do |resource|
+
+%h3= Cmor::Rbac::Permission.model_name.human(count: :other)
+
+.table-responsive
+  = collection_table(collection: @resource.permissions) do |table|
+    = table.column :identifier
+    = table.column :actions, title: "" do |resource|
+      - capture_haml do
         = link_to t('.show'), url_for(resource), class: 'btn btn-primary btn-xs'
-  .panel-footer

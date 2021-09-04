@@ -16,9 +16,15 @@ de:
           show_extras:
             show: 'Anzeigen'
   pundit:
+    default: 'Sie können diese Aktion nicht ausführen.'
+    permission_missing: "Sie können diese Aktion nicht ausführen. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
     not_authorized:
-      index: "Sie sind nicht berechtigt %{collection_name} aufzulisten"
-      new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen"
-      show: "Sie sind nicht berechtigt die Resource %{resource_name} anzuzeigen"
+      service_controller:
+        new: "Sie sind nicht berechtigt den Dienst %{service_name} anzuzeigen. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
+        create: "Sie sind nicht berechtigt den Dienst %{service_name} auszuführen. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
+      resources_controller:
+        index: "Sie sind nicht berechtigt %{collection_name} aufzulisten. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
+        new: "Sie sind nicht berechtigt %{collection_name} hinzuzufügen. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
+        show: "Sie sind nicht berechtigt die Resource %{resource_name} anzuzeigen. Ihnen fehlt folgende Berechtigung: %{permission_identifier}"
   routes:
     cmor-rbac-backend-engine: 'berechtigungen'

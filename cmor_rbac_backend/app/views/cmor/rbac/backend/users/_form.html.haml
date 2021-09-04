@@ -1,5 +1,7 @@
-.well
-  %h4= form.object.email
+.row
+  .col-12
+    %h4= form.object.email
 
-.well
-  = form.association :roles, as: :check_boxes, label_method: :identifier
+.row
+  .col-12
+    = form.association :roles, as: :check_boxes, label_method: :identifier, item_wrapper_class: 'd-block', input_html: { class: 'mr-1' }

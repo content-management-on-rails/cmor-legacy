@@ -1,10 +1,13 @@
-.well
-  = form.input :identifier
-  = form.input :enabled_from
-  = form.input :enabled_to
+.row
+  .col-12
+    = form.input :identifier
+  .col-6
+    = form.input :enabled_from, as: :date_time_picker
+  .col-6
+    = form.input :enabled_to, as: :date_time_picker
 
-.well
-  = form.association :roles, as: :check_boxes, label_method: :identifier
-
-.well
-  = form.association :users, as: :check_boxes, label_method: :email
+.row
+  .col-6
+    = form.association :users, as: :check_boxes, label_method: :email, item_wrapper_class: 'd-block', input_html: { class: 'mr-1' }
+  .col-6
+    = form.association :roles, as: :check_boxes, label_method: :identifier, item_wrapper_class: 'd-block', input_html: { class: 'mr-1' }

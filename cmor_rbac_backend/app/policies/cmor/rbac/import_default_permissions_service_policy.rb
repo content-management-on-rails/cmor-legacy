@@ -1,4 +1,6 @@
-module Cmor::Rbac
-  class ImportDefaultPermissionsServicePolicy # < Itsf::Backend::Service::BasePolicy
+module Cmor
+  module Rbac
+    class ImportDefaultPermissionsServicePolicy < Cmor::Rbac::ServicePolicy::Base
+    end
   end
 end

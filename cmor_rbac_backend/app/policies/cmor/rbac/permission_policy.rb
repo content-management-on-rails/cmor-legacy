@@ -1,4 +1,4 @@
 module Cmor::Rbac
-  class PermissionPolicy # < Itsf::Backend::BasePolicy
+  class PermissionPolicy < Cmor::Rbac::ResourcesPolicy::Base
   end
 end

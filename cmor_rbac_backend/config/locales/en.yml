@@ -16,8 +16,15 @@ en:
           show_extras:
             show: 'Show'
   pundit:
+    default: 'You cannot perform this action.'
+    permission_missing: "You cannot perform this action. You don't have following permission: %{permission_identifier}"
     not_authorized:
-      index: "You are not allowed to list %{collection_name}"
-      new: "You are not allowed to add %{collection_name}"
+      service_controller:
+        new: "You are not allowed to show %{service_name}. You don't have following permission: %{permission_identifier}"
+        create: "You are not allowed to run %{service_name} auszuführen. You don't have following permission: %{permission_identifier}"
+      resources_controller:
+        index: "You are not allowed to list %{collection_name}. You don't have following permission: %{permission_identifier}"
+        new: "You are not allowed to add %{collection_name}. You don't have following permission: %{permission_identifier}"
+        show: "You are not allowed to show %{resource_name}. You don't have following permission: %{permission_identifier}"
   routes:
     cmor-rbac-backend-engine: 'authorization'

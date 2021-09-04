@@ -22,8 +22,8 @@ defaults:
     - cmor/rbac/user/edit
     - cmor/rbac/user/update
     - cmor/rbac/user/destroy
-    - cmor/rbac/import_default_permissions_service/call
-    - cmor/rbac/import_default_permissions_service/invoke
+    - cmor/rbac/import_default_permissions_service/new
+    - cmor/rbac/import_default_permissions_service/create
   roles:
     cmor/rbac/administrator:
       - cmor/rbac/backend/engine
@@ -48,8 +48,8 @@ defaults:
       - cmor/rbac/user/edit
       - cmor/rbac/user/update
       - cmor/rbac/user/destroy
-      - cmor/rbac/import_default_permissions_service/call
-      - cmor/rbac/import_default_permissions_service/invoke
+      - cmor/rbac/import_default_permissions_service/new
+      - cmor/rbac/import_default_permissions_service/create
     cmor/rbac/reviewer:
       - cmor/rbac/backend/engine
       - cmor/rbac/permission/index
@@ -58,4 +58,3 @@ defaults:
       - cmor/rbac/role/show
       - cmor/rbac/user/index
       - cmor/rbac/user/show
-      - cmor/rbac/import_default_permissions_service/invoke
