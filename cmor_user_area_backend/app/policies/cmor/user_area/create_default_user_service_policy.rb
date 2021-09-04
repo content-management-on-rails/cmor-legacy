@@ -1,4 +1,6 @@
-module Cmor::UserArea
-  class CreateDefaultUserServicePolicy # < Itsf::Backend::Service::BasePolicy
+module Cmor
+  module UserArea
+    class CreateDefaultUserServicePolicy < Cmor::Rbac::ServicePolicy::Base
+    end
   end
 end

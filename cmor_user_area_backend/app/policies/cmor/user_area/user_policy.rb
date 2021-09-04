@@ -1,4 +1,6 @@
-module Cmor::UserArea
-  class UserPolicy # < Itsf::Backend::BasePolicy
+module Cmor
+  module UserArea
+    class UserPolicy < Cmor::Rbac::ResourcesPolicy::Base
+    end
   end
 end

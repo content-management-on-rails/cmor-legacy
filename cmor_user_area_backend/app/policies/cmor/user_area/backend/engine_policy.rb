@@ -1,4 +1,4 @@
 module Cmor::UserArea::Backend
-  class EnginePolicy # < Itsf::Backend::EnginePolicy
+  class EnginePolicy < Cmor::Rbac::Backend::EnginePolicy::Base
   end
 end
