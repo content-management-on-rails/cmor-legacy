@@ -1,0 +1,3 @@
+= render_navigation do |primary|
+  - posts_by_month.sort.reverse.each do |month, posts|
+    - primary.item "posts_for_#{month}", "#{I18n.l(month, format: '%B %Y')} (#{posts.size})", cmor_blog.month_posts_path(year: month.year, month: month.month)

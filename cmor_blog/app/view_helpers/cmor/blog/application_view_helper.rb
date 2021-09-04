@@ -22,6 +22,17 @@ module Cmor
         post = Cmor::Blog::Post.published.for_locale.where(id: id).first
         render(post: post) if post.present?
       end
+
+      # Example:
+      #
+      #     # app/views/layouts/application.html.haml
+      #     - if controller.class.name.deconstantize == 'Cmor::Blog'
+      #       = blog_helper(self).render_monthly_navigation
+      #
+      def render_monthly_navigation
+        posts_by_month = Cmor::Blog::Post.published.all.pluck(:created_at).group_by { |t| t.beginning_of_month }
+        render posts_by_month: posts_by_month
+      end
     end
   end
 end
