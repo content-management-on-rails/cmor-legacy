@@ -1,12 +1,14 @@
-PATH
-  remote: ../../../tatoru/tatoru-client-rails
+GIT
+  remote: https://github.com/tatoru-antivirus/tatoru-client-rails
+  revision: 054ca017793fcba7f9045f019afce8c51a45f095
   specs:
     tatoru-client-rails (0.0.1)
       rails (>= 6.0)
       tatoru-client
 
-PATH
-  remote: ../../../tatoru/tatoru-client-ruby
+GIT
+  remote: https://github.com/tatoru-antivirus/tatoru-client-ruby
+  revision: 71708211562f2643f1d678175ea5bbf3534fd47b
   specs:
     tatoru-client (0.0.1)
       httparty
@@ -530,4 +532,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   2.2.24
+   2.2.27
