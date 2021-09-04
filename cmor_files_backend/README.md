@@ -5,27 +5,19 @@ Short description and motivation.
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_files_backend'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_files_backend'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_files_backend
-```
+Install bundle:
 
-Install initializer, add routes and hook it into the backend:
-```bash
-$ rails g cmor:files:backend:install
-```
+    > bundle install
 
+Install initalizer and routes:
+
+    > rails g cmor:files:backend:install
 
 ## Contributing
 Contribution directions go here.
