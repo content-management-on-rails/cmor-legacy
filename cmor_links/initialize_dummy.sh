@@ -21,6 +21,7 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # Use webpacker
 sed -i '17irequire "webpacker"' config/application.rb
+rails webpacker:install
 
 # I18n configuration
 touch config/initializers/i18n.rb
