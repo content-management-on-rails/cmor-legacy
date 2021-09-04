@@ -7,16 +7,24 @@ Add it to your gemfile:
   # Gemfile
   gem 'cmor_tags'
 
-Add migrations:
+And install bundle:
 
-  $ rake cmor_tags:install:migrations
+  > bundle install
 
-Migrate:
+Install the initializer and routes:
 
-  $ rake db:migrate
+  > rails g cmor:tags:install
+
+Add the acts-on-taggable-on migrations:
+
+  > rake acts_as_taggable_on_engine:install:migrations
+
+Add migrations and migrate:
+
+  > rake cmor_tags:install:migrations && rake db:migrate
 
 
 = How do I run tests?
 
-  $ RAILS_ENV=test rake db:migrate
-  $ guard
+  > RAILS_ENV=test rake db:migrate
+  > guard
