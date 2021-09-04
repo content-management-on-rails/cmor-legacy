@@ -5,21 +5,20 @@ Short description and motivation.
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_legal'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_legal'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_legal
-```
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:legal:install
+
 ## Contributing
 Contribution directions go here.
 
