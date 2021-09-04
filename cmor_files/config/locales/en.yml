@@ -44,6 +44,8 @@ en:
         assets: Files
         assets_count: Files
         description: Description
+        file_details: Files
+        file_details_count: Files
         identifier: Identifier
         locale: Locale
         name: Name

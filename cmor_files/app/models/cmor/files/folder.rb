@@ -29,6 +29,10 @@ module Cmor
         assets.count
       end
 
+      def file_details_count
+        file_details.count
+      end
+
       module FileDetailsConcern
         extend ActiveSupport::Concern
 
