@@ -21,6 +21,10 @@ Or install it yourself as:
 $ gem install cmor_legal_frontend
 ```
 
+Install the initializer and routes:
+
+    > rails g cmor:legal:frontend:install
+
 ## Usage
 
 ### Rendering the cookie consent banner

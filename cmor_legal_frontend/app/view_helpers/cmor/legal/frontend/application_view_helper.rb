@@ -10,6 +10,11 @@ module Cmor::Legal
     #     end
     #
     class ApplicationViewHelper < Rao::ViewHelper::Base
+      # Example:
+      #
+      #     # app/views/layouts/application.html.haml
+      #     = legal_helper(self).render_cookie_consent_banner
+      #
       def render_cookie_consent_banner
         return unless ::Cmor::Legal::Configuration.enable_cookie_consent_banner
 
