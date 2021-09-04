@@ -1,7 +1,9 @@
 # Cmor::Frontend
+
 Short description and motivation.
 
 ## Usage
+
 How to use my plugin.
 
 ## Prerequisites
@@ -22,33 +24,19 @@ For bootstrap 4:
 Please ensure to set the correct pagination options (pagination_options_proc) as documented in the initializer.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_frontend'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_core_frontend'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_frontend
-```
+Install bundle:
 
-Add migrations and migrate:
+    > bundle install
 
-```bash
-$ rake cmor_frontend:install:migrations && rake db:migrate
-```
+Install initalizer and routes:
 
-Install routes and initializer:
-
-```bash
-$ rails g cmor:frontend:install
-```
+    > rails g cmor:core:frontend:install
 
 ## Adding a bootstrap 4 frontend
 
