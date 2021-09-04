@@ -3,9 +3,9 @@ module Cmor
     module Backend
       module ServiceController
         class Base < Administrador::ServiceController::Base
-        # class Base < Cmor::Core::Backend::Configuration.service_controller_base_class_name.constantize
-        #   include Administrador::Controller::ApplicationConcern
-        #   include Administrador::Controller::ServiceConcern
+          if Cmor::Core.features?(:cmor_rbac)
+            include Cmor::Rbac::ServiceController::PunditConcern
+          end
         end
       end
     end

@@ -1,28 +1,30 @@
 # Cmor::Core::Backend
+
 Short description and motivation.
 
 ## Usage
+
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_core_backend'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_core_backend'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_core_backend
-```
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:core:backend:install
 
 ## Contributing
+
 Contribution directions go here.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
