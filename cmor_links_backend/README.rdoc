@@ -1,37 +1,31 @@
 = CMOR Links 2 Backend
 
-= Prerequisites
+== Prerequisites
 
 Install cmor_links2
 
-= Installation
+== Installation
 
-Add it to your Gemfile:
+Add it to your gemfile:
 
     # Gemfile
-    gem 'route_translator'
-    gem 'itsf_backend'
-    gem 'cmor_links2_backend'
+    gem 'cmor_links_backend'
 
-Generate the initializer, backend controller and routes:
+Install bundle:
 
-    rails g itsf:backend:install
-    rails g cmor:links:backend:install
+    > bundle install
 
-Register the backend in the ITSF Backend configuration:
+Install initalizer and routes:
 
-    # config/initializers/itsf_backend.rb
-    Itsf::Backend.configure do |config|
-      config.backend_engines = [
-        Cmor::Links::Backend::Engine
-      ]
-    end
+    > rails g cmor:links:backend:install
 
-= How to run specs
+== How to run specs
 
     gem install bundler
     bundle 
     cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
     guard
+
+== License
 
 This project rocks and uses MIT-LICENSE.

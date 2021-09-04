@@ -1,6 +1,7 @@
 defaults:
   permissions:
     - cmor/links/backend/engine
+    - cmor/links/backend/home/index
     - cmor/links/category/index
     - cmor/links/category/show
     - cmor/links/category/new
@@ -18,6 +19,7 @@ defaults:
   roles:
     cmor/links/administrator:
       - cmor/links/backend/engine
+      - cmor/links/backend/home/index
       - cmor/links/category/index
       - cmor/links/category/show
       - cmor/links/category/new
@@ -34,6 +36,7 @@ defaults:
       - cmor/links/link/destroy
     cmor/links/reviewer:
       - cmor/links/backend/engine
+      - cmor/links/backend/home/index
       - cmor/links/category/index
       - cmor/links/category/show
       - cmor/links/link/index
