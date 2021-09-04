@@ -4,25 +4,6 @@
 
 Please look at the[link:doc] Folder.
 
-= Migrating from 1.x.x to 2.0.0
-
-Add active_admin-awesome_nested_set to your gemfile, if you are using activeadmin:
-
-    # Gemfile
-    gem 'active_admin-awesome_nested_set'
-
-= Prerequisites
-
-if you are using activeadmin as backend, cmor_cmss comes with admin files to provide a backend. In that case, you'll need active_admin-awesome_nested_set. Add it to your gemfile:
-
-    # Gemfile
-    gem 'active_admin-awesome_nested_set'
-
-You may need to add therubyracer to your Gemfile:
-
-    # Gemfile
-    gem 'therubyracer'
-
 = Installation
 
 Add it to your bundle:
