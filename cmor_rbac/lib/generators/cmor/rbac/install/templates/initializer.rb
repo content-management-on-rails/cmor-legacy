@@ -17,4 +17,20 @@ Cmor::Rbac.configure do |config|
   # default: config.default_permissions_filename = -> { Rails.root.join('config', 'rbac.yml') }
   # 
   config.default_permissions_filename = -> { Rails.root.join('config', 'rbac.yml') }
+
+  # Where to redirect to when authorization fails.
+  #
+  # default: config.authorization_failed_location = -> { request.referrer || main_app.root_path }}
+  #
+  config.authorization_failed_location = -> { request.referrer || main_app.root_path }
+
+  # If set to true and the requested permission is not in the database the action will be
+  # authorized.
+  #
+  # If set to false and the requested permission id not in the database the action will not be
+  # authorized.
+  #
+  # default: config.authorize_if_permission_is_missing = -> { false }
+  #
+  config.authorize_if_permission_is_missing = -> { false }
 end

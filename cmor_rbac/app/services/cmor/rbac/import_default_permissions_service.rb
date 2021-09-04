@@ -59,11 +59,11 @@ module Cmor
         @result.role_permissions = create_or_update_role_permissions
       end
 
-      private
-
       def filename
         @filename ||= Cmor::Rbac.default_permissions_filename.call
       end
+
+      private
 
       def create_or_update_permissions
         permissions = @permissions.collect do |permission_identifier|

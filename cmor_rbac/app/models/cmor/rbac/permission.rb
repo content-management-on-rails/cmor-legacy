@@ -22,6 +22,9 @@ module Cmor::Rbac
 
     flag_from_time_range :enabled?
 
+    # scopes
+    scope :glob, ->(exp, column: :identifier) { where(["#{column} LIKE ?",  exp.gsub("*", "%")]) }
+
     # validations
     validates :identifier, presence: true, uniqueness: true
     validates :enabled_from, presence: true

@@ -11,7 +11,17 @@ module Cmor
       mattr_accessor(:user_class_name) { 'User' }
       mattr_accessor(:user_factory_name) { :user }
 
-      mattr_accessor(:default_permissions_filename) { -> { Rails.root.join('config', 'rbac.yml') }  }
+      mattr_accessor(:default_permissions_filename) do
+        -> { Rails.root.join('config', 'rbac.yml') }
+      end
+
+      mattr_accessor(:authorization_failed_location) do
+        -> { request.referrer || main_app.root_path }
+      end
+
+      mattr_accessor(:authorize_if_permission_is_missing) do
+        -> { false }
+      end
 
       def self.user_class
         user_class_name.constantize

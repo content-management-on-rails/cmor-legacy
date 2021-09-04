@@ -21,8 +21,7 @@ The installer will add an initializer with configuration options in initializers
 
 Add the database migrations and migrate:
 
-    rake cmor_rbac:install:migrations
-    rake db:migrate
+    > rake cmor_rbac:install:migrations && rake db:migrate
 
 
 = Configuration
