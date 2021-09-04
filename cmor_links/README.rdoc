@@ -23,23 +23,19 @@ if you are using activeadmin as backend, cmor_cms2 comes with admin files to pro
 Add it to your gemfile:
 
   # Gemfile
-  gem 'cmor_links2'
+  gem 'cmor_links'
 
 Install your bundle:
 
   > bundle install
 
-Generate initializer:
+Generate initializer and routes:
 
   > rails generate cmor:links:install
 
-Generatre the migrations:
+Generate the migrations and migrate:
 
-  > rake cmor_links_engine:install:migrations
-
-Migrate:
-
-  > rake db:migrate
+  > rake cmor_links:install:migrations && rake db:migrate
 
 
 == Optional: Generate locale files
