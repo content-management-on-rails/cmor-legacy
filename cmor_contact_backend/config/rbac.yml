@@ -1,0 +1,27 @@
+defaults:
+  permissions:
+    - cmor/contact/backend/engine
+    - cmor/contact/backend/home/index
+    - cmor/contact/contact_request/index
+    - cmor/contact/contact_request/show
+    - cmor/contact/contact_request/new
+    - cmor/contact/contact_request/create
+    - cmor/contact/contact_request/edit
+    - cmor/contact/contact_request/update
+    - cmor/contact/contact_request/destroy
+  roles:
+    cmor/contact/administrator:
+      - cmor/contact/backend/engine
+      - cmor/contact/backend/home/index
+      - cmor/contact/contact_request/index
+      - cmor/contact/contact_request/show
+      - cmor/contact/contact_request/new
+      - cmor/contact/contact_request/create
+      - cmor/contact/contact_request/edit
+      - cmor/contact/contact_request/update
+      - cmor/contact/contact_request/destroy
+    cmor/contact/reviewer:
+      - cmor/contact/backend/engine
+      - cmor/contact/backend/home/index
+      - cmor/contact/contact_request/index
+      - cmor/contact/contact_request/show

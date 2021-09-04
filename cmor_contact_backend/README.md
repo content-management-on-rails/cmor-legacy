@@ -5,21 +5,19 @@ Short description and motivation.
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_contact_backend'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_contact_backend'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_contact_backend
-```
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:contact:backend:install
 
 ## Contributing
 Contribution directions go here.
