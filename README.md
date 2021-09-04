@@ -32,6 +32,7 @@ the modules one by one.
   * multi_tenancy - Provides multi tenancy across all modules (not installed by default)
   * partners - Provides a showcase and a slider for your business partners
   * rbac - Role based authorization framework with a nice admin interface
+  * security - Security related features like antivirus integration
   * seo - Integration of seo feature like automatic sitemap generation, meta tags and micro formats
   * showcase - A showcase for your projects/products
   * system - A system insights dashbard for active storage, delayed job, changelogs, etc.
