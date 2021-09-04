@@ -1,6 +1,13 @@
 module Cmor
   module UserArea
     module Controller
+      # Example:
+      #
+      #     # app/controllers/application_controller.rb
+      #     class ApplicationController < ActionController::Base
+      #       include Cmor::UserArea::Controller::CurrentUserConcern
+      #     end
+      #
       module CurrentUserConcern
         extend ActiveSupport::Concern
 

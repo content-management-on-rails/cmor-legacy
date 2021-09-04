@@ -19,15 +19,15 @@ Add it to your Gemfile:
 
 Install:
 
-  rails g cmor:user_area:install
+  > rails g cmor:user_area:install
 
 Add Migrations and migrate:
 
-  rake cmor_user_area:install:migrations && rake db:migrate
+  > rake cmor_user_area:install:migrations && rake db:migrate
 
 Optionally, create a default user (user@example.com/password):
 
-  rake cmor:user_area:create_default_user
+  > rake cmor:user_area:create_user
   
 Add routes:
 
