@@ -1,0 +1,57 @@
+defaults:
+  permissions:
+    - cmor/system/backend/engine
+    - cmor/system/backend/home/index
+    - active_storage/attachment/index
+    - active_storage/attachment/show
+    - active_storage/attachment/destroy
+    - active_storage/blob/index
+    - active_storage/blob/show
+    - active_storage/blob/destroy
+    - rack/attack/banned_ip/index
+    - rack/attack/banned_ip/show
+    - rack/attack/banned_ip/new
+    - rack/attack/banned_ip/create
+    - rack/attack/banned_ip/destroy
+    - cmor/system/changelog/index
+    - cmor/system/changelog/show
+    - delayed/backend/active_record/job/index
+    - delayed/backend/active_record/job/show
+    - delayed/backend/active_record/job/edit
+    - delayed/backend/active_record/job/update
+    - delayed/backend/active_record/job/destroy
+  roles:
+    cmor/system/administrator:
+      - cmor/system/backend/engine
+      - cmor/system/backend/home/index
+      - active_storage/attachment/index
+      - active_storage/attachment/show
+      - active_storage/attachment/destroy
+      - active_storage/blob/index
+      - active_storage/blob/show
+      - active_storage/blob/destroy
+      - rack/attack/banned_ip/index
+      - rack/attack/banned_ip/show
+      - rack/attack/banned_ip/new
+      - rack/attack/banned_ip/create
+      - rack/attack/banned_ip/destroy
+      - cmor/system/changelog/index
+      - cmor/system/changelog/show
+      - delayed/backend/active_record/job/index
+      - delayed/backend/active_record/job/show
+      - delayed/backend/active_record/job/edit
+      - delayed/backend/active_record/job/update
+      - delayed/backend/active_record/job/destroy
+    cmor/system/reviewer:
+      - cmor/system/backend/engine
+      - cmor/system/backend/home/index
+      - active_storage/attachment/index
+      - active_storage/attachment/show
+      - active_storage/blob/index
+      - active_storage/blob/show
+      - rack/attack/banned_ip/index
+      - rack/attack/banned_ip/show
+      - cmor/system/changelog/index
+      - cmor/system/changelog/show
+      - delayed/backend/active_record/job/index
+      - delayed/backend/active_record/job/show

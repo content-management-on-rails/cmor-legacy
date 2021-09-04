@@ -78,8 +78,12 @@ module Cmor
           def _all
             application_changelog = Rails.root.join("CHANGELOG.md")
             app_changelog = if File.exist?(application_changelog)
-              version = if Rails.application.class.parent.const_defined?("VERSION")
-                Rails.application.class.parent::VERSION
+              parent = Rails.application.class.tap do |c|
+                c.respond_to?(:module_parent) ? c.module_parent : c.parent
+              end
+
+              version = if parent.const_defined?("VERSION")
+                parent::VERSION
               end
               new(id: Rails.application.class.name.deconstantize.underscore, name: Rails.application.class.name.deconstantize.underscore, gem: nil, file: application_changelog, version: version)
             end

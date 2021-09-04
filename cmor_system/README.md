@@ -11,21 +11,19 @@ cmor_system_backend was renamed to cmor_system. You need to do following things 
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_system'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_system'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_system
-```
+Install bundle:
+
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:system:install
 
 ## Contributing
 Contribution directions go here.

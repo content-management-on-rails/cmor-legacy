@@ -3,7 +3,7 @@ Cmor::System.configure do |config|
   # 
   # Default: config.registered_controllers = -> {[
   #            Cmor::System::ChangelogsController,
-  #            Cmor::System::DelayedBackendActiveRecordJobsController,
+  #            Cmor::System::Delayed::Backend::ActiveRecord::JobsController,
   #            Cmor::System::ActiveStorage::BlobsController,
   #            Cmor::System::ActiveStorage::AttachmentsController,
   #            Cmor::System::Rack::Attack::BannedIpsController
@@ -11,7 +11,7 @@ Cmor::System.configure do |config|
   # 
   config.registered_controllers = -> {[
     Cmor::System::ChangelogsController,
-    Cmor::System::DelayedBackendActiveRecordJobsController,
+    Cmor::System::Delayed::Backend::ActiveRecord::JobsController,
     Cmor::System::ActiveStorage::BlobsController,
     Cmor::System::ActiveStorage::AttachmentsController,
     Cmor::System::Rack::Attack::BannedIpsController
