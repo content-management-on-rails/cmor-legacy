@@ -5,26 +5,19 @@ Short description and motivation.
 How to use my plugin.
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'cmor_galleries_backend'
-```
+Add it to your gemfile:
 
-And then execute:
-```bash
-$ bundle
-```
+    # Gemfile
+    gem 'cmor_galleries_backend'
 
-Or install it yourself as:
-```bash
-$ gem install cmor_galleries_backend
-```
+Install bundle:
 
-Install initializer, add routes and hook it into the backend:
-```bash
-$ rails g cmor:galleries:backend:install
-```
+    > bundle install
+
+Install initalizer and routes:
+
+    > rails g cmor:galleries:backend:install
 
 
 ## Contributing

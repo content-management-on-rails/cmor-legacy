@@ -1,0 +1,43 @@
+defaults:
+  permissions:
+    - cmor/galleries/backend/engine
+    - cmor/galleries/backend/home/index
+    - cmor/galleries/picture_detail/index
+    - cmor/galleries/picture_detail/show
+    - cmor/galleries/picture_detail/new
+    - cmor/galleries/picture_detail/create
+    - cmor/galleries/picture_detail/edit
+    - cmor/galleries/picture_detail/update
+    - cmor/galleries/picture_detail/destroy
+    - cmor/galleries/picture_gallery/index
+    - cmor/galleries/picture_gallery/show
+    - cmor/galleries/picture_gallery/new
+    - cmor/galleries/picture_gallery/create
+    - cmor/galleries/picture_gallery/edit
+    - cmor/galleries/picture_gallery/update
+    - cmor/galleries/picture_gallery/destroy
+  roles:
+    cmor/galleries/administrator:
+      - cmor/galleries/backend/engine
+      - cmor/galleries/backend/home/index
+      - cmor/galleries/picture_detail/index
+      - cmor/galleries/picture_detail/show
+      - cmor/galleries/picture_detail/new
+      - cmor/galleries/picture_detail/create
+      - cmor/galleries/picture_detail/edit
+      - cmor/galleries/picture_detail/update
+      - cmor/galleries/picture_detail/destroy
+      - cmor/galleries/picture_gallery/index
+      - cmor/galleries/picture_gallery/show
+      - cmor/galleries/picture_gallery/new
+      - cmor/galleries/picture_gallery/create
+      - cmor/galleries/picture_gallery/edit
+      - cmor/galleries/picture_gallery/update
+      - cmor/galleries/picture_gallery/destroy
+    cmor/galleries/reviewer:
+      - cmor/galleries/backend/engine
+      - cmor/galleries/backend/home/index
+    - cmor/galleries/picture_detail/index
+    - cmor/galleries/picture_detail/show
+    - cmor/galleries/picture_gallery/index
+    - cmor/galleries/picture_gallery/show
