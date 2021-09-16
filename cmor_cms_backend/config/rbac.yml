@@ -9,6 +9,13 @@ defaults:
     - cmor/cms/content_box/edit
     - cmor/cms/content_box/update
     - cmor/cms/content_box/destroy
+    - cmor/cms/layout/index
+    - cmor/cms/layout/show
+    - cmor/cms/layout/new
+    - cmor/cms/layout/create
+    - cmor/cms/layout/edit
+    - cmor/cms/layout/update
+    - cmor/cms/layout/destroy
     - cmor/cms/navigation/index
     - cmor/cms/navigation/show
     - cmor/cms/navigation/new
@@ -37,6 +44,13 @@ defaults:
     - cmor/cms/partial/edit
     - cmor/cms/partial/update
     - cmor/cms/partial/destroy
+    - cmor/cms/redirect/index
+    - cmor/cms/redirect/show
+    - cmor/cms/redirect/new
+    - cmor/cms/redirect/create
+    - cmor/cms/redirect/edit
+    - cmor/cms/redirect/update
+    - cmor/cms/redirect/destroy
     - cmor/cms/template/index
     - cmor/cms/template/show
     - cmor/cms/template/new
@@ -59,6 +73,13 @@ defaults:
       - cmor/cms/content_box/edit
       - cmor/cms/content_box/update
       - cmor/cms/content_box/destroy
+      - cmor/cms/layout/index
+      - cmor/cms/layout/show
+      - cmor/cms/layout/new
+      - cmor/cms/layout/create
+      - cmor/cms/layout/edit
+      - cmor/cms/layout/update
+      - cmor/cms/layout/destroy
       - cmor/cms/navigation/index
       - cmor/cms/navigation/show
       - cmor/cms/navigation/new
@@ -87,6 +108,13 @@ defaults:
       - cmor/cms/partial/edit
       - cmor/cms/partial/update
       - cmor/cms/partial/destroy
+      - cmor/cms/redirect/index
+      - cmor/cms/redirect/show
+      - cmor/cms/redirect/new
+      - cmor/cms/redirect/create
+      - cmor/cms/redirect/edit
+      - cmor/cms/redirect/update
+      - cmor/cms/redirect/destroy
       - cmor/cms/template/index
       - cmor/cms/template/show
       - cmor/cms/template/new
@@ -103,6 +131,8 @@ defaults:
       - cmor/cms/backend/home/index
       - cmor/cms/content_box/index
       - cmor/cms/content_box/show
+      - cmor/cms/layout/index
+      - cmor/cms/layout/show
       - cmor/cms/navigation/index
       - cmor/cms/navigation/show
       - cmor/cms/navigation_item/index
@@ -111,5 +141,7 @@ defaults:
       - cmor/cms/page/show
       - cmor/cms/partial/index
       - cmor/cms/partial/show
+      - cmor/cms/redirect/index
+      - cmor/cms/redirect/show
       - cmor/cms/template/index
       - cmor/cms/template/show
