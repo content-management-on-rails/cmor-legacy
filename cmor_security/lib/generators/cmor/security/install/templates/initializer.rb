@@ -30,6 +30,10 @@ Cmor::Security.configure do |config|
   # Set the active storage attachments that will be scanned for viruses with
   # tatoru.io.
   #
+  # Example: config.enable_antivirus_for = {
+  #            "Cmor::Files::Folder#assets" => {}
+  #          }
+  #
   # Default: config.enable_antivirus_for = {}
   #
   config.enable_antivirus_for = {}
