@@ -51,9 +51,9 @@ defaults:
     cmor/files/reviewer:
       - cmor/files/backend/engine
       - cmor/files/backend/home/index
-    - cmor/files/attachment/index
-    - cmor/files/attachment/show
-    - cmor/files/file_detail/index
-    - cmor/files/file_detail/show
-    - cmor/files/folder/index
-    - cmor/files/folder/show
+      - cmor/files/attachment/index
+      - cmor/files/attachment/show
+      - cmor/files/file_detail/index
+      - cmor/files/file_detail/show
+      - cmor/files/folder/index
+      - cmor/files/folder/show
