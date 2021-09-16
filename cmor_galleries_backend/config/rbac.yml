@@ -37,7 +37,7 @@ defaults:
     cmor/galleries/reviewer:
       - cmor/galleries/backend/engine
       - cmor/galleries/backend/home/index
-    - cmor/galleries/picture_detail/index
-    - cmor/galleries/picture_detail/show
-    - cmor/galleries/picture_gallery/index
-    - cmor/galleries/picture_gallery/show
+      - cmor/galleries/picture_detail/index
+      - cmor/galleries/picture_detail/show
+      - cmor/galleries/picture_gallery/index
+      - cmor/galleries/picture_gallery/show
