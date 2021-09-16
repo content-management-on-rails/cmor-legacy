@@ -1,10 +1,14 @@
 en:
+  classes:
+    cmor/showcase/frontend/engine: "showcase"
   cmor:
     showcase:
       frontend:
         categories:
           index:
             title: "%{collection_name}"
+          show:
+            back: "Back"
         items:
           item:
             more: "More"

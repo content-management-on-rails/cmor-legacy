@@ -1,17 +1,19 @@
 de:
   classes:
-    cmor/showcase/frontend/engine: Schaufenster
+    cmor/showcase/frontend/engine: "Schaufenster"
   cmor:
     showcase:
       frontend:
         categories:
           index:
             title: "%{collection_name}"
+          show:
+            back: "Zurück"
         items:
           item:
             more: "Mehr"
           show:
-            back: Zurück
+            back: "Zurück"
   routes:
     cmor_showcase_frontend_engine: "schaufenster"
     categories: "kategorien"
