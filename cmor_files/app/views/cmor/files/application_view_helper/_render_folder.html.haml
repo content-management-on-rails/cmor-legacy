@@ -7,7 +7,7 @@
     .table-responsive
       = collection_table(collection: resource.file_details, resource_class: Cmor::Files::FileDetail, header: false) do |table|
         = table.column :label
-        = table.column :actions, html: "text-right" do |resource|
+        = table.column :actions, title: false, html: "text-right" do |resource|
           - capture_haml do
             .text-right
               = link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do

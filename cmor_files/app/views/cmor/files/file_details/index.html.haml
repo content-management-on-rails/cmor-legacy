@@ -7,6 +7,6 @@
         - resource.asset.blob.filename
       = table.column :blob_byte_size do |resource|
         - number_to_human_size(resource.asset.blob.byte_size)
-      = table.column :actions do |resource|
+      = table.column :actions, title: false do |resource|
         - capture_haml do
           = link_to(t('.download'), main_app.url_for(resource.asset), class: 'btn btn-primary')
