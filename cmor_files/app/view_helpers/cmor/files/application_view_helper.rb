@@ -37,7 +37,19 @@ module Cmor
       end
 
       def asset_download_button_label(asset)
-        "#{c.t(".download")} (#{asset.blob.content_type.split('/').last}, #{c.number_to_human_size(asset.blob.byte_size)})"
+        "#{c.t(".download")} (#{build_label(asset)}, #{c.number_to_human_size(asset.blob.byte_size)})"
+      end
+
+      private
+
+      def build_label(asset)
+        type = asset.blob.content_type.split('/').last
+        case type
+        when 'vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+          "xls"
+        else
+          type
+        end
       end
     end
   end

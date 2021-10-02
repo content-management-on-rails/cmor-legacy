@@ -5,4 +5,4 @@
 
   .resource-actions
     = link_to(main_app.url_for(resource.asset), class: 'btn btn-primary') do
-      = "#{t('.download')} (#{resource.asset.content_type.split('/').last}, #{number_to_human_size(resource.asset.blob.byte_size)})"
+      = files_helper(self).asset_download_button_label(resource.asset)
