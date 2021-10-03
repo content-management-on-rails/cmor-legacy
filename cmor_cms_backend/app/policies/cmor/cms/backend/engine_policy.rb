@@ -1,4 +1,8 @@
-module Cmor::Cms::Backend
-  class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
+module Cmor
+  module Cms
+    module Backend
+      class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
+      end
+    end
   end
 end
