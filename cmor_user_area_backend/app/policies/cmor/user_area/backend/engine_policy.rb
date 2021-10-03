@@ -1,7 +1,8 @@
 module Cmor
-  module serArea
-    module ackend
-    class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
+  module UserArea
+    module Backend
+      class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
+      end
     end
   end
 end
