@@ -11,5 +11,8 @@ en:
       cmor/legal/personal_data:
         one: Personal Data
         other: Personal Data
-
-
+  cmor:
+    legal:
+      home:
+        index_extras:
+          title: Configuration
