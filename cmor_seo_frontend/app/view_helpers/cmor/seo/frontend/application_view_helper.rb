@@ -10,6 +10,10 @@ module Cmor::Seo
     #     end
     #
     class ApplicationViewHelper < Rao::ViewHelper::Base
+      # Example:
+      #
+      #    # app/views/layouts/application.html.haml
+      #    = seo_helper(self).render_meta_tags
       def render_meta_tags
         item = find_item
 
@@ -26,7 +30,7 @@ module Cmor::Seo
           end
 
           if c.respond_to?(:resource_class) && c.instance_variable_get(:@resource).nil?
-            raise "not implemented"
+            # raise "not implemented"
             return
           end
 
