@@ -2,27 +2,58 @@
 Short description and motivation.
 
 ## Usage
-How to use my plugin.
+
+Add the view helper to your controller:
+
+# app/controllers/application_controller.rb
+```
+class ApplicationController < ActionController::Base
+  view_helper Cmor::Seo::Frontend::ApplicationViewHelper, as: :seo_helper
+  #...
+end
+```
+
+Render meta tags in your layout:
+
+```
+# app/views/layouts/application.html.haml
+!!!
+  %html
+    %head
+      = seo_helper(self).render_meta_tags
+```
 
 ## Installation
-Add this line to your application's Gemfile:
 
-```ruby
+Add it to your bundle:
+
+```
+# Gemfile:
 gem 'cmor_seo_frontend'
 ```
 
-And then execute:
-```bash
-$ bundle
+Install your bundle:
+
+```
+$> bundle install
 ```
 
-Or install it yourself as:
-```bash
-$ gem install cmor_seo_frontend
+Install the initializer:
+
+```
+$> rails g cmor:seo:frontend:install
 ```
 
-## Contributing
-Contribution directions go here.
+
+## Running specs
+
+```
+$> gem install bundler
+$> bundle
+$> cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+$> guard
+```
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
