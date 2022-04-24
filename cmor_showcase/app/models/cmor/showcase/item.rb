@@ -8,6 +8,7 @@ module Cmor::Showcase
     has_many_attached :assets
     
     acts_as_list scope: :category
+    default_scope -> { order(:category_id, :position) }
     acts_as_published
 
     # slugs
