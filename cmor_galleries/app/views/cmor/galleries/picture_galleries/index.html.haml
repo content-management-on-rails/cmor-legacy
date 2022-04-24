@@ -4,7 +4,7 @@
   - @collection.each do |picture_gallery|
     .col-4.d-flex.flex-column.mb-5
       - image_options = if picture_gallery.picture_details.first.try(:asset).present?
-        - { src: main_app.url_for(picture_gallery.picture_details.first.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
+        - { alt: picture_gallery.description, src: main_app.url_for(picture_gallery.picture_details.first.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
       - else
         - {}
       .picture_gallery-preview_image.mb-3

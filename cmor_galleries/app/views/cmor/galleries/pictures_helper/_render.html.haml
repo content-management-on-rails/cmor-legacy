@@ -7,7 +7,7 @@
       .row{ id: dom_id(resource), class: dom_class(resource) }
         .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
           .card.text-center.border-0.w-100
-            %img.card-img-top{ src: main_app.url_for(resource.asset.variant(variant_options)) }
+            %img.card-img-top{ alt: resource.description, src: main_app.url_for(resource.asset.variant(variant_options)) }
             - if show_details
               .card-body
                 %h5.card-title

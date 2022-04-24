@@ -6,7 +6,7 @@
       .col-md-6.col-lg-3.d-flex.align-items-stretch.mb-4
         .card.text-center.border-0
           %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(@resource) } }
-            %img.img-fluid{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
+            %img.img-fluid{ alt: picture_detail.description, src: main_app.url_for(picture_detail.asset.variant(Cmor::Galleries::Configuration.thumbnail_variant_options)) }
           .card-body
             %h5.card-title
               = picture_detail.title
