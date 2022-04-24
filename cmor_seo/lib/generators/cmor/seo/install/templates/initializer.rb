@@ -18,10 +18,14 @@ Cmor::Seo.configure do |config|
   config.resource_controllers = -> {[]}
 
   # Set the services, that will be shown in the backend menu.
-  # 
-  # Default: config.service_controllers = -> {[]}
-  # 
-  config.service_controllers = -> {[]}
+  #
+  # Default: config.service_controllers = -> {[
+  #            Cmor::Seo::GenerateResourceClassesMetaTagsServiceController,
+  #          ]}
+  #
+  config.service_controllers = -> {[
+      Cmor::Seo::GenerateResourceClassesMetaTagsServiceController,
+  ]}
 
   # Set the sidebars, that will be shown in the backend menu.
   # 

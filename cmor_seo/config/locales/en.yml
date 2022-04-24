@@ -1,6 +1,12 @@
 en:
   classes:
     cmor/seo/engine: SEO
+  activemodel:
+    models:
+      cmor/seo/generate_resource_classes_meta_tags_service: 'Generate meta tags service'
+    attributes:
+      cmor/seo/generate_resource_classes_meta_tags_service:
+        resource_classes: resource classes
   activerecord:
     models:
       cmor/seo/item:
