@@ -51,13 +51,18 @@ module Cmor
         end
       end
 
-      include RoutingConcern
-
       private
         def _perform
+          initialize_routing!
+
           @meta_tags = generate_meta_tags!
 
           @result.meta_tags = @meta_tags
+        end
+        
+        def initialize_routing!
+          # This is bad, but is has to be for the routing to work lazily.
+          self.class.include(RoutingConcern) unless self.class < RoutingConcern
         end
 
         def generate_meta_tags!
