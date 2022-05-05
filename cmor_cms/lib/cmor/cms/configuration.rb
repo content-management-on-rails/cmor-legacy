@@ -17,8 +17,8 @@ module Cmor
         HashWithIndifferentAccess.new
       end
 
-      mattr_accessor :site_title do
-        ''
+      mattr_accessor :page_title do
+        ->(context) { [context.content_for(:title), "My Page"].compact.join(" - ") }
       end
 
       mattr_accessor :navigation_item_properties do

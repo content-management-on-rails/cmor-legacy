@@ -45,11 +45,11 @@ Cmor::Cms.configure do |config|
   # 
   config.navigation_locale_fallback = ->(navigation_name, locale) { I18n.default_locale }
 
-  # Sets the site title
+  # Sets the page title that is used in the html title tag.
   #
-  # Default: config.site_title = Rails.application.class.to_s.deconstantize
+  # Default: config.page_title = ->(context) { [context.content_for(:title), "My Page"].compact.join(" - ") }
   #
-  config.site_title = Rails.application.class.to_s.deconstantize
+  config.page_title = ->(context) { [context.content_for(:title), "My Page"].compact.join(" - ") }
 
   # Enable/Disable redirects
   #

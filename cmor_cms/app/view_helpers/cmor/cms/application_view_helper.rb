@@ -9,7 +9,7 @@ module Cmor
     #
     class ApplicationViewHelper < Rao::ViewHelper::Base
       def title
-        "#{Cmor::Cms::Configuration.site_title} - #{c.content_for(:title)}"
+        instance_exec(c, &Cmor::Cms::Configuration.page_title)
       end
 
       def meta_description

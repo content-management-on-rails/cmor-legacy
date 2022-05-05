@@ -20,6 +20,6 @@ RSpec.describe 'title rendering', type: :request do
   end
     
   it 'adds the title to the page' do
-    expect(response.body).to include("<title>#{Cmor::Cms::Configuration.site_title} - #{page.title}</title>")
+    expect(response.body).to include("<title>This is the title - My Page</title>")
   end
 end
