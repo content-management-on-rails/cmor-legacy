@@ -1,5 +1,5 @@
 = table.row :target do |resource|
-  - resource.path.presence || resource.resource&.human
+  - resource.path.presence || administrador_helper(self).label_for(resource.resource)
 = table.row :meta_tags_count
 = table.row :meta_tags_to_html do |resource|
   - capture_haml do
