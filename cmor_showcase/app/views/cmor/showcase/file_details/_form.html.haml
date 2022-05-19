@@ -1,0 +1,9 @@
+.row
+  .col-12.text-center
+    %img{ src: main_app.url_for(form.object.asset.variant(resize: "384x216^", extent: "384x216", gravity: "center")) }
+.row
+  .col-12
+    = form.input :title
+.row
+  .col-12
+    = form.input :description
