@@ -26,7 +26,7 @@
         .col-lg-4.d-flex.align-items-stretch
           .card.text-center.border-0
             %a{ href: main_app.url_for(picture_detail.asset), data: { gallery: dom_id(post) } }
-              %img.ing-fluid.w-100{ src: main_app.url_for(picture_detail.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)) }
+              %img.img-fluid.w-100{ alt: picture_detail.title, src: main_app.url_for(picture_detail.asset.variant(Cmor::Blog::Configuration.preview_picture_asset_variant_options)) }
             .card-body
               %h5.card-title
                 = picture_detail.title
