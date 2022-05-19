@@ -2,7 +2,7 @@
   .card.h-100
     = link_to([cmor_showcase_frontend, item]) do
       - if item.preview_picture.respond_to?(:variant)
-        %img.card-img-top{ src: main_app.url_for(item.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
+        %img.card-img-top{ alt: item.preview_picture.title, src: main_app.url_for(item.preview_picture.variant(Cmor::Showcase::Frontend::Configuration.default_render_items_variant_options)) }/
     .card-body
       %h5.card-title= item.name
       %p.card-text= markup_helper(self).to_html(item, :body).html_safe
