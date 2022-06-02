@@ -1,5 +1,8 @@
 = table.row :target do |resource|
   - resource.path.presence || administrador_helper(self).label_for(resource.resource)
+= table.row :title_tag do |resource|
+  - capture_haml do
+    %pre= resource.title_tag
 = table.row :meta_tags_count
 = table.row :meta_tags_to_html do |resource|
   - capture_haml do

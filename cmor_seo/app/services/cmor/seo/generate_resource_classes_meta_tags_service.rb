@@ -12,7 +12,7 @@ module Cmor
 
       def _perform
         resource_classes.reject(&:blank?).each do |resource_class|
-          say "Generating meta tags for #{constantize_resource_class(resource_class).model_name.human.pluralize}" do
+          say "Generating meta tags for #{constantize_resource_class(resource_class).model_name.human(count: :other)}" do
             generate_meta_tags_for!(resource_class)
           end
         end

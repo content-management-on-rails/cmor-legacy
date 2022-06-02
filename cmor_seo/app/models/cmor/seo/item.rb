@@ -39,6 +39,11 @@ module Cmor::Seo
       end
     end
 
+    def title_tag
+      return unless title.present?
+      "<title>#{title}</title>"
+    end
+
     def meta_tags_count
       meta_tags.count
     end

@@ -3,7 +3,7 @@ de:
     cmor/seo/engine: SEO
   activemodel:
     models:
-      cmor/seo/generate_resource_classes_meta_tags_service: 'Dienst zum generieren von Meta-Tags'
+      cmor/seo/generate_resource_classes_meta_tags_service: "Dienst zum generieren von Meta-Tags"
     attributes:
       cmor/seo/generate_resource_classes_meta_tags_service:
         resource_classes: Ressource-Klassen
@@ -35,6 +35,7 @@ de:
         resource_id: Resource
         resource_type: Resource-Typ
         target: Ziel
+        title: Titel
       cmor/seo/meta_tag:
         <<: *shared_attributes
         content: Inhalt
@@ -45,9 +46,8 @@ de:
     seo:
       items:
         form:
-          add_association: 'Meta Tag hinzufügen'
+          add_association: "Meta Tag hinzufügen"
         meta_tag_fields:
-          remove_association: 'Meta Tag löschen'
+          remove_association: "Meta Tag löschen"
   routes:
     cmor-seo-engine: seo
-

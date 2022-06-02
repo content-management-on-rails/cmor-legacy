@@ -46,6 +46,7 @@ Cmor::Seo.configure do |config|
   #
   # config.add_resource(
   #   'Cmor::Blog::Post',
+  #   title: ->(resource) { resource.title },
   #   meta_tags: -> {{
   #     'description' => ->(resource) { { content: resource.title } },
   #     'og:title'    => ->(resource) { { content: resource.title } },
@@ -60,6 +61,7 @@ Cmor::Seo.configure do |config|
   #
   # config.add_resource(
   #   'Cmor::Cms::Page',
+  #   title: ->(resource) { resource.title },
   #   meta_tags: -> {{
   #     'description' => ->(resource) { { content: resource.meta_description } },
   #     'og:title'    => ->(resource) { { content: resource.title } },

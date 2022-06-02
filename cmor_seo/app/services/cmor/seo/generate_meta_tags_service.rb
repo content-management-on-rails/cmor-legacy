@@ -4,10 +4,10 @@ module Cmor
   module Seo
     class GenerateMetaTagsService < Rao::Service::Base
       class Result < Rao::Service::Result::Base
-        attr_accessor :resources, :meta_tags
+        attr_accessor :resources, :meta_tags, :items
       end
 
-      attr_accessor :resources, :meta_tags
+      attr_accessor :resources, :meta_tags, :items, :default_url_options
 
       # delegate :url_helpers, to: 'Rails.application.routes'
       # alias_method :main_app, :url_helpers
@@ -19,7 +19,13 @@ module Cmor
           attr_accessor :default_url_options
 
           def initialize(default_url_options: nil)
-            @default_url_options = default_url_options
+            @default_url_options = default_url_options || default_url_options_defaults
+          end
+
+          private
+
+          def default_url_options_defaults
+            (Rails.application.config.action_controller.default_url_options || Rails.application.config.action_mailer.default_url_options || { host: "localhost", port: "3000" })
           end
         end
 
@@ -45,18 +51,15 @@ module Cmor
           return main_app.send(m, *args, &block) if main_app.respond_to?(m)
           super
         end
-
-        def default_url_options
-          @default_url_options ||= (Rails.application.config.action_controller.default_url_options || Rails.application.config.action_mailer.default_url_options || { host: "http://localhost:3000" })
-        end
       end
 
       private
         def _perform
           initialize_routing!
 
-          @meta_tags = generate_meta_tags!
-
+          @meta_tags = []
+          @result.items = @items = generate_meta_tags_and_titles!
+          @meta_tags.flatten!
           @result.meta_tags = @meta_tags
         end
         
@@ -65,26 +68,39 @@ module Cmor
           self.class.include(RoutingConcern) unless self.class < RoutingConcern
         end
 
-        def generate_meta_tags!
+        def generate_meta_tags_and_titles!
           say "Generating meta tags for #{resources.count} resources" do
             resources.collect do |resource|
-              build_or_update_meta_tags_for(resource)
-            end.flatten
+              find_or_initialize_item_for(resource).tap do |item|
+                @meta_tags << build_or_update_meta_tags_for(item, resource)
+                update_title(item, resource)
+                item
+              end
+            end
           end
         end
 
         def save
           ActiveRecord::Base.transaction do
+            @items.map(&:save!)
             @meta_tags.map(&:save!)
           end
         end
 
-        def build_or_update_meta_tags_for(resource)
+        def build_or_update_meta_tags_for(item, resource)
           say "Building/Updating meta tags for #<#{resource.class} id:#{resource.id}>" do
-            item = find_or_initialize_item_for(resource)
             meta_tag_configuration_for(resource).call.collect do |name, options_proc|
               options = instance_exec(resource, &options_proc)
               initialize_or_update_meta_tag(item, name, options)
+            end
+          end
+        end
+
+        def update_title(item, resource)
+          say "Setting title on #<#{resource.class} id:#{resource.id}>" do
+            title_proc = title_configuration_for(resource)
+            if title_proc.respond_to?(:call)
+              item.title = instance_exec(resource, &title_proc)
             end
           end
         end
@@ -98,6 +114,10 @@ module Cmor
 
         def meta_tag_configuration_for(resource)
           ::Cmor::Seo::Configuration.resources[resource.class.name][:meta_tags]
+        end
+
+        def title_configuration_for(resource)
+          ::Cmor::Seo::Configuration.resources[resource.class.name][:title]
         end
 
         def initialize_or_update_meta_tag(item, name, options)
