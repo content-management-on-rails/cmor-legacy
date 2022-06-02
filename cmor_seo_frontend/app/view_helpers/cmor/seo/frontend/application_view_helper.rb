@@ -13,7 +13,23 @@ module Cmor::Seo
       # Example:
       #
       #    # app/views/layouts/application.html.haml
+      #    = seo_helper(self).render_title_tag
+      #
+      def render_title_tag
+        item = find_item
+
+        if item&.title_tag.present?
+          item.title_tag.html_safe
+        else
+          c.instance_exec(&Configuration.title_tag_fallback)
+        end
+      end
+
+      # Example:
+      #
+      #    # app/views/layouts/application.html.haml
       #    = seo_helper(self).render_meta_tags
+      #
       def render_meta_tags
         item = find_item
 
