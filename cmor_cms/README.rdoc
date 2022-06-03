@@ -1,0 +1,73 @@
+= CMOR CMS
+
+= End-User documentation
+
+Please look at the[link:doc] Folder.
+
+= Installation
+
+Add it to your bundle:
+
+  # Gemfile:
+  gem 'cmor_cms'
+
+Install your bundle:
+
+  > bundle install
+
+Install the intializer:
+
+  > rails g cmor:cms:install
+
+Generate migrations and migrate:
+
+  > rake cmor_cms:install:migrations
+  > rake db:migrate
+
+= Optional: Generating example/default data
+
+There is a task to prepopulate your database tables with example data.
+
+Warning: *RUNNING THIS WILL DELETE ALL OF YOUR CMS DATA AND REPLACE IT WITH EXAMPLE DATA!*
+
+  > rake cmor:cms:db:populate!
+
+= Linking to pages
+
+    <%= link_to 'My Page', page_path(i18n_locale: I18n.locale, page: 'my-page') %>
+
+= Using partials form the database in other controllers
+
+    # app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      prepend_view_path ::Cmor::Cms::PartialResolver.instance
+      ...
+    end
+
+= Using the navigation helper
+
+    # app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      helper Cmor::CmsHelper
+      ...
+    end
+
+Then you can render navigation in your views:
+
+    # app/views/_navigation.rb
+    = cms_render_navigation(:main)
+
+= Running specs
+
+    gem install bundler
+    bundle
+    cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
+    guard
+
+= Updating to 0.0.62.pre
+
+The site_title was deprecated in favor of the page_title configuration option.
+
+= License
+
+This project rocks and uses MIT-LICENSE.
