@@ -64,6 +64,10 @@ Then you can render navigation in your views:
     cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
     guard
 
+= Updating to 0.0.62.pre
+
+The site_title was deprecated in favor of the page_title configuration option.
+
 = License
 
 This project rocks and uses MIT-LICENSE.
