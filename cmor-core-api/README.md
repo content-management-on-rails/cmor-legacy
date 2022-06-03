@@ -20,11 +20,17 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
+Generate the initializers with the configuration:
 
 ```bash
-$ gem install cmor-core-api
+$ rails g cmor:core:api:install
 ```
+
+### Registering engines
+
+To add api endpoints you will have to register the engines that include them:
+
+    # config/initializers/cmor-core-api.rb
 
 ### Querying existing endpoints
 
