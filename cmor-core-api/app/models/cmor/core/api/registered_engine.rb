@@ -30,8 +30,18 @@ module Cmor::Core::Api
        end || []
     end
 
+    def services
+       @services ||= engine_configuration&.service_controllers&.call&.map do |sc|
+         Service.new(controller: sc)
+       end || []
+    end
+
     def engine_class
       @engine_class ||= class_name.constantize
+    end
+
+    def engine_class_name
+      @engine_class_name ||= engine_class.name
     end
 
     def engine_configuration
