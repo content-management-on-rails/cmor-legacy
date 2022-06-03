@@ -1,5 +1,5 @@
 module Cmor::Core::Api
-  class PluralResource
+  class Service
     if Rails.version < '7.0'
       include ActiveModel::Model
       include ActiveModel::Attributes
@@ -22,7 +22,7 @@ module Cmor::Core::Api
       (options[:methods] ||= []).push(
         :base_path,
         :routes,
-        :resource_class_name,
+        :service_class_name,
         :singular_name,
         :plural_name,
         :identifier
@@ -34,24 +34,24 @@ module Cmor::Core::Api
       @identifier ||= controller.name.underscore.chomp("_controller").gsub("/", "-")
     end
 
-    def resource_class
-      @resource_class ||= controller.resource_class
+    def service_class
+      @service_class ||= controller.service_class
     end
 
-    def resource_class_name
-      @resource_class_name ||= resource_class.name
+    def service_class_name
+      @service_class_name ||= service_class.name
     end
 
     def singular_name
-      resource_class.model_name.human
+      service_class.model_name.human
     end
 
     def plural_name
-      resource_class.model_name.human(count: :other)
+      service_class.model_name.human(count: :other)
     end
 
     def base_path
-      @base_path ||= router.url_for(controller: controller.name.underscore.chomp("_controller"), action: :index, only_path: true)
+      @base_path ||= router.url_for(controller: controller.name.underscore.chomp("_controller"), action: :create, only_path: true)
     end
 
     def engine_class_name

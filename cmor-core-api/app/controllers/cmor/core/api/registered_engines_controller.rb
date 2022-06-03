@@ -5,7 +5,8 @@ module Cmor::Core::Api
         methods: [
           :identifier,
           :plural_resources,
-          :engine_class,
+          :services,
+          :engine_class_name,
           :singular_name,
           :plural_name
         ]
