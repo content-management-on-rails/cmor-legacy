@@ -28,14 +28,20 @@ en:
     attributes:
       cmor/seo/item:
         <<: *shared_attributes
+        created_at: Created at
+        created_by_id: Created by
+        creator: Created by
         meta_tags_count: Meta Tags
         meta_tags_to_html: Meta Tags (HTML)
         path: Path
-        resource: Resource
         resource_id: Resource
         resource_type: Resource Type
+        resource: Resource
         target: Target
         title: Title
+        updated_at: Updated at
+        updated_by_id: Updated by
+        updater: Updated by
       cmor/seo/meta_tag:
         <<: *shared_attributes
         content: Content

@@ -39,6 +39,19 @@ Cmor::Seo.configure do |config|
   #
   config.handle_seoable_after_save_exception = ->(exception) { raise exception }
 
+  # Class to use for creators and updaters.
+  #
+  # default: config.creator_class_name = '<%= creator_class_name %>'
+  #
+  config.creator_class_name = '<%= creator_class_name %>'
+
+  # This proc is used in context of the ItemsController and MetaTagsController
+  # to retrieve the current user to userstamp created/updated items/meta tags.
+  #
+  # default: config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
+  #
+  config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
+
   # Set the resources that will be available as seo targets when creating new
   # Cmor::Seo::Items.
   #

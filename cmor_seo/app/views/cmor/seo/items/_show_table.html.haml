@@ -7,5 +7,7 @@
 = table.row :meta_tags_to_html do |resource|
   - capture_haml do
     %pre= resource.meta_tags_to_html
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.association :updater, label_method: ->(r) { administrador_helper(self).label_for(r) }
 = table.timestamp :published_at
 = table.timestamps

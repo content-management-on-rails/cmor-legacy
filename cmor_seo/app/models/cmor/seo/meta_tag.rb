@@ -16,5 +16,28 @@ module Cmor::Seo
     def human
       "#{item.human}: #{name}"
     end
+
+    module ItemUserstampsConcern
+      extend ActiveSupport::Concern
+
+      included do
+        attr_accessor :creator, :updater
+        after_create :set_creator_on_item!, if: -> { item.present? && creator.present? }
+        after_update :set_updater_on_item!, if: -> { item.present? && updater.present? }
+        after_destroy :set_updater_on_item!, if: -> { item.present? && updater.present? }
+      end
+
+      private
+
+      def set_creator_on_item!
+        item.update!(creator: creator)
+      end
+
+      def set_updater_on_item!
+        item.update!(updater: updater)
+      end
+    end
+
+    include ItemUserstampsConcern
   end
 end

@@ -43,6 +43,20 @@ module Cmor::Seo
     include AutocompleteConcern
 
     private
+
+      def current_user_for_userstamp
+        Cmor::Seo::Configuration.current_user_proc.call(self)
+      end
+
+      def initialize_resource
+        super
+        @resource.creator = current_user_for_userstamp
+      end
+
+      def before_rest_action
+        @resource.updater = current_user_for_userstamp if action_name == "update"
+      end
+
       def load_collection_scope
         super.eager_load(:meta_tags)
       end

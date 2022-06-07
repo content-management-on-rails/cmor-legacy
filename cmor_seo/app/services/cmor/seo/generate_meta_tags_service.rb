@@ -72,6 +72,10 @@ module Cmor
           say "Generating meta tags for #{resources.count} resources" do
             resources.collect do |resource|
               find_or_initialize_item_for(resource).tap do |item|
+                if item.creator.present? || item.updater.present?
+                  say "Skipping manually created/updated resource"
+                  next
+                end
                 @meta_tags << build_or_update_meta_tags_for(item, resource)
                 update_title(item, resource)
                 item

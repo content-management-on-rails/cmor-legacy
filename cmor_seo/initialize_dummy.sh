@@ -20,6 +20,14 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 # Add ActiveStorage
 rails active_storage:install
 
+# Add User model for userstamping
+rails g model User email
+sed -i '2i\  private' app/controllers/application_controller.rb
+sed -i '3i\  ' app/controllers/application_controller.rb
+sed -i '4i\  def current_user' app/controllers/application_controller.rb
+sed -i '5i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
+sed -i '6i\  end' app/controllers/application_controller.rb
+
 # I18n configuration
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
@@ -57,27 +65,29 @@ rails cmor_seo:install:migrations db:migrate db:test:prepare
 # Conifgure Cmor::Seo
 sed -i "2i\  config.add_resource(" config/initializers/cmor_seo.rb
 sed -i "3i\    'Post'," config/initializers/cmor_seo.rb
-sed -i "4i\    meta_tags: -> {{" config/initializers/cmor_seo.rb
-sed -i "5i\      'description' => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
-sed -i "6i\      'og:title'    => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
-sed -i "7i\      'og:url'      => ->(resource) { { content: main_app.url_for(resource) } }," config/initializers/cmor_seo.rb
-sed -i "8i\    }}," config/initializers/cmor_seo.rb
-sed -i "9i\    autocomplete_options: {" config/initializers/cmor_seo.rb
-sed -i "10i\      scope: ->(term) { Post.where(\"LOWER(title) LIKE :term\", term: \"%#{term.downcase}%\") }," config/initializers/cmor_seo.rb
-sed -i "11i\      id_method: :id," config/initializers/cmor_seo.rb
-sed -i "12i\      text_method: :title" config/initializers/cmor_seo.rb
-sed -i "13i\    }" config/initializers/cmor_seo.rb
-sed -i "14i\  )" config/initializers/cmor_seo.rb
-sed -i "15i\ " config/initializers/cmor_seo.rb
-sed -i "16i\  config.add_resource(" config/initializers/cmor_seo.rb
-sed -i "17i\    'Page'," config/initializers/cmor_seo.rb
-sed -i "18i\    meta_tags: -> {{" config/initializers/cmor_seo.rb
-sed -i "19i\      'description' => ->(resource) { { content: resource.meta_description } }," config/initializers/cmor_seo.rb
-sed -i "20i\      'og:title'    => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
-sed -i "21i\    }}," config/initializers/cmor_seo.rb
-sed -i "22i\    autocomplete_options: {" config/initializers/cmor_seo.rb
-sed -i "23i\      scope: ->(term) { Page.where(\"LOWER(title) LIKE :term\", term: \"%#{term.downcase}%\") }," config/initializers/cmor_seo.rb
-sed -i "24i\      id_method: :id," config/initializers/cmor_seo.rb
-sed -i "25i\      text_method: :title" config/initializers/cmor_seo.rb
-sed -i "26i\    }" config/initializers/cmor_seo.rb
-sed -i "27i\  )" config/initializers/cmor_seo.rb
+sed -i "4i\    title: ->(resource) { resource.title }," config/initializers/cmor_seo.rb
+sed -i "5i\    meta_tags: -> {{" config/initializers/cmor_seo.rb
+sed -i "6i\      'description' => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
+sed -i "7i\      'og:title'    => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
+sed -i "8i\      'og:url'      => ->(resource) { { content: main_app.url_for(resource) } }," config/initializers/cmor_seo.rb
+sed -i "9i\    }}," config/initializers/cmor_seo.rb
+sed -i "10i\    autocomplete_options: {" config/initializers/cmor_seo.rb
+sed -i "11i\      scope: ->(term) { Post.where(\"LOWER(title) LIKE :term\", term: \"%#{term.downcase}%\") }," config/initializers/cmor_seo.rb
+sed -i "12i\      id_method: :id," config/initializers/cmor_seo.rb
+sed -i "13i\      text_method: :title" config/initializers/cmor_seo.rb
+sed -i "14i\    }" config/initializers/cmor_seo.rb
+sed -i "15i\  )" config/initializers/cmor_seo.rb
+sed -i "16i\ " config/initializers/cmor_seo.rb
+sed -i "17i\  config.add_resource(" config/initializers/cmor_seo.rb
+sed -i "18i\    'Page'," config/initializers/cmor_seo.rb
+sed -i "19i\    title: ->(resource) { resource.title }," config/initializers/cmor_seo.rb
+sed -i "20i\    meta_tags: -> {{" config/initializers/cmor_seo.rb
+sed -i "21i\      'description' => ->(resource) { { content: resource.meta_description } }," config/initializers/cmor_seo.rb
+sed -i "22i\      'og:title'    => ->(resource) { { content: resource.title } }," config/initializers/cmor_seo.rb
+sed -i "23i\    }}," config/initializers/cmor_seo.rb
+sed -i "24i\    autocomplete_options: {" config/initializers/cmor_seo.rb
+sed -i "25i\      scope: ->(term) { Page.where(\"LOWER(title) LIKE :term\", term: \"%#{term.downcase}%\") }," config/initializers/cmor_seo.rb
+sed -i "26i\      id_method: :id," config/initializers/cmor_seo.rb
+sed -i "27i\      text_method: :title" config/initializers/cmor_seo.rb
+sed -i "28i\    }" config/initializers/cmor_seo.rb
+sed -i "29i\  )" config/initializers/cmor_seo.rb

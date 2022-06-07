@@ -1,5 +1,36 @@
 # Cmor::Seo
-Short description and motivation.
+
+Adds meta tag and title support for resources and pages.
+
+## Updating to 0.0.62.pre
+
+This version adds userstamping for items. If an item or its meta tags was changed, the item and its
+meta tags will not update automatically.
+
+For this feature to work there are userstamp columns in the item model. After updating you will have
+to install the migrations that add those columns and migrate:
+
+    > rails cmor_seo:install:migrations && rails db:migrate
+
+Additionally configure the user stamping:
+
+    # config/initializers/cmor_seo.rb
+    Cmor::Seo.configure do |config|
+      # Class to use for creators and updaters.
+      #
+      # default: config.creator_class_name = 'User'
+      #
+      config.creator_class_name = 'Cmor::UserArea::User'
+
+      # This proc is used in context of the ItemsController and MetaTagsController
+      # to retrieve the current user to userstamp created/updated items/meta tags.
+      #
+      # default: config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
+      #
+      config.current_user_proc = ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
+
+      # ...
+    end
 
 ## Usage
 
@@ -12,6 +43,7 @@ You configure Cmor::Seo to generate seo related meta tags automatically:
 Cmor::Seo.configure do |config|
   config.add_resource(
     'Cmor::Blog::Post',
+    title: ->(resource) { resource.title },
     meta_tags: -> {{
       # This hash configures the mapping between the resource and the meta tag that will be
       # automatically created/upated when the resource is saved.
@@ -70,7 +102,7 @@ $> gem install bundler
 $> bundle
 $> cd spec/dummy && rake db:migrate RAILS_ENV=test && cd ../..
 $> guard
-```    
+```
 
 ## License
 

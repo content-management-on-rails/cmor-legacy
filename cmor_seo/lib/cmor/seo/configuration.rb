@@ -6,28 +6,36 @@ module Cmor::Seo
       yield self
     end
 
-    mattr_accessor :resources_controllers do
+    mattr_accessor(:resources_controllers) do
       -> { [] }
     end
 
-    mattr_accessor :resource_controllers do
+    mattr_accessor(:resource_controllers) do
       -> { [] }
     end
 
-    mattr_accessor :service_controllers do
+    mattr_accessor(:service_controllers) do
       -> { [] }
     end
 
-    mattr_accessor :sidebar_controllers do
+    mattr_accessor(:sidebar_controllers) do
       -> { [] }
     end
 
-    mattr_accessor :resources do
+    mattr_accessor(:resources) do
       {}
     end
 
-    mattr_accessor :handle_seoable_after_save_exception do
+    mattr_accessor(:handle_seoable_after_save_exception) do
       ->(exception) { raise exception }
+    end
+
+    mattr_accessor(:creator_class_name) do
+      'User'
+    end
+
+    mattr_accessor(:current_user_proc) do
+      ->(controller) { controller.respond_to?(:current_user, true) ? controller.send(:current_user) : nil }
     end
 
     def self.resources_autocomplete_options
