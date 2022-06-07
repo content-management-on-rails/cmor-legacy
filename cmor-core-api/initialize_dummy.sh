@@ -54,4 +54,6 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 # rails db:migrate db:test:prepare
 
 # Install
-# rails generate cmor:core:api:install
+rails generate cmor:core:api:install
+rails cmor_core_api:install:migrations
+rails db:migrate db:test:prepare

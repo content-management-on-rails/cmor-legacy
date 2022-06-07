@@ -8,4 +8,5 @@ Gem::Specification.new do |spec|
   
   spec.name        = "cmor-core-api"
   spec.summary     = "Core API module for CMOR."
+  spec.add_dependency "bcrypt"
 end
