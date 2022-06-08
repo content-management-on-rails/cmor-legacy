@@ -53,6 +53,9 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 
 # rails db:migrate db:test:prepare
 
+# Setup ActiveRecord encryption
+rails db:encryption:init
+
 # Install
 rails generate cmor:core:api:install
 rails cmor_core_api:install:migrations

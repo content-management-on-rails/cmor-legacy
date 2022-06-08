@@ -4,7 +4,11 @@ module Cmor::Core::Api
       extend ActiveSupport::Concern
 
       included do
-        encrypts :token, deterministic: true
+        if Rails.version >= "7.0"
+          encrypts :token, deterministic: true
+        else
+          puts "[Cmor::Core::Api] Warning: Could not enable api token encryption. Please update to rails >= 7.0 to enable encryption."
+        end
 
         after_initialize :initialize_token, if: :new_record?
       end
