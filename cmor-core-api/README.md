@@ -6,6 +6,14 @@ Provides api core functionality like discovery of available REST endpoints.
 
 How to use my plugin.
 
+## Prerequisites
+
+You need to enable ActiveRecord encryption. See https://guides.rubyonrails.org/active_record_encryption.html
+
+TL;DR: If you haven't used ActiveRecord encryption in you project until now, set it up by running:
+
+    > rails db:encryption:init
+
 ## Installation
 
 Add this line to your application's Gemfile:
