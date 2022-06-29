@@ -48,8 +48,47 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 # Add ActiveStorage
 # rails active_storage:install
 
-# Example model for ActiveStorage specs
-# rails g model Post title
+# Example models for specs
+rails g model Post title body:text
+rails g model Comment post:references body:text
+
+# Example controller for specs
+
+echo "class PostsController < ActionController::API" >> app/controllers/posts_controller.rb
+echo "  include Cmor::Core::Api::Controllers::TokenAuthenticationConcern" >> app/controllers/posts_controller.rb
+echo "  include Cmor::Core::Api::Controllers::WriteAuthorizationConcern" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def index" >> app/controllers/posts_controller.rb
+echo "    render json: Post.all" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def show" >> app/controllers/posts_controller.rb
+echo "    render json: Post.find(params[:id])" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def create" >> app/controllers/posts_controller.rb
+echo "    post = Post.create(permitted_params)" >> app/controllers/posts_controller.rb
+echo "    render json: post" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def update" >> app/controllers/posts_controller.rb
+echo "    post = Post.find(params[:id])" >> app/controllers/posts_controller.rb
+echo "    post.update_attributes(post_params)" >> app/controllers/posts_controller.rb
+echo "    render json: post" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def destroy" >> app/controllers/posts_controller.rb
+echo "    Post.destroy(params[:id])" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  private " >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
+echo "  def permitted_params" >> app/controllers/posts_controller.rb
+echo "    params.require(:post).permit(:title, :body)" >> app/controllers/posts_controller.rb
+echo "  end" >> app/controllers/posts_controller.rb
+echo "end" >> app/controllers/posts_controller.rb
+
+sed -i '2i\  resources :posts' config/routes.rb
 
 # rails db:migrate db:test:prepare
 

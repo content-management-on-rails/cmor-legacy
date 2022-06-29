@@ -45,7 +45,7 @@ module Cmor::Core::Api
 
       class_methods do
         def authenticate(token, options)
-          active.where(token: token).first.present?
+          active.where(token: token).first
         end
       end
     end

@@ -28,12 +28,14 @@ module Cmor::Core::Api
       included do
         include ActionController::HttpAuthentication::Token::ControllerMethods
         before_action :authenticate_with_token!
+
+        attr_reader :current_api_token
       end
 
       private
 
       def authenticate_with_token!
-        unless authenticate_with_http_token { |t, o| ApiToken.authenticate(t, o) }
+        unless authenticate_with_http_token { |t, o| @current_api_token = ApiToken.authenticate(t, o) }
           request_http_token_authentication
         end
       end
