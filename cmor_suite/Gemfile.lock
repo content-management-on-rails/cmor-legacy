@@ -1,3 +1,37 @@
+GIT
+  remote: https://github.com/tatoru-antivirus/tatoru-client-rails
+  revision: 054ca017793fcba7f9045f019afce8c51a45f095
+  branch: main
+  specs:
+    tatoru-client-rails (0.0.1)
+      rails (>= 6.0)
+      tatoru-client
+
+GIT
+  remote: https://github.com/tatoru-antivirus/tatoru-client-ruby
+  revision: 71708211562f2643f1d678175ea5bbf3534fd47b
+  branch: main
+  specs:
+    tatoru-client (0.0.1)
+      httparty
+      zeitwerk
+
+PATH
+  remote: ../cmor-core-api-backend
+  specs:
+    cmor-core-api-backend (0.0.61.pre)
+      cmor_core (= 0.0.61.pre)
+      cmor_core_backend (= 0.0.61.pre)
+      rails (>= 6.0.0.0)
+
+PATH
+  remote: ../cmor-core-api
+  specs:
+    cmor-core-api (0.0.61.pre)
+      bcrypt
+      cmor_core (= 0.0.61.pre)
+      rails (>= 6.0.0.0)
+
 PATH
   remote: ../cmor_blog_backend
   specs:
@@ -194,6 +228,16 @@ PATH
       sprockets-rails
 
 PATH
+  remote: ../cmor_security
+  specs:
+    cmor_security (0.0.61.pre)
+      cmor_core (= 0.0.61.pre)
+      cmor_core_backend (= 0.0.61.pre)
+      rails (>= 6.0.0.0)
+      sassc-rails
+      tatoru-client-rails
+
+PATH
   remote: ../cmor_seo_frontend
   specs:
     cmor_seo_frontend (0.0.61.pre)
@@ -382,6 +426,8 @@ PATH
   remote: .
   specs:
     cmor_suite (0.0.61.pre)
+      cmor-core-api (= 0.0.61.pre)
+      cmor-core-api-backend (= 0.0.61.pre)
       cmor_blog (= 0.0.61.pre)
       cmor_blog_backend (= 0.0.61.pre)
       cmor_carousels (= 0.0.61.pre)
@@ -404,6 +450,7 @@ PATH
       cmor_partners_frontend (= 0.0.61.pre)
       cmor_rbac (= 0.0.61.pre)
       cmor_rbac_backend (= 0.0.61.pre)
+      cmor_security (= 0.0.61.pre)
       cmor_seo (= 0.0.61.pre)
       cmor_seo_frontend (= 0.0.61.pre)
       cmor_showcase (= 0.0.61.pre)
@@ -642,6 +689,9 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
+    httparty (0.20.0)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json (2.6.2)
@@ -686,6 +736,7 @@ GEM
       railties (>= 3.1)
     msgpack (1.6.0)
     multi_json (1.15.0)
+    multi_xml (0.6.0)
     nenv (0.3.0)
     net-imap (0.3.1)
       net-protocol
@@ -955,6 +1006,8 @@ DEPENDENCIES
   bootsnap
   capybara
   cmor!
+  cmor-core-api!
+  cmor-core-api-backend!
   cmor_blog!
   cmor_blog_backend!
   cmor_carousels!
@@ -971,6 +1024,7 @@ DEPENDENCIES
   cmor_links_backend!
   cmor_rbac!
   cmor_rbac_backend!
+  cmor_security!
   cmor_seo!
   cmor_seo_frontend!
   cmor_showcase!
@@ -1002,6 +1056,8 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sqlite3 (~> 1.4)
+  tatoru-client!
+  tatoru-client-rails!
   turbolinks (~> 5)
   webpacker (~> 4.0)
 

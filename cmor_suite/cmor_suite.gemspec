@@ -47,6 +47,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_rbac', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_rbac_backend', "= #{Cmor::VERSION}"
 
+  s.add_dependency 'cmor_security', "= #{Cmor::VERSION}"
+
   s.add_dependency 'cmor_seo', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_seo_frontend', "= #{Cmor::VERSION}"
 
@@ -63,4 +65,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'cmor_user_area', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_user_area_backend', "= #{Cmor::VERSION}"
+
+  s.add_dependency 'cmor-core-api', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor-core-api-backend', "= #{Cmor::VERSION}"
 end
