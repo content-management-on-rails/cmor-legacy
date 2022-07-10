@@ -5,6 +5,7 @@ require 'tatoru-client-rails'
 require 'cmor/security/version'
 require 'cmor/security/configuration'
 require 'cmor/security/engine'
+require 'cmor/security/antivirus_configuration'
 
 module Cmor
   module Security
