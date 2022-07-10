@@ -17,25 +17,26 @@ Install the module:
 
 Create migrations:
 
-  > rake cmor_testimonials_engine:install:migrations
+  > rails cmor_testimonials:install:migrations
 
 Migrate:
 
-  > rake db:migrate
+  > rails db:migrate
 
 = Usage
 
 Add the helper to your controller:
 
-  # app/controllers/application_controller.rb
-  class ApplicationController < ActionController::Base
-    helper Cmor::TestimonialsHelper
-    #...
-  end
+    # app/controllers/application_controller.rb
+    class ApplicationController < ActionController::Base
+      view_helper Cmor::Testimonials::ApplicationViewHelper, as: :testimonials_helper
+      #...
+    end
 
-Use the helper to display a testimonial:
+Use the helper to display a testimonial category:
 
-  <%= render_testimonial 'My Testimonial' %>
+    #     # app/views/layouts/application.html.erb
+    #     <%= testimonials_helper(self).render_category("My Category") %>
 
 = License
 
