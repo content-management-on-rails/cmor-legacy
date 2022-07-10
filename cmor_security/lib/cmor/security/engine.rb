@@ -5,9 +5,7 @@ module Cmor
 
       config.to_prepare do
         Configuration.antivirus_enabled_models.each do |av_config|
-          # model_name, attachment = key.split("#")
           puts "[Cmor::Security] Enabling tatoru.io antivirus for #{av_config.model_class_name}##{av_config.attachment_name}..."
-          # model_name.constantize.send(:validates, attachment, tatoru: true, **value)
           av_config.model_class_name.constantize.send(:validates, av_config.attachment_name, tatoru: true, **av_config.options)
           puts "  => OK"
         rescue NameError => e
