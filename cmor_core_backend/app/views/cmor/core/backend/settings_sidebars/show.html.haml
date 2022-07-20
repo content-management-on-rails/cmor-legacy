@@ -1,0 +1,16 @@
+%aside#settings-sidebar.py-2.w-100
+  .container-fluid
+    .row
+      .col-12
+        %h3= t(".font_size")
+      .col-12
+        .btn-group.w-100
+          %a.w-33.btn.btn-danger{ data: { font: { size: { decrease: true } } } }
+            .text-white
+              %i.fas.fa-minus
+          %a.w-33.btn.btn-primary{ data: { font: { size: { reset: true } } } }
+            .text-white
+              %i.fas.fa-undo
+          %a.w-33.btn.btn-success{ data: { font: { size: { increase: true } } } }
+            .text-white
+              %i.fas.fa-plus
