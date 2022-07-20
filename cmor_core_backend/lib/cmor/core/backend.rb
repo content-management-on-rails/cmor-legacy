@@ -10,3 +10,4 @@ module Cmor
 end
 
 Cmor.configure { |c| c.register_configuration(:administrador, Administrador) }
+Cmor.configure { |c| c.register_configuration(:cmor_core_backend, Cmor::Core::Backend) }

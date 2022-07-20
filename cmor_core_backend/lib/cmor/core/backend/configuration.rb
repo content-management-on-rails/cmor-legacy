@@ -11,6 +11,10 @@ module Cmor
           yield self
         end
 
+        mattr_accessor :sidebar_controllers do
+          -> {[]}
+        end
+
         mattr_accessor(:image_variant_options) {
           {
             gallery: { resize: "640x480" },

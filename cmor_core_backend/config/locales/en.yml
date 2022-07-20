@@ -8,6 +8,9 @@ en:
           base:
             show_actions:
               back: Back
+        settings_sidebars:
+          show:
+            font_size: "Fontsize"
   routes:
     cmor-core-backend-engine: core
   or: or
