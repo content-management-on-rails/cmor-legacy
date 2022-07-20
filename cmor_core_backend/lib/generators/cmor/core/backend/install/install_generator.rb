@@ -14,6 +14,10 @@ module Cmor
           def generate_initializer
             template 'initializer.rb', 'config/initializers/cmor_core_backend.rb'
           end
+
+          def generate_routes
+            route File.read(File.join(File.expand_path('../templates', __FILE__), 'routes.source'))
+          end
         end
       end
     end

@@ -10,6 +10,16 @@ Cmor::Core::Backend.configure do |config|
     table:   { resize: "160x120" }
   }
 
+  # Set the sidebars, that will be shown in the backend menu.
+  #
+  # Default: config.sidebar_controllers = -> {[
+  #            Cmor::Core::Backend::SettingsSidebarsController
+  #          ]}
+  #
+  config.sidebar_controllers = -> {[
+    Cmor::Core::Backend::SettingsSidebarsController
+  ]}
+
   # You can add routes to resources based an any condition that is based
   # on the controller or resource class that a route is used for.
   #
