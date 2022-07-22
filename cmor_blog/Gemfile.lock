@@ -416,7 +416,7 @@ GEM
     tilt (2.0.10)
     tins (1.28.0)
       sync
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
