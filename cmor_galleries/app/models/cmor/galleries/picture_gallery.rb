@@ -10,7 +10,6 @@ module Cmor
 
         included do
           has_many :picture_details, -> { order(position: :asc) }, inverse_of: :picture_gallery, dependent: :destroy, autosave: true
-          before_validation :cleanup_orphaned_picture_details
           before_validation :ensure_picture_details
         end
 
@@ -41,12 +40,6 @@ module Cmor
         end
 
         private
-
-        def cleanup_orphaned_picture_details
-          picture_details.each do |picture_detail|
-            picture_detail.destroy if picture_detail.asset.nil?
-          end
-        end
 
         def ensure_picture_details
           (assets - picture_details.all.map(&:asset)).map do |asset|
