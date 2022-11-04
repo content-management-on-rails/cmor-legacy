@@ -17,31 +17,40 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# I18n configuration
+# Needed requires
+sed -i "17irequire 'sprockets/rails'" config/application.rb
+sed -i "17irequire 'turbolinks'" config/application.rb
+sed -i "17irequire 'cmor_cms'" config/application.rb
+
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-# I18n routing
+# Setup I18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Turbolinks
-sed -i "15irequire 'turbolinks'" config/application.rb
-
-# Satisfy prerequisites
-sed -i "15irequire 'cmor_cms'" config/application.rb
+# Setup SimpleForm
 rails generate simple_form:install --bootstrap
+
+# Setup Administrador
 rails generate administrador:install
+
+# Setup Cmor::Core
 rails generate cmor:core:install
+
+# Setup Cmor::Core::Backend
 rails generate cmor:core:backend:install
+
+# Setup Cmor::Cms
 rails generate cmor:cms:install
 rails cmor_cms:install:migrations
 
-# Install gem
+# SEtup Cmor::Legal
 rails generate cmor:legal:install
 
-# prepare spec database
+# Prepare spec database
 rails db:migrate db:test:prepare

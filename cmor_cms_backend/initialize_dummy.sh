@@ -17,12 +17,14 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
+# Needed requires
+sed -i "17i\  require 'sprockets/rails'" config/application.rb
 sed -i '17i\  require "responders"' config/application.rb
-
-## Always require rspec and factory_bot_rails in dummy app
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
+
+# Install SimpleForm
+rails generate simple_form:install --bootstrap
 
 ## I18n configuration
 touch config/initializers/i18n.rb
@@ -40,8 +42,8 @@ rails generate administrador:install
 rails generate cmor:core:backend:install
 
 # CMOR CMS
-rails generate cmor:cms:install
 rails cmor_cms:install:migrations db:migrate db:test:prepare
+rails generate cmor:cms:install
 
 # Install
 rails generate cmor:cms:backend:install

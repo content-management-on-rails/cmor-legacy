@@ -17,10 +17,18 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# Add ActiveStorage
+# Needed requires
+sed -i "17irequire 'sprockets/rails'" config/application.rb
+sed -i "17irequire 'turbolinks'" config/application.rb
+sed -i "17irequire 'factory_bot_rails'" config/application.rb
+
+# Setup SimpleForm
+rails generate simple_form:install --bootstrap
+
+# Setup ActiveStorage
 rails active_storage:install
 
-# Add User model for userstamping
+# Setup user model for userstamping
 rails g model User email
 sed -i '2i\  private' app/controllers/application_controller.rb
 sed -i '3i\  ' app/controllers/application_controller.rb
@@ -28,37 +36,30 @@ sed -i '4i\  def current_user' app/controllers/application_controller.rb
 sed -i '5i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
 sed -i '6i\  end' app/controllers/application_controller.rb
 
-# I18n configuration
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-# I18n routing
+# Setup I18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Add turbolinks
-sed -i "15irequire 'turbolinks'" config/application.rb
-sed -i "16irequire 'factory_bot_rails'" config/application.rb
-
-# Install administrador
+# Setup administrador
 rails generate administrador:install
 
-# Install SimpleForm
-rails generate simple_form:install --bootstrap
-
-# Install cmor_core_backend
+# Setup Cmor::Core::Backend
 rails g cmor:core:backend:install
 
-# Setup sepcs
+# Setup dummy app
 rails g scaffold Post title body:text published_at:timestamp --no-test-framework
 rails g factory_bot:model Post title body:text published_at:timestamp
 rails g scaffold Page title meta_description body:text published_at:timestamp --no-test-framework
 rails g factory_bot:model Page title meta_description body:text published_at:timestamp
 
-# Install
+# Setup Cmor::Seo
 rails generate cmor:seo:install
 rails cmor_seo:install:migrations db:migrate db:test:prepare
 

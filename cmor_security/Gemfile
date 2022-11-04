@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 gem "cmor", path: "../"
 gem "cmor_core", path: "../cmor_core"
-gem 'rails', '6.0.0.0'
+gem 'rails', '7.0.4'
 
 gem 'tatoru-client', git: 'https://github.com/tatoru-antivirus/tatoru-client-ruby' # path: '~/projects/tatoru/tatoru-client-ruby'
 gem 'tatoru-client-rails', git: 'https://github.com/tatoru-antivirus/tatoru-client-rails' # path: '~/projects/tatoru/tatoru-client-rails'

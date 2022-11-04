@@ -17,6 +17,9 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Needed requires
+sed -i "16irequire 'sprockets/rails'" config/application.rb
+
 # I18n configuration
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb

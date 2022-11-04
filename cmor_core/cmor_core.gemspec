@@ -7,15 +7,15 @@ require_relative "../lib/cmor/version"
 Gem::Specification.new do |s|
   s.name        = "cmor_core"
   s.version     = ::Cmor::VERSION
-  s.authors     = ["Roberto Vasquez Angel"]
-  s.email       = ["roberto@vasquez-angel.de"]
+  s.authors     = ["BeeGood IT"]
+  s.email       = ["info@beegoodit.de"]
   s.homepage    = "https://github.com/content-management-on-rails"
   s.summary     = "Cmor Core Module."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", ">= 6.0.0.0"
+  s.add_dependency "rails", ">= 7.0.4"
   s.add_dependency "cmor", "= #{Cmor::VERSION}"
   s.add_dependency 'delayed_job_active_record'
   s.add_dependency 'request_store_rails'
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rao-view_helper", ">= 0.0.20.pre"
   s.add_dependency "kaminari"
   s.add_dependency "bootstrap-kaminari-views"
+  s.add_dependency "sprockets-rails"
 
   s.add_development_dependency "sqlite3", '~> 1.4'
 

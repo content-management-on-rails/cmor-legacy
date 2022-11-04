@@ -1,6 +1,4 @@
 #!/bin/bash
-GEM_NAME=${PWD##*/}
-INSTALL_NAME=${GEM_NAME//cmor_/cmor\:}
 
 # Delete old dummy app
 rm -rf spec/dummy
@@ -19,26 +17,29 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# Use webpacker
-sed -i '17irequire "webpacker"' config/application.rb
+# Needed requires
+sed -i '17i\require "sprockets/rails"' config/application.rb
+sed -i '17i\require "webpacker"' config/application.rb
+
+# Setup Webpacker
 rails webpacker:install
 
-# Install SimpleForm
+# Setup SimpleForm
 rails generate simple_form:install --bootstrap
 
-# Add ActiveStorage
+# Setup ActiveStorage
 rails active_storage:install
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-# I18n routing
+# Setup I18n
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Frontend setup
+# Setup dummy app
 sed -i '2i\  view_helper Cmor::Core::ApplicationViewHelper, as: :core_helper' app/controllers/application_controller.rb
 sed -i '3i\  view_helper Cmor::UserArea::ApplicationViewHelper, as: :user_area_helper' app/controllers/application_controller.rb
 
@@ -55,7 +56,7 @@ echo "end" >> app/controllers/home_controller.rb
 mkdir -p app/views/home
 touch app/views/home/index.html.erb
 
-# add application layout
+# Setup application layout
 cat <<EOT > app/views/layouts/application.html.erb
 <!doctype html>
 <html lang="en">
@@ -89,7 +90,6 @@ cat <<EOT > app/views/layouts/application.html.erb
 </html>
 EOT
 
-
-# Install
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+# Setup Cmor::UserArea
+rails generate cmor:user_area:install
+rails cmor_user_area:install:migrations db:migrate db:test:prepare

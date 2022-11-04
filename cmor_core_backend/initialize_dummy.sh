@@ -17,38 +17,36 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
-# sed -i '17i\  require "responders"' config/application.rb
+# Needed requires
+sed -i "16irequire 'sprockets/rails'" config/application.rb
+sed -i '16irequire "rspec-rails"' config/application.rb
+sed -i '16irequire "factory_bot_rails"' config/application.rb
 
-## Always require rspec and factory_bot_rails in dummy app
-sed -i '17i\  require "rspec-rails"' config/application.rb
-sed -i '17i\  require "factory_bot_rails"' config/application.rb
+# Setup SimpleForm
+rails generate simple_form:install --bootstrap
 
-## I18n configuration
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+## Setup I18n routing
 # touch config/initializers/route_translator.rb
 # echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 # echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 # echo "end" >> config/initializers/route_translator.rb
 
-# Install administrador
+# Setup administrador
 rails generate administrador:install
 
-# Install SimpleForm
-rails generate simple_form:install --bootstrap
-
-# Add DelayedJob::ActiveRecord
+# Setup DelayedJob::ActiveRecord
 # sed -i '17i\  require "delayed_job_active_record"' config/application.rb
 # rails generate delayed_job:active_record
 
-# Add ActiveStorage
+# Setup ActiveStorage
 # rails active_storage:install
 
-# Example model for ActiveStorage specs
+# Setup example model for ActiveStorage specs
 # rails g model Post title
 
 # rails db:migrate db:test:prepare

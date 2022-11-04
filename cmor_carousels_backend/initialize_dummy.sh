@@ -19,7 +19,7 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
 # responders for rao-service_controller
 ## Always require rspec and factory_bot_rails in dummy app
-required_gems="require 'responders'\nrequire 'rspec-rails'\nrequire 'factory_bot_rails'\n"
+required_gems="require 'sprockets/rails'\nrequire 'responders'\nrequire 'rspec-rails'\nrequire 'factory_bot_rails'\n"
 echo "$(awk 'NR==17{print "'"$required_gems"'"}1' config/application.rb)" > config/application.rb
 
 ## I18n configuration

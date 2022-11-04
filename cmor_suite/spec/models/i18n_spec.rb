@@ -45,14 +45,14 @@ RSpec.describe 'Translations', type: :model do
             I18n.locale = locale
             i18n_key = ['activerecord', 'models', model.name.underscore].join('.')
             i18n_options = {}
-            expect(I18n.translate!(i18n_key, options)[:one]).to be_a(String)
+            expect(I18n.translate!(i18n_key, **options)[:one]).to be_a(String)
           end
 
           it 'include other' do
             I18n.locale = locale
             i18n_key = ['activerecord', 'models', model.name.underscore].join('.')
             i18n_options = {}
-            expect(I18n.translate!(i18n_key, options)[:other]).to be_a(String)
+            expect(I18n.translate!(i18n_key, **options)[:other]).to be_a(String)
           end
 
           describe 'for attributes' do

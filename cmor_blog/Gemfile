@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
-gem 'rails', '6.0.0.0'
+gem 'rails', '7.0.4'

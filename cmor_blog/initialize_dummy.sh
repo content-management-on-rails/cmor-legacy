@@ -17,15 +17,17 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# Use Webpacker
+# Needed requires
+sed -i "17irequire 'sprockets/rails'" config/application.rb
 sed -i '17i\require "webpacker"' config/application.rb
+sed -i '17irequire "sassc-rails"' config/application.rb
+sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
+
+# Use Webpacker
 rails webpacker:install
 
 # Satisfy prerequisites
 RAILS_ENV=development rails g model User email
-sed -i '17irequire "sassc-rails"' config/application.rb
-sed -i '17irequire "bootstrap4-kaminari-views"' config/application.rb
-
 
 # Add ActiveStorage
 rails active_storage:install

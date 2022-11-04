@@ -5,7 +5,5 @@ module Cmor::Galleries
     include Rao::ResourcesController::RestResourceUrlsConcern
     include Rao::ResourcesController::ResourceInflectionsConcern
     include Rao::ResourcesController::LocationHistoryConcern
-
-    helper Twitter::Bootstrap::Components::Rails::V4::ComponentsHelper
   end
 end

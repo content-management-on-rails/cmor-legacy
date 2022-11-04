@@ -17,7 +17,8 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-## Always require rspec and factory_bot_rails in dummy app
+# Needed requires
+sed -i "17i\  require 'sprockets/rails'" config/application.rb
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
 

@@ -20,4 +20,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'webdrivers'
+  s.add_development_dependency 'webrick'
 end

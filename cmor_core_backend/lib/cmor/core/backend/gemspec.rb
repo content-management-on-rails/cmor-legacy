@@ -4,16 +4,17 @@ module Cmor
       class Gemspec
         def self.defaults(s, load_self: true)
           s.version     = ::Cmor::VERSION
-          s.authors     = ["Roberto Vasquez Angel"]
-          s.email       = ["roberto@vasquez-angel.de"]
+          s.authors     = ["BeeGood IT"]
+          s.email       = ["info@beegoodit.de"]
           s.homepage    = "https://github.com/content-management-on-rails"
           s.license     = "MIT"
 
           s.files = Dir["{app,config,db,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-          s.required_ruby_version = ">= 2.6.0"
+          s.required_ruby_version = '>= 3.1.0'
 
-          s.add_dependency "rails", ">= 6.0.0.0"
+          s.add_dependency "rails", ">= 7.0.4"
+          s.add_dependency "sprockets-rails"
           # s.add_dependency "cmor", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
 
@@ -21,7 +22,7 @@ module Cmor
 
           s.add_development_dependency "sqlite3", '~> 1.4.0'
           s.add_development_dependency 'responders'
-          
+
           s.add_development_dependency 'capybara'
           s.add_development_dependency 'coveralls'
           s.add_development_dependency 'git_log_generator'

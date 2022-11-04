@@ -1,7 +1,6 @@
 #!/bin/bash
-BACKEND_GEM_NAME=${PWD##*/}
-BACKEND_INSTALL_NAME=${BACKEND_GEM_NAME//cmor_/cmor\:}
-BACKEND_INSTALL_NAME=${BACKEND_INSTALL_NAME//_backend/\:backend}
+BACKEND_GEM_NAME=cmor_user_area_backend
+BACKEND_INSTALL_NAME=cmor:user_area:backend
 GEM_NAME=${BACKEND_GEM_NAME//_backend/}
 INSTALL_NAME=${BACKEND_INSTALL_NAME//\:backend/}
 
@@ -22,31 +21,35 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
-sed -i '17i\  require "responders"' config/application.rb
+# Needed requires
+sed -i '17i\require "sprockets/rails"' config/application.rb
+sed -i '17i\require "responders"' config/application.rb
+sed -i '17i\require "rspec-rails"' config/application.rb
+sed -i '17i\require "factory_bot_rails"' config/application.rb
 
-## Always require rspec and factory_bot_rails in dummy app
-sed -i '17i\  require "rspec-rails"' config/application.rb
-sed -i '17i\  require "factory_bot_rails"' config/application.rb
+# Setup SimpleForm
+rails generate simple_form:install --bootstrap
 
-## I18n configuration
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+# Setup I18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Install cmor core backend gem
+# Setup Administrador
 rails generate administrador:install
+
+# Setup Cmor::Core::Backend
 rails generate cmor:core:backend:install
 
-# Install frontend gem
-rails generate $INSTALL_NAME:install
-rails $GEM_NAME:install:migrations db:migrate db:test:prepare
+# Setup Cmor::UserArea
+rails generate cmor:user_area:install
+rails cmor_user_area:install:migrations db:migrate db:test:prepare
 
-# Install
-rails generate $BACKEND_INSTALL_NAME:install
+# Setup Cmor::UserArea::Backend
+rails generate cmor:user_area:backend:install

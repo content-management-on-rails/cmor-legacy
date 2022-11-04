@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency 'administrador', '>= 0.0.28.pre'
+  s.add_dependency 'administrador', '>= 0.0.29.pre'
 end

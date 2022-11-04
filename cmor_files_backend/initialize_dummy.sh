@@ -17,32 +17,34 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
-sed -i '17i\  require "responders"' config/application.rb
+# Needed requires
+sed -i "17irequire 'sprockets/rails'" config/application.rb
+sed -i '17irequire "responders"' config/application.rb
+sed -i '17irequire "rspec-rails"' config/application.rb
+sed -i '17irequire "factory_bot_rails"' config/application.rb
 
-## Always require rspec and factory_bot_rails in dummy app
-sed -i '17i\  require "rspec-rails"' config/application.rb
-sed -i '17i\  require "factory_bot_rails"' config/application.rb
+# Setup SimpleForm
+rails generate simple_form:install --bootstrap
 
-## I18n configuration
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+# Setup I18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Add ActiveStorage
+# Setup ActiveStorage
 rails active_storage:install
 
-# Install cmor core backend gem
+# Setup Cmor::Core::Backend
 rails generate administrador:install
 rails generate cmor:core:backend:install
 
-# Install frontend gem
+# Setup Cmor::Files
 rails generate cmor:files:install
 rails cmor_files:install:migrations db:migrate db:test:prepare
 

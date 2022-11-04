@@ -17,6 +17,9 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Needed requires
+sed -i "17i\  require 'sprockets/rails'" config/application.rb
+
 # Satisfy prerequisites
 rails active_storage:install
 touch config/initializers/i18n.rb

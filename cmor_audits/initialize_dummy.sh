@@ -18,6 +18,11 @@ cd $DUMMY_APP_PATH
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Add needed requires
+sed -i "15irequire 'sprockets/rails'" config/application.rb
+sed -i "16irequire 'turbolinks'" config/application.rb
+sed -i "17irequire 'factory_bot_rails'" config/application.rb
+
 # Add ActiveStorage
 rails active_storage:install
 
@@ -31,10 +36,6 @@ touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
-
-# Add turbolinks
-sed -i "15irequire 'turbolinks'" config/application.rb
-sed -i "16irequire 'factory_bot_rails'" config/application.rb
 
 # Install administrador
 rails generate administrador:install
@@ -51,8 +52,8 @@ rails g paper_trail:install
 # Setup specs
 rails g model User email
 rails g factory_bot:model User email
-sed -i "17irequire 'cmor_blog'" config/application.rb
-sed -i "18irequire 'cmor_blog_backend'" config/application.rb
+sed -i "18irequire 'cmor_blog'" config/application.rb
+sed -i "19irequire 'cmor_blog_backend'" config/application.rb
 rails g cmor:core:install
 rails g cmor:blog:install
 rails g cmor:blog:backend:install

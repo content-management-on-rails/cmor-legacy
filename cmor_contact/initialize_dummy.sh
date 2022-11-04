@@ -17,14 +17,19 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-rails active_storage:install
+# Needed requires
+sed -i "17i\  require 'sprockets/rails'" config/application.rb
+sed -i '17i\  require "responders"' config/application.rb
+sed -i '17i\  require "webpacker"' config/application.rb
+
+# Install webpacker
+rails webpacker:install
+
+# Simple Form
 rails generate simple_form:install --bootstrap
 
-# Add webpacker
-# sed -i '17i\  require "webpacker"' config/application.rb
-
-# Responders
-sed -i '17i\require "responders"' config/application.rb
+# Active Storage
+rails active_storage:install
 
 # I18n configuration
 touch config/initializers/i18n.rb
@@ -38,9 +43,14 @@ echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # Spec setup
-sed -i '2i\  view_helper Cmor::Contact::ApplicationViewHelper, as: :contact_helper' app/controllers/application_controller.rb
+mkdir -p app/assets/javascripts
+touch app/assets/javascripts/application.js
 sed -i '15i\//= require cmor_contact' app/assets/javascripts/application.js
+
 sed -i '13i\ *= require cmor_contact' app/assets/stylesheets/application.css
+
+sed -i '2i\  view_helper Cmor::Contact::ApplicationViewHelper, as: :contact_helper' app/controllers/application_controller.rb
+
 rails generate controller Welcome index
 sed -i '3i\  root to: "welcome#index"' config/routes.rb
 cat <<EOT > app/views/layouts/application.html.erb

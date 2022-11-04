@@ -8,7 +8,7 @@ require_relative "../cmor_core_frontend/lib/cmor/core/frontend/gemspec"
 Gem::Specification.new do |s|
   s.name        = "cmor_testimonials"
   Cmor::Core::Frontend::Gemspec.defaults(s)
-  s.authors     = ["Eugen Müller", "Roberto Vasquez Angel"]
+  s.authors     = ["Eugen Müller", "BeeGood IT"]
   s.summary     = "CMOR Testimonials Module."
   s.description = "CMOR Testimonials Module."
 

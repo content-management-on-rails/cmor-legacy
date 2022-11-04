@@ -17,8 +17,11 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# Add webpacker
+# Needed requires
+sed -i "17i\  require 'sprockets/rails'" config/application.rb
 sed -i '17i\  require "webpacker"' config/application.rb
+
+# Add webpacker
 rails webpacker:install
 
 # I18n configuration

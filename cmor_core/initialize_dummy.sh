@@ -17,7 +17,13 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
+# Needed requires
+sed -i "16irequire 'sprockets/rails'" config/application.rb
+
+# Install Active Storage
 rails active_storage:install
+
+# Configure i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb

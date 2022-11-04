@@ -4,6 +4,8 @@ module Cmor::Transports
   class Engine < ::Rails::Engine
     isolate_namespace Cmor::Transports
 
+    config.autoload_paths << self.root.join(*%w[app concerns])
+
     config.to_prepare do
       print "[Cmor::Transports] Adding resources routes"
       Cmor::Core::Backend.configure do |config|

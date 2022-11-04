@@ -5,4 +5,5 @@ gemspec
 gem "cmor", path: "../"
 gem "cmor_multi_tenancy", path: "../cmor_multi_tenancy"
 gem "cmor_core_backend", path: "../cmor_core_backend"
-gem 'rails', '6.0.0.0'
+gem 'rails', '7.0.4'
+gem 'psych', '< 4'
