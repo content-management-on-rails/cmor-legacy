@@ -9,3 +9,4 @@ gem "cmor_cms", path: "../cmor_cms"
 gem "cmor_core_frontend", path: "../cmor_core_frontend"
 gem "cmor_legal", path: "../cmor_legal"
 gem 'rails', '7.0.4'
+gem 'capybara', git: "https://github.com/teamcapybara/capybara" # Fix undefined method `strings' for Puma::Events:Class when running specs
