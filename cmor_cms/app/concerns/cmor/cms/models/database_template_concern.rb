@@ -13,7 +13,7 @@ module Cmor
           # validations
           validates :basename, presence: true,
                                uniqueness: { scope: [:pathname, :locale, :format, :handler] }
-          validates :handler, inclusion: { in: ActionView::Template::Handlers.extensions.map(&:to_s) }
+          validates :handler, inclusion: { in: -> (r) { ActionView::Template::Handlers.extensions.map(&:to_s) } }
           validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) },
                                   allow_nil: true,
                                   allow_blank: true

@@ -3,3 +3,4 @@ gemspec
 gem 'cmor', path: '../'
 gem 'cmor_core', path: '../cmor_core'
 gem 'rails', '7.0.4'
+gem 'psych', '< 4'

@@ -20,6 +20,7 @@ sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 # Needed requires
 sed -i "17i\  require 'sprockets/rails'" config/application.rb
 sed -i '17i\  require "webpacker"' config/application.rb
+sed -i '17i\  require "rails-i18n"' config/application.rb
 
 # Add webpacker
 rails webpacker:install

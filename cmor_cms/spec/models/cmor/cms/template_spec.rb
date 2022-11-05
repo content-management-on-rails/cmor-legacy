@@ -18,8 +18,7 @@ RSpec.describe Cmor::Cms::Template, type: :model do
     end
 
     context 'sets default locale on initialization' do
-      before(:each) { I18n.locale = :de }
-      it { expect(subject.locale).to eq(I18n.locale.to_s) }
+      it { I18n.with_locale(:de) { expect(subject.locale).to eq(I18n.locale.to_s) } }
     end
   end
 

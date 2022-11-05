@@ -78,7 +78,7 @@ module Cmor
         context 'template in subfolder lookup'do
           before(:each) do
             @template = Cmor::Cms::Layout.create! do |template|
-              template.pathname  = '/foo/bar/'
+              template.pathname  = 'foo/bar/'
               template.basename  = 'baz'
               template.format    = 'html'
               template.handler   = 'erb'
@@ -138,8 +138,8 @@ module Cmor
       describe '#assert_slashs' do
         it { expect(subject).to respond_to :assert_slashs }
 
-        it 'should assert it has slashs on both ends' do
-          expect(subject.assert_slashs('foo/bar')).to eq('/foo/bar/')
+        it 'should assert it has slashs at the end' do
+          expect(subject.assert_slashs('foo/bar')).to eq('foo/bar/')
         end
       end
 

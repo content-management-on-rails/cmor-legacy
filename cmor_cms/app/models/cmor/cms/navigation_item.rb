@@ -84,7 +84,7 @@ module Cmor::Cms
     def update_url_form_page
       self.url = build_url_from_page(page.locale, page.pathname, page.basename, page.home_page?)
     end
-    
+
     module PropertiesConcern
       extend ActiveSupport::Concern
 

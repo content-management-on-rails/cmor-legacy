@@ -36,7 +36,7 @@ RSpec.describe Cmor::Cms::NavigationItem, type: :model do
         original_navigation = create(:cmor_cms_navigation, name: 'old_navigation')
         first_level_item = create(:cmor_cms_navigation_item, name: 'first_level_item', navigation: original_navigation)
         second_level_item = create(:cmor_cms_navigation_item, name: 'second_level_item', parent: first_level_item)
-        
+
         new_navigation = create(:cmor_cms_navigation, name: 'new_navigation')
         first_level_item.navigation = new_navigation
         first_level_item.save!
