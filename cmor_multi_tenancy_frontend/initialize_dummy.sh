@@ -60,7 +60,9 @@ Rails.application.routes.draw do
       root to: 'home#index'
     end
 
-    scope path: "(/:client_identifier)" do
+    # The constraints part is needed due to a bug in route_translator where the generated
+    # routes do not include the leading slash from the scope.
+    scope "/(:client_identifier)", constraints: { client_identifier: /\/(.+)/ } do
       root to: 'home#index'
     end
 

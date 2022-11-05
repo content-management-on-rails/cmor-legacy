@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'cmor_multi_tenancy'
 
   spec.add_development_dependency "turbolinks"
+  spec.add_development_dependency "puma"
 end
