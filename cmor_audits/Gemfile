@@ -4,6 +4,6 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 gem "cmor", path: "../"
-gem 'rails', '7.0.4'
 gem 'cmor_blog', path: '../cmor_blog'
 gem 'cmor_blog_backend', path: '../cmor_blog_backend'
+gem 'rails', '7.0.4'

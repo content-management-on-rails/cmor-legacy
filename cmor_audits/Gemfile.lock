@@ -24,6 +24,7 @@ PATH
       rao-component
       rao-resources_controller (>= 0.0.17.pre)
       rao-service (>= 0.0.17.pre)
+      sprockets-rails
 
 PATH
   remote: ..
@@ -38,6 +39,7 @@ PATH
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
+      sprockets-rails
     cmor_core_backend (0.0.61.pre)
       administrador (>= 0.0.29.pre)
       cmor_core (= 0.0.61.pre)
@@ -47,6 +49,7 @@ PATH
       cmor_core (= 0.0.61.pre)
       rails (>= 7.0.4)
       rao-view_helper
+      sprockets-rails
 
 PATH
   remote: .
