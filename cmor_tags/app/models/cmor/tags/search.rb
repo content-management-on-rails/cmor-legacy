@@ -21,11 +21,7 @@ module Cmor::Tags
     end
 
     def exact=(value)
-      if Rails.version < '5.1'
-        @exact = ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
-      else
-        @exact = ActiveRecord::Type::Boolean.new.cast(value)
-      end
+      @exact = ActiveRecord::Type::Boolean.new.cast(value)
     end
 
     private

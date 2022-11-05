@@ -6,7 +6,7 @@ module Cmor::Showcase
     belongs_to :category
 
     has_many_attached :assets
-    
+
     acts_as_list scope: :category
     default_scope -> { order(:category_id, :position) }
     acts_as_published
@@ -50,13 +50,9 @@ module Cmor::Showcase
         assets
       end
 
-       def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
-        end
+      def append_assets=(assets)
+        self.assets.attach(assets)
+      end
 
       def overwrite_assets
         assets

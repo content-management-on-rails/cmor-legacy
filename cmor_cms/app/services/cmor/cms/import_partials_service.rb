@@ -75,7 +75,7 @@ module Cmor::Cms
 
     private
 
-    def _perform    
+    def _perform
       @partials = load_partials
       partials_count = @partials.size
       say "Processing #{partials_count} partials in #{view_path}" do
@@ -96,11 +96,7 @@ module Cmor::Cms
     end
 
     def force=(value)
-      @force = if Rails.version < '5.0'
-        ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
-      else
-        ActiveRecord::Type::Boolean.new.cast(value)
-      end
+      @force = ActiveRecord::Type::Boolean.new.cast(value)
     end
 
     private

@@ -8,11 +8,7 @@ module Cmor
         include Rao::ResourcesController::RestActionsConcern
         include Controller::RedirectBackConcern
 
-        if Rails.version < '5'
-          skip_before_action :authenticate_user!
-        else
-          skip_before_action :authenticate_user!, raise: false
-        end
+        skip_before_action :authenticate_user!, raise: false
 
         def create
           @resource = resource_class.new(permitted_params)

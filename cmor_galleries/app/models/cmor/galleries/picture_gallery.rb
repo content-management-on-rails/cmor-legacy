@@ -18,11 +18,7 @@ module Cmor
         end
 
         def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
+          self.assets.attach(assets)
         end
 
         def overwrite_assets

@@ -32,11 +32,7 @@ module Cmor
         end
 
         def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
+          self.assets.attach(assets)
         end
 
         def overwrite_assets
@@ -79,12 +75,12 @@ module Cmor
 
         included do
           attr_writer :height, :width
-          
+
           serialize :variant_options
-          
+
           validates :width, numericality: true, allow_nil: true, allow_blank: true
           validates :height, numericality: true, allow_nil: true, allow_blank: true
-          
+
           before_validation :set_variant_options
         end
 

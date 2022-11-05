@@ -7,11 +7,7 @@ FactoryBot.define do
         filename:     'example.png',
         content_type: 'image/png'
       )
-      if Rails.version < "6.0.0"
-        resource.asset = assets.first
-      else
-        resource.asset = resource.carousel.assets.first
-      end
+      resource.asset = resource.carousel.assets.first
     }
   end
 end
