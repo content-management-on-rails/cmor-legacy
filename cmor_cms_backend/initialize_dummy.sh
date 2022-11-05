@@ -31,6 +31,9 @@ touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
+# Fix psych
+sed -i '39i\    config.active_record.yaml_column_permitted_classes = [OpenStruct]' config/application.rb
+
 ## I18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
