@@ -10,6 +10,7 @@ PATH
       rao-view_helper (>= 0.0.20.pre)
       request_store_rails
       route_translator
+      sprockets-rails
 
 PATH
   remote: ..
