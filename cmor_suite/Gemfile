@@ -31,3 +31,4 @@ gem 'cmor_user_area', path: '../cmor_user_area'
 gem 'cmor_user_area_backend', path: '../cmor_user_area_backend'
 
 gem 'rails', '7.0.4'
+gem 'psych', '< 4'
