@@ -15,6 +15,7 @@ module Cmor
         def with_subdomain(identfier)
           @_original_host = Capybara.default_host
           Capybara.default_host = @_original_host.gsub(/(\:\/\/[a-z0-9-]{1,})\./, "://#{identfier}.")
+          puts @_original_host.gsub(/(\:\/\/[a-z0-9-]{1,})\./, "://#{identfier}.")
           yield
           Capybara.default_host = @_original_host
         end

@@ -16,9 +16,9 @@ module Cmor
         included do
           helper_method :current_client if respond_to?(:helper_method)
         end
-        
+
         private
-        
+
         def current_client
           Cmor::MultiTenancy.current_client
         end
@@ -44,7 +44,13 @@ module Cmor
         end
 
         def current_client_identifier
-          params[:client_identifier] || ENV.fetch('client_identifier') { Cmor::MultiTenancy::Configuration.aliases_for_default_client.first }
+          if current_client_key == :subdomain
+            request.host.split(".").first
+          else
+            # The delete_prefix call is needed due to a bug in route_translator where the generated
+            # routes do not include the leading slash from the scope.
+            params[:client_identifier]&.delete_prefix("/") || ENV.fetch('client_identifier') { Cmor::MultiTenancy::Configuration.aliases_for_default_client.first }
+          end
         end
 
         def with_client(client)
@@ -52,11 +58,11 @@ module Cmor
         end
 
         def redirect_to_default_client
-          redirect_to(current_client_key => load_default_client.identifier)
+          redirect_to(url_for(current_client_key => load_default_client.identifier), allow_other_host: true)
         end
 
         def current_client_key
-          :subdomain
+          Cmor::MultiTenancy::Configuration.current_client_key
         end
       end
     end
