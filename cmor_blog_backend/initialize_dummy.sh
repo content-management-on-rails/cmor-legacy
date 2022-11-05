@@ -22,21 +22,24 @@ sed -i "17i\  require 'sprockets/rails'" config/application.rb
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
 
-## I18n configuration
+# Setup SimpleForm
+rails generate simple_form:install --bootstrap
+
+# Setup I18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+# Setup I18n
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Add ActiveStorage
+# Setup ActiveStorage
 rails active_storage:install:migrations
 
-# Add User model for userstamping
+# Setup user model for userstamping
 rails g model User email
 sed -i '2i\  private' app/controllers/application_controller.rb
 sed -i '3i\  ' app/controllers/application_controller.rb
@@ -44,13 +47,15 @@ sed -i '4i\  def current_user' app/controllers/application_controller.rb
 sed -i '5i\    User.first_or_create!(email: "jane.doe@domain.local")' app/controllers/application_controller.rb
 sed -i '6i\  end' app/controllers/application_controller.rb
 
-# Install cmor core backend gem
+# Setup Administrador
 rails generate administrador:install
+
+# Setup Cmor::Core::Backend
 rails generate cmor:core:backend:install
 
-# CMOR Blog
+# Setup Cmor::Blog
 rails generate cmor:blog:install
 rails cmor_blog:install:migrations db:migrate db:test:prepare
 
-# Install
+# Setup Cmor::Blog::Backend
 rails generate cmor:blog:backend:install

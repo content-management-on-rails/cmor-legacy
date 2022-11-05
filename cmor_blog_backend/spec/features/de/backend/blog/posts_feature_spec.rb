@@ -11,7 +11,7 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
     it { resources; expect(subject).to implement_index_action(self) }
 
     # Create
-    it { 
+    it {
       expect(subject).to implement_create_action(self)
         .for(resource_class)
         .within_form('#new_post') {
@@ -29,7 +29,7 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
         }
         .increasing{ Cmor::Blog::Post.count }.by(1)
     }
-    
+
     # Read
     it { expect(subject).to implement_show_action(self).for(resource) }
 
@@ -39,9 +39,9 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
         .for(resource)
         .within_form('.edit_post') {
           # fill the needed form inputs via capybara here
-          # 
+          #
           # Example:
-          # 
+          #
           #     fill_in 'slider[name]', with: 'New name'
           fill_in 'post[body]', with: 'Blah blah blah.'
         }
@@ -74,7 +74,8 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
       attach_file 'post[append_assets][]', [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
     end
 
-    it { expect{ submit_button.click }.to change{ resource.asset_details.count }.from(2).to(3) }
+    it { expect{ submit_button.click }.to change{ resource.reload.assets.count }.from(2).to(3) }
+    it { expect{ submit_button.click }.to change{ resource.reload.asset_details.count }.from(2).to(3) }
   end
 
   describe 'replacing asset details' do
@@ -93,6 +94,7 @@ RSpec.describe '/de/backend/blog/posts', type: :feature do
       attach_file 'post[overwrite_assets][]', [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
     end
 
-    it { expect{ submit_button.click }.to change{ resource.asset_details.count }.from(2).to(1) }
+    it { expect{ submit_button.click }.to change{ resource.reload.asset_details.count }.from(2).to(1) }
+    it { expect{ submit_button.click }.to change{ resource.reload.assets.count }.from(2).to(1) }
   end
 end
