@@ -1,6 +1,12 @@
 # CMOR User Area
 
-## Migration to 4.0.0
+## Upgrading to 0.0.61.pre
+
+Add Migrations and migrate:
+
+    #> rails cmor_user_area:install:migrations && rails db:migrate
+
+## Upgrading to 4.0.0
 
 Defining after_sign_in_url in the controller is not supported anymore. Control
 the after sign in location by configuring it in the initializer:
