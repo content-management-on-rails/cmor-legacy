@@ -12,7 +12,7 @@ RSpec.describe '/de/backend/authentifizierung/users', type: :feature do
   it { resources; expect(subject).to implement_index_action(self) }
 
   # Create
-  it { 
+  it {
     expect(subject).to implement_create_action(self)
       .for(resource_class)
       .within_form('#new_user') {
@@ -30,7 +30,7 @@ RSpec.describe '/de/backend/authentifizierung/users', type: :feature do
       }
       .increasing{ Cmor::UserArea::User.count }.by(1)
   }
-  
+
   # Read
   it { expect(subject).to implement_show_action(self).for(resource) }
 
@@ -40,9 +40,9 @@ RSpec.describe '/de/backend/authentifizierung/users', type: :feature do
       .for(resource)
       .within_form('.edit_user') {
         # fill the needed form inputs via capybara here
-        # 
+        #
         # Example:
-        # 
+        #
         #     fill_in 'slider[name]', with: 'New name'
         fill_in 'user[email]', with: 'john.doe@local.domain'
       }
