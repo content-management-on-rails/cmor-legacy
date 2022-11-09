@@ -6,7 +6,7 @@ module Cmor
       validates :model_class_name, :attachment_name, :options, presence: true
 
       def self._all
-        Configuration.antivirus_enabled_models
+        Configuration.antivirus_enabled_models.values
       end
 
       def id
