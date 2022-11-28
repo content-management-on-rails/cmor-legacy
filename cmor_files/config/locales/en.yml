@@ -40,14 +40,14 @@ en:
         updated_at: Updated at
       cmor/files/folder:
         id: ID
-        append_file_details: Append files
+        append_file_detail_assets: Append files
         description: Description
         file_details: Files
         file_details_count: Files
         identifier: Identifier
         locale: Locale
         name: Name
-        overwrite_file_details: Overwrite files
+        overwrite_file_detail_assets: Overwrite files
         position: Position
         published: Published
         published_at: Published at

@@ -40,14 +40,14 @@ de:
         updated_at: Aktualisiert am
       cmor/files/folder:
         id: ID
-        append_file_details: Dateien hinzufügen
+        append_file_detail_assets: Dateien hinzufügen
         description: Beschreibung
         file_details: Dateien
         file_details_count: Dateien
         identifier: Bezeichner
         locale: Sprache
         name: Name
-        overwrite_file_details: Dateien ersetzen
+        overwrite_file_detail_assets: Dateien ersetzen
         position: Position
         published: Veröffentlicht
         published_at: Veröffentlicht am
