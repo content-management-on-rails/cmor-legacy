@@ -20,6 +20,14 @@ module Cmor
           super.joins(:folder)
         end
 
+        def after_destroy_location
+          last_location
+        end
+
+        def after_reposition_location
+          last_location
+        end
+
         def permitted_params
           params.require(:file_detail).permit(:title, :description)
         end

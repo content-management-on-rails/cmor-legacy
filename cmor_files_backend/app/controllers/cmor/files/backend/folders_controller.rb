@@ -13,7 +13,7 @@ module Cmor
         private
 
         def permitted_params
-          params.require(:folder).permit(:name, :description, :published, assets: [], append_assets: [], overwrite_assets: [])
+          params.require(:folder).permit(:name, :description, :published, append_file_detail_assets: [], overwrite_file_detail_assets: [])
         end
       end
     end

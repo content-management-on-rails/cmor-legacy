@@ -1,16 +1,11 @@
 %h2= Cmor::Files::FileDetail.model_name.human(count: :other)
 
-= collection_table(collection: @resource.file_details, resource_class: Cmor::Files::FileDetail) do |t|
-  = t.id
-  = t.column :title
-  = t.column :blob_filename do |resource|
-    - resource.asset.blob.filename
-  = t.column :blob_byte_size do |resource|
-    - number_to_human_size(resource.asset.blob.byte_size)
-  = t.column :blob_checksum do |resource|
-    - resource.asset.blob.checksum
-  = t.timestamps format: :short
-  = t.column :actions do |resource|
-    - link_to([resource], id: "#{dom_id(resource)}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('rao.component.collection_table.destroy_confirmation') }) do
-      %span.glyphicon.glyphicon-fire
-      %span.btn-text= t('.destroy')
+= collection_table(collection: @resource.file_details, resource_class: Cmor::Files::FileDetail) do |table|
+  = table.acts_as_list_actions
+  = table.column :title
+  = table.column :asset_filename do |resource|
+    - resource.asset.filename
+  = table.column :asset_byte_size do |resource|
+    - number_to_human_size(resource.asset.byte_size)
+  = table.timestamps format: :short
+  = render partial: "administrador/resources_controller/base/index_table_actions", locals: { table: table }
