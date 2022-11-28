@@ -3,7 +3,7 @@ module Cmor
     class Folder < ApplicationRecord
       include Cmor::Core::Model::LocalizationConcern
 
-      has_many_attached :assets
+      # has_many_attached :assets
 
       # acts as published
       include ActsAsPublished::ActiveRecord
@@ -25,61 +25,31 @@ module Cmor
         "#{self.class.model_name.human}: #{self.name}"
       end
 
-      def assets_count
-        assets.count
-      end
-
-      def file_details_count
-        file_details.count
-      end
-
       module FileDetailsConcern
         extend ActiveSupport::Concern
 
         included do
           has_many :file_details, inverse_of: :folder, dependent: :destroy, autosave: true
-          before_validation :cleanup_orphaned_file_details
-          before_validation :ensure_file_details
         end
 
-        def append_assets
-          assets
+        def file_details_count
+          file_details.count
         end
 
-         def append_assets=(assets)
-            if Rails.version < '6.0.0'
-              self.assets = assets
-            else
-              self.assets.attach(assets)
-            end
-          end
-
-        def overwrite_assets
-          assets
+        def append_file_detail_assets=(collection)
+          collection.map { |r| file_details.build.tap { |fd| fd.asset.attach(r); fd } }
         end
 
-        def overwrite_assets=(assets)
-          return if assets.nil? || assets.empty?
-          self.file_details.map { |fd| fd.mark_for_destruction }
-          self.assets = assets
+        def append_file_detail_assets
+          file_details
         end
 
-        private
-
-        def cleanup_orphaned_file_details
-          file_details.each do |file_detail|
-            file_detail.destroy if file_detail.asset.nil?
-          end
+        def overwrite_file_detail_assets=(collection)
+          file_details.replace(collection.map { |r| file_details.build.tap { |fd| fd.asset.attach(r); fd } })
         end
 
-        def ensure_file_details
-          (assets - file_details.all.map(&:asset)).map do |asset|
-            build_file_detail_for_asset(asset)
-          end
-        end
-
-        def build_file_detail_for_asset(asset)
-          file_details.build(asset: asset)
+        def overwrite_file_detail_assets
+          file_details
         end
       end
 
