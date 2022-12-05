@@ -14,10 +14,14 @@ module Cmor::Showcase
 
     private
 
+    def load_collection_scope
+      super.joins(:item)
+    end
+
     def after_reposition_location
       last_location
     end
-    
+
     def after_destroy_many_location
       last_location
     end
