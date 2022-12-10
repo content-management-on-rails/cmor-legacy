@@ -57,7 +57,7 @@ RSpec.describe '/de/backend/dateien/folders', type: :feature do
     }
   end
 
-  describe 'appending item details' do
+  describe 'appending file details' do
     let(:original_assets) {[
       { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'},
       { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'}
@@ -76,11 +76,11 @@ RSpec.describe '/de/backend/dateien/folders', type: :feature do
     it { expect{ submit_button.click }.to change{ resource.file_details.count }.from(2).to(3) }
   end
 
-  describe 'replacing item details' do
-  let(:original_assets) {[
-      { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'},
-      { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'}
-    ]}
+  describe 'replacing file details' do
+    let(:original_assets) {[
+        { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'},
+        { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'}
+      ]}
     let(:resource) { create(:cmor_files_folder, append_file_detail_assets: original_assets) }
     let(:base_path) { '/de/backend/dateien/folders' }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
