@@ -1,7 +1,6 @@
 module Cmor::Files
   class FileDetail < ApplicationRecord
     belongs_to :folder, inverse_of: :file_details
-    # belongs_to :asset, class_name: 'ActiveStorage::Attachment', dependent: :destroy
     has_one_attached :asset
 
     # acts as published

@@ -3,8 +3,6 @@ module Cmor
     class Folder < ApplicationRecord
       include Cmor::Core::Model::LocalizationConcern
 
-      # has_many_attached :assets
-
       # acts as published
       include ActsAsPublished::ActiveRecord
       acts_as_published
