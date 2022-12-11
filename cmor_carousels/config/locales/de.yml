@@ -29,6 +29,7 @@ de:
         url: URL
       cmor/carousels/carousel:
         id: ID
+        append_item_detail_assets: Dateien hinzufügen
         created_at: Erstellt am
         description: Beschreibung
         item_details: Karussell Elemente
@@ -37,6 +38,7 @@ de:
         name: Name
         updated_at: Aktualisiert am
         identifier: Bezeichner
+        overwrite_item_detail_assets: Dateien ersetzen
         variant_options: Bildoptionen
   resources:
     cmor_carousels_items_details: carousel-item-details

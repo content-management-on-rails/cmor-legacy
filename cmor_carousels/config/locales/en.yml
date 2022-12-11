@@ -16,7 +16,7 @@ en:
         created_at: created at
         image: Bild
         image_content_type: image filetype
-        image_file_name: imagte filename
+        image_file_name: image filename
         image_file_size: image filesize
         image_fingerprint: image fingerprint
         image_updated_at: image updated at
@@ -29,6 +29,7 @@ en:
         url: url
       cmor/carousels/carousel:
         id: ID
+        append_item_detail_assets: append files
         created_at: created at
         description: description
         items: carousel items
@@ -37,6 +38,7 @@ en:
         name: name
         updated_at: updated at
         identifier: identifier
+        overwrite_item_detail_assets: overwrite files
         variant_options: image_options
   resources:
     cmor_carousels_items: carousel-items

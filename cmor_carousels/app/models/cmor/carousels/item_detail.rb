@@ -4,8 +4,9 @@ module Cmor
       include ActsAsPublished::ActiveRecord
       include Markup::Rails::ActiveRecord
 
-      belongs_to :carousel
-      belongs_to :asset, class_name: 'ActiveStorage::Attachment', dependent: :destroy      
+      belongs_to :carousel, inverse_of: :item_details
+
+      has_one_attached :asset
 
       acts_as_list scope: :carousel
       acts_as_markup :description, Cmor::Core::Configuration.default_markup_options

@@ -4,13 +4,11 @@
   = form.input :width
   = form.input :height
 
-- if form.object.assets.empty?
-  = form.input :assets, as: :file, input_html: { multiple: true }
-- else
-  .row.mb-4
-    .col-md-6
-      .bg-success.p-4
-        = form.input :append_assets, as: :file, input_html: { multiple: true }
+.row.mb-4
+  .col-md-6
+    .bg-success.p-4
+      = form.input :append_item_detail_assets, as: :file, input_html: { multiple: true }
+  - if form.object.item_details.any?
     .col-md-6
       .bg-danger.p-4
-        = form.input :overwrite_assets, as: :file, input_html: { multiple: true }
+        = form.input :overwrite_item_detail_assets, as: :file, input_html: { multiple: true }

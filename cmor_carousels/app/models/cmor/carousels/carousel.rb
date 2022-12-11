@@ -1,8 +1,6 @@
 module Cmor
   module Carousels
     class Carousel < ActiveRecord::Base
-      has_many_attached :assets
-
       scope :for_locale, ->(locale) { where(self.arel_table[:locale].eq(locale).or(self.arel_table[:locale].eq(nil))).order(locale: :desc) }
 
       validates :locale, inclusion: I18n.available_locales.map(&:to_s),
@@ -14,77 +12,47 @@ module Cmor
         "#{identifier} (#{locale})"
       end
 
-      def item_details_count
-        item_details.count
-      end
-
-      module ItemDetails
+      module ItemDetailsConcern
         extend ActiveSupport::Concern
 
         included do
-          has_many :item_details, -> { order(position: :asc) }, inverse_of: :carousel, dependent: :destroy, autosave: true
-          before_validation :cleanup_orphaned_item_details
-          before_validation :ensure_item_details
-        end
-
-        def append_assets
-          assets
-        end
-
-        def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
-        end
-
-        def overwrite_assets
-          assets
-        end
-
-        def overwrite_assets=(assets)
-          return if assets.nil? || assets.empty?
-          self.item_details.map { |id| id.mark_for_destruction }
-          self.assets = assets
+          has_many :item_details, inverse_of: :carousel, dependent: :destroy, autosave: true
         end
 
         def item_details_count
           item_details.count
         end
 
-        private
-
-        def cleanup_orphaned_item_details
-          item_details.each do |item_detail|
-            item_detail.destroy if item_detail.asset.nil?
-          end
+        def append_item_detail_assets=(collection)
+          collection.map { |r| self.item_details.build.tap { |fd| fd.asset.attach(r); fd } }
         end
 
-        def ensure_item_details
-          (assets - item_details.all.map(&:asset)).map do |asset|
-            build_item_detail_for_asset(asset)
-          end
+        def append_item_detail_assets
+          item_details
         end
 
-        def build_item_detail_for_asset(asset)
-          item_details.build(asset: asset, published: true)
+        def overwrite_item_detail_assets=(collection)
+          item_details.replace(collection.map { |r| item_details.build.tap { |fd| fd.asset.attach(r); fd } })
+        end
+
+        def overwrite_item_detail_assets
+          item_details
         end
       end
 
-      include ItemDetails
+      include ItemDetailsConcern
 
       module VariantOptionsConcern
         extend ActiveSupport::Concern
 
         included do
           attr_writer :height, :width
-          
+
           serialize :variant_options
-          
+
           validates :width, numericality: true, allow_nil: true, allow_blank: true
           validates :height, numericality: true, allow_nil: true, allow_blank: true
-          
+
           before_validation :set_variant_options
         end
 

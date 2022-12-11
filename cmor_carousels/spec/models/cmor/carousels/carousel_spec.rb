@@ -1,20 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe Cmor::Carousels::Carousel, type: :model do
-  describe '#append_assets' do
-    let(:original_assets) { [{ io: File.open(Cmor::Carousels::Engine.root.join(*%w(spec files cmor carousels item_details example.png))), filename: 'original.png' }] }
-    let(:appended_assets) { [{ io: File.open(Cmor::Carousels::Engine.root.join(*%w(spec files cmor carousels item_details example.png))), filename: 'appended.png' }] }
+  describe '#append_item_detail_assets' do
+    let(:existing_item_details) { create_list(:cmor_carousels_item_detail, 1, carousel: subject) }
+    let(:new_assets) { [{ io: File.open(Cmor::Carousels::Engine.root.join(*%w(spec files cmor carousels item_details example.png))), filename: 'appended.png' }] }
 
     subject { create(:cmor_carousels_carousel) }
 
     before(:each) do
-      subject.assets.attach(original_assets)
-      subject.save!
-      subject.append_assets = appended_assets
-      subject.save!
+      existing_item_details
     end
-    it { expect(subject.assets.count).to eq(2) }
-    it { expect(subject.item_details.count).to eq(2) }
-    it { subject.item_details.each { |id| expect(id.asset).to be_present } }
+
+    describe 'persistence changes' do
+      it { expect { subject.append_item_detail_assets = new_assets; subject.save! }.to change { subject.item_details.count }.from(1).to(2) }
+    end
+  end
+
+  describe '#overwrite_item_detail_assets' do
+    let(:existing_item_details) { create_list(:cmor_carousels_item_detail, 2, carousel: subject) }
+    let(:new_assets) { [{ io: File.open(Cmor::Carousels::Engine.root.join(*%w(spec files cmor carousels item_details example.png))), filename: 'appended.png' }] }
+
+    subject { create(:cmor_carousels_carousel) }
+
+    before(:each) do
+      existing_item_details
+    end
+
+    describe 'persistence changes' do
+      it { expect { subject.overwrite_item_detail_assets = new_assets; subject.save! }.to change { subject.item_details.count }.from(2).to(1) }
+    end
   end
 end
