@@ -12,7 +12,7 @@ module Cmor
 
         include Rao::Query::Controller::QueryConcern
         view_helper Rao::Query::ApplicationHelper, as: :query_helper
-        
+
         def self.resource_class
           Cmor::Blog::Post
         end
@@ -43,7 +43,7 @@ module Cmor
         end
 
         def permitted_params
-          params.require(:post).permit(:locale, :title, :body, :published, :tag_list, assets: [], append_assets: [], overwrite_assets: [])
+          params.require(:post).permit(:locale, :title, :body, :published, :tag_list, append_asset_detail_assets: [], overwrite_asset_detail_assets: [])
         end
       end
     end

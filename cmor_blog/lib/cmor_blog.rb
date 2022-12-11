@@ -1,4 +1,5 @@
 require 'cmor_core_frontend'
+require 'active_storage_validations'
 require 'acts_as_list'
 require 'acts_as_published'
 require 'friendly_id'

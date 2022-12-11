@@ -17,7 +17,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
     specs_to_run = options.delete(:specs_to_run)
     specs_to_skip = options.delete(:specs_to_skip)
     specs = specs_to_run - specs_to_skip
-    
+
     describe model do
       it 'is an ActiveRecord::Base' do
         expect(ActiveRecord::Base.descendants).to include(model)
@@ -30,7 +30,7 @@ RSpec.describe 'ActiveRecord::Base models', type: :model do
 
       it 'is valid with correct attribute values' do
         instance = build(model.to_s.tableize.singularize.underscore.tr('/', '_'))
-        
+
         instance.valid?
         expect(instance.errors.full_messages).to eq([])
       end if specs.include?(:valid_with_correct_attributes)

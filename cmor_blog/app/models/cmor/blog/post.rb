@@ -12,9 +12,6 @@ module Cmor
       acts_as_list
       default_scope { order(position: :desc) }
 
-      # assets
-      has_many_attached :assets if respond_to?(:has_many_attached)
-
       # slugs
       extend FriendlyId
       friendly_id :title, use: :slugged
@@ -54,56 +51,30 @@ module Cmor
 
         included do
           has_many :asset_details, inverse_of: :post, dependent: :destroy, autosave: true
-          before_validation :cleanup_orphaned_asset_details
-          before_validation :ensure_asset_details
         end
 
         def asset_details_count
           asset_details.count
         end
 
-        def append_assets
-          assets
+        def append_asset_detail_assets=(collection)
+          collection.map { |r| self.asset_details.build.tap { |fd| fd.asset.attach(r); fd } }
         end
 
-        def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
+        def append_asset_detail_assets
+          asset_details
         end
 
-        def overwrite_assets
-          assets
+        def overwrite_asset_detail_assets=(collection)
+          asset_details.replace(collection.map { |r| asset_details.build.tap { |fd| fd.asset.attach(r); fd } })
         end
 
-        def overwrite_assets=(assets)
-          return if assets.nil? || assets.empty?
-          self.asset_details.map { |ad| ad.mark_for_destruction }
-          self.assets = assets
-        end
-
-        private
-
-        def cleanup_orphaned_asset_details
-          asset_details.each do |asset_detail|
-            asset_detail.destroy if asset_detail.asset.nil?
-          end
-        end
-
-        def ensure_asset_details
-          (assets - asset_details.all.map(&:asset)).map do |asset|
-            build_asset_detail_for_asset(asset)
-          end
-        end
-
-        def build_asset_detail_for_asset(asset)
-          asset_details.build(asset: asset)
+        def overwrite_asset_detail_assets
+          asset_details
         end
       end
 
-      include AssetDetailsConcern if respond_to?(:has_many_attached)
+      include AssetDetailsConcern
 
       module PreviewPictureConcern
         extend ActiveSupport::Concern

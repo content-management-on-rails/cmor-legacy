@@ -12,14 +12,14 @@ en:
     attributes:
       cmor/blog/post:
         id: ID
-        append_assets: Append files
+        append_asset_detail_assets: Append files
         asset_details_count: Assets
         assets: Asset
         body: Body
         created_by_id: Created by
         creator: Created by
         locale: Locale
-        overwrite_assets: Overwrite files
+        overwrite_asset_detail_assets: Overwrite files
         position: Position
         published: Published
         published_at: Published at
