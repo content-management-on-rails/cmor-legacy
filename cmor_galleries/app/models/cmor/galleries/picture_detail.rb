@@ -4,7 +4,8 @@ module Cmor
       include ActsAsPublished::ActiveRecord
 
       belongs_to :picture_gallery, inverse_of: :picture_details
-      belongs_to :asset, class_name: 'ActiveStorage::Attachment', dependent: :destroy
+
+      has_one_attached :asset
 
       acts_as_list scope: :picture_gallery
 

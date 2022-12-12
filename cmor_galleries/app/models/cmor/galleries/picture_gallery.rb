@@ -3,57 +3,35 @@ module Cmor
     class PictureGallery < ApplicationRecord
       include Cmor::Core::Model::CollectionConcern
 
-      has_many_attached :assets
-
-      module PictureDetails
+      module PictureDetailsConcern
         extend ActiveSupport::Concern
 
         included do
-          has_many :picture_details, -> { order(position: :asc) }, inverse_of: :picture_gallery, dependent: :destroy, autosave: true
-          before_validation :ensure_picture_details
-        end
-
-        def append_assets
-          assets
-        end
-
-        def append_assets=(assets)
-          if Rails.version < '6.0.0'
-            self.assets = assets
-          else
-            self.assets.attach(assets)
-          end
-        end
-
-        def overwrite_assets
-          assets
-        end
-
-        def overwrite_assets=(assets)
-          return if assets.nil? || assets.empty?
-          self.picture_details.map { |pd| pd.mark_for_destruction }
-          self.assets = assets
+          has_many :picture_details, inverse_of: :picture_gallery, dependent: :destroy, autosave: true
         end
 
         def picture_details_count
           picture_details.count
         end
 
-        private
-
-        def ensure_picture_details
-          (assets - picture_details.all.map(&:asset)).map do |asset|
-            build_picture_detail_for_asset(asset)
-          end
+        def append_picture_detail_assets=(collection)
+          collection.map { |r| self.picture_details.build.tap { |fd| fd.asset.attach(r); fd } }
         end
 
-        def build_picture_detail_for_asset(asset)
-          picture_details.build(asset: asset, published: published)
+        def append_picture_detail_assets
+          picture_details
+        end
+
+        def overwrite_picture_detail_assets=(collection)
+          picture_details.replace(collection.map { |r| picture_details.build.tap { |fd| fd.asset.attach(r); fd } })
+        end
+
+        def overwrite_picture_detail_assets
+          picture_details
         end
       end
 
-      include PictureDetails
-
+      include PictureDetailsConcern
 
       def human
         name

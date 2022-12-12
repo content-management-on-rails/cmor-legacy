@@ -15,20 +15,20 @@ en:
     attributes:
       cmor/galleries/picture_gallery:
         id: ID
-        append_assets: Append pictures
+        append_picture_detail_assets: Append pictures
         description: Description
         display_code_for_erb: Display code (erb)
         identifier: Identifier
         locale: Locale
         name: Name
-        overwrite_assets: Overwrite pictures
+        overwrite_picture_detail_assets: Overwrite pictures
         picture_details_count: Pictures
         position: Position
         preview: Preview
         published: Published
         published_at: Published at
         slug: Friendly ID
-        created_at: Created at 
+        created_at: Created at
         updated_at: Updated at
       cmor/galleries/picture_detail:
         id: ID
@@ -46,7 +46,7 @@ en:
         published_at: Published at
         published: Published
         title: Title
-        created_at: Created at 
+        created_at: Created at
         updated_at: Updated at
   cmor:
     galleries:

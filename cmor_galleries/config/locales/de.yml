@@ -15,13 +15,13 @@ de:
     attributes:
       cmor/galleries/picture_gallery:
         id: ID
-        append_assets: Bilder hinzufügen
+        append_picture_detail_assets: Bilder hinzufügen
         description: Beschreibung
         display_code_for_erb: Anzeigecode (erb)
         identifier: Bezeichner
         locale: Sprache
         name: Name
-        overwrite_assets: Bilder ersetzen
+        overwrite_picture_detail_assets: Bilder ersetzen
         picture_details_count: Bilder
         position: Position
         preview: Vorschau
