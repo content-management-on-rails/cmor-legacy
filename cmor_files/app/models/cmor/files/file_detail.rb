@@ -15,6 +15,7 @@ module Cmor::Files
     extend FriendlyId
     friendly_id :title, use: :slugged
 
+    validates :asset, attached: true
     validates :identifier, uniqueness: { scope: [ :folder_id ] }, allow_blank: true, allow_nil: true
 
     def label
