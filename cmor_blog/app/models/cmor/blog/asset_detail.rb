@@ -1,7 +1,6 @@
 module Cmor::Blog
   class AssetDetail < ApplicationRecord
     belongs_to :post, inverse_of: :asset_details
-    # belongs_to :asset, class_name: 'ActiveStorage::Attachment', dependent: :destroy
     has_one_attached :asset
     validates :asset, attached: true
 

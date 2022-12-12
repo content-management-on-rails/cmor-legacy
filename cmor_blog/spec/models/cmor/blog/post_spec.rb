@@ -12,9 +12,7 @@ RSpec.describe Cmor::Blog::Post, type: :model do
         { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: 'example.jpg'}
       ]}
 
-      subject { build(:cmor_blog_post) }
-
-      before(:each) { subject.save }
+      subject { create(:cmor_blog_post) }
 
       it { expect{  subject.append_asset_detail_assets = asset_detail_assets; subject.save }.to change { Cmor::Blog::AssetDetail.count }.from(0).to(2) }
     end
