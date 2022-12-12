@@ -26,7 +26,9 @@ en:
     attributes:
       cmor/showcase/category:
         <<: *shared_attributes
+        append_file_detail_assets: Append files
         locale: Locale
+        overwrite_file_detail_assets: Overwrite files
       cmor/showcase/file_detail:
         <<: *shared_attributes
         description:  Description

@@ -19,7 +19,7 @@ module Cmor::Showcase
     end
 
     def permitted_params
-      params.require(:item).permit(:category_id, :identifier, :name, :body, :published, assets: [], append_assets: [], overwrite_assets: [])
+      params.require(:item).permit(:category_id, :identifier, :name, :body, :published, append_file_detail_assets: [], overwrite_file_detail_assets: [])
     end
   end
 end

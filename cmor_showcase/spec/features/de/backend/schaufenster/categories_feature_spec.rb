@@ -9,7 +9,7 @@ RSpec.describe '/de/backend/schaufenster/categories', type: :feature do
   it { resources; expect(subject).to implement_index_action(self) }
 
   # Create
-  it { 
+  it {
     expect(subject).to implement_create_action(self)
       .for(resource_class)
       .within_form('#new_category') {
@@ -25,9 +25,9 @@ RSpec.describe '/de/backend/schaufenster/categories', type: :feature do
         fill_in 'category[identifier]', with: 'category-1'
         fill_in 'category[name]', with: 'Webseiten'
       }
-      .increasing{ Cmor::Showcase::Category.count }.by(1)
+      .increasing{ resource_class.count }.by(1)
   }
-  
+
   # Read
   it { expect(subject).to implement_show_action(self).for(resource) }
 
@@ -37,9 +37,9 @@ RSpec.describe '/de/backend/schaufenster/categories', type: :feature do
       .for(resource)
       .within_form('.edit_category') {
         # fill the needed form inputs via capybara here
-        # 
+        #
         # Example:
-        # 
+        #
         #     fill_in 'slider[name]', with: 'New name'
         fill_in 'category[name]', with: 'CI'
       }

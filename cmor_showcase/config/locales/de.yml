@@ -23,10 +23,12 @@ de:
       published: Veröffentlicht
       slug: Slug
       updated_at: Aktualisiert am
-    attributes: 
+    attributes:
       cmor/showcase/category:
         <<: *shared_attributes
+        append_file_detail_assets: Dateien hinzufügen
         locale: Sprache
+        overwrite_file_detail_assets: Dateien ersetzen
       cmor/showcase/file_detail:
         <<: *shared_attributes
         description: Beschreibung
