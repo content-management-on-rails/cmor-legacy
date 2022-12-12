@@ -9,6 +9,7 @@ module Cmor
 
       acts_as_list scope: :picture_gallery
 
+      validates :asset, attached: true
       validates :identifier, uniqueness: true, allow_nil: true
 
       def human
