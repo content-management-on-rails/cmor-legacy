@@ -28,7 +28,7 @@ RSpec.describe "/de/backend/seo/items", type: :feature do
         #     fill_in 'slider[interval]', with: '3'
         fill_in "item[path]", with: "/de"
       }
-      .increasing { Cmor::Seo::Item.count }.by(1)
+      .increasing { resource_class.count }.by(1)
   }
 
   # Read

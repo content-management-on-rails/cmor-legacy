@@ -13,7 +13,7 @@ RSpec.describe '/de/backend/bilder/picture_galleries', type: :feature, locale: :
     it { resources; expect(subject).to implement_index_action(self) }
 
     # Create
-    it { 
+    it {
       expect(subject).to implement_create_action(self)
         .for(resource_class)
         .within_form('#new_picture_gallery') {
@@ -26,7 +26,7 @@ RSpec.describe '/de/backend/bilder/picture_galleries', type: :feature, locale: :
           #     check 'slider[auto_start]'
           #     fill_in 'slider[interval]', with: '3'
           fill_in 'picture_gallery[name]', with: 'My first gallery'
-          attach_file 'picture_gallery[assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
+          attach_file 'picture_gallery[append_picture_detail_assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
           check 'picture_gallery[published]'
         }
         .increasing{ Cmor::Galleries::PictureGallery.count }.by(1)
@@ -41,9 +41,9 @@ RSpec.describe '/de/backend/bilder/picture_galleries', type: :feature, locale: :
       .for(resource)
       .within_form('.edit_picture_gallery') {
         # fill the needed form inputs via capybara here
-          # 
+          #
           # Example:
-          # 
+          #
           #     fill_in 'slider[name]', with: 'New name'
           fill_in 'picture_gallery[name]', with: 'A new name'
         }
@@ -61,38 +61,34 @@ RSpec.describe '/de/backend/bilder/picture_galleries', type: :feature, locale: :
   end
 
   describe 'appending picture details' do
-    let(:original_assets) {[
-      { io: File.open(Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))), filename: 'example.png'},
-      { io: File.open(Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))), filename: 'example.png'}
-    ]}
-    let(:resource) { create(:cmor_galleries_picture_gallery, assets: original_assets) }
+    let(:existing_picture_details) { create_list(:cmor_galleries_picture_detail, 2, picture_gallery: resource) }
+    let(:resource) { create(:cmor_galleries_picture_gallery) }
     let(:base_path) { '/de/backend/bilder/picture_galleries' }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within('form.edit_picture_gallery') { first('input[type="submit"]') } }
 
     before(:each) do
+      existing_picture_details
       visit(edit_path)
-      attach_file 'picture_gallery[append_assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
+      attach_file 'picture_gallery[append_picture_detail_assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
     end
 
     it { expect{ submit_button.click  }.to change{ resource.picture_details.count }.from(2).to(3) }
   end
 
   describe 'replacing picture details' do
-    let(:original_assets) {[
-      { io: File.open(Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))), filename: 'example.jpg'},
-      { io: File.open(Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))), filename: 'example.jpg'}
-    ]}
-    let(:resource) { create(:cmor_galleries_picture_gallery, assets: original_assets) }
+    let(:existing_picture_details) { create_list(:cmor_galleries_picture_detail, 2, picture_gallery: resource) }
+    let(:resource) { create(:cmor_galleries_picture_gallery) }
     let(:base_path) { '/de/backend/bilder/picture_galleries' }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within('form.edit_picture_gallery') { first('input[type="submit"]') } }
 
     before(:each) do
+      existing_picture_details
       visit(edit_path)
-      attach_file 'picture_gallery[overwrite_assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
+      attach_file 'picture_gallery[overwrite_picture_detail_assets][]', [Cmor::Galleries::Engine.root.join(*%w(spec files cmor galleries picture_details example.png))]
     end
 
     it { expect{ submit_button.click  }.to change{ resource.picture_details.count }.from(2).to(1) }
