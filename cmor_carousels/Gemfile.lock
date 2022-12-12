@@ -24,6 +24,7 @@ PATH
   remote: .
   specs:
     cmor_carousels (0.0.61.pre)
+      active_storage_validations
       acts_as_list
       acts_as_published
       cmor_core (= 0.0.61.pre)
@@ -71,6 +72,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_validations (1.0.3)
+      activejob (>= 5.2.0)
+      activemodel (>= 5.2.0)
+      activestorage (>= 5.2.0)
+      activesupport (>= 5.2.0)
     activejob (6.0.0)
       activesupport (= 6.0.0)
       globalid (>= 0.3.6)
@@ -179,7 +185,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    kramdown (2.3.1)
+    kramdown (2.4.0)
       rexml
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)

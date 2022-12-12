@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
+  s.add_dependency 'active_storage_validations'
   s.add_dependency 'acts_as_list'
   s.add_dependency 'markup-rails'
   s.add_dependency 'acts_as_published'

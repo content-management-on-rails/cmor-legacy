@@ -1,3 +1,4 @@
+require 'active_storage_validations'
 require 'acts_as_list'
 require 'markup-rails'
 require 'acts_as_published'

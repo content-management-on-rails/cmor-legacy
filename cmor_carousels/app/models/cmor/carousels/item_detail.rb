@@ -11,6 +11,8 @@ module Cmor
       acts_as_list scope: :carousel
       acts_as_markup :description, Cmor::Core::Configuration.default_markup_options
 
+      validates :asset, attached: true
+
       def human
         "#{carousel.class.model_name.human} #{carousel.human} - #{self.class.model_name.human} #{id}"
       end
