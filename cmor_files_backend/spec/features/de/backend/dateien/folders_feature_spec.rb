@@ -58,17 +58,15 @@ RSpec.describe '/de/backend/dateien/folders', type: :feature do
   end
 
   describe 'appending file details' do
-    let(:original_assets) {[
-      { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'},
-      { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'}
-    ]}
-    let(:resource) { create(:cmor_files_folder, append_file_detail_assets: original_assets) }
+    let(:existing_file_details) { create_list(:cmor_files_file_detail, 2, folder: resource) }
+    let(:resource) { create(:cmor_files_folder) }
     let(:base_path) { '/de/backend/dateien/folders' }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within('form.edit_folder') { first('input[type="submit"]') } }
 
     before(:each) do
+      existing_file_details
       visit(edit_path)
       attach_file 'folder[append_file_detail_assets][]', [Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))]
     end
@@ -77,17 +75,15 @@ RSpec.describe '/de/backend/dateien/folders', type: :feature do
   end
 
   describe 'replacing file details' do
-    let(:original_assets) {[
-        { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'},
-        { io: File.open(Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))), filename: 'example.png'}
-      ]}
-    let(:resource) { create(:cmor_files_folder, append_file_detail_assets: original_assets) }
+    let(:existing_file_details) { create_list(:cmor_files_file_detail, 2, folder: resource) }
+    let(:resource) { create(:cmor_files_folder) }
     let(:base_path) { '/de/backend/dateien/folders' }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within('form.edit_folder') { first('input[type="submit"]') } }
 
     before(:each) do
+      existing_file_details
       visit(edit_path)
       attach_file 'folder[overwrite_file_detail_assets][]', [Cmor::Files::Engine.root.join(*%w(spec files cmor files file_details example.png))]
     end
