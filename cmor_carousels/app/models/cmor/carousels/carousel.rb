@@ -24,7 +24,10 @@ module Cmor
         end
 
         def append_item_detail_assets=(collection)
-          collection.map { |r| self.item_details.build.tap { |fd| fd.asset.attach(r); fd } }
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            item_details << clean_collection.keep_if { |r| r.present? }.map { |r| item_details.build.tap { |fd| fd.asset.attach(r) } }
+          end
         end
 
         def append_item_detail_assets
@@ -32,7 +35,10 @@ module Cmor
         end
 
         def overwrite_item_detail_assets=(collection)
-          item_details.replace(collection.map { |r| item_details.build.tap { |fd| fd.asset.attach(r); fd } })
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            item_details.replace(clean_collection.map { |r| item_details.build.tap { |id| id.asset.attach(r) } })
+          end
         end
 
         def overwrite_item_detail_assets
