@@ -7,7 +7,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          has_many :picture_details, inverse_of: :picture_gallery, dependent: :destroy, autosave: true
+          has_many :picture_details, inverse_of: :picture_gallery, dependent: :destroy
         end
 
         def picture_details_count
@@ -15,7 +15,10 @@ module Cmor
         end
 
         def append_picture_detail_assets=(collection)
-          collection.map { |r| self.picture_details.build.tap { |fd| fd.asset.attach(r); fd } }
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            picture_details << clean_collection.map { |r| picture_details.build.tap{ |pd| pd.asset.attach(r) } }
+          end
         end
 
         def append_picture_detail_assets
@@ -23,7 +26,10 @@ module Cmor
         end
 
         def overwrite_picture_detail_assets=(collection)
-          picture_details.replace(collection.map { |r| picture_details.build.tap { |fd| fd.asset.attach(r); fd } })
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            picture_details.replace(clean_collection.map { |r| picture_details.build.tap { |pd| pd.asset.attach(r) } })
+          end
         end
 
         def overwrite_picture_detail_assets
