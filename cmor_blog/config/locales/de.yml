@@ -37,6 +37,7 @@ de:
         asset: Datei
         asset_id: Datei
         asset_actions: ''
+        asset_byte_size: "Dateigröße"
         description: Beschreibung
         filename: Dateiname
         title: Titel

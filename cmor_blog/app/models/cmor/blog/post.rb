@@ -50,7 +50,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          has_many :asset_details, inverse_of: :post, dependent: :destroy, autosave: true
+          has_many :asset_details, inverse_of: :post, dependent: :destroy
         end
 
         def asset_details_count
@@ -58,7 +58,10 @@ module Cmor
         end
 
         def append_asset_detail_assets=(collection)
-          collection.map { |r| self.asset_details.build.tap { |fd| fd.asset.attach(r); fd } }
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            asset_details << clean_collection.map { |r| asset_details.build.tap{ |ad| ad.asset.attach(r) } }
+          end
         end
 
         def append_asset_detail_assets
@@ -66,7 +69,10 @@ module Cmor
         end
 
         def overwrite_asset_detail_assets=(collection)
-          asset_details.replace(collection.map { |r| asset_details.build.tap { |fd| fd.asset.attach(r); fd } })
+          clean_collection = collection.keep_if { |r| r.present? }
+          if clean_collection.any?
+            asset_details.replace(clean_collection.map { |r| asset_details.build.tap { |ad| ad.asset.attach(r) } })
+          end
         end
 
         def overwrite_asset_detail_assets
