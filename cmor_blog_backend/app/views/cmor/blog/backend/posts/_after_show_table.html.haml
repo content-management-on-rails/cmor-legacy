@@ -1,24 +1,16 @@
+%h2= Cmor::Blog::AssetDetail.model_name.human(count: :other)
+
 - if @resource.asset_details.any?
-  = collection_table(collection: @resource.asset_details.order(position: :asc)) do |t|
-    = t.acts_as_list_actions
-    = t.thumbnail :asset
-    = t.column :filename
-    = t.column :asset_actions do |resource|
+  = collection_table(collection: @resource.asset_details.order(position: :asc)) do |table|
+    = table.acts_as_list_actions
+    = table.thumbnail :asset
+    = table.column :filename
+    = table.column :asset_byte_size do |resource|
+      - number_to_human_size(resource.asset.byte_size)
+    = table.timestamps format: :short
+    = table.column :asset_actions do |resource|
       - if resource.asset.present?
         - link_to(main_app.url_for(resource.asset), class: 'btn btn-xs btn-primary btn-responsive') do
           %i.fas.fa-download
           %span.btn-text= t('.download')
-    = t.column :actions, title: '' do |resource|
-      - capture_haml do
-        - id_base = "link-to-#{controller.class.name.underscore.gsub('_controller', '').gsub(/[\/_]/, '-')}-#{resource.to_param}"
-        .text-right.w-100
-          .btn-group
-            = link_to(resource, id: "#{id_base}-show", class: 'btn btn-xs btn-responsive btn-primary') do
-              %i.fas.fa-eye
-              %span.btn-text= t('.show')
-            = link_to([:edit, resource], id: "#{id_base}-edit", class: 'btn btn-xs btn-responsive btn-secondary') do
-              %i.fas.fa-pen
-              %span.btn-text= t('.edit')
-            = link_to(resource, id: "#{id_base}-destroy", class: 'btn btn-xs btn-responsive btn-danger', method: :delete, data: { confirm: t('rao.component.collection_table.destroy_confirmation') }) do
-              %i.fas.fa-fire
-              %span.btn-text= t('.destroy')
+    = render partial: "administrador/resources_controller/base/index_table_actions", locals: { table: table }
