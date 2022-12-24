@@ -13,6 +13,14 @@ module Cmor::Carousels::Backend
 
     private
 
+    def after_reposition_location
+      last_location
+    end
+
+    def after_destroy_many_location
+      last_location
+    end
+
     def load_collection_scope
       super.eager_load(:carousel)
     end
