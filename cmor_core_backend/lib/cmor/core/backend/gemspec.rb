@@ -21,7 +21,7 @@ module Cmor
 
           s.add_development_dependency "sqlite3", '~> 1.4.0'
           s.add_development_dependency 'responders'
-          
+
           s.add_development_dependency 'capybara'
           s.add_development_dependency 'coveralls'
           s.add_development_dependency 'git_log_generator'
@@ -39,6 +39,7 @@ module Cmor
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
+          s.add_development_dependency 'standard'
           s.add_development_dependency 'bootsnap'
           s.add_development_dependency 'puma', '~> 3.11'
           s.add_development_dependency 'webpacker'
