@@ -1,7 +1,7 @@
 module Cmor
   module Core
     module Api
-      VERSION = "0.1.0"
+      VERSION = ::Cmor::VERSION
     end
   end
 end
