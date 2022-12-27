@@ -9,5 +9,5 @@ Cmor::Blog::Engine.routes.draw do
     post :reposition, on: :member
   end
 
-  root to: 'home#index'
+  root to: "home#index"
 end

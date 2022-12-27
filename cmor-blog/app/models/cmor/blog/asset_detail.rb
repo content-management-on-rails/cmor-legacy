@@ -10,7 +10,7 @@ module Cmor::Blog
     include ActsAsPublished::ActiveRecord
     acts_as_published
 
-    scope :images,     -> { joins(asset_attachment: [:blob]).where("active_storage_blobs.content_type LIKE '%image/%'") }
+    scope :images, -> { joins(asset_attachment: [:blob]).where("active_storage_blobs.content_type LIKE '%image/%'") }
     scope :non_images, -> { joins(asset_attachment: [:blob]).where("active_storage_blobs.content_type NOT LIKE '%image/%'") }
 
     def filename

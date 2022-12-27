@@ -16,8 +16,8 @@ module Cmor
       extend FriendlyId
       friendly_id :title, use: :slugged
 
-      belongs_to :creator, class_name: Cmor::Blog::Configuration.creator_class_name, foreign_key: 'created_by_id', optional: true
-      belongs_to :updater, class_name: Cmor::Blog::Configuration.creator_class_name, foreign_key: 'updated_by_id', optional: true
+      belongs_to :creator, class_name: Cmor::Blog::Configuration.creator_class_name, foreign_key: "created_by_id", optional: true
+      belongs_to :updater, class_name: Cmor::Blog::Configuration.creator_class_name, foreign_key: "updated_by_id", optional: true
 
       scope :for_date, ->(year, month, day) { where(created_at: "#{year}-#{month || 1}-#{day || 1}".to_date.beginning_of_month.."#{year}-#{month || 1}-#{day || 1}".to_date.end_of_month) }
 
@@ -60,7 +60,7 @@ module Cmor
         def append_asset_detail_assets=(collection)
           clean_collection = collection.keep_if { |r| r.present? }
           if clean_collection.any?
-            asset_details << clean_collection.map { |r| asset_details.build.tap{ |ad| ad.asset.attach(r) } }
+            asset_details << clean_collection.map { |r| asset_details.build.tap { |ad| ad.asset.attach(r) } }
           end
         end
 

@@ -1,4 +1,4 @@
-require 'csv'
+require "csv"
 
 module Cmor
   module Blog
@@ -11,7 +11,7 @@ module Cmor
     #    where created_by = joomla_users.id;
     #
     # And exported the data into a csv file like this:
-    # 
+    #
     #     # tmp/old_posts.csv
     #     title;fulltext;created;modified;email
     #     "My first Post";"This is the body";"2013-02-12 14:22:23";"2013-02-12 21:58:54";john.doe@example.com
@@ -28,12 +28,12 @@ module Cmor
 
       COLUMN_MAPS = {
         joomla: {
-          title:         :title,
-          body:          :fulltext,
-          created_at:    :created,
-          updated_at:    :modified,
+          title: :title,
+          body: :fulltext,
+          created_at: :created,
+          updated_at: :modified,
           # published_at:  ->(row) { Time.zone.now },
-          published_at:  :created,
+          published_at: :created,
           creator_email: :email
         }
       }
@@ -63,14 +63,14 @@ module Cmor
 
       def _perform
         @csv_data = load_csv_data!
-        @posts    = build_posts!
-        
+        @posts = build_posts!
+
         ActiveRecord::Base.transaction { @posts.map(&:save!) } if autosave?
 
-        @result.csv_data           = @csv_data
-        @result.posts              = @posts
-        @result.filename           = @filename
-        @result.column_map         = @column_map
+        @result.csv_data = @csv_data
+        @result.posts = @posts
+        @result.filename = @filename
+        @result.column_map = @column_map
         @result.body_source_format = @body_source_format
       end
 
@@ -79,7 +79,7 @@ module Cmor
       end
 
       def csv_options
-        { col_sep: ';', headers: true }
+        {col_sep: ";", headers: true}
       end
 
       def build_posts!
@@ -104,12 +104,10 @@ module Cmor
             row[value_key_or_proc.to_s]
           when Proc
             value_key_or_proc.call(row)
-          else
-            nil
           end
         end
         attrs[:creator] = load_creator(attrs.delete(:creator_email))
-        attrs[:body] = transform_body(attrs.delete(:body) || '') unless @body_source_format == :markdown
+        attrs[:body] = transform_body(attrs.delete(:body) || "") unless @body_source_format == :markdown
         attrs
       end
 

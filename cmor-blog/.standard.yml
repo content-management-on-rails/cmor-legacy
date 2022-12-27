@@ -10,3 +10,7 @@ ignore:
 - Rakefile:
   - Style/StringLiterals
   - Layout/ExtraSpacing
+- spec/rails_helper.rb:
+  - Style/StringLiterals
+- spec/spec_helper.rb:
+  - Style/BlockComments
