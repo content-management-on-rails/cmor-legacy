@@ -1,0 +1,43 @@
+defaults:
+  permissions:
+    - cmor/blog/backend/engine
+    - cmor/blog/backend/home/index
+    - cmor/blog/asset_detail/index
+    - cmor/blog/asset_detail/show
+    - cmor/blog/asset_detail/new
+    - cmor/blog/asset_detail/create
+    - cmor/blog/asset_detail/edit
+    - cmor/blog/asset_detail/update
+    - cmor/blog/asset_detail/destroy
+    - cmor/blog/post/index
+    - cmor/blog/post/show
+    - cmor/blog/post/new
+    - cmor/blog/post/create
+    - cmor/blog/post/edit
+    - cmor/blog/post/update
+    - cmor/blog/post/destroy
+  roles:
+    cmor/blog/administrator:
+      - cmor/blog/engine
+      - cmor/blog/home/index
+      - cmor/blog/asset_detail/index
+      - cmor/blog/asset_detail/show
+      - cmor/blog/asset_detail/new
+      - cmor/blog/asset_detail/create
+      - cmor/blog/asset_detail/edit
+      - cmor/blog/asset_detail/update
+      - cmor/blog/asset_detail/destroy
+      - cmor/blog/post/index
+      - cmor/blog/post/show
+      - cmor/blog/post/new
+      - cmor/blog/post/create
+      - cmor/blog/post/edit
+      - cmor/blog/post/update
+      - cmor/blog/post/destroy
+    cmor/blog/reviewer:
+      - cmor/blog/engine
+      - cmor/blog/home/index
+      - cmor/blog/asset_detail/index
+      - cmor/blog/asset_detail/show
+      - cmor/blog/post/index
+      - cmor/blog/post/show

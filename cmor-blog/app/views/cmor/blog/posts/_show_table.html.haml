@@ -1,0 +1,10 @@
+= table.row :locale
+= table.row :title
+= table.row :body
+- if Cmor::Core.features?(:cmor_tags)
+  = table.row(:tags) do |resource|
+    - tag_labels_for(resource)
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.association :updater, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.timestamp :published_at
+= table.timestamps
