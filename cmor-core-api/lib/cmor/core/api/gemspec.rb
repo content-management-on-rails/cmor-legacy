@@ -35,6 +35,7 @@ module Cmor
           spec.add_development_dependency "pry-rails"
           spec.add_development_dependency "rails-dummy"
           spec.add_development_dependency "rspec-rails"
+          spec.add_development_dependency "standard"
           spec.add_development_dependency "webpacker"
         end
       end
