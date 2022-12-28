@@ -4,6 +4,7 @@ require "acts_as_published"
 require "friendly_id"
 require "cmor_core"
 require "cmor/core/model/localization_concern"
+require "cmor_core_backend"
 require "rao-service"
 
 require "cmor/blog/version"
