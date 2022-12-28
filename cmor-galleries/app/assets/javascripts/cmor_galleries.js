@@ -1,0 +1,1 @@
+//= require cmor/galleries/application
