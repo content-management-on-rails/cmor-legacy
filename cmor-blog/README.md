@@ -1,4 +1,4 @@
-# Cmor::Seo
+# Cmor::Blog
 
 Adds meta tag and title support for resources and pages.
 

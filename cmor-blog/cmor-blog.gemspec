@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.description = "Cmor::Blog Backend Module."
   # rubocop:enable Layout/ExtraSpacing
 
-  spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   spec.add_dependency "active_storage_validations"
   spec.add_dependency "acts_as_list"
