@@ -5,6 +5,10 @@ module Cmor
         module SerializationConcern
           extend ActiveSupport::Concern
 
+          class_methods do
+            def serializer_class; end
+          end
+
           private
 
           def serialize_collection(collection, populate_associations: true)
@@ -12,26 +16,34 @@ module Cmor
               data: collection.map { |resource| serialize_resource_for_collection(resource, populate_associations: populate_associations) },
               meta: { attribute_names: resource_class.attribute_names.each_with_object({}) { |an, memo| memo[an] = resource_class.human_attribute_name(an)  } }
             }
-            
+
           end
 
-          def serialize_resource_for_collection(resource, populate_associations: true)
-            json = {}
-            json[:id] = resource.id
-            json[:attributes] = resource.as_json.except("id")
-            json[:attributes].merge!(populate(resource, json)) if populate_associations
-            json[:errors] = serialize_errors(resource.errors) if resource.errors.any?
-            json
-          end
+        def serialize_resource_for_collection(resource, populate_associations: true)
+          json = {}
+          json[:id] = resource.id
+          json[:attributes] = serializable_object(resource).as_json.except("id")
+          json[:attributes].merge!(populate(resource, json)) if populate_associations
+          json[:errors] = serialize_errors(resource.errors) if resource.errors.any?
+          json
+        end
 
-          def serialize_resource(resource, populate_associations: true)
-            json = { data: {} }
-            json[:data][:id] = resource.id
-            json[:data][:attributes] = resource.as_json.except("id")
-            json[:data][:attributes].merge!(populate(resource, json)) if populate_associations
-            json[:data][:errors] = serialize_errors(resource.errors) if resource.errors.any?
-            json
+        def serialize_resource(resource, populate_associations: true)
+          json = { data: {} }
+          json[:data][:id] = resource.id
+          json[:data][:attributes] = serializable_object(resource).as_json.except("id")
+          json[:data][:attributes].merge!(populate(resource, json)) if populate_associations
+          json[:data][:errors] = serialize_errors(resource.errors) if resource.errors.any?
+          json
+        end
+
+        def serializable_object(resource)
+          if self.class.serializer_class.present?
+            self.class.serializer_class.new(resource)
+          else
+            resource
           end
+        end
 
           def serialize_errors(errors)
             errors.as_json(full_messages: true)
