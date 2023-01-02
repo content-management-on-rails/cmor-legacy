@@ -1,0 +1,43 @@
+defaults:
+  permissions:
+    - cmor/links/engine
+    - cmor/links/home/index
+    - cmor/links/category/index
+    - cmor/links/category/show
+    - cmor/links/category/new
+    - cmor/links/category/create
+    - cmor/links/category/edit
+    - cmor/links/category/update
+    - cmor/links/category/destroy
+    - cmor/links/link/index
+    - cmor/links/link/show
+    - cmor/links/link/new
+    - cmor/links/link/create
+    - cmor/links/link/edit
+    - cmor/links/link/update
+    - cmor/links/link/destroy
+  roles:
+    cmor/links/administrator:
+      - cmor/links/engine
+      - cmor/links/home/index
+      - cmor/links/category/index
+      - cmor/links/category/show
+      - cmor/links/category/new
+      - cmor/links/category/create
+      - cmor/links/category/edit
+      - cmor/links/category/update
+      - cmor/links/category/destroy
+      - cmor/links/link/index
+      - cmor/links/link/show
+      - cmor/links/link/new
+      - cmor/links/link/create
+      - cmor/links/link/edit
+      - cmor/links/link/update
+      - cmor/links/link/destroy
+    cmor/links/reviewer:
+      - cmor/links/engine
+      - cmor/links/home/index
+      - cmor/links/category/index
+      - cmor/links/category/show
+      - cmor/links/link/index
+      - cmor/links/link/show
