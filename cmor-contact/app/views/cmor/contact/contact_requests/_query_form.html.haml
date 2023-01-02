@@ -1,0 +1,10 @@
+.col-12.mb-2
+  .form-inline
+    = form.input :name_cont
+    = form.input :email_cont
+    = form.input(:phone_cont) if resource_class.attribute_names.include?('phone')
+    = form.input(:subject_cont) if resource_class.attribute_names.include?('subject')
+    = form.input :ip_address_cont
+.col-12.mb-2
+  .form-inline
+    = form.input :message_cont

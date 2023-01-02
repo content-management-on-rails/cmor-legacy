@@ -1,0 +1,43 @@
+en:
+  activemodel:
+    models:
+      cmor/contact/whatsapp_request:
+        one: WhatsApp Request
+        other: WhatsApp Requests
+    attributes:
+      cmor/contact/whatsapp_request:
+        message: Message
+  activerecord:
+    models:
+      cmor/contact/contact_request:
+        one: Contact Request
+        other: Contact Requests
+    attributes:
+      cmor/contact/contact_request:
+        id: ID
+        accept_terms_of_service: 'Terms'
+        name: Name
+        email: E-Mail
+        phone: Phone
+        ip_address: IP Address
+        message: Message
+        notified_at: Notified at
+        created_at: Created at
+        updated_at: Updated at
+        additional_actions: Additional Actions
+  classes:
+    cmor/contact/engine: Contact
+  cmor:
+    contact:
+      backend:
+        contact_requests:
+          notify:
+            success: 'The notification was sent.'
+          table:
+            notify: 'Resend notification'
+      contact_request_mailer:
+        notify:
+          subject: "[%{application_name}] New contact request"
+          title: "New contact request"
+  routes:
+    cmor-contact-engine: contact

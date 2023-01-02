@@ -1,0 +1,14 @@
+= table.column :id, sort: true
+= table.column :name, sort: true
+= table.column :email, sort: true
+= table.column(:phone, sort: true) if resource_class.attribute_names.include?('phone')
+= table.column(:subject, sort: true) if resource_class.attribute_names.include?('subject')
+= table.column :ip_address, sort: true
+= table.column :message, sort: true
+= table.column :notified_at, sort: true
+= table.timestamps(format: :short, sort: true)
+= table.column :additional_actions do |resource|
+  - link_to({ action: :notify, id: resource.to_param}, method: :post, class: 'btn btn-xs btn-sm btn-default btn-primary') do
+    %span.glyphicon.glyphicon-envelope
+    %span.fas.fa-envelope
+    %span.btn-text= t('cmor.contact.backend.contact_requests.table.notify')
