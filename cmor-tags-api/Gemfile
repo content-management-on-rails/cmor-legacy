@@ -1,0 +1,8 @@
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gemspec
+gem "cmor-core-api", path: "../cmor-core-api"
+gem "cmor", path: "../"
+gem "cmor-tags", path: "../cmor-tags"
+gem 'rails', '~> 7.0'
+gem "rao-api-resources_controller", path: "~/projects/gems/rao/rao-api-resources_controller"
