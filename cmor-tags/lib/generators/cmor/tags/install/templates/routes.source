@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Tags::Engine, at: '/backend/cmor-tags-engine'
+  end

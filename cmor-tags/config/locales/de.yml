@@ -1,0 +1,60 @@
+de:
+  attributes:
+    tag_list: Tags
+  activemodel:
+    attributes:
+      cmor/tags/search:
+        exact: Genau
+        tags: Tags
+  activerecord:
+    models:
+      acts_as_taggable_on/tag: &tag_model
+        one: Tag
+        other: Tags
+      acts_as_taggable_on/tagging: &tagging_model
+        one: Tagging
+        other: Taggings
+      cmor/tags/tag: *tag_model
+      cmor/tags/tagging: *tagging_model
+    attributes:
+      acts_as_taggable_on/tag: &tag_attributes
+        id: ID
+        color: Farbe
+        name: Name
+        taggings_count: Getagte Objekte
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      acts_as_taggable_on/tagging: &tagging_attributes
+        id: ID
+        color: Farbe
+        context: Kontext
+        tag_id: Tag
+        tag: Tag
+        taggable_id: Getagtes Objekt
+        taggable: Getagtes Objekt
+        taggable_type: Getagtes Objekt-Typ
+        tagger_id: Ersteller
+        tagger: Ersteller
+        tagger_type: Ersteller-Typ
+        tenant: Mandant
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/tags/tag: *tag_attributes
+      cmor/tags/tagging: *tagging_attributes
+      cmor/tags/search:
+        exact: Wortgenau
+        tag_list: Tags
+  classes:
+    cmor/tags/engine: Tags
+  cmor:
+    tags:
+      backend:
+        taggings:
+          create_by_gid_and_tag:
+            success: 'Tag hinzugefügt'
+  routes:
+    cmor-tags-engine: 'tags'
+  simple_form:
+    hints:
+      post:
+        tag_list: "Kommagetrennt. Beispiel: Katzen, Tiere, Meme"

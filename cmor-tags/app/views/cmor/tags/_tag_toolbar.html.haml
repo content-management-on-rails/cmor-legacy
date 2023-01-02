@@ -1,0 +1,19 @@
+- tag_url_method = local_assigns.has_key?(:overwrite_tags_on_drop) ? :set_by_gid_and_tag_taggings_path : :create_by_gid_and_tag_taggings_path
+.navbar.navbar-default
+  .container-fluid
+    = simple_form_for((@tag || Cmor::Tags::Tag.new), url: cmor_tags_backend.tags_path, html: { class: 'navbar-form simple_form new_tag form-inline' }, remote: true) do |f|
+      = f.input :name, label: t('.add')
+      = f.submit
+
+    .navbar-brand
+      = Cmor::Tags::Tag.model_name.human(count: :other)
+    %ul.nav.navbar-nav
+      - Cmor::Tags::Tag.all.each do |tag|
+        %li
+          .navbar-text
+            %span.draggable-tag.label.label-default{ id: "tag-#{tag.to_param}", style: "background-color: #{tag.color}", data: { tag: true, 'tag-uid': tag.to_param, 'tag-url': cmor_tags_backend.send(tag_url_method) } }
+              = tag.name
+
+- if local_assigns.has_key? :added_element
+  :javascript
+    $("#tag-#{added_element}").effect("highlight", {},1000);
