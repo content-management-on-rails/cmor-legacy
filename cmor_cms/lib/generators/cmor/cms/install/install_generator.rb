@@ -31,7 +31,7 @@ module Cmor
 
         def add_homepages
           begin
-            AddHomepagesService.call(locales: [I18n.locale])
+            Cmor::Cms::AddHomepagesService.call(locales: [I18n.locale])
           rescue ActiveRecord::StatementInvalid => e
             puts "[Cmor::Cms] Could not generate homepage: #{e.message}"
           end
