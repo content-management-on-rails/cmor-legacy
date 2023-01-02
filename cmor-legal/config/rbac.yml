@@ -1,0 +1,35 @@
+defaults:
+  permissions:
+    - cmor/legal/engine
+    - cmor/legal/home/index
+    - cmor/legal/personal_data/index
+    - cmor/legal/personal_data/show
+    - cmor/legal/personal_data/destroy
+    - cmor/legal/privacy_policy/index
+    - cmor/legal/privacy_policy/show
+    - cmor/legal/privacy_policy/new
+    - cmor/legal/privacy_policy/create
+    - cmor/legal/privacy_policy/edit
+    - cmor/legal/privacy_policy/update
+    - cmor/legal/privacy_policy/destroy
+  roles:
+    cmor/legal/administrator:
+      - cmor/legal/engine
+      - cmor/legal/home/index
+      - cmor/legal/personal_data/index
+      - cmor/legal/personal_data/show
+      - cmor/legal/personal_data/destroy
+      - cmor/legal/privacy_policy/index
+      - cmor/legal/privacy_policy/show
+      - cmor/legal/privacy_policy/new
+      - cmor/legal/privacy_policy/create
+      - cmor/legal/privacy_policy/edit
+      - cmor/legal/privacy_policy/update
+      - cmor/legal/privacy_policy/destroy
+    cmor/legal/reviewer:
+      - cmor/legal/engine
+      - cmor/legal/home/index
+      - cmor/legal/personal_data/index
+      - cmor/legal/personal_data/show
+      - cmor/legal/privacy_policy/index
+      - cmor/legal/privacy_policy/show

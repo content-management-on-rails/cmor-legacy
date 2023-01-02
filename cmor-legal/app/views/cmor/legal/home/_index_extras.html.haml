@@ -1,0 +1,28 @@
+.row
+  .col-12
+    %h3= t(".title")
+
+.row
+  .col-12
+    = resource_table(resource: Cmor::Legal::Configuration) do |t|
+      = t.row :enforce_ssl do |resource|
+        - capture_haml do
+          - if resource.enforce_ssl
+            %span.label.label-success= t('true')
+          - else
+            %span.label.label-danger= t('false')
+      = t.row :filtered_log_parameters do |resource|
+        - resource.filter_personal_data_attributes.collect { |p| "<span class=\"label label-success\">#{p}</span>&nbsp;" }.join.html_safe
+      = t.row :enable_cookie_consent_banner do |resource|
+        - capture_haml do
+          - if resource.enable_cookie_consent_banner
+            %span.label.label-success= t('true')
+          - else
+            %span.label.label-danger= t('false')
+      - I18n.available_locales.each do |locale|
+        = t.row "privacy_policy_available_for_#{locale}" do |resource|
+          - capture_haml do
+            - if resource.privacy_policy_available_for(locale)
+              %span.label.label-success= t('true')
+            - else
+              %span.label.label-danger= t('false')
