@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Cms::Engine, at: '/backend/cmor-cms-engine'
+  end

@@ -1,0 +1,139 @@
+de:
+  activerecord:
+    models:
+      cmor/cms/content_block:
+        one: Content Block
+        other: Content Blöcke
+      cmor/cms/content_box:
+        one: Content Box
+        other: Content Boxen
+      cmor/cms/layout:
+        one: Layout
+        other: Layouts
+      cmor/cms/navigation:
+        one: Navigation
+        other: Navigationen
+      cmor/cms/navigation_item:
+        one: Navigationseintrag
+        other: Navigationseinträge
+      cmor/cms/page:
+        one: Seite
+        other: Seiten
+      cmor/cms/partial:
+        one: Fragment
+        other: Fragmente
+      cmor/cms/redirect:
+        one: Umleitung
+        other: Umleitungen
+      cmor/cms/template:
+        one: Vorlage
+        other: Vorlagen
+    attributes:
+      defaults: &defaults
+        id: ID
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+      cmor/cms/content_block:
+        <<: *defaults
+        body: Inhalt
+        page: Seite
+        page_id: Seite
+        content_box: Content Box
+        content_box_id: Content Box
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/cms/content_box:
+        <<: *defaults
+        name: Name
+        body: Inhalt
+        content_blocks: Content Blöcke
+        content_blocks_count: Content Blöcke
+      cmor/cms/layout:
+        <<: *defaults
+        basename: Name
+        body: Inhalt
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        locale: Sprache
+        path_and_filename: Dateipfad
+        pathname: Pfad
+      cmor/cms/navigation:
+        <<: *defaults
+        navigation_items: Navigationseinträge
+        navigation_items_count: Navigationseinträge
+        locale: Sprache
+        name: Name
+        slug: Freundliche ID
+      cmor/cms/navigation_item:
+        <<: *defaults
+        children_count: Unterelemente
+        data_add_icon: Symbol
+        depth: Baumtiefe
+        navigation: Navigation
+        navigation_id: Navigation
+        page: Seite
+        page_id: Seite
+        highlights_on: Hervorgehoben bei
+        key: Schlüssel
+        lft: Links
+        li_attributes: 'Listen-Element Attribute'
+        name: Name
+        options: Optionen
+        parent: Untereintrag von
+        parent_id: Untereintrag von
+        properties: Eigenschaften
+        rgt: Rechts
+        slug: Freundliche ID
+        url: Ziel-URL
+      cmor/cms/page:
+        <<: *defaults
+        basename: Name
+        body: Inhalt
+        cmor_cms_folder_id: Ordner
+        cmor_cms_folder: Ordner
+        navigation_items: Verlinkt von
+        navigation_item_ids: Verlinkt von
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        meta_description: Meta Beschreibung
+        path_and_filename: Dateipfad
+        pathname: Pfad
+        title: Titel
+      cmor/cms/partial:
+        <<: *defaults
+        basename: Name
+        body: Inhalt
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        path_and_filename: Dateipfad
+        pathname: Pfad
+      cmor/cms/redirect:
+        <<: *defaults
+        source: Quelle
+        target: Ziel
+        position: Position
+      cmor/cms/template:
+        <<: *defaults
+        basename: Name
+        body: Inhalt
+        filename: Dateiname
+        format: Format
+        handler: Handler
+        layout: Layout
+        locale: Sprache
+        path_and_filename: Dateipfad
+        pathname: Pfad
+  classes:
+    cmor/cms/add_homepages_service: 'Dienst zum hinzufügen von Homepages'
+    cmor/cms/import_partials_service: 'Dienst zum importieren von Fragmenten'
+
+
