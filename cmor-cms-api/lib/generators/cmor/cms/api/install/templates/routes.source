@@ -1,0 +1,2 @@
+
+  mount Cmor::Cms::Api::Engine, at: "/api/cmor-cms"
