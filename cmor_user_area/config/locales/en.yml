@@ -10,7 +10,6 @@ en:
         code: Code
         code_confirmation: Confirmation Code
   activerecord:
-  activerecord:
     events:
       cmor/user_area/user:
         prepare_tfa: "Prepare 2FA"
