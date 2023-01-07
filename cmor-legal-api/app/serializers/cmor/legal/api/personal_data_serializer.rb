@@ -1,5 +1,5 @@
 module Cmor::Legal::Api
-  class PeronsalDataSerializer
+  class PersonalDataSerializer
     def initialize(resource)
       @resource = resource
     end
