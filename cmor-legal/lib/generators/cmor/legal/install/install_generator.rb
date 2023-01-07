@@ -15,7 +15,7 @@ module Cmor::Legal
       end
 
       def generate_initializer
-        template "initializer.rb", "config/initializers/cmor_legal.rb"
+        template "initializer.rb", "config/initializers/cmor-legal.rb"
       end
 
       def generate_routes
