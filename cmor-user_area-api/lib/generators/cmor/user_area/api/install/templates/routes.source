@@ -1,0 +1,2 @@
+
+  mount Cmor::UserArea::Api::Engine, at: "/api/cmor-user-area"
