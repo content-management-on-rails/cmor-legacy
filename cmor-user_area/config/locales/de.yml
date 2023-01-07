@@ -1,0 +1,81 @@
+de:
+  activemodel:
+    cmor/user_area/user_two_factor_authentication:
+      invalid_code: "ist ungültig"
+    models:
+      cmor/user_area/two_factor_authentication_setup_service:
+        one: 2FA Einrichtungsdienst
+    attributes:
+      cmor/user_area/two_factor_authentication_setup_service:
+        code: Sicherheits-Code
+        code_confirmation: Bestätigungs-Code
+  activerecord:
+    events:
+      cmor/user_area/user:
+        prepare_tfa: "2FA vorbereiten"
+        enable_tfa: "2FA aktivieren"
+        disable_tfa: "2FA deaktivieren"
+    attributes:
+      cmor/user_area/user_password_reset_request:
+        email: E-Mail
+        user: Benutzer
+      cmor/user_area/user:
+        id: ID
+        active: Aktiv
+        approved: Genehmigt
+        confirmed: Bestätigt
+        crypted_password: Verschlüsseltes Passwort
+        current_login_at: Aktueller Login am
+        current_login_ip: Aktuelle IP Adresse
+        email: E-Mail
+        failed_login_count: Fehlgeschlagene Logins
+        last_login_at: Zuletzt eingeloggt am
+        last_login_ip: Letzte IP Adresse
+        last_request_at: Letzte Anfrage am
+        login_count: Logins
+        otp_backup_codes: 2FA Backup Codes
+        otp_secret_key: 2FA Schlüssel
+        password: Passwort
+        password_confirmation: Passwort wiederholen
+        password_salt: Passwort Salt
+        perishable_token: Vergänglicher Token
+        persistence_token: Persistenztoken
+        single_access_token: One-Time Token
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+        tfa_state: 2FA Status
+        tfa_state_state: 2FA Status
+        tfa_state_actions: 2FA Aktionen
+        tfa_state/disabled: "Inaktiv"
+        tfa_state/enabled: "Aktiv"
+        tfa_state/in_preparation: "In Vorbereitung"
+    models:
+      cmor/user_area/user_password_reset_request:
+        one: Passwort
+        other: Passwörter
+      cmor/user_area/user:
+        one: Benutzer
+        other: Benutzer
+    errors:
+      models:
+        cmor/user_area/user_password_reset_request:
+          attributes:
+            user:
+              blank: 'nicht bekannt'
+    scopes:
+      never_signed_in: Niemals angemeldet
+  classes:
+    cmor/user_area/backend/engine: Authentifizierung
+  cmor:
+    user_area:
+      backend:
+        user_sidebars:
+          show:
+            signed_in_as: "Angemeldet als %{user}"
+            show: "Profil"
+            sign_out: "Abmelden"
+            not_signed_in: "Nicht angemeldet"
+            sign_in: "Anmelden"
+            new: "Registrieren"
+  routes:
+    cmor-user-area-engine: 'authentifizierung'

@@ -1,0 +1,16 @@
+.container.mt-2
+  .row
+    .col-12
+      - if user_signed_in?
+        .alert.alert-info
+          = t('.signed_in_as', user: administrador_helper(self).label_for(current_user))
+        .btn-group.d-flex
+          = link_to t('.show'), cmor_user_area.current_user_path, class: 'btn btn-primary w-100 ml-0'
+          = link_to t('.sign_out'), cmor_user_area.user_session_path, method: :delete, class: 'btn btn-warning w-100'
+      - else
+        .alert.alert-info
+          = t('.not_signed_in')
+        .btn-group.d-flex
+          = link_to t('.sign_in'), cmor_user_area.new_user_session_path, class: 'btn btn-primary w-100 ml-0'
+          - if Cmor::UserArea::Configuration.enable_registrations    
+            = link_to t('.new'), cmor_user_area.new_current_user_path, class: 'btn btn-success w-100'
