@@ -7,7 +7,7 @@ module Cmor
 
       include Cmor::Audits::ResourcesController::PaperTrailConcern if Cmor::Core.features?(:cmor_audits)
 
-      helper Cmor::Tags::Backend::ApplicationHelper if Cmor::Core.features?(:cmor_tags)
+      helper Cmor::Tags::ApplicationHelper if Cmor::Core.features?(:cmor_tags)
 
       include Rao::Query::Controller::QueryConcern
       view_helper Rao::Query::ApplicationHelper, as: :query_helper
