@@ -23,10 +23,12 @@ module Cmor
 
         define_option :base_controller, default: "ActionController::API"
 
-        define_option :resources_controllers, default: -> { [
-          Cmor::Files::Api::FoldersController,
-          Cmor::Files::Api::FileDetailsController
-        ] }
+        define_option :resources_controllers, default: -> {
+                                                         [
+                                                           Cmor::Files::Api::FoldersController,
+                                                           Cmor::Files::Api::FileDetailsController
+                                                         ]
+                                                       }
 
         define_option :resource_controllers, default: -> { [] }
 
