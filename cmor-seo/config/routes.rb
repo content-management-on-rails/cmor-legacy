@@ -11,5 +11,5 @@ Cmor::Seo::Engine.routes.draw do
   end
   resources :generate_resource_classes_meta_tags_service, only: [:new, :create]
 
-  root to: 'home#index'
+  root to: "home#index"
 end

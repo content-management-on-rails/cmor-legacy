@@ -8,7 +8,10 @@ RSpec.describe "/de/backend/seo/items", type: :feature do
   let(:resources) { create_list(:cmor_seo_item, 3) }
 
   # List
-  it { resources; expect(subject).to implement_index_action(self) }
+  it {
+    resources
+    expect(subject).to implement_index_action(self)
+  }
 
   # Create
   it {

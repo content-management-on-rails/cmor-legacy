@@ -5,8 +5,7 @@ Cmor::Seo.configure do |config|
   #          ]}
   #
   config.resources_controllers = -> {
-    [
-    ]
+    []
   }
 
   # Set the services, that will be shown in the backend menu.
@@ -15,8 +14,7 @@ Cmor::Seo.configure do |config|
   #          ]}
   #
   config.service_controllers = -> {
-    [
-    ]
+    []
   }
 
   # Set the sidebars, that will be shown in the backend menu.
@@ -25,15 +23,14 @@ Cmor::Seo.configure do |config|
   #          ]}
   #
   config.sidebar_controllers = -> {
-    [
-    ]
+    []
   }
 
   # Class to use for creators and updaters.
   #
   # default: config.creator_class_name = '<%= creator_class_name %>'
   #
-  config.creator_class_name = '<%= creator_class_name %>'
+  config.creator_class_name = "<%= creator_class_name %>"
 
   # This proc is used in context of the ItemsController and MetaTagsController
   # to retrieve the current user to userstamp created/updated items/meta tags.

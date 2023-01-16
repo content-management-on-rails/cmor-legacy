@@ -10,7 +10,10 @@ RSpec.describe "/de/backend/seo/meta_tags", type: :feature do
   let(:item) { create(:cmor_seo_item) }
 
   # List
-  it { resources; expect(subject).to implement_index_action(self) }
+  it {
+    resources
+    expect(subject).to implement_index_action(self)
+  }
 
   # Create
   it {
