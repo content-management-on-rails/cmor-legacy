@@ -16,7 +16,7 @@ module Cmor
 
       acts_as_markup :body, Cmor::Core::Configuration.default_markup_options
 
-      validates :name, presence: true, uniqueness: { scope: [ :category_id ] }
+      validates :name, presence: true, uniqueness: {scope: [:category_id]}
 
       module PreviewPictureConcern
         extend ActiveSupport::Concern
@@ -42,7 +42,7 @@ module Cmor
         def append_file_detail_assets=(collection)
           clean_collection = collection.keep_if { |r| r.present? }
           if clean_collection.any?
-            file_details << clean_collection.map { |r| file_details.build.tap{ |fd| fd.asset.attach(r) } }
+            file_details << clean_collection.map { |r| file_details.build.tap { |fd| fd.asset.attach(r) } }
           end
         end
 

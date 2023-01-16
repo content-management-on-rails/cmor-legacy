@@ -3,7 +3,7 @@ module Cmor::Showcase
     include Rao::ResourcesController::ActsAsListConcern
     include Rao::ResourcesController::ActsAsPublishedConcern
     include Rao::ResourcesController::FriendlyIdConcern
-    
+
     def self.resource_class
       Cmor::Showcase::Category
     end

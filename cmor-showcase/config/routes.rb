@@ -14,5 +14,5 @@ Cmor::Showcase::Engine.routes.draw do
     acts_as_list
   end
 
-  root to: 'home#index'
+  root to: "home#index"
 end

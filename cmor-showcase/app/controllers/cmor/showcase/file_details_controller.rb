@@ -9,7 +9,7 @@ module Cmor::Showcase
     end
 
     def self.available_rest_actions
-      super - %i(new)
+      super - %i[new]
     end
 
     private
@@ -17,7 +17,7 @@ module Cmor::Showcase
     def after_reposition_location
       last_location
     end
-    
+
     def after_destroy_many_location
       last_location
     end
