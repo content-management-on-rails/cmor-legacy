@@ -1,0 +1,13 @@
+= form.association :category, label_method: :human
+= form.input :fullname
+= form.input :role
+= form.input :company
+= form.input :body
+- unless form.object.image.attached?
+  = form.input :image, as: :file
+- else
+  .row.mb-4
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :image, as: :file
+= form.input :published, as: :boolean

@@ -1,0 +1,3 @@
+/*
+ *= require cmor/testimonials/application
+ */

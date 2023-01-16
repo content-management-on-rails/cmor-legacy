@@ -1,0 +1,14 @@
+%h2= Cmor::Testimonials::Testimonial.model_name.human(count: :other)
+
+= collection_table(collection: @resource.testimonials, resource_class: Cmor::Testimonials::Testimonial) do |table|
+  = table.batch_actions actions: { destroy: url_for([:destroy_many, Cmor::Testimonials::Testimonial]) }
+  = table.acts_as_list_actions scope: :category_id
+  = table.column :image do |resource|
+    - if resource.image.attached?
+      - image_tag(main_app.url_for(resource.image.variant(Cmor::Core::Backend::Configuration.image_variant_options_for(:table))))
+  = table.column :company
+  = table.column :fullname
+  = table.column :role
+  = table.timestamps
+  = table.acts_as_published_actions
+  = render partial: '/administrador/resources_controller/base/index_table_actions', locals: { table: table }
