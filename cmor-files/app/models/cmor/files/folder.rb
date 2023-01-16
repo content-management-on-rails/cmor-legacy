@@ -15,12 +15,11 @@ module Cmor
       extend FriendlyId
       friendly_id :name, use: :slugged
 
-
-      validates :name, presence: true, uniqueness: { scope: [ :locale ] }
-      validates :identifier, uniqueness: { scope: [ :locale ] }, allow_nil: true, allow_blank: true
+      validates :name, presence: true, uniqueness: {scope: [:locale]}
+      validates :identifier, uniqueness: {scope: [:locale]}, allow_nil: true, allow_blank: true
 
       def human
-        "#{self.class.model_name.human}: #{self.name}"
+        "#{self.class.model_name.human}: #{name}"
       end
 
       module FileDetailsConcern
@@ -37,7 +36,7 @@ module Cmor
         def append_file_detail_assets=(collection)
           clean_collection = collection.keep_if { |r| r.present? }
           if clean_collection.any?
-            file_details << clean_collection.map { |r| file_details.build.tap{ |fd| fd.asset.attach(r) } }
+            file_details << clean_collection.map { |r| file_details.build.tap { |fd| fd.asset.attach(r) } }
           end
         end
 

@@ -19,5 +19,5 @@ Cmor::Files::Engine.routes.draw do
     post :publish_many, on: :collection
   end
 
-  root to: 'home#index'
+  root to: "home#index"
 end

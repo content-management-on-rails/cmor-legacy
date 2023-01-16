@@ -14,7 +14,7 @@ module Cmor::Files
     end
 
     def permitted_params
-      params.require(:attachment).permit()
+      params.require(:attachment).permit
     end
   end
 end

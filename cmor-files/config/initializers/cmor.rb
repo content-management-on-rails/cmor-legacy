@@ -1,3 +1,3 @@
 Cmor.configure do |config|
-  config.administrador.register_engine('Cmor::Files::Engine', {})
+  config.administrador.register_engine("Cmor::Files::Engine", {})
 end
