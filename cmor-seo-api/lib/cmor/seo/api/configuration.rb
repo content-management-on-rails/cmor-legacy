@@ -23,10 +23,12 @@ module Cmor
 
         define_option :base_controller, default: "ActionController::API"
 
-        define_option :resources_controllers, default: -> { [
-          Cmor::Showcase::Api::ItemsController,
-          Cmor::Showcase::Api::MetaTagsController
-        ] }
+        define_option :resources_controllers, default: -> {
+                                                         [
+                                                           Cmor::Showcase::Api::ItemsController,
+                                                           Cmor::Showcase::Api::MetaTagsController
+                                                         ]
+                                                       }
 
         define_option :resource_controllers, default: -> { [] }
 

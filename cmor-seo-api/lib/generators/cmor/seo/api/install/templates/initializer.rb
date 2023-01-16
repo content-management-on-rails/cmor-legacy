@@ -6,10 +6,12 @@ Rails.application.config.to_prepare do
     #
     config.base_controller = "<%= base_controller_class_name %>"
 
-    config.resources_controllers = -> { [
-      Cmor::Showcase::Api::ItemsController,
-      Cmor::Showcase::Api::MetaTagsController
-    ] }
+    config.resources_controllers = -> {
+      [
+        Cmor::Showcase::Api::ItemsController,
+        Cmor::Showcase::Api::MetaTagsController
+      ]
+    }
 
     config.resource_controllers = -> { [] }
 
