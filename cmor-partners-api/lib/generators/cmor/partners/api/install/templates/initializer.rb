@@ -6,10 +6,12 @@ Rails.application.config.to_prepare do
     #
     config.base_controller = "<%= base_controller_class_name %>"
 
-    config.resources_controllers = -> { [
-      Cmor::Partners::Api::CategoriesController,
-      Cmor::Partners::Api::PartnersController
-    ] }
+    config.resources_controllers = -> {
+      [
+        Cmor::Partners::Api::CategoriesController,
+        Cmor::Partners::Api::PartnersController
+      ]
+    }
 
     config.resource_controllers = -> { [] }
 
