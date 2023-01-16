@@ -1,5 +1,8 @@
 ignore:
-- spec/dummy/**/*
+- 'Guardfile'
+- 'spec/dummy/**/*'
+- 'spec/rails_helper.rb'
+- 'spec/spec_helper.rb'
 - Gemfile:
   - Style/StringLiterals
   - Layout/TrailingEmptyLines

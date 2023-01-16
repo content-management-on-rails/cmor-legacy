@@ -6,10 +6,12 @@ Rails.application.config.to_prepare do
     #
     config.base_controller = "<%= base_controller_class_name %>"
 
-    config.resources_controllers = -> { [
-      Cmor::Carousels::Api::CarouselsController,
-      Cmor::Carousels::Api::ItemDetailsController
-    ] }
+    config.resources_controllers = -> {
+      [
+        Cmor::Carousels::Api::CarouselsController,
+        Cmor::Carousels::Api::ItemDetailsController
+      ]
+    }
 
     config.resource_controllers = -> { [] }
 
