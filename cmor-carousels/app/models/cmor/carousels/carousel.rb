@@ -1,12 +1,12 @@
 module Cmor
   module Carousels
     class Carousel < ApplicationRecord
-      scope :for_locale, ->(locale) { where(self.arel_table[:locale].eq(locale).or(self.arel_table[:locale].eq(nil))).order(locale: :desc) }
+      scope :for_locale, ->(locale) { where(arel_table[:locale].eq(locale).or(arel_table[:locale].eq(nil))).order(locale: :desc) }
 
       validates :locale, inclusion: I18n.available_locales.map(&:to_s),
-                        if: proc { |carousel| carousel.locale.present? }
+        if: proc { |carousel| carousel.locale.present? }
       validates :identifier, presence: true,
-                            uniqueness: { scope: [:locale] }
+        uniqueness: {scope: [:locale]}
 
       def human
         "#{identifier} (#{locale})"
@@ -79,7 +79,7 @@ module Cmor
         end
 
         def build_variant_options
-          { resize: "#{width}x#{height}" }
+          {resize: "#{width}x#{height}"}
         end
       end
 

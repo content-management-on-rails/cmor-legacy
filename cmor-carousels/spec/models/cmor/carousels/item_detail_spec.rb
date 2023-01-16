@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Cmor::Carousels::ItemDetail, type: :model do
   subject { create :cmor_carousels_item_detail }
@@ -17,5 +17,4 @@ RSpec.describe Cmor::Carousels::ItemDetail, type: :model do
   context "active_storage" do
     it { should respond_to :asset }
   end
-
 end

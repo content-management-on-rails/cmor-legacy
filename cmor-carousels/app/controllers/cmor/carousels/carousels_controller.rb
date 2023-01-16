@@ -7,7 +7,7 @@ module Cmor::Carousels
     private
 
     def permitted_params
-      params.require(:carousel).permit(:identifier, :locale, :height, :width, { overwrite_item_detail_assets: [], append_item_detail_assets: [] })
+      params.require(:carousel).permit(:identifier, :locale, :height, :width, {overwrite_item_detail_assets: [], append_item_detail_assets: []})
     end
   end
 end

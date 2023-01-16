@@ -1,5 +1,4 @@
 module Cmor::Carousels
-    class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
-    end
+  class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
   end
 end

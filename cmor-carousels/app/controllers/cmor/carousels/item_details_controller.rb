@@ -8,7 +8,7 @@ module Cmor::Carousels
     end
 
     def self.available_rest_actions
-      super - %i(new create)
+      super - %i[new create]
     end
 
     private

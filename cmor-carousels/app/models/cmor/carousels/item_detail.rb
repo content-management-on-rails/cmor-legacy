@@ -21,11 +21,11 @@ module Cmor
         extend ActiveSupport::Concern
 
         def video?
-          asset.content_type.start_with?('video/')
+          asset.content_type.start_with?("video/")
         end
 
         def image?
-          asset.content_type.start_with?('image/')
+          asset.content_type.start_with?("image/")
         end
       end
 
