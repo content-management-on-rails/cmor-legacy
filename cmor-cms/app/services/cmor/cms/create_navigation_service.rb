@@ -28,8 +28,8 @@ module Cmor::Cms
         end
       end
 
-      @result.navigation               = @navigation
-      @result.navigation_items         = @navigation_items
+      @result.navigation = @navigation
+      @result.navigation_items = @navigation_items
       @result.created_navigation_items = @created_navigation_items
       @result.errored_navigation_items = @errored_navigation_items
     end

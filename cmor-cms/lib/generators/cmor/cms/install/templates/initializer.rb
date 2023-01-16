@@ -19,8 +19,7 @@ Cmor::Cms.configure do |config|
   #          ]}
   #
   config.service_controllers = lambda {
-    [
-    ]
+    []
   }
 
   # Set the default handler for pages, partials and templates
@@ -32,8 +31,8 @@ Cmor::Cms.configure do |config|
   #            }
   #
   config.default_handlers = {
-    page:     :textile,
-    partial:  :textile,
+    page: :textile,
+    partial: :textile,
     template: :textile
   }
 
@@ -53,4 +52,3 @@ Cmor::Cms.configure do |config|
   #
   config.navigation_item_properties = [:data_add_icon]
 end
-

@@ -4,9 +4,9 @@ module Cmor::Cms
 
     # associations
     belongs_to :navigation,
-               optional: true
+      optional: true
     belongs_to :page,
-               optional: true
+      optional: true
 
     # publishing
     include ActsAsPublished::ActiveRecord
@@ -30,20 +30,20 @@ module Cmor::Cms
     validates :navigation, presence: true, if: -> { parent.nil? }
 
     def params_for_new_page
-      return {} if self.new_record?
+      return {} if new_record?
       match = url.scan(/(#{I18n.available_locales.join('|')})$/)
-      return { locale: match[0][0], pathname: '/', basename: 'home', title: name, navigation_item_ids: [to_param] } if match.size > 0
+      return {locale: match[0][0], pathname: "/", basename: "home", title: name, navigation_item_ids: [to_param]} if match.size > 0
       match = url.scan(/(#{I18n.available_locales.join('|')})(.*)\/(.*)/)
       return {} unless match.first.respond_to?(:size) # && match.first.size != 3
       params = match.first
       return {} if params.size != 3
-      params[1] << '/' unless params[1].end_with?('/')
-      { locale: params[0], pathname: params[1], basename: params[2], title: name, navigation_item_ids: [to_param] }
+      params[1] << "/" unless params[1].end_with?("/")
+      {locale: params[0], pathname: params[1], basename: params[2], title: name, navigation_item_ids: [to_param]}
     end
 
     def to_label
       if depth > 0
-        "#{'&nbsp;' * depth} &#9654; #{name}".html_safe
+        "#{"&nbsp;" * depth} &#9654; #{name}".html_safe
       else
         name
       end
@@ -59,7 +59,7 @@ module Cmor::Cms
     end
 
     def update_children_navigations!
-      descendants.map(&:"update_navigation_from_parent!")
+      descendants.map(&:update_navigation_from_parent!)
     end
 
     def update_url_form_page!
@@ -84,14 +84,14 @@ module Cmor::Cms
     def update_url_form_page
       self.url = build_url_from_page(page.locale, page.pathname, page.basename, page.home_page?)
     end
-    
+
     module PropertiesConcern
       extend ActiveSupport::Concern
 
       included do
         serialize :properties, OpenStruct
-        delegate *Cmor::Cms::Configuration.navigation_item_properties, to: :li_attributes
-        delegate *Cmor::Cms::Configuration.navigation_item_properties.collect { |a| "#{a}=".to_sym }, to: :li_attributes
+        delegate(*Cmor::Cms::Configuration.navigation_item_properties, to: :li_attributes)
+        delegate(*Cmor::Cms::Configuration.navigation_item_properties.collect { |a| "#{a}=".to_sym }, to: :li_attributes)
       end
 
       def highlights_on

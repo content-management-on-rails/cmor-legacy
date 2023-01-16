@@ -13,7 +13,7 @@ module Cmor::Cms
     private
 
     def ensure_basename_starts_without_underscore
-      basename.slice!(0) if basename.start_with?('_')
+      basename.slice!(0) if basename.start_with?("_")
     end
   end
 end

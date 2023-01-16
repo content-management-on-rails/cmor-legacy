@@ -5,10 +5,10 @@ module Cmor::Cms
 
     # associations
     has_many :navigation_items,
-             dependent: :nullify
+      dependent: :nullify
     has_many :content_blocks,
-             dependent: :destroy,
-             inverse_of: :page
+      dependent: :destroy,
+      inverse_of: :page
 
     accepts_nested_attributes_for :content_blocks, allow_destroy: true
 
@@ -23,7 +23,7 @@ module Cmor::Cms
     validates :title, presence: true
 
     def home_page?
-      pathname == '/' && basename == 'home'
+      pathname == "/" && basename == "home"
     end
 
     def touch_navigation_items

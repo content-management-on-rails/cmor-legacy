@@ -11,7 +11,7 @@ module Cmor
       end
 
       # instance methods go here
-      if Rails.version < '6.0'
+      if Rails.version < "6.0"
         def find_templates(name, prefix, partial, details, outside_app_allowed = false)
           return [] unless resolve(partial)
 
@@ -26,7 +26,7 @@ module Cmor
           format = conditions.delete(:format)
           locale = conditions.delete(:locale)
 
-          query  = template_class.constantize.where(conditions)
+          query = template_class.constantize.where(conditions)
 
           # 1) Only include published templates
           query = query.published
@@ -35,13 +35,13 @@ module Cmor
           query = query.where(["format = ? OR format = '' OR format IS NULL", format])
 
           # 3) Ensure templates with format come first
-          query = query.order('format DESC')
+          query = query.order("format DESC")
 
           # 4) Check for templates with the given locale or locale is nil
           query = query.where(["locale = ? OR locale = '' OR locale IS NULL", locale])
 
           # 5) Ensure templates with locale come first
-          query = query.order('locale DESC')
+          query = query.order("locale DESC")
 
           # 6) Now trigger the query passing on conditions to initialization
           query.map do |record|
@@ -63,7 +63,7 @@ module Cmor
           format = conditions.delete(:format)
           locale = conditions.delete(:locale)
 
-          query  = template_class.constantize.where(conditions)
+          query = template_class.constantize.where(conditions)
 
           # 1) Only include published templates
           query = query.published
@@ -72,13 +72,13 @@ module Cmor
           query = query.where(["format = ? OR format = '' OR format IS NULL", format])
 
           # 3) Ensure templates with format come first
-          query = query.order('format DESC')
+          query = query.order("format DESC")
 
           # 4) Check for templates with the given locale or locale is nil
           query = query.where(["locale = ? OR locale = '' OR locale IS NULL", locale])
 
           # 5) Ensure templates with locale come first
-          query = query.order('locale DESC')
+          query = query.order("locale DESC")
 
           # 6) Now trigger the query passing on conditions to initialization
           query.map do |record|
@@ -88,15 +88,15 @@ module Cmor
       end
 
       # Initialize an ActionView::Template object based on the record found.
-      if Rails.version < '6.0'
+      if Rails.version < "6.0"
         def initialize_template(record, details)
-          source     = build_source(record)
+          source = build_source(record)
           identifier = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
-          handler    = ::ActionView::Template.registered_template_handler(record.handler)
+          handler = ::ActionView::Template.registered_template_handler(record.handler)
 
           # 5) Check for the record.format, if none is given, try the template
           # handler format and fallback to the one given on conditions
-          format   = record.format && Mime[record.format]
+          format = record.format && Mime[record.format]
           format ||= handler.default_format if handler.respond_to?(:default_format)
           format ||= details[:formats]
           details = {
@@ -111,15 +111,15 @@ module Cmor
         end
       else
         def initialize_template(record, details, locals = [])
-          source       = build_source(record)
-          identifier   = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
-          handler      = ::ActionView::Template.registered_template_handler(record.handler)
+          source = build_source(record)
+          identifier = "#{record.class} - #{record.id} - #{record.pathname}#{record.basename}"
+          handler = ::ActionView::Template.registered_template_handler(record.handler)
           virtual_path = "#{record.pathname}#{record.basename}"
           layout = record.layout if record.respond_to?(:layout) && record.layout.present?
 
           # 5) Check for the record.format, if none is given, try the template
           # handler format and fallback to the one given on conditions
-          format   = record.format && Mime[record.format]
+          format = record.format && Mime[record.format]
           format ||= handler.default_format if handler.respond_to?(:default_format)
           format ||= details[:formats]
 
@@ -132,8 +132,8 @@ module Cmor
 
       def assert_slashs(prefix)
         output = prefix.dup
-        output << '/' unless output.end_with?('/')
-        output = '/' << output unless output.start_with?('/')
+        output << "/" unless output.end_with?("/")
+        output = "/" << output unless output.start_with?("/")
         output
       end
 
@@ -143,19 +143,19 @@ module Cmor
       end
 
       def build_source
-        fail 'call to abstract method #build_source'
+        fail "call to abstract method #build_source"
       end
 
       def normalize_basename(_basename)
-        fail 'call to abstract method #normalize_basename'
+        fail "call to abstract method #normalize_basename"
       end
 
       def resolve(_partial_flag)
-        fail 'call to abstract method #resolve'
+        fail "call to abstract method #resolve"
       end
 
       def template_class
-        fail 'call to abstract method #template_class'
+        fail "call to abstract method #template_class"
       end
     end
   end

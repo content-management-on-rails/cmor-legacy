@@ -1,9 +1,9 @@
 FactoryBot.define do
-  factory :cmor_cms_navigation_item, class: 'Cmor::Cms::NavigationItem' do
+  factory :cmor_cms_navigation_item, class: "Cmor::Cms::NavigationItem" do
     association(:navigation, factory: :cmor_cms_navigation)
     sequence(:name) { |i| "Navigation Item ##{i}" }
     key { name.dasherize }
-    url { '/' }
+    url { "/" }
 
     factory :cmor_cms_navigation_item_root do
       parent { nil }

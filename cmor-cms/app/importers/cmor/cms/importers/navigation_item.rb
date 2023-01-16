@@ -4,7 +4,7 @@ module Cmor
       class NavigationItem
         def initialize(yaml, _option = {})
           @navigation_items = nil
-          @yaml = YAML.load(yaml)
+          @yaml = YAML.safe_load(yaml)
         end
 
         def navigation_items
@@ -15,12 +15,16 @@ module Cmor
 
         def create_navigation_items
           built_navigation_items = []
-          @yaml.each do |navigation_locale, navigation|
-            navigation.each do |navigation_name, navigation_items_attributes|
-              n = find_or_create_navigation(navigation_locale, navigation_name)
-              built_navigation_items << create_navigation_items_for_navigation(n, navigation_items_attributes)
-            end if navigation_locale.respond_to?(:each)
-          end if @yaml.respond_to?(:each)
+          if @yaml.respond_to?(:each)
+            @yaml.each do |navigation_locale, navigation|
+              if navigation_locale.respond_to?(:each)
+                navigation.each do |navigation_name, navigation_items_attributes|
+                  n = find_or_create_navigation(navigation_locale, navigation_name)
+                  built_navigation_items << create_navigation_items_for_navigation(n, navigation_items_attributes)
+                end
+              end
+            end
+          end
           built_navigation_items.flatten
         end
 
@@ -34,16 +38,18 @@ module Cmor
         end
 
         def create_navigation_item(navigation_item_attributes, navigation)
-          subitems = navigation_item_attributes.delete('subitems')
+          subitems = navigation_item_attributes.delete("subitems")
 
           ni = Cmor::Cms::NavigationItem.new(navigation_item_attributes)
           ni.cmor_cms_navigation = navigation
           ni.save!
 
-          subitems.each do |subitem_attributes|
-            subitem_attributes['parent'] = ni
-            create_navigation_item(subitem_attributes, navigation)
-          end if subitems.respond_to?(:each)
+          if subitems.respond_to?(:each)
+            subitems.each do |subitem_attributes|
+              subitem_attributes["parent"] = ni
+              create_navigation_item(subitem_attributes, navigation)
+            end
+          end
 
           ni
         end

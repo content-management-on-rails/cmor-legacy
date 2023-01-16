@@ -4,15 +4,17 @@ module Cmor
       class Navigation
         def initialize(yaml, _option = {})
           @navigations = nil
-          @yaml = YAML.load(yaml)
+          @yaml = YAML.safe_load(yaml)
         end
 
         def build_navigations
           navigations = []
-          @yaml.each do |navigation_data|
-            navigation = Cmor::Cms::Navigation.new(navigation_data)
-            navigations << navigation
-          end if @yaml.respond_to?(:each)
+          if @yaml.respond_to?(:each)
+            @yaml.each do |navigation_data|
+              navigation = Cmor::Cms::Navigation.new(navigation_data)
+              navigations << navigation
+            end
+          end
           navigations
         end
 

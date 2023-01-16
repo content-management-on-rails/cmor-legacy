@@ -5,7 +5,7 @@ module Cmor::Cms
 
     # validations
     validates :name, presence: true,
-                     uniqueness: true
+      uniqueness: true
 
     delegate :count, to: :content_blocks, prefix: true
   end

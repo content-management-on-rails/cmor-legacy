@@ -1,7 +1,7 @@
 module Cmor
   module Cms
     class TemplateResolver < ::ActionView::Resolver
-      require 'singleton'
+      require "singleton"
       include Singleton
 
       # add shared behaviour for database backed templates
@@ -20,7 +20,7 @@ module Cmor
       end
 
       def template_class
-        'Cmor::Cms::Template'
+        "Cmor::Cms::Template"
       end
     end
   end

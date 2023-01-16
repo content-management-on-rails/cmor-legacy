@@ -12,14 +12,14 @@ module Cmor
 
           # validations
           validates :basename, presence: true,
-                               uniqueness: { scope: [:pathname, :locale, :format, :handler] }
-          validates :handler, inclusion: { in: ActionView::Template::Handlers.extensions.map(&:to_s) }
-          validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) },
-                                  allow_nil: true,
-                                  allow_blank: true
-          validates :format, inclusion: { in: Mime::SET.symbols.map(&:to_s) },
-                                  allow_nil: true,
-                                  allow_blank: true
+            uniqueness: {scope: [:pathname, :locale, :format, :handler]}
+          validates :handler, inclusion: {in: ActionView::Template::Handlers.extensions.map(&:to_s)}
+          validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s)},
+            allow_nil: true,
+            allow_blank: true
+          validates :format, inclusion: {in: Mime::SET.symbols.map(&:to_s)},
+            allow_nil: true,
+            allow_blank: true
           validates :pathname, presence: true
         end
 
@@ -28,7 +28,7 @@ module Cmor
         end
 
         def filename
-          filename = basename.nil? ? '' : basename.dup
+          filename = basename.nil? ? "" : basename.dup
           filename << ".#{locale}" if locale.present?
           filename << ".#{format}" if format.present?
           filename << ".#{handler}" if handler.present?
@@ -42,8 +42,8 @@ module Cmor
         private
 
         def assert_trailing_slash_on_pathname
-          self.pathname = '/' and return if pathname.blank?
-          pathname << '/' unless pathname.end_with?('/')
+          self.pathname = "/" and return if pathname.blank?
+          pathname << "/" unless pathname.end_with?("/")
         end
 
         def clear_resolver_cache

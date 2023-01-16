@@ -10,27 +10,27 @@ module Cmor::Cms
       end
 
       def pathname
-        @pathname ||= File.join("#{File.dirname(relative_filename)}")
+        @pathname ||= File.join(File.dirname(relative_filename).to_s)
       end
 
       def basename
-        @basename ||= File.basename(relative_filename).split('.').first
+        @basename ||= File.basename(relative_filename).split(".").first
       end
 
       def locale
-        locale = File.basename(relative_filename).split('.')[-3]
+        locale = File.basename(relative_filename).split(".")[-3]
         if I18n.available_locales.map(&:to_s).include?(locale)
           @locale ||= locale
         end
       end
 
       def format
-        format = File.basename(relative_filename).split('.')[-2]
+        format = File.basename(relative_filename).split(".")[-2]
         @format ||= format if Mime::SET.symbols.map(&:to_s).include?(format)
       end
 
       def handler
-        handler = File.basename(relative_filename).split('.').last
+        handler = File.basename(relative_filename).split(".").last
         if ActionView::Template::Handlers.extensions.map(&:to_s).include?(handler)
           @handler ||= handler
         end
@@ -44,10 +44,10 @@ module Cmor::Cms
         {
           pathname: pathname,
           basename: basename,
-          locale:   locale,
-          format:   format,
-          handler:  handler,
-          body:     body
+          locale: locale,
+          format: format,
+          handler: handler,
+          body: body
         }
       end
 
@@ -58,24 +58,25 @@ module Cmor::Cms
       private
 
       def relative_filename
-        @relative_filename ||= @filename.gsub(view_path.to_s, '')
+        @relative_filename ||= @filename.gsub(view_path.to_s, "")
       end
 
       attr_reader :view_path
     end
 
-    attr_accessor :view_path, :force
+    attr_accessor :view_path
+    attr_reader :force
 
     validates :view_path, presence: true
 
     def initialize(attributes = {}, options = {})
-      attributes.reverse_merge!(view_path: Rails.root.join(*%w(app views)), force: false)
+      attributes.reverse_merge!(view_path: Rails.root.join(*%w[app views]), force: false)
       super(attributes, options)
     end
 
     private
 
-    def _perform    
+    def _perform
       @partials = load_partials
       partials_count = @partials.size
       say "Processing #{partials_count} partials in #{view_path}" do
@@ -86,9 +87,9 @@ module Cmor::Cms
             new_record = partial.new_record?
             partial.attributes = attributes_hash
             if partial.save
-              say "#{new_record ? 'Created' : 'Updated'} #{partial.human}"
+              say "#{new_record ? "Created" : "Updated"} #{partial.human}"
             else
-              say "Could not #{new_record ? 'create' : 'update'} #{partial.human}. Errors: #{partial.errors.full_messages.to_sentence}"
+              say "Could not #{new_record ? "create" : "update"} #{partial.human}. Errors: #{partial.errors.full_messages.to_sentence}"
             end
           end
         end
@@ -96,7 +97,7 @@ module Cmor::Cms
     end
 
     def force=(value)
-      @force = if Rails.version < '5.0'
+      @force = if Rails.version < "5.0"
         ActiveRecord::Type::Boolean.new.type_cast_from_database(value)
       else
         ActiveRecord::Type::Boolean.new.cast(value)

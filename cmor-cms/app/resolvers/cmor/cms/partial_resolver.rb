@@ -1,14 +1,14 @@
 module Cmor
   module Cms
     class PartialResolver < ::ActionView::Resolver
-      require 'singleton'
+      require "singleton"
       include Singleton
 
       # add shared behaviour for database backed templates
       include Cmor::Cms::DatabaseResolver
 
       def template_class
-        'Cmor::Cms::Partial'
+        "Cmor::Cms::Partial"
       end
 
       def build_source(record)
@@ -16,7 +16,7 @@ module Cmor
       end
 
       def normalize_basename(basename)
-        '_' << basename
+        "_" << basename
       end
 
       def resolve(partial_flag)
