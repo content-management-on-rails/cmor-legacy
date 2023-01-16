@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Cmor::Testimonials::Testimonial, type: :model do
   subject { create :cmor_testimonials_testimonial }
@@ -19,14 +19,14 @@ RSpec.describe Cmor::Testimonials::Testimonial, type: :model do
   end
 
   describe "attach image" do
-    let(:filename) { 'homer.png' } 
-    let(:file) { File.open(Cmor::Testimonials::Engine.root.join(*%W(spec files cmor testimonials testimonials #{filename}))) }    
-    
+    let(:filename) { "homer.png" }
+    let(:file) { File.open(Cmor::Testimonials::Engine.root.join(*%W[spec files cmor testimonials testimonials #{filename}])) }
+
     before(:each) do
-      subject.image.attach(io: file, filename: filename, content_type: 'image/png')
+      subject.image.attach(io: file, filename: filename, content_type: "image/png")
       subject.save!
     end
-    
+
     it { expect(subject.image).to be_attached }
     it { expect(subject.image.filename.to_s).to eq(filename) }
   end

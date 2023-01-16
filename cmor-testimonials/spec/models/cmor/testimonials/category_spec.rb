@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Cmor::Testimonials::Category, type: :model do
   subject { create :cmor_testimonials_category }
