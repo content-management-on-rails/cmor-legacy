@@ -1,0 +1,11 @@
+= table.batch_actions
+= table.id
+= table.association :item, sort: { column_name: 'cmor_seo_items.id' } do |resource|
+  - capture_haml do
+    = link_to(url_for(resource.item)) do
+      = administrador_helper(self).label_for(resource.item)
+= table.column :name, sort: true
+= table.column :content, sort: true
+= table.column :to_html
+= table.acts_as_published_actions sort: { column_name: :published }
+= table.timestamps sort: true

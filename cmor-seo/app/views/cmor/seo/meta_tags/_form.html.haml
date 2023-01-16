@@ -1,0 +1,11 @@
+.row
+  .col-12
+    = form.association :item, label_method: :human
+.row
+  .col-12.col-md-6
+    = form.input :name
+  .col-12.col-md-6
+    = form.input :content, as: :string
+.row
+  .col-12
+    = form.input :published, as: :boolean

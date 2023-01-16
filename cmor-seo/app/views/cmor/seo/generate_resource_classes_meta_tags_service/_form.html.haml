@@ -1,0 +1,1 @@
+= form.input :resource_classes, as: :check_boxes, collection: Cmor::Seo::Configuration.resources.keys.collect { |r| [r.constantize.model_name.human(count: :other), r] }

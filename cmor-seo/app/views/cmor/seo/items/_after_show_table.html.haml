@@ -1,0 +1,8 @@
+%h2= Cmor::Seo::MetaTag.model_name.human(count: :other)
+
+= collection_table(collection: resource.meta_tags) do |table|
+  = table.acts_as_list_actions
+  = table.column :to_html
+  = table.column :position
+  = table.acts_as_published_actions
+  = render partial: '/administrador/resources_controller/base/index_table_actions', locals: { table: table }

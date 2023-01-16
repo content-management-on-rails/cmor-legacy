@@ -1,0 +1,11 @@
+= table.batch_actions actions: { destroy_many: url_for(action: :destroy_many) }
+= table.column :target do |resource|
+  - resource.path.presence || administrador_helper(self).label_for(resource.resource)
+= table.column :title, sort: true do |resource|
+  - capture_haml do
+    = resource.title&.truncate(42)
+= table.column :meta_tags_count
+= table.association :creator, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.association :updater, label_method: ->(r) { administrador_helper(self).label_for(r) }
+= table.acts_as_published_actions sort: { column_name: :published_at }
+= table.timestamps sort: true

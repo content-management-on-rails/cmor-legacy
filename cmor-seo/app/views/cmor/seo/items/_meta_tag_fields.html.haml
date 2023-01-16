@@ -1,0 +1,13 @@
+.row
+  .col-12
+    .nested-fields.mb-2
+      .row
+        .col-12.col-md-4
+          = f.input :name, label: false
+        .col-12.col-md-4
+          = f.input :content, as: :string, label: false
+        .col-12.col-md-2
+          = f.input :published, as: :boolean
+        .col-12.col-md-2
+          = link_to_remove_association t('.remove_association'), f, class: 'btn btn-danger'
+      %hr

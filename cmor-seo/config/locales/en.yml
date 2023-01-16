@@ -1,0 +1,52 @@
+en:
+  activemodel:
+    models:
+      cmor/seo/generate_resource_classes_meta_tags_service: "Generate meta tags service"
+    attributes:
+      cmor/seo/generate_resource_classes_meta_tags_service:
+        resource_classes: resource classes
+  activerecord:
+    models:
+      cmor/seo/item:
+        one: Item
+        other: Items
+      cmor/seo/meta_tag:
+        one: Meta Tag
+        other: Meta Tags
+    shared_attributes: &shared_attributes
+      body: Description
+      created_at: Created at
+      id: ID
+      identifier: Identifier
+      name: Name
+      position: Position
+      published_at: Published at
+      published: Published
+      updated_at: Updated at
+    attributes:
+      cmor/seo/item:
+        <<: *shared_attributes
+        created_at: Created at
+        created_by_id: Created by
+        creator: Created by
+        meta_tags_count: Meta Tags
+        meta_tags_to_html: Meta Tags (HTML)
+        path: Path
+        resource_id: Resource
+        resource_type: Resource Type
+        resource: Resource
+        target: Target
+        title: Title
+        updated_at: Updated at
+        updated_by_id: Updated by
+        updater: Updated by
+      cmor/seo/meta_tag:
+        <<: *shared_attributes
+        content: Content
+        item: Item
+        item_id: Item
+        to_html: HTML
+  classes:
+    cmor/seo/engine: SEO
+  routes:
+    cmor-seo-engine: seo
