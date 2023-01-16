@@ -30,7 +30,6 @@ module Cmor
                                                          ]
                                                        }
 
-
         define_option :resource_controllers, default: -> { [] }
 
         define_option :service_controllers, default: -> { [] }
