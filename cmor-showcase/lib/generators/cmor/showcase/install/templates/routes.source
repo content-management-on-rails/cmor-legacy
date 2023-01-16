@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Showcase::Engine, at: '/backend/cmor-showcase-engine'
+  end

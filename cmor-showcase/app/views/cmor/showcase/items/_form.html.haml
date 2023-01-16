@@ -1,0 +1,14 @@
+= form.association :category
+= form.input :identifier
+= form.input :name
+= form.input :body
+= form.input :published, as: :boolean
+
+.row.mb-4
+  .col-md-6
+    .bg-success.p-4
+      = form.input :append_file_detail_assets, as: :file, input_html: { multiple: true }
+  - if form.object.file_details.any?
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :overwrite_file_detail_assets, as: :file, input_html: { multiple: true }

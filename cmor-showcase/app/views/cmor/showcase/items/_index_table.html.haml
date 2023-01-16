@@ -1,0 +1,7 @@
+= table.acts_as_list_actions
+= table.thumbnail :preview_picture
+= table.column :category, as: :association, label_method: :human, sort: { column_name: 'cmor_showcase_categories.name' }
+= table.column :identifier, sort: true
+= table.column :name, sort: true
+= table.timestamps sort: true
+= table.acts_as_published_actions

@@ -1,0 +1,46 @@
+de:
+  activerecord:
+    models:
+      cmor/showcase/category:
+        one: Kategorie
+        other: Kategorien
+      cmor/showcase/file_detail:
+        one: Anhang
+        other: Anhänge
+      cmor/showcase/item:
+        one: Eintrag
+        other: Einträge
+    shared_attributes: &shared_attributes
+      body: Beschreibung
+      created_at: Erstellt am
+      id: ID
+      identifier: Bezeichner
+      name: Name
+      position: Position
+      published_at: Veröffentlicht am
+      published: Veröffentlicht
+      slug: Slug
+      updated_at: Aktualisiert am
+    attributes:
+      cmor/showcase/category:
+        <<: *shared_attributes
+        append_file_detail_assets: Dateien hinzufügen
+        locale: Sprache
+        overwrite_file_detail_assets: Dateien ersetzen
+      cmor/showcase/file_detail:
+        <<: *shared_attributes
+        description: Beschreibung
+        asset: Datei
+        asset_id: Datei
+        item: Eintrag
+        item_id: Eintrag
+        title: Titel
+      cmor/showcase/item:
+        <<: *shared_attributes
+        category: Kategorie
+        category_id: Kategorie
+        preview_picture: Vorschaubild
+  classes:
+    cmor/showcase/engine: Schaufenster
+  routes:
+    cmor-showcase-engine: schaufenster
