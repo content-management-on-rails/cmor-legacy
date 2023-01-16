@@ -1,0 +1,3 @@
+/*
+ *= require cmor/carousels/application
+ */

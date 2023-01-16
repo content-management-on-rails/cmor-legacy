@@ -1,0 +1,12 @@
+.row
+  .col-lg-12
+    %h2= Cmor::Carousels::ItemDetail.model_name.human(count: :other)
+
+.row
+  .col-lg-12
+    = collection_table(collection: resource.item_details, resource_class: Cmor::Carousels::ItemDetail) do |table|
+      = table.acts_as_list_actions scope: :carousel_id
+      = table.thumbnail :asset, variant_options: Cmor::Core::Backend::Configuration.image_variant_options_for(:table)
+      = table.timestamps
+      = table.acts_as_published_actions
+      = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: table }

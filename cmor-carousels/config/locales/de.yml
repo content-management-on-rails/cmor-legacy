@@ -1,0 +1,46 @@
+de:
+  activerecord:
+    models:
+      cmor/carousels/item_detail:
+        one: Karussell Element
+        other: Karussell Elemente
+      cmor/carousels/carousel:
+        one: Karussell
+        other: Karussell
+    attributes:
+      cmor/carousels/item_detail:
+        id: ID
+        asset: Bild
+        asset_id: Bild
+        description: Inhalt
+        created_at: Erstellt am
+        image: Bild
+        image_content_type: Dateintyp
+        image_file_name: Dateiname
+        image_file_size: Dateigrösse
+        image_fingerprint: Dateifingerabdruck
+        image_updated_at: Datei erstellt am
+        position: Position
+        published: Veröffentlicht
+        published_at: Veröffentlicht am
+        carousel: Karussell
+        carousel_id: Karussell
+        updated_at: Aktualisiert am
+        url: URL
+      cmor/carousels/carousel:
+        id: ID
+        append_item_detail_assets: Dateien hinzufügen
+        created_at: Erstellt am
+        description: Beschreibung
+        item_details: Karussell Elemente
+        item_details_count: Karussell Elemente
+        locale: Sprache
+        name: Name
+        updated_at: Aktualisiert am
+        identifier: Bezeichner
+        overwrite_item_detail_assets: Dateien ersetzen
+        variant_options: Bildoptionen
+  classes:
+    cmor/carousels/engine: 'Karusselle'
+  routes:
+    cmor-carousels-engine: 'karusselle'

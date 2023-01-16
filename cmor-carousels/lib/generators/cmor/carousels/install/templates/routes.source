@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Carousels::Engine, at: '/backend/cmor-carousels-engine'
+  end
