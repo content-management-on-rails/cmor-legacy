@@ -1,0 +1,2 @@
+
+  mount Cmor::Seo::Api::Engine, at: "/api/cmor-seo"
