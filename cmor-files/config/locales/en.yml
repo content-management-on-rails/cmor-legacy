@@ -1,0 +1,54 @@
+en:
+  activerecord:
+    models:
+      cmor/files/file_detail:
+        one: File detail
+        other: File details
+      cmor/files/folder:
+        one: Folder
+        other: Folders
+    attributes:
+      cmor/files/file_detail:
+        id: ID
+        asset: Asset
+        asset_id: Asset
+        asset_permanent_path: Permanent asset path
+        asset_permanent_url: Permanent asset ur
+        blob_byte_size: Filesize
+        blob_checksum: Checksum
+        blob_content_type: Content-Type
+        blob_created_at: File created at
+        blob_filename: Filename
+        description: Description
+        filename: Filename
+        folder: Folder
+        folder_id: Folder
+        identifier: Identifier
+        label: Label
+        position: Position
+        published: Published
+        published_at: Published at
+        slug: Friendly ID
+        title: Title
+        created_at: Created at
+        updated_at: Updated at
+      cmor/files/folder:
+        id: ID
+        append_file_detail_assets: Append files
+        description: Description
+        file_details: Files
+        file_details_count: Files
+        identifier: Identifier
+        locale: Locale
+        name: Name
+        overwrite_file_detail_assets: Overwrite files
+        position: Position
+        published: Published
+        published_at: Published at
+        slug: Friendly ID
+        created_at: Created at
+        updated_at: Updated at
+  classes:
+    cmor/files/engine: Files
+  routes:
+    cmor-files-engine: files

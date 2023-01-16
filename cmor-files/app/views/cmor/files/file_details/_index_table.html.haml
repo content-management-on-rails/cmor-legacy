@@ -1,0 +1,14 @@
+= table.batch_actions( actions: { destroy: destroy_many_attachments_path })
+= table.acts_as_list_actions
+= table.association :folder, label_method: :human, link_to: ->(r) { url_for(r.folder) }
+= table.column :identifier, sort: true
+= table.column :title, sort: true
+= table.column :filename do |resource|
+  - truncate(resource.asset.blob.filename.to_s)
+= table.timestamp :created_at, sort: true
+= table.column :asset do |resource|
+  - capture_haml do
+    = link_to(main_app.url_for(resource.asset), class: 'btn btn-primary btn-responsive btn-xs') do
+      %i.fas.fa-download
+      %span.btn-text= "#{t('.download')} (#{resource.asset.blob.content_type.split('/').last}, #{number_to_human_size(resource.asset.blob.byte_size)})"
+= table.acts_as_published_actions

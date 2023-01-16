@@ -1,0 +1,59 @@
+defaults:
+  permissions:
+    - cmor/files/engine
+    - cmor/files/home/index
+    - cmor/files/attachment/index
+    - cmor/files/attachment/show
+    - cmor/files/attachment/new
+    - cmor/files/attachment/create
+    - cmor/files/attachment/edit
+    - cmor/files/attachment/update
+    - cmor/files/attachment/destroy
+    - cmor/files/file_detail/index
+    - cmor/files/file_detail/show
+    - cmor/files/file_detail/new
+    - cmor/files/file_detail/create
+    - cmor/files/file_detail/edit
+    - cmor/files/file_detail/update
+    - cmor/files/file_detail/destroy
+    - cmor/files/folder/index
+    - cmor/files/folder/show
+    - cmor/files/folder/new
+    - cmor/files/folder/create
+    - cmor/files/folder/edit
+    - cmor/files/folder/update
+    - cmor/files/folder/destroy
+  roles:
+    cmor/files/administrator:
+      - cmor/files/engine
+      - cmor/files/home/index
+      - cmor/files/attachment/index
+      - cmor/files/attachment/show
+      - cmor/files/attachment/new
+      - cmor/files/attachment/create
+      - cmor/files/attachment/edit
+      - cmor/files/attachment/update
+      - cmor/files/attachment/destroy
+      - cmor/files/file_detail/index
+      - cmor/files/file_detail/show
+      - cmor/files/file_detail/new
+      - cmor/files/file_detail/create
+      - cmor/files/file_detail/edit
+      - cmor/files/file_detail/update
+      - cmor/files/file_detail/destroy
+      - cmor/files/folder/index
+      - cmor/files/folder/show
+      - cmor/files/folder/new
+      - cmor/files/folder/create
+      - cmor/files/folder/edit
+      - cmor/files/folder/update
+      - cmor/files/folder/destroy
+    cmor/files/reviewer:
+      - cmor/files/engine
+      - cmor/files/home/index
+      - cmor/files/attachment/index
+      - cmor/files/attachment/show
+      - cmor/files/file_detail/index
+      - cmor/files/file_detail/show
+      - cmor/files/folder/index
+      - cmor/files/folder/show

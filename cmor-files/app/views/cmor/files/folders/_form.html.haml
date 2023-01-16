@@ -1,0 +1,15 @@
+= form.input :name
+= form.input :description
+
+- if form.object.file_details.empty?
+  = form.input :append_file_detail_assets, as: :file, input_html: { multiple: true }
+- else
+  .row.mb-4
+    .col-md-6
+      .bg-success.p-4
+        = form.input :append_file_detail_assets, as: :file, input_html: { multiple: true }
+    .col-md-6
+      .bg-danger.p-4
+        = form.input :overwrite_file_detail_assets, as: :file, input_html: { multiple: true }
+
+= form.input :published, as: :boolean
