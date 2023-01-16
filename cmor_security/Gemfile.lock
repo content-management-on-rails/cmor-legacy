@@ -464,6 +464,8 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    standard (0.0.36)
+      rubocop (>= 0.63)
     sync (0.5.0)
     temple (0.8.2)
     term-ansicolor (1.7.1)
@@ -529,6 +531,7 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sqlite3 (~> 1.4.0)
+  standard
   tatoru-client!
   tatoru-client-rails!
   turbolinks
