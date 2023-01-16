@@ -6,13 +6,13 @@ module Cmor::Partners
     belongs_to :category
 
     has_one_attached :logo
-    
+
     acts_as_list scope: :category
     acts_as_published
     acts_as_markup :body, Cmor::Core::Configuration.default_markup_options
 
     default_scope -> { order(position: :asc) }
 
-    validates :name, presence: true, uniqueness: { scope: [ :category_id ] }
+    validates :name, presence: true, uniqueness: {scope: [:category_id]}
   end
 end
