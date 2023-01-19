@@ -35,7 +35,6 @@ PATH
       administrador (>= 0.0.28.pre)
       cmor_core (= 0.0.61.pre)
       rails (>= 6.0.0.0)
-      sass-rails
 
 PATH
   remote: .
@@ -283,7 +282,7 @@ GEM
     public_suffix (4.0.6)
     puma (3.12.6)
     racc (1.5.2)
-    rack (2.2.3)
+    rack (2.2.6.2)
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -419,8 +418,6 @@ GEM
     ruby-progressbar (1.11.0)
     ruby_parser (3.16.0)
       sexp_processor (~> 4.15, >= 4.15.1)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
