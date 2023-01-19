@@ -1,5 +1,3 @@
-require_dependency 'redcloth'
-
 class Cmor::Links::Link < ActiveRecord::Base
     include Markup::Rails::ActiveRecord
 
@@ -14,4 +12,5 @@ class Cmor::Links::Link < ActiveRecord::Base
   # validations
   validates :name, presence: true
   validates :url,  presence: true
+  validates :identifier, uniqueness: { scope: [:category_id] }, allow_nil: true
 end

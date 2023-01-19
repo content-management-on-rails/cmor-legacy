@@ -1,10 +1,10 @@
 de:
   activerecord:
-    models: 
+    models:
       cmor/links/category:
         one: Link Kategorie
         other: Link Kategorien
-      cmor/links/link: 
+      cmor/links/link:
         one: Link
         other: Links
     attributes:
@@ -13,6 +13,7 @@ de:
         children: Unterkategorien
         created_at: Erstellt am
         depth: Tiefe
+        identifier: Bezeichner
         lft: Links
         link_footer_column: Link Footer Spalte
         links: Links
@@ -28,11 +29,12 @@ de:
         slug: Freundliche ID
         updated_at: Aktualisiert am
       cmor/links/link:
-        id: ID 
+        id: ID
         category: Link Kategorie
         category_id: Link Kategorie
         created_at: Erstellt am
         description: Beschreibung
+        identifier: Bezeichner
         link_actions: ''
         markup_language: Markup Sprache
         name: Name

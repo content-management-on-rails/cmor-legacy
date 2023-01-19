@@ -11,7 +11,7 @@ module Cmor
         def permitted_params
           params
             .require(:category)
-            .permit(:parent_id, :locale, :name, :short_description, :long_description, :link_footer_column)
+            .permit(:parent_id, :locale, :name, :short_description, :long_description, :link_footer_column, :identifier)
         end
       end
     end

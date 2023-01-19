@@ -2,12 +2,14 @@
   <% Cmor::Links::Configuration.link_footer_columns.times do |column| %>
     <div class="column-<%= column + 1 %> <%= Cmor::Links::Configuration.link_footer_column_css_classes.join(' ') %>">
       <% categories[column + 1].each do |c| %>
-        <h4><%= c.name %></h4>
-        <ul>
-        <% c.links.each do |l| %>
-          <li><%= render partial: 'cmor/links/links/link', locals: { link: l } %></li>
-        <% end %>
-        </ul>
+        <div class="<%= [dom_class(c.class), dom_id(c), "cmor-links-category-#{c.identifier}"].join(" ") %>">
+          <h4><%= c.name %></h4>
+          <ul>
+          <% c.links.each do |l| %>
+            <li class="<%= [dom_class(l.class), dom_id(l), "cmor-links-link-#{l.identifier}"].join(" ") %>"><%= render partial: 'cmor/links/links/link', locals: { link: l } %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end if categories.has_key?(column + 1) %>
     </div>
   <% end %>
