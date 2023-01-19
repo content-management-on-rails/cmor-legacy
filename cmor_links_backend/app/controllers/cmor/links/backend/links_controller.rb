@@ -15,7 +15,7 @@ module Cmor
         def permitted_params
           params
             .require(:link)
-            .permit(:category_id, :name, :url, :description)
+            .permit(:category_id, :name, :url, :description, :identifier)
         end
       end
     end

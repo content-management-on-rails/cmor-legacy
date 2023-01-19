@@ -25,6 +25,7 @@ module Cmor::Links
     validates :locale, absence: true, if: proc { |c| !c.parent.nil? }
     validates :name, presence: true,
                      uniqueness: { scope: [:parent_id] }
+    validates :identifier, uniqueness: { scope: [:parent_id] }, allow_nil: true
 
     def human
       name
