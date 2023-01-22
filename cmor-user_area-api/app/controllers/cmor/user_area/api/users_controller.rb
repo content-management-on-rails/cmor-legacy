@@ -7,5 +7,11 @@ module Cmor::UserArea::Api
     def self.serializer_class
       Cmor::UserArea::Api::UserSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :active, :confirmed, :approved)
+    end
   end
 end
