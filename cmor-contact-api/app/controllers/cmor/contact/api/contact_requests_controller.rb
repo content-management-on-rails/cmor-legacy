@@ -1,5 +1,5 @@
 module Cmor::Contact::Api
-  class ContactRequestsController < Cmor::Contact::Api::ResourceController::Base
+  class ContactRequestsController < Cmor::Contact::Api::ResourcesController::Base
     def self.resource_class
       Cmor::Contact::ContactRequest
     end
