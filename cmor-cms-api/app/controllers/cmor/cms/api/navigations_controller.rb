@@ -7,5 +7,12 @@ module Cmor::Cms::Api
     def self.serializer_class
       Cmor::Cms::Api::NavigationSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:navigation)
+            .permit(:locale, :name)
+    end
   end
 end

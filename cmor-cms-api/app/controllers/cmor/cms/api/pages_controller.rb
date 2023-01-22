@@ -7,5 +7,13 @@ module Cmor::Cms::Api
     def self.serializer_class
       Cmor::Cms::Api::PageSerializer
     end
+
+    private
+
+    def permitted_params
+      params
+        .require(:page)
+        .permit(:title, :meta_description, :body, :pathname, :basename, :locale, :format, :handler, :layout, :published, navigation_item_ids: [])
+    end
   end
 end
