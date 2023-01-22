@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-showcase/items", type: :request do
-  let(:base_path) { "/api/cmor-showcase/items" }
-  let(:resource_class) { Cmor::Showcase::Item }
+RSpec.describe "/api/cmor-showcase/file_details", type: :request do
+  let(:base_path) { "/api/cmor-showcase/file_details" }
+  let(:resource_class) { Cmor::Showcase::FileDetail }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[body category_id created_at identifier name position published_at slug updated_at] }
+  let(:attribute_keys) { %w[asset_id created_at description item_id position title updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
@@ -80,8 +80,8 @@ RSpec.describe "/api/cmor-showcase/items", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:category) { create(:cmor_showcase_category) }
-    let(:params) { { param_key => attributes_for(factory_name).merge(category_id: category.id) } }
+    let(:item) { create(:cmor_showcase_item) }
+    let(:params) { { param_key => attributes_for(factory_name).merge(item_id: item.id) } }
 
     describe "when not authenticated" do
       before(:each) do
@@ -127,7 +127,7 @@ RSpec.describe "/api/cmor-showcase/items", type: :request do
     let(:resource) { create(factory_name) }
     let(:update_path) { "#{base_path}/#{resource.id}" }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => {name: "New name"}} }
+    let(:params) { { param_key => {title: "updated title"}} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -164,7 +164,7 @@ RSpec.describe "/api/cmor-showcase/items", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.name }.to("New name") }
+        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.title }.to("updated title") }
       end
     end
   end

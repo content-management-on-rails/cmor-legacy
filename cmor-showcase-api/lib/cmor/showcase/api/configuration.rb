@@ -26,7 +26,8 @@ module Cmor
         define_option :resources_controllers, default: -> {
                                                          [
                                                            Cmor::Showcase::Api::CategoriesController,
-                                                           Cmor::Showcase::Api::ItemsController
+                                                           Cmor::Showcase::Api::ItemsController,
+                                                           Cmor::Showcase::Api::FileDetailsController
                                                          ]
                                                        }
 

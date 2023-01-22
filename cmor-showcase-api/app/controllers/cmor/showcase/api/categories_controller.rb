@@ -7,5 +7,11 @@ module Cmor::Showcase::Api
     def self.serializer_class
       Cmor::Showcase::Api::CategorySerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:category).permit(:locale, :identifier, :name, :body, :published, :image)
+    end
   end
 end

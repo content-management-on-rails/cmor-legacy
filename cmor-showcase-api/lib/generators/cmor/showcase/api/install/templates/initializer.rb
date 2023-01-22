@@ -9,7 +9,8 @@ Rails.application.config.to_prepare do
     config.resources_controllers = -> {
       [
         Cmor::Showcase::Api::CategoriesController,
-        Cmor::Showcase::Api::ItemsController
+        Cmor::Showcase::Api::ItemsController,
+        Cmor::Showcase::Api::FileDetailsController
       ]
     }
 
