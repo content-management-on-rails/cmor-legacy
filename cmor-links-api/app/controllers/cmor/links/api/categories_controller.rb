@@ -7,5 +7,13 @@ module Cmor::Links::Api
     def self.serializer_class
       Cmor::Links::Api::CategorySerializer
     end
+
+    private
+
+    def permitted_params
+      params
+        .require(:category)
+        .permit(:parent_id, :locale, :name, :short_description, :long_description, :link_footer_column, :identifier)
+    end
   end
 end
