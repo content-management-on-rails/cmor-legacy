@@ -7,5 +7,11 @@ module Cmor::Seo::Api
     def self.serializer_class
       Cmor::Seo::Api::MetaTagSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:meta_tag).permit(:item_id, :name, :content, :published)
+    end
   end
 end

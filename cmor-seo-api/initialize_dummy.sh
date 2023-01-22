@@ -63,3 +63,6 @@ echo "end" >> app/controllers/api_controller.rb
 
 # Setup database
 rails db:migrate db:test:prepare
+
+# Setup unpermitted params
+sed -i '9i\  config.action_controller.action_on_unpermitted_parameters = :raise' config/environments/test.rb

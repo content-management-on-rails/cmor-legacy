@@ -7,5 +7,11 @@ module Cmor::Seo::Api
     def self.serializer_class
       Cmor::Seo::Api::ItemSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:item).permit(:resource_type, :resource_id, :path, :published, :title, meta_tags_attributes: [:id, :name, :content, :published, :_destroy])
+    end
   end
 end
