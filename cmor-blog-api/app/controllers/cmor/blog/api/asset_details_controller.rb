@@ -7,5 +7,11 @@ module Cmor::Blog::Api
     def self.serializer_class
       Cmor::Blog::Api::PostSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:asset_detail).permit(:title, :description, :published)
+    end
   end
 end
