@@ -1,4 +1,4 @@
 Cmor::Legal::Api::Engine.routes.draw do
   resources :personal_data
-  resource :privacy_policies
+  resources :privacy_policies
 end

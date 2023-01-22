@@ -7,5 +7,11 @@ module Cmor::Legal::Api
     def self.serializer_class
       Cmor::Legal::Api::PersonalDataSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:personal_data_registry).permit()
+    end
   end
 end
