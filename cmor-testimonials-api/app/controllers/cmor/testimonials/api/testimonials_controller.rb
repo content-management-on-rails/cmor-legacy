@@ -7,5 +7,11 @@ module Cmor::Testimonials::Api
     def self.serializer_class
       Cmor::Testimonials::Api::TestimonialSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:testimonial).permit(:category_id, :fullname, :role, :company, :body, :published, :image)
+    end
   end
 end
