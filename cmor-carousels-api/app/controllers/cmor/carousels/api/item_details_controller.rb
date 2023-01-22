@@ -7,5 +7,11 @@ module Cmor::Carousels::Api
     def self.serializer_class
       Cmor::Carousels::Api::ItemDetailSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:item_detail).permit(:carousel_id, :url, :description, :published, :asset)
+    end
   end
 end

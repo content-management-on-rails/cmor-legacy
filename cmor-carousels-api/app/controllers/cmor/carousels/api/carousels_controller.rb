@@ -7,5 +7,11 @@ module Cmor::Carousels::Api
     def self.serializer_class
       Cmor::Carousels::Api::CarouselSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:carousel).permit(:identifier, :locale, :height, :width, { overwrite_item_detail_assets: [], append_item_detail_assets: [] })
+    end
   end
 end
