@@ -10,7 +10,7 @@ FactoryBot.tap do |f|
   f.factories.clear
   f.definition_file_paths += [
     Cmor::Core::Api::Engine.root.join(*%w[spec factories]),
-    Cmor::Carousels::Engine.root.join(*%w[spec factories])
+    Cmor::Files::Engine.root.join(*%w[spec factories])
   ]
   f.find_definitions
 end

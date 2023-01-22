@@ -7,5 +7,11 @@ module Cmor::Files::Api
     def self.serializer_class
       Cmor::Files::Api::FileDetailSerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:file_detail).permit(:folder_id, :asset, :title, :description)
+    end
   end
 end
