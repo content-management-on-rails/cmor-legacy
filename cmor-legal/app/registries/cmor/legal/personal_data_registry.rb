@@ -14,6 +14,10 @@ module Cmor
         @personal_data = []
       end
 
+      def all
+        @personal_data
+      end
+
       def self.instance
         @@instance
       end

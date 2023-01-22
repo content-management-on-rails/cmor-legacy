@@ -54,7 +54,7 @@ module Cmor
         end
       end
 
-      def personal_data
+      def self.personal_data
         @personal_data ||= ::Cmor::Legal::PersonalDataRegistry.instance
       end
 

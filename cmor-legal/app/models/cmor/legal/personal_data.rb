@@ -7,6 +7,9 @@ module Cmor
 
       attr_accessor :root, :options, :block
 
+      validates :block, presence: true
+      validates :root, presence: true
+
       def to_hash_with_options
         @hash ||= build_hash_with_options!
       end

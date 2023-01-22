@@ -1,46 +1,52 @@
 #!/bin/bash
 
-# Delete old dummy app
+# delete old dummy app
 rm -rf spec/dummy
 
-# Generate new dummy app
+# generate new dummy app
 DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
-# Cleanup
+# cleanup
 rm spec/dummy/.ruby-version
 rm spec/dummy/Gemfile
 
 cd spec/dummy
 
-# Use correct Gemfile
+# use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# I18n configuration
+# Ssetup i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-# I18n routing
+# setup i18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Turbolinks
+# setup turbolinks
 sed -i "15irequire 'turbolinks'" config/application.rb
 
-# Satisfy prerequisites
-sed -i "15irequire 'cmor_cms'" config/application.rb
+# setup simple form
 rails generate simple_form:install --bootstrap
+
+# setup administrador
 rails generate administrador:install
+
+# setup cmor-core
 rails generate cmor:core:install
 rails generate cmor:core:backend:install
+
+# setup cmor-cms
 rails generate cmor:cms:install
 rails cmor_cms:install:migrations
+# sed -i "15irequire 'cmor_cms'" config/application.rb
 
-# Install gem
+# setup cmor-legal
 rails generate cmor:legal:install
 
 # prepare spec database
