@@ -7,5 +7,11 @@ module Cmor::Partners::Api
     def self.serializer_class
       Cmor::Partners::Api::CategorySerializer
     end
+
+    private
+
+    def permitted_params
+      params.require(:category).permit(:locale, :identifier, :name, :body, :published)
+    end
   end
 end
