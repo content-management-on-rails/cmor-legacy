@@ -2,6 +2,16 @@ module Cmor
   module Core
     module Api
       module ResourcesController
+        # When using the concern along with Rao::Query when you use the populate
+        # parameter you will have to add it to the query params exception list.
+        #
+        # Example:
+        #
+        #     # config/initializers/rao-query.rb
+        #     Rao::Query.configure do |config|
+        #       config.default_query_params_exceptions %w(... populate)
+        #     end
+        #
         module SerializationConcern
           extend ActiveSupport::Concern
 
