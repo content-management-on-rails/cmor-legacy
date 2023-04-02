@@ -1,0 +1,5 @@
+en:
+  classes:
+    cmor/restaurant/api/engine: FAQ API
+  routes:
+    cmor-restaurant: restaurant
