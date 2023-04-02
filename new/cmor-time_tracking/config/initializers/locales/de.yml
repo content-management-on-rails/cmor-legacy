@@ -1,0 +1,22 @@
+de:
+  activemodel:
+    models:
+    attributes:
+  activerecord:
+    models:
+    shared_attributes: &shared_attributes
+      description: Beschreibung
+      created_at: Erstellt am
+      id: ID
+      identifier: Bezeichner
+      name: Name
+      position: Position
+      published_at: Veröffentlicht am
+      published: Veröffentlicht
+      updated_at: Aktualisiert am
+    attributes:
+    values:
+  classes:
+    cmor/time_tracking/engine: FAQ
+  routes:
+    cmor-time_tracking-engine: time_tracking
