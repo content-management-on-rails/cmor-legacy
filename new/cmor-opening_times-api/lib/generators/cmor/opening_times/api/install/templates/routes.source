@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::OpeningTimes::Api::Engine, at: "/api/cmor-opening_times"
+  end

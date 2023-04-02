@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/opening_times/api/engine: FAQ API
+  routes:
+    cmor-opening_times: opening_times
