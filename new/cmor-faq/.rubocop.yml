@@ -1,0 +1,9 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+AllCops:
+  Exclude:
+    - 'Guardfile'
+    - 'spec/dummy/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
