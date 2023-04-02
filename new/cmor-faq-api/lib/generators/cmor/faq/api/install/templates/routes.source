@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Faq::Api::Engine, at: "/api/cmor-faq"
+  end

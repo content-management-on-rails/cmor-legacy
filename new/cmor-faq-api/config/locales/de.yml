@@ -1,0 +1,5 @@
+de:
+  classes:
+    cmor/faq/api/engine: FAQ API
+  routes:
+    cmor-faq: faq
