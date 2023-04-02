@@ -1,0 +1,5 @@
+en:
+  classes:
+    cmor/time_tracking/api/engine: FAQ API
+  routes:
+    cmor-time_tracking: time_tracking
