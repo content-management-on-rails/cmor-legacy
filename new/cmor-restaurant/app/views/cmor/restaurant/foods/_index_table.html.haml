@@ -5,6 +5,8 @@
 = table.column :identifier, sort: true
 = table.column :price, sort: true
 = table.column :quantity, sort: true
-= table.column :unit, sort: true
-= table.acts_as_published_actions sort: true
+= table.column :unit, sort: true do |resource|
+  - capture_haml do
+    = resource.unit(locale: I18n.locale)
 = table.timestamps sort: true
+= table.acts_as_published_actions sort: true

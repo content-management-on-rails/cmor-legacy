@@ -1,0 +1,16 @@
+%h2= Cmor::Restaurant::Food.model_name.human(count: :other)
+
+= collection_table(collection: @resource.foods) do |t|
+  = t.acts_as_list_actions scope: :category
+  = t.id
+  = t.column :name
+  = t.column :identifier
+  = t.column :price
+  = t.column :quantity
+  = t.column :unit do |resource|
+    - capture_haml do
+      = resource.unit(locale: I18n.locale)
+  = t.timestamps
+  = t.acts_as_published_actions
+  - capture_haml do
+    = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: t }

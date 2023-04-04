@@ -50,6 +50,7 @@ PATH
       friendly_id
       money-rails
       rails (>= 6.0.0.0)
+      rao-service
 
 GEM
   remote: https://rubygems.org/
@@ -374,6 +375,11 @@ GEM
       rails (>= 6.1)
       rao
       responders
+    rao-service (0.0.48.pre)
+      activemodel
+      activesupport
+      rails (>= 6.1)
+      rao
     rao-service_controller (0.0.48.pre)
       font-awesome-rails
       rails (>= 6.1)

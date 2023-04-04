@@ -1,11 +1,30 @@
 %h2= resource_class.human_attribute_name(:descendants)
 
-= collection_table(collection: @resource.descendants) do |t|
+= collection_table(collection: @resource.descendants, resource_class: Cmor::Restaurant::Category) do |t|
   = t.awesome_nested_set_actions :parent
-  = t.id sort: true
-  = t.column :name, sort: true do |resource|
+  = t.id
+  = t.column :name do |resource|
     - capture_haml do
       = "#{"&nbsp;&nbsp;&nbsp;&nbsp;" * resource.depth}#{resource.name}".html_safe
-  = t.column :identifier, sort: true
-  = t.timestamps sort: true
+  = t.column :identifier
+  = t.timestamps
   = t.acts_as_published_actions
+  - capture_haml do
+    = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: t }
+
+%h2= resource_class.human_attribute_name(:foods)
+
+= collection_table(collection: @resource.foods) do |t|
+  = t.acts_as_list_actions scope: :category
+  = t.id
+  = t.column :name
+  = t.column :identifier
+  = t.column :price
+  = t.column :quantity
+  = t.column :unit do |resource|
+    - capture_haml do
+      = resource.unit(locale: I18n.locale)
+  = t.timestamps
+  = t.acts_as_published_actions
+  - capture_haml do
+    = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: t }

@@ -19,7 +19,7 @@ module Cmor
       end
 
       def permitted_params
-        params.require(:food).permit(:name, :description, :price, :unit, :category_id, :published, :identifier, :quantity)
+        params.require(:food).permit(:name, :description, :price, :unit, :category_id, :published, :identifier, :quantity, additive_ids: [], allergen_ids: [])
       end
     end
   end

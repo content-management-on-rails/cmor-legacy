@@ -15,7 +15,9 @@ RSpec.describe "ActiveRecord::Base models", type: :model do
     Cmor::Restaurant::Additive => {},
     Cmor::Restaurant::Allergen => {},
     Cmor::Restaurant::Category => {},
-    Cmor::Restaurant::Food => {}
+    Cmor::Restaurant::Food => {},
+    Cmor::Restaurant::FoodAdditive => {},
+    Cmor::Restaurant::FoodAllergen => {}
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [])
     specs_to_run = options.delete(:specs_to_run)

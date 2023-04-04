@@ -1,0 +1,1 @@
+Cmor::Restaurant::SeedService.call!

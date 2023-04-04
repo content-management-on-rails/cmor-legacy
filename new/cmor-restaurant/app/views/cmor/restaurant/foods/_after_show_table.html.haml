@@ -1,0 +1,25 @@
+%h2= Cmor::Restaurant::Additive.model_name.human(count: :other)
+
+= collection_table(collection: @resource.additives) do |t|
+  = t.acts_as_list_actions scope: :food
+  = t.id
+  = t.column :name
+  = t.column :identifier
+  = t.column :description
+  = t.timestamps
+  = t.acts_as_published_actions
+  - capture_haml do
+    = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: t }
+
+%h2= Cmor::Restaurant::Allergen.model_name.human(count: :other)
+
+= collection_table(collection: @resource.allergens) do |t|
+  = t.acts_as_list_actions scope: :food
+  = t.id
+  = t.column :name
+  = t.column :identifier
+  = t.column :description
+  = t.timestamps
+  = t.acts_as_published_actions
+  - capture_haml do
+    = render partial: 'administrador/resources_controller/base/index_table_actions', locals: { table: t }

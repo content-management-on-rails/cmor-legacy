@@ -18,7 +18,7 @@ the modules one by one.
 
 ## Available modules
 
-  * audits - Change auditing module (not installed by default) 
+  * audits - Change auditing module (not installed by default)
   * blog - Blogging module
   * carousels - Picture carousels
   * cms - Content management core module with layouts, pages, redirects, partials, navigations
@@ -62,7 +62,7 @@ A collection should have at least following columns:
 
     locale
     identifier
-    title
+    name
     description
     position
     slug
@@ -72,7 +72,7 @@ Resources should have at least following columns:
 
     collection_id
     identifier
-    title
+    name
     description
     position
     slug

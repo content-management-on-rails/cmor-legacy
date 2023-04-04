@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "cocktails",
+      "name": "Mojito",
+      "identifier": "mojito",
+      "description": "Erfrischender Cocktail mit Limetten und Minze",
+      "price": 8.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "cocktails",
+      "name": "Cosmopolitan",
+      "identifier": "cosmopolitan",
+      "description": "Fruchtiger Cocktail mit Cranberry- und Limettensaft",
+      "price": 9.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "cocktails",
+      "name": "Margarita",
+      "identifier": "margarita",
+      "description": "Cocktail mit Tequila, Limettensaft und Salzrand",
+      "price": 8.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "cocktails",
+      "name": "Sex on the Beach",
+      "identifier": "sex_on_the_beach",
+      "description": "Fruchtiger Cocktail mit Wodka, Pfirsich- und Orangensaft",
+      "price": 9.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "cocktails",
+      "name": "Long Island Iced Tea",
+      "identifier": "long_island_iced_tea",
+      "description": "Starker Cocktail mit Wodka, Gin, Rum, Tequila und Cola",
+      "price": 11.5,
+      "quantity": 1,
+      "unit": "glas"
+    }
+  ]
+}

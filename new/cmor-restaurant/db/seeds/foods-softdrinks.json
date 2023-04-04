@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "softdrinks",
+      "name": "Coca-Cola",
+      "identifier": "coca_cola",
+      "description": "Erfrischendes koffeinhaltiges Softgetränk",
+      "price": 2.5,
+      "quantity": 330,
+      "unit": "ml"
+    },
+    {
+      "categories.identifier": "softdrinks",
+      "name": "Sprite",
+      "identifier": "sprite",
+      "description": "Erfrischendes zitroniges Softgetränk",
+      "price": 2.5,
+      "quantity": 330,
+      "unit": "ml"
+    },
+    {
+      "categories.identifier": "softdrinks",
+      "name": "Fanta",
+      "identifier": "fanta",
+      "description": "Fruchtig-süßes Softgetränk mit Orangengeschmack",
+      "price": 2.5,
+      "quantity": 330,
+      "unit": "ml"
+    },
+    {
+      "categories.identifier": "softdrinks",
+      "name": "Limonade",
+      "identifier": "limonade",
+      "description": "Erfrischende Limonade mit Zitronengeschmack",
+      "price": 2.0,
+      "quantity": 250,
+      "unit": "ml"
+    },
+    {
+      "categories.identifier": "softdrinks",
+      "name": "Eistee",
+      "identifier": "eistee",
+      "description": "Erfrischender Eistee mit Pfirsichgeschmack",
+      "price": 2.5,
+      "quantity": 500,
+      "unit": "ml"
+    }
+  ]
+}

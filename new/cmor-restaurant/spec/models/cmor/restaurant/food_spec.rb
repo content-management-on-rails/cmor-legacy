@@ -3,7 +3,10 @@ require "rails_helper"
 module Cmor::Restaurant
   RSpec.describe Food, type: :model do
     describe "associations" do
-      it { expect(subject).to belong_to(:category) }
+      it { expect(subject).to have_many(:food_allergens) }
+      it { expect(subject).to have_many(:allergens).through(:food_allergens) }
+      it { expect(subject).to have_many(:food_additives) }
+      it { expect(subject).to have_many(:additives).through(:food_additives) }
     end
 
     describe "validations" do

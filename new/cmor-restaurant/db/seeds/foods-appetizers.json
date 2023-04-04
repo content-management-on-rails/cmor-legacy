@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "vorspeisen",
+      "name": "Salat",
+      "identifier": "salat",
+      "description": "Salat mit Tomaten, Gurken, Paprika und Zwiebeln",
+      "price": 5.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "vorspeisen",
+      "name": "Tomatensuppe",
+      "identifier": "tomatensuppe",
+      "description": "Hausgemachte Tomatensuppe mit frischen Tomaten",
+      "price": 4.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "vorspeisen",
+      "name": "Käseplatte",
+      "identifier": "käseplatte",
+      "description": "Eine Auswahl an verschiedenen Käsesorten und Früchten",
+      "price": 8.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "vorspeisen",
+      "name": "Bruschetta",
+      "identifier": "bruschetta",
+      "description": "Geröstetes Brot mit Tomaten, Knoblauch und Basilikum",
+      "price": 6.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "vorspeisen",
+      "name": "Gefüllte Champignons",
+      "identifier": "gefüllte_champignons",
+      "description": "Champignons gefüllt mit Kräuterbutter und Parmesankäse",
+      "price": 7.5,
+      "quantity": 1,
+      "unit": "portion"
+    }
+  ]
+}

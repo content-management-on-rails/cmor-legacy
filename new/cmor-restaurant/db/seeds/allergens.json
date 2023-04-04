@@ -1,0 +1,104 @@
+{
+  "allergens": [
+    {
+      "name": "Gluten",
+      "identifier": "gluten",
+      "description": "Klebereiweiß"
+    },
+    {
+      "name": "Milch",
+      "identifier": "milch",
+      "description": "Milcheiweiß"
+    },
+    {
+      "name": "Eier",
+      "identifier": "eier",
+      "description": "Hühnereiweiß"
+    },
+    {
+      "name": "Erdnüsse",
+      "identifier": "erdnuesse",
+      "description": "Erdnussallergie"
+    },
+    {
+      "name": "Soja",
+      "identifier": "soja",
+      "description": "Sojaallergie"
+    },
+    {
+      "name": "Fisch",
+      "identifier": "fisch",
+      "description": "Fischallergie"
+    },
+    {
+      "name": "Schalentiere",
+      "identifier": "schalentiere",
+      "description": "Schalentierallergie"
+    },
+    {
+      "name": "Sesam",
+      "identifier": "sesam",
+      "description": "Sesamallergie"
+    },
+    {
+      "name": "Senf",
+      "identifier": "senf",
+      "description": "Senfallergie"
+    },
+    {
+      "name": "Sellerie",
+      "identifier": "sellerie",
+      "description": "Sellerieallergie"
+    },
+      {
+      "name": "Weichtiere",
+      "identifier": "weichtiere",
+      "description": "Weichtierallergie"
+    },
+    {
+      "name": "Nüsse",
+      "identifier": "nuesse",
+      "description": "Nussallergie"
+    },
+    {
+      "name": "Lupinen",
+      "identifier": "lupinen",
+      "description": "Lupinenallergie"
+    },
+    {
+      "name": "Getreide",
+      "identifier": "getreide",
+      "description": "Getreideallergie"
+    },
+    {
+      "name": "Schwefeldioxid und Sulfite",
+      "identifier": "schwefeldioxid_sulfite",
+      "description": "Schwefeldioxid- und Sulfitallegie"
+    },
+    {
+      "name": "Laktose",
+      "identifier": "laktose",
+      "description": "Laktoseintoleranz"
+    },
+    {
+      "name": "Mandel",
+      "identifier": "mandel",
+      "description": "Mandelallergie"
+    },
+    {
+      "name": "Hafer",
+      "identifier": "hafer",
+      "description": "Haferallergie"
+    },
+    {
+      "name": "Kakao",
+      "identifier": "kakao",
+      "description": "Kakaoallergie"
+    },
+    {
+      "name": "Weizen",
+      "identifier": "weizen",
+      "description": "Weizenallergie"
+    }
+  ]
+}

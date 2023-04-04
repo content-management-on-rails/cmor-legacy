@@ -4,7 +4,9 @@
 = table.row :identifier
 = table.row :price
 = table.row :quantity
-= table.row :unit
+= table.row :unit do |resource|
+  - capture_haml do
+    = resource.unit(locale: I18n.locale)
 = table.row :description
 = table.timestamp :published_at
 = table.timestamps

@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "locale": "de",
+      "name": "Vorspeisen",
+      "identifier": "vorspeisen",
+      "description": "Unsere Hauptspeisen bieten eine große Auswahl an Fleisch-, Fisch- und vegetarischen Gerichten. Sie werden von unserem Chefkoch frisch und lecker zubereitet."
+    },
+    {
+      "locale": "de",
+      "name": "Hauptspeisen",
+      "identifier": "hauptspeisen",
+      "description": "Unsere Hauptspeisen bieten eine große Auswahl an Fleisch-, Fisch- und vegetarischen Gerichten. Sie werden von unserem Chefkoch frisch und lecker zubereitet."
+    },
+    {
+      "locale": "de",
+      "name": "Snacks",
+      "identifier": "snacks",
+      "description": "Unsere Snacks sind perfekt für den kleinen Hunger zwischendurch. Wir bieten eine Auswahl an süßen und salzigen Snacks."
+    },
+    {
+      "locale": "de",
+      "name": "Softdrinks",
+      "identifier": "softdrinks",
+      "description": "Wir bieten eine große Auswahl an Softdrinks an, darunter Limonade, Saft und Wasser. Unsere Getränke sind erfrischend und von höchster Qualität."
+    },
+    {
+      "locale": "de",
+      "name": "Cocktails",
+      "identifier": "cocktails",
+      "description": "Unsere Cocktails sind frisch gemixt und bieten eine große Auswahl an verschiedenen Geschmacksrichtungen. Genießen Sie einen Cocktail in unserer gemütlichen Bar."
+    },
+    {
+      "locale": "de",
+      "name": "Spirituosen",
+      "identifier": "spirituosen",
+      "description": "Wir bieten eine umfangreiche Auswahl an Spirituosen, darunter Whisky, Gin und Rum. Genießen Sie einen hochwertigen Drink in unserer Bar."
+    },
+    {
+      "locale": "de",
+      "name": "Weine",
+      "identifier": "weine",
+      "description": "Unsere Weinkarte bietet eine große Auswahl an Weinen aus verschiedenen Regionen und Jahrgängen. Unsere Sommeliers helfen Ihnen gerne bei der Auswahl des perfekten Weins."
+    }
+  ]
+}

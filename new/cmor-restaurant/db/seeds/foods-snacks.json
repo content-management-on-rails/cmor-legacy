@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "snacks",
+      "name": "Nachos",
+      "identifier": "nachos",
+      "description": "Knusprige Nachos mit hausgemachtem Guacamole-Dip",
+      "price": 7.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "snacks",
+      "name": "Pommes Frites",
+      "identifier": "pommes_frites",
+      "description": "Knusprige Pommes Frites mit Ketchup oder Mayo",
+      "price": 4.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "snacks",
+      "name": "Mini-Burger",
+      "identifier": "mini_burger",
+      "description": "Kleine Burger mit Rindfleisch, Salat und Tomaten",
+      "price": 8.5,
+      "quantity": 2,
+      "unit": "pieces"
+    },
+    {
+      "categories.identifier": "snacks",
+      "name": "Fish and Chips",
+      "identifier": "fish_and_chips",
+      "description": "Kross gebackener Fisch mit Pommes Frites",
+      "price": 10.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "snacks",
+      "name": "Chicken Wings",
+      "identifier": "chicken_wings",
+      "description": "Knusprige Hähnchenflügel mit BBQ-Sauce",
+      "price": 9.5,
+      "quantity": 6,
+      "unit": "pieces"
+    }
+  ]
+}

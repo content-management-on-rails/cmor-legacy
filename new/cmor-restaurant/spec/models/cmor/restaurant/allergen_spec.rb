@@ -3,6 +3,8 @@ require "rails_helper"
 module Cmor::Restaurant
   RSpec.describe Allergen, type: :model do
     describe "associations" do
+      it { expect(subject).to have_many(:food_allergens) }
+      it { expect(subject).to have_many(:foods).through(:food_allergens) }
     end
 
     describe "validations" do

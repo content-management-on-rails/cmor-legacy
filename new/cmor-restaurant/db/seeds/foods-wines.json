@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "weine",
+      "name": "Chardonnay",
+      "identifier": "chardonnay",
+      "description": "Trockener Weißwein mit Noten von Zitrusfrüchten und Vanille",
+      "price": 6.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "weine",
+      "name": "Sauvignon Blanc",
+      "identifier": "sauvignon_blanc",
+      "description": "Fruchtiger Weißwein mit Noten von grünem Apfel und Stachelbeere",
+      "price": 7.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "weine",
+      "name": "Pinot Noir",
+      "identifier": "pinot_noir",
+      "description": "Leichter Rotwein mit Noten von Erdbeeren und Kirschen",
+      "price": 8.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "weine",
+      "name": "Merlot",
+      "identifier": "merlot",
+      "description": "Fruchtiger Rotwein mit Noten von Pflaumen und Gewürzen",
+      "price": 9.5,
+      "quantity": 1,
+      "unit": "glas"
+    },
+    {
+      "categories.identifier": "weine",
+      "name": "Cabernet Sauvignon",
+      "identifier": "cabernet_sauvignon",
+      "description": "Kraftvoller Rotwein mit Noten von schwarzen Johannisbeeren und Zedernholz",
+      "price": 10.5,
+      "quantity": 1,
+      "unit": "glas"
+    }
+  ]
+}

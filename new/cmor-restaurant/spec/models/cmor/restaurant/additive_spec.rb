@@ -3,6 +3,8 @@ require "rails_helper"
 module Cmor::Restaurant
   RSpec.describe Additive, type: :model do
     describe "associations" do
+      it { expect(subject).to have_many(:food_additives) }
+      it { expect(subject).to have_many(:foods).through(:food_additives) }
     end
 
     describe "validations" do

@@ -1,0 +1,49 @@
+{
+  "foods": [
+    {
+      "categories.identifier": "hauptspeisen",
+      "name": "Rindfleisch mit Gemüse",
+      "identifier": "rindfleisch_mit_gemüse",
+      "description": "Zartes Rindfleisch mit frischem Gemüse und Sojasauce",
+      "price": 15.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "hauptspeisen",
+      "name": "Pasta Carbonara",
+      "identifier": "pasta_carbonara",
+      "description": "Pasta mit einer cremigen Sauce aus Eiern, Speck und Parmesan",
+      "price": 12.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "hauptspeisen",
+      "name": "Gegrilltes Hähnchen",
+      "identifier": "gegrilltes_hähnchen",
+      "description": "Gegrilltes Hähnchen mit Kartoffeln und Salat",
+      "price": 13.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "hauptspeisen",
+      "name": "Lachsfilet",
+      "identifier": "lachsfilet",
+      "description": "Gegrilltes Lachsfilet mit Reis und Gemüse",
+      "price": 16.5,
+      "quantity": 1,
+      "unit": "portion"
+    },
+    {
+      "categories.identifier": "hauptspeisen",
+      "name": "Ratatouille",
+      "identifier": "ratatouille",
+      "description": "Französisches Gemüsegericht aus Zucchini, Auberginen, Paprika und Tomaten",
+      "price": 11.5,
+      "quantity": 1,
+      "unit": "portion"
+    }
+  ]
+}

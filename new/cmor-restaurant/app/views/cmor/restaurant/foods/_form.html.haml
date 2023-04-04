@@ -23,3 +23,9 @@
 .row
   .col
     = form.input :published, as: :boolean
+
+.row
+  .col.col-md-6
+    = form.association :additives, as: :check_boxes
+  .col.col-md-6
+    = form.association :allergens, as: :check_boxes

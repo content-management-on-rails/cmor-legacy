@@ -16,6 +16,12 @@ en:
       cmor/restaurant/food:
         one: Food
         other: Foods
+      cmor/restaurant/food_additive:
+        one: Food-Additive
+        other: Food-Additives
+      cmor/restaurant/food_allergen:
+        one: Food-Allergen
+        other: Food-Allergens
     shared_attributes: &shared_attributes
       children_count: Children
       created_at: Created at
@@ -50,7 +56,25 @@ en:
         price: Price
         quantity: Quantity
         unit: Unit
+      cmor/restaurant/food_additive:
+        <<: *shared_attributes
+        additive_id: Additive ID
+        additive: Additive
+        food_id: Food ID
+        food: Food
+      cmor/restaurant/food_allergen:
+        <<: *shared_attributes
+        allergen_id: Allergen ID
+        allergen: Allergen
+        food_id: Food ID
+        food: Food
     values:
+      cmor/restaurant/food:
+        unit:
+          glas: Glas
+          ml: ml
+          pieces: Pieces
+          portion: Portion
   classes:
     cmor/restaurant/engine: Restaurant
   routes:

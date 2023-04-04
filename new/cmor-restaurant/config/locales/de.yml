@@ -16,6 +16,12 @@ de:
       cmor/restaurant/food:
         one: Speise
         other: Speisen
+      cmor/restaurant/food_additive:
+        one: Speisen-Zusatzstoff
+        other: Speisen-Zusatzstoffe
+      cmor/restaurant/food_allergen:
+        one: Speisen-Allergen
+        other: Speisen-Allergene
     shared_attributes: &shared_attributes
       children_count: Unterelemente
       created_at: Erstellt am
@@ -50,7 +56,25 @@ de:
         price: Preis
         quantity: Menge
         unit: Einheit
+      cmor/restaurant/food_additive:
+        <<: *shared_attributes
+        additive_id: Zusatzstoff ID
+        additive: Zusatzstoff
+        food_id: Speisen ID
+        food: Speise
+      cmor/restaurant/food_allergen:
+        <<: *shared_attributes
+        allergen_id: Allergen ID
+        allergen: Allergen
+        food_id: Speisen ID
+        food: Speise
     values:
+      cmor/restaurant/food:
+        unit:
+          glas: Glas
+          ml: ml
+          pieces: Stück
+          portion: Portion
   classes:
     cmor/restaurant/engine: Restaurant
   routes:

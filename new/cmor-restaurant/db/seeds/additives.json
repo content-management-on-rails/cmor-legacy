@@ -1,0 +1,109 @@
+{
+  "additives": [
+    {
+      "name": "E202",
+      "identifier": "e202",
+      "description": "Kaliumsorbat"
+    },
+    {
+      "name": "E211",
+      "identifier": "e211",
+      "description": "Natriumbenzoat"
+    },
+    {
+      "name": "E220",
+      "identifier": "e220",
+      "description": "Schwefeldioxid"
+    },
+    {
+      "name": "E330",
+      "identifier": "e330",
+      "description": "Zitronensäure"
+    },
+    {
+      "name": "E407",
+      "identifier": "e407",
+      "description": "Carrageen"
+    },
+    {
+      "name": "E450",
+      "identifier": "e450",
+      "description": "Diphosphate"
+    },
+    {
+      "name": "E621",
+      "identifier": "e621",
+      "description": "Mononatriumglutamat"
+    },
+    {
+      "name": "E951",
+      "identifier": "e951",
+      "description": "Aspartam"
+    },
+    {
+      "name": "E952",
+      "identifier": "e952",
+      "description": "Cyclamat"
+    },
+    {
+      "name": "E954",
+      "identifier": "e954",
+      "description": "Saccharin"
+    },
+    {
+      "name": "E260",
+      "identifier": "e260",
+      "description": "Essigsäure"
+    },
+    {
+      "name": "E296",
+      "identifier": "e296",
+      "description": "Äpfelsäure"
+    },
+    {
+      "name": "E322",
+      "identifier": "e322",
+      "description": "Lecithine, Sojalecithine"
+    },
+    {
+      "name": "E410",
+      "identifier": "e410",
+      "description": "Johannisbrotkernmehl"
+    },
+    {
+      "name": "E412",
+      "identifier": "e412",
+      "description": "Guarkernmehl"
+    },
+    {
+      "name": "E965",
+      "identifier": "e965",
+      "description": "Maltit"
+    },
+    {
+      "name": "E967",
+      "identifier": "e967",
+      "description": "Xylit"
+    },
+      {
+      "name": "E170",
+      "identifier": "e170",
+      "description": "Calciumcarbonat"
+    },
+    {
+      "name": "E327",
+      "identifier": "e327",
+      "description": "Calciumlactat"
+    },
+    {
+      "name": "E508",
+      "identifier": "e508",
+      "description": "Kaliumchlorid"
+    },
+    {
+      "name": "E551",
+      "identifier": "e551",
+      "description": "Siliciumdioxid"
+    }
+  ]
+}
