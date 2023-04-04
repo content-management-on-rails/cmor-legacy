@@ -7,6 +7,9 @@ de:
       cmor/restaurant/category:
         one: Kategorie
         other: Kategorien
+      cmor/restaurant/food:
+        one: Speise
+        other: Speisen
     shared_attributes: &shared_attributes
       children_count: Unterelemente
       created_at: Erstellt am
@@ -29,6 +32,14 @@ de:
       cmor/restaurant/category:
         <<: *shared_attributes
         locale: Sprache
+      cmor/restaurant/food:
+        <<: *shared_attributes
+        category_id: Kategorie
+        category: Kategorie
+        price_cents: Preis (in Cent)
+        price: Preis
+        quantity: Menge
+        unit: Einheit
     values:
   classes:
     cmor/restaurant/engine: Restaurant

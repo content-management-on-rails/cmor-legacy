@@ -4,5 +4,10 @@ Cmor::Restaurant::Engine.routes.draw do
     acts_as_list
   end
 
+  resources :foods do
+    acts_as_published
+    acts_as_list
+  end
+
   root to: "home#index"
 end

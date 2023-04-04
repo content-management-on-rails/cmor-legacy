@@ -1,0 +1,10 @@
+= table.id
+= table.association :category, label_method: :human, link_to: ->(resource) { resource.category }
+= table.row :name
+= table.row :identifier
+= table.row :price
+= table.row :quantity
+= table.row :unit
+= table.row :description
+= table.timestamp :published_at
+= table.timestamps

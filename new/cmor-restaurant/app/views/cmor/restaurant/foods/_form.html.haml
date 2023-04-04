@@ -1,0 +1,25 @@
+.row
+  .col
+    = form.association :category
+
+.row
+  .col.col-md-6
+    = form.input :name
+  .col.col-md-6
+    = form.input :identifier
+
+.row
+  .col.col-md-4
+    = form.input :price
+  .col.col-md-4
+    = form.input :quantity
+  .col.col-md-4
+    = form.input :unit
+
+.row
+  .col
+    = form.input :description
+
+.row
+  .col
+    = form.input :published, as: :boolean

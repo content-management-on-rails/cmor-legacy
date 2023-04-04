@@ -30,7 +30,8 @@ module Cmor
 
       define_option :resources_controllers, default: -> {
                                                        [
-                                                         Cmor::Restaurant::CategoriesController
+                                                         Cmor::Restaurant::CategoriesController,
+                                                         Cmor::Restaurant::FoodsController
                                                        ]
                                                      }
       define_option :resource_controllers, default: -> { [] }

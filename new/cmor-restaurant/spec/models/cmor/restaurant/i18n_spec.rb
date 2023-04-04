@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Translations", type: :model do
   {
-    Cmor::Restaurant::Category => {}
+    Cmor::Restaurant::Category => {},
+    Cmor::Restaurant::Food => {}
   }.each do |model, options|
     I18n.available_locales.each do |locale|
       I18n.locale = locale

@@ -26,6 +26,9 @@ rails active_storage:install
 # Setup simple form
 rails generate simple_form:install --bootstrap
 
+# Setup money rails
+rails generate money_rails:initializer
+
 # Setup i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb

@@ -42,11 +42,13 @@ PATH
   remote: .
   specs:
     cmor-restaurant (0.0.61.pre)
+      acts_as_list
       acts_as_published
       awesome_nested_set
       cmor_core (= 0.0.61.pre)
       cmor_core_backend (= 0.0.61.pre)
       friendly_id
+      money-rails
       rails (>= 6.0.0.0)
 
 GEM
@@ -117,6 +119,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts_as_list (1.1.0)
+      activerecord (>= 4.2)
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
     addressable (2.8.2)
@@ -279,6 +283,15 @@ GEM
     minitest (5.18.0)
     momentjs-rails (2.29.4.1)
       railties (>= 3.1)
+    monetize (1.12.0)
+      money (~> 6.12)
+    money (6.16.0)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.15.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      railties (>= 3.0)
     msgpack (1.7.0)
     multi_json (1.15.0)
     nenv (0.3.0)

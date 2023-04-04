@@ -1,0 +1,10 @@
+= table.acts_as_list_actions scope: :category, sort: true
+= table.id sort: true
+= table.association :category, label_method: :human, link_to: ->(resource) { resource.category }, sort: { column: "cmor_restaurant_categories.name" }
+= table.column :name, sort: true
+= table.column :identifier, sort: true
+= table.column :price, sort: true
+= table.column :quantity, sort: true
+= table.column :unit, sort: true
+= table.acts_as_published_actions sort: true
+= table.timestamps sort: true

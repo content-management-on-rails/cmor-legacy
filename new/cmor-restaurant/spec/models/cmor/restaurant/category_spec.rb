@@ -3,6 +3,7 @@ require "rails_helper"
 module Cmor::Restaurant
   RSpec.describe Category, type: :model do
     describe "associations" do
+      it { expect(subject).to have_many(:foods) }
     end
 
     describe "validations" do
