@@ -28,7 +28,11 @@ module Cmor
         @values[key]
       end
 
-      define_option :resources_controllers, default: -> { [] }
+      define_option :resources_controllers, default: -> {
+                                                       [
+                                                         Cmor::Restaurant::CategoriesController
+                                                       ]
+                                                     }
       define_option :resource_controllers, default: -> { [] }
       define_option :service_controllers, default: -> { [] }
       define_option :sidebar_controllers, default: -> { [] }

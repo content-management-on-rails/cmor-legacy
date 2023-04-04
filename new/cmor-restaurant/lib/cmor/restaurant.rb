@@ -1,3 +1,5 @@
+require "acts_as_published"
+
 require "cmor/restaurant/version"
 require "cmor/restaurant/configuration"
 require "cmor/restaurant/engine"

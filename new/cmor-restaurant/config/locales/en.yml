@@ -1,0 +1,36 @@
+en:
+  activemodel:
+    models:
+    attributes:
+  activerecord:
+    models:
+      cmor/restaurant/category:
+        one: Category
+        other: Categories
+    shared_attributes: &shared_attributes
+      children_count: Children
+      created_at: Created at
+      depth: Depth
+      descendants: "Sub-Categories"
+      description: Description
+      id: ID
+      identifier: Identifier
+      lft: Left
+      name: Name
+      parent_id: Parent
+      parent: Parent
+      position: Position
+      published_at: Published at
+      published: Published
+      rgt: Right
+      slug: Slug
+      updated_at: Updated at
+    attributes:
+      cmor/restaurant/category:
+        <<: *shared_attributes
+        locale: Locale
+    values:
+  classes:
+    cmor/restaurant/engine: Restaurant
+  routes:
+    cmor-restaurant-engine: restaurant

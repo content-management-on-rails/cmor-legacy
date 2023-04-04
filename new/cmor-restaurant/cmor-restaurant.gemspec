@@ -16,5 +16,9 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
+  spec.add_dependency "acts_as_published"
+  spec.add_dependency "awesome_nested_set"
+  spec.add_dependency "friendly_id"
+
   spec.add_development_dependency "guard-standardrb"
 end

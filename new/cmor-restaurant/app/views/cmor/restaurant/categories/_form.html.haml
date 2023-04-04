@@ -1,0 +1,18 @@
+.row
+  .col.col-md-6
+    = form.association :parent, collection: Cmor::Restaurant::Category.all
+  .col.col-md-6
+    = form.input :locale, collection: I18n.available_locales
+
+.row
+  .col.col-md-6
+    = form.input :name
+  .col.col-md-6
+    = form.input :identifier
+.row
+  .col
+    = form.input :description
+
+.row
+  .col
+    = form.input :published, as: :boolean

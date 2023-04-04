@@ -1,0 +1,8 @@
+= table.awesome_nested_set_actions :parent
+= table.id sort: true
+= table.column :name, sort: true do |resource|
+  - capture_haml do
+    = "#{"&nbsp;&nbsp;&nbsp;&nbsp;" * resource.depth}#{resource.name}".html_safe
+= table.column :identifier, sort: true
+= table.timestamps sort: true
+= table.acts_as_published_actions

@@ -1,0 +1,11 @@
+%h2= resource_class.human_attribute_name(:descendants)
+
+= collection_table(collection: @resource.descendants) do |t|
+  = t.awesome_nested_set_actions :parent
+  = t.id sort: true
+  = t.column :name, sort: true do |resource|
+    - capture_haml do
+      = "#{"&nbsp;&nbsp;&nbsp;&nbsp;" * resource.depth}#{resource.name}".html_safe
+  = t.column :identifier, sort: true
+  = t.timestamps sort: true
+  = t.acts_as_published_actions

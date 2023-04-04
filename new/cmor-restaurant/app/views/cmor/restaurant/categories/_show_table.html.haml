@@ -1,0 +1,6 @@
+= table.id
+= table.association :parent, label_method: :human, link_to: ->(resource) { cmor_restaurant.category_path(resource.parent) }
+= table.row :name
+= table.row :identifier
+= table.boolean :published
+= table.timestamps
