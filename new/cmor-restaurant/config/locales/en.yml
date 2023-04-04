@@ -4,6 +4,12 @@ en:
     attributes:
   activerecord:
     models:
+      cmor/restaurant/additive:
+        one: Additive
+        other: Additives
+      cmor/restaurant/allergen:
+        one: Allergene
+        other: Allergenes
       cmor/restaurant/category:
         one: Category
         other: Categories
@@ -29,6 +35,10 @@ en:
       slug: Slug
       updated_at: Updated at
     attributes:
+      cmor/restaurant/additive:
+        <<: *shared_attributes
+      cmor/restaurant/allergen:
+        <<: *shared_attributes
       cmor/restaurant/category:
         <<: *shared_attributes
         locale: Locale

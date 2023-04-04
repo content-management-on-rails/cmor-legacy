@@ -12,6 +12,8 @@ RSpec.describe "ActiveRecord::Base models", type: :model do
   # rubocop:enable Lint/ConstantDefinitionInBlock
 
   {
+    Cmor::Restaurant::Additive => {},
+    Cmor::Restaurant::Allergen => {},
     Cmor::Restaurant::Category => {},
     Cmor::Restaurant::Food => {}
   }.each do |model, options|

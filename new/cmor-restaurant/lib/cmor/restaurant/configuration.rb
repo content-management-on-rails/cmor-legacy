@@ -30,6 +30,8 @@ module Cmor
 
       define_option :resources_controllers, default: -> {
                                                        [
+                                                         Cmor::Restaurant::AdditivesController,
+                                                         Cmor::Restaurant::AllergensController,
                                                          Cmor::Restaurant::CategoriesController,
                                                          Cmor::Restaurant::FoodsController
                                                        ]

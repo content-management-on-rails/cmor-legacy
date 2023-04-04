@@ -2,12 +2,16 @@ Cmor::Restaurant.configure do |config|
   # Set the resources, that will be shown in the backend menu.
   #
   # Default: config.resources_controllers = -> {[
+  #            Cmor::Restaurant::AdditivesController,
+  #            Cmor::Restaurant::AllergensController,
   #            Cmor::Restaurant::CategoriesController,
   #            Cmor::Restaurant::FoodsController
   #          ]}
   #
   config.resources_controllers = -> {
     [
+      Cmor::Restaurant::AdditivesController,
+      Cmor::Restaurant::AllergensController,
       Cmor::Restaurant::CategoriesController,
       Cmor::Restaurant::FoodsController
     ]

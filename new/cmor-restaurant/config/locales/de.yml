@@ -4,6 +4,12 @@ de:
     attributes:
   activerecord:
     models:
+      cmor/restaurant/additive:
+        one: Zusatzstoff
+        other: Zusatzstoffe
+      cmor/restaurant/allergen:
+        one: Allergen
+        other: Allergene
       cmor/restaurant/category:
         one: Kategorie
         other: Kategorien
@@ -29,6 +35,10 @@ de:
       slug: Slug
       updated_at: Aktualisiert am
     attributes:
+      cmor/restaurant/additive:
+        <<: *shared_attributes
+      cmor/restaurant/allergen:
+        <<: *shared_attributes
       cmor/restaurant/category:
         <<: *shared_attributes
         locale: Sprache
