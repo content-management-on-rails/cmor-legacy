@@ -27,6 +27,7 @@ module Cmor
           s.add_development_dependency 'guard-bundler'
           s.add_development_dependency 'guard-rails'
           s.add_development_dependency 'guard-rspec'
+          s.add_development_dependency 'guard-standardrb'
           s.add_development_dependency 'pry-rails'
           s.add_development_dependency 'rao-shoulda_matchers'
           s.add_development_dependency 'rails-dummy'
@@ -38,6 +39,7 @@ module Cmor
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
+          s.add_development_dependency 'standard', '>= 1.0'
           s.add_development_dependency 'bootsnap'
           s.add_development_dependency 'webpacker', '~> 4.0'
         end
