@@ -21,7 +21,6 @@ de:
         user: Benutzer
       cmor/user_area/user:
         id: ID
-        tfa_state: 2FA Status
         active: Aktiv
         approved: Genehmigt
         confirmed: Bestätigt
