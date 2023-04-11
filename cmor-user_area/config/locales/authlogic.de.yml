@@ -1,0 +1,24 @@
+de:
+  authlogic:
+    error_messages:
+      login_blank: darf nicht leer sein
+      login_not_found: ist nicht gültig
+      login_invalid: darf nur aus Buchstaben, Zahlen, Leerzeichen, und .-_@+ bestehen.
+      consecutive_failed_logins_limit_exceeded: Zuviele fehlgeschlagene Loginversuche, der Account wurde deaktiviert.
+      email_invalid: muss eine E-Mail Adresse sein.
+      email_invalid_international: muss eine E-Mail Adresse sein.
+      password_blank: darf nicht leer sein
+      password_invalid: ist nicht gültig
+      not_active: Ihr Account ist nicht aktiv
+      not_confirmed: Ihr Account ist nicht bestätigt
+      not_approved: Ihr Account ist nicht verifiziert
+      no_authentication_details: Sie haben keine Authentifizierungsdetails angegeben.
+      general_credentials_error: Benutzername/Password nicht bekannt.
+    models:
+      user_session: User Session
+    attributes:
+      cmor/user_area/user_session:
+        login: Benutzername
+        email: E-Mail
+        password: Passwort
+        remember_me: merken?

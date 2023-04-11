@@ -7,7 +7,7 @@ Cmor::UserArea.configure do |config|
   #
   config.resources_controllers = -> {
     [
-      Cmor::UserArea::Backend::UsersController
+      Cmor::UserArea::UsersController
     ]
   }
 
@@ -19,7 +19,7 @@ Cmor::UserArea.configure do |config|
   #
   config.service_controllers = -> {
     [
-      Cmor::UserArea::Backend::CreateDefaultUserServiceController
+      Cmor::UserArea::CreateDefaultUserServiceController
     ]
   }
 
@@ -31,7 +31,7 @@ Cmor::UserArea.configure do |config|
   #
   config.sidebar_controllers = -> {
     [
-      Cmor::UserArea::Backend::UserSidebarsController
+      Cmor::UserArea::UserSidebarsController
     ]
   }
 

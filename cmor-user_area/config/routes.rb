@@ -6,7 +6,6 @@ Cmor::UserArea::Engine.routes.draw do
     post "trigger_event/:machine_name/:event_name", on: :member, action: "trigger_event", as: :trigger_event
   end
 
-  resource :current_user, only: [:show]
   resource :user_sidebar, only: [:show]
 
   root to: "home#index"

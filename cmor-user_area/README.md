@@ -16,9 +16,14 @@ Install bundle:
 
     > bundle install
 
-Install initalizer and routes:
+Install initializer and routes:
 
     > rails g cmor:user_area:install
+
+Install the migrations and migrate:
+
+    #> rails cmor_user_area:install:migrations
+    #> rails db:migrate
 
 ## Contributing
 Contribution directions go here.
