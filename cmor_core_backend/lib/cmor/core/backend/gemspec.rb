@@ -4,8 +4,8 @@ module Cmor
       class Gemspec
         def self.defaults(s, load_self: true)
           s.version     = ::Cmor::VERSION
-          s.authors     = ["Roberto Vasquez Angel"]
-          s.email       = ["roberto@vasquez-angel.de"]
+          s.authors     = ["BeeGood IT"]
+          s.email       = ["info@beegoodit.de"]
           s.homepage    = "https://github.com/content-management-on-rails"
           s.license     = "MIT"
 

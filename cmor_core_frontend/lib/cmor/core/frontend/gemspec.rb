@@ -4,8 +4,8 @@ module Cmor
       class Gemspec
         def self.defaults(s, load_self: true)
           s.version     = ::Cmor::VERSION
-          s.authors     = ["Roberto Vasquez Angel"]
-          s.email       = ["roberto@vasquez-angel.de"]
+          s.authors     = ["BeeGood IT"]
+          s.email       = ["info@beegoodit.de"]
           s.homepage    = "https://github.com/content-management-on-rails"
           s.license     = "MIT"
 
@@ -14,14 +14,13 @@ module Cmor
           s.required_ruby_version = ">= 2.6.0"
 
           s.add_dependency "rails", ">= 6.0.0.0"
-          # s.add_dependency "cmor", "= #{Cmor::VERSION}"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
 
-         
+
           s.add_dependency "cmor_core_frontend", "= #{Cmor::VERSION}"  if load_self
 
           s.add_development_dependency "sqlite3", '~> 1.4'
-          
+
           s.add_development_dependency 'capybara'
           s.add_development_dependency 'coveralls'
           s.add_development_dependency 'git_log_generator'
@@ -39,10 +38,8 @@ module Cmor
           s.add_development_dependency 'shoulda-matchers'
           s.add_development_dependency 'simplecov'
           s.add_development_dependency 'simplecov-console'
-          # s.add_development_dependency 'puma', '~> 5.2'
           s.add_development_dependency 'bootsnap'
           s.add_development_dependency 'webpacker', '~> 4.0'
-          # s.add_development_dependency 'byebug'
         end
       end
     end

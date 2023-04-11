@@ -7,8 +7,8 @@ require "cmor/version"
 Gem::Specification.new do |s|
   s.name        = "cmor"
   s.version     = ::Cmor::VERSION
-  s.authors     = ["Roberto Vasquez Angel"]
-  s.email       = ["roberto@vasquez-angel.de"]
+  s.authors     = ["BeeGood IT"]
+  s.email       = ["info@beegoodit.de"]
   s.summary     = "Content management on rails"
   s.description = "(C)ontent (m)anagement (o)n (r)ails a.k.a Seymore - Let's you see more and makes your content²!"
   s.license     = "MIT"
