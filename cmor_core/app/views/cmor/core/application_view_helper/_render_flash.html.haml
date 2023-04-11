@@ -1,5 +1,8 @@
 - messages.each do |type, content|
-  .alert.alert-dismissible.fade.show{ role: "alert", class: "alert-#{type}"} 
+  .alert.alert-dismissible.fade.show{ role: "alert", class: "alert-#{type}"}
     = content.html_safe
-    %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
-      %span{"aria-hidden" => "true"} ×
+    - if view_helper.options[:bootstrap_version] == 5
+      %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "alert", :type => "button"}
+    - else
+      %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
