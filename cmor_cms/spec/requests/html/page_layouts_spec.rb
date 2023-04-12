@@ -19,7 +19,7 @@ RSpec.describe 'pages with different layouts', type: :request do
       basename: 'home',
       locale: 'en',
       format: 'html',
-      layout: '/layouts/foo',
+      layout: 'layouts/foo',
       handler: 'erb',
       published: true
     )
