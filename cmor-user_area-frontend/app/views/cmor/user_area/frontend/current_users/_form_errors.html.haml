@@ -1,0 +1,6 @@
+- if resource.errors.any?
+  .error-explanation.alert.alert-danger
+    .error-heading= t('errors.template.header', count: resource.errors.count, model: resource.model_name.human)
+    %ul
+      - resource.errors.full_messages.each do |msg|
+        %li= msg

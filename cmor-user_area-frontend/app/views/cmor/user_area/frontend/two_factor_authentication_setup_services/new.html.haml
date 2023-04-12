@@ -1,0 +1,8 @@
+  
+%h1= t('.title', **inflections)
+
+= simple_form_for(@service, url: create_service_path) do |f|
+  - if f.object.errors.any?
+    = render 'form_errors',  form: f
+  = render 'form',         form: f
+  = render 'form_buttons', form: f

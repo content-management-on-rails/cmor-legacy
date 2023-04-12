@@ -1,0 +1,26 @@
+= table.row :email
+= table.row :single_access_token
+= table.row :login_count
+= table.row :failed_login_count
+= table.timestamp :last_request_at
+= table.timestamp :current_login_at
+= table.timestamp :last_login_at
+= table.row :current_login_ip
+= table.row :last_login_ip
+= table.boolean :active
+= table.boolean :confirmed
+= table.boolean :approved
+- if Cmor::UserArea::Configuration.tfa_enabled?
+  = table.aasm_state :tfa_state
+  = table.row :tfa_actions do |resource|
+    - capture_haml do
+      - if resource.may_enable_tfa? || resource.may_prepare_tfa?
+        = link_to(new_current_user_two_factor_authentication_setup_service_path, class: 'btn btn-success') do
+          %i.fas.fa-check
+          = t('cmor.user_area.frontend.two_factor_authentication.enable_tfa')
+      - elsif resource.may_disable_tfa?
+        = link_to({ action: 'trigger_event', machine_name: 'tfa_state', event_name: 'disable_tfa' }, method: :post, class: 'btn btn-danger') do
+          %i.fas.fa-times
+          = t('cmor.user_area.frontend.two_factor_authentication.disable_tfa')
+= table.timestamps
+= Cmor::UserArea::Configuration.current_user_additional_table_rows_proc.try(:call, self, table)

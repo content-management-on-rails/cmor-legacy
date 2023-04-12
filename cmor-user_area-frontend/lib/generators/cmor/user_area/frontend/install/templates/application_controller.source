@@ -1,0 +1,3 @@
+
+  include Cmor::UserArea::Frontend::Controller::RedirectBackConcern
+  include Cmor::UserArea::Frontend::Controller::CurrentUserConcern

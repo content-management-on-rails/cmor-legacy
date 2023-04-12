@@ -1,0 +1,15 @@
+%div.panel.panel-default
+  %div.panel-heading
+    %h1= t('.title', **inflections)
+  %div.panel-body
+    = simple_form_for(@resource, url: current_user_path) do |f|
+      = render partial: 'form_errors', locals: { resource: f.object }
+      = render 'form', form: f
+      = f.button :submit, class: 'btn btn-success'
+  %div.panel-footer
+
+.well.well-sm
+  .btn-container-right
+    = link_to main_app.root_path, class: 'btn btn-default btn-responsive' do
+      %span.glyphicon.glyphicon-arrow-left
+      %span.btn-text= t('.back')

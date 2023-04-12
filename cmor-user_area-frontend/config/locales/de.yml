@@ -1,0 +1,138 @@
+de:
+  cmor:
+    user_area:
+      frontend:
+        navigation_view_helper:
+          defaults: &navigation_view_helper_defaults
+            show: Mein Account
+            edit: Mein Account
+            new: Registrieren
+            not_signed_in: Nicht angemeldet
+            sign_in: Einloggen
+            sign_out: Ausloggen
+          bootstrap_3:
+            render:
+              <<: *navigation_view_helper_defaults
+            render_dropdown:
+              <<: *navigation_view_helper_defaults
+          bootstrap_4:
+            render:
+              <<: *navigation_view_helper_defaults
+            render_dropdown:
+              <<: *navigation_view_helper_defaults
+        password_reset_requests:
+          base:
+            new:
+              back: Zurück
+              title: 'Passwort zurücksetzen'
+        password_resets:
+          base:
+            edit:
+              back: Zurück
+              title: 'Neues Passwort für %{resource} setzen'
+        sessions:
+          base:
+            form_errors:
+              errors:
+                template:
+                  header: 'Login fehlgeschlagen'
+            new:
+              back: Zurück
+              title: Einloggen
+              password:
+                new: 'Passwort vergessen'
+        two_factor_authentications:
+          base:
+            new:
+              title: Zwei Faktor Autentifizierung
+        two_factor_authentication:
+          disable_tfa: 'Zwei Faktor Autentifizierung deaktivieren'
+          enable_tfa: 'Zwei Faktor Autentifizierung jetzt aktivieren'
+          recommend_hint_html: >
+            <h4 class='alert-heading'>
+            Zwei Faktor Autentifizierung App (TOTP) - Empfehlung
+            </h4>
+            <p>
+              Um die höchstmöglichen Datenschutz, sowie die Sicherheit Ihres Accounts und der
+              damit verbundenen Daten zu bieten, können Sie eine zwei Faktor Autentifizierung
+              aktivieren. Diese Autentifizierung bietet den Schutz eines zweiten Faktors, der
+              über eine App, wie z.B. dem "Microsoft Authenticator" oder "Google
+              Authenticator", erstellt wird.
+            </p>
+            <hr>
+            <a class="btn btn-success" href="%{link}">Zwei Faktor Autentifizierung jetzt aktivieren</a>
+        two_factor_authentication_setup_services:
+          create:
+            success_message: "Zwei Faktor Autentifizierung aktiviert."
+          form:
+            backup_codes_heading: "Speichern Sie Ihre Wiederherstellungscodes"
+            backup_codes_hint_html: >
+              Wiederherstellungscodes werden verwendet, um auf Ihr Konto zuzugreifen, falls Sie keine
+              Zwei-Faktor-Authentifizierung über Ihre App erhalten können. Aus Sicherheitsgründen
+              kann jeder Code nur einmal verwendet werden.
+              <hr/>
+              Drucken oder kopieren Sie Ihre Wiederherstellungscodes, bevor Sie mit der Einrichtung der
+              Zwei-Faktor-Authentifizierung fortfahren.
+            backup_codes_security_hint_html: >
+              Behandeln Sie Ihre Wiederherstellungscodes mit der gleichen Maß an Sicherheit wie Ihr Passwort!
+            qr_code_heading: "Scannen Sie diesen QR-Code mit Ihrer App"
+            qr_code_instructions: "Scannen Sie den folgenden QR-Code mit der Zwei-Faktor-Authentifizierungs-App auf Ihrem Telefon:"
+            code_heading: "Geben Sie den sechsstelligen Code aus der Anwendung ein"
+            code_instructions: "Nach dem Scannen des QR-Codes zeigt die App einen sechsstelligen Code an, den Sie hier eingeben können:"
+          form_buttons:
+            submit: Aktivieren
+          new:
+            title: Zwei Faktor Autentifizierung einrichten
+        current_users:
+          edit:
+            back: Zurück
+            show: Anzeigen
+            title: Mein Account
+          new:
+            back: Zurück
+            title: Registrieren
+          show:
+            back: Zurück
+            destroy: 'Löschen'
+            edit: 'Bearbeiten'
+            sign_out: 'Ausloggen'
+        users:
+          base:
+            show:
+              sign_out: Ausloggen
+  flash:
+    cmor:
+      user_area:
+        user_password_resets:
+          update:
+            notice: 'Passwort aktualisiert'
+        user_password_reset_requests:
+          create:
+            notice: 'Anweisungen zum zurücksetzen des Passworts versandt.'
+  helpers:
+    submit:
+      user_password_reset_request:
+        create: 'Weiter'
+      user_session:
+        create: 'Einloggen'
+      user_two_factor_authentication:
+        create: 'Code prüfen'
+  messages:
+    confirmations:
+      cmor_user_area_frontend:
+        send_instructions: 'Sie erhalten in wenigen Minuten eine E-Mail, mit der Sie Ihre Registrierung bestätigen können.'
+    success:
+      cmor_user_area_frontend:
+        signed_in: 'Erfolgreich angemeldet.'
+        signed_out: 'Erfolgreich abgemeldet.'
+    failures:
+      cmor_user_area_frontend:
+        authentication_failed: 'Sie müssen sich anmelden oder registrieren, bevor Sie fortfahren können.'
+        perishable_token_invalid: 'Es konnte kein Benutzer mit dem eingegebenen Token gefunden werden oder ihr Token ist zu alt.'
+  routes:
+    cmor_user_area_frontend_engine: benutzer
+    current_user: profil
+    user_password_reset_request: passwort-reset
+    user_session: session
+    two_factor_authentication_setup_service: 2fa-einrichtung
+    user_two_factor_authentications: 2fa
