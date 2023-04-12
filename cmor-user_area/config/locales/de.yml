@@ -65,17 +65,16 @@ de:
     scopes:
       never_signed_in: Niemals angemeldet
   classes:
-    cmor/user_area/backend/engine: Authentifizierung
+    cmor/user_area/engine: Authentifizierung
   cmor:
     user_area:
-      backend:
-        user_sidebars:
-          show:
-            signed_in_as: "Angemeldet als %{user}"
-            show: "Profil"
-            sign_out: "Abmelden"
-            not_signed_in: "Nicht angemeldet"
-            sign_in: "Anmelden"
-            new: "Registrieren"
+      user_sidebars:
+        show:
+          signed_in_as: "Angemeldet als %{user}"
+          show: "Profil"
+          sign_out: "Abmelden"
+          not_signed_in: "Nicht angemeldet"
+          sign_in: "Anmelden"
+          new: "Registrieren"
   routes:
     cmor-user-area-engine: 'authentifizierung'

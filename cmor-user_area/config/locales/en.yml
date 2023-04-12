@@ -65,17 +65,16 @@ en:
     scopes:
       never_signed_in: Never signed in
   classes:
-    cmor/user_area/backend/engine: Authentication
+    cmor/user_area/engine: Authentication
   cmor:
     user_area:
-      backend:
-        user_sidebars:
-          show:
-            signed_in_as: "Signed in as %{user}"
-            show: "Profile"
-            sign_out: "Sign out"
-            not_signed_in: "Not signed in"
-            sign_in: "Sign in"
-            new: "Sign up"
+      user_sidebars:
+        show:
+          signed_in_as: "Signed in as %{user}"
+          show: "Profile"
+          sign_out: "Sign out"
+          not_signed_in: "Not signed in"
+          sign_in: "Sign in"
+          new: "Sign up"
   routes:
     cmor-user-area-engine: 'authentication'
