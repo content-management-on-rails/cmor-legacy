@@ -1,4 +1,4 @@
 module Cmor::UserArea
-  class CreateDefaultUserServicePolicy < Cmor::Rbac::ServicePolicy::Base
+  class CreateDefaultUserServicePolicy < (Cmor::Core.features?(:rbac) ? Cmor::Rbac::ServicePolicy::Base : Object)
   end
 end

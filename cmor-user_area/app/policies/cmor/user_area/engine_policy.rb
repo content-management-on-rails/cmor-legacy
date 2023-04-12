@@ -1,4 +1,4 @@
 module Cmor::UserArea
-  class EnginePolicy < Cmor::Rbac::EnginePolicy::Base
+  class EnginePolicy < (Cmor::Core.features?(:rbac) ? Cmor::Rbac::EnginePolicy::Base : Object)
   end
 end

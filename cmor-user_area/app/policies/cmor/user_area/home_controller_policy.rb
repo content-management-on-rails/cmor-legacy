@@ -1,4 +1,4 @@
 module Cmor::UserArea
-  class HomeControllerPolicy < Cmor::Rbac::HomeControllerPolicy::Base
+  class HomeControllerPolicy < (Cmor::Core.features?(:rbac) ? Cmor::Rbac::HomeControllerPolicy::Base : Object)
   end
 end
