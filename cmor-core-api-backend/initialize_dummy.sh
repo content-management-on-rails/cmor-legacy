@@ -17,41 +17,44 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# SimpleForm
+# setup simple form
 rails generate simple_form:install --bootstrap
 
-# ActiveStorage
+# setup webpacker
+rails webpacker:install
+
+# setup active storage
 # rails active_storage:install
 
-# I18n configuration
+# setup i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-# I18n routing
+# setup i18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Turbolinks
+# setup turbolinks
 sed -i "15irequire 'turbolinks'" config/application.rb
 
-# Asset pipeline
+# setup assets
 sed -i "16irequire 'sprockets/rails'" config/application.rb
 
-# Factory bot
+# setup factory bot
 sed -i "17irequire 'factory_bot_rails'" config/application.rb
 
-# Administrador
+# setup administrador
 rails generate administrador:install
 
-# Install cmor_core_backend
+# setup  cmor_core_backend
 rails g cmor:core:backend:install
 
-# Install cnor-core-api
+# setup cmor-core-api
 rails g cmor:core:api:install
 rails cmor_core_api:install:migrations db:migrate db:test:prepare
 
-# Install
+# setup cmor-core-api-backend
 rails generate cmor:core:api:backend:install

@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe "/de/backend/core/api/tokens", type: :feature do
+RSpec.describe "/de/backend/core/api/api_tokens", type: :feature do
   let(:resource_class) { Cmor::Core::Api::ApiToken }
   let(:resource) { create(:cmor_core_api_api_token) }
   let(:resources) { create_list(:cmor_core_api_api_token, 3) }
@@ -23,8 +23,8 @@ RSpec.describe "/de/backend/core/api/tokens", type: :feature do
         #     fill_in 'slider[name]', with: 'My first slider'
         #     check 'slider[auto_start]'
         #     fill_in 'slider[interval]', with: '3'
-        fill_in "token[active_from]", with: Time.zone.now
-        fill_in "token[active_to]", with: 1.year.from_now
+        fill_in "api_token[active_from]", with: Time.zone.now
+        fill_in "api_token[active_to]", with: 1.year.from_now
       }
       .increasing { resource_class.count }.by(1)
   }
@@ -42,7 +42,7 @@ RSpec.describe "/de/backend/core/api/tokens", type: :feature do
         # Example:
         #
         #     fill_in 'slider[name]', with: 'New name'
-        check "token[can_write]"
+        check "api_token[can_write]"
       }
       .updating
       .from(resource.attributes)
