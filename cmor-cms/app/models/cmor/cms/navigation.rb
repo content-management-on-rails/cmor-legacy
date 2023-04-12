@@ -1,6 +1,6 @@
 class Cmor::Cms::Navigation < ActiveRecord::Base
   # associations
-  has_many :navigation_items,
+  has_many :navigation_items, inverse_of: :navigation,
     dependent: :destroy do
     def published
       merge(Cmor::Cms::NavigationItem.published)

@@ -3,7 +3,7 @@ module Cmor::Cms
     # include Cmor::Cms::NavigationItem::PropertiesConcern
 
     # associations
-    belongs_to :navigation,
+    belongs_to :navigation, inverse_of: :navigation_items,
       optional: true
     belongs_to :page,
       optional: true
