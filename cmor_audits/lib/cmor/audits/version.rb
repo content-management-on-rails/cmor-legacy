@@ -1,7 +1,7 @@
-# frozen_string_literal: true
+require "cmor/version"
 
 module Cmor
   module Audits
-    VERSION = "0.0.1"
+    VERSION = ::Cmor::VERSION
   end
 end

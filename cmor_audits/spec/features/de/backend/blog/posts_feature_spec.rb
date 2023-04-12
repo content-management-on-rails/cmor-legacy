@@ -27,7 +27,7 @@ RSpec.describe "/de/backend/blog/posts", type: :feature do
           #     fill_in 'slider[interval]', with: '3'
           fill_in "post[title]", with: "My first blog post"
           fill_in "post[body]", with: "Lorem Ipsum."
-          attach_file("post[assets][]", File.absolute_path(Cmor::Blog::Engine.root.join("spec", "files", "cmor", "blog", "post", "asset", "example.jpg")))
+          attach_file("post[append_asset_detail_assets][]", File.absolute_path(Cmor::Blog::Engine.root.join("spec", "files", "cmor", "blog", "post", "asset", "example.jpg")))
         }
         .increasing { Cmor::Blog::Post.count }.by(1)
     }
@@ -61,38 +61,34 @@ RSpec.describe "/de/backend/blog/posts", type: :feature do
   end
 
   describe "appending asset details" do
-    let(:original_assets) { [
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: "example.jpg" },
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: "example.jpg" }
-    ]}
-    let(:resource) { create(:cmor_blog_post, assets: original_assets) }
+    let(:resource) { create(:cmor_blog_post) }
+    let(:original_asset_details) { create_list(:cmor_blog_asset_detail, 2, post: resource) }
     let(:base_path) { "/de/backend/blog/posts" }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within("form.edit_post") { first('input[type="submit"]') } }
 
     before(:each) do
+      original_asset_details
       visit(edit_path)
-      attach_file "post[append_assets][]", [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
+      attach_file "post[append_asset_detail_assets][]", [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
     end
 
     it { expect { submit_button.click }.to change { resource.asset_details.count }.from(2).to(3) }
   end
 
   describe "replacing asset details" do
-    let(:original_assets) { [
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: "example.jpg" },
-      { io: File.open(Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))), filename: "example.jpg" }
-    ]}
-    let(:resource) { create(:cmor_blog_post, assets: original_assets) }
+    let(:resource) { create(:cmor_blog_post) }
+    let(:original_asset_details) { create_list(:cmor_blog_asset_detail, 2, post: resource) }
     let(:base_path) { "/de/backend/blog/posts" }
     let(:edit_path) { "#{base_path}/#{resource.to_param}/edit" }
 
     let(:submit_button) { within("form.edit_post") { first('input[type="submit"]') } }
 
     before(:each) do
+      original_asset_details
       visit(edit_path)
-      attach_file "post[overwrite_assets][]", [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
+      attach_file "post[overwrite_asset_detail_assets][]", [Cmor::Blog::Engine.root.join(*%w(spec files cmor blog post asset example.jpg))]
     end
 
     it { expect { submit_button.click }.to change { resource.asset_details.count }.from(2).to(1) }
