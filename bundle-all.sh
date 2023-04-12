@@ -3,3 +3,4 @@ gem update --system
 bundle
 
 for d in ./cmor_*/ ; do (cd "$d" && bundle); done
+for d in ./cmor-*/ ; do (cd "$d" && bundle); done
