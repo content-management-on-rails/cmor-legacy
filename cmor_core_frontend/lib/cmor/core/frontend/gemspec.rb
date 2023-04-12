@@ -13,7 +13,7 @@ module Cmor
 
           s.required_ruby_version = ">= 2.6.0"
 
-          s.add_dependency "rails", ">= 6.0.0.0"
+          s.add_dependency "rails", ">= 6.1"
           s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
 
 
