@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 gemspec
 gem 'cmor', path: '../'
-gem 'rails', '6.0.0.0'
+gem "rails", "~> 6.1", "< 6.2"

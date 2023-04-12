@@ -37,4 +37,4 @@ gem 'cmor-core-api-backend', path: '../cmor-core-api-backend'
 gem 'tatoru-client', git: 'https://github.com/tatoru-antivirus/tatoru-client-ruby', branch: 'main'
 gem 'tatoru-client-rails', git: 'https://github.com/tatoru-antivirus/tatoru-client-rails', branch: 'main'
 
-gem 'rails', '6.0.0.0'
+gem "rails", "~> 6.1", "< 6.2"

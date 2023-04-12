@@ -4,4 +4,4 @@ gemspec
 gem "cmor-core-api", path: "../cmor-core-api"
 gem "cmor", path: "../"
 gem "cmor-blog", path: "../cmor-blog"
-gem 'rails', '6.0.0.0'
+gem "rails", "~> 6.1", "< 6.2"

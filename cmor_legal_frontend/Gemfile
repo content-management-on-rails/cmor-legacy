@@ -7,4 +7,5 @@ gemspec
 gem "cmor", path: "../"
 gem "cmor_core_frontend", path: "../cmor_core_frontend"
 gem "cmor_legal", path: "../cmor_legal"
-gem 'rails', '6.0.0.0'
+gem "cmor_cms", path: "../cmor_cms"
+gem "rails", "~> 6.1", "< 6.2"
