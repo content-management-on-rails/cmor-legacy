@@ -6,6 +6,7 @@ require 'cmor_core_frontend'
 require 'rao-resources_controller'
 require 'rao-view_helper'
 require 'haml-rails'
+require "twitter-bootstrap-components-rails"
 
 require 'cmor/core/model/collection_concern'
 require 'cmor/core/model/localization_concern'

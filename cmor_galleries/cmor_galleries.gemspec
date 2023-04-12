@@ -18,4 +18,5 @@ Gem::Specification.new do |s|
   s.add_dependency "friendly_id"
   s.add_dependency "rao-resources_controller", '>= 0.0.14.pre'
   s.add_dependency "haml-rails"
+  s.add_dependency "twitter-bootstrap-components-rails"
 end
