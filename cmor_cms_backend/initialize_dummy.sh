@@ -8,40 +8,44 @@ DISABLE_MIGRATE=true bundle exec rake dummy:app
 
 if [ ! -d "spec/dummy/config" ]; then exit 1; fi
 
-# Cleanup
+# cleanup
 rm spec/dummy/.ruby-version
 rm spec/dummy/Gemfile
 
 cd spec/dummy
 
-# Use correct Gemfile
+# use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
+# setup responders for rao-service_controller
 sed -i '17i\  require "responders"' config/application.rb
 
-## Always require rspec and factory_bot_rails in dummy app
+# setup testing
 sed -i '17i\  require "rspec-rails"' config/application.rb
 sed -i '17i\  require "factory_bot_rails"' config/application.rb
 
-## I18n configuration
+# setup i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+# setup i18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Install cmor core backend gem
+# setup administrador
 rails generate administrador:install
+
+# setup cmor_core_backend
 rails generate cmor:core:backend:install
 
-# CMOR CMS
-rails generate cmor:cms:install
+# setup cmor_cms
 rails cmor_cms:install:migrations db:migrate db:test:prepare
+rails generate cmor:cms:install
 
-# Install
+# setup cmor_cms_backend
 rails generate cmor:cms:backend:install
+sed -i "39i  config.active_record.yaml_column_permitted_classes = [OpenStruct, Symbol]" config/application.rb
+
