@@ -6,7 +6,7 @@ module Cmor::Blog::Api
 
     def as_json
       @resource.as_json.merge(
-        asset_url: Rails.application.routes.url_helpers.rails_blob_url(@resource.asset, only_path: true)
+        asset_url: Rails.application.routes.url_helpers.rails_blob_path(@resource.asset, only_path: true)
       )
     end
   end

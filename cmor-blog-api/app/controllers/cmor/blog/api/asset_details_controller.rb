@@ -11,7 +11,7 @@ module Cmor::Blog::Api
     private
 
     def permitted_params
-      params.require(:asset_detail).permit(:title, :description, :published)
+      params.require(:asset_detail).permit(:post_id, :title, :description, :published, :asset)
     end
   end
 end

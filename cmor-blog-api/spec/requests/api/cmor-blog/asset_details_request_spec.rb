@@ -80,7 +80,8 @@ RSpec.describe "/api/cmor-blog/asset_details", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => attributes_for(factory_name) } }
+    let(:cmor_blog_post) { create(:cmor_blog_post) }
+    let(:params) { { param_key => attributes_for(factory_name).merge(post_id: cmor_blog_post.id) } }
 
     describe "when not authenticated" do
       before(:each) do
@@ -104,7 +105,7 @@ RSpec.describe "/api/cmor-blog/asset_details", type: :request do
           post(create_path, headers: headers, params: params)
         end
 
-        it { binding.pry; expect(response).to have_http_status(:created) }
+        it { expect(response).to have_http_status(:created) }
         it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
 
         describe "data" do
