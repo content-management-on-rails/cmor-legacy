@@ -7,11 +7,19 @@ module Cmor
 
       attr_accessor :email, :password, :password_confirmation, :active, :approved, :confirmed
 
+      validates :password, confirmation: true, allow_blank: true
+
       def _perform
         @result.user = create_user
       end
 
       private
+
+      def after_initialize
+        user_attribute_defaults.each do |key, value|
+          send(key) || send("#{key}=", value)
+        end
+      end
 
       def create_user
         user = Cmor::UserArea::User.new(user_attributes)
@@ -26,11 +34,7 @@ module Cmor
       end
 
       def user_attributes
-        user_attribute_defaults.merge(user_attribute_overrides)
-      end
-
-      def user_attribute_overrides
-        {email: email, password: password, password_confirmation: password_confirmation, active: active, approved: approved, confirmed: confirmed}.compact
+        {email: email, password: password, password_confirmation: password_confirmation, active: ActiveModel::Type::Boolean.new.cast(active), approved: ActiveModel::Type::Boolean.new.cast(approved), confirmed: ActiveModel::Type::Boolean.new.cast(confirmed)}.compact.delete_if { |k, v| v.blank? }
       end
 
       def user_attribute_defaults

@@ -6,8 +6,12 @@ module Cmor::UserArea
 
     private
 
+    def initialize_service_for_create
+      @service ||= service_class.new(permitted_params.delete_if { |k, v| v.blank? })
+    end
+
     def permitted_params
-      params.fetch(:create_default_user_service, {})
+      params.require(:create_default_user_service).permit(:email, :password, :password_confirmation, :active, :approved, :confirmed)
     end
   end
 end

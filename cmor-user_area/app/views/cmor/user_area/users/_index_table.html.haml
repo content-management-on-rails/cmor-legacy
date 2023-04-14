@@ -1,6 +1,11 @@
 = table.column :email, sort: true
+= table.boolean :active, sort: true
+= table.boolean :approved, sort: true
+= table.boolean :confirmed, sort: true
 - if Cmor::UserArea::Configuration.tfa_enabled?
   = table.aasm_state :tfa_state, sort: true
+= table.column :login_count, sort: true
+= table.column :last_login_at, sort: true
 = table.timestamps sort: true
 - if Cmor::UserArea::Configuration.tfa_enabled?
   = table.aasm_actions :tfa_state, title: '' do |resource|
