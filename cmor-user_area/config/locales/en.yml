@@ -3,6 +3,9 @@ en:
     cmor/user_area/user_two_factor_authentication:
       invalid_code: "is invalid"
     models:
+      cmor/user_area/create_default_user_service:
+        one: Create Default User Service
+        other: Create Default User Services
       cmor/user_area/two_factor_authentication_setup_service:
         one: 2FA Setup Service
     attributes:

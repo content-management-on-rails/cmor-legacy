@@ -3,6 +3,9 @@ de:
     cmor/user_area/user_two_factor_authentication:
       invalid_code: "ist ungültig"
     models:
+      cmor/user_area/create_default_user_service:
+        one: Standard-Benutzer-Einrichtungsdienst
+        other: Standard-Benutzer-Einrichtungsdienste
       cmor/user_area/two_factor_authentication_setup_service:
         one: 2FA Einrichtungsdienst
     attributes:
