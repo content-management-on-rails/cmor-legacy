@@ -2,9 +2,13 @@
 = table.id sort: true
 = table.column :item_type, sort: true
 = table.column :item_id, sort: true
-= table.column :event, sort: true
-= table.column :whodunnit, sort: true
-= table.column :object
+= table.column :event, sort: true do |resource|
+  - capture_haml do
+    - css_class = { create: "badge-success", update: "badge-warning", delete: "badge-danger"}[resource.event.to_sym] || "badge-info"
+    %span.badge{ class: css_class}= resource.event
+= table.column :whodunnit, sort: true do |resource|
+  - capture_haml do
+    = administrador_helper(self).label_for Cmor::Audits::Configuration.whodunnit_find_proc.call(resource.whodunnit)
 = table.timestamp :created_at, sort: true
 = table.column :version_actions do |resource|
   - if resource.item_type.constantize.respond_to?(:version_class_name) && resource.reify.present? && resource.item.present?
@@ -12,7 +16,7 @@
       - if Cmor::Audits::Configuration.resources.call.dig(resource.item_type, :link_to_version).present?
         - target = instance_exec(resource, &Cmor::Audits::Configuration.resources.call.dig(resource.item_type, :link_to_version))
       - else
-        - router_method_name = (Administrador.engines.values.map(&:resources_controllers).flatten.find { |c| c.resource_class == resource.item_type.constantize }&.engine_class&.to_s&.deconstantize&.underscore.gsub('/', '_') || "main_app")
+        - router_method_name = (Administrador::Configuration.engines.map(&:resources_controllers).flatten.find { |c| c.resource_class == resource.item_type.constantize }&.engine_class&.to_s&.deconstantize&.underscore.gsub('/', '_') || "main_app")
         - target = send(router_method_name).polymorphic_path([:version, resource.reify], version_id: resource.id)
 
       = link_to(target, class: 'btn btn-xs btn-primary btn-responsive') do

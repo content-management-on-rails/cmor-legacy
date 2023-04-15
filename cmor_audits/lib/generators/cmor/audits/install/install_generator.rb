@@ -7,10 +7,13 @@ module Cmor::Audits
 
       source_root File.expand_path("../templates", __FILE__)
 
-      attr_reader :base_controller_class_name
+      attr_reader :base_controller_class_name, :audited_factory_name, :whodunnit_class_name, :whodunnit_find_proc
 
       def initialize(*args)
         super
+        @whodunnit_find_proc = ENV.fetch('CMOR_AUDIT_WHODUNNIT_FIND_PROC') { '->(whodunnit) { Cmor::Audits::Configuration.whodunnit_class_name.constantize.find_by(id: whodunnit) }' }
+        @whodunnit_class_name = ENV.fetch('CMOR_AUDIT_WHODUNNIT_CLASS_NAME') { 'User' }
+        @audited_factory_name = ENV.fetch('CMOR_AUDIT_AUDITED_FACTORY_NAME') { ':post' }
         @base_controller_class_name = ENV.fetch("BASE_CONTROLLER_CLASS_NAME") { "::ApplicationController" }
       end
 

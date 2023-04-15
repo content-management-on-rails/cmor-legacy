@@ -23,6 +23,7 @@ module Cmor
         end
 
         private
+
         def load_versions
           @versions = @resource.versions
         end

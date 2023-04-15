@@ -66,7 +66,7 @@ rails g model User email
 rails g factory_bot:model User email
 
 # setup cmor_audits
-rails generate cmor:audits:install
+CMOR_AUDIT_AUDITED_FACTORY_NAME=:cmor_blog_post rails generate cmor:audits:install
 rails db:migrate db:test:prepare
 
 sed -i "2i  config.enable_feature(:cmor_audits, {})" config/initializers/cmor_core.rb

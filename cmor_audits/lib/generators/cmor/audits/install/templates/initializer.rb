@@ -27,6 +27,24 @@ Cmor::Audits.configure do |config|
   # 
   config.sidebar_controllers = -> {[]}
 
+  # Factory name to use for audited objects.
+  #
+  # Default: config.audited_factory_name = <%= audited_factory_name %>
+  #
+  config.audited_factory_name = <%= audited_factory_name %>
+
+  # Class name of the change creator model.
+  #
+  # Default: config.whodunnit_class_name = "<%= whodunnit_class_name %>"
+  #
+  config.whodunnit_class_name = "<%= whodunnit_class_name %>"
+
+  # Proc to find the change creator model.
+  #
+  # Default: config.whodunnit_find_proc = <%= whodunnit_find_proc %>
+  #
+  config.whodunnit_find_proc = <%= whodunnit_find_proc %>
+
   # Specify the models that will be audited. Listing models here is the same
   # as adding has_paper_trail to the model class directly.
   #

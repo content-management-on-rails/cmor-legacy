@@ -1,0 +1,14 @@
+= table.id
+= table.row :item_type
+= table.row :item_id
+= table.row :event do |resource|
+  - capture_haml do
+    - css_class = { create: "badge-success", update: "badge-warning", delete: "badge-danger"}[resource.event.to_sym] || "badge-info"
+    %span.badge{ class: css_class}= resource.event
+= table.row :whodunnit do |resource|
+  - capture_haml do
+    = administrador_helper(self).label_for Cmor::Audits::Configuration.whodunnit_find_proc.call(resource.whodunnit)
+= table.row :object do |resource|
+  - capture_haml do
+    %pre= resource.object
+= table.timestamp :created_at

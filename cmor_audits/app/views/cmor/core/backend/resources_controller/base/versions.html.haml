@@ -4,18 +4,28 @@
 
 .row.mb-4
   .col-12
-    = simple_form_for(:paper_trail, url: url_for(action: :version_at), html: { method: :get, class: 'form-inline' }) do |f|
+    = simple_form_for(:paper_trail, wrapper: :inline_form, url: url_for(action: :version_at), html: { method: :get, class: 'form-inline' }) do |f|
       .form-row
-        = render partial: 'versions_form', locals: { form: f }
-        = render partial: 'versions_form_buttons', locals: { form: f }
+        .form-group
+          = render partial: 'versions_form', locals: { form: f }
+        .form-group
+          = render partial: 'versions_form_buttons', locals: { form: f }
 
 .row
   .col-12
     = collection_table(collection: @versions, resource_class: PaperTrail::Version) do |table|
       = table.id
-      = table.column :event
-      = table.column :whodunnit
+      = table.column :event do |resource|
+        - capture_haml do
+          - css_class = { create: "badge-success", update: "badge-warning", delete: "badge-danger"}[resource.event.to_sym] || "badge-info"
+          %span.badge{ class: css_class}= resource.event
+      = table.column :whodunnit do |resource|
+        - capture_haml do
+          = administrador_helper(self).label_for Cmor::Audits::Configuration.whodunnit_find_proc.call(resource.whodunnit)
       = table.timestamp :created_at
+      = table.column :object do |resource|
+        - capture_haml do
+          %pre= resource.object
       = table.column :actions, title: '' do |resource|
         - capture_haml do
           .w-100.text-right

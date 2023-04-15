@@ -15,6 +15,7 @@ en:
         item_type: Item-Type
         object: Object
         version_actions: Auditing
+        version_at: Version at
         whodunnit: Changed by
         created_at: Created at
   cmor:

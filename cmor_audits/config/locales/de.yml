@@ -15,6 +15,7 @@ de:
         item_type: Element-Typ
         object: Objekt
         version_actions: Versionierung
+        version_at: Version am
         whodunnit: Geändert durch
         created_at: Erstellt am
   cmor:
