@@ -42,7 +42,7 @@ module Cmor
             json = { data: {} }
             json[:data][:id] = resource.id
             json[:data][:attributes] = serializable_object(resource).as_json.except("id")
-            json[:data][:attributes].merge!(populate(resource, json)) if populate_associations
+            json[:data][:attributes].merge!(populate(resource, json)) if self.class.serializer_class.nil? && populate_associations
             json[:data][:errors] = serialize_errors(resource.errors) if resource.errors.any?
             json
           end
