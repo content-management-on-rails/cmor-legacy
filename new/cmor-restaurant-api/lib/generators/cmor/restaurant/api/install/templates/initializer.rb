@@ -7,7 +7,7 @@ Cmor::Restaurant::Api.configure do |config|
 
   config.resources_controllers = -> {
     [
-      Cmor::Restaurant::Api::V1::TeamsController
+      Cmor::Restaurant::Api::CategoriesController
     ]
   }
 

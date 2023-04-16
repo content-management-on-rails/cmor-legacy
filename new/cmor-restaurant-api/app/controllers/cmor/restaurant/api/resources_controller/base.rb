@@ -12,8 +12,8 @@ module Cmor
           include Rao::Api::ResourcesController::LastActionConcern
           include Rao::Api::ResourcesController::ExceptionHandlingConcern
           include Rao::Query::Controller::QueryConcern
-          include Cmor::Restaurant::Api::ResourcesController::SerializationConcern
-          include Cmor::Restaurant::Api::ResourcesController::SortingConcern
+          include Cmor::Core::Api::ResourcesController::SerializationConcern
+          include Cmor::Core::Api::ResourcesController::SortingConcern
         end
       end
     end

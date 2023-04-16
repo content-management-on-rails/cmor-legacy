@@ -49,7 +49,7 @@ PATH
       cmor_core_backend (= 0.0.61.pre)
       friendly_id
       money-rails
-      rails (>= 6.0.0.0)
+      rails (>= 6.1)
       rao-service
 
 GEM
@@ -578,7 +578,7 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sqlite3 (~> 1.4.0)
-  standard
+  standard (>= 1.0)
   webpacker
 
 BUNDLED WITH

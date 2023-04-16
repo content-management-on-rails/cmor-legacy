@@ -37,6 +37,17 @@ echo "RouteTranslator.config do |config|" >> config/initializers/route_translato
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
+# Setup cors
+echo "require 'rack/cors'" >> config/initializers/cors.rb
+echo "Rails.application.config.middleware.insert_before 0, Rack::Cors do" >> config/initializers/cors.rb
+echo "  allow do" >> config/initializers/cors.rb
+echo "    origins '*'" >> config/initializers/cors.rb
+echo "    resource '*'," >> config/initializers/cors.rb
+echo "      headers: :any," >> config/initializers/cors.rb
+echo "      methods: [:get, :post, :put, :patch, :delete, :options, :head], expose: ['Content-Disposition']" >> config/initializers/cors.rb
+echo "  end" >> config/initializers/cors.rb
+echo "end" >> config/initializers/cors.rb
+
 # Setup administrador
 rails generate administrador:install
 

@@ -18,7 +18,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "cmor-restaurant"
   spec.add_dependency "rao-api-resources_controller"
+  spec.add_dependency "active_model_serializers"
 
   spec.add_development_dependency "guard-bundler"
   spec.add_development_dependency "guard-standardrb"
+  spec.add_development_dependency "rack-cors"
 end

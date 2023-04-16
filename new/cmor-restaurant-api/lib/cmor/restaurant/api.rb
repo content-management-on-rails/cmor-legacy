@@ -1,5 +1,6 @@
 require "cmor-core-api"
 require "rao-api-resources_controller"
+require "active_model_serializers"
 
 require "cmor/restaurant/api/version"
 require "cmor/restaurant/api/configuration"
