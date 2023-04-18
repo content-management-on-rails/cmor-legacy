@@ -18,7 +18,7 @@ module Cmor
           # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
           spec.files = Dir.chdir(File.expand_path(__dir__)) do
-            Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+            Dir["{app,config,db,lib,spec/factories}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
           end
 
           spec.required_ruby_version = ">= 2.6.0"
