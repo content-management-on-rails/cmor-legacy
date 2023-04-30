@@ -1,5 +1,6 @@
 require "aasm"
 require "active_model_otp"
+require "active_model_serializers"
 require "authlogic"
 require "bcrypt"
 require "cmor_core_backend"

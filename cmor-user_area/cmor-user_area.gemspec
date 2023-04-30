@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bcrypt"
   spec.add_dependency "rao-service"
   spec.add_dependency "active_model_otp", ">= 2.1.1"
+  spec.add_dependency "active_model_serializers"
 end
