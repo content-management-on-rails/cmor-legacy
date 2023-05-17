@@ -12,6 +12,10 @@ module Cmor
           skip_before_action :authenticate_user!, only: [:new, :create], raise: false
           skip_before_action :store_location, only: [:new, :create]
 
+          protect_from_forgery with: :null_session, if: -> { request.format.json? }
+          skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
+
+
           def new
             @session = initialize_resource
             respond_with @session
@@ -23,15 +27,27 @@ module Cmor
             if @session.valid?
               if Cmor::UserArea::Configuration.tfa_enabled? && @session.attempted_record.has_tfa?
                 session["#{@session.attempted_record.class.name.underscore}_tfa_candidate_id"] = @session.attempted_record.id
-                redirect_to new_user_two_factor_authentications_path
+                respond_to do |format|
+                  format.html { redirect_to new_user_two_factor_authentications_path }
+                  # respond with 501 Not Implemented for now
+                  format.json { render json: { error: "Not Implemented" }, status: :not_implemented }
+                end
               else
                 @session.save!
-                flash[:notice] = I18n.t("messages.success.cmor_user_area_frontend.signed_in") unless request.xhr?
-                redirect_to(instance_eval(&Configuration.after_sign_in_url))
+                respond_to do |format|
+                  format.html do
+                    flash[:notice] = I18n.t("messages.success.cmor_user_area_frontend.signed_in") unless request.xhr?
+                    redirect_to(instance_eval(&Configuration.after_sign_in_url))
+                  end
+                  format.json { render json: @session.attempted_record, status: :ok }
+                end
               end
               nil
             else
-              render action: :new
+              respond_to do |format|
+                format.html { render action: :new }
+                format.json { render json: { error: @session.errors.full_messages.join(", ") }, status: :unauthorized }
+              end
             end
           end
 
