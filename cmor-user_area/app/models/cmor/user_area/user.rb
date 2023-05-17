@@ -128,6 +128,18 @@ module Cmor
       end
 
       include ValidationConcern
+
+      module SingleAccessTokenAuthentication
+        extend ActiveSupport::Concern
+
+        class_methods do
+          def authenticate_with_single_access_token(token, options = {})
+            authenticable.find_by_single_access_token(token)
+          end
+        end
+      end
+
+      include SingleAccessTokenAuthentication
     end
   end
 end
