@@ -7,6 +7,8 @@ module Cmor::Core::Api
     #
     #     class ApiController < ActionController::API
     #       include Cmor::Core::Api::Controllers::TokenAuthenticationConcern
+
+    #       before_action :authenticate_with_token!
     #       # ...
     #     end
     #
@@ -27,7 +29,6 @@ module Cmor::Core::Api
 
       included do
         include ActionController::HttpAuthentication::Token::ControllerMethods
-        before_action :authenticate_with_token!
 
         attr_reader :current_api_token
       end
