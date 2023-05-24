@@ -26,9 +26,11 @@ module Cmor::Core::Api
     # secure them by adding a before_action call to your controller:
     #
     #     class ApiController < ActionController::API
+    #       include Cmor::Core::Api::Controllers::TokenAuthenticationConcern
     #       include Cmor::Core::Api::Controllers::WriteAuthorizationConcern
     #
-    #       before_action before_action :authorize_write!, only: [:create, :update, :destroy, :destroy_all]
+    #       before_action :authenticate_with_token!
+    #       before_action :authorize_write!, only: [:create, :update, :destroy]
     #     end
     #
     # Note that you will have to list all the actions you wan't to secure in
@@ -38,7 +40,7 @@ module Cmor::Core::Api
       extend ActiveSupport::Concern
 
       included do
-        before_action :authorize_write!, only: [:create, :update, :destroy]
+        # before_action :authorize_write!, only: [:create, :update, :destroy]
       end
 
       private

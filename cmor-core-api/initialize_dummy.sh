@@ -58,6 +58,9 @@ echo "class PostsController < ActionController::API" >> app/controllers/posts_co
 echo "  include Cmor::Core::Api::Controllers::TokenAuthenticationConcern" >> app/controllers/posts_controller.rb
 echo "  include Cmor::Core::Api::Controllers::WriteAuthorizationConcern" >> app/controllers/posts_controller.rb
 echo "" >> app/controllers/posts_controller.rb
+echo "  before_action :authenticate_with_token!" >> app/controllers/posts_controller.rb
+echo "  before_action :authorize_write!, only: [:create, :update, :destroy]" >> app/controllers/posts_controller.rb
+echo "" >> app/controllers/posts_controller.rb
 echo "  def index" >> app/controllers/posts_controller.rb
 echo "    render json: Post.all" >> app/controllers/posts_controller.rb
 echo "  end" >> app/controllers/posts_controller.rb
