@@ -1,5 +1,3 @@
-require 'cmor/version'
-
 module Cmor
   module Core
     module Api
