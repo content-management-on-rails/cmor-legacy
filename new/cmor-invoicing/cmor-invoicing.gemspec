@@ -15,4 +15,9 @@ Gem::Specification.new do |spec|
   # rubocop:enable Layout/ExtraSpacing
 
   spec.files = Dir["{app,config,db,lib,spec/factories,spec/files}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+
+  spec.add_dependency "money-rails"
+  spec.add_dependency "wicked_pdf"
+  spec.add_dependency "wkhtmltopdf-binary"
+  spec.add_dependency "rao-service"
 end

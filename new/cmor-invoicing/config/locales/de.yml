@@ -1,0 +1,54 @@
+de:
+  activemodel:
+    models:
+    attributes:
+  activerecord:
+    models:
+      cmor/invoicing/invoice:
+        one: Rechnung
+        other: Rechnungen
+      cmor/invoicing/invoice_item:
+        one: Rechnungsposition
+        other: Rechnungspositionen
+    attributes:
+      shared_attributes: &shared_attributes
+        description: Beschreibung
+        created_at: Erstellt am
+        id: ID
+        identifier: Bezeichner
+        name: Name
+        position: Position
+        published_at: Veröffentlicht am
+        published: Veröffentlicht
+        updated_at: Aktualisiert am
+      cmor/invoicing/invoice:
+        <<: *shared_attributes
+        invoice_number: Rechnungsnummer
+        issuer_name: Name des Ausstellers
+        issuer_street: Straße des Ausstellers
+        issuer_postal_code: Postleitzahl des Ausstellers
+        issuer_city: Stadt des Ausstellers
+        issuer_country: Land des Ausstellers
+        issuer_tax_number: Steuernummer des Ausstellers
+        recipient_name: Name des Empfängers
+        recipient_street: Straße des Empfängers
+        recipient_postal_code: Postleitzahl des Empfängers
+        recipient_city: Stadt des Empfängers
+        recipient_country: Land des Empfängers
+        recipient_tax_number: Steuernummer des Empfängers
+        additional_text: Zusätzlicher Text
+      cmor/invoicing/invoice_item:
+        <<: *shared_attributes
+        invoice: Rechnung
+        invoice_id: Rechnung
+        title: Titel
+        description: Beschreibung
+        quantity: Menge
+        price_cents: Preis (Cents)
+        price: Preis
+        tax_rate: Steuersatz
+    values:
+  classes:
+    cmor/invoicing/engine: Invoicing
+  routes:
+    cmor-invoicing-engine: invoicing

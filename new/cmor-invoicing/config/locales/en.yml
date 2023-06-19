@@ -1,0 +1,54 @@
+en:
+  activemodel:
+    models:
+    attributes:
+  activerecord:
+    models:
+      cmor/invoicing/invoice:
+        one: Invoice
+        other: Invoices
+      cmor/invoicing/invoice_item:
+        one: Invoice item
+        other: Invoice items
+    attributes:
+      shared_attributes: &shared_attributes
+        description: Description
+        created_at: Created at
+        id: ID
+        identifier: Identifier
+        name: Name
+        position: Position
+        published_at: Published at
+        published: Published
+        updated_at: Updated at
+      cmor/invoicing/invoice:
+        <<: *shared_attributes
+        invoice_number: Invoice number
+        issuer_name: Issuer name
+        issuer_street: Issuer street
+        issuer_postal_code: Issuer postal code
+        issuer_city: Issuer city
+        issuer_country: Issuer country
+        issuer_tax_number: Issuer tax number
+        recipient_name: Recipient name
+        recipient_street: Recipient street
+        recipient_postal_code: Recipient postal code
+        recipient_city: Recipient city
+        recipient_country: Recipient country
+        recipient_tax_number: Recipient tax number
+        additional_text: Additional text
+      cmor/invoicing/invoice_item:
+        <<: *shared_attributes
+        invoice: Invoice
+        invoice_id: Invoice
+        title: Title
+        description: Description
+        quantity: Quantity
+        price_cents: Price (Cents)
+        price: Price
+        tax_rate: Tax rate
+    values:
+  classes:
+    cmor/invoicing/engine: Invoicing
+  routes:
+    cmor-invoicing-engine: invoicing
