@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Invoicing::Engine, at: '/backend/cmor-invoicing-engine'
+  end
