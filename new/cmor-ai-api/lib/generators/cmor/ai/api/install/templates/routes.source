@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Ai::Api::Engine, at: "/api/cmor-ai"
+  end

@@ -1,0 +1,5 @@
+en:
+  classes:
+    cmor/ai/api/engine: FAQ API
+  routes:
+    cmor-ai: ai
