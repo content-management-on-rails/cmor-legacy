@@ -1,0 +1,5 @@
+en:
+  classes:
+    cmor/invoicing/api/engine: FAQ API
+  routes:
+    cmor-invoicing: invoicing
