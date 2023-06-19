@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Ai::Engine, at: '/backend/cmor-ai-engine'
+  end
