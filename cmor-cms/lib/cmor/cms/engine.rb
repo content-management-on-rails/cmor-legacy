@@ -8,7 +8,7 @@ module Cmor::Cms
     end
 
     initializer "cmor_cms_engine.register_template_handlers" do |app|
-      require "cmor/cms/action_view/template/handlers/textile"
+      require "action_view/template/handlers/textile"
       ::ActionView::Template.register_template_handler :textile, ::ActionView::Template::Handlers::Textile.new
     end
   end
