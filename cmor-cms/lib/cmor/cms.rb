@@ -9,8 +9,8 @@ require "cmor/cms/version"
 require "cmor/cms/configuration"
 require "cmor/cms/engine"
 
-require "cmor/cms/action_view/template_patch"
-require "cmor/cms/action_view/template_renderer_patch"
+require "action_view/template_patch"
+require "action_view/template_renderer_patch"
 
 module Cmor
   module Cms
