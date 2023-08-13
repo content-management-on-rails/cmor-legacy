@@ -1,2 +1,2 @@
 
-  mount Cmor::Legal::Api::Engine, at: "/api/cmor-legal"
+  mount Cmor::Legal::Api::Engine, at: "/api/legal"

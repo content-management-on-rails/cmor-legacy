@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-legal/personal_data", type: :request do
-  let(:base_path) { "/api/cmor-legal/personal_data" }
+RSpec.describe "/api/legal/personal_data", type: :request do
+  let(:base_path) { "/api/legal/personal_data" }
   let(:resource_class) { Cmor::Legal::PersonalData }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[attributes] }

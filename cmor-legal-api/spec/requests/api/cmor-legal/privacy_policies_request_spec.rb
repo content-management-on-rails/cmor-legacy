@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-legal/privacy_policies", type: :request do
-  let(:base_path) { "/api/cmor-legal/privacy_policies" }
+RSpec.describe "/api/legal/privacy_policies", type: :request do
+  let(:base_path) { "/api/legal/privacy_policies" }
   let(:resource_class) { Cmor::Legal::PrivacyPolicy }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[basename body created_at format handler layout locale meta_description pathname published_at title updated_at] }
