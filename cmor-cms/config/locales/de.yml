@@ -136,3 +136,5 @@ de:
     cmor/cms/add_homepages_service: "Dienst zum hinzufügen von Homepages"
     cmor/cms/engine: "CMS"
     cmor/cms/import_partials_service: "Dienst zum importieren von Fragmenten"
+  routes:
+    cmor-cms-engine: cms

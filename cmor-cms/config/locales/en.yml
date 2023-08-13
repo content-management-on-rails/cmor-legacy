@@ -134,3 +134,5 @@ en:
     cmor/cms/add_homepages_service: "Add homepages service"
     cmor/cms/engine: "CMS"
     cmor/cms/import_partials_service: "Import partials service"
+  routes:
+    cmor-cms-engine: cms
