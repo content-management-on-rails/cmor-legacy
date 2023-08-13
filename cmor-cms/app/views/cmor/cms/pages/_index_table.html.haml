@@ -1,0 +1,9 @@
+= table.column :title, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :pathname, sort: true, class: 'truncate-chars truncate-chars-30'
+= table.column :filename, sort: { column_name: 'basename' }, class: 'truncate-chars truncate-chars-30'
+= table.boolean :home_page?
+= table.column :layout, sort: true
+= table.column(:navigation_items, sortable: false) do |page|
+  - page.navigation_items.collect{ |navigation_item| link_to(navigation_item, navigation_item_path(navigation_item)) }.join('<br />').html_safe
+= table.timestamps(sort: true)
+= table.acts_as_published_actions

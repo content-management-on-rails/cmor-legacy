@@ -79,7 +79,7 @@ de:
         highlights_on: Hervorgehoben bei
         key: Schlüssel
         lft: Links
-        li_attributes: 'Listen-Element Attribute'
+        li_attributes: "Listen-Element Attribute"
         name: Name
         options: Optionen
         parent: Untereintrag von
@@ -133,7 +133,6 @@ de:
         path_and_filename: Dateipfad
         pathname: Pfad
   classes:
-    cmor/cms/add_homepages_service: 'Dienst zum hinzufügen von Homepages'
-    cmor/cms/import_partials_service: 'Dienst zum importieren von Fragmenten'
-
-
+    cmor/cms/add_homepages_service: "Dienst zum hinzufügen von Homepages"
+    cmor/cms/engine: "CMS"
+    cmor/cms/import_partials_service: "Dienst zum importieren von Fragmenten"

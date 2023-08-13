@@ -1,0 +1,11 @@
+= table.row :parent, as: :association
+= table.row :name do |resource|
+  - capture_haml do
+    = resource.name.html_safe
+= table.row :url
+= table.row :key
+= table.row :highlights_on
+- Cmor::Cms::Configuration.navigation_item_properties.each do |navigation_item_property|
+  = table.row navigation_item_property
+= table.timestamp :published_at
+= table.timestamps

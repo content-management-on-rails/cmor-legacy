@@ -77,7 +77,7 @@ en:
         highlights_on: Highlights on
         key: Key
         lft: Left
-        li_attributes: 'List-element attributes'
+        li_attributes: "List-element attributes"
         name: Name
         options: Options
         parent: Parent
@@ -131,5 +131,6 @@ en:
         path_and_filename: Filepath
         pathname: Path
   classes:
-    cmor/cms/add_homepages_service: 'Add homepages service'
-    cmor/cms/import_partials_service: 'Import partials service'
+    cmor/cms/add_homepages_service: "Add homepages service"
+    cmor/cms/engine: "CMS"
+    cmor/cms/import_partials_service: "Import partials service"

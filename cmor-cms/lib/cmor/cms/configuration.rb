@@ -20,9 +20,21 @@ module Cmor
 
       @values = {}
 
-      define_option :resources_controllers, default: -> { [] }
+      define_option :resources_controllers, default: -> { [
+        Cmor::Cms::ContentBoxesController,
+        Cmor::Cms::NavigationsController,
+        Cmor::Cms::NavigationItemsController,
+        Cmor::Cms::LayoutsController,
+        Cmor::Cms::PagesController,
+        Cmor::Cms::PartialsController,
+        Cmor::Cms::RedirectsController,
+        Cmor::Cms::TemplatesController
+      ] }
       define_option :resource_controllers, default: -> { [] }
-      define_option :service_controllers, default: -> { [] }
+      define_option :service_controllers, default: -> { [
+        Cmor::Cms::AddHomepagesServiceController,
+        Cmor::Cms::ImportPartialsServiceController
+      ] }
       define_option :sidebar_controllers, default: -> { [] }
       define_option :navigation_item_properties, default: []
       define_option :default_handlers, default: HashWithIndifferentAccess.new

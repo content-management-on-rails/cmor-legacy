@@ -1,0 +1,26 @@
+.well
+  = form.association :navigation, label_method: :human
+  = form.association :parent
+  = form.input :name
+
+.well
+  = form.association :page
+  = form.input :url
+
+.well
+  = form.input :key
+  = form.input :options
+
+%h4= Cmor::Cms::NavigationItem.human_attribute_name(:options)
+
+.well
+  = form.input :highlights_on
+
+%h4= Cmor::Cms::NavigationItem.human_attribute_name(:li_attributes)
+
+.well
+  - Cmor::Cms::Configuration.navigation_item_properties.each do |navigation_item_property|
+    = form.input navigation_item_property
+
+.well
+  = form.input :published, as: :boolean

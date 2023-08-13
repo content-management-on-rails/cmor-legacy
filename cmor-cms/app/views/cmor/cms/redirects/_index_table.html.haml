@@ -1,0 +1,10 @@
+= table.batch_actions
+= table.acts_as_list_actions
+= table.column(:source, sort: true) do |resource|
+  - capture_haml do
+    = link_to(resource.source, resource.source)
+= table.column(:target, sort: true) do |resource|
+  - capture_haml do
+    = link_to(resource.target, resource.target)
+= table.timestamps sort: true
+= table.acts_as_published_actions sort: true
