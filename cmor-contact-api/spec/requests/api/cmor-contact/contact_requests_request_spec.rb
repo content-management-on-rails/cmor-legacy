@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-contact/contact_requests", type: :request do
-  let(:base_path) { "/api/cmor-contact/contact_requests" }
+RSpec.describe "/api/contact/contact_requests", type: :request do
+  let(:base_path) { "/api/contact/contact_requests" }
   let(:resource_class) { Cmor::Contact::ContactRequest }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[accept_terms_of_service created_at email ip_address message name notified_at phone updated_at] }

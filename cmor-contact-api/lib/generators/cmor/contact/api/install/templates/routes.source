@@ -1,2 +1,2 @@
 
-  mount Cmor::Contact::Api::Engine, at: "/api/cmor-contact"
+  mount Cmor::Contact::Api::Engine, at: "/api/contact"

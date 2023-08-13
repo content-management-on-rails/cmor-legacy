@@ -10,6 +10,7 @@ module Cmor::Contact::Api
       include Rao::Api::ResourcesController::FirstActionConcern
       include Rao::Api::ResourcesController::LastActionConcern
       include Rao::Api::ResourcesController::ExceptionHandlingConcern
+      include Rao::Api::ResourcesController::ValidationConcern
       include Rao::Query::Controller::QueryConcern
       include Cmor::Core::Api::ResourcesController::SerializationConcern
       include Cmor::Core::Api::ResourcesController::SortingConcern
