@@ -1,4 +1,8 @@
 Cmor::Blog::Api::Engine.routes.draw do
-  resources :posts
-  resources :asset_details
+  resources :posts do
+    get :count, on: :collection
+  end
+  resources :asset_details do
+    get :count, on: :collection
+  end
 end

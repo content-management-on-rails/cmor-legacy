@@ -1,13 +1,12 @@
 module Cmor::Blog::Api
   class PostSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json
-      @resource.as_json.merge(
-        asset_url: Rails.application.routes.url_helpers.rails_blob_path(@resource.asset, only_path: true)
-      )
+      @resource.as_json(except: [:tag_list], include: (@params[:populate] || []))
     end
   end
 end
