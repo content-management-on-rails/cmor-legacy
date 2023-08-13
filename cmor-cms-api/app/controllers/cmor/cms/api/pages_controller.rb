@@ -10,6 +10,14 @@ module Cmor::Cms::Api
 
     private
 
+    def load_collection_scope
+      super.published
+    end
+
+    def load_resource_scope
+      super.published
+    end
+
     def permitted_params
       params
         .require(:page)
