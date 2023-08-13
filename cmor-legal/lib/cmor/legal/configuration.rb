@@ -8,7 +8,10 @@ module Cmor
       end
 
       mattr_accessor :resources_controllers do
-        -> { [] }
+        -> { [
+          Cmor::Legal::PrivacyPoliciesController,
+          Cmor::Legal::PersonalDataController
+        ] }
       end
 
       mattr_accessor :resource_controllers do
