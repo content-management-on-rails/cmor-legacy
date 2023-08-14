@@ -22,7 +22,7 @@ module Cmor
         end
 
         def generate_initializer
-          template 'initializer.rb', 'config/initializers/cmor_system.rb'
+          template 'initializer.rb', 'config/initializers/cmor-system.rb'
         end
 
         def generate_routes

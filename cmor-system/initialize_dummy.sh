@@ -17,43 +17,46 @@ cd spec/dummy
 # Use correct Gemfile
 sed -i "s|../Gemfile|../../../Gemfile|g" config/boot.rb
 
-# responders for rao-service_controller
+# Setup rao-service_controller
 sed -i '17irequire "responders"' config/application.rb
 
-## Always require rspec and factory_bot_rails in dummy app
+# Setup rspec-rails
 sed -i '17irequire "rspec-rails"' config/application.rb
+
+# Setup factory_bot_rails
 sed -i '17irequire "factory_bot_rails"' config/application.rb
 
-## I18n configuration
+# Setup i18n
 touch config/initializers/i18n.rb
 echo "Rails.application.config.i18n.available_locales = [:en, :de]" >> config/initializers/i18n.rb
 echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializers/i18n.rb
 
-## I18n routing
+# Setup i18n routing
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
+echo "  config.i18n_use_slash_separator = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
-# Install cmor core backend gem
+# Setup cmor_core_backend
 rails generate administrador:install
 rails generate cmor:core:backend:install
 
-# Install SimpleForm
+# Setup SimpleForm
 rails generate simple_form:install --bootstrap
 
-# Add DelayedJob::ActiveRecord
+# Setup delayed_job-active_record
 sed -i '17irequire "delayed_job_active_record"' config/application.rb
 rails generate delayed_job:active_record
 
-# Add ActiveStorage
+# Setup ActiveStorage
 rails active_storage:install
 
-# Example model for ActiveStorage specs
+# Setup example model for ActiveStorage specs
 rails g model Post title
 sed -i '2i\  has_one_attached Cmor::System::Configuration.record_attachment_name' app/models/post.rb
 
 rails db:migrate db:test:prepare
 
-# Install
+# Setup cmor-system
 CMOR_SYSTEM_ENABLE_ACTIVE_STORAGE=true CMOR_SYSTEM_ENABLE_DELAYED_JOB=true rails generate cmor:system:install
