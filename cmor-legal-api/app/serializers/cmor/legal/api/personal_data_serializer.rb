@@ -1,7 +1,8 @@
 module Cmor::Legal::Api
   class PersonalDataSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json
