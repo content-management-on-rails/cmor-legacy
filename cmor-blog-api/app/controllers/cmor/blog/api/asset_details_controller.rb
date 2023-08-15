@@ -5,7 +5,7 @@ module Cmor::Blog::Api
     end
 
     def self.serializer_class
-      Cmor::Blog::Api::PostSerializer
+      Cmor::Blog::Api::AssetDetailSerializer
     end
 
     private

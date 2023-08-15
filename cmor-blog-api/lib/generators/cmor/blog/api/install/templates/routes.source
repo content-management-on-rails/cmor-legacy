@@ -1,2 +1,2 @@
 
-  mount Cmor::Blog::Api::Engine, at: "/api/cmor-blog"
+  mount Cmor::Blog::Api::Engine, at: "/api/blog"

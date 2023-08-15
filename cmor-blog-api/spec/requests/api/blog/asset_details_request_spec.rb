@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-blog/posts", type: :request do
-  let(:base_path) { "/api/cmor-blog/posts" }
-  let(:resource_class) { Cmor::Blog::Post }
+RSpec.describe "/api/blog/asset_details", type: :request do
+  let(:base_path) { "/api/blog/asset_details" }
+  let(:resource_class) { Cmor::Blog::AssetDetail }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[body created_at created_by_id locale position published_at slug title updated_at updated_by_id] }
+  let(:attribute_keys) { %w[post_id asset_id title description position published_at created_at updated_at asset_url] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
@@ -80,7 +80,8 @@ RSpec.describe "/api/cmor-blog/posts", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => attributes_for(factory_name) } }
+    let(:cmor_blog_post) { create(:cmor_blog_post) }
+    let(:params) { { param_key => attributes_for(factory_name).merge(post_id: cmor_blog_post.id) } }
 
     describe "when not authenticated" do
       before(:each) do

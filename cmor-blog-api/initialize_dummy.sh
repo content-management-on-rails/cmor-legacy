@@ -58,6 +58,7 @@ BASE_CONTROLLER_CLASS_NAME=ApiController rails generate cmor:blog:api:install
 touch app/controllers/api_controller.rb
 echo "class ApiController < ActionController::API" >> app/controllers/api_controller.rb
 echo "  include Cmor::Core::Api::Controllers::TokenAuthenticationConcern" >> app/controllers/api_controller.rb
+echo "  before_action :authenticate_with_token!" >> app/controllers/api_controller.rb
 echo "end" >> app/controllers/api_controller.rb
 
 # setup database
