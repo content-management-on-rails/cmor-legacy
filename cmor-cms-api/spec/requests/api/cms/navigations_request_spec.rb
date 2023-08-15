@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-cms/navigations", type: :request do
-  let(:base_path) { "/api/cmor-cms/navigations" }
+RSpec.describe "/api/cms/navigations", type: :request do
+  let(:base_path) { "/api/cms/navigations" }
   let(:resource_class) { Cmor::Cms::Navigation }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[created_at locale name slug updated_at] }

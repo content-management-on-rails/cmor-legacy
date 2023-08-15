@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-cms/pages", type: :request do
-  let(:base_path) { "/api/cmor-cms/pages" }
+RSpec.describe "/api/cms/pages", type: :request do
+  let(:base_path) { "/api/cms/pages" }
   let(:resource_class) { Cmor::Cms::Page }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[basename body created_at format handler layout locale meta_description pathname published_at title updated_at] }
+  let(:attribute_keys) { %w[basename body created_at format handler html layout locale meta_description pathname published_at title updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
