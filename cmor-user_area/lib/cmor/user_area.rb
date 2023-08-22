@@ -3,7 +3,7 @@ require "active_model_otp"
 require "active_model_serializers"
 require "authlogic"
 require "bcrypt"
-require "cmor_core_backend"
+require "cmor-core-backend"
 require "rao-service"
 
 require "cmor/user_area/version"
