@@ -5,7 +5,7 @@ require "awesome_nested_set-tools"
 require "friendly_id"
 require "RedCloth"
 
-require "cmor_core_backend"
+require "cmor-core-backend"
 
 require "cmor/links/version"
 require "cmor/links/configuration"

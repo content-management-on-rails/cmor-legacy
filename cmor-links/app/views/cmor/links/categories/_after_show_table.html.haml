@@ -1,0 +1,13 @@
+%h2= Cmor::Links::Link.model_name.human(count: :other)
+
+= collection_table(collection: @resource.links) do |table|
+  = table.acts_as_list_actions
+  = table.id sort: true
+  = table.association :category, sort: { column_name: 'cmor_links_categories.name' }, link_to: ->(resource) { resource.category }
+  = table.column :name, sort: true do |resource|
+    - capture_haml do
+      = resource.name.html_safe
+  = table.column :description, sort: true, class: 'truncate-chars truncate-chars-30'
+  = table.timestamps sort: true
+  = table.column(:link_actions) { |link| link_to(t('.visit'), link.url, class: 'btn btn-xs btn-primary') }
+  = render partial: "administrador/resources_controller/base/index_table_actions", locals: { table: table }
