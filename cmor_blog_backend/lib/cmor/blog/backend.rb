@@ -1,3 +1,7 @@
+require 'cmor_blog'
+require 'cmor-core-backend'
+require 'rao-query'
+
 require 'cmor/blog/backend/configuration'
 require "cmor/blog/backend/engine"
 
