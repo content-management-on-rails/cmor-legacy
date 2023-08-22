@@ -2,7 +2,7 @@ require "acts_as_list"
 require "acts_as_published"
 require "friendly_id"
 require "markup-rails"
-require "cmor_core_backend"
+require "cmor-core-backend"
 
 require "cmor/testimonials/version"
 require "cmor/testimonials/configuration"
