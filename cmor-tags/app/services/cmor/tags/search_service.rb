@@ -1,7 +1,7 @@
 module Cmor::Tags
-  class Search < Rao::Service::Base
+  class SearchService < Rao::Service::Base
     class Result < Rao::Service::Result::Base
-      attr_accessor :tag_list, :taggable_classes, :exact, :found
+      attr_accessor :tag_list, :taggable_classes, :exact, :results
     end
 
     attr_writer :tag_list, :taggable_classes
@@ -31,7 +31,7 @@ module Cmor::Tags
     private
 
     def _perform
-      @result.found = search!
+      @result.results = search!
     end
 
     def wild
