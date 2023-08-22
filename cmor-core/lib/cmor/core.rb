@@ -1,6 +1,7 @@
 require "cmor/core/feature"
 require "cmor/core/configuration"
 require "cmor/core/engine"
+require "cmor/core/version"
 require "cmor/core/active_collection/base"
 
 module Cmor

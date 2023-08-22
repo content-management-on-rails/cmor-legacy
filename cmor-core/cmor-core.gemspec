@@ -5,7 +5,7 @@ require_relative "../lib/cmor/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "cmor_core"
+  s.name        = "cmor-core"
   s.version     = ::Cmor::VERSION
   s.authors     = ["BeeGood IT"]
   s.email       = ["info@beegoodit.de"]
