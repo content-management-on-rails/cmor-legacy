@@ -6,5 +6,5 @@ gemspec
 
 gem "cmor", path: "../"
 gem "cmor_seo", path: "../cmor_seo"
-gem "cmor_core_backend", path: "../cmor_core_backend"
+gem "cmor-core-backend", path: "../cmor-core-backend"
 gem "rails", "~> 6.1", "< 6.2"
