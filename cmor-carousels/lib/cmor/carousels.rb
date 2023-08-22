@@ -1,7 +1,7 @@
 require "active_storage_validations"
 require "acts_as_list"
 require "acts_as_published"
-require "cmor_core_backend"
+require "cmor-core-backend"
 require "markup-rails"
 
 require "cmor/carousels/version"
