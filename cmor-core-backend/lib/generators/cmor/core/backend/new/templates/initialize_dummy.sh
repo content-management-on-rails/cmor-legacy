@@ -32,7 +32,7 @@ rails generate administrador:install
 # Install SimpleForm
 rails generate simple_form:install --bootstrap
 
-# Install cmor_core_backend
+# Install cmor-core-backend
 rails g cmor:core:backend:install
 
 # Install

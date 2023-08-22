@@ -7,7 +7,7 @@ require "cmor/core/backend/gemspec"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   Cmor::Core::Backend::Gemspec.defaults(s, load_self: false)
-  s.name        = "cmor_core_backend"
+  s.name        = "cmor-core-backend"
   s.summary     = "Cmor Core Module."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]

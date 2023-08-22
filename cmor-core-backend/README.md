@@ -11,7 +11,7 @@ How to use my plugin.
 Add it to your gemfile:
 
     # Gemfile
-    gem 'cmor_core_backend'
+    gem 'cmor-core-backend'
 
 Install bundle:
 

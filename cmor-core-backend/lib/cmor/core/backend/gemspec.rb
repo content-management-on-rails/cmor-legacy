@@ -14,10 +14,9 @@ module Cmor
           s.required_ruby_version = ">= 2.6.0"
 
           s.add_dependency "rails", ">= 6.1"
-          # s.add_dependency "cmor", "= #{Cmor::VERSION}"
-          s.add_dependency "cmor_core", "= #{Cmor::VERSION}"
+          s.add_dependency "cmor-core", "= #{Cmor::VERSION}"
 
-          s.add_dependency "cmor_core_backend", "= #{Cmor::VERSION}" if load_self
+          s.add_dependency "cmor-core-backend", "= #{Cmor::VERSION}" if load_self
 
           s.add_development_dependency "sqlite3", '~> 1.4.0'
           s.add_development_dependency 'responders'

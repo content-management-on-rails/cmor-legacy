@@ -12,7 +12,7 @@ module Cmor
           end
 
           def generate_initializer
-            template 'initializer.rb', 'config/initializers/cmor_core_backend.rb'
+            template 'initializer.rb', 'config/initializers/cmor-core-backend.rb'
           end
 
           def generate_routes

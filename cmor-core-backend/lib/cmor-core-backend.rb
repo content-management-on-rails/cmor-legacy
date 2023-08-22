@@ -1,4 +1,4 @@
-require "cmor_core"
+require "cmor-core"
 require "administrador"
 require "sass-rails"
 
