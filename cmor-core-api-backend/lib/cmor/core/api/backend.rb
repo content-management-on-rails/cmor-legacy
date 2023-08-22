@@ -1,4 +1,4 @@
-require "cmor_core_backend"
+require "cmor-core-backend"
 
 require "cmor/core/api/backend/version"
 require "cmor/core/api/backend/configuration"
