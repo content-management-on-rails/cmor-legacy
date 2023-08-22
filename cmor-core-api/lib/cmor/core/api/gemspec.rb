@@ -24,7 +24,7 @@ module Cmor
           spec.required_ruby_version = ">= 2.6.0"
 
           spec.add_dependency "rails", ">= 6.1"
-          spec.add_dependency "cmor_core", "= #{Cmor::VERSION}"
+          spec.add_dependency "cmor-core", "= #{Cmor::VERSION}"
 
           spec.add_dependency "cmor-core-api", "= #{Cmor::VERSION}" if load_self
 

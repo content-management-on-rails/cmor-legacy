@@ -2,7 +2,7 @@ PATH
   remote: ..
   specs:
     cmor (0.0.61.pre)
-    cmor_core (0.0.61.pre)
+    cmor-core (0.0.61.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.61.pre)
       delayed_job_active_record
@@ -17,7 +17,7 @@ PATH
   specs:
     cmor-core-api (0.0.61.pre)
       bcrypt
-      cmor_core (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
 
 GEM
@@ -83,7 +83,7 @@ GEM
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
     ast (2.4.2)
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap-kaminari-views (0.0.5)
@@ -232,7 +232,7 @@ GEM
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
     rexml (3.2.5)
-    route_translator (13.1.0)
+    route_translator (13.2.1)
       actionpack (>= 5.2, < 7.1)
       activesupport (>= 5.2, < 7.1)
     rspec (3.12.0)
