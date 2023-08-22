@@ -1,4 +1,4 @@
-require 'cmor_core_frontend'
+require 'cmor-core-frontend'
 require 'authlogic'
 require 'active_model_serializers'
 require 'rao-component'
