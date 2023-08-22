@@ -3,11 +3,11 @@ require "acts_as_list"
 require "acts_as_published"
 require "friendly_id"
 
-require "cmor_core"
+require "cmor-core"
 require "cmor/core/model/collection_concern"
 require "cmor/core/model/localization_concern"
 require "cmor/core/model/identifier_concern"
-require "cmor_core_backend"
+require "cmor-core-backend"
 
 require "cmor/galleries/version"
 require "cmor/galleries/configuration"
