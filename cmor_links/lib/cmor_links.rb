@@ -1,4 +1,4 @@
-require 'cmor_core_frontend'
+require 'cmor-core-frontend'
 require 'acts_as_list'
 require 'awesome_nested_set'
 require 'awesome_nested_set-tools'
