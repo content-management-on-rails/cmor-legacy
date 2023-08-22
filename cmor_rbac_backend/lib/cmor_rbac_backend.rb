@@ -1,4 +1,4 @@
 require 'cmor_rbac'
-require 'cmor_core_backend'
+require 'cmor-core-backend'
   
 require 'cmor/rbac/backend'
