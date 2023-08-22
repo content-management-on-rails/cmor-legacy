@@ -1,4 +1,4 @@
 require 'cmor_links'
-require 'cmor_core_backend'
+require 'cmor-core-backend'
 
 require 'cmor/links/backend'
