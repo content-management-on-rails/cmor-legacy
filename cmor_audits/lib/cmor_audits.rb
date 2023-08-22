@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "cmor_core_backend"
+require "cmor-core-backend"
 require "paper_trail"
 
 require "cmor/audits/version"
