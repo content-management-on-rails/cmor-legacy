@@ -1,5 +1,5 @@
-require "cmor_core"
-require "cmor_core_frontend"
+require "cmor-core"
+require "cmor-core-frontend"
 
 require "cmor/showcase/frontend/version"
 require "cmor/showcase/frontend/configuration"
