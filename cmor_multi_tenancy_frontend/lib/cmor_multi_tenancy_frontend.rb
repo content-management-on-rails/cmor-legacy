@@ -1,4 +1,4 @@
-require "cmor_core_frontend"
+require "cmor-core-frontend"
 
 require "cmor/multi_tenancy/frontend/version"
 require "cmor/multi_tenancy/frontend/configuration"
