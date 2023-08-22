@@ -2,7 +2,7 @@ PATH
   remote: ..
   specs:
     cmor (0.0.61.pre)
-    cmor_core (0.0.61.pre)
+    cmor-core (0.0.61.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.61.pre)
       delayed_job_active_record
@@ -11,9 +11,9 @@ PATH
       rao-view_helper (>= 0.0.49.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.61.pre)
+    cmor-core-backend (0.0.61.pre)
       administrador (>= 0.0.28.pre)
-      cmor_core (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
       sass-rails
 
@@ -21,8 +21,8 @@ PATH
   remote: .
   specs:
     cmor-system (0.0.61.pre)
-      cmor_core (= 0.0.61.pre)
-      cmor_core_backend (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
+      cmor-core-backend (= 0.0.61.pre)
       markup-rails
       rails (>= 6.1)
 
