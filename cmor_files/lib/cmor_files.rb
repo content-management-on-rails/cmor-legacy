@@ -1,4 +1,4 @@
-require 'cmor_core_frontend'
+require 'cmor-core-frontend'
 require 'active_storage_validations'
 require 'acts_as_published'
 require 'acts_as_list'
