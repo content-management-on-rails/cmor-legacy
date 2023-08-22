@@ -1,6 +1,6 @@
 require "acts_as_list"
 require "acts_as_published"
-require "cmor_core_backend"
+require "cmor-core-backend"
 require "cocoon"
 require "rao-or_validator"
 require "rao-service"
