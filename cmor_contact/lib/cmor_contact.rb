@@ -1,5 +1,5 @@
-require "cmor_core"
-require "cmor_core_frontend"
+require "cmor-core"
+require "cmor-core-frontend"
 require "haml-rails"
 require "simple_form"
 require "coffee-rails"

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 gemspec
 gem 'cmor', path: '../'
-gem 'cmor_core', path: '../cmor_core'
+gem 'cmor-core', path: '../cmor-core'
 gem "rails", "~> 6.1", "< 6.2"
