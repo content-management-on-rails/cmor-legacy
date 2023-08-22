@@ -1,4 +1,4 @@
-require "cmor_core_frontend"
+require "cmor-core-frontend"
 require "cmor_partners"
 require "slick-rails"
 
