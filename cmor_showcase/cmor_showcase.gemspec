@@ -2,7 +2,7 @@ $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
 require_relative "../lib/cmor/version"
-require_relative "../cmor_core_backend/lib/cmor/core/backend/gemspec"
+require_relative "../cmor-core-backend/lib/cmor/core/backend/gemspec"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|

@@ -1,5 +1,5 @@
-require "cmor_core"
-require "cmor_core_backend"
+require "cmor-core"
+require "cmor-core-backend"
 require "active_storage_validations"
 require "acts_as_published"
 require "acts_as_list"
