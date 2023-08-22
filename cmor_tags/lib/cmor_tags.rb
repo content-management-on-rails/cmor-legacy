@@ -1,5 +1,5 @@
 require 'responders'
-require 'cmor_core_frontend'
+require 'cmor-core-frontend'
 require 'acts-as-taggable-on'
 require 'rao-service'
 require 'rao-service_controller'
