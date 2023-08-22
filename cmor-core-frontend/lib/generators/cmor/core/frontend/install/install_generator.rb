@@ -19,7 +19,7 @@ module Cmor
           end
 
           def generate_initializer
-            template 'initializer.rb', 'config/initializers/cmor_core_frontend.rb'
+            template 'initializer.rb', 'config/initializers/cmor-core-frontend.rb'
           end
         end
       end

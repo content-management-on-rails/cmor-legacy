@@ -46,13 +46,21 @@ module Cmor
               b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.content_for(:title), url: c.url_for()))
             end
 
-            # Are we inside a resources controller?
-            if c.controller.class.respond_to?(:resource_class)
+            # Are we inside an engine with a root route?
+            if c.controller.respond_to?(:current_engine, true)
               # Add a text breadcrumb for the current engine
               b.push(breadcrumb_for_current_engine)
+            end
 
+            # Are we inside a resources controller?
+            if c.controller.class.respond_to?(:resource_class)
               # Add a breadrumb for collection page
-              b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: c.url_for(action: :index, page: nil)))
+              begin
+                b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: c.url_for(action: :index, page: nil)))
+              rescue ActionController::UrlGenerationError
+                b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: nil))
+                Rails.logger.debug "[Cmor::Core::Frontend] Could not generate url for #{c.controller.class.resource_class.model_name.human(count: :other)} index page. Continuing without this breadcrumb."
+              end
 
               # Are we showing a single resource?
               if r = c.instance_variable_get(:@resource).presence
@@ -75,9 +83,6 @@ module Cmor
 
             # Are we inside a service controller?
             if c.controller.class.respond_to?(:service_class)
-              # Add a text breadcrumb for the engine
-              b.push(breadcrumb_for_current_engine)
-
               # Add a text breadcrumb for the service name
               b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.service_class.model_name.human))
             end
@@ -94,6 +99,10 @@ module Cmor
             if exclude.include?(:first)
               breadcrumbs.shift
             end
+          end
+
+          if c.controller.respond_to?(:breadcrumbs, true)
+            breadcrumbs = c.controller.send(:breadcrumbs, breadcrumbs)
           end
 
           render breadcrumbs: breadcrumbs
@@ -130,15 +139,19 @@ module Cmor
         end
 
         def breadcrumb_for_current_engine
-          return if current_engine.nil?
           breadcrumb_for_engine(current_engine)
         end
 
         def breadcrumb_for_engine(engine)
-          Cmor::Core::Frontend::Breadcrumb::Base.new(label: I18n.t("classes.#{engine.name.underscore}"))
+          router_name = engine.name.underscore.gsub("/", "_").gsub(/_engine$/, '')
+          url = c.send("#{router_name}").root_path
+          Cmor::Core::Frontend::Breadcrumb::Base.new(label: I18n.t("classes.#{engine.name.underscore}"), url: url)
         end
 
         def current_engine
+          if c.controller.respond_to?(:current_engine, true)
+            return c.controller.send(:current_engine)
+          end
           klass_name_parts = c.controller.class.name.split("::")
           klass_name_parts.size.downto(1).each do |i|
             if klass_name_parts.take(i).join("::").constantize.const_defined?("Engine")

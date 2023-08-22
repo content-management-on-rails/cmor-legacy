@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   # Defaults
   spec.add_dependency "rails", ">= 5.2.0"
   spec.add_dependency "cmor", "= <%= cmor_version %>"
-  spec.add_dependency "cmor_core_frontend", "= <%= cmor_version %>"
+  spec.add_dependency "cmor-core-frontend", "= <%= cmor_version %>"
 
   spec.add_development_dependency "sqlite3", '~> 1.3.6'
 

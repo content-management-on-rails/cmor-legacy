@@ -1,4 +1,4 @@
-require "cmor_core_frontend"
+require "cmor-core-frontend"
 
 require "<%= name.underscore %>/configuration"
 require "<%= name.underscore %>/engine"

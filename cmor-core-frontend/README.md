@@ -28,7 +28,7 @@ Please ensure to set the correct pagination options (pagination_options_proc) as
 Add it to your gemfile:
 
     # Gemfile
-    gem 'cmor_core_frontend'
+    gem 'cmor-core-frontend'
 
 Install bundle:
 
