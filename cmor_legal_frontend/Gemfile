@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem "cmor", path: "../"
-gem "cmor_core_frontend", path: "../cmor_core_frontend"
+gem "cmor-core-frontend", path: "../cmor-core-frontend"
 gem "cmor_legal", path: "../cmor_legal"
 gem "cmor_cms", path: "../cmor_cms"
 gem "rails", "~> 6.1", "< 6.2"

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "cmor_core"
-require "cmor_core_frontend"
+require "cmor-core"
+require "cmor-core-frontend"
 require "cmor_legal"
 
 require "cmor/legal/frontend/version"
