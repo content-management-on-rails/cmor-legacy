@@ -1,7 +1,7 @@
 require 'acts_as_list'
 require 'acts_as_published'
 require 'awesome_nested_set'
-require 'cmor_core_frontend'
+require 'cmor-core-frontend'
 require 'rao-service'
 require 'rao-view_helper'
 require 'redcloth'
