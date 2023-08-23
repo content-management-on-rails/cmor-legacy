@@ -1,7 +1,8 @@
 module Cmor::UserArea::Api
   class UserSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json

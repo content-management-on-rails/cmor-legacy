@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-user-area/users", type: :request do
-  let(:base_path) { "/api/cmor-user-area/users" }
+RSpec.describe "/api/user-area/users", type: :request do
+  let(:base_path) { "/api/user-area/users" }
   let(:resource_class) { Cmor::UserArea::User }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[active approved confirmed created_at crypted_password current_login_at current_login_ip email failed_login_count last_login_at last_login_ip last_request_at login_count otp_backup_codes password_salt perishable_token persistence_token single_access_token tfa_state updated_at] }
