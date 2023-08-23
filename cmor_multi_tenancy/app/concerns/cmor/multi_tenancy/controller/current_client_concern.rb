@@ -33,7 +33,7 @@ module Cmor
 
         def load_current_client
           if Cmor::MultiTenancy::Configuration.aliases_for_default_client.include?(current_client_identifier)
-            ::Client.active.default.first!
+            load_default_client
           else
             ::Client.active.where(identifier: current_client_identifier).first
           end
@@ -41,6 +41,8 @@ module Cmor
 
         def load_default_client
           ::Client.active.default.first!
+        rescue ActiveRecord::RecordNotFound => e
+          raise e.class.new "No active default client found. Please create a client with default: true or set the current client via ENV['client_identifier']"
         end
 
         def current_client_identifier
