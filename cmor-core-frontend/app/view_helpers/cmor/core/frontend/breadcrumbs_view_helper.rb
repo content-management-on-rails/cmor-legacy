@@ -57,7 +57,7 @@ module Cmor
               # Add a breadrumb for collection page
               begin
                 b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: c.url_for(action: :index, page: nil)))
-              rescue ActionController::UrlGenerationError
+              rescue ActionController::UrlGenerationError => e
                 b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: nil))
                 Rails.logger.debug "[Cmor::Core::Frontend] Could not generate url for #{c.controller.class.resource_class.model_name.human(count: :other)} index page. Continuing without this breadcrumb."
               end
@@ -67,7 +67,11 @@ module Cmor
                 # Is it persisted?
                 if r.persisted?
                   # Add breadcrumb to this specific resource
-                  b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: label_for(r), url: c.url_for(action: :show, id: r.to_param)))
+                  begin
+                    b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: label_for(r), url: c.url_for(action: :show, id: r.to_param)))
+                  rescue ActionController::UrlGenerationError => e
+                    Rails.logger.debug "[Cmor::Core::Frontend] Could not generate url for #{r.class.name} #{r.to_param}. Continuing without this breadcrumb."
+                  end
                 end
               end
 
@@ -75,9 +79,15 @@ module Cmor
               if r = c.instance_variable_get(:@collection).presence
                 # Are we paginating?
                 if c.params.has_key?(:page)
-                  # Ass breadcrumb for this page
+                  # Add breadcrumb for this page
                   b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: c.controller.class.resource_class.model_name.human(count: :other), url: c.url_for()))
                 end
+              end
+
+              # Are we showing the new page?
+              if c.action_name == 'new'
+                # Add breadcrumb for this page
+                b.push(Cmor::Core::Frontend::Breadcrumb::Base.new(label: I18n.t('cmor.core.frontend.breadcrumbs.new'), url: nil))
               end
             end
 

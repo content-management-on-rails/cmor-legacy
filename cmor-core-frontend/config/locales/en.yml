@@ -1,4 +1,9 @@
 en:
+  cmor:
+    core:
+      frontend:
+        breadcrumbs:
+          new: "New"
   cmor/core/frontend/breadcrumbs_view_helper:
     render_breadcrumbs:
       home: Home
