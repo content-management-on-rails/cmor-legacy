@@ -13,8 +13,8 @@ PATH
       acts_as_list
       acts_as_published
       awesome_nested_set
-      cmor_core (= 0.0.61.pre)
-      cmor_core_backend (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
+      cmor-core-backend (= 0.0.61.pre)
       rails (>= 6.1)
       rao-service
 
@@ -23,14 +23,14 @@ PATH
   specs:
     cmor-core-api (0.0.61.pre)
       bcrypt
-      cmor_core (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
 
 PATH
   remote: ..
   specs:
     cmor (0.0.61.pre)
-    cmor_core (0.0.61.pre)
+    cmor-core (0.0.61.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.61.pre)
       delayed_job_active_record
@@ -39,9 +39,9 @@ PATH
       rao-view_helper (>= 0.0.49.pre)
       request_store_rails
       route_translator
-    cmor_core_backend (0.0.61.pre)
+    cmor-core-backend (0.0.61.pre)
       administrador (>= 0.0.28.pre)
-      cmor_core (= 0.0.61.pre)
+      cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
       sass-rails
 
@@ -50,8 +50,8 @@ PATH
   specs:
     cmor-cms-api (0.0.61.pre)
       cmor-cms
+      cmor-core (= 0.0.61.pre)
       cmor-core-api (= 0.0.61.pre)
-      cmor_core (= 0.0.61.pre)
       rails (>= 6.1)
       rao-api-resources_controller
 
@@ -203,7 +203,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (6.1.1)
+    haml (6.1.2)
       temple (>= 0.8.2)
       thor
       tilt
@@ -302,7 +302,7 @@ GEM
       railties
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
-    rails-i18n (7.0.6)
+    rails-i18n (7.0.8)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
     railties (7.0.4.3)
@@ -431,9 +431,9 @@ GEM
       language_server-protocol (~> 3.17.0.2)
       rubocop (~> 1.48.1)
       rubocop-performance (~> 1.16.0)
-    temple (0.10.0)
+    temple (0.10.2)
     thor (1.2.1)
-    tilt (2.1.0)
+    tilt (2.2.0)
     timeout (0.3.2)
     twitter-bootstrap-components-rails (1.0.0)
       haml-rails
