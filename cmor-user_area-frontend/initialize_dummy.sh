@@ -41,7 +41,7 @@ echo "end" >> config/initializers/route_translator.rb
 # setup cmor_core
 rails generate cmor:core:install
 
-# setup cmor_core_frontend
+# setup cmor-core-frontend
 rails generate cmor:core:frontend:install
 
 # setup cmor-user_area
