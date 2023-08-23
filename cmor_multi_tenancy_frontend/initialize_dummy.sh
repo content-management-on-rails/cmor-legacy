@@ -36,6 +36,7 @@ echo "Rails.application.config.i18n.default_locale    = :de" >> config/initializ
 touch config/initializers/route_translator.rb
 echo "RouteTranslator.config do |config|" >> config/initializers/route_translator.rb
 echo "  config.force_locale = true" >> config/initializers/route_translator.rb
+echo "  config.i18n_use_slash_separator = true" >> config/initializers/route_translator.rb
 echo "end" >> config/initializers/route_translator.rb
 
 # setup turbolinks
@@ -62,7 +63,7 @@ Rails.application.routes.draw do
       root to: 'home#index'
     end
 
-    scope path: "(/:client_identifier)" do
+    scope path: ":client_identifier" do
       root to: 'home#index'
     end
 
