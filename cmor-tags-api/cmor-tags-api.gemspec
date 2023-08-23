@@ -18,4 +18,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "cmor-tags"
   spec.add_dependency "rao-api-resources_controller"
+  spec.add_dependency "rao-api-service_controller"
 end

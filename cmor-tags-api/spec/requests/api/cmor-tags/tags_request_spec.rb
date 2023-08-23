@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-tags/tags", type: :request do
-  let(:base_path) { "/api/cmor-tags/tags" }
+RSpec.describe "/api/tags/tags", type: :request do
+  let(:base_path) { "/api/tags/tags" }
 
   describe "GET index" do
     let(:index_path) { base_path }

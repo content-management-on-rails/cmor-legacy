@@ -1,7 +1,8 @@
 module Cmor::Tags::Api
   class TagSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json

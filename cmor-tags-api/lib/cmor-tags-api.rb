@@ -1,6 +1,7 @@
 require "cmor-core-api"
 require "cmor-tags"
 require "rao-api-resources_controller"
+require "rao-api-service_controller"
 
 require "cmor/tags/api/version"
 require "cmor/tags/api/configuration"
