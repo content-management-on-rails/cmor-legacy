@@ -1,6 +1,6 @@
 Rails.application.config.to_prepare do
   Cmor::Blog::Api.configure do |config|
-    # Set the base controller for the page controller
+    # Set the base controller for controllers.
     #
     # Default: config.base_controller = '<%= base_controller_class_name %>'
     #
