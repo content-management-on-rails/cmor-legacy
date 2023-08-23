@@ -1,2 +1,2 @@
 
-  mount Cmor::Links::Api::Engine, at: "/api/cmor-links"
+  mount Cmor::Links::Api::Engine, at: "/api/links"

@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-links/links", type: :request do
-  let(:base_path) { "/api/cmor-links/links" }
+RSpec.describe "/api/links/links", type: :request do
+  let(:base_path) { "/api/links/links" }
   let(:resource_class) { Cmor::Links::Link }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[category_id created_at description name position updated_at url] }

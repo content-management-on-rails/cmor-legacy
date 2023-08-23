@@ -10,6 +10,14 @@ module Cmor::Links::Api
 
     private
 
+    def load_collection_scope
+      super.includes(:links)
+    end
+
+    def query_params_exceptions
+      super + %w(populate)
+    end
+
     def permitted_params
       params
         .require(:category)

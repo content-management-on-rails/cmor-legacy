@@ -1,7 +1,8 @@
 module Cmor::Links::Api
   class LinkSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json
