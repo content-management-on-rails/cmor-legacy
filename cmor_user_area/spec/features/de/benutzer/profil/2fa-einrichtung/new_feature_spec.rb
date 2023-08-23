@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "/de/benutzer/profil/2fa-einrichtung/new" do
+RSpec.describe "/de/benutzer/profil/2fa-einrichtung/new", type: :feature do
   let(:base_path) { "/de/benutzer/profil/2fa-einrichtung/new" }
 
   describe "when not authenticated" do
