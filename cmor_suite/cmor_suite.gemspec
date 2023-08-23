@@ -2,7 +2,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require_relative "../lib/cmor/version"
-require_relative "../cmor_core_frontend/lib/cmor/core/frontend/gemspec"
+require_relative "../cmor-core-frontend/lib/cmor/core/frontend/gemspec"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
@@ -55,7 +55,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cmor_showcase', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_showcase_frontend', "= #{Cmor::VERSION}"
 
-  s.add_dependency 'cmor_system', "= #{Cmor::VERSION}"
+  s.add_dependency 'cmor-system', "= #{Cmor::VERSION}"
 
   s.add_dependency 'cmor_tags', "= #{Cmor::VERSION}"
   s.add_dependency 'cmor_tags_backend', "= #{Cmor::VERSION}"
