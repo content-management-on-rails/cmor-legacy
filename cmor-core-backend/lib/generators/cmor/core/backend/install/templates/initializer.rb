@@ -2,12 +2,12 @@ Cmor::Core::Backend.configure do |config|
   # Globally set variant options to be used in backends.
   #
   # default: config.image_variant_options = {
-  #            gallery: { resize: "640x480" },
-  #            table:   { resize: "160x120" }
+  #            gallery: { resize_to_fill: [640, 480] },
+  #            table:   { resize_to_fill: [160, 120] }
   #          }
   config.image_variant_options = {
-    gallery: { resize: "640x480" },
-    table:   { resize: "160x120" }
+    gallery: { resize_to_fill: [640, 480] },
+    table:   { resize_to_fill: [160, 120] }
   }
 
   # Set the sidebars, that will be shown in the backend menu.
