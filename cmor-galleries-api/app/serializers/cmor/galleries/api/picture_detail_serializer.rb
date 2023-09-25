@@ -1,7 +1,8 @@
 module Cmor::Galleries::Api
   class PictureDetailSerializer
-    def initialize(resource)
+    def initialize(resource, params = {})
       @resource = resource
+      @params = params
     end
 
     def as_json
