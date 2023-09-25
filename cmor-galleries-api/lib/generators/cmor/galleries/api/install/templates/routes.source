@@ -1,2 +1,2 @@
 
-  mount Cmor::Galleries::Api::Engine, at: "/api/cmor-galleries"
+  mount Cmor::Galleries::Api::Engine, at: "/api/galleries"
