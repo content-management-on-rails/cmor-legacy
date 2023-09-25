@@ -27,7 +27,7 @@ module Cmor
           if client = load_current_client
             with_client(client) { yield }
           else
-            redirect_to_default_client
+            handle_client_not_found
           end
         end
 
@@ -59,6 +59,13 @@ module Cmor
 
         def current_client_key
           :subdomain
+        end
+
+        def handle_client_not_found
+          respond_to do |format|
+            format.html { redirect_to_default_client }
+            format.json { render json: { error: "Could not find client with identifier #{current_client_identifier}" }, status: :not_found }
+          end
         end
       end
     end

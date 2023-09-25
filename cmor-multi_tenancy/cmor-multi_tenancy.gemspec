@@ -9,7 +9,7 @@ require_relative "../cmor-core-backend/lib/cmor/core/backend/gemspec"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   Cmor::Core::Backend::Gemspec.defaults(spec)
-  spec.name        = "cmor_multi_tenancy"
+  spec.name        = "cmor-multi_tenancy"
   spec.summary     = "Cmor::MultiTenancy Module."
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

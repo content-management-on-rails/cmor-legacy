@@ -30,6 +30,10 @@ module Cmor
       output
     end
 
+    def self.with_default_client
+      with_client(:default) { yield }
+    end
+
     def self.current_client
       RequestStore.store[:current_client]
     end

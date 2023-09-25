@@ -39,4 +39,14 @@ Cmor::MultiTenancy.configure do |config|
   # Default: aliases_for_default_client = %w( www )
   #
   config.aliases_for_default_client = %w( www )
+
+  # Set the models that will be scoped by client.
+  #
+  # Example: config.models = -> {{
+  #            Cmor::Blog::Post => {}
+  #          }}
+  #
+  # Default: config.scoped_models = -> {{}}
+  #
+  config.scoped_models = -> {{}}
 end

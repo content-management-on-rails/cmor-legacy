@@ -27,5 +27,9 @@ module Cmor::MultiTenancy
     mattr_accessor :aliases_for_default_client do
       %w( www )
     end
+
+    mattr_accessor :scoped_models do
+      -> {{}}
+    end
   end
 end

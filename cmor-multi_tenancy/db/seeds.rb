@@ -1,0 +1,1 @@
+Cmor::MultiTenancy::SeedService.call
