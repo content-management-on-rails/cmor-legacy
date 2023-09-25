@@ -11,18 +11,17 @@ module Cmor
       end
 
       def self.available_rest_actions
-        super - %i[new]
+        super - %i[new create]
       end
 
       private
 
       def load_collection_scope
-        scope = super.joins(:picture_gallery).order(picture_gallery_id: :asc, position: :asc)
-        with_conditions_from_query(scope)
+        super.joins(:picture_gallery).order(picture_gallery_id: :asc, position: :asc)
       end
 
       def after_destroy_location
-        last_location
+        last_location == url_for(action: :show) ? url_for(action: :index) : last_location
       end
 
       def permitted_params
