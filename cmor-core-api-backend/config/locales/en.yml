@@ -1,4 +1,9 @@
 en:
+  activemodel:
+    models:
+      cmor/core/api/backend/engine:
+        one: API
+        other: APIs
   classes:
     cmor/core/api/backend/engine: API
   cmor:
@@ -8,10 +13,5 @@ en:
           api_tokens:
             create:
               token_info_html: "<p>%{token}<br />Make sure you copy this token, you won't be able to see it again.</p>"
-  activemodel:
-    models:
-      cmor/core/api/backend/engine:
-        one: API
-        other: APIs
   routes:
     cmor-core-api-backend-engine: core/api

@@ -25,6 +25,7 @@ RSpec.describe "/de/backend/core/api/api_tokens", type: :feature do
         #     fill_in 'slider[interval]', with: '3'
         fill_in "api_token[active_from]", with: Time.zone.now
         fill_in "api_token[active_to]", with: 1.year.from_now
+        fill_in "api_token[description]", with: "My API token"
       }
       .increasing { resource_class.count }.by(1)
   }
