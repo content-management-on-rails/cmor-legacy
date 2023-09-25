@@ -1,5 +1,11 @@
 module Cmor::Core::Api
   class ApiToken < ApplicationRecord
+    validates :description, presence: true, uniqueness: true
+
+    def human
+      "#{description} (#{active_from} - #{active_to})"
+    end
+
     module TokenConcern
       extend ActiveSupport::Concern
 

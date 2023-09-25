@@ -13,4 +13,7 @@ Gem::Specification.new do |spec|
   # rubocop:enable Layout/ExtraSpacing
 
   spec.add_dependency "bcrypt"
+  spec.add_development_dependency "shoulda-matchers"
+  spec.add_development_dependency "rails-i18n"
+  spec.add_development_dependency "guard-bundler"
 end

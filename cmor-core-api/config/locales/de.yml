@@ -1,0 +1,18 @@
+de:
+  activerecord:
+    models:
+      cmor/core/api/api_token:
+        one: API Token
+        other: API Tokens
+    attributes:
+      shared: &shared
+        id: ID
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      cmor/core/api/api_token:
+        <<: *shared
+        active_from: Gültig ab
+        active_to: Gültig bis
+        can_write: Schreiben erlaubt
+        description: Beschreibung
+        token: Token
