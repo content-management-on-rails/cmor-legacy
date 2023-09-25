@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-galleries/picture_details", type: :request do
-  let(:base_path) { "/api/cmor-galleries/picture_details" }
-  let(:resource_class) { Cmor::Galleries::PictureDetail }
+RSpec.describe "/api/galleries/galleries", type: :request do
+  let(:base_path) { "/api/galleries/galleries" }
+  let(:resource_class) { Cmor::Galleries::PictureGallery }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[asset_id created_at description identifier picture_gallery_id position published_at title updated_at] }
+  let(:attribute_keys) { %w[created_at description identifier locale name position published_at slug updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
@@ -80,8 +80,7 @@ RSpec.describe "/api/cmor-galleries/picture_details", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:picture_gallery) { create(:cmor_galleries_picture_gallery) }
-    let(:params) { { param_key => attributes_for(factory_name).merge(picture_gallery_id: picture_gallery.id) } }
+    let(:params) { { param_key => attributes_for(factory_name) } }
 
     describe "when not authenticated" do
       before(:each) do
@@ -127,7 +126,7 @@ RSpec.describe "/api/cmor-galleries/picture_details", type: :request do
     let(:resource) { create(factory_name) }
     let(:update_path) { "#{base_path}/#{resource.id}" }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => {title: "New title"}} }
+    let(:params) { { param_key => {name: "New name"}} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -164,7 +163,7 @@ RSpec.describe "/api/cmor-galleries/picture_details", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.title }.to("New title") }
+        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.name }.to("New name") }
       end
     end
   end
