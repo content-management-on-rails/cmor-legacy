@@ -4,8 +4,12 @@ RSpec.describe "/api/galleries/picture_details", type: :request do
   let(:base_path) { "/api/galleries/picture_details" }
   let(:resource_class) { Cmor::Galleries::PictureDetail }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[asset_id created_at description identifier picture_gallery_id position published_at title updated_at] }
+  let(:attribute_keys) { %w[asset_id asset_url created_at description identifier picture_gallery_id position published_at title updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
+
+  before(:each) do
+    allow_any_instance_of(Cmor::Core::Api::Serializer::Base).to receive(:default_url_options).and_return({host: "localhost", port: 3000})
+  end
 
   describe "GET /" do
     let(:collection) { create_list(factory_name, 3) }
@@ -65,7 +69,7 @@ RSpec.describe "/api/galleries/picture_details", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -106,7 +110,7 @@ RSpec.describe "/api/galleries/picture_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -152,7 +156,7 @@ RSpec.describe "/api/galleries/picture_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -197,7 +201,7 @@ RSpec.describe "/api/galleries/picture_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }

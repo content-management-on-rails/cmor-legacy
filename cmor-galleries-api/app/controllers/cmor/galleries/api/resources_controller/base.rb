@@ -3,7 +3,7 @@ module Cmor::Galleries::Api
     class Base < Cmor::Galleries::Api::ApplicationController
       include Rao::Api::ResourcesController::RestActionsConcern
       include Rao::Api::ResourcesController::ResourcesConcern
-      include Rao::Api::ResourcesController::SerializationConcern
+      # include Rao::Api::ResourcesController::SerializationConcern
       include Rao::Api::ResourcesController::CountActionConcern
       include Rao::Api::ResourcesController::DestroyAllActionConcern
       include Rao::Api::ResourcesController::DeleteAllActionConcern
