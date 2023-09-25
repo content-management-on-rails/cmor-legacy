@@ -22,6 +22,7 @@ module Cmor
         @values = {}
 
         define_option :registered_engines, default: {}
+        define_option :default_url_options, default: -> { Rails.application.routes.default_url_options }
 
         def self.register_engine(class_name, options = {})
           @values[:registered_engines][class_name] = ::Cmor::Core::Api::RegisteredEngine.new(
