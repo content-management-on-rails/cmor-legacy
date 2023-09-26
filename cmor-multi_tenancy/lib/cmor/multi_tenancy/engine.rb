@@ -6,6 +6,13 @@ module Cmor::MultiTenancy
     # to make sure all scoped models are loaded.
     # config.after_initialize do
     config.to_prepare do
+      begin
+        puts ActiveRecord::Base.connection
+      rescue => e
+        puts "[Cmor::MultiTenancy] Skipping client concern injection because database does not exist yet."
+        next
+      end
+
       puts "[Cmor::MultiTenancy] Injecting client concern into scoped models:"
       Cmor::MultiTenancy::Configuration.scoped_models.call.each do |model, options|
         p "[Cmor::MultiTenancy]   #{model}"
