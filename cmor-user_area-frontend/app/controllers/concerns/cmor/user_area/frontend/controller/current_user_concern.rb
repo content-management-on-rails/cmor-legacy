@@ -2,11 +2,22 @@ module Cmor
   module UserArea
     module Frontend
       module Controller
+        # This concern provides methods for handling the current user.
+        #
         # Example:
         #
         #     # app/controllers/application_controller.rb
         #     class ApplicationController < ActionController::Base
         #       include Cmor::UserArea::Frontend::Controller::CurrentUserConcern
+        #
+        #       # require authentication for all actions
+        #       before_action :authenticate_user!
+        #     end
+        #
+        #     # app/controllers/backend_controller.rb
+        #     class BackendController < ActionController::Base
+        #       # require authentication for all actions
+        #       before_action :authenticate_user!
         #     end
         #
         module CurrentUserConcern
@@ -42,7 +53,7 @@ module Cmor
           end
 
           def user_authentication_failed_path
-            cmor_user_area_frontend.new_user_session_path
+            cmor_user_area_frontend.url_for([:new, Cmor::UserArea::UserSession])
           end
 
           def user_signed_in?

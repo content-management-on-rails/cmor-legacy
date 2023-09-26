@@ -26,7 +26,8 @@ module Cmor
             @resource = load_user_by_token
             unless @resource
               flash[:error] = t(".user_not_found")
-              redirect_to new_user_session_path
+              # redirect_to new_user_session_path
+              redirect_to([:new, Cmor::UserArea::UserSession])
               return
             end
             respond_with @resource

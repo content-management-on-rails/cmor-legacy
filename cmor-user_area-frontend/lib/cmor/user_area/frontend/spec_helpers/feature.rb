@@ -38,8 +38,9 @@ module Cmor
           #      it { visit(base_path); expect(page).to have_text("Posts") }
           #    end
           #
-          def sign_in(user, otp_code: nil, with_tfa: true)
-            sign_in_path = "/#{I18n.locale}/#{I18n.t("routes.cmor_user_area_frontend_engine")}/#{I18n.t("routes.user_session")}/new"
+          def sign_in(user, otp_code: nil, with_tfa: true, sign_in_path: nil)
+            # sign_in_path ||= "/#{I18n.locale}/#{I18n.t("routes.cmor_user_area_frontend_engine")}/#{I18n.t("routes.user_session")}/new"
+            sign_in_path ||= Cmor::UserArea::Frontend::Engine.routes.url_helpers.url_for([:new, Cmor::UserArea::UserSession, {only_path: true}])
 
             visit(sign_in_path)
 

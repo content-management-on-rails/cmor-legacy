@@ -5,7 +5,7 @@ RSpec.describe "/de/benutzer/profil" do
 
   describe "when not authenticated" do
     describe "response" do
-      let(:authentication_failed_path) { "/#{I18n.locale}/#{I18n.t("routes.cmor_user_area_frontend_engine")}/#{I18n.t("routes.user_session")}/new" }
+      let(:authentication_failed_path) { "/#{I18n.locale}/#{I18n.t("routes.cmor_user_area_frontend_engine")}/#{I18n.t("routes.user_sessions")}/new" }
 
       before(:each) { visit(base_path) }
 

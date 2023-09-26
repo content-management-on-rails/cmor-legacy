@@ -21,7 +21,7 @@
 
 .well.well-sm
   .btn-group
-    = link_to(cmor_user_area_frontend.user_session_path, class: 'btn btn-warning btn-responsive', method: :delete) do
+    = link_to(cmor_user_area_frontend.url_for([Cmor::UserArea::UserSession]), class: 'btn btn-warning btn-responsive', method: :delete) do
       %span.glyphicon.glyphicon-pencil
       %span.btn-text= t('.sign_out')
     = link_to(cmor_user_area_frontend.edit_current_user_path, class: 'btn btn-primary btn-responsive') do

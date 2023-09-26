@@ -32,11 +32,12 @@ module Cmor
           end
 
           def after_update_location
-            new_user_session_path
+            # new_user_session_path
+            url_for([:new, Cmor::UserArea::UserSession])
           end
 
           def handle_user_not_found
-            redirect_to new_user_session_path, notice: t("messages.failures.cmor_user_area_frontend.perishable_token_invalid")
+            redirect_to [:new, Cmor::UserArea::UserSession], notice: t("messages.failures.cmor_user_area_frontend.perishable_token_invalid")
           end
 
           def find_using_perishable_token

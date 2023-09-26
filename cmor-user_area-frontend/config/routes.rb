@@ -14,7 +14,7 @@ Cmor::UserArea::Frontend::Engine.routes.draw do
         match "/:id/:token" => "user_password_resets#update", :constraint => {token: /\d+/}, :as => :update, :via => [:put, :patch]
       end
 
-      resource :user_session, only: [:new, :create, :destroy]
+      resource :user_sessions, only: [:new, :create, :destroy]
       resource :user_two_factor_authentications, only: [:new, :create] if Cmor::UserArea::Configuration.tfa_enabled?
 
       root to: "current_users#show"

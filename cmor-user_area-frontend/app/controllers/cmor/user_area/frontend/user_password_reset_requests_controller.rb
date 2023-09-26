@@ -9,7 +9,8 @@ module Cmor
         private
 
         def after_create_location
-          new_user_session_path
+          # new_user_session_path
+          url_for([:new, Cmor::UserArea::UserSession])
         end
       end
     end

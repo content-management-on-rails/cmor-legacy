@@ -133,6 +133,6 @@ de:
     cmor_user_area_frontend_engine: benutzer
     current_user: profil
     user_password_reset_request: passwort-reset
-    user_session: session
+    user_sessions: session
     two_factor_authentication_setup_service: 2fa-einrichtung
     user_two_factor_authentications: 2fa

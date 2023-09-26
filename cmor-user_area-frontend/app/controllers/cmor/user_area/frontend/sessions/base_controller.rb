@@ -15,7 +15,6 @@ module Cmor
           protect_from_forgery with: :null_session, if: -> { request.format.json? }
           skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
 
-
           def new
             @session = initialize_resource
             respond_with @session
@@ -30,7 +29,7 @@ module Cmor
                 respond_to do |format|
                   format.html { redirect_to new_user_two_factor_authentications_path }
                   # respond with 501 Not Implemented for now
-                  format.json { render json: { error: "Not Implemented" }, status: :not_implemented }
+                  format.json { render json: {error: "Not Implemented"}, status: :not_implemented }
                 end
               else
                 @session.save!
@@ -46,7 +45,7 @@ module Cmor
             else
               respond_to do |format|
                 format.html { render action: :new }
-                format.json { render json: { error: @session.errors.full_messages.join(", ") }, status: :unauthorized }
+                format.json { render json: {error: @session.errors.full_messages.join(", ")}, status: :unauthorized }
               end
             end
           end

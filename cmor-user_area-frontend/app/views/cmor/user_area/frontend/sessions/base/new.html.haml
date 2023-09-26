@@ -2,7 +2,7 @@
   %div.panel-heading
     %h1= t('.title', **inflections)
   %div.panel-body
-    = simple_form_for(@session, url: user_session_path) do |f|
+    = simple_form_for(@session) do |f|
       = render partial: 'form_errors', locals: { resource: f.object }
       = render 'form', form: f
       = f.button :submit, class: 'btn btn-success'

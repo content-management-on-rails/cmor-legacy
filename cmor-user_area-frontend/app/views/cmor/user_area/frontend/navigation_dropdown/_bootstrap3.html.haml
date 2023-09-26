@@ -9,8 +9,8 @@
     %ul.dropdown-menu
       - if user_signed_in?
         %li= link_to t('.show'), cmor_user_area_frontend.current_user_path
-        %li= link_to t('.sign_out'), cmor_user_area_frontend.user_session_path, method: :delete
+        %li= link_to t('.sign_out'), cmor_user_area_frontend.url_for([Cmor::UserArea::UserSession]), method: :delete
       - else
-        %li= link_to t('.sign_in'), cmor_user_area_frontend.new_user_session_path
+        %li= link_to t('.sign_in'), cmor_user_area_frontend.url_for([:new, Cmor::UserArea::UserSession])
         - if Cmor::UserArea::Configuration.enable_registrations
           %li= link_to t('.new'), cmor_user_area_frontend.new_current_user_path

@@ -44,7 +44,7 @@ module Cmor
 
             if @resource.save && (@resource.previous_changes.keys.map(&:to_sym) & [:email, :crypted_password]).any?
               current_session(:user).destroy
-              redirect_to(new_user_session_path)
+              redirect_to([:new, Cmor::UserArea::UserSession])
               return
             end
             respond_with @resource, location: edit_current_user_path
@@ -53,7 +53,8 @@ module Cmor
           private
 
           def after_registration_url
-            new_user_session_path
+            # new_user_session_path
+            url_for([:new, Cmor::UserArea::UserSession])
           end
 
           def load_resource

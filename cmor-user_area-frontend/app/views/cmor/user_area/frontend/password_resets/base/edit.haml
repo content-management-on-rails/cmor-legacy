@@ -10,6 +10,6 @@
 
 .well.well-sm
   .btn-container-right
-    = link_to new_user_session_path, class: 'btn btn-default btn-responsive' do
+    = link_to [:new, Cmor::UserArea::UserSession], class: 'btn btn-default btn-responsive' do
       %span.glyphicon.glyphicon-arrow-left
       %span.btn-text= t('.back')
