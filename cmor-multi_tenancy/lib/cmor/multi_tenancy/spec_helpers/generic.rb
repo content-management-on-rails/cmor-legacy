@@ -3,12 +3,12 @@ module Cmor
     module SpecHelpers
       # Usage:
       #
-      #     # spec/support/cmor_multi_tenancy.rb
-      #     require 'cmor/multi_tenancy/spec_helpers/system'
+      #     # spec/support/cmor-multi_tenancy.rb
+      #     require 'cmor/multi_tenancy/spec_helpers/generic'
       #
       #     RSpec.configure do |config|
-      #       config.include Cmor::MultiTenancy::SpecHelpers::System, type: :feature
-      #       config.include Cmor::MultiTenancy::SpecHelpers::System, type: :system
+      #       config.include Cmor::MultiTenancy::SpecHelpers::Generic, type: :feature
+      #       config.include Cmor::MultiTenancy::SpecHelpers::Generic, type: :system
       #     end
       #
       module Generic
