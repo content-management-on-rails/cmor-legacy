@@ -15,20 +15,20 @@ module Cmor::MultiTenancy
 
       puts "[Cmor::MultiTenancy] Injecting client concern into scoped models:"
       Cmor::MultiTenancy::Configuration.scoped_models.call.each do |model, options|
-        p "[Cmor::MultiTenancy]   #{model}"
+        print "[Cmor::MultiTenancy]   #{model}"
         model.class_eval do
           include Cmor::MultiTenancy::Model::ClientConcern
         end
-        puts "[Cmor::MultiTenancy]     => OK"
+        puts " => OK"
       end
 
       puts "[Cmor::MultiTenancy] Adding scoped model associations to the client model:"
       Cmor::MultiTenancy::Configuration.scoped_models.call.each do |model, options|
-        p "[Cmor::MultiTenancy]   #{model}"
+        print "[Cmor::MultiTenancy]   #{model}"
         Cmor::MultiTenancy::Client.class_eval do
           has_many model.to_s.tableize.gsub("/", "_").to_sym, class_name: model.to_s, dependent: :destroy
         end
-        puts "[Cmor::MultiTenancy]     => OK"
+        puts " => OK"
       end
     end
   end
