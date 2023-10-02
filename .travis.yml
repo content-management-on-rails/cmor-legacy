@@ -12,9 +12,6 @@ env:
   - GEM=cmor_cms_backend
   - GEM=cmor_contact
   - GEM=cmor_contact_backend
-  - GEM=cmor_core
-  - GEM=cmor_core_backend
-  - GEM=cmor_core_frontend
   - GEM=cmor_files
   - GEM=cmor_files_backend
   - GEM=cmor_galleries
@@ -42,6 +39,9 @@ env:
   - GEM=cmor_transports
   - GEM=cmor_user_area
   - GEM=cmor_user_area_backend
+  - GEM=cmor-core
+  - GEM=cmor-core-backend
+  - GEM=cmor-core-frontend
 
 before_install:
   - nvm install --lts
