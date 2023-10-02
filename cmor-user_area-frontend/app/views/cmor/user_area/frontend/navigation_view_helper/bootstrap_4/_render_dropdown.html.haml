@@ -8,8 +8,8 @@
     .dropdown-menu{"aria-labelledby" => "dropdown02"}
       - if user_signed_in?
         = link_to t('.show'), cmor_user_area_frontend.current_user_path, class: 'dropdown-item'
-        = link_to t('.sign_out'), cmor_user_area_frontend.url_for([ Cmor::UserArea::UserSession]), class: 'dropdown-item', method: :delete
+        = link_to t('.sign_out'), cmor_user_area_frontend.url_for([Cmor::UserArea::UserSession]), class: 'dropdown-item', method: :delete
       - else
-        = link_to t('.sign_in'), cmor_user_area_frontend.new_user_session_path, class: 'dropdown-item'
+        = link_to t('.sign_in'), cmor_user_area_frontend.url_for([:new, Cmor::UserArea::UserSession]), class: 'dropdown-item'
         - if Cmor::UserArea::Configuration.enable_registrations
           = link_to t('.new'), cmor_user_area_frontend.new_current_user_path, class: 'dropdown-item'
