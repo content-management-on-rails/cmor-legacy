@@ -16,6 +16,10 @@ module Cmor
             @values[key] = value
           end
         end
+
+        def cmor
+          Cmor
+        end
       end
 
       @values = {}

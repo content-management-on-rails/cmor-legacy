@@ -21,7 +21,7 @@ module Cmor
       end
 
       def after_destroy_location
-        last_location == url_for(action: :show) ? url_for(action: :index) : last_location
+        (last_location == url_for(action: :show)) ? url_for(action: :index) : last_location
       end
 
       def permitted_params

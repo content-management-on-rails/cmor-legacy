@@ -2,6 +2,12 @@ require "rails_helper"
 
 module Cmor::Galleries
   RSpec.describe PictureDetail, type: :model do
-    pending "add some examples to (or delete) #{__FILE__}"
+    describe "associations" do
+      it { expect(subject).to belong_to(:picture_gallery) }
+    end
+
+    describe "validations" do
+      it { expect(subject).to validate_uniqueness_of(:identifier) }
+    end
   end
 end
