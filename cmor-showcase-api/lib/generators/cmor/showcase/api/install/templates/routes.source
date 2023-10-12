@@ -1,2 +1,2 @@
 
-  mount Cmor::Showcase::Api::Engine, at: "/api/cmor-showcase"
+  mount Cmor::Showcase::Api::Engine, at: "/api/showcase"
