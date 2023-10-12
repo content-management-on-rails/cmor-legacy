@@ -1,7 +1,7 @@
-require_dependency 'redcloth'
+require_dependency "redcloth"
 
 class Cmor::Links::Link < ActiveRecord::Base
-    include Markup::Rails::ActiveRecord
+  include Markup::Rails::ActiveRecord
 
   # acts as list
   acts_as_list scope: :category
@@ -13,5 +13,5 @@ class Cmor::Links::Link < ActiveRecord::Base
 
   # validations
   validates :name, presence: true
-  validates :url,  presence: true
+  validates :url, presence: true
 end

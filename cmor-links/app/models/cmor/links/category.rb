@@ -1,4 +1,4 @@
-require_dependency 'redcloth'
+require_dependency "redcloth"
 
 module Cmor::Links
   class Category < ActiveRecord::Base
@@ -6,7 +6,7 @@ module Cmor::Links
 
     # associations
     has_many :links, -> { order(:position) },
-             dependent: :destroy
+      dependent: :destroy
 
     accepts_nested_attributes_for :links, allow_destroy: true
 
@@ -24,7 +24,7 @@ module Cmor::Links
     validates :locale, presence: true, if: proc { |c| c.parent.nil? }
     validates :locale, absence: true, if: proc { |c| !c.parent.nil? }
     validates :name, presence: true,
-                     uniqueness: { scope: [:parent_id] }
+      uniqueness: {scope: [:parent_id]}
 
     def human
       name
@@ -39,7 +39,7 @@ module Cmor::Links
     end
 
     def self.for_link_footer
-      where(arel_table['link_footer_column'].not_eq(nil)).for_actual_locale
+      where(arel_table["link_footer_column"].not_eq(nil)).for_actual_locale
     end
 
     def links_count

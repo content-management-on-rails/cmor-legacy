@@ -20,10 +20,12 @@ module Cmor
 
       @values = {}
 
-      define_option :resources_controllers, default: -> { [
-        Cmor::Links::CategoriesController,
-        Cmor::Links::LinksController
-      ] }
+      define_option :resources_controllers, default: -> {
+                                                       [
+                                                         Cmor::Links::CategoriesController,
+                                                         Cmor::Links::LinksController
+                                                       ]
+                                                     }
       define_option :resource_controllers, default: -> { [] }
       define_option :service_controllers, default: -> { [] }
       define_option :sidebar_controllers, default: -> { [] }
