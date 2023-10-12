@@ -1,11 +1,4 @@
 module Cmor::Testimonials::Api
-  class TestimonialSerializer
-    def initialize(resource)
-      @resource = resource
-    end
-
-    def as_json
-      @resource.as_json
-    end
+  class TestimonialSerializer < Cmor::Core::Api::Serializer::Base
   end
 end

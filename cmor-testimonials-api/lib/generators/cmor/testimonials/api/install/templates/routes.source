@@ -1,2 +1,2 @@
 
-  mount Cmor::Testimonials::Api::Engine, at: "/api/cmor-testimonials"
+  mount Cmor::Testimonials::Api::Engine, at: "/api/testimonials"

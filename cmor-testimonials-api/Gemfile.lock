@@ -14,21 +14,17 @@ PATH
       rails (>= 6.1)
 
 PATH
-  remote: ../cmor-testimonials
+  remote: ../cmor-core-backend
   specs:
-    cmor-testimonials (0.0.61.pre)
-      acts_as_list
-      acts_as_published
-      cmor_core (= 0.0.61.pre)
-      cmor_core_backend (= 0.0.61.pre)
-      friendly_id
-      markup-rails
+    cmor-core-backend (0.0.61.pre)
+      administrador (>= 0.0.32.pre)
+      cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
+      sass-rails
 
 PATH
-  remote: ..
+  remote: ../cmor-core
   specs:
-    cmor (0.0.61.pre)
     cmor-core (0.0.61.pre)
       bootstrap-kaminari-views
       cmor (= 0.0.61.pre)
@@ -38,20 +34,23 @@ PATH
       rao-view_helper (>= 0.0.49.pre)
       request_store_rails
       route_translator
-    cmor_core (0.0.61.pre)
-      bootstrap-kaminari-views
-      cmor (= 0.0.61.pre)
-      delayed_job_active_record
-      kaminari
-      rails (>= 6.1)
-      rao-view_helper (>= 0.0.49.pre)
-      request_store_rails
-      route_translator
-    cmor_core_backend (0.0.61.pre)
-      administrador (>= 0.0.28.pre)
+
+PATH
+  remote: ../cmor-testimonials
+  specs:
+    cmor-testimonials (0.0.61.pre)
+      acts_as_list
+      acts_as_published
       cmor-core (= 0.0.61.pre)
+      cmor-core-backend (= 0.0.61.pre)
+      friendly_id
+      markup-rails
       rails (>= 6.1)
-      sass-rails
+
+PATH
+  remote: ..
+  specs:
+    cmor (0.0.61.pre)
 
 PATH
   remote: .
@@ -135,7 +134,7 @@ GEM
       activerecord (>= 4.2)
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
-    administrador (0.0.29.pre)
+    administrador (0.0.32.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -182,7 +181,7 @@ GEM
       delayed_job (>= 3.0, < 5)
     diff-lcs (1.5.0)
     erubi (1.12.0)
-    execjs (2.8.1)
+    execjs (2.9.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -210,7 +209,11 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    haml (6.1.2)
+    guard-standardrb (0.2.2)
+      guard (>= 2.0.0)
+      guard-compat (~> 1.0)
+      standardrb
+    haml (6.2.3)
       temple (>= 0.8.2)
       thor
       tilt
@@ -359,7 +362,7 @@ GEM
     regexp_parser (2.7.0)
     request_store_rails (2.0.0)
       concurrent-ruby (~> 1.0)
-    responders (3.1.0)
+    responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
@@ -415,7 +418,7 @@ GEM
       tilt
     semantic_range (3.0.0)
     shellany (0.0.1)
-    simple_form (5.2.0)
+    simple_form (5.3.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
     simple_form-datetimepicker (0.0.3)
@@ -427,7 +430,7 @@ GEM
       coffee-rails
       rails (>= 5.0.0)
       rao-view_helper (>= 0.0.17.pre)
-    sprockets (4.2.0)
+    sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.4.2)
@@ -439,9 +442,11 @@ GEM
       language_server-protocol (~> 3.17.0.2)
       rubocop (~> 1.48.1)
       rubocop-performance (~> 1.16.0)
-    temple (0.10.2)
+    standardrb (1.0.1)
+      standard
+    temple (0.10.3)
     thor (1.2.1)
-    tilt (2.2.0)
+    tilt (2.3.0)
     timeout (0.3.2)
     twitter-bootstrap-components-rails (1.0.0)
       haml-rails
@@ -467,11 +472,14 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   cmor!
+  cmor-core!
   cmor-core-api!
+  cmor-core-backend!
   cmor-testimonials!
   cmor-testimonials-api!
   factory_bot_rails
   guard-rspec
+  guard-standardrb
   pry-rails
   rails (~> 7.0)
   rails-dummy
