@@ -1,4 +1,10 @@
 Cmor::Core::Api::Backend.configure do |config|
+  # Register self to be shown in the backend.
+  #
+  # Default: config.register_engine("Cmor::Core::Api::Backend::Engine", {})
+  #
+  config.cmor.administrador.register_engine("Cmor::Core::Api::Backend::Engine", {})
+
   # Set the resources, that will be shown in the backend menu.
   # 
   # Default: config.resources_controllers = -> {[
