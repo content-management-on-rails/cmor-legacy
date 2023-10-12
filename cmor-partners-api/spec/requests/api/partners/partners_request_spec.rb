@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-partners/partners", type: :request do
-  let(:base_path) { "/api/cmor-partners/partners" }
+RSpec.describe "/api/partners/partners", type: :request do
+  let(:base_path) { "/api/partners/partners" }
   let(:resource_class) { Cmor::Partners::Partner }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
   let(:attribute_keys) { %w[body category_id created_at identifier name position published_at updated_at] }
@@ -65,7 +65,7 @@ RSpec.describe "/api/cmor-partners/partners", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -106,7 +106,7 @@ RSpec.describe "/api/cmor-partners/partners", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -152,7 +152,7 @@ RSpec.describe "/api/cmor-partners/partners", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -197,7 +197,7 @@ RSpec.describe "/api/cmor-partners/partners", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }

@@ -38,7 +38,7 @@ PATH
       request_store_rails
       route_translator
     cmor-core-backend (0.0.61.pre)
-      administrador (>= 0.0.28.pre)
+      administrador (>= 0.0.32.pre)
       cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
       sass-rails
@@ -125,7 +125,7 @@ GEM
       activerecord (>= 4.2)
     acts_as_published (1.1.0)
       rails (>= 3.2.0)
-    administrador (0.0.29.pre)
+    administrador (0.0.32.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
@@ -198,6 +198,10 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-standardrb (0.2.2)
+      guard (>= 2.0.0)
+      guard-compat (~> 1.0)
+      standardrb
     haml (6.1.2)
       temple (>= 0.8.2)
       thor
@@ -427,6 +431,8 @@ GEM
       language_server-protocol (~> 3.17.0.2)
       rubocop (~> 1.48.1)
       rubocop-performance (~> 1.16.0)
+    standardrb (1.0.1)
+      standard
     temple (0.10.2)
     thor (1.2.1)
     tilt (2.2.0)
@@ -460,6 +466,7 @@ DEPENDENCIES
   cmor-partners-api!
   factory_bot_rails
   guard-rspec
+  guard-standardrb
   pry-rails
   rails (~> 7.0)
   rails-dummy

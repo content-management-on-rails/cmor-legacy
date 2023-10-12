@@ -1,2 +1,2 @@
 
-  mount Cmor::Partners::Api::Engine, at: "/api/cmor-partners"
+  mount Cmor::Partners::Api::Engine, at: "/api/partners"
