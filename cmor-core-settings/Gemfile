@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gemspec
+gem 'cmor', path: '../'
+gem 'cmor-core', path: '../cmor-core'
+gem 'cmor-core-backend', path: '../cmor-core-backend'
+gem "rao-active_collection", path: "~/projects/gems/rao/rao-active_collection"
+gem "rails", "~> 6.1", "< 6.2"

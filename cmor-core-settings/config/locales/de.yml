@@ -1,0 +1,24 @@
+de:
+  classes:
+    cmor/core/settings/engine: Einstellungen
+  routes:
+    cmor-core-settings-engine: einstellungen
+  activerecord:
+    models:
+      cmor/core/settings/setting:
+        one: Einstellung
+        other: Einstellungen
+    attributes:
+      cmor/core/settings/setting:
+        id: ID
+        namespace: Namensraum
+        key: Schlüssel
+        value: Wert
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  cmor:
+    core:
+      settings:
+        settables:
+          form:
+            value_hint: "Default: %{default_value}"

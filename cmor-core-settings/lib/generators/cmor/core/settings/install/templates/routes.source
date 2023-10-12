@@ -1,0 +1,5 @@
+
+
+  localized do
+    mount Cmor::Core::Settings::Engine, at: '/backend/cmor-core-settings-engine'
+  end
