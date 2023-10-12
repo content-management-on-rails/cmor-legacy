@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "/api/user-area/users", type: :request do
   let(:base_path) { "/api/user-area/users" }
   let(:resource_class) { Cmor::UserArea::User }
-  let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
+  let(:factory_name) { resource_class.name.underscore.tr("/", "_") }
   let(:attribute_keys) { %w[active approved confirmed created_at crypted_password current_login_at current_login_ip email failed_login_count last_login_at last_login_ip last_request_at login_count otp_backup_codes password_salt perishable_token persistence_token single_access_token tfa_state updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
@@ -65,7 +65,7 @@ RSpec.describe "/api/user-area/users", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -80,7 +80,7 @@ RSpec.describe "/api/user-area/users", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => attributes_for(factory_name) } }
+    let(:params) { {param_key => attributes_for(factory_name)} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -105,7 +105,7 @@ RSpec.describe "/api/user-area/users", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -117,7 +117,7 @@ RSpec.describe "/api/user-area/users", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ post(create_path, headers: headers, params: params) }.to change{ resource_class.count }.from(0).to(1) }
+        it { expect { post(create_path, headers: headers, params: params) }.to change { resource_class.count }.from(0).to(1) }
       end
     end
   end
@@ -126,7 +126,7 @@ RSpec.describe "/api/user-area/users", type: :request do
     let(:resource) { create(factory_name) }
     let(:update_path) { "#{base_path}/#{resource.id}" }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => {email: "new-email@domain.local"}} }
+    let(:params) { {param_key => {email: "new-email@domain.local"}} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -151,7 +151,7 @@ RSpec.describe "/api/user-area/users", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -163,7 +163,7 @@ RSpec.describe "/api/user-area/users", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.email }.to("new-email@domain.local") }
+        it { expect { put(update_path, headers: headers, params: params) }.to change { resource.reload.email }.to("new-email@domain.local") }
       end
     end
   end
@@ -196,7 +196,7 @@ RSpec.describe "/api/user-area/users", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -210,7 +210,7 @@ RSpec.describe "/api/user-area/users", type: :request do
       describe "persistence changes" do
         before(:each) { resource }
 
-        it { expect{ delete(delete_path, headers: headers) }.to change{ resource_class.count }.from(1).to(0) }
+        it { expect { delete(delete_path, headers: headers) }.to change { resource_class.count }.from(1).to(0) }
       end
     end
   end
