@@ -6,3 +6,4 @@ gem "cmor", path: "../"
 gem "cmor-contact", path: "../cmor-contact"
 gem 'rails', '~> 7.0'
 gem "rao-api-resources_controller", path: "~/projects/gems/rao/rao-api-resources_controller"
+gem "rao-active_collection", path: "~/projects/gems/rao/rao-active_collection"
