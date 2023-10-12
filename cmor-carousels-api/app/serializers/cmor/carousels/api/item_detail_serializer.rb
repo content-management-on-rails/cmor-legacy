@@ -1,11 +1,4 @@
 module Cmor::Carousels::Api
-  class ItemDetailSerializer
-    def initialize(resource)
-      @resource = resource
-    end
-
-    def as_json
-      @resource.as_json
-    end
+  class ItemDetailSerializer < Cmor::Core::Api::Serializer::Base
   end
 end
