@@ -1,12 +1,4 @@
 module Cmor::Legal::Api
-  class PersonalDataSerializer
-    def initialize(resource, params = {})
-      @resource = resource
-      @params = params
-    end
-
-    def as_json
-      @resource.as_json
-    end
+  class PersonalDataSerializer < Cmor::Core::Api::Serializer::Base
   end
 end
