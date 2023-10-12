@@ -12,7 +12,7 @@ RSpec.describe "ActiveRecord::Base models", type: :model do
   # rubocop:enable Lint/ConstantDefinitionInBlock
 
   {
-    Cmor::Legal::PersonalData => { specs_to_skip: [ :is_an_active_record, :saves_with_valid_attributes ], factory_name: :cmor_legal_personal_data  },
+    Cmor::Legal::PersonalData => {specs_to_skip: [:is_an_active_record, :saves_with_valid_attributes], factory_name: :cmor_legal_personal_data},
     Cmor::Legal::PrivacyPolicy => {}
   }.each do |model, options|
     options.reverse_merge!(specs_to_run: DEFAULT_SPECS_TO_RUN, specs_to_skip: [], factory_name: model.to_s.tableize.singularize.underscore.tr("/", "_"))
