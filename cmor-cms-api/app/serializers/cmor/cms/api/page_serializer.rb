@@ -1,14 +1,9 @@
 module Cmor::Cms::Api
-  class PageSerializer
-    def initialize(resource, params = {})
-      @resource = resource
-      @params = params
-    end
-
+  class PageSerializer < Cmor::Core::Api::Serializer::Base
     def as_json
-      @resource.as_json.merge(
-        html: html
-      )
+      super.tap do |hash|
+        hash[:attributes].merge!(html: html)
+      end
     end
 
     def html
