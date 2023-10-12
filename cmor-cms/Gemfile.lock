@@ -12,7 +12,7 @@ PATH
       request_store_rails
       route_translator
     cmor-core-backend (0.0.61.pre)
-      administrador (>= 0.0.28.pre)
+      administrador (>= 0.0.32.pre)
       cmor-core (= 0.0.61.pre)
       rails (>= 6.1)
       sass-rails
@@ -99,7 +99,7 @@ GEM
       rails (>= 3.2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    administrador (0.0.29.pre)
+    administrador (0.0.32.pre)
       bootstrap4-kaminari-views
       coffee-rails
       haml-rails
