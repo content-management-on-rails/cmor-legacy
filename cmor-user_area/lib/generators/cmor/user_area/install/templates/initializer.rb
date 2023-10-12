@@ -1,4 +1,10 @@
 Cmor::UserArea.configure do |config|
+  # Register self to be shown in the backend.
+  #
+  # Default: config.cmor.administrador.register_engine("Cmor::UserArea::Engine", {})
+  #
+  config.cmor.administrador.register_engine("Cmor::UserArea::Engine", {})
+
   # Set the resources, that will be shown in the backend menu.
   #
   # Default: config.resources_controllers = -> {[

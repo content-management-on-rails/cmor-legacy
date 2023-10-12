@@ -16,6 +16,10 @@ module Cmor
             @values[key] = value
           end
         end
+
+        def cmor
+          Cmor
+        end
       end
 
       @values = {}
@@ -28,16 +32,22 @@ module Cmor
         @values[key]
       end
 
-      define_option :resources_controllers, default: -> { [
-        Cmor::UserArea::UsersController
-      ] }
+      define_option :resources_controllers, default: -> {
+                                                       [
+                                                         Cmor::UserArea::UsersController
+                                                       ]
+                                                     }
       define_option :resource_controllers, default: -> { [] }
-      define_option :service_controllers, default: -> { [
-        Cmor::UserArea::CreateDefaultUserServiceController
-      ] }
-      define_option :sidebar_controllers, default: -> { [
-        Cmor::UserArea::UserSidebarsController
-      ] }
+      define_option :service_controllers, default: -> {
+                                                     [
+                                                       Cmor::UserArea::CreateDefaultUserServiceController
+                                                     ]
+                                                   }
+      define_option :sidebar_controllers, default: -> {
+                                                     [
+                                                       Cmor::UserArea::UserSidebarsController
+                                                     ]
+                                                   }
 
       define_option :enable_registrations, default: false
       define_option :allow_users_to_destroy_self, default: true

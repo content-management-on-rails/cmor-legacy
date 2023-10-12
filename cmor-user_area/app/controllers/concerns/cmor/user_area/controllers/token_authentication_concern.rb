@@ -8,7 +8,7 @@ module Cmor
       #
       #     class ApiController < ActionController::API
       #       include Cmor::UserArea::Controllers::TokenAuthenticationConcern
-  
+
       #       before_action :authenticate_with_single_access_token!
       #       # ...
       #     end
@@ -31,31 +31,31 @@ module Cmor
         included do
           include ActionController::HttpAuthentication::Token::ControllerMethods
         end
-  
+
         private
-  
+
         def authenticate_user_with_single_access_token!
           unless authenticate_with_http_token { |t, o| @current_user = Cmor::UserArea::User.authenticate_with_single_access_token(t, o) }
             request_http_token_authentication
           end
         end
       end
-#      module TokenAuthenticationConcern
-#        extend ActiveSupport::Concern
-#
-#        included do
-#          before_action :authenticate_user_from_token!
-#        end
-#
-#        private
-#
-#        def authenticate_user_from_token!
-#          user_token = params[:user_token].presence
-#          user       = user_token && Cmor::UserArea::User.find_by_authentication_token(user_token.to_s)
-#
-#          if user
-#            sign_in user, store: false
-#          end
-        end
-      end
+      #      module TokenAuthenticationConcern
+      #        extend ActiveSupport::Concern
+      #
+      #        included do
+      #          before_action :authenticate_user_from_token!
+      #        end
+      #
+      #        private
+      #
+      #        def authenticate_user_from_token!
+      #          user_token = params[:user_token].presence
+      #          user       = user_token && Cmor::UserArea::User.find_by_authentication_token(user_token.to_s)
+      #
+      #          if user
+      #            sign_in user, store: false
+      #          end
     end
+  end
+end

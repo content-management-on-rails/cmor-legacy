@@ -1,4 +1,4 @@
-# Cmor::Contact
+# Cmor::UserArea
 
 Short description and motivation.
 
