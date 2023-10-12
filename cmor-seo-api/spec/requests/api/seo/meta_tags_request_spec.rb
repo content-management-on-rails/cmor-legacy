@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-seo/items", type: :request do
-  let(:base_path) { "/api/cmor-seo/items" }
-  let(:resource_class) { Cmor::Seo::Item }
+RSpec.describe "/api/seo/meta_tags", type: :request do
+  let(:base_path) { "/api/seo/meta_tags" }
+  let(:resource_class) { Cmor::Seo::MetaTag }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[created_at created_by_id path published_at resource_id resource_type title updated_at updated_by_id] }
+  let(:attribute_keys) { %w[content created_at item_id name position published_at updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
@@ -65,7 +65,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -80,7 +80,8 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => attributes_for(factory_name) } }
+    let(:item) { create(:cmor_seo_item) }
+    let(:params) { { param_key => attributes_for(factory_name).merge(item_id: item.id) } }
 
     describe "when not authenticated" do
       before(:each) do
@@ -105,7 +106,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -126,7 +127,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
     let(:resource) { create(factory_name) }
     let(:update_path) { "#{base_path}/#{resource.id}" }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => {title: "New title"}} }
+    let(:params) { { param_key => {name: "og:title"}} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -151,7 +152,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -163,7 +164,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.title }.to("New title") }
+        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.name }.to("og:title") }
       end
     end
   end
@@ -196,7 +197,7 @@ RSpec.describe "/api/cmor-seo/items", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }

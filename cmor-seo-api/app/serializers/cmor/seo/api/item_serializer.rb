@@ -1,11 +1,4 @@
 module Cmor::Seo::Api
-  class ItemSerializer
-    def initialize(resource)
-      @resource = resource
-    end
-
-    def as_json
-      @resource.as_json
-    end
+  class ItemSerializer < Cmor::Core::Api::Serializer::Base
   end
 end
