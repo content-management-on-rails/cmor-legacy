@@ -1,1 +1,1 @@
-require 'capybara'
+require "capybara"

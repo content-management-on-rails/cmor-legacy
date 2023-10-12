@@ -8,13 +8,13 @@ module Cmor
       end
 
       def self.available_rest_actions
-        %i(index show)
+        %i[index show]
       end
 
       private
 
       def permitted_params
-        params.require(:changelog).permit()
+        params.require(:changelog).permit
       end
     end
   end

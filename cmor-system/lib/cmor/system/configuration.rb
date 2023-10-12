@@ -1,5 +1,5 @@
-require 'active_support/core_ext/module/delegation'
-require 'active_support/core_ext/module/attribute_accessors'
+require "active_support/core_ext/module/delegation"
+require "active_support/core_ext/module/attribute_accessors"
 
 module Cmor
   module System
@@ -8,12 +8,12 @@ module Cmor
         yield self
       end
 
-      mattr_accessor(:registered_controllers) { -> {[]} }
-      mattr_accessor(:registered_services) { -> {[]} }
+      mattr_accessor(:registered_controllers) { -> { [] } }
+      mattr_accessor(:registered_services) { -> { [] } }
       mattr_accessor(:enable_active_storage_backend) { false }
       mattr_accessor(:enable_delayed_job_backend) { false }
-      mattr_accessor(:record_factory_name) { 'user' }
-      mattr_accessor(:record_attachment_name) { 'asset' }
+      mattr_accessor(:record_factory_name) { "user" }
+      mattr_accessor(:record_attachment_name) { "asset" }
       mattr_accessor(:enable_rack_attack_backend) { false }
 
       def self.registered_controllers

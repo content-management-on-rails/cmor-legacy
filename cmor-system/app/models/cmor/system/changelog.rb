@@ -1,7 +1,7 @@
 module Cmor
   module System
     class Changelog
-      if Object.const_defined?('Kaminari')
+      if Object.const_defined?(:Kaminari)
         class Collection < Kaminari::PaginatableArray
         end
       else
@@ -20,7 +20,7 @@ module Cmor
       validates :file, presence: true
 
       def self.attribute_names
-        %w(id name gem file content version)
+        %w[id name gem file content version]
       end
 
       module AttributesConcern
@@ -37,7 +37,7 @@ module Cmor
             end
 
             define_method("#{attr}=") do |value|
-              @attributes[attr.to_sym]= value
+              @attributes[attr.to_sym] = value
             end
           end
         end
@@ -48,7 +48,7 @@ module Cmor
         def initialize(attributes = {})
           @attributes = {}.with_indifferent_access
           attributes.each do |k, v|
-            self.send("#{k}=", v)
+            send("#{k}=", v)
           end
         end
       end
@@ -63,8 +63,8 @@ module Cmor
             key = order.first[0].to_sym
             value = order.first[1].to_sym
             sorted = _all.sort { |a, b| a.send(key) <=> b.send(key) }
-            value == :asc ? sorted : sorted.reverse
-            Collection.new(value == 'asc' ? sorted : sorted.reverse)
+            (value == :asc) ? sorted : sorted.reverse
+            Collection.new((value == "asc") ? sorted : sorted.reverse)
           end
 
           def count
@@ -82,7 +82,7 @@ module Cmor
                 c.respond_to?(:module_parent) ? c.module_parent : c.parent
               end
 
-              version = if parent.const_defined?("VERSION")
+              version = if parent.const_defined?(:VERSION)
                 parent::VERSION
               end
               new(id: Rails.application.class.name.deconstantize.underscore, name: Rails.application.class.name.deconstantize.underscore, gem: nil, file: application_changelog, version: version)
@@ -124,13 +124,13 @@ module Cmor
           @attributes[name.to_sym] = value
         end
 
-          def ==(other)
-            false unless other.respond_to?(:id) && other.respond_to?(:name) && other.respond_to?(:gem) && other.respond_to?(:version)
-            self.id == other.id &&
-            self.name == other.name &&
+        def ==(other)
+          false unless other.respond_to?(:id) && other.respond_to?(:name) && other.respond_to?(:gem) && other.respond_to?(:version)
+          id == other.id &&
+            name == other.name &&
             self.gem == other.gem &&
-            self.version == other.version
-          end
+            version == other.version
+        end
       end
 
       include ActiveRecordLikeConcern

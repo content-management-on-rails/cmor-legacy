@@ -1,0 +1,16 @@
+ignore:
+- spec/dummy/**/*
+- Gemfile:
+  - Style/StringLiterals
+  - Layout/TrailingEmptyLines
+- Guardfile:
+  - Style/StringLiterals
+  - Style/PercentLiteralDelimiters
+  - Layout/ExtraSpacing
+- Rakefile:
+  - Style/StringLiterals
+  - Layout/ExtraSpacing
+- spec/rails_helper.rb:
+  - Style/StringLiterals
+- spec/spec_helper.rb:
+  - Style/BlockComments

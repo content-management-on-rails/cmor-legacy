@@ -6,7 +6,7 @@ module Cmor
       end
 
       def self.available_rest_actions
-        %i(index show edit update destroy)
+        %i[index show edit update destroy]
       end
 
       private

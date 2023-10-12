@@ -13,7 +13,7 @@ module Cmor
         end
 
         def self.available_rest_actions
-          super - %i(new create edit update)
+          super - %i[new create edit update]
         end
 
         private
@@ -23,7 +23,7 @@ module Cmor
         end
 
         def permitted_params
-          params.require(:blob).permit()
+          params.require(:blob).permit
         end
       end
     end

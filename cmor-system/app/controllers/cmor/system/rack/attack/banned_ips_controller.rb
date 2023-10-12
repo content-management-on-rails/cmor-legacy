@@ -10,13 +10,13 @@ module Cmor
           def self.resource_class
             Cmor::System::Rack::Attack::BannedIp
           end
-    
+
           def self.available_rest_actions
-            %i(index show new create destroy)
+            %i[index show new create destroy]
           end
-    
+
           private
-    
+
           def permitted_params
             params.require(:rack_attack_banned_ip).permit(:key)
           end

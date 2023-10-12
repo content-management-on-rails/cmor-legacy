@@ -11,20 +11,24 @@ Cmor::System::Engine.routes.draw do
       end
     end
   end
-  namespace :active_storage do
-    resources :blobs , only: [:index, :show, :destroy] do
-      Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+  if Cmor::System::Configuration.enable_active_storage_backend
+    namespace :active_storage do
+      resources :blobs, only: [:index, :show, :destroy] do
+        Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+      end
+      resources :attachments, only: [:index, :show, :destroy] do
+        Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
+      end
     end
-    resources :attachments , only: [:index, :show, :destroy] do
-      Cmor::Core::Backend::Routing::ResourcesRoutes.inject_routes(self)
-    end
-  end if Cmor::System::Configuration.enable_active_storage_backend
+  end
 
-  namespace :rack do
-    namespace :attack do
-      resources :banned_ips, only: [:index, :show, :new, :create, :destroy]
+  if Cmor::System::Configuration.enable_active_storage_backend
+    namespace :rack do
+      namespace :attack do
+        resources :banned_ips, only: [:index, :show, :new, :create, :destroy]
+      end
     end
-  end if Cmor::System::Configuration.enable_active_storage_backend
+  end
 
-  root to: 'home#index'
+  root to: "home#index"
 end

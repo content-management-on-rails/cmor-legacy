@@ -13,7 +13,7 @@ module Cmor
         end
 
         def self.available_rest_actions
-          super - %i(new create edit update)
+          super - %i[new create edit update]
         end
 
         private
