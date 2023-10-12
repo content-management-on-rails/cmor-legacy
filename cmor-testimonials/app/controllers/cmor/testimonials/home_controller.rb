@@ -1,5 +1,4 @@
 module Cmor::Testimonials
-    class HomeController < Cmor::Core::Backend::HomeController::Base
-    end
+  class HomeController < Cmor::Core::Backend::HomeController::Base
   end
 end
