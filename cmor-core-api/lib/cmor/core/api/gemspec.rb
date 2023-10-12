@@ -32,6 +32,7 @@ module Cmor
           spec.add_development_dependency "bootsnap"
           spec.add_development_dependency "factory_bot_rails"
           spec.add_development_dependency "guard-rspec"
+          spec.add_development_dependency "guard-standardrb"
           spec.add_development_dependency "pry-rails"
           spec.add_development_dependency "rails-dummy"
           spec.add_development_dependency "rspec-rails"
