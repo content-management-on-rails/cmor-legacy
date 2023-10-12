@@ -5,7 +5,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          validates :identifier, uniqueness: { scope: [ :locale ] }, allow_nil: true, allow_blank: true
+          validates :identifier, uniqueness: {scope: [:locale]}, allow_nil: true, allow_blank: true
         end
       end
     end

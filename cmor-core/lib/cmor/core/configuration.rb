@@ -1,5 +1,5 @@
-require 'active_support/core_ext/module/delegation'
-require 'active_support/core_ext/module/attribute_accessors'
+require "active_support/core_ext/module/delegation"
+require "active_support/core_ext/module/attribute_accessors"
 
 module Cmor
   module Core
@@ -8,7 +8,7 @@ module Cmor
         yield self
       end
 
-      mattr_accessor(:default_markup_options) { { processor: :markdown } }
+      mattr_accessor(:default_markup_options) { {processor: :markdown} }
 
       mattr_accessor(:features) { {} }
 

@@ -1,4 +1,4 @@
-require 'cmor/version'
+require "cmor/version"
 
 module Cmor
   module Core

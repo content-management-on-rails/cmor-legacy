@@ -5,7 +5,7 @@ module Cmor
         extend ActiveSupport::Concern
 
         included do
-          validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }, allow_nil: true
+          validates :locale, inclusion: {in: I18n.available_locales.map(&:to_s)}, allow_nil: true
 
           scope :for_locale, ->(locale = I18n.locale, options = {}) do
             options.reverse_merge!(include_without_locale: true)

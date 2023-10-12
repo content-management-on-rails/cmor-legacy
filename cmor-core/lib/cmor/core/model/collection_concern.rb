@@ -20,7 +20,7 @@ module Cmor
           extend FriendlyId
           friendly_id :name, use: :slugged
 
-          validates :name, presence: true, uniqueness: { scope: [ :locale ] }
+          validates :name, presence: true, uniqueness: {scope: [:locale]}
         end
       end
     end

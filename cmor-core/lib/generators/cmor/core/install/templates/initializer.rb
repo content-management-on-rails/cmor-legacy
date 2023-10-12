@@ -3,7 +3,7 @@ Cmor::Core.configure do |config|
   #
   # Default: config.default_markup_options = { processor: :markdown }
   #
-  config.default_markup_options = { processor: :markdown }
+  config.default_markup_options = {processor: :markdown}
 
   # Enables the Cmor::Comments integration
   #

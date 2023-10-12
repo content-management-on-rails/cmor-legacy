@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 gemspec
-gem 'cmor', path: '../'
+gem "cmor", path: "../"
 gem "rails", "~> 6.1", "< 6.2"

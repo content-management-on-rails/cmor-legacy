@@ -134,6 +134,10 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-standardrb (0.2.2)
+      guard (>= 2.0.0)
+      guard-compat (~> 1.0)
+      standardrb
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     i18n-debug (1.2.0)
@@ -151,8 +155,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    language_server-protocol (3.17.0.3)
     launchy (2.5.2)
       addressable (~> 2.8)
+    lint_roller (1.1.0)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -273,7 +279,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    rubocop (1.50.0)
+    rubocop (1.52.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -285,6 +291,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.28.0)
       parser (>= 3.2.1.0)
+    rubocop-performance (1.18.0)
+      rubocop (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.13.0)
     semantic_range (3.0.0)
     shellany (0.0.1)
@@ -300,6 +309,20 @@ GEM
     sqlite3 (1.6.2)
       mini_portile2 (~> 2.8.0)
     sqlite3 (1.6.2-x86_64-linux)
+    standard (1.30.1)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.52.0)
+      standard-custom (~> 1.0.0)
+      standard-performance (~> 1.1.0)
+    standard-custom (1.0.2)
+      lint_roller (~> 1.0)
+      rubocop (~> 1.50)
+    standard-performance (1.1.2)
+      lint_roller (~> 1.1)
+      rubocop-performance (~> 1.18.0)
+    standardrb (1.0.1)
+      standard
     thor (1.2.1)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -329,6 +352,7 @@ DEPENDENCIES
   factory_bot_rails
   guard-bundler
   guard-rspec
+  guard-standardrb
   i18n-debug
   launchy
   pry-rails
@@ -339,6 +363,7 @@ DEPENDENCIES
   rubocop
   shoulda-matchers
   sqlite3 (~> 1.4)
+  standard
   webpacker
 
 BUNDLED WITH
