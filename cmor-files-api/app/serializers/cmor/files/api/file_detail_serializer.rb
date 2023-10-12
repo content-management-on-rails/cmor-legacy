@@ -1,11 +1,4 @@
 module Cmor::Files::Api
-  class FileDetailSerializer
-    def initialize(resource)
-      @resource = resource
-    end
-
-    def as_json
-      @resource.as_json
-    end
+  class FileDetailSerializer < Cmor::Core::Api::Serializer::Base
   end
 end

@@ -1,2 +1,2 @@
 
-  mount Cmor::Files::Api::Engine, at: "/api/cmor-files"
+  mount Cmor::Files::Api::Engine, at: "/api/files"

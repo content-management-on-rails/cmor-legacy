@@ -1,10 +1,10 @@
 require "rails_helper"
 
-RSpec.describe "/api/cmor-files/file_details", type: :request do
-  let(:base_path) { "/api/cmor-files/file_details" }
-  let(:resource_class) { Cmor::Files::FileDetail }
+RSpec.describe "/api/files/folders", type: :request do
+  let(:base_path) { "/api/files/folders" }
+  let(:resource_class) { Cmor::Files::Folder }
   let(:factory_name) { resource_class.name.underscore.gsub("/", "_") }
-  let(:attribute_keys) { %w[asset_id created_at description folder_id identifier position published_at slug title updated_at] }
+  let(:attribute_keys) { %w[created_at description identifier locale name position published_at slug updated_at] }
   let(:param_key) { resource_class.name.demodulize.underscore.to_sym }
 
   describe "GET /" do
@@ -65,7 +65,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -80,8 +80,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
   describe "POST /" do
     let(:create_path) { base_path }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:folder) { create(:cmor_files_folder) }
-    let(:params) { { param_key => attributes_for(factory_name).merge(folder_id: folder.id) } }
+    let(:params) { { param_key => attributes_for(factory_name) } }
 
     describe "when not authenticated" do
       before(:each) do
@@ -106,7 +105,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -127,7 +126,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
     let(:resource) { create(factory_name) }
     let(:update_path) { "#{base_path}/#{resource.id}" }
     let(:headers) { {"Accept" => "application/json"} }
-    let(:params) { { param_key => {title: "New title"}} }
+    let(:params) { { param_key => {name: "New name"}} }
 
     describe "when not authenticated" do
       before(:each) do
@@ -152,7 +151,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -164,7 +163,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
       end
 
       describe "persistence changes" do
-        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.title }.to("New title") }
+        it { expect{ put(update_path, headers: headers, params: params) }.to change{ resource.reload.name }.to("New name") }
       end
     end
   end
@@ -197,7 +196,7 @@ RSpec.describe "/api/cmor-files/file_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
