@@ -17,7 +17,7 @@ module Cmor
         client = ::Client.new(client_attributes)
         say "Creating client [#{client.identifier}]" do
           if client.save
-            say '=> [OK]'
+            say "=> [OK]"
           else
             add_error_and_say(:base, "=> [FAILED] Errors: #{client.errors.full_messages.to_sentence}")
           end
@@ -30,7 +30,7 @@ module Cmor
       end
 
       def client_attribute_overrides
-        { identifier: identifier, title: title, description: description, active_form: active_form, active_to: active_to, default: default }.compact
+        {identifier: identifier, title: title, description: description, active_form: active_form, active_to: active_to, default: default}.compact
       end
 
       def client_attribute_defaults
@@ -40,7 +40,7 @@ module Cmor
           description: "This is the default client.",
           active_from: Time.at(0),
           active_to: Time.parse("9999-12-31 23:59:59"),
-          default: true,
+          default: true
         }
       end
     end

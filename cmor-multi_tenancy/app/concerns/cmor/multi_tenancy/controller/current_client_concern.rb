@@ -16,15 +16,15 @@ module Cmor
         included do
           helper_method :current_client if respond_to?(:helper_method)
         end
-        
+
         private
-        
+
         def current_client
           Cmor::MultiTenancy.current_client
         end
 
         def set_current_client
-          if client = load_current_client
+          if (client = load_current_client)
             with_client(client) { yield }
           else
             handle_client_not_found
@@ -46,7 +46,7 @@ module Cmor
         end
 
         def current_client_identifier
-          params[:client_identifier] || ENV.fetch('client_identifier') { Cmor::MultiTenancy::Configuration.aliases_for_default_client.first }
+          params[:client_identifier] || ENV.fetch("client_identifier") { Cmor::MultiTenancy::Configuration.aliases_for_default_client.first }
         end
 
         def with_client(client)
@@ -64,7 +64,7 @@ module Cmor
         def handle_client_not_found
           respond_to do |format|
             format.html { redirect_to_default_client }
-            format.json { render json: { error: "Could not find client with identifier #{current_client_identifier}" }, status: :not_found }
+            format.json { render json: {error: "Could not find client with identifier #{current_client_identifier}"}, status: :not_found }
           end
         end
       end

@@ -5,4 +5,3 @@ module Cmor
     VERSION = ::Cmor::VERSION
   end
 end
-

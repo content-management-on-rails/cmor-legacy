@@ -9,7 +9,7 @@ module Cmor
 
           after_initialize :set_client, if: :new_record?
 
-          validates :client, presence: { strict: true }
+          validates :client, presence: {strict: true}
 
           scope :for_current_client, -> { where(client_id: Cmor::MultiTenancy.current_client.id) }
 

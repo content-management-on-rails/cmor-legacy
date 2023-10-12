@@ -7,9 +7,9 @@ module Cmor::MultiTenancy
     # config.after_initialize do
     config.to_prepare do
       begin
-        puts ActiveRecord::Base.connection
+        ActiveRecord::Base.connection
       rescue => e
-        puts "[Cmor::MultiTenancy] Skipping client concern injection because database does not exist yet."
+        puts "[Cmor::MultiTenancy] Skipping client concern injection because database does not exist yet (#{e.message})."
         next
       end
 
@@ -26,7 +26,7 @@ module Cmor::MultiTenancy
       Cmor::MultiTenancy::Configuration.scoped_models.call.each do |model, options|
         print "[Cmor::MultiTenancy]   #{model}"
         Cmor::MultiTenancy::Client.class_eval do
-          has_many model.to_s.tableize.gsub("/", "_").to_sym, class_name: model.to_s, dependent: :destroy
+          has_many model.to_s.tableize.tr("/", "_").to_sym, class_name: model.to_s, dependent: :destroy
         end
         puts " => OK"
       end

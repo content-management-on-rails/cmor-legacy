@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe '/de/backend/mandantensteuerung', type: :feature do
-  let(:base_path) { '/de/backend/mandantensteuerung' }
+RSpec.describe "/de/backend/mandantensteuerung", type: :feature do
+  let(:base_path) { "/de/backend/mandantensteuerung" }
 
   before(:each) { visit(base_path) }
 

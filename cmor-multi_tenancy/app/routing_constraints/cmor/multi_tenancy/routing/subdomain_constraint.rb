@@ -12,7 +12,7 @@ module Cmor
       class SubdomainConstraint
         def self.matches?(request)
           if request.subdomain.present?
-            ENV['client_identifier'] = request.subdomain
+            ENV["client_identifier"] = request.subdomain
             true
           end
         end

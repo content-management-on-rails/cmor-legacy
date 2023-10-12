@@ -1,6 +1,6 @@
 module Cmor::MultiTenancy
   class Client < ApplicationRecord
-    validates :identifier, presence: true, uniqueness: true, format: { with: /\A[a-z0-9-]+\z/ }, length: { minimum: 2, maximum: 63 }
+    validates :identifier, presence: true, uniqueness: true, format: {with: /\A[a-z0-9-]+\z/}, length: {minimum: 2, maximum: 63}
     validates :title, presence: true, uniqueness: true
 
     def human
@@ -22,7 +22,7 @@ module Cmor::MultiTenancy
 
         after_initialize do
           self.active_from ||= Time.at(0)
-          self.active_to   ||= Time.new(9999, 12, 31, 23, 59, 59)
+          self.active_to ||= Time.new(9999, 12, 31, 23, 59, 59)
         end
       end
     end
