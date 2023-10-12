@@ -36,8 +36,8 @@ module Cmor
           s.add_development_dependency 'rubocop-rails_config'
           s.add_development_dependency 'rubocop'
           s.add_development_dependency 'shoulda-matchers'
-          s.add_development_dependency 'simplecov-console'
           s.add_development_dependency 'simplecov'
+          s.add_development_dependency 'simplecov-console'
           s.add_development_dependency 'webpacker', '~> 4.0'
           s.add_development_dependency "sqlite3", '~> 1.4'
         end
