@@ -65,7 +65,7 @@ RSpec.describe "/api/blog/asset_details", type: :request do
       end
 
       it { expect(response).to have_http_status(:ok) }
-      it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+      it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
       describe "data" do
         subject { JSON.parse(response.body)["data"] }
@@ -106,7 +106,7 @@ RSpec.describe "/api/blog/asset_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:created) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -152,7 +152,7 @@ RSpec.describe "/api/blog/asset_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }
@@ -197,7 +197,7 @@ RSpec.describe "/api/blog/asset_details", type: :request do
         end
 
         it { expect(response).to have_http_status(:ok) }
-        it { expect(JSON.parse(response.body).keys).to match_array(%w[data]) }
+        it { expect(JSON.parse(response.body).keys).to match_array(%w[data meta]) }
 
         describe "data" do
           subject { JSON.parse(response.body)["data"] }

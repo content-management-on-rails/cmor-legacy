@@ -1,12 +1,9 @@
 module Cmor::Blog::Api
-  class AssetDetailSerializer
-    def initialize(resource, params = {})
-      @resource = resource
-      @params = params
-    end
-
+  class AssetDetailSerializer < Cmor::Core::Api::Serializer::Base
     def as_json
-      @resource.as_json(include: (@params[:populate] || [])).merge(asset_url: asset_url)
+      super.tap do |hash|
+        hash[:attributes].merge!(asset_url: asset_url)
+      end
     end
 
     private
