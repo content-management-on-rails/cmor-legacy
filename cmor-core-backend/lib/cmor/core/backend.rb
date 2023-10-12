@@ -1,3 +1,4 @@
+require "cmor/core/backend/version"
 require "cmor/core/backend/configuration"
 require "cmor/core/backend/engine"
 

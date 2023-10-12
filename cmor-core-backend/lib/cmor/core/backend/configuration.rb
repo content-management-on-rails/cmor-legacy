@@ -53,6 +53,10 @@ module Cmor
         def add_resources_routes(name, options)
           resources_routes[name] = options
         end
+
+        mattr_accessor :cmor do
+          Cmor
+        end
       end
     end
   end

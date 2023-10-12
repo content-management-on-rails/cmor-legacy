@@ -1,4 +1,10 @@
 Cmor::Core::Backend.configure do |config|
+  # Register self to be shown in the backend.
+  #
+  # Default: config.cmor.administrador.register_engine("Cmor::Core::Backend::Engine", { show: false })
+  #
+  config.cmor.administrador.register_engine("Cmor::Core::Backend::Engine", { show: false })
+
   # Globally set variant options to be used in backends.
   #
   # default: config.image_variant_options = {

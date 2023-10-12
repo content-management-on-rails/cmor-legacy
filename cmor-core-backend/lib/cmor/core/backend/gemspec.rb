@@ -27,6 +27,7 @@ module Cmor
           s.add_development_dependency 'guard-bundler'
           s.add_development_dependency 'guard-rails'
           s.add_development_dependency 'guard-rspec'
+          s.add_development_dependency 'guard-standardrb'
           s.add_development_dependency 'pry-rails'
           s.add_development_dependency 'rails-dummy'
           s.add_development_dependency 'rails-i18n'
