@@ -64,5 +64,8 @@ de:
         updated_at: Aktualisiert am
   classes:
     cmor/system/engine: System
+  modules:
+    cmor/system/delayed/backend/active_record: Delayed Job
+    cmor/system/active_storage: Active Storage
   routes:
     cmor-system-engine: system
