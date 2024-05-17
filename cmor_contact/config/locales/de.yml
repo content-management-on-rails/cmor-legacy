@@ -54,6 +54,9 @@ de:
         create: Absenden
       whatsapp_request:
         create: Absenden
+  recaptcha:
+    errors:
+      verification_failed: "Die ReCaptcha-Überprüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut."
   routes:
     cmor_contact_engine: kontakt
     contact_requests: anfrage

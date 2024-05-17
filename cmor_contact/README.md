@@ -34,6 +34,21 @@ Generate migrations and migrate:
 
 You can use the environment variable CMOR_CONTACT_RECIPIENTS to override the recipients in config/initializers/cmor_contact.rb
 
+## Spam Protection
+
+You can configure the spam protection in the initializer. Available options are:
+
+* :hidden_field - Uses a hidden field as honeypot (default)
+* :google_recaptcha_v2 - Google reCaptcha v2
+* :google_recaptcha_v3 - Google reCaptcha v3
+
+To use reCaptcha you have to add the recaptcha gem to you Gemfile:
+
+    # Gemfile
+    gem 'recaptcha'
+
+Additionally you have to configure the google reCaptcha api keys. See the recaptcha documentation for futher information: [https://github.com/ambethia/recaptcha](https://github.com/ambethia/recaptcha).
+
 ## Contributing
 Contribution directions go here.
 

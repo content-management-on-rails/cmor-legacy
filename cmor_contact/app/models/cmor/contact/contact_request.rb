@@ -28,14 +28,16 @@ module Cmor::Contact
     validates :accept_terms_of_service, acceptance: true
 
     module SpamProtection
-      attr_accessor :nickname
+      module HiddenField
+        attr_accessor :nickname
 
-      def save
-        if nickname.present?
-          valid?
-          return true
-        else
-          super
+        def save
+          if nickname.present?
+            valid?
+            return true
+          else
+            super
+          end
         end
       end
     end
@@ -50,7 +52,7 @@ module Cmor::Contact
       end
     end
 
-    prepend SpamProtection
+    prepend SpamProtection::HiddenField if Cmor::Contact::Configuration.spam_protection == :hidden_field
     include Notification
   end
 end

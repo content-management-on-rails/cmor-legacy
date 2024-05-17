@@ -1,0 +1,4 @@
+- if Cmor::Contact::Configuration.spam_protection == :google_recaptcha_v2
+  .mb-4= recaptcha_tags
+- if Cmor::Contact::Configuration.spam_protection == :google_recaptcha_v3
+  = recaptcha_v3(action: 'create/contact_request/contact/cmor', site_key: Recaptcha.configuration.site_key)

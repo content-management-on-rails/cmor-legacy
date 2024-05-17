@@ -131,6 +131,13 @@ Cmor::Contact.configure do |config|
   # Available options are:
   #
   # - :hidden_field
+  # - :google_recaptcha_v2
+  # - :google_recaptcha_v3
+  #
+  # To use google recaptcha v3 you need to add the recaptcha gem to your Gemfile:
+  #
+  #     # Gemfile
+  #     gem 'recaptcha'
   #
   # Default: config.spam_protection = :hidden_field
   #

@@ -1,4 +1,7 @@
 = simple_form_for(resource, remote: request.xhr?) do |f|
   = render 'form_errors', resource: f.object
   = render 'form_fields', form: f
+
+  = render 'spam_protection', form: f
+
   = render 'form_buttons', form: f

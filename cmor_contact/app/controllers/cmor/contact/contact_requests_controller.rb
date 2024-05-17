@@ -21,7 +21,7 @@ module Cmor
 
       def create
         @resource.ip_address = request.remote_ip
-        if @resource.save
+        if before_save && @resource.save
           respond_with @resource, location: after_create_url
         else
           respond_with @resource
@@ -29,6 +29,23 @@ module Cmor
       end
 
       private
+
+      def before_save
+        if Cmor::Contact::Configuration.spam_protection == :google_recaptcha_v2
+          return verify_recaptcha(model: @resource)
+        end
+
+        if Cmor::Contact::Configuration.spam_protection == :google_recaptcha_v3
+          unless verify_recaptcha(action: 'create/contact_request/contact/cmor', minimum_score: 0.5, secret_key: Recaptcha.configuration.secret_key)
+            @resource.valid?
+            @resource.errors.add(:base, flash[:recaptcha_error])
+            flash.delete(:recaptcha_error)
+            return false
+          end
+        end
+
+        true
+      end
 
       def initialize_resource_for_create
         @resource = initialize_scope.new(permitted_params)
