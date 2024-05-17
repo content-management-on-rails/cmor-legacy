@@ -9,28 +9,37 @@ module Cmor::Contact
     it { expect(subject).to validate_presence_of(:message) }
 
     describe 'spam protection' do
-      it { expect(subject).to respond_to(:nickname) }
+      describe 'when hidden field' do
+        it { expect(subject).to respond_to(:nickname) }
 
-      describe 'when is spam' do
-        subject { build(:cmor_contact_contact_request) }
+        around(:each) do |example|
+          @_spam_protection = Cmor::Contact::Configuration.spam_protection
+          Cmor::Contact::Configuration.spam_protection = :hidden_field
+          example.run
+          Cmor::Contact::Configuration.spam_protection = @_spam_protection
+        end
 
-        before(:each) { subject.nickname = 'Evil Spammer' }
+        describe 'when is spam' do
+          subject { build(:cmor_contact_contact_request) }
 
-        it { expect(subject).to be_valid }
-        it { expect(subject.save).to be_truthy }
-        it { subject.valid?; expect(subject.errors.full_messages).to eq([])}
-        it { expect{ subject.save }.not_to change{ described_class.count } }
-      end
+          before(:each) { subject.nickname = 'Evil Spammer' }
 
-      describe 'when it is not spam' do
-        subject { build(:cmor_contact_contact_request) }
+          it { expect(subject).to be_valid }
+          it { expect(subject.save).to be_truthy }
+          it { subject.valid?; expect(subject.errors.full_messages).to eq([])}
+          it { expect{ subject.save }.not_to change{ described_class.count } }
+        end
 
-        before(:each) { subject.nickname = nil }
+        describe 'when it is not spam' do
+          subject { build(:cmor_contact_contact_request) }
 
-        it { expect(subject).to be_valid }
-        it { expect(subject.save).to be_truthy }
-        it { subject.valid?; expect(subject.errors.full_messages).to eq([])}
-        it { expect{ subject.save }.to change{ described_class.count }.from(0).to(1) }
+          before(:each) { subject.nickname = nil }
+
+          it { expect(subject).to be_valid }
+          it { expect(subject.save).to be_truthy }
+          it { subject.valid?; expect(subject.errors.full_messages).to eq([])}
+          it { expect{ subject.save }.to change{ described_class.count }.from(0).to(1) }
+        end
       end
     end
 

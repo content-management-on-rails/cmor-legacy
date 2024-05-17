@@ -125,4 +125,14 @@ Cmor::Contact.configure do |config|
   # Default: config.whatsapp_number = nil
   #
   config.whatsapp_number = nil
+
+  # Configure the spam protection method.
+  #
+  # Available options are:
+  #
+  # - :hidden_field
+  #
+  # Default: config.spam_protection = :hidden_field
+  #
+  config.spam_protection = :hidden_field
 end
