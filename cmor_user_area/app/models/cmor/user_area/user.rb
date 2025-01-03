@@ -34,7 +34,12 @@ module Cmor
 
         included do
           has_one_time_password Cmor::UserArea::Configuration.one_time_password_options
-          serialize :otp_backup_codes, Array
+          #  rails 7.2 has changesd the method signature.
+          if Rails.version >= "7.2"
+            serialize :otp_backup_codes, type: Array
+          else
+            serialize :otp_backup_codes, Array
+          end
 
           include AASM
 

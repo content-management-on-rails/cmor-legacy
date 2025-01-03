@@ -89,7 +89,13 @@ module Cmor::Cms
       extend ActiveSupport::Concern
 
       included do
-        serialize :properties, OpenStruct
+        #  rails 7.2 has changesd the method signature
+        if Rails.version >= "7.2"
+          serialize :properties, type: OpenStruct
+        else
+          serialize :properties, OpenStruct
+        end
+
         delegate *Cmor::Cms::Configuration.navigation_item_properties, to: :li_attributes
         delegate *Cmor::Cms::Configuration.navigation_item_properties.collect { |a| "#{a}=".to_sym }, to: :li_attributes
       end
