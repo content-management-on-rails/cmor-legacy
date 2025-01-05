@@ -1,5 +1,5 @@
 module Cmor::Showcase
-  class Item < ApplicationRecord
+  class Item < ActiveRecord::Base
     include ActsAsPublished::ActiveRecord
     include Markup::Rails::ActiveRecord
 
