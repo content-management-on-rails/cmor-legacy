@@ -80,7 +80,11 @@ module Cmor
         included do
           attr_writer :height, :width
           
-          serialize :variant_options
+          if Rails.version >= "7.2"
+            serialize :variant_options, type: Hash, coder: YAML
+          else
+            serialize :variant_options, Hash
+          end
           
           validates :width, numericality: true, allow_nil: true, allow_blank: true
           validates :height, numericality: true, allow_nil: true, allow_blank: true
