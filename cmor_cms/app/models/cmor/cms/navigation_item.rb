@@ -91,7 +91,7 @@ module Cmor::Cms
       included do
         #  rails 7.2 has changesd the method signature
         if Rails.version >= "7.2"
-          serialize :properties, type: OpenStruct
+          serialize :properties, type: OpenStruct, coder: YAML
         else
           serialize :properties, OpenStruct
         end
