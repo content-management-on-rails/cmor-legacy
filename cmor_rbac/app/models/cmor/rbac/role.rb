@@ -1,5 +1,3 @@
-require 'model/flag_from_time_range_concern'
-
 module Cmor::Rbac
   class Role < ActiveRecord::Base
     include Model::FlagFromTimeRangeConcern
