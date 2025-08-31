@@ -15,7 +15,11 @@ module Cmor::Transports
     validates :count_query, presence: true
     validates :output_format, presence: true
 
-    serialize :output_attributes, Array
+    if Rails.version >= "7.2"
+      serialize :output_attributes, type: Array, coder: YAML
+    else
+      serialize :output_attributes, Array
+    end
 
     def human
       [root_model, output_format, updated_at, creator].compact.join(" | ")
